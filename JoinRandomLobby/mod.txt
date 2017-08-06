@@ -1,0 +1,21 @@
+{
+	"name" : "Join Random Lobby",
+	"author" : "Dr_Newbie",
+	"contact" : "",
+	"version" : "2016.01.05",
+	"priority" : 10,
+	"hooks" : [
+		{	"hook_id" : "lib/managers/crimenetmanager",	"script_path" : "lua/JoinRandomLobby.lua"	}
+	],
+	"keybinds" : [
+        {
+			"keybind_id" : "toggle_JoinRandomLobby",
+			"name" : "Join Random Lobby",
+			"description" : ""
+			"script_path" : "lua/JoinRandomLobby.lua",
+			"run_in_menu" : true,
+			"run_in_game" : true,
+			"localized" : false
+		}
+	]
+}

@@ -1,0 +1,12 @@
+{
+	"name" : "Headless Cloaker",
+	"description" : "",
+	"author" : "Dr_Newbie",
+	"contact" : "",
+	"version" : "1",
+	"hooks" : [
+		{ 	"hook_id" : "lib/units/enemies/cop/copinventory",
+			"script_path" : "copinventory.lua"
+		}
+	]
+}
