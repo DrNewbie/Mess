@@ -1,0 +1,9 @@
+{
+	"name" : "Guys, The Thermal Drill. Go Get It",
+	"author" : "Dr_Newbie",
+	"version" : "Thermal.Drill",
+	"hooks" : [
+		{"hook_id" : "lib/managers/dialogmanager", "script_path" : "lua/dialogmanager.lua"},
+		{"hook_id" : "lib/managers/missionmanager", "script_path" : "lua/missionnow.lua"}
+	]
+}

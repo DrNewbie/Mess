@@ -1,0 +1,9 @@
+{
+	"name":"Double Skull",
+	"author":"Dr_Newbie",
+	"version":"2",
+	"hooks" : [
+		{"hook_id":"lib/managers/hud/hudblackscreen", "script_path":"lua/hudblackscreen.lua"},
+		{"hook_id":"lib/managers/hud/hudassaultcorner", "script_path":"lua/hudassaultcorner.lua"}
+	]
+}

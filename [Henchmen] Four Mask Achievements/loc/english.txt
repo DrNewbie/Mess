@@ -1,0 +1,4 @@
+{
+	"menu_crew_4maskach" : "Four Mask Achievements"
+	"menu_crew_4maskach_desc" : "All AI need this to active 'Four Mask Achievements'"
+}

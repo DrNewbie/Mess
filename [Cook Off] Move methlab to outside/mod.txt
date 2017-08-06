@@ -1,0 +1,14 @@
+{
+	"name": "[Cook Off] Move methlab to outside",
+	"description": "Cook Off Mod",
+	"author": "Dr_Newbie",
+	"contact": " ",
+	"version": "2",
+	"priority": 1,
+	"hooks": [
+		{
+			"hook_id": "core/lib/managers/mission/coreelementinstance",
+			"script_path": "lua/coreelementinstance.lua"
+		}
+	]
+}

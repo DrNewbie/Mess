@@ -1,0 +1,10 @@
+{
+	"name" : "--- Skin Kicker ---",
+	"author" : "Dr_Newbie",
+	"contact" : "Kick someone who is using skin when you're host.",
+	"version" : "2015.11.16",
+	"priority" : 10,
+	"hooks" : [
+		{	"hook_id" : "lib/managers/hudmanagerpd2",	"script_path" : "lua/kickskin.lua"	}
+	]
+}

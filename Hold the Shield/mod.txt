@@ -1,0 +1,11 @@
+{
+	"name" : "Hold the Shield",
+	"author" : "Dr_Newbie",
+	"version" : "2",
+	"hooks" : [
+		{"hook_id" : "lib/units/beings/player/states/playerstandard", "script_path" : "lua/playerstandard.lua"},
+		{"hook_id" : "lib/units/beings/player/playerinventory", "script_path" : "lua/playerinventory.lua"},
+		{"hook_id" : "lib/units/beings/player/playerdamage", "script_path" : "lua/playerdamage.lua"},
+		{"hook_id" : "lib/units/weapons/akimboweaponbase", "script_path" : "lua/akimboweaponbase.lua"}
+	]
+}

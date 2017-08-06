@@ -1,0 +1,12 @@
+{
+	"name" : "DoNotBlockMyCharacter",
+	"author" : "Dr_Newbie",
+	"contact" : " ",
+	"version" : "1",
+	"hooks" : [
+		{
+			"hook_id" : "lib/managers/mission/elementplayercharacter",
+			"script_path" : "lua/elementplayercharacter.lua"
+		}
+	]
+}

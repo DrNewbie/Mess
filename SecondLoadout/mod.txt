@@ -1,0 +1,44 @@
+{
+	"name" : "Second Loadout",
+	"author" : "Dr_Newbie",
+	"contact" : "",
+	"version" : "ver.1.2",
+	"priority" : 10,
+	"keybinds" : [
+        {
+			"keybind_id" : "toggle_SecondLoadout",
+			"name" : "Second Loadout",
+			"description" : ""
+			"script_path" : "lua/active.lua",
+			"run_in_menu" : true,
+			"run_in_game" : true,
+			"localized" : false
+		}
+	],
+	"hooks" : [
+		{
+			"hook_id": "lib/managers/achievmentmanager",
+			"script_path": "UnHackMe/lua/AchievmentManager.lua"
+		},
+		{
+			"hook_id" : "lib/managers/menu/items/menuitemmultichoice",
+			"script_path" : "UnHackMe/lua/MenuItemMultiChoice.lua"
+		},
+		{
+			"hook_id" : "lib/managers/menu/menunodegui",
+			"script_path" : "UnHackMe/lua/MenuNodeGui.lua"
+		},
+		{
+			"hook_id" : "lib/network/matchmaking/networkaccountsteam",
+			"script_path" : "UnHackMe/lua/NetworkAccountSTEAM.lua"
+		},
+		{
+			"hook_id" : "lib/network/matchmaking/networkmatchmakingsteam",
+			"script_path" : "UnHackMe/lua/NetworkMatchmakingSTEAM.lua"
+		},
+		{
+			"hook_id": "lib/managers/savefilemanager",
+			"script_path": "UnHackMe/lua/SavefileManager.lua"
+		}
+	]
+}

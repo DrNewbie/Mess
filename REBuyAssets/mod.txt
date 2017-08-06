@@ -1,0 +1,13 @@
+{
+	"name":"REBuyAssets",
+	"description":" ",
+	"author":"Dr_Newbie",
+	"contact":" ",
+	"version":"4",
+	"hooks" :
+	[
+		{"hook_id":"lib/managers/localizationmanager", "script_path":"lua/MenuFunction.lua"},
+		{"hook_id":"lib/managers/preplanningmanager", "script_path":"lua/preplanningmanager.lua"},
+		{"hook_id":"lib/managers/menu/missionbriefinggui", "script_path":"lua/missionbriefinggui.lua"}
+	]
+}

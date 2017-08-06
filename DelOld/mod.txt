@@ -1,0 +1,14 @@
+{
+	"name": "DelOld",
+	"description": " ",
+	"author": "https://stackoverflow.com/a/51069",
+	"contact": " ",
+	"version": "1",
+	"priority": 123,
+	"hooks": [
+		{
+			"hook_id": "lib/managers/localizationmanager",
+			"script_path": "Run.lua"
+		}
+	]
+}

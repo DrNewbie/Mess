@@ -1,0 +1,20 @@
+{
+	"name" : "Challenge Info",
+	"description" : "",
+	"author" : "Dr_Newbie",
+	"version" : "1",
+	"hooks" : [
+		{"hook_id":"lib/managers/menumanager", "script_path":"Menu.lua"}
+	],
+	"keybinds":[
+        {
+			"keybind_id":"toggle_ChallengeInfo",
+			"name":"Challenge Info",
+			"description":" "
+			"script_path":"Open.lua",
+			"run_in_menu":true,
+			"run_in_game":true,
+			"localized":false
+		}
+	]
+}

@@ -1,0 +1,8 @@
+{
+	"name" : "Forced Drill to Jammed",
+	"author" : "Dr_Newbie",
+	"version" : "1",
+	"hooks" : [
+		{"hook_id":"lib/units/props/timergui", "script_path":"lua/jammed_event.lua"}
+	]
+}

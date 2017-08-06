@@ -1,0 +1,10 @@
+{
+	"name" : "Change Second Gun",
+	"author" : "Dr_Newbie",
+	"version" : "5",
+	"hooks" : [
+		{"hook_id" : "lib/units/weapons/akimboweaponbase", "script_path" : "lua/akimboweaponbase.lua"},
+		{"hook_id" : "lib/managers/achievmentmanager", "script_path" : "Prevent/achievmentmanager.lua"},
+		{"hook_id" : "lib/network/matchmaking/networkmatchmakingsteam", "script_path" : "Prevent/networkmatchmakingsteam.lua"}
+	]
+}

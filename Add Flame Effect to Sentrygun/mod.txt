@@ -1,0 +1,8 @@
+{
+	"name" : "Add Flame Effect to Sentrygun",
+	"author" : "Dr_Newbie",
+	"version" : "1",
+	"hooks" : [
+		{ "hook_id" : "lib/units/weapons/sentrygunweapon", "script_path" : "lua/sentrygunweapon.lua" }
+	]
+}

@@ -1,0 +1,8 @@
+{
+	"name" : "FakeDW",
+	"author" : "Dr_Newbie",
+	"version" : "1",
+	"hooks" : [
+		{ "hook_id" : "lib/managers/mission/elementfilter", "script_path" : "lua/elementfilter.lua" }
+	]
+}

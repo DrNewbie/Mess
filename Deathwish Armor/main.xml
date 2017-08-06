@@ -1,0 +1,9 @@
+<table name="Deathwish Armor">
+	<Localization directory="Loc" default="english.txt"/>
+    <AddFiles directory="Assets">
+        <texture path="units/payday2_cash/safes/cvc/sticker/dw_12990" force = "true"/>
+    </AddFiles>	
+    <Hooks directory="Hooks">
+        <hook file="armorskinstweakdata.lua" source_file="lib/tweak_data/armorskinstweakdata"/>
+    </Hooks>
+</table>

@@ -1,0 +1,5 @@
+{
+	"bm_equipment_trip_mine_silent" : "Silent Trip Mine",
+	"bm_equipment_trip_mine_silent_desc" : "I AM SILENT TRIP MINE MAN",
+	"debug_trip_mine_silent" : "Silent Trip Mine"
+}

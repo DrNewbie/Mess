@@ -1,0 +1,29 @@
+<dynamic_object>
+    <diesel materials="units/payday2/equipment/gen_equipment_tripmine/gen_equipment_tripmine" orientation_object="rp_gen_equipment_tripmine" />
+	<sequence_manager file="units/payday2/equipment/gen_equipment_tripmine/gen_equipment_tripmine" />
+	
+	<animations enabled="true">
+    <animation_group name="laser" enabled="false">
+      <object name="root" enabled="true" />
+	  <object name="end" enabled="true" />
+    </animation_group>
+  </animations>
+  
+	<bodies>
+		<body remove_ray_type="walk vis_graph" name="body_static" enabled="true" template="raycoll_static">
+			<object name="c_trip_mine" collision_type="mesh_mopp" />
+		</body>
+	</bodies>
+	
+	<effects>
+		<effect_spawner name="effect_light" enabled="false" object="rp_gen_equipment_tripmine" effect="units/payday2/equipment/gen_equipment_tripmine/gen_equipment_tripmine" />
+	</effects>
+	
+    <graphics>
+		<object enabled="true" name="g_trip_mine" />
+		<graphic_group name="g_laser" enabled="true" culling_object="co_laser">
+			<object name="g_laser" enabled="false" />
+			<object name="g_laser_sensor" enabled="false" />
+		</graphic_group>
+    </graphics>
+</dynamic_object>

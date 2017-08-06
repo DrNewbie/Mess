@@ -1,0 +1,11 @@
+{
+	"name":"Stay there, Twitch!!",
+	"author":"Dr_Newbie",
+	"contact":" ",
+	"version":"2",
+	"hooks":[
+		{
+			"hook_id":"core/lib/managers/mission/coremissionscriptelement", "script_path":"lua/coremissionscriptelement.lua"
+		}
+	]
+}

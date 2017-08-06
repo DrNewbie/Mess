@@ -1,0 +1,8 @@
+{
+	"name" : "Add Flame Effect to Dragon's Breath",
+	"author" : "Dr_Newbie",
+	"version" : "1",
+	"hooks" : [
+		{ "hook_id" : "lib/units/weapons/shotgun/newshotgunbase", "script_path" : "lua/newshotgunbase.lua" }
+	]
+}

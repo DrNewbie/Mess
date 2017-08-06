@@ -1,0 +1,10 @@
+{
+	"name" : "Toggle in OVK Keepers",
+	"author" : "Dr_Newbie",
+	"version" : "1",
+	"hooks" : [
+		{"hook_id" : "lib/managers/group_ai_states/groupaistatebase", "script_path" : "lua/groupaistatebase.lua"},
+		{"hook_id" : "lib/units/beings/player/states/playerdriving", "script_path" : "lua/playerdriving.lua"},
+		{"hook_id" : "lib/managers/localizationmanager", "script_path" : "lua/MenuFunction.lua"}
+	]
+}

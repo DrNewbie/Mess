@@ -1,0 +1,11 @@
+{
+	"name" : "Bullet Trail",
+	"author" : "Dr_Newbie",
+	"contact" : " ",
+	"version" : "1",
+	"priority" : 1,
+	"hooks" : [
+		{"hook_id":"lib/managers/localizationmanager", "script_path":"lua/localizationmanager.lua"},
+		{"hook_id":"lib/units/weapons/newraycastweaponbase", "script_path":"lua/newraycastweaponbase.lua"}
+	]
+}

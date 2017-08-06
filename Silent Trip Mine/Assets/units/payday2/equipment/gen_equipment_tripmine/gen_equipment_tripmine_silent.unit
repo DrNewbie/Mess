@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<unit type="item" slot="14" >
+    <object file="units/payday2/equipment/gen_equipment_tripmine/gen_equipment_tripmine_silent" />
+	<network sync="spawn"/>
+	<dependencies>
+    <depends_on effect="effects/particles/explosions/explosion_grenade" />
+    <depends_on bnk="soundbanks/weapon_trip_mine" />
+  </dependencies>
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+    <extension name="base" class="TripMineBase" />
+    <extension name="damage" class="UnitDamage" />
+    <extension name="interaction" class="TripMineInteractionExt">
+      <var name="tweak_data" value="trip_mine_silent" />
+    </extension>
+    <extension name="contour" class="ContourExt" />
+  </extensions>
+  <sounds>
+    <default_soundsource source="rp_gen_equipment_tripmine" />
+  </sounds>
+</unit>

@@ -1,0 +1,4 @@
+{
+	"menu_crew_flame_ammo" : "Dragon's Breath"
+	"menu_crew_flame_ammo_desc" : "Apply dragons breath bullet to AI's weapon"
+}

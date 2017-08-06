@@ -1,0 +1,7 @@
+{
+	"name" : "All Side Job",
+	"author" : "Dr_Newbie",
+	"hooks" : [
+		{ "hook_id" : "lib/managers/challengemanager", "script_path" : "lua/unlock.lua" }
+	]
+}

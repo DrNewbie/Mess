@@ -1,0 +1,9 @@
+{
+	"name" : "No Forced Loadout and Character",
+	"description" : "",
+	"author" : "Dr_Newbie",
+	"version" : "1",
+	"hooks" : [
+		{ "hook_id" : "lib/managers/blackmarketmanager", "script_path" : "lua/blackmarketmanager.lua" }
+	]
+}

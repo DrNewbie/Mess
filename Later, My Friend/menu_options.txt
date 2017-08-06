@@ -1,0 +1,32 @@
+{
+	"menu_id" : "latermyfriend_menu_id",
+	"parent_menu_id" : "lua_mod_options_menu",
+	"title" : "latermyfriend_menu_title",
+	"description" : "latermyfriend_menu_desc",
+	"items" : [
+		{
+			"type" : "slider",
+			"id" : "latermyfriend_delay_callback",
+			"title" : "latermyfriend_delay_title",
+			"description" : "latermyfriend_delay_desc",
+			"callback" : "LaterMyFriendMenuSetDelay",
+			"value" : "_delay",
+			"show_value": true,
+			"min" : 5,
+			"max" : 600,
+			"step" : 5,
+		},
+		{
+			"type" : "slider",
+			"id" : "latermyfriend_times_callback",
+			"title" : "latermyfriend_times_title",
+			"description" : "latermyfriend_times_desc",
+			"callback" : "LaterMyFriendMenuSetTimes",
+			"value" : "_times",
+			"show_value": true,
+			"min" : 0,
+			"max" : 10,
+			"step" : 1,
+		}
+	]
+}

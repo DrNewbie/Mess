@@ -1,0 +1,6 @@
+<table name="Everyone_Is_45th">
+	<Hooks directory="Hooks">
+		<hook file="copmovement.lua" source_file="lib/units/enemies/cop/copmovement"/>
+		<hook file="copinventory.lua" source_file="lib/units/enemies/cop/copinventory"/>
+	</Hooks>
+</table>

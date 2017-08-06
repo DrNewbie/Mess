@@ -1,0 +1,8 @@
+{
+	"name" : "Lab Hold the Dark",
+	"author" : "Dr_Newbie",
+	"version" : "1",
+	"hooks" : [
+		{ "hook_id" : "core/lib/managers/mission/coreelementrandom", "script_path" : "lua/coreelementrandom.lua" }
+	]
+}

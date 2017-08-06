@@ -1,0 +1,14 @@
+{
+	"name": "[First World Bank]Replace Overdrill Gold with Money",
+	"description": " ",
+	"author": "Dr_Newbie",
+	"contact": " ",
+	"version": "1",
+	"priority": 1000,
+	"hooks": [
+		{
+			"hook_id": "core/lib/utils/dev/editor/coreworlddefinition",
+			"script_path": "RUN.lua"
+		}
+	]
+}

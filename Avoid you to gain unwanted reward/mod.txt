@@ -1,0 +1,37 @@
+{
+	"name": "Avoid you to gain unwanted reward",
+	"description": " ",
+	"author": "Dr_Newbie",
+	"contact": " ",
+	"version": "2",
+	"priority": 1,
+	"hooks": [
+		{
+			"hook_id": "lib/managers/localizationmanager",
+			"script_path": "lua/function4others.lua"
+		},
+		{
+			"hook_id": "lib/managers/experiencemanager",
+			"script_path": "lua/experiencemanager.lua"
+		},
+		{
+			"hook_id": "lib/managers/moneymanager",
+			"script_path": "lua/moneymanager.lua"
+		},
+		{
+			"hook_id": "lib/managers/localizationmanager",
+			"script_path": "lua/askme.lua"
+		}
+	],
+	"keybinds" : [
+		{
+			"keybind_id" : "keybind_exprewardlater",
+			"name" : "EXP Reward Later",
+			"description" : "Turn ON or OFF"
+			"script_path" : "lua/change.lua",
+			"run_in_menu" : true,
+			"run_in_game" : true,
+			"localized" : false
+		}
+	]
+}

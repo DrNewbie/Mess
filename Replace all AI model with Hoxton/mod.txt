@@ -1,0 +1,11 @@
+{
+	"name":"Replace all AI model with Hoxton",
+	"description":" ",
+	"author":"Dr_Newbie",
+	"contact":" ",
+	"version":"1",
+	"hooks":
+	[
+		{"hook_id":"lib/tweak_data/blackmarkettweakdata", "script_path":"lua/blackmarkettweakdata.lua"}
+	]
+}

@@ -1,0 +1,10 @@
+{
+	"OVK_Keepers_menu_title" : "Toggle in OVK Keepers",
+	"OVK_Keepers_menu_desc" : "",
+	
+	"OVK_Keepers_menu_no_too_far_so_move_title" : "Don't Move even it is far",
+	"OVK_Keepers_menu_no_driving_so_move_title" : "Don't Move even I'm driving",
+	
+	"OVK_Keepers_menu_warning4reboot" : "You need to reboot the game to apply this changing",
+	"OVK_Keepers_menu_use4ok" : "[OK]"
+}

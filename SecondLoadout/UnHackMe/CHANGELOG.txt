@@ -1,0 +1,4 @@
+
+1.1r2:
+ - fixed disabling of public gameplay
+ - hopefully disabled saving

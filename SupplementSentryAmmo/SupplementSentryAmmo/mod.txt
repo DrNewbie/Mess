@@ -1,0 +1,8 @@
+{
+	"name" : "Supplement Sentry Ammo",
+	"author" : "Dr_Newbie",
+	"version" : "1",
+	"hooks" : [
+		{"hook_id" : "lib/units/beings/player/states/playerstandard", "script_path"	: "lua/playerstandard.lua"}
+	]
+}

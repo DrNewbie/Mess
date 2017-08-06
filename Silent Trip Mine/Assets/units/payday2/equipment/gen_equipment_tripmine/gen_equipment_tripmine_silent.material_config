@@ -1,0 +1,21 @@
+<materials version="3">
+    <material name="tripmine" unique="true" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/equipment/gen_equipment_tripmine/tripmine_df"/>
+        <bump_normal_texture file="units/payday2/equipment/gen_equipment_tripmine/tripmine_nm"/>
+
+				<variable value="1 1 1" type="vector3" name="contour_color"/>
+				<variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+    <material version="2" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:INTERSECTION_FADEOUT:SKINNED_1WEIGHT:VIEW_ANGLE_FALLOFF_OP" name="trip_mine_laser">
+        <variable value="streetlight" type="scalar" name="intensity"/>
+        <diffuse_texture file="units/payday2/equipment/gen_equipment_tripmine/trip_mine_alphas_df"/>
+        <variable value="100" type="scalar" name="fadeout_distance"/>
+        <variable value="9.9999997473788e-005" type="scalar" name="falloff_exp"/>
+    </material>
+    <material version="2" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:INTERSECTION_FADEOUT:SKINNED_1WEIGHT:VIEW_ANGLE_FALLOFF_OP" name="sensor_mine_laser">
+        <variable value="streetlight" type="scalar" name="intensity"/>
+        <diffuse_texture file="units/payday2/equipment/gen_equipment_tripmine/trip_mine_alphas_blue_df"/>
+        <variable value="100" type="scalar" name="fadeout_distance"/>
+        <variable value="9.9999997473788e-005" type="scalar" name="falloff_exp"/>
+    </material>
+</materials>

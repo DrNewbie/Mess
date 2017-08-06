@@ -1,0 +1,29 @@
+<table name="Silent_Trip_Mine">
+	<Localization directory="Loc" default="english.txt"/>
+	<AssetUpdates id="20327" name="asset_updates" folder_name="Silent Trip Mine" provider="lastbullet"/>
+	<AddFiles directory="Assets">
+		<model path="units/payday2/equipment/gen_equipment_tripmine/gen_equipment_tripmine_silent"/>
+		<unit path="units/payday2/equipment/gen_equipment_tripmine/gen_equipment_tripmine_silent"/>
+		<unit path="units/payday2/equipment/gen_equipment_tripmine/gen_equipment_tripmine_silent_dummy"/>
+		<material_config path="units/payday2/equipment/gen_equipment_tripmine/gen_equipment_tripmine_silent"/>
+		<object path="units/payday2/equipment/gen_equipment_tripmine/gen_equipment_tripmine_silent"/>
+		<texture path="guis/textures/pd2/blackmarket/icons/deployables/trip_mine_silent"/>
+	</AddFiles>
+	<Hooks directory="Hooks">
+		<hook file="Main_Function.lua" source_file="lib/managers/localizationmanager"/>
+		<hook file="blackmarketmanager.lua" source_file="lib/managers/blackmarketmanager"/>
+		<hook file="playermanager.lua" source_file="lib/managers/playermanager"/>
+		<hook file="explosionmanager.lua" source_file="lib/managers/explosionmanager"/>
+		<hook file="interactionext.lua" source_file="lib/units/interactions/interactionext"/>		
+		<hook file="tripminebase.lua" source_file="lib/units/weapons/trip_mine/tripminebase"/>
+		<hook file="missiondoor.lua" source_file="lib/units/props/missiondoor"/>
+		<hook file="blackmarketgui.lua" source_file="lib/managers/menu/blackmarketgui"/>
+		<hook file="tweak_data/blackmarkettweakdata.lua" source_file="lib/tweak_data/blackmarkettweakdata"/>
+		<hook file="tweak_data/equipmentstweakdata.lua" source_file="lib/tweak_data/equipmentstweakdata"/>
+		<hook file="tweak_data/upgradestweakdata.lua" source_file="lib/tweak_data/upgradestweakdata"/>
+		<hook file="tweak_data/weapontweakdata.lua" source_file="lib/tweak_data/weapontweakdata"/>
+		<hook file="tweak_data/interactiontweakdata.lua" source_file="lib/tweak_data/interactiontweakdata"/>
+		<hook file="Prevent/achievmentmanager.lua" source_file="lib/managers/achievmentmanager"/>
+		<hook file="Prevent/networkmatchmakingsteam.lua" source_file="lib/network/matchmaking/networkmatchmakingsteam"/>
+	</Hooks>
+</table>

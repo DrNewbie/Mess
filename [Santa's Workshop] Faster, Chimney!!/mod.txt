@@ -1,0 +1,14 @@
+{
+	"name": "Faster, Chimney!!",
+	"description": "Chimney will come in faster",
+	"author": "Dr_Newbie",
+	"contact": " ",
+	"version": "1",
+	"priority": 1,
+	"hooks": [
+		{
+			"hook_id": "core/lib/managers/mission/coremissionscriptelement",
+			"script_path": "lua/coremissionscriptelement.lua"
+		}
+	]
+}

@@ -1,0 +1,18 @@
+{
+	"BotCarryBags_menu_title" : "Bot Carry Bags",
+	"BotCarryBags_menu_desc" : "",
+	"BotCarryBags_menu_shout_to_come_here_title" : "Shout to Come Here",
+	"BotCarryBags_menu_shout_to_come_here_desc" : "Bot will go to your there when you shout to him and he has the bag.",
+	"BotCarryBags_menu_auto_pickup_bag_title" : "Auto Pickup Bag",
+	"BotCarryBags_menu_auto_pickup_bag_desc" : "Bot will pickup the bag if there is one around him.",
+	"BotCarryBags_menu_auto_follow_player_title" : "Auto Follow Player",
+	"BotCarryBags_menu_auto_follow_player_desc" : "Bot will follow player when he has bags. (Required: 'Shout to Come Here')",
+	"BotCarryBags_menu_lua_keybinds_title" : "Keybinds for Logic",
+	"BotCarryBags_menu_lua_keybinds_desc" : "When this is ON, system will create keybinds to directly use logic.",
+	"BotCarryBags_menu_shout_to_drop_title" : "Shout to Drop",
+	"BotCarryBags_menu_shout_to_drop_desc" : "Bot will drop the bag when you shout to him",
+	"BotCarryBags_menu_fix_outside_bag_title" : "Fix Unreachable Bag",
+	"BotCarryBags_menu_fix_outside_bag_desc" : "Forced the bag to stick on Bot when it fall through the ground.",
+	"BotCarryBags_menu_warning4reboot" : "You need to reboot the game to apply this changing",
+	"BotCarryBags_menu_use4ok" : "[OK]"
+}

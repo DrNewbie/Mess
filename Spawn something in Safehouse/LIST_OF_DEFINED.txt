@@ -1,0 +1,3 @@
+{spawn_type = 1, name = "money", pos = Vector3(180, 218, 51), rot = Rotation()},
+{spawn_type = 1, name = "cloaker_gold", pos = Vector3(30, 325, 51), rot = Rotation(90, 0, 0)},
+{spawn_type = 2, name = "units/pd2_halloween/weapons/wpn_mel_titan_hammer/wpn_mel_titan_hammer", pos = Vector3(115, 335, 48), rot = Rotation(90, 90, 0), pack = "packages/lvl_help"},

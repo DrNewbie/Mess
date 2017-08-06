@@ -1,0 +1,10 @@
+{
+	"name" : "Mask Whitelist",
+	"author" : "Dr_Newbie",
+	"version" : "2.2",
+	"hooks" : [
+		{"hook_id" : "lib/managers/criminalsmanager", "script_path" : "lua/criminalsmanager.lua"},
+		{"hook_id" : "lib/managers/menumanager", "script_path" : "lua/Menu_Function.lua"},
+		{"hook_id" : "lib/managers/menu/menuscenemanager", "script_path" : "lua/menuscenemanager.lua"}
+	]
+}

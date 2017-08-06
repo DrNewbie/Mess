@@ -1,0 +1,8 @@
+{
+	"latermyfriend_menu_title" : "[Later, My Friend] Options",
+	"latermyfriend_menu_desc" : " ",
+	"latermyfriend_delay_title" : "Delay",
+	"latermyfriend_delay_desc" : "How long?",
+	"latermyfriend_times_title" : "Times",
+	"latermyfriend_times_desc" : "How many?",
+}

@@ -1,0 +1,10 @@
+{
+	"name" : "NonSense Gates [Free]",
+	"author" : "Dr_Newbie",
+	"version" : "3",
+	"hooks" : [
+		{ "hook_id" : "core/lib/managers/mission/coremissionscriptelement", "script_path" : "lua/coremissionscriptelement.lua" },
+		{ "hook_id" : "core/lib/managers/mission/coreelementrandom", "script_path" : "lua/coreelementrandom.lua" },
+		{ "hook_id" : "lib/managers/localizationmanager", "script_path" : "lua/MainSpawn.lua" }
+	]
+}

@@ -1,0 +1,14 @@
+{
+	"name": "NATO Minus",
+	"description": " ",
+	"author": "Dr_Newbie",
+	"contact": " ",
+	"version": "2",
+	"priority": 1,
+	"hooks": [
+		{
+			"hook_id": "lib/tweak_data/weaponfactorytweakdata",
+			"script_path": "lua/weaponfactorytweakdata.lua"
+		}
+	]
+}

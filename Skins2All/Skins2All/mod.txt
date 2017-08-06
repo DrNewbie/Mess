@@ -1,0 +1,30 @@
+{
+	"name": "Apply skins to any weapon",
+	"description": "Allow you use your skins on any weapon",
+	"author": "Dr_Newbie",
+	"contact": " ",
+	"version": "4",
+	"priority": 1000,
+	"hooks": [
+		{
+			"hook_id": "lib/managers/menumanager",
+			"script_path": "lua/Menu_Function.lua"
+		},
+		{
+			"hook_id": "lib/tweak_data/blackmarket/weaponskinstweakdata",
+			"script_path": "lua/weaponskinstweakdata.lua"
+		},
+		{
+			"hook_id": "lib/managers/blackmarketmanager",
+			"script_path": "lua/blackmarketmanager.lua"
+		},
+		{
+			"hook_id": "lib/network/base/networkpeer",
+			"script_path": "lua/networkpeer.lua"
+		},
+		{
+			"hook_id": "lib/managers/menu/BlackMarketGui",
+			"script_path": "lua/blackmarketgui.lua"
+		}
+	]
+}

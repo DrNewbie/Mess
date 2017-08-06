@@ -1,0 +1,11 @@
+{
+	"name" : "Skulldozer with Rocket Launcher",
+	"author" : "Dr_Newbie",
+	"version" : "2",
+	"hooks" : [
+		{ "hook_id" : "lib/managers/localizationmanager", "script_path" : "lua/Menu.lua" },
+		{ "hook_id" : "lib/units/enemies/cop/actions/upper_body/copactionshoot", "script_path" : "lua/copactionshoot.lua" },
+		{ "hook_id" : "lib/network/matchmaking/networkmatchmakingsteam", "script_path" : "lua/checkerr.lua" },
+		{ "hook_id" : "lib/managers/menumanagerdialogs", "script_path" : "lua/warning.lua" }
+	]
+}

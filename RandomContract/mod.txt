@@ -1,0 +1,8 @@
+{
+	"name" : "Random Contract",
+	"author" : "Dr_Newbie and BangL",
+	"version" : "2016.10"
+	"hooks" : [
+		{"hook_id" : "lib/managers/menumanager", "script_path" : "RandomContract.lua"}
+    ]
+}
