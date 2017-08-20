@@ -1,26 +1,21 @@
 core:import("CoreMissionScriptElement")
 ElementSpawnEnemyDummy = ElementSpawnEnemyDummy or class(CoreMissionScriptElement.MissionScriptElement)
 
-function ElementSpawnEnemyDummy:on_executed(instigator, _repeat)
+function ElementSpawnEnemyDummy:on_executed(instigator)
 	if not self._values.enabled then
 		return
 	end
 	if not managers.groupai:state():is_AI_enabled() and not Application:editor() then
 		return
 	end
-	local unit = self:produce()
-	if not _repeat then
-		ElementSpawnEnemyDummy.super.on_executed(self, unit)
-	else
-		ElementSpawnEnemyDummy.super.on_executed(self, unit, true)
-		ElementSpawnEnemyDummy.super.on_executed(self, unit, true)
-		ElementSpawnEnemyDummy.super.on_executed(self, unit, true)
+	if managers.groupai and managers.groupai:state() and managers.groupai:state():_SMF_GUI_Get_Enemy_Amount() > 45 then
+		return
 	end
+	local unit = self:produce()
+	ElementSpawnEnemyDummy.super.on_executed(self, unit)
 end
 
 local SFM_ElementSpawnEnemyDummy_ori_produce = ElementSpawnEnemyDummy.produce
-
-local SFM_ElementSpawnEnemyDummy_Block = {}
 
 function ElementSpawnEnemyDummy:produce(params)
 	if not managers.groupai:state():is_AI_enabled() then
