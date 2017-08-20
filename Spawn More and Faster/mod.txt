@@ -3,7 +3,7 @@
 	"description": " ",
 	"author": "Dr_Newbie",
 	"contact": " ",
-	"version": "1",
+	"version": "9",
 	"priority": 1000,
 	"libraries": [
 		{
