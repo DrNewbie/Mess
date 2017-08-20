@@ -1,0 +1,27 @@
+Hello
+Alright
+Thanks!
+Help
+Yes
+Nope
+,
+'SHIT!'
+'FUCK!'
+,
+Need ammo
+Need a medic bag
+Need a first aid kit
+,
+Ammo here
+Medic bag here
+First aid kit here
+,
+Taser
+Cloaker
+Sniper
+Bulldozer
+Skulldozer
+,
+Muriatic Acid
+Hydrogen Chloride
+Caustic Soda
