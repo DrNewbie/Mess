@@ -26,3 +26,58 @@ end)
 function GroupAIStateBase:_SMF_GUI_Get_Enemy_Amount()
 	return self._SMF_GUI_Enemy_Amount or 0
 end
+
+function GroupAIStateBase:_get_spawn_unit_name(weights, wanted_access_type)
+	local unit_categories = tweak_data.group_ai.unit_categories
+	local total_weight = 0
+	local candidates = {}
+	local candidate_weights = {}
+	for cat_name, cat_weights in pairs(weights) do
+		local cat_weight = self:_get_difficulty_dependent_value(cat_weights)
+		local suitable = cat_weight > 0
+		local cat_data = unit_categories[cat_name]
+		if suitable and cat_data.max_amount then
+			local special_type = cat_data.special_type
+			local nr_active = self._special_units[special_type] and table.size(self._special_units[special_type]) or 0
+			if nr_active >= tweak_data.group_ai.special_unit_spawn_limits[special_type] then
+				suitable = false
+			end
+		end
+		if suitable and cat_data.special_type and not self._special_units[cat_name] then
+			local nr_boss_types_present = table.size(self._special_units)
+			if nr_boss_types_present >= tweak_data.group_ai.max_nr_simultaneous_boss_types then
+				suitable = false
+			end
+		end
+		self._SMF_GUI_Enemy_Amount = self._SMF_GUI_Enemy_Amount or 0
+		if self._SMF_GUI_Enemy_Amount > 75 then
+			suitable = false
+		end
+		if suitable and wanted_access_type then
+			suitable = false
+			for _, available_access_type in ipairs(cat_data.access) do
+				if wanted_access_type == available_access_type then
+					suitable = true
+				else
+				end
+			end
+		end
+		if suitable then
+			total_weight = total_weight + cat_weight
+			table.insert(candidates, cat_name)
+			table.insert(candidate_weights, total_weight)
+		end
+	end
+	if total_weight == 0 then
+		return
+	end
+	local lucky_nr = math.random() * total_weight
+	local i_candidate = 1
+	while lucky_nr > candidate_weights[i_candidate] do
+		i_candidate = i_candidate + 1
+	end
+	local lucky_cat_name = candidates[i_candidate]
+	local lucky_unit_names = unit_categories[lucky_cat_name].units
+	local spawn_unit_name = lucky_unit_names[math.random(#lucky_unit_names)]
+	return spawn_unit_name, lucky_cat_name
+end
