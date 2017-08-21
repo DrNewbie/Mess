@@ -1,0 +1,5 @@
+{
+	"bm_wp_wpn_fps_electricbullet" : "Electric Bullet",
+    "bm_wp_wpn_fps_electricbullet_desc" : "Ahhh...",
+    "menu_l_global_value_electricbullet" : ""
+}
