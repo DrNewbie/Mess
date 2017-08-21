@@ -1,0 +1,16 @@
+<mod name="Taser_Frag" global_key="TaserFrag">
+	<AssetUpdates id="19484" version="1" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+
+	<Hooks directory="Hooks">
+        <hook file="tweakdata.lua" source_file="lib/tweak_data/tweakdata"/>
+        <hook file="projectilestweakdata.lua" source_file="lib/tweak_data/blackmarket/projectilestweakdata"/>
+        <hook file="upgradestweakdata.lua" source_file="lib/tweak_data/upgradestweakdata"/>
+        <hook file="explosionmanager.lua" source_file="lib/managers/explosionmanager"/>
+        <hook file="blackmarketmanager.lua" source_file="lib/managers/blackmarketmanager"/>
+        <hook file="fraggrenade.lua" source_file="lib/units/weapons/grenades/fraggrenade"/>
+	</Hooks>
+	
+	<Localization directory="Loc" default="english.txt"/>
+	
+	<AddFiles file="add.xml"/>
+</mod>

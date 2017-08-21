@@ -1,7 +1,3 @@
-if Network:is_client() then
-	return
-end
-
 function FragGrenade:_detonate(tag, unit, body, other_unit, other_body, position, normal, collision_velocity, velocity, other_velocity, new_velocity, direction, damage, ...)
 	local pos = self._unit:position()
 	local normal = math.UP
@@ -21,7 +17,7 @@ function FragGrenade:_detonate(tag, unit, body, other_unit, other_body, position
 		user = self:thrower_unit() or self._unit,
 		owner = self._unit
 	}
-	if self._unit:name():key() == Idstring("units/payday2/weapons/wpn_frag_grenade/wpn_frag_grenade"):key() then
+	if tostring(self._new_frag) == "frag_taser" then
 		_params.damage = 5
 		_params._is_taser = true
 	end

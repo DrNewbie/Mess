@@ -1,0 +1,4 @@
+<table directory="Assets">
+	<unit path="units/payday2/weapons/wpn_frag_grenade_com/wpn_frag_grenade_taser"/>
+	<texture path="guis/textures/pd2/blackmarket/icons/grenades/frag_taser"/>
+</table>

@@ -1,7 +1,3 @@
-if Network:is_client() then
-	return
-end
-
 function ExplosionManager:detect_and_give_dmg(params)
 	local hit_pos = params.hit_pos
 	local slotmask = params.collision_slotmask
@@ -173,7 +169,6 @@ function ExplosionManager:detect_and_give_dmg(params)
 						}
 						action_data.direction_vec = hit_unit:position() - action_data.attacker_unit:position():normalized()
 						hit_unit:character_damage():damage_melee(action_data)
-						hit_unit:movement():add_tased_effect(3)
 					end
 					if not dead_before and hit_unit:base() and hit_unit:base()._tweak_table and hit_unit:character_damage():dead() then
 						type = hit_unit:base()._tweak_table

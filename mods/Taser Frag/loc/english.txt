@@ -1,4 +1,4 @@
 {
-	"bm_grenade_frag" : "Taser Frag",
-	"bm_grenade_frag_desc" : "Why Not?"
+	"bm_grenade_frag_taser" : "Taser Frag",
+	"bm_grenade_frag_taser_desc" : "Why Not?"
 }

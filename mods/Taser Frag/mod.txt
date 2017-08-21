@@ -1,32 +1,26 @@
 {
-	"name" : "Taser Frag",
-	"author" : "Dr_Newbie",
-	"description" : " ",
-	"contact" : " ",
-	"version" : "2",
-	"libraries" : [
+	"name": "Taser Frag",
+	"description": " ",
+	"author": "Dr_Newbie",
+	"contact": " ",
+	"version": "1",
+	"priority": 1000,
+	"libraries": [
 		{
-			"display_name" : "Announcer",
-			"identifier" : "ANCR",
-			"optional" : "false"
+			"display_name": "Announcer",
+			"identifier": "ANCR",
+			"optional": "false"
+		},
+		{
+			"display_name": "BeardLib",
+			"identifier": "beardlib",
+			"optional": "false"
 		}
 	],
-	"hooks" : [
+	"pre_hooks": [
 		{
-			"hook_id" : "lib/units/weapons/grenades/fraggrenade",
-			"script_path" : "lua/fraggrenade.lua"
-		},
-		{
-			"hook_id" : "lib/managers/explosionmanager",
-			"script_path" : "lua/explosionmanager.lua"
-		},
-		{
-			"hook_id" : "lib/units/enemies/cop/copmovement",
-			"script_path" : "lua/copmovement.lua"
-		},
-		{
-			"hook_id" : "lib/managers/menumanager",
-			"script_path" : "lua/warning.lua"
+			"hook_id": "lib/entry",
+			"script_path": "Base.lua"
 		}
 	]
 }
