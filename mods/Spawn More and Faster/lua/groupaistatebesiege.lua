@@ -8,11 +8,11 @@ function Mod4ModifySomething(_num)
 
 	for cat_name, team in pairs(tweak_data.group_ai.enemy_spawn_groups) do
 		if team.amount and team.spawn and team.spawn and team.spawn then
-			tweak_data.group_ai.enemy_spawn_groups[cat_name].amount[1] = team.amount[1] + _num
-			tweak_data.group_ai.enemy_spawn_groups[cat_name].amount[2] = team.amount[2] + _num + 1
+			tweak_data.group_ai.enemy_spawn_groups[cat_name].amount[1] = (team.amount[1] or 1) + _num
+			tweak_data.group_ai.enemy_spawn_groups[cat_name].amount[2] = (team.amount[2] or 1) + _num + 1
 			for kat, kat_spawn in pairs(team.spawn) do
-				tweak_data.group_ai.enemy_spawn_groups[cat_name].spawn[kat].amount_min = kat_spawn.amount_min + _num
-				tweak_data.group_ai.enemy_spawn_groups[cat_name].spawn[kat].amount_max = kat_spawn.amount_max + _num + 1
+				tweak_data.group_ai.enemy_spawn_groups[cat_name].spawn[kat].amount_min = (kat_spawn.amount_min or 1) + _num
+				tweak_data.group_ai.enemy_spawn_groups[cat_name].spawn[kat].amount_max = (kat_spawn.amount_max or 1) + _num + 1
 				local _u = tostring(kat_spawn.unit)
 				if tweak_data.group_ai.unit_categories[_u] and not tweak_data.group_ai.unit_categories[_u].special_type then
 					tweak_data.group_ai.enemy_spawn_groups[cat_name].spawn[kat].freq = 0.5
