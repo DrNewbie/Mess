@@ -1,18 +1,19 @@
 {
-	"name" : "Other Chat Menu",
-	"description" : "A simple menu that facilitates sending messages during the game.\n\n(I copy this idea from 'Secco2112')"
-	"author" : "Dr_Newbie",
-        "version" : "1",
-	"contact" : "",
-	"keybinds" : [
+	"name": "Other Chat Menu",
+	"description": "A simple menu that facilitates sending messages during the game.\n\n(I copy this idea from 'Secco2112')"
+	"author": "Dr_Newbie",
+	"contact": " ",
+    "version": "2.0",
+	"color": "0 0 0",
+	"keybinds": [
 		{
-			"keybind_id" : "Other Chat_Menu",
-			"name" : "Other Chat Menu",
-			"description" : "Select the key that you will press to open the Chat Menu."
-			"script_path" : "lua/menumanager.lua",
-			"run_in_menu" : true,
-			"run_in_game" : true,
-			"localized" : false
+			"keybind_id": "Other Chat_Menu",
+			"name": "Other Chat Menu",
+			"description": "Select the key that you will press to open the Chat Menu."
+			"script_path": "lua/menumanager.lua",
+			"run_in_menu": true,
+			"run_in_game": true,
+			"localized": false
 		}
 	]
 }

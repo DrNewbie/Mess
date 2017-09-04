@@ -1,0 +1,22 @@
+{
+	"name" : "Buy More Gage Asset",
+	"description" : "[Crime Spree] Buy More Gage Asset",
+	"author" : "Dr_Newbie",
+	"contact" : " ",
+	"version" : "1.00",
+	"priority" : 1,
+	"image": "Dr_Newbie.png",
+	"color": "0 0 0",
+	"blt_version": 2,
+	"libraries": [
+		{
+			"display_name": "Announcer",
+			"identifier": "ANCR",
+			"optional": "false"
+		}
+	],
+	"hooks" : [
+		{"hook_id" : "lib/managers/crimespreemanager", "script_path" :"Add.lua"},
+		{"hook_id" : "lib/managers/menu/menumanagercrimespreecallbacks", "script_path" :"ddA.lua"}
+	]
+}

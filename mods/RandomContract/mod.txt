@@ -1,7 +1,11 @@
 {
 	"name" : "Random Contract",
+    "description": "Random Contract",
 	"author" : "Dr_Newbie and BangL",
-	"version" : "2016.10"
+    "version": "2.0",
+	"image": "logo.png",
+	"color": "0 0 0",
+	"blt_version": 2,
 	"hooks" : [
 		{"hook_id" : "lib/managers/menumanager", "script_path" : "RandomContract.lua"}
     ]

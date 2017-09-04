@@ -1,0 +1,12 @@
+{
+	"name" : "[MOD-BLT] Bring ingame mod options back",
+	"description" : "[MOD-BLT] Bring ingame mod options back",
+	"author" : "Dr_Newbie",
+	"contact" : " ",
+	"version" : "1.00",
+	"priority" : 1,
+	"blt_version" : 2,
+	"hooks" : [   
+		{"hook_id" : "lib/managers/menumanagerpd2", "script_path" :"Add.lua"}
+	]
+}

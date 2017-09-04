@@ -1,5 +1,3 @@
-local menu_id = "menu_roll_contract"
-
 Hooks:Add("LocalizationManagerPostInit", "RandomContract_loc", function(loc)
 	LocalizationManager:add_localized_strings({
     ["menu_roll_contract"] = "Random contract",
@@ -36,21 +34,28 @@ Hooks:Add("LocalizationManagerPostInit", "RandomContract_loc", function(loc)
 end)
 
 Hooks:Add("MenuManagerSetupCustomMenus", "MenuManagerSetupCustomMenus_RandomContract", function(menu_manager, nodes)
-	if nodes.lobby then
-		MenuHelper:NewMenu( menu_id )
+	if nodes["lobby"] then
+		MenuHelper:NewMenu( "menu_roll_contract" )
 	end
 end)
 
 Hooks:Add("MenuManagerBuildCustomMenus", "MenuManagerBuildCustomMenus_RandomContract", function(menu_manager, nodes)
-	if nodes.lobby and ( not LuaNetworking:IsMultiplayer() or ( LuaNetworking:IsMultiplayer() and LuaNetworking:IsHost() ) ) then
-		nodes[menu_id] = MenuHelper:BuildMenu( menu_id )
-		MenuHelper:AddMenuItem( nodes.lobby, menu_id, "menu_roll_contract_name", "menu_roll_contract_desc" )
+	if nodes["lobby"] and ( not LuaNetworking:IsMultiplayer() or ( LuaNetworking:IsMultiplayer() and LuaNetworking:IsHost() ) ) then
+		nodes["menu_roll_contract"] = MenuHelper:BuildMenu( "menu_roll_contract" )
+		MenuHelper:AddMenuItem(nodes["lobby"], "menu_roll_contract", "menu_roll_contract_name", "menu_roll_contract_desc" )
 	end
 end)
 
 Hooks:Add("MenuManagerPopulateCustomMenus", "MenuManagerPopulateCustomMenus_RandomContract", function(menu_manager, nodes)
 	if nodes.lobby then
 		MenuCallbackHandler.Random_Contract_Now = function(self, item)
+			local create_job =  function(data)
+				local difficulty_id = tweak_data:difficulty_to_index(data.difficulty)
+				managers.money:on_buy_premium_contract(data.job_id, difficulty_id)
+				managers.job:on_buy_job(data.job_id, difficulty_id)
+				MenuCallbackHandler:start_job({job_id = data.job_id, difficulty = data.difficulty})
+				MenuCallbackHandler:save_progress()
+			end
 			local job_id_list = tweak_data.narrative:get_jobs_index()
 			local rnd_job_id_list = {}
 			local job_tweak_data, is_not_dlc_or_got, choose_job, can_afford, retries
@@ -119,7 +124,7 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "MenuManagerPopulateCustomMenus_Rand
 			desc = "roll_contract_all_ovk_desc",
 			callback = "Random_Contract_Now",
 			priority = "roll_contract_all_ovk",
-			menu_id = menu_id,
+			menu_id = "menu_roll_contract",
 		})
 		MenuHelper:AddButton({
 			id = "roll_contract_all_ew",
@@ -127,7 +132,7 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "MenuManagerPopulateCustomMenus_Rand
 			desc = "roll_contract_all_ew_desc",
 			callback = "Random_Contract_Now",
 			priority = "roll_contract_all_ew",
-			menu_id = menu_id,
+			menu_id = "menu_roll_contract",
 		})
 		MenuHelper:AddButton({
 			id = "roll_contract_all_dw",
@@ -135,7 +140,7 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "MenuManagerPopulateCustomMenus_Rand
 			desc = "roll_contract_all_dw_desc",
 			callback = "Random_Contract_Now",
 			priority = "roll_contract_all_dw",
-			menu_id = menu_id,
+			menu_id = "menu_roll_contract",
 		})
 		MenuHelper:AddButton({
 			id = "roll_contract_all_od",
@@ -143,7 +148,7 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "MenuManagerPopulateCustomMenus_Rand
 			desc = "roll_contract_all_od_desc",
 			callback = "Random_Contract_Now",
 			priority = "roll_contract_all_od",
-			menu_id = menu_id,
+			menu_id = "menu_roll_contract",
 		})
 		MenuHelper:AddButton({
 			id = "roll_contract_loud_ovk",
@@ -151,7 +156,7 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "MenuManagerPopulateCustomMenus_Rand
 			desc = "roll_contract_loud_ovk_desc",
 			callback = "Random_Contract_Now",
 			priority = "roll_contract_loud_ovk",
-			menu_id = menu_id,
+			menu_id = "menu_roll_contract",
 		})
 		MenuHelper:AddButton({
 			id = "roll_contract_loud_ew",
@@ -159,7 +164,7 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "MenuManagerPopulateCustomMenus_Rand
 			desc = "roll_contract_loud_ew_desc",
 			callback = "Random_Contract_Now",
 			priority = "roll_contract_loud_ew",
-			menu_id = menu_id,
+			menu_id = "menu_roll_contract",
 		})
 		MenuHelper:AddButton({
 			id = "roll_contract_loud_dw",
@@ -167,7 +172,7 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "MenuManagerPopulateCustomMenus_Rand
 			desc = "roll_contract_loud_dw_desc",
 			callback = "Random_Contract_Now",
 			priority = "roll_contract_loud_dw",
-			menu_id = menu_id,
+			menu_id = "menu_roll_contract",
 		})
 		MenuHelper:AddButton({
 			id = "roll_contract_loud_od",
@@ -175,7 +180,7 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "MenuManagerPopulateCustomMenus_Rand
 			desc = "roll_contract_loud_od_desc",
 			callback = "Random_Contract_Now",
 			priority = "roll_contract_loud_od",
-			menu_id = menu_id,
+			menu_id = "menu_roll_contract",
 		})
 		MenuHelper:AddButton({
 			id = "roll_contract_stealth_ovk",
@@ -183,7 +188,7 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "MenuManagerPopulateCustomMenus_Rand
 			desc = "roll_contract_stealth_ovk_desc",
 			callback = "Random_Contract_Now",
 			priority = "roll_contract_stealth_ovk",
-			menu_id = menu_id,
+			menu_id = "menu_roll_contract",
 		})
 		MenuHelper:AddButton({
 			id = "roll_contract_stealth_ew",
@@ -191,7 +196,7 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "MenuManagerPopulateCustomMenus_Rand
 			desc = "roll_contract_stealth_ew_desc",
 			callback = "Random_Contract_Now",
 			priority = "roll_contract_stealth_ew",
-			menu_id = menu_id,
+			menu_id = "menu_roll_contract",
 		})
 		MenuHelper:AddButton({
 			id = "roll_contract_stealth_dw",
@@ -199,7 +204,7 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "MenuManagerPopulateCustomMenus_Rand
 			desc = "roll_contract_stealth_dw_desc",
 			callback = "Random_Contract_Now",
 			priority = "roll_contract_stealth_dw",
-			menu_id = menu_id,
+			menu_id = "menu_roll_contract",
 		})
 		MenuHelper:AddButton({
 			id = "roll_contract_stealth_od",
@@ -207,15 +212,7 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "MenuManagerPopulateCustomMenus_Rand
 			desc = "roll_contract_stealth_od_desc",
 			callback = "Random_Contract_Now",
 			priority = "roll_contract_stealth_od",
-			menu_id = menu_id,
+			menu_id = "menu_roll_contract",
 		})
 	end
 end)
-
-function create_job(data)
-	local difficulty_id = tweak_data:difficulty_to_index(data.difficulty)
-	managers.money:on_buy_premium_contract(data.job_id, difficulty_id)
-	managers.job:on_buy_job(data.job_id, difficulty_id)
-	MenuCallbackHandler:start_job({job_id = data.job_id, difficulty = data.difficulty})
-	MenuCallbackHandler:save_progress()
-end
