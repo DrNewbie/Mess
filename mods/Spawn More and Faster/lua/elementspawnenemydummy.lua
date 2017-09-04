@@ -22,6 +22,15 @@ function ElementSpawnEnemyDummy:produce(params)
 		return
 	end
 	local unit = SFM_ElementSpawnEnemyDummy_ori_produce(self, params)
+	if unit:character_damage()._invulnerable or unit:character_damage()._immortal or unit:character_damage()._dead then
+		return unit
+	end
+	if not managers.groupai or not managers.groupai:state() then
+		return unit
+	end
+	if managers.groupai:state():is_enemy_converted_to_criminal(unit) then
+		return unit
+	end
 	local _spawn_enemy = function (unit_name, pos, rot)
 		local unit_done = safe_spawn_unit(unit_name, pos, rot)
 		local team_id = tweak_data.levels:get_default_team_ID(unit_done:base():char_tweak().access == "gangster" and "gangster" or "combatant")
@@ -29,7 +38,7 @@ function ElementSpawnEnemyDummy:produce(params)
 		managers.groupai:state():assign_enemy_to_group_ai(unit_done, team_id)
 		return unit_done
 	end
-	if managers.groupai and managers.groupai:state() and not managers.groupai:state():whisper_mode() then
+	if not managers.groupai:state():whisper_mode() then
 		for i = 1, 4 do
 			if not managers.groupai:state():is_enemy_special(unit) and managers.groupai:state():_SMF_GUI_Get_Enemy_Amount() > 75 then
 				break

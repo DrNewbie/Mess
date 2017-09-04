@@ -1,10 +1,13 @@
 {
 	"name": "Spawn More and Faster",
-	"description": " ",
+	"description": "Spawn More Enemies and Faster",
 	"author": "Dr_Newbie",
 	"contact": " ",
-	"version": "9",
+	"version": "11",
 	"priority": 1000,
+	"image": "logo.png",
+	"color": "0 0 0",
+	"blt_version": 2,
 	"libraries": [
 		{
 			"display_name": "Full Speed Swarm",
