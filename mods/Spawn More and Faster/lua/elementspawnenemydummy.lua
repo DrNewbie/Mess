@@ -39,8 +39,8 @@ function ElementSpawnEnemyDummy:produce(params)
 		return unit_done
 	end
 	if not managers.groupai:state():whisper_mode() then
-		for i = 1, 4 do
-			if not managers.groupai:state():is_enemy_special(unit) and managers.groupai:state():_SMF_GUI_Get_Enemy_Amount() > 75 then
+		for i = 1, 3 do
+			if not managers.groupai:state():is_enemy_special(unit) and managers.groupai:state():_SMF_GUI_Get_Enemy_Amount() > 70 then
 				break
 			end
 			local enemy_name = Idstring("units/payday2/characters/ene_spook_1/ene_spook_1")
@@ -56,6 +56,7 @@ function ElementSpawnEnemyDummy:produce(params)
 			local rad = math.random(30, 50)
 			local offset = Vector3(math.cos(ang) * rad, math.sin(ang) * rad, 0)
 			local unit_done = _spawn_enemy(enemy_name, pos + offset, rot)
+			table.insert(self._units, unit_done)
 		end
 	end
 	return unit

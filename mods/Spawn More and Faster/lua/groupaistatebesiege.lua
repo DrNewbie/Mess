@@ -1,21 +1,21 @@
 function Mod4ModifySomething(_num)
-	local _num_f = math.round(_num/2) + 1
+	--local _num_f = math.round(_num/2) + 1
 	local _num_b = _num + 2
 
 	for special_type, v in pairs(tweak_data.group_ai.special_unit_spawn_limits) do
-		tweak_data.group_ai.special_unit_spawn_limits[special_type] = _num + math.clamp(v*_num_b, 4, 999)
+		tweak_data.group_ai.special_unit_spawn_limits[special_type] = _num + math.clamp(v*_num_b, 4, 9)
 	end
 
 	for cat_name, team in pairs(tweak_data.group_ai.enemy_spawn_groups) do
 		if team.amount and team.spawn and team.spawn and team.spawn then
-			tweak_data.group_ai.enemy_spawn_groups[cat_name].amount[1] = _num + (team.amount[1] or 1)*_num_f
-			tweak_data.group_ai.enemy_spawn_groups[cat_name].amount[2] = _num + (team.amount[2] or 1)*_num_f
-			for k, _ in pairs(team.spawn) do
-				tweak_data.group_ai.enemy_spawn_groups[cat_name].spawn[k].amount_min = _num + (team.spawn[k].amount_min or 1)*_num_f
-				tweak_data.group_ai.enemy_spawn_groups[cat_name].spawn[k].amount_max = _num + (team.spawn[k].amount_max or 1)*_num_f
-				local _u = tostring(tweak_data.group_ai.enemy_spawn_groups[cat_name].spawn[k].unit)
+			tweak_data.group_ai.enemy_spawn_groups[cat_name].amount[1] = team.amount[1] + _num
+			tweak_data.group_ai.enemy_spawn_groups[cat_name].amount[2] = team.amount[2] + _num + 1
+			for kat, kat_spawn in pairs(team.spawn) do
+				tweak_data.group_ai.enemy_spawn_groups[cat_name].spawn[kat].amount_min = kat_spawn.amount_min + _num
+				tweak_data.group_ai.enemy_spawn_groups[cat_name].spawn[kat].amount_max = kat_spawn.amount_max + _num + 1
+				local _u = tostring(kat_spawn.unit)
 				if tweak_data.group_ai.unit_categories[_u] and not tweak_data.group_ai.unit_categories[_u].special_type then
-					tweak_data.group_ai.enemy_spawn_groups[cat_name].spawn[k].freq = 0.5
+					tweak_data.group_ai.enemy_spawn_groups[cat_name].spawn[kat].freq = 0.5
 				end
 			end
 		end	
@@ -24,7 +24,7 @@ function Mod4ModifySomething(_num)
 	tweak_data.group_ai.phalanx.spawn_chance.respawn_delay = 30
 end
 
-Mod4ModifySomething(4)
+Mod4ModifySomething(3)
 
 Hooks:PostHook(GroupAIStateBesiege, "_upd_assault_task", "SMF_GUI_upd_assault_task", function(self, ...)
 	local task_data = self._task_data.assault

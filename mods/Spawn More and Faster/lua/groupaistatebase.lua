@@ -1,6 +1,6 @@
 function GroupAIStateBase:_get_balancing_multiplier(balance_multipliers)
 	local _num = self:num_alive_criminals() or 4
-	local _ans = math.clamp((balance_multipliers[#balance_multipliers])*(1.15 + 0.15*_num), 0.10, 999.00)
+	local _ans = math.clamp((balance_multipliers[#balance_multipliers])*(1.05 + 0.15*_num), 0.10, 999.00)
 	return _ans
 end
 
