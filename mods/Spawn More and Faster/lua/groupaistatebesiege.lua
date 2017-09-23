@@ -66,21 +66,25 @@ local Mod4ModifySomething = function(them)
 		them.special_unit_spawn_limits[k] = math.clamp(math.round(_modify_v_more(v)), 1, 20)
 	end
 	for group_name, group_data in pairs(them.besiege.assault.groups) do
-		for k, v in pairs(group_data) do
-			them.besiege.assault.groups[group_name][k] = _modify_v_little_more(v)
+		if group_name ~= "Phalanx" then
+			for k, v in pairs(group_data) do
+				them.besiege.assault.groups[group_name][k] = _modify_v_little_more(v)
+			end
 		end
 	end
 	for group_name, group_data in pairs(them.enemy_spawn_groups) do
-		for k, v in pairs(group_data) do
-			if k == "amount" then
-				for ki, vi in pairs(them.enemy_spawn_groups[group_name].amount) do
-					them.enemy_spawn_groups[group_name].amount[ki] = math.round(_modify_v_more(vi))
-				end
-			elseif k == "spawn" then
-				for ki, vi in pairs(them.enemy_spawn_groups[group_name].spawn) do
-					for kj, vj in pairs(vi) do
-						if kj == "amount_min" or kj == "amount_max" then
-							them.enemy_spawn_groups[group_name].spawn[ki][kj] = math.round(_modify_v_more(vj))
+		if group_name ~= "Phalanx" then
+			for k, v in pairs(group_data) do
+				if k == "amount" then
+					for ki, vi in pairs(them.enemy_spawn_groups[group_name].amount) do
+						them.enemy_spawn_groups[group_name].amount[ki] = math.round(_modify_v_more(vi))
+					end
+				elseif k == "spawn" then
+					for ki, vi in pairs(them.enemy_spawn_groups[group_name].spawn) do
+						for kj, vj in pairs(vi) do
+							if kj == "amount_min" or kj == "amount_max" then
+								them.enemy_spawn_groups[group_name].spawn[ki][kj] = math.round(_modify_v_more(vj))
+							end
 						end
 					end
 				end
