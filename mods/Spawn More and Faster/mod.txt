@@ -3,11 +3,16 @@
 	"description": "Spawn More Enemies and Faster",
 	"author": "Dr_Newbie",
 	"contact": "http://modwork.shop/20649",
-	"version": "15",
+	"version": "17",
 	"priority": 1,
 	"image": "logo.png",
 	"color": "0 0 0",
 	"blt_version": 2,
+	"updates": [
+		{
+			"identifier" : "20649"
+		}
+	],
 	"libraries": [
 		{
 			"display_name": "Full Speed Swarm",

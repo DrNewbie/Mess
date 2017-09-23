@@ -21,6 +21,10 @@ function ElementSpawnEnemyDummy:produce(params)
 	if gro:_SMF_GUI_Get_Enemy_Amount() > 80 then
 		return unit
 	end
+	local catname = tostring(unit:base()._tweak_table)
+	if gro:_SMF_GUI_Get_Special_Amount(catname) > 20 then
+		return unit
+	end
 	local _spawn_enemy = function (unit_name, pos, rot)
 		local unit_done = safe_spawn_unit(unit_name, pos, rot)
 		local team_id = tweak_data.levels:get_default_team_ID(unit_done:base():char_tweak().access == "gangster" and "gangster" or "combatant")
