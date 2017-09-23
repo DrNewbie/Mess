@@ -9,8 +9,8 @@ function ElementSpawnEnemyDummy:produce(params)
 		return unit
 	end
 	local gro = managers.groupai:state()
-	if not gro:is_AI_enabled() or not gro:enemy_weapons_hot() or gro:whisper_mode() then
-		return
+	if not gro:is_AI_enabled() or not gro:enemy_weapons_hot() or not gro:whisper_mode() then
+		return unit
 	end
 	if unit:character_damage()._invulnerable or unit:character_damage()._immortal or unit:character_damage()._dead then
 		return unit
