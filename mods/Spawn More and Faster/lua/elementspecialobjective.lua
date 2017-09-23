@@ -1,7 +1,6 @@
 function ElementSpecialObjective:clbk_objective_administered(unit)
 	return
 end
-
 function ElementSpecialObjective:clbk_verify_administration(unit)
 	return true
 end
