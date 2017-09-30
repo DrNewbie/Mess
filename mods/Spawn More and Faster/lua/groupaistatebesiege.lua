@@ -3,10 +3,11 @@ local Mod4ModifySomething = function(them)
 		v = v or 0
 		return 0.01 + v / 3
 	end
-	local function _modify_v_more(v, v_fix)
+	local function _modify_v_more(v, v_fix, v_rat)
 		v = v or 0
 		v_fix = v_fix or 0
-		return 1 + v * 6 + v_fix
+		v_rat = v_rat or 6
+		return 1 + v * v_rat + v_fix
 	end
 	local function _modify_v_little_more(v)
 		v = v or 0
@@ -24,10 +25,10 @@ local Mod4ModifySomething = function(them)
 		them.besiege.assault.delay[k] = _modify_v_delay(v)
 	end
 	for k, v in pairs(them.besiege.assault.sustain_duration_min) do
-		them.besiege.assault.sustain_duration_min[k] = _modify_v_more(v, -10)
+		them.besiege.assault.sustain_duration_min[k] = _modify_v_more(v, -10, 3)
 	end
 	for k, v in pairs(them.besiege.assault.sustain_duration_max) do
-		them.besiege.assault.sustain_duration_max[k] = _modify_v_more(v)
+		them.besiege.assault.sustain_duration_max[k] = _modify_v_more(v, nil, 3)
 	end
 	for k, v in pairs(them.besiege.assault.sustain_duration_balance_mul ) do
 		them.besiege.assault.sustain_duration_balance_mul [k] = _modify_v_little_more(v)
@@ -95,3 +96,8 @@ local Mod4ModifySomething = function(them)
 end
 
 Mod4ModifySomething(tweak_data.group_ai)
+
+function GroupAIStateBase:set_difficulty()
+	self._difficulty_value = 1
+	self:_calculate_difficulty_ratio()
+end
