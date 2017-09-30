@@ -1,4 +1,4 @@
-Hooks:Add("LocalizationManagerPostInit", "TimeSpeed_loc", function(loc)
+Hooks:Add("LocalizationManagerPostInit", "TimeSpeed_loc", function(...)
 	LocalizationManager:add_localized_strings({
 		["menu_TimeSpeed_Multiplier_name"] = "Time Speed",
 		["menu_TimeSpeed_Multiplier_desc"] = " ",
@@ -13,10 +13,6 @@ end)
 _G.TimeSpeed = _G.TimeSpeed or {}
 TimeSpeed._ModPath = TimeSpeed._ModPath or ModPath
 TimeSpeed._SavePath = TimeSpeed._SavePath or SavePath .. "TimeSpeed.txt"
-
-function TimeSpeed:init()
-	Input:keyboard():add_trigger(Idstring("f10"), callback(self, self, "ForcedApply"))
-end
 
 function TimeSpeed:Save()
 	local file = io.open(TimeSpeed._SavePath, "w+")
