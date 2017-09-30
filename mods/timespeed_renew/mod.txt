@@ -1,0 +1,27 @@
+{
+	"name": "Time Speed",
+	"description": "Time Speed",
+	"author": "Dr_Newbie",
+	"contact": "http://modwork.shop/20998",
+	"version": "1",
+	"priority": 1,
+	"blt_version": 2,
+	"hooks": [
+		{
+			"hook_id": "lib/managers/localizationmanager",
+			"script_path": "Base.lua"
+		}
+	],
+	"keybinds": [
+			{
+				"keybind_id": "TimeSpeed_Multiplier_Apply_callback",
+				"name": "Apply",
+				"description": " "
+				"script_path": "Run.lua",
+				"run_in_menu": true,
+				"run_in_game": true,
+				"localized" : false
+			}
+		]
+	}
+}

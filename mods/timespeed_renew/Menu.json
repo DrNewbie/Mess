@@ -1,0 +1,25 @@
+{
+	"menu_id" : "TimeSpeed_Main_Menu",
+	"parent_menu_id" : "blt_options",
+	"title" : "menu_TimeSpeed_Multiplier_name",
+	"description" : "menu_TimeSpeed_Multiplier_desc",
+	"items" : 
+	[
+		{
+			"type" : "multiple_choice",
+			"id" : "TimeSpeed_Multiplier_menu_callback",
+			"title" : "menu_TimeSpeed_Multiplier_name",
+			"description" : "menu_TimeSpeed_Multiplier_desc",
+			"callback" : "TimeSpeed_Multiplier_menu_callback",
+			"items" : [
+				"TimeSpeed_Multiplier_1",
+				"TimeSpeed_Multiplier_2",
+				"TimeSpeed_Multiplier_3",
+				"TimeSpeed_Multiplier_4",
+				"TimeSpeed_Multiplier_5"
+			],
+			"value" : "speedmultiplier",
+			"default_value" : 2
+		}
+	]
+}
