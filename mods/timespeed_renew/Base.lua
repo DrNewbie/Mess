@@ -13,23 +13,34 @@ end)
 _G.TimeSpeed = _G.TimeSpeed or {}
 TimeSpeed._ModPath = TimeSpeed._ModPath or ModPath
 TimeSpeed._SavePath = TimeSpeed._SavePath or SavePath .. "TimeSpeed.txt"
+TimeSpeed.Settings = TimeSpeed.Settings or {}
 
 function TimeSpeed:Save()
-	local file = io.open(TimeSpeed._SavePath, "w+")
+	local file = io.open(self._SavePath, "w+")
 	if file then
-		file:write(json.encode(TimeSpeed.Settings))
+		file:write(json.encode(self.Settings))
 		file:close()
 	end
 end
 
 function TimeSpeed:Load()
-	local file = io.open(TimeSpeed._SavePath, "r")
+	local file = io.open(self._SavePath, "r")
 	if file then
 		for k, v in pairs(json.decode(file:read("*all")) or {}) do
-			TimeSpeed.Settings[k] = v
+			self.Settings[k] = v
 		end
 		file:close()
 	else
+		self.Settings = {
+			speedmultiplier = 3,
+			speedmultiplier_list = {
+				0.5,
+				1,
+				2,
+				4,
+				8
+			}
+		}
 		self:Save()
 	end
 end
@@ -59,16 +70,8 @@ function TimeSpeed:ForcedApply()
 end
 
 Hooks:Add("MenuManagerInitialize", "MenuManagerInitialize_NoobJoin", function(...)
-	TimeSpeed.Settings = TimeSpeed.Settings or {
-		speedmultiplier = 1,
-		speedmultiplier_list = {
-			0.5,
-			1,
-			2,
-			4,
-			8
-		}
-	}
+
+	TimeSpeed:Load()
 	
 	MenuCallbackHandler.TimeSpeed_Multiplier_menu_callback = function(this, item)
 		TimeSpeed.Settings.speedmultiplier = tonumber(item:value()) or 2
