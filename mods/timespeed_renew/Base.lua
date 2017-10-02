@@ -69,7 +69,7 @@ function TimeSpeed:ForcedApply()
 	self:Apply(self.Toggle)
 end
 
-Hooks:Add("MenuManagerInitialize", "MenuManagerInitialize_NoobJoin", function(...)
+Hooks:Add("MenuManagerInitialize", "MenuManagerInitialize_TimeSpeed", function(...)
 
 	TimeSpeed:Load()
 	
