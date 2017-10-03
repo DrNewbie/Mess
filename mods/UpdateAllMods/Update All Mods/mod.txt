@@ -1,0 +1,11 @@
+{
+	"name" : "Update All Mods",
+	"description" : "Lazy to do it one by one",
+	"author" : "Dr_Newbie",
+	"version" : "3",
+	"contact" : " ",
+	"hooks" : [
+		{"hook_id" : "lib/managers/menumanager",   "script_path" : "lua/update_mods.lua"},
+		{"hook_id" : "lib/managers/localizationmanager",   "script_path" : "lua/menu_function.lua"}
+	]
+}
