@@ -1,5 +1,3 @@
-_G._WTF_Fly_Enemy_Big = _G._WTF_Fly_Enemy_Big or 0
-
 local function rand_vector3_use(pos)
 	local _use_v3_list = {pos}
 	local z_offsett = {0, 0, 100, 0, 300, 400, 200, 500, 500}
@@ -18,10 +16,9 @@ Hooks:PostHook(CopMovement, "post_init", "CopMovement_post_init_WTF_Fly_Enemy", 
 end)
 
 Hooks:PostHook(CopMovement, "update", "CopMovement_update_WTF_Fly_Enemy", function(self, unit, t, dt)
-	if self._WTF_Fly_Enemy_delay_t > t or _WTF_Fly_Enemy_Big > t then
+	if self._WTF_Fly_Enemy_delay_t > t then
 		return
 	end
-	_WTF_Fly_Enemy_Big = t + 0.2
 	if self._WTF_Fly_Enemy_warp2 then
 		self:action_request({
 			body_part = 1,
@@ -32,7 +29,7 @@ Hooks:PostHook(CopMovement, "update", "CopMovement_update_WTF_Fly_Enemy", functi
 		self._WTF_Fly_Enemy_warp2 = nil
 		return
 	end
-	local _randomseed = tostring(os.time()):reverse():sub(1, 6) .. tostring(_WTF_Fly_Enemy_Big)
+	local _randomseed = tostring(os.time()):reverse():sub(1, 6) .. tostring(t)
 	math.randomseed(_randomseed)	
 	self._WTF_Fly_Enemy_delay_t = t + 3 + math.random()*10
 	
