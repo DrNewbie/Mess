@@ -1,25 +1,19 @@
 {
-	"name" : "Game --- WTF Flying Enemy",
+	"name" : "Teleport Enemy",
+	"description": "Teleport Enemy",
 	"author" : "Dr_Newbie",
-	"contact" : "",
-	"version" : "2015.11.03",
-	"priority" : 10,
+	"contact" : "http://modwork.shop/14427",
+	"blt_version": 2,
+	"version": "3",
+	"priority": 1,
 	"hooks" : [
 		{
+			"hook_id": "lib/managers/localizationmanager",
+			"script_path": "Base.lua"
+		},
+		{
 			"hook_id" : "lib/units/enemies/cop/copmovement",
-			"script_path" : "lua/move.lua"
-		},
-		{
-			"hook_id" : "lib/network/matchmaking/networkmatchmakingsteam",
-			"script_path" : "lua/checkerr.lua"
-		},
-		{
-			"hook_id" : "lib/managers/hudmanagerpd2",
-			"script_path" : "lua/whengamestart.lua"
-		},
-		{
-			"hook_id" : "lib/managers/menumanagerdialogs",
-			"script_path" : "lua/warning.lua"
+			"script_path" : "lua/copmovement.lua"
 		}
 	]
 }
