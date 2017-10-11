@@ -2,7 +2,7 @@
     <Localization directory="Localization" default="english.txt">
     </Localization>
 	
-	<AssetUpdates id="21019" name="asset_updates" folder_name="M202 Thermobaric Warhead" provider="lastbullet"/>
+	<AssetUpdates id="0" name="asset_updates" folder_name="M202 Thermobaric Warhead" provider="lastbullet"/>
 
     <WeaponMod based_on="wpn_fps_saw_m_blade_sharp" id="wpn_fps_gre_ray_incen" unit="units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy" dlc = "bbq" type="ammo" drop="false" texture_bundle_folder="mods" is_a_unlockable="true" internal_part="true">
 		<stats damage="-47"/>
