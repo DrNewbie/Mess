@@ -1,0 +1,4 @@
+{
+    "bm_wp_wpn_fps_gre_ray_incen" : "Thermobaric Rockets"
+"bm_wp_wpn_fps_gre_ray_incen_desc" : "Rocket Warhead filled with Incendiary agents that burn the surrounding impact area, with up to 700 damage for 10 sec."
+}

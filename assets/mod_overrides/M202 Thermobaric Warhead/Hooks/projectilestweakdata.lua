@@ -1,6 +1,6 @@
 Hooks:PostHook(BlackMarketTweakData, "_init_projectiles", "M202Incen_BlackMarketTweakData_init_projectiles", function(self, tweak_data)
 	self.projectiles.rocket_ray_frag_incen = deep_clone(self.projectiles.rocket_ray_frag)
-	self.projectiles.rocket_ray_frag_incen.unit = "units/pd2_dlc_friend/weapons/wpn_third_ray_fired_rocket/wpn_third_ray_fired_incen_rocket"
+	self.projectiles.rocket_ray_frag_incen.unit = "units/mods/weapons/wpn_third_ray_fired_rocket/wpn_third_ray_fired_incen_rocket"
 	if not table.contains(self._projectiles_index, 'rocket_ray_frag_incen') then
 		table.insert(self._projectiles_index, 'rocket_ray_frag_incen')
 	end
