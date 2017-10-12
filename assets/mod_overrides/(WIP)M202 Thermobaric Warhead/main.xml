@@ -1,8 +1,7 @@
 <table name="M202 Thermobaric" image="guis/m202incen" color="Color(0, 0.1, 0.5)">
-    <Localization directory="Localization" default="english.txt">
-    </Localization>
+    <Localization directory="Localization" default="english.txt"/>
 	
-	<AssetUpdates id="0" name="asset_updates" folder_name="M202 Thermobaric Warhead" provider="lastbullet"/>
+	<AssetUpdates id="21019" name="asset_updates" folder_name="M202 Thermobaric Warhead" provider="lastbullet"/>
 
     <WeaponMod based_on="wpn_fps_saw_m_blade_sharp" id="wpn_fps_gre_ray_incen" unit="units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy" dlc = "bbq" type="ammo" drop="false" texture_bundle_folder="mods" is_a_unlockable="true" internal_part="true">
 		<stats damage="-47"/>
@@ -14,19 +13,9 @@
 	
 	
 	<AddFiles directory="assets">
-	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_gre_ray_incen"/>
-	<texture path="guis/m202incen"/>
-	
-	<!-- <unit path="units/mods/weapons/wpn_fps_ass_contraband_gl_m203_incen/wpn_fps_ass_contraband_gl_m203_incen"/>
-	<object path="units/mods/weapons/wpn_fps_ass_contraband_gl_m203_incen/wpn_fps_ass_contraband_gl_m203_incen"/>
-	<model path="units/mods/weapons/wpn_fps_ass_contraband_gl_m203_incen/wpn_fps_ass_contraband_gl_m203_incen"/>
-	<unit path="units/mods/weapons/wpn_fps_ass_contraband_gl_m203_incen/wpn_fps_ass_contraband_gl_m203_incen"/>
-	<material_config path="units/mods/weapons/wpn_fps_ass_contraband_gl_m203_incen/wpn_fps_ass_contraband_gl_m203_incen"/>
-	<cooked_physics path="units/mods/weapons/wpn_fps_ass_contraband_gl_m203_incen/wpn_fps_ass_contraband_gl_m203_incen"/>
-	<material_config path="units/mods/weapons/wpn_fps_ass_contraband_gl_m203_incen/wpn_fps_ass_contraband_gl_m203_incen_cc"/>
-	<material_config path="units/mods/weapons/wpn_fps_ass_contraband_gl_m203_incen/wpn_fps_ass_contraband_gl_m203_incen_cc_thq"/>
-	<material_config path="units/mods/weapons/wpn_fps_ass_contraband_gl_m203_incen/wpn_fps_ass_contraband_gl_m203_incen_thq"/> -->
-    </AddFiles>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_gre_ray_incen"/>
+		<texture path="guis/m202incen"/>
+	</AddFiles>
 	
 	<Hooks directory="Hooks">
 		<hook file="weaponfactorytweakdata.lua" source_file="lib/tweak_data/weaponfactorytweakdata"/>
