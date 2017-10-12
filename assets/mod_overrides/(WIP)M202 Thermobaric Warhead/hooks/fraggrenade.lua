@@ -1,12 +1,21 @@
+function FragGrenade:_spawn_environment_fire(normal)
+	local grenade_entry = self._tweak_projectile_entry or "frag"
+	local tweak_entry = tweak_data.projectiles[grenade_entry]
+	if tweak_entry.incendiary_fire_arbiter then
+		local position = self._unit:position()
+		local rotation = self._unit:rotation()
+		local data = tweak_entry.incendiary_fire_arbiter
+		EnvironmentFire.spawn(position, rotation, data, normal, self._thrower_unit, 0, 1)
+	end
+end
+
 function FragGrenade:_detonate(tag, unit, body, other_unit, other_body, position, normal, collision_velocity, velocity, other_velocity, new_velocity, direction, damage, ...)
 	local pos = self._unit:position()
 	local normal = math.UP
 	local range = self._range
 	local slot_mask = managers.slot:get_mask("explosion_targets")
-
 	managers.explosion:give_local_player_dmg(pos, range, self._player_damage)
 	managers.explosion:play_sound_and_effects(pos, normal, range, self._custom_params)
-
 	local hit_units, splinters = managers.explosion:detect_and_give_dmg({
 		player_damage = 0,
 		hit_pos = pos,
@@ -18,10 +27,8 @@ function FragGrenade:_detonate(tag, unit, body, other_unit, other_body, position
 		alert_radius = self._alert_radius,
 		user = self:thrower_unit() or self._unit,
 		owner = self._unit
-	})
-	
-	 IncendiaryGrenade._spawn_environment_fire(self, normal)
-
+	})	
+	self:_spawn_environment_fire(normal)
 	managers.network:session():send_to_peers_synched("sync_unit_event_id_16", self._unit, "base", GrenadeBase.EVENT_IDS.detonate)
 	self._unit:set_slot(0)
 end

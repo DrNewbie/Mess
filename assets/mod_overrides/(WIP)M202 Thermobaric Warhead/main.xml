@@ -15,6 +15,7 @@
 	<AddFiles directory="assets">
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_gre_ray_incen"/>
 		<texture path="guis/m202incen"/>
+		<unit path="units/pd2_dlc_friend/weapons/wpn_third_ray_fired_rocket/wpn_third_ray_fired_incen_rocket"/>
 	</AddFiles>
 	
 	<Hooks directory="Hooks">
