@@ -16,6 +16,15 @@ _G.TimeSpeed = _G.TimeSpeed or {}
 TimeSpeed._ModPath = TimeSpeed._ModPath or ModPath
 TimeSpeed._SavePath = TimeSpeed._SavePath or SavePath .. "TimeSpeed.txt"
 TimeSpeed.Settings = TimeSpeed.Settings or {}
+TimeSpeed.speedmultiplier_list = {
+	0.25,
+	0.5,
+	1,
+	2,
+	4,
+	8,
+	16
+}
 
 function TimeSpeed:Save()
 	local file = io.open(self._SavePath, "w+")
@@ -34,16 +43,7 @@ function TimeSpeed:Load()
 		file:close()
 	else
 		self.Settings = {
-			speedmultiplier = 4,
-			speedmultiplier_list = {
-				0.25,
-				0.5,
-				1,
-				2,
-				4,
-				8,
-				16
-			}
+			speedmultiplier = 4
 		}
 		self:Save()
 	end
@@ -51,11 +51,11 @@ end
 
 function TimeSpeed:Apply(Toggle)
 	Toggle = Toggle or 0
-	local m_timespeed = self.Settings.speedmultiplier_list[self.Settings.speedmultiplier] or 1
+	local m_timespeed = self.speedmultiplier_list[self.Settings.speedmultiplier] or 1
 	if Toggle == -1 or Toggle == -2 then
 		m_timespeed = 1.0
 	elseif Toggle == 1 then
-		m_timespeed = self.Settings.speedmultiplier_list[self.Settings.speedmultiplier]
+		m_timespeed = self.speedmultiplier_list[self.Settings.speedmultiplier]
 	end
 	SoundDevice:set_rtpc("game_speed", m_timespeed)
 	for k, v in pairs({"player", "game", "game_animation"}) do
@@ -92,3 +92,12 @@ Hooks:Add("MenuManagerInitialize", "MenuManagerInitialize_TimeSpeed", function(.
 
 	MenuHelper:LoadFromJsonFile(TimeSpeed._ModPath .. "Menu.json", TimeSpeed, TimeSpeed.Settings)
 end)
+
+if UpdateThisMod then
+	UpdateThisMod:Add({
+		mod_id = 'Timespeed Renew',
+		data = {
+			modworkshop_id = 20998
+		}
+	})
+end
