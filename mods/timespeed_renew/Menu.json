@@ -12,14 +12,16 @@
 			"description" : "menu_TimeSpeed_Multiplier_desc",
 			"callback" : "TimeSpeed_Multiplier_menu_callback",
 			"items" : [
+				"TimeSpeed_Multiplier_0",
 				"TimeSpeed_Multiplier_1",
 				"TimeSpeed_Multiplier_2",
 				"TimeSpeed_Multiplier_3",
 				"TimeSpeed_Multiplier_4",
-				"TimeSpeed_Multiplier_5"
+				"TimeSpeed_Multiplier_5",
+				"TimeSpeed_Multiplier_6"
 			],
 			"value" : "speedmultiplier",
-			"default_value" : 2
+			"default_value" : 4
 		}
 	]
 }

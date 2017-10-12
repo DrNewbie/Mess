@@ -2,11 +2,13 @@ Hooks:Add("LocalizationManagerPostInit", "TimeSpeed_loc", function(...)
 	LocalizationManager:add_localized_strings({
 		["menu_TimeSpeed_Multiplier_name"] = "Time Speed",
 		["menu_TimeSpeed_Multiplier_desc"] = " ",
+		["TimeSpeed_Multiplier_0"] = "0.25",
 		["TimeSpeed_Multiplier_1"] = "0.5",
 		["TimeSpeed_Multiplier_2"] = "1",
 		["TimeSpeed_Multiplier_3"] = "2",
 		["TimeSpeed_Multiplier_4"] = "4",
-		["TimeSpeed_Multiplier_5"] = "8"	
+		["TimeSpeed_Multiplier_5"] = "8",
+		["TimeSpeed_Multiplier_6"] = "16"	
 	})
 end)
 
@@ -32,13 +34,15 @@ function TimeSpeed:Load()
 		file:close()
 	else
 		self.Settings = {
-			speedmultiplier = 3,
+			speedmultiplier = 4,
 			speedmultiplier_list = {
+				0.25,
 				0.5,
 				1,
 				2,
 				4,
-				8
+				8,
+				16
 			}
 		}
 		self:Save()
