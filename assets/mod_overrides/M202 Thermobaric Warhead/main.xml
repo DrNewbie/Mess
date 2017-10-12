@@ -24,6 +24,7 @@
 		<hook file="projectilestweakdata.lua" source_file="lib/tweak_data/blackmarket/projectilestweakdata"/>
 		<hook file="tweakdata_ray.lua" source_file="lib/tweak_data/tweakdata"/>
 		<hook file="fraggrenade.lua" source_file="lib/units/weapons/grenades/fraggrenade"/>
+		<hook file="projectilebase.lua" source_file="lib/units/weapons/projectiles/projectilebase"/>
 	</Hooks>
 	
 </table>

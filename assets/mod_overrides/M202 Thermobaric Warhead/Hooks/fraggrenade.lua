@@ -1,4 +1,4 @@
-function FragGrenade:_spawn_environment_fire(normal)
+function FragGrenade:_spawn_environment_fire(normal, unit)
 	local grenade_entry = self._tweak_projectile_entry or "frag"
 	local tweak_entry = tweak_data.projectiles[grenade_entry]
 	if tweak_entry.incendiary_fire_arbiter then
@@ -6,6 +6,10 @@ function FragGrenade:_spawn_environment_fire(normal)
 		local rotation = self._unit:rotation()
 		local data = tweak_entry.incendiary_fire_arbiter
 		EnvironmentFire.spawn(position, rotation, data, normal, self._thrower_unit, 0, 1)
+		if unit:base()._fake_fire then
+			local _fire = World:spawn_unit(Idstring("units/pd2_dlc_bbq/weapons/molotov_cocktail/wpn_molotov_third"), unit:position(), unit:rotation())
+			_fire:base():_detonate(normal)
+		end
 	end
 end
 
@@ -27,8 +31,8 @@ function FragGrenade:_detonate(tag, unit, body, other_unit, other_body, position
 		alert_radius = self._alert_radius,
 		user = self:thrower_unit() or self._unit,
 		owner = self._unit
-	})	
-	self:_spawn_environment_fire(normal)
+	})
+	self:_spawn_environment_fire(normal, unit)
 	managers.network:session():send_to_peers_synched("sync_unit_event_id_16", self._unit, "base", GrenadeBase.EVENT_IDS.detonate)
 	self._unit:set_slot(0)
 end
