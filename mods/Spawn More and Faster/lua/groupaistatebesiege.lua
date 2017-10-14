@@ -63,9 +63,13 @@ local Mod4ModifySomething = function(them)
 	for k, v in pairs(them.besiege.recon.force) do
 		them.besiege.recon.force[k] = _modify_v_more(v)
 	end
-	for k, v in pairs(them.special_unit_spawn_limits) do
-		them.special_unit_spawn_limits[k] = math.clamp(math.round(_modify_v_more(v)), 1, 20)
-	end
+	them.special_unit_spawn_limits = {
+		shield = 20,
+		medic = 20,
+		taser = 12,
+		tank = 8,
+		spooc = 12
+	}
 	for group_name, group_data in pairs(them.besiege.assault.groups) do
 		if group_name ~= "Phalanx" then
 			for k, v in pairs(group_data) do

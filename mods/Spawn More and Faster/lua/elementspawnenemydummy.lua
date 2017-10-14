@@ -18,12 +18,18 @@ function ElementSpawnEnemyDummy:produce(params)
 	if gro:is_enemy_converted_to_criminal(unit) then
 		return unit
 	end
-	if gro:_SMF_GUI_Get_Enemy_Amount() > 80 then
+	if gro:_SMF_GUI_Get_Enemy_Amount() > 70 then
 		return unit
 	end
 	local catname = tostring(unit:base()._tweak_table)
-	if gro:_SMF_GUI_Get_Special_Amount(catname) > 20 then
+	if gro:_SMF_GUI_Get_Special_Amount(catname) >= 20 then
 		return unit
+	end
+	if catname == "taser" or catname == "tank" or catname == "spooc" then
+		gro:Forced_SMF_GUI_update(catname)
+		if gro:_SMF_GUI_Get_Special_Amount(catname) >= 10 then
+			return unit
+		end
 	end
 	local _spawn_enemy = function (unit_name, pos, rot)
 		local unit_done = safe_spawn_unit(unit_name, pos, rot)
