@@ -18,18 +18,19 @@ function ElementSpawnEnemyDummy:produce(params)
 	if gro:is_enemy_converted_to_criminal(unit) then
 		return unit
 	end
-	if gro:_SMF_GUI_Get_Enemy_Amount() > 70 then
-		return unit
-	end
+	local xtimes = 0
 	local catname = tostring(unit:base()._tweak_table)
-	if gro:_SMF_GUI_Get_Special_Amount(catname) >= 20 then
-		return unit
+	if not gro:is_enemy_special(unit) then
+		xtimes = 0
+	elseif catname == "taser" or catname == "tank" then
+		xtimes = 1
+	elseif catname == "spooc" then
+		xtimes = 2
+	elseif gro:is_enemy_special(unit) then
+		xtimes = 3
 	end
-	if catname == "taser" or catname == "tank" or catname == "spooc" then
-		gro:Forced_SMF_GUI_update(catname)
-		if gro:_SMF_GUI_Get_Special_Amount(catname) >= 10 then
-			return unit
-		end
+	if xtimes <= 0 then
+		return unit
 	end
 	local _spawn_enemy = function (unit_name, pos, rot)
 		local unit_done = safe_spawn_unit(unit_name, pos, rot)
@@ -38,7 +39,7 @@ function ElementSpawnEnemyDummy:produce(params)
 		gro:assign_enemy_to_group_ai(unit_done, team_id)
 		return unit_done
 	end
-	for i = 1, 3 do
+	for i = 1, xtimes do
 		local enemy_name = unit:name()
 		local pos, rot = self:get_orientation()
 		local ang = math.random() * 360 * math.pi
