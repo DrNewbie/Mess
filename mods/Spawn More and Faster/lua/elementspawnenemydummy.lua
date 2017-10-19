@@ -3,6 +3,8 @@ ElementSpawnEnemyDummy = ElementSpawnEnemyDummy or class(CoreMissionScriptElemen
 
 local SFM_ElementSpawnEnemyDummy_ori_produce = ElementSpawnEnemyDummy.produce
 
+local SFM_4_Sniper = {}
+
 function ElementSpawnEnemyDummy:produce(params)
 	local unit = SFM_ElementSpawnEnemyDummy_ori_produce(self, params)
 	if not managers.groupai or not managers.groupai:state() then
@@ -21,7 +23,9 @@ function ElementSpawnEnemyDummy:produce(params)
 	local xtimes = 0
 	local catname = tostring(unit:base()._tweak_table)
 	if catname == "sniper" then
-		xtimes = 4
+		table.insert(SFM_4_Sniper, unit:name())
+		table.insert(SFM_4_Sniper, unit:name())
+		table.insert(SFM_4_Sniper, unit:name())
 	elseif catname == "taser" or catname == "tank" then
 		xtimes = 1
 	elseif catname == "spooc" then
@@ -50,6 +54,14 @@ function ElementSpawnEnemyDummy:produce(params)
 		pos = pos + offset
 		local unit_done = _spawn_enemy(enemy_name, pos, rot)
 		table.insert(self._units, unit_done)
+	end
+	if #SFM_4_Sniper > 0 then
+		local _r = math.random(#SFM_4_Sniper)
+		if tostring(SFM_4_Sniper[_r]):find('Idstring') then
+			unit_done = _spawn_enemy(SFM_4_Sniper[_r], pos, rot)
+			table.insert(self._units, unit_done)
+			table.remove(SFM_4_Sniper, _r)
+		end
 	end
 	return unit
 end
