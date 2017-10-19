@@ -20,14 +20,16 @@ function ElementSpawnEnemyDummy:produce(params)
 	end
 	local xtimes = 0
 	local catname = tostring(unit:base()._tweak_table)
-	if not gro:is_enemy_special(unit) then
-		xtimes = 0
+	if catname == "sniper" then
+		xtimes = 4
 	elseif catname == "taser" or catname == "tank" then
 		xtimes = 1
 	elseif catname == "spooc" then
 		xtimes = 2
+	elseif not gro:is_enemy_special(unit) then
+		xtimes = 0
 	elseif gro:is_enemy_special(unit) then
-		xtimes = 3
+		xtimes = 2
 	end
 	if xtimes <= 0 then
 		return unit
