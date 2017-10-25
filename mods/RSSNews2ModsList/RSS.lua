@@ -56,11 +56,13 @@ local function GetRssNews(msg_max)
 						local _msg = splitByChunk(tostring(data.items[r].title), 40)
 						for i, v in ipairs(_msg) do
 							local _sp_b = false
-							if _msg[i+1] and string.len(_msg[i+1]) <= 3 then
-								v = v .. _msg[i+1]
-								_sp_b = true
-							else
-								v = v .. ' ...'
+							if _msg[i+1] then
+								if string.len(_msg[i+1]) <= 3 then
+									v = v .. _msg[i+1]
+									_sp_b = true
+								else
+									v = v .. ' ...'
+								end
 							end
 							table.insert(_tmp_rss.Msg, string.format('%q', v))
 							if _sp_b then
