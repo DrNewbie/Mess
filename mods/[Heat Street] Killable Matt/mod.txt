@@ -1,0 +1,19 @@
+{
+	"name": "[Heat Street] Killable Matt",
+	"description": "ahhh!",
+	"author": "Dr_Newbie",
+	"contact": "https://modworkshop.net",
+	"version": "1",
+	"priority": 1,
+	"blt_version": 2,
+	"hooks": [
+		{
+			"hook_id": "lib/managers/mission/elementspawncivilian",
+			"script_path": "elementspawncivilian.lua"
+		},
+		{
+			"hook_id": "lib/managers/group_ai_states/groupaistatebase",
+			"script_path": "groupaistatebase.lua"
+		}
+	]
+}
