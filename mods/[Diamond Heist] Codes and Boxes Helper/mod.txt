@@ -1,0 +1,19 @@
+{
+	"name": "[Diamond Heist] Codes and Boxes Helper",
+	"description": "ahhh!!",
+	"author": "Dr_Newbie",
+	"contact": "https://modworkshop.net/",
+	"version": "1",
+	"priority": 1,
+	"blt_version": 2,
+	"hooks": [
+		{
+			"hook_id" : "lib/managers/dialogmanager",
+			"script_path" : "Base.lua"
+		},
+		{
+			"hook_id" : "core/lib/managers/mission/coreelementinstance",
+			"script_path" : "Keypad.lua"
+		}
+	]
+}
