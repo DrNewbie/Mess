@@ -1,0 +1,15 @@
+{
+	"name": "[Diamond Heist] Codes is not working",
+	"description": "wat!!",
+	"author": "Dr_Newbie",
+	"contact": "https://modworkshop.net",
+	"version": "3",
+	"priority": 1,
+	"blt_version": 2,
+	"hooks": [
+		{
+			"hook_id": "core/lib/managers/mission/coreelementinstance",
+			"script_path": "coreelementinstance.lua"
+		}
+	]
+}
