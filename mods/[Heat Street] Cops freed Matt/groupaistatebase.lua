@@ -58,7 +58,7 @@ Hooks:PostHook(GroupAIStateBase, "update", "DedMatt_update", function(self, t)
 			self._DedMatt_Run = 2
 			--Matt is dead, GG
 			managers.hud:remove_waypoint('DedMattUnderAttack')
-			managers.chat:send_message(ChatManager.GAME, "", "[System]: Matt is dead, Game Over.")
+			managers.chat:send_message(ChatManager.GAME, "", "[System]: Cops freed Matt. Game Over.")
 			DelayedCalls:Add('MattDeadGG', 5, function()
 				managers.network:session():send_to_peers("mission_ended", false, 0)
 				game_state_machine:change_state_by_name("gameoverscreen")
