@@ -1,9 +1,9 @@
 {
-	"name": "[Diamond Heist] Codes and Boxs Helper",
-	"description": "[Diamond Heist] Codes and Boxs Helper",
+	"name": "[Diamond Heist] Codes and Boxes Helper",
+	"description": "[Diamond Heist] Codes and Boxes Helper",
 	"author": "Dr_Newbie",
 	"contact": "https://modworkshop.net/",
-	"version": "2",
+	"version": "3",
 	"priority": 1,
 	"blt_version": 2,
 	"hooks": [
