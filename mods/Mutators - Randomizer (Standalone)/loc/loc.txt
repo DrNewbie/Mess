@@ -1,0 +1,16 @@
+{
+	"menu_MutatorRandomizer_Data_Randomizer_name" : "Randomizer",
+	"menu_MutatorRandomizer_Data_Randomizer_decs" : "Enable or Disable Which One You Want to Do Randomize",
+	"menu_MutatorRandomizer_Data_nah" : " ...",
+	"menu_MutatorRandomizer_Data_Character_name" : "Character",
+	"menu_MutatorRandomizer_Data_Primary_name" : "Primary",
+	"menu_MutatorRandomizer_Data_Secondary_name" : "Secondary",
+	"menu_MutatorRandomizer_Data_Armor_name" : "Armor",
+	"menu_MutatorRandomizer_Data_Deployable_name" : "Deployable",
+	"menu_MutatorRandomizer_Data_Throwable_name" : "Throwable",
+	"menu_MutatorRandomizer_Data_Melee_name" : "Melee",
+	"menu_MutatorRandomizer_Data_DoesItemUnlock_name" : "Check Restricted Item",
+	"menu_MutatorRandomizer_Data_UseMyInventory_name" : "Use My Inventory",
+	"menu_MutatorRandomizer_Data_CLEAN_name" : "Clean Data",
+	"menu_MutatorRandomizer_Data_PartsCrazyTry_name" : "Do not Block Crazy Mods"
+}

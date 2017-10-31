@@ -1,0 +1,20 @@
+_G.SurvivorModeBase = _G.SurvivorModeBase or {}
+if SurvivorModeBase.Load then
+	return
+end
+SurvivorModeBase.Load = true
+SurvivorModeBase.This_Wave = 5
+SurvivorModeBase.This_Time = 240
+SurvivorModeBase.Spawn_Settings = {
+	{enemy = "units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2", max_amount = 10},
+	{enemy = "units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3", max_amount = 10},
+	{enemy = "units/payday2/characters/ene_spook_1/ene_spook_1", max_amount = 10},
+	{enemy = "units/payday2/characters/ene_tazer_1/ene_tazer_1", max_amount = 10},
+	{enemy = "units/payday2/characters/ene_shield_1/ene_shield_1", max_amount = 10},
+	{enemy = "units/payday2/characters/ene_sniper_2/ene_sniper_2", max_amount = 10},
+	{enemy = "units/payday2/characters/ene_spook_1/ene_spook_1", max_amount = 10},
+	{enemy = "units/payday2/characters/ene_tazer_1/ene_tazer_1", max_amount = 10},
+	{enemy = "units/payday2/characters/ene_shield_1/ene_shield_1", max_amount = 10},
+	{enemy = "units/payday2/characters/ene_sniper_2/ene_sniper_2", max_amount = 10}
+}
+log("[SurvivorMode]: arm_cro , wave " .. SurvivorModeBase.This_Wave)

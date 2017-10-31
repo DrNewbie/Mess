@@ -1,0 +1,7 @@
+{
+	"name" : "Use inspire even you down",
+	"author" : "Dr_Newbie",
+	"hooks" : [
+		{ "hook_id" : "lib/units/beings/player/states/playerbleedout", "script_path" : "lua/playerbleedout.lua" }
+	]
+}

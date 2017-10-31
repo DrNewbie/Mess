@@ -1,0 +1,11 @@
+_G.SurvivorModeBase = _G.SurvivorModeBase or {}
+if SurvivorModeBase.Load then
+	return
+end
+SurvivorModeBase.Load = true
+SurvivorModeBase.This_Wave = 2
+SurvivorModeBase.This_Time = 240
+SurvivorModeBase.Spawn_Settings = {
+	{enemy = "units/payday2/characters/ene_tazer_1/ene_tazer_1", max_amount = 50}
+}
+log("[SurvivorMode]: arm_cro , wave " .. SurvivorModeBase.This_Wave)

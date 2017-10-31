@@ -1,0 +1,22 @@
+{
+	"name" : "Rage Mode - Infra-Sight",
+	"description" : "",
+	"author" : "Dr_Newbie",
+	"version" : "6",
+	"hooks" : [
+		{ "hook_id" : "lib/managers/playermanager","script_path" : "Pass_Data.lua"},
+		{ "hook_id" : "lib/managers/hudmanagerpd2","script_path" : "HudManager.lua"},
+		{ "hook_id" : "lib/units/beings/player/states/playerstandard","script_path" : "lua/Enter.lua"}
+	],
+	"keybinds" : [
+		{
+			"keybind_id" : "toggle_RageModeAvtive",
+			"name" : "Rage Mode Avtive",
+			"description" : ""
+			"script_path" : "lua/USE.lua",
+			"run_in_menu" : true,
+			"run_in_game" : true,
+			"localized" : false
+		}
+	]
+}

@@ -1,0 +1,10 @@
+{
+	"name" : "Heavy Security",
+	"author" : "Dr_Newbie",
+	"version" : "10",
+	"hooks" : [
+		{ "hook_id" : "lib/network/handlers/unitnetworkhandler", "script_path" : "lua/unitnetworkhandler.lua" },
+		{ "hook_id" : "lib/managers/localizationmanager", "script_path" : "lua/Menu.lua" },
+		{ "hook_id" : "lib/managers/mission/elementspawnenemydummy", "script_path" : "lua/elementspawnenemydummy.lua" }
+	]
+}

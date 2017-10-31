@@ -1,0 +1,13 @@
+{
+	"name" : "Survivor Mode [Client Side]",
+	"author" : "Dr_Newbie",
+	"version" : "beta.5",
+	"hooks" : [
+		{ "hook_id" : "lib/managers/localizationmanager", "script_path" : "lua/function/create_new_charactertweakdata.lua" },
+		{ "hook_id" : "lib/managers/localizationmanager", "script_path" : "lua/function/create_new_load_packages.lua" },
+		{ "hook_id" : "lib/managers/localizationmanager", "script_path" : "lua/sync/sync_main.lua" },
+		{ "hook_id" : "lib/managers/group_ai_states/groupaistatebase", "script_path" : "lua/groupaistatebase.lua" },
+		{ "hook_id" : "lib/managers/missionmanager", "script_path" : "lua/override/missionmanager.lua" },
+		{ "hook_id" : "lib/tweak_data/charactertweakdata", "script_path" : "lua/override/charactertweakdata.lua" }
+	]
+}

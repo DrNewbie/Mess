@@ -1,0 +1,24 @@
+{
+	"menu_id": "m_ghost",
+	"parent_menu_id": "blt_options",
+	"title": "m_ghost_mode",
+	"description": "m_ghost_desc",
+	"back_callback": "m_ghost_save",
+	"items": [
+		{"type": "divider", "size": 160},
+		{"type": "divider", "size": 160},
+		{
+			"type": "multiple_choice",
+			"id": "mode",
+			"title": "m_ghost_mode",
+			"description": "m_ghost_mode_desc",
+			"callback": "m_ghost_set",
+			"items": [
+				"m_ghost_mode_off",
+				"m_ghost_mode_pro",
+				"m_ghost_mode_expert"
+			],
+			"value": "mode"
+		}
+	]
+}

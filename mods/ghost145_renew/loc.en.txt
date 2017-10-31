@@ -1,0 +1,9 @@
+{
+	"m_ghost": "Ghost 145+",
+	"m_ghost_desc": "Enable or disable advanced stealth modes.",
+	"m_ghost_mode": "Ghost 145+",
+	"m_ghost_mode_desc": "Select between the following stealth gameplay rules:\n\nVanilla\nDefault gameplay -\n\nProfessional\n3 pagers -\nNo civilian casualties -\nReduced mark duration -\nShouting at civilians creates noise -\n\nMurky (Expert)\nNo pagers -\nNo civilian casualties -\nNo enemy marking -\nECM only disables cameras -\nShouting at civilians creates noise -",
+	"m_ghost_mode_off": "Vanilla",
+	"m_ghost_mode_pro": "Professional",
+	"m_ghost_mode_expert": "Murky (Expert)"
+}

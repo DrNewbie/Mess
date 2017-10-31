@@ -1,0 +1,9 @@
+_G.SurvivorModeBase = _G.SurvivorModeBase or {}
+if SurvivorModeBase.Load then
+	return
+end
+SurvivorModeBase.Load = true
+SurvivorModeBase.This_Wave = 0
+SurvivorModeBase.This_Time = 120
+SurvivorModeBase.Spawn_Settings = {}
+log("[SurvivorMode]: arm_cro , wave " .. SurvivorModeBase.This_Wave)

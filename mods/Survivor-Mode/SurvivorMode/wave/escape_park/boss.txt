@@ -1,0 +1,86 @@
+ _G.SurvivorModeBase = _G.SurvivorModeBase or {}
+if not SurvivorModeBase or (SurvivorModeBase and SurvivorModeBase.BossLoad) then
+	return
+end
+SurvivorModeBase.BossLoad = true
+SurvivorModeBase.Boss_Name = "units/pd2_mcmansion/characters/ene_male_hector_2/ene_male_hector_2"
+SurvivorModeBase.Boss_Position = Vector3(435, -1485, 27)
+SurvivorModeBase.Boss_Rotation = Rotation(0, 0, 0)
+SurvivorModeBase.PackageRequired = SurvivorModeBase.PackageRequired or {}
+table.insert(SurvivorModeBase.PackageRequired, "packages/narr_hox_3")
+log("[SurvivorMode]: escape_park , boss , Hector")
+local _f_Character_init = CharacterTweakData.init
+function CharacterTweakData:init(...)
+	_f_Character_init(self, ...)
+	self.hector_boss.move_speed = self.presets.move_speed.lightning
+	self.hector_boss.weapon.saiga.focus_delay = 0.5
+	self.hector_boss.weapon.saiga.melee_speed = 0.5
+	self.hector_boss.damage.hurt_severity = self.presets.hurt_severities.only_light_hurt_and_fire
+	self.hector_boss.weapon.saiga.range = {
+		close = 15000,
+		optimal = 15000,
+		far = 15000
+	}
+end
+local _date_FALLOFF = {
+		{
+			r = 0,
+			acc = {0.8, 0.9},
+			dmg_mul = 3,
+			recoil = {0.1, 0.1},
+			mode = {
+				50,
+				50,
+				50,
+				50
+			}
+		},
+		{
+			r = 100,
+			acc = {0.8, 0.9},
+			dmg_mul = 2.9,
+			recoil = {0.1, 0.1},
+			mode = {
+				50,
+				50,
+				50,
+				50
+			}
+		}
+	}
+local _f_Character_set_easy = CharacterTweakData._set_easy
+function CharacterTweakData:_set_easy()
+	_f_Character_set_easy(self)
+	self.hector_boss.HEALTH_INIT = 10000
+	self.hector_boss.weapon.saiga.FALLOFF = _date_FALLOFF
+end
+local _f_Character_set_normal = CharacterTweakData._set_normal
+function CharacterTweakData:_set_normal()
+	_f_Character_set_normal(self)
+	self.hector_boss.HEALTH_INIT = 20000
+	self.hector_boss.weapon.saiga.FALLOFF = _date_FALLOFF
+end
+local _f_Character_set_hard = CharacterTweakData._set_hard
+function CharacterTweakData:_set_hard()
+	_f_Character_set_hard(self)
+	self.hector_boss.HEALTH_INIT = 40000
+	self.hector_boss.weapon.saiga.FALLOFF = _date_FALLOFF
+end
+local _f_Character_set_overkill = CharacterTweakData._set_overkill
+function CharacterTweakData:_set_overkill()
+	_f_Character_set_overkill(self)
+	self.hector_boss.HEALTH_INIT = 80000
+	self.hector_boss.weapon.saiga.FALLOFF = _date_FALLOFF
+end
+local _f_Character_set_overkill_145 = CharacterTweakData._set_overkill_145
+function CharacterTweakData:_set_overkill_145()
+	_f_Character_set_overkill_145(self)
+	self.hector_boss.HEALTH_INIT = 100000
+	self.hector_boss.weapon.saiga.FALLOFF = _date_FALLOFF
+end
+local _f_Character_set_overkill_290 = CharacterTweakData._set_overkill_290
+function CharacterTweakData:_set_overkill_290()
+	_f_Character_set_overkill_290(self)
+	self.hector_boss.HEALTH_INIT = 400000
+	self.hector_boss.weapon.saiga.FALLOFF = _date_FALLOFF
+end
