@@ -83,3 +83,16 @@ function ElementInstanceInputEvent:on_executed(...)
 	end
 	return DiamondHeistHelper_KeypadAns(self, ...)
 end
+
+ElementInstanceOutputEvent = ElementInstanceOutputEvent or class(CoreMissionScriptElement.MissionScriptElement)
+
+local DiamondHeistHelper_Stop = ElementInstanceOutputEvent.on_executed
+function ElementInstanceOutputEvent:on_executed(...)
+	if not self._values.enabled then
+		return
+	end	
+	if self._id == 101342 then
+		DiamondHeistHelper._KeypadAnsEnable = false
+	end
+	DiamondHeistHelper_Stop(self, ...)
+end
