@@ -1,0 +1,15 @@
+{
+	"name": "Secret Pager",
+	"description": "Secret Pager",
+	"author": "Dr_Newbie",
+	"contact": "https://modworkshop.net/",
+	"version": "1",
+	"priority": 1,
+	"blt_version": 2,
+	"hooks": [
+		{
+			"hook_id" : "lib/managers/group_ai_states/groupaistatebase",
+			"script_path" : "hook.groupaistatebase.lua"
+		}
+	]
+}
