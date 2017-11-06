@@ -2,6 +2,7 @@ local MainPager_Civ_Req = 1
 local MainPager_Cop_Req = 3
 local MainPager_Record = {}
 local MainPager_LastBool = -2
+local MainPager_TiedDown = {false, false} 
 
 Hooks:PostHook(GroupAIStateBase, "update", "MainPager_update", function(self, t)
 	if not self._whisper_mode or not Utils:IsInHeist() then
@@ -14,9 +15,9 @@ Hooks:PostHook(GroupAIStateBase, "update", "MainPager_update", function(self, t)
 	if MainPager_LastBool ~= self.MainPager.bool then
 		MainPager_LastBool = self.MainPager.bool
 		if MainPager_LastBool == 1 then
-			managers.chat:send_message(ChatManager.GAME, "", "[Secret Pager]: ON")
+			managers.chat:send_message(ChatManager.GAME, "", "[Secret Pager]: ON!! Pager system is closed")
 		else
-			managers.chat:send_message(ChatManager.GAME, "", "[Secret Pager]: OFF")
+			managers.chat:send_message(ChatManager.GAME, "", "[Secret Pager]: OFF!! Pager system is online")
 		end
 		if MainPager_LastBool ~= 1 and #MainPager_Record > 0 then
 			for u_key, _ in pairs(MainPager_Record) do
@@ -38,7 +39,7 @@ Hooks:PostHook(GroupAIStateBase, "update", "MainPager_update", function(self, t)
 		local _all_enemies_size = 0
 		local _all_civilians_size = 0
 		for u_key, u_data in pairs(_all_civilians) do
-			if u_data.unit:brain():is_current_logic('idle') then
+			if u_data.unit:brain() and tostring(u_data.unit:brain()._current_logic_name) == 'idle' then
 				table.insert(_all_civilians_unit, u_data.unit)
 				_all_civilians_size = _all_civilians_size + 1
 			end
@@ -88,7 +89,15 @@ Hooks:PostHook(GroupAIStateBase, "update", "MainPager_update", function(self, t)
 			self.MainPager.bool = -1
 			return
 		end
-		if self.MainPager.Cop:brain():is_current_logic('intimidated') and self.MainPager.Civ:brain():is_current_logic('surrender') then
+		if tostring(self.MainPager.Cop:brain()._current_logic_name) == 'intimidated' and not MainPager_TiedDown[1] then
+			MainPager_TiedDown[1] = true
+			managers.chat:send_message(ChatManager.GAME, "", "[Secret Pager]: Tie down!!")
+		end
+		if tostring(self.MainPager.Civ:brain()._current_logic_name) == 'surrender' and not MainPager_TiedDown[2] then
+			MainPager_TiedDown[2] = true
+			managers.chat:send_message(ChatManager.GAME, "", "[Secret Pager]: Tie down!!")
+		end
+		if MainPager_TiedDown[1] and MainPager_TiedDown[2] then
 			self.MainPager.bool = 1
 			MainPager_Record = {}
 			for u_key, u_data in pairs(managers.enemy:all_enemies()) do
