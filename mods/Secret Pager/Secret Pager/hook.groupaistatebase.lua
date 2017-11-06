@@ -38,8 +38,10 @@ Hooks:PostHook(GroupAIStateBase, "update", "MainPager_update", function(self, t)
 		local _all_enemies_size = 0
 		local _all_civilians_size = 0
 		for u_key, u_data in pairs(_all_civilians) do
-			table.insert(_all_civilians_unit, u_data.unit)
-			_all_civilians_size = _all_civilians_size + 1
+			if u_data.unit:brain():is_current_logic('idle') then
+				table.insert(_all_civilians_unit, u_data.unit)
+				_all_civilians_size = _all_civilians_size + 1
+			end
 		end
 		for u_key, u_data in pairs(_all_enemies) do
 			table.insert(_all_enemies_unit, u_data.unit)
@@ -71,8 +73,10 @@ Hooks:PostHook(GroupAIStateBase, "update", "MainPager_update", function(self, t)
 		end
 		if not self.MainPager.Civ or not alive(self.MainPager.Civ) or not self.MainPager.Cop or not alive(self.MainPager.Cop) then
 			self.MainPager.bool = -1
+			managers.chat:send_message(ChatManager.GAME, "", "[Secret Pager]: 404")
 			return
 		end
+		managers.chat:send_message(ChatManager.GAME, "", "[Secret Pager]: Detected")
 	end
 	if self.MainPager.t and t > self.MainPager.t and self.MainPager.Civ and self.MainPager.Cop then
 		self.MainPager.t = t + 1
