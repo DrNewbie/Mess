@@ -1,0 +1,7 @@
+<mod name="AddOnArmourSync" global_key="AddOnArmourSync">
+	<AssetUpdates id="21423" name="asset_updates" folder_name="AddOnArmourSync" version="2" provider="modworkshop"/>
+	<Hooks directory="Hooks">
+		<hook file="SyncCheck.lua" source_file="lib/network/base/networkpeer"/>
+		<hook file="FixOK.lua" source_file="lib/network/matchmaking/networkmatchmakingsteam"/>
+	</Hooks>
+</mod>

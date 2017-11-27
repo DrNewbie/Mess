@@ -1,0 +1,15 @@
+{
+	"menu_id":"AskBot2Stealth_Mneu",
+	"parent_menu_id":"blt_options",
+	"title":"AskBot2Stealth_Mneu_title",
+	"description":"AskBot2Stealth_Mneu_desc",
+	"items":[
+		{
+			"type" : "button",
+			"id" : "AskBot2Stealth_Mneu_Run",
+			"title" : "AskBot2Stealth_Mneu_Run_title",
+			"description" : "AskBot2Stealth_Mneu_Run_desc",
+			"callback" : "AskBot2StealthRun"
+		}
+	]
+}

@@ -1,0 +1,5 @@
+{
+	"bm_wp_wpn_fps_axebullet" : "BlunderAxe||The Axiom Round",
+    "bm_wp_wpn_fps_axebullet_desc" : "Ahhh...",
+    "menu_l_global_value_axebullet" : ""
+}

@@ -1,0 +1,7 @@
+<table name="Pick All Possible Assets"> 
+	<AssetUpdates id="21346" name="asset_updates" version="2" folder_name="Pick All Possible Assets" provider="modworkshop"/>
+	<Hooks> 
+		<hook file="hook.elementspawndeployable.lua" source_file="lib/managers/mission/elementspawndeployable"/>
+		<hook file="hook.elementassettrigger.lua" source_file="lib/managers/mission/elementassettrigger"/>
+	</Hooks>
+</table>

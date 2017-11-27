@@ -1,0 +1,30 @@
+<table name="BlunderAxeTheAxiomRound">
+	<Localization directory="Localization" default="english.txt"/>	
+	<AssetUpdates id="21254" name="asset_updates" version="3" folder_name="BlunderAxeTheAxiomRound" provider="modworkshop"/>
+	<AddFiles directory="assets">
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_axebullet"/>
+	</AddFiles>	
+	<Hooks directory="Hooks">
+		<hook file="shotgunbase.lua" source_file="lib/units/weapons/shotgun/shotgunbase"/>
+		<hook file="weaponfactorytweakdata.lua" source_file="lib/tweak_data/weaponfactorytweakdata"/>
+	</Hooks>	
+	<WeaponMod based_on="wpn_fps_upg_a_dragons_breath" id="wpn_fps_axebullet" unit="units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy" type="ammo" drop="false" texture_bundle_folder="mods" is_a_unlockable="true">
+		<stats value="9" total_ammo_mod="-8" damage="-999" spread="-999" moving_spread="12"/>
+		<weapons>
+			<value_node value="wpn_fps_shot_saiga"/>
+			<value_node value="wpn_fps_shot_r870"/>
+			<value_node value="wpn_fps_shot_huntsman"/>
+			<value_node value="wpn_fps_shot_serbu"/>
+			<value_node value="wpn_fps_sho_ben"/>
+			<value_node value="wpn_fps_sho_striker"/>
+			<value_node value="wpn_fps_sho_ksg"/>
+			<value_node value="wpn_fps_pis_judge"/>
+			<value_node value="wpn_fps_sho_spas12"/>
+			<value_node value="wpn_fps_shot_b682"/>
+			<value_node value="wpn_fps_sho_aa12"/>
+			<value_node value="wpn_fps_sho_boot"/>
+			<value_node value="wpn_fps_shot_m37"/>
+			<value_node value="wpn_fps_sho_rota"/>
+		</weapons>
+    </WeaponMod>
+</table>

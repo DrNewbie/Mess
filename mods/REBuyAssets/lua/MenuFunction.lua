@@ -115,7 +115,7 @@ end)
 
 Hooks:Add("MenuManagerBuildCustomMenus", "MenuManagerBuildCustomMenus_REBuyAssets", function(menu_manager, nodes)
 	nodes[REBuyAssets.menu_id] = MenuHelper:BuildMenu(REBuyAssets.menu_id)
-	MenuHelper:AddMenuItem(MenuHelper.menus.lua_mod_options_menu, REBuyAssets.menu_id, "menu_REBuyAssets_contract_name", "menu_REBuyAssets_contract_desc")
+	MenuHelper:AddMenuItem(nodes["blt_options"], REBuyAssets.menu_id, "menu_REBuyAssets_contract_name", "menu_REBuyAssets_contract_desc")
 end)
 
 Hooks:Add("LocalizationManagerPostInit", "REBuyAssets_loc", function(loc)
@@ -134,3 +134,7 @@ Hooks:Add("LocalizationManagerPostInit", "REBuyAssets_loc", function(loc)
 end)
 
 REBuyAssets:Load()
+
+if ModCore then
+	ModCore:new(REBuyAssets.ModPath .. "Config.xml", false, true):init_modules()
+end

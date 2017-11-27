@@ -1,22 +1,21 @@
 <table name="M202 Thermobaric" image="guis/m202incen" color="Color(0, 0.1, 0.5)">
-    <Localization directory="Localization" default="english.txt"/>
+	<Localization directory="Localization" default="english.txt"/>
 	
-	<AssetUpdates id="21019" name="asset_updates" folder_name="M202 Thermobaric Warhead" provider="lastbullet"/>
-
-    <WeaponMod based_on="wpn_fps_saw_m_blade_sharp" id="wpn_fps_gre_ray_incen" unit="units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy" dlc = "bbq" type="ammo" drop="false" texture_bundle_folder="mods" is_a_unlockable="true" internal_part="true">
+	<WeaponMod based_on="wpn_fps_saw_m_blade_sharp" id="wpn_fps_gre_ray_incen" unit="units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy" dlc = "bbq" type="ammo" drop="false" texture_bundle_folder="mods" is_a_unlockable="true" internal_part="true">
 		<stats damage="-47"/>
 		<weapons>
 			<value_node value="wpn_fps_gre_ray"/>
 		</weapons>
 		<pcs/>
-    </WeaponMod>
+	</WeaponMod>
 	
+	<Throwables id="rocket_ray_frag_incen" based_on="launcher_incendiary_m32" time_cheat="0.1" no_cheat_count="true" unit="units/mods/weapons/wpn_third_ray_fired_rocket/wpn_third_ray_fired_incen_rocket"/>
 	
 	<AddFiles directory="assets">
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_gre_ray_incen"/>
 		<texture path="guis/m202incen"/>
 		<unit path="units/mods/weapons/wpn_third_ray_fired_rocket/wpn_third_ray_fired_incen_rocket"/>
-    </AddFiles>
+	</AddFiles>
 	
 	<Hooks directory="Hooks">
 		<hook file="weaponfactorytweakdata.lua" source_file="lib/tweak_data/weaponfactorytweakdata"/>
@@ -25,6 +24,5 @@
 		<hook file="tweakdata_ray.lua" source_file="lib/tweak_data/tweakdata"/>
 		<hook file="fraggrenade.lua" source_file="lib/units/weapons/grenades/fraggrenade"/>
 		<hook file="projectilebase.lua" source_file="lib/units/weapons/projectiles/projectilebase"/>
-	</Hooks>
-	
+	</Hooks>	
 </table>

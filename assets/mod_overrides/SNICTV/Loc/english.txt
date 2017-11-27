@@ -1,0 +1,3 @@
+{
+	"bm_armor_level_8":"Special Needs Improved Combine Tactical Vest"
+}

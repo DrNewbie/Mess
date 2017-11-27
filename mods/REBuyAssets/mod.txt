@@ -1,9 +1,12 @@
 {
 	"name":"REBuyAssets",
-	"description":" ",
+	"description":"REBuyAssets",
 	"author":"Dr_Newbie",
-	"contact":" ",
-	"version":"4",
+	"contact":"http://modwork.shop/18798",
+	"version":"6",
+	"image": "logo.png",
+	"color": "0 0 0",
+	"blt_version": 2,
 	"hooks" :
 	[
 		{"hook_id":"lib/managers/localizationmanager", "script_path":"lua/MenuFunction.lua"},

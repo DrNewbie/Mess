@@ -1,0 +1,6 @@
+{
+	"AskBot2Stealth_Mneu_title":"Bot Steal Jewelry",
+	"AskBot2Stealth_Mneu_desc":"(Only Jewelry Store)",
+	"AskBot2Stealth_Mneu_Run_title":"Active this Function",
+	"AskBot2Stealth_Mneu_Run_desc":" "
+}

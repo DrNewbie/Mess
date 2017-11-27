@@ -1,0 +1,15 @@
+{
+	"name":"Ask Bot to Steal the Jewelry",
+	"description":" ",
+	"author":"Dr_Newbie",
+	"contact":"http://modwork.shop/",
+	"version":"2",
+	"priority":1,
+	"blt_version":2,
+	"hooks":[
+		{
+			"hook_id":"lib/managers/menumanager",
+			"script_path":"function.menu.lua"
+		}
+	]
+}

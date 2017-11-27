@@ -24,4 +24,3 @@ tweak_data.projectiles.rocket_ray_frag_incen.incendiary_fire_arbiter = {
 		dot_tick_period = 0.5
 	}
 }
-tweak_data.weapon_disable_crit_for_damage.rocket_ray_frag_incen = {explosion = false, fire = false}

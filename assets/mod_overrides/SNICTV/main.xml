@@ -1,0 +1,18 @@
+<table name="Special Needs Improved Combine Tactical Vest">
+	<Localization directory="Loc" default="english.txt"/>
+	<AssetUpdates id="21394" name="asset_updates" folder_name="SNICTV" version="8" provider="modworkshop"/>
+	<AddFiles directory="Assets">
+		<texture path="guis/textures/pd2/blackmarket/icons/armors/level_8" force="true" relaod="true"/>
+		<sequence_manager path="units/payday2/characters/npc_criminals_suit_1/npc_criminals_suit_1" force="true"/>
+		<sequence_manager path="units/payday2/characters/npc_criminal_female_1/npc_criminal_female_1" force="true"/>
+		<sequence_manager path="units/pd2_dlc_opera/characters/npc_criminals_fem_3/npc_criminal_sydney" force="true"/>
+		<sequence_manager path="units/pd2_dlc_bonnie/characters/npc_criminal_bonnie/npc_criminal_bonnie" force="true"/>
+	</AddFiles>
+	<Hooks directory="Hooks">
+		<hook file="blackmarketmanager.lua" source_file="lib/managers/blackmarketmanager"/>
+		<hook file="blackmarkettweakdata.lua" source_file="lib/tweak_data/blackmarkettweakdata"/>
+		<hook file="upgradestweakdata.lua" source_file="lib/tweak_data/upgradestweakdata"/>
+		<hook file="statisticstweakdata.lua" source_file="lib/tweak_data/statisticstweakdata"/>
+		<hook file="networkmatchmakingsteam.lua" source_file="lib/network/matchmaking/networkmatchmakingsteam"/>
+	</Hooks> 
+</table>
