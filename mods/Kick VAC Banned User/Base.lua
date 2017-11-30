@@ -20,6 +20,9 @@ Hooks:Add("NetworkManagerOnPeerAdded", "KickVACBanned", function(peer, peer_id)
 	dohttpreq("http://steamcommunity.com/profiles/"..user_id.."/?xml=1",
 		function (page)
 			page = tostring(page)
+			if not page:find('vacBanned') then
+				return
+			end
 			local vacBanned = tostring(string.match(page, '<vacBanned>(%d+)</vacBanned>'))
 			vacBanned = tonumber(vacBanned) or 0
 			if vacBanned > 0 then
