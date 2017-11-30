@@ -1,0 +1,15 @@
+{
+	"name":"Kick VAC Banned User",
+	"description":" ",
+	"author":"Dr_Newbie",
+	"contact":"http://modwork.shop/21451",
+	"version":"2",
+	"priority":1,
+	"blt_version":2,
+	"hooks":[
+		{
+			"hook_id":"lib/network/base/networkpeer",
+			"script_path":"Base.lua"
+		}
+	]
+}

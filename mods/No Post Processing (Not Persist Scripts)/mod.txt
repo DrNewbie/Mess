@@ -1,0 +1,15 @@
+{
+	"name": "No Post Processing (Not Persist Scripts)",
+	"description": "http://modwork.shop/21450",
+	"author": "http://modwork.shop/21359",
+	"contact": " ",
+	"version": "2",
+	"blt_version": 2,
+	"priority": 1,
+	"hooks": [
+		{
+			"hook_id": "core/lib/managers/viewport/coreviewportmanager",
+			"script_path": "hook.coreviewportmanager.lua"
+		}
+	]
+}
