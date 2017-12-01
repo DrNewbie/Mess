@@ -17,7 +17,7 @@ end
 
 Hooks:Add("LocalizationManagerPostInit", "SomeonNotHome_loc", function(loc)
 	LocalizationManager:add_localized_strings({
-		["SomeonNotHome_menu_title"] = "Someon is not at safehouse",
+		["SomeonNotHome_menu_title"] = "Someone is not at safehouse",
 		["SomeonNotHome_menu_desc"] = "Who is not at safehouse now?",
 		["SomeonNotHome_menu_empty_desc"] = " ",
 		["SomeonNotHome_menu_Crew_title"] = "Payday Gang",

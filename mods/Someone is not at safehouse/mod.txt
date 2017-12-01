@@ -1,6 +1,6 @@
 {
-	"name": "Someon is not at safehouse",
-	"description": "Someon is not at safehouse",
+	"name": "Someone is not at safehouse",
+	"description": "Someone is not at safehouse",
 	"author": "Dr_Newbie",
 	"contact": "http://modwork.shop/21452",
 	"version": "4",
