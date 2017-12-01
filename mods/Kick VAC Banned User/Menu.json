@@ -1,0 +1,26 @@
+{
+	"menu_id":"menu_id_JokeVACBan",
+	"parent_menu_id":"blt_options",
+	"title":"menu_JokeVACBan_title",
+	"description":"menu_JokeVACBan_desc",
+	"back_callback":"JokeVACBan_Callback_Save",
+	"items":[
+		{
+			"type":"multiple_choice",
+			"id":"JokeVACBan_days_max",
+			"title":"JokeVACBan_days_max_title",
+			"description":"JokeVACBan_days_max_desc",
+			"callback":"JokeVACBan_days_max",
+			"items":[
+				"JokeVACBan_days_max_0",
+				"JokeVACBan_days_max_1",
+				"JokeVACBan_days_max_2",
+				"JokeVACBan_days_max_3",
+				"JokeVACBan_days_max_4",
+				"JokeVACBan_days_max_5",
+				"JokeVACBan_days_max_6"
+			],
+			"value":"days_max"
+		}
+	]
+}

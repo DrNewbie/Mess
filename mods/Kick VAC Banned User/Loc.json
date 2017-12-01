@@ -1,0 +1,13 @@
+{
+	"menu_JokeVACBan_title":"VAC Ban",
+	"menu_JokeVACBan_desc":"A stupid mod that kick user who have 'VAC Banned'",
+	"JokeVACBan_days_max_title":"Ignore",
+	"JokeVACBan_days_max_desc":"How long that it should be ignored",
+	"JokeVACBan_days_max_0":"No Ignore",
+	"JokeVACBan_days_max_1":"30 Days",
+	"JokeVACBan_days_max_2":"60 Days",
+	"JokeVACBan_days_max_3":"120 Days",
+	"JokeVACBan_days_max_4":"240 Days",
+	"JokeVACBan_days_max_5":"480 Days",
+	"JokeVACBan_days_max_6":"960 Days"
+}
