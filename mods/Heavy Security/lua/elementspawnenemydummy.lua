@@ -40,9 +40,9 @@ function ElementSpawnEnemyDummy:produce(...)
 		if Global.game_settings and Global.game_settings.level_id then
 			_level_id = Global.game_settings.level_id
 		end
-		if _editor_name then
-			log("HeavySecurity: " .. tostring( json.encode( {_editor_name = _editor_name, _level_id = _level_id, _id = _id} ) ) )
-		end
+		--if _editor_name then
+		--	log("HeavySecurity: " .. tostring( json.encode( {_editor_name = _editor_name, _level_id = _level_id, _id = _id} ) ) )
+		--end
 		if (_editor_name:find("patrol") and _editor_name:find("guard")) or 
 			(_id_list[_level_id] and _id_list[_level_id]:find(_id)) or 
 			(_level_id == "dark" and _editor_name:find("patrol")) or 
