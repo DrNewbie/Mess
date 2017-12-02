@@ -7,7 +7,6 @@ end
 HeavySecurity.options_menu = "HeavySecurity_menu"
 HeavySecurity.ModPath = ModPath
 HeavySecurity.SaveFile = HeavySecurity.SaveFile or SavePath .. "HeavySecurity.txt"
-HeavySecurity.ModOptions = HeavySecurity.ModPath .. "menus/modoptions.txt"
 HeavySecurity.settings = HeavySecurity.settings or {}
 
 function HeavySecurity:Reset()
@@ -94,5 +93,13 @@ end)
 
 Hooks:Add("MenuManagerBuildCustomMenus", "HeavySecurityOptions", function(menu_manager, nodes)
 	nodes[HeavySecurity.options_menu] = MenuHelper:BuildMenu( HeavySecurity.options_menu )
-	MenuHelper:AddMenuItem( MenuHelper.menus.lua_mod_options_menu, HeavySecurity.options_menu, "HeavySecurity_menu_title", "HeavySecurity_menu_desc", 1 )
+	MenuHelper:AddMenuItem(nodes["blt_options"], HeavySecurity.options_menu, "HeavySecurity_menu_title", "HeavySecurity_menu_desc")
 end)
+
+if Announcer then
+	Announcer:AddHostMod("Heavy Security, ( http://modwork.shop/16274 )")
+end
+
+if ModCore then
+	ModCore:new(HeavySecurity.ModPath .. "Config.xml", false, true):init_modules()
+end

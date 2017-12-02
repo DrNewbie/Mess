@@ -1,20 +1,16 @@
 _G.HeavySecurity = _G.HeavySecurity or {}
 
-if Network:is_client() then
-	return
-end
-
 if not HeavySecurity or not HeavySecurity.settings or not HeavySecurity.settings.Level then
 	return
 end
 
-local _f_ElementSpawnEnemyDummy_produce = ElementSpawnEnemyDummy.produce
+local HeavySecurity_SpawnEnemyDummy = ElementSpawnEnemyDummy.produce
 
 HeavySecurity.SpawnAtOnce = false
 
-function ElementSpawnEnemyDummy:produce(params)
-	local _cop = _f_ElementSpawnEnemyDummy_produce(self, params)
-	if managers.groupai:state():whisper_mode() then
+function ElementSpawnEnemyDummy:produce(...)
+	local _cop = HeavySecurity_SpawnEnemyDummy(self, ...)
+	if not Network:is_client() and managers.groupai:state():whisper_mode() then
 		local _editor_name = tostring(self._editor_name)
 		local _id = tostring(self._id)
 		local _id_list = {
@@ -45,14 +41,16 @@ function ElementSpawnEnemyDummy:produce(params)
 			_level_id = Global.game_settings.level_id
 		end
 		if _editor_name then
-			log(": " .. tostring( json.encode( {_editor_name = _editor_name, _level_id = _level_id, _id = _id} ) ) )
+			log("HeavySecurity: " .. tostring( json.encode( {_editor_name = _editor_name, _level_id = _level_id, _id = _id} ) ) )
 		end
 		if (_editor_name:find("patrol") and _editor_name:find("guard")) or 
 			(_id_list[_level_id] and _id_list[_level_id]:find(_id)) or 
 			(_level_id == "dark" and _editor_name:find("patrol")) or 
 			(_level_id == "crojob2" and _editor_name:find("guard")) or 
 			(_level_id == "kenaz" and _editor_name:find("ai_spawn_enemy")) or 
-			(_level_id == "welcome_to_the_jungle_2" and _editor_name:find("ai_spawn_enemy")) then
+			(_level_id == "welcome_to_the_jungle_2" and _editor_name:find("ai_spawn_enemy")) or
+			(_level_id == "fish" and _editor_name:find("ai_spawn_security")) or 
+			(_level_id == "dah" and _editor_name:find("patrol")) then
 			local _u, team_id
 			local new_objective = {
 				type = "follow",
@@ -70,12 +68,6 @@ function ElementSpawnEnemyDummy:produce(params)
 						managers.groupai:state():assign_enemy_to_group_ai(_u, team_id)
 					else
 						managers.groupai:state():set_char_team(_u, team_id)
-					end
-					table.insert(self._units, _u)
-					self:event("spawn", _u)
-					if self._values.force_pickup and self._values.force_pickup ~= "none" then
-						local pickup_name = self._values.force_pickup ~= "no_pickup" and self._values.force_pickup or nil
-						_u:character_damage():set_pickup(pickup_name)
 					end
 					_u:brain():set_spawn_ai( { init_state = "idle", params = { scan = true }, objective = new_objective } )
 					_u:brain():on_reload()
