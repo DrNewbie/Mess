@@ -36,7 +36,7 @@ Hooks:PreHook(HuskPlayerInventory, "synch_equipped_weapon", "Safe2Stealth_Weapon
 				if tweak_data.weapon.factory.parts[_fid] then
 					local fp = tweak_data.weapon.factory.parts[_fid]
 					if fp.custom_stats then
-						if fp.custom_stats.bullet_class == "FlameBulletBase" or fp.custom_stats.bullet_class == "InstantExplosiveBulletBase" or fp.custom_stats.bullet_class == "InstantExplosiveBulletBase" then
+						if fp.custom_stats.bullet_class == "FlameBulletBase" or fp.custom_stats.bullet_class == "PoisonBulletBase" or fp.custom_stats.bullet_class == "InstantExplosiveBulletBase" then
 							silencer = -2
 							part_name = _fid
 							break
