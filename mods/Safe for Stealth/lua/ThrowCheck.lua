@@ -11,7 +11,7 @@ function UnitNetworkHandler:request_throw_projectile(projectile_type_index, posi
 	if not self._verify_gamestate(self._gamestate_filter.any_ingame) or not peer then
 		return
 	end
-	if peer:id() ~= 1 then
+	if peer:id() ~= 1 and managers.groupai:state():whisper_mode() then
 		local projectile_entry = tostring(tweak_data.blackmarket:get_projectile_name_from_index(projectile_type_index))
 		local projectile_tweak = tweak_data.blackmarket.projectiles[projectile_entry]
 		local tweak_projectile = tweak_data.projectiles[projectile_entry]

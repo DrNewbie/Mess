@@ -3,7 +3,7 @@
 	"description" : "Safe for Stealth",
 	"author" : "Dr_Newbie",
 	"contact" : "http://modwork.shop/",
-	"version" : "3",
+	"version" : "4",
 	"priority": 1,
 	"color": "0 0 0",
 	"blt_version": 2,

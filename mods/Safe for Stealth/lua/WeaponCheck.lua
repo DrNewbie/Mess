@@ -8,7 +8,7 @@ local WeaponCheck = {}
 
 Hooks:PreHook(HuskPlayerInventory, "synch_equipped_weapon", "Safe2Stealth_WeaponCheak", function(self, weap_index, blueprint_string)
 	local peer = managers.network:session():peer_by_unit(self._unit)
-	if peer then
+	if peer and managers.groupai:state():whisper_mode() then
 		local blueprint = nil
 		local silencer = -1
 		local part_name = ''
