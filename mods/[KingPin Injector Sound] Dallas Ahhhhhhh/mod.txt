@@ -1,0 +1,16 @@
+{
+	"name": "[KingPin Injector Sound] Dallas Ahhhhhhh",
+	"description": " ",
+	"author": "Dr_Newbie",
+	"contact": "http://modwork.shop/21485",
+	"version": "2",
+	"priority": 1,
+	"color": "0 0 0",
+	"blt_version": 2,
+	"hooks": [
+		{
+			"hook_id": "lib/managers/playermanager",
+			"script_path": "Base.lua"
+		}
+	]
+}

@@ -1,0 +1,6 @@
+{
+    "InjectorSoundOptionsButtonTitleID" : "InjectorSound",
+    "InjectorSoundOptionsButtonDescID" : " ",
+    "InjectorSoundOnUseInjectorSoundTitleID" : "Play on Injector",
+    "EmptyId" : ""
+}
