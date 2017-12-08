@@ -1,0 +1,6 @@
+{
+    "StoicSlurpOptionsButtonTitleID" : "StoicSlurp",
+    "StoicSlurpOptionsButtonDescID" : " ",
+    "StoicSlurpOnUseStoicSlurpTitleID" : "Play on Flask",
+    "EmptyId" : ""
+}

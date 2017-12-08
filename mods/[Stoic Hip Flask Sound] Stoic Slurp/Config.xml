@@ -1,0 +1,11 @@
+<mod name="StoicSlurp" global_key="StoicSlurp">
+	<Localization directory="Loc" default="EN.txt"/>
+	<AddFiles directory="Assets">
+		<movie path="UseStoicSlurp"/>
+	</AddFiles>
+	<Options build_menu="true" auto_load="true">
+		<options>
+			<option type="boolean" default_value="false" desc_id="EmptyId" name="OnUseStoicSlurp"/>
+		</options>
+	</Options>
+</mod>

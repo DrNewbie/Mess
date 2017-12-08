@@ -1,0 +1,15 @@
+{
+	"name": "Stoic Slurp",
+	"description": "Sluuuuuuuuurp",
+	"author": "Maple Maniac",
+	"version": "1",
+	"priority": 1,
+	"color": "0 0 0",
+	"blt_version": 2,
+	"hooks": [
+		{
+			"hook_id": "lib/managers/playermanager",
+			"script_path": "Base.lua"
+		}
+	]
+}
