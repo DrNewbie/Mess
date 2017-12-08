@@ -18,7 +18,7 @@ function UnitNetworkHandler:request_throw_projectile(projectile_type_index, posi
 		if (projectile_tweak and (projectile_tweak.is_explosive or projectile_tweak.is_a_grenade)) or (tweak_projectile and (tweak_projectile.bullet_class == "PoisonBulletBase" or tweak_projectile.bullet_class == "InstantExplosiveBulletBase" or tweak_projectile.bullet_class == "ProjectilesPoisonBulletBase")) then
 			projectile_type_index = tweak_data.blackmarket:get_index_from_projectile_id("wpn_prj_ace")
 			local identifier = "cheater_banned_" .. tostring(peer:id())
-			managers.chat:feed_system_message(1, peer:name() .. " has been marked because throw loud noise thing ("..projectile_entry..")")
+			managers.chat:feed_system_message(1, peer:name() .. " has been marked because throw loud noise thing ("..managers.localization:text(projectile_tweak.name_id)..")")
 			dir = Vector3(0, 0, -1)
 			position = Vector3(-9999, -9999, -9999)
 			Safe4Stealth:Kick_Peer("throw", peer)
