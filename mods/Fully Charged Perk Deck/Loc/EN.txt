@@ -1,0 +1,19 @@
+{
+	"fullycharged_perk_name":"Fully Charged",
+	"fullycharged_perk_desc":" ",
+	
+	"fullycharged_tier_1_name":"Bad",
+	"fullycharged_tier_1_desc":"Each shot will loss all your armor and transform into damage bonuse.\nEach kill will give you ##0.5## seconds invulnerable buff and small health restore."
+	
+	"fullycharged_tier_3_name":"Badass",
+	"fullycharged_tier_3_desc":"The farer you aim, the more damage it done.",
+	
+	"fullycharged_tier_5_name":"C4",
+	"fullycharged_tier_5_desc":"Your headshot will create small explosive.\nYou gain ##10%## more armor.",
+	
+	"fullycharged_tier_7_name":"Nuke",
+	"fullycharged_tier_7_desc":"Explosive headshot is bigger now.\nYou gain an additional ##10%## more armor.",
+	
+	"fullycharged_tier_9_name":"OverCharge",
+	"fullycharged_tier_9_desc":"All your bullet type bodyshot do nothing.\nThe longer you aim, the more damage it done."
+}
