@@ -30,7 +30,7 @@ function CopDamage:damage_bullet(attack_data, ...)
 				end
 				if managers.player:has_category_upgrade("player", "passive_fully_charged_far2damage") and managers.player:upgrade_value("player", "passive_fully_charged_far2damage", false) then
 					local distance = mvector3.distance(self._unit:position(), player:position())
-					attack_data.damage = attack_data.damage * (1+(distance/2000))
+					attack_data.damage = attack_data.damage * (1+(distance/6000))
 				end
 				if managers.player:has_category_upgrade("player", "passive_fully_charged_time2damage") and managers.player:upgrade_value("player", "passive_fully_charged_time2damage", false) then
 					local in_steelsight = player:movement() and player:movement():current_state() and player:movement():current_state():in_steelsight() or false
@@ -39,7 +39,7 @@ function CopDamage:damage_bullet(attack_data, ...)
 						if fct > 0 then
 							fct = TimerManager:game():time() - fct
 							if fct > 0 then
-								attack_data.damage = attack_data.damage * (1+(fct/10))
+								attack_data.damage = attack_data.damage * (1+(fct/40))
 								player:movement():current_state()._fully_charged_time2damage_t = TimerManager:game():time()
 							end
 						end
