@@ -1,0 +1,19 @@
+{
+	"critical_perk_name":"Critical",
+	"critical_perk_desc":" ",
+	
+	"critical_tier_1_name":"Surprise",
+	"critical_tier_1_desc":"Unlock Critical-Hit to all possible things, no matter what.",
+	
+	"critical_tier_3_name":"More Surprise",
+	"critical_tier_3_desc":"You have 30% chance to do Addon-Critical.\nWhen Addon-Critical is happening, you will get critical hit.\nYour weapon reload time are increased 30%.",
+	
+	"critical_tier_5_name":"Additional Surprise",
+	"critical_tier_5_desc":"You gain another 30% chance to do Addon-Critical\nand another 30% reload time addition.",
+	
+	"critical_tier_7_name":"Critical Health",
+	"critical_tier_7_desc":"When your armor breaks, each successful Addon-Critical give you 4 life point.",
+	
+	"critical_tier_9_name":"Over Critical",
+	"critical_tier_9_desc":"Life point is increased to 8 now."
+}

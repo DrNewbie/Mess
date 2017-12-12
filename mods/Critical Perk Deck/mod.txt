@@ -1,0 +1,16 @@
+{	
+	"name":"Critical Perk Deck",
+	"description":"http://modwork.shop/21521",
+	"author":"Dr_Newbie",
+	"version":"7",
+	"blt_version":2,
+	"hooks":[
+		{"hook_id":"lib/managers/localizationmanager", "script_path":"Base.lua"},
+		{"hook_id":"lib/tweak_data/skilltreetweakdata", "script_path":"lua/hook.skilltreetweakdata.lua"},
+		{"hook_id":"lib/managers/menu/skilltreegui", "script_path":"lua/hook.skilltreegui.lua"},
+		{"hook_id":"lib/managers/playermanager", "script_path":"lua/hook.playermanager.lua"},
+		{"hook_id":"lib/tweak_data/upgradestweakdata", "script_path":"lua/hook.upgradestweakdata.lua"},
+		{"hook_id":"lib/units/enemies/cop/copdamage", "script_path":"lua/hook.copdamage.lua"},
+		{"hook_id":"lib/managers/menu/playerinventorygui", "script_path":"lua/hook.playerinventorygui.lua"}
+	]
+}
