@@ -3,7 +3,7 @@
 	"fullycharged_perk_desc":" ",
 	
 	"fullycharged_tier_1_name":"Bad",
-	"fullycharged_tier_1_desc":"Each shot will loss all your armor and transform into damage bonuse.\nEach kill will give you ##0.5## seconds invulnerable buff and small health restore."
+	"fullycharged_tier_1_desc":"Each bullet shot will loss all your armor and transform into damage bonuse.\nEach bullet kill will give you ##0.5## seconds invulnerable buff and small health restore."
 	
 	"fullycharged_tier_3_name":"Badass",
 	"fullycharged_tier_3_desc":"The farer you aim, the more damage it done.",
