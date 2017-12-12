@@ -2,7 +2,7 @@
 	"name":"Fully Charged Perk Deck",
 	"description":"http://modwork.shop/21524",
 	"author":"Dr_Newbie",
-	"version":"8",
+	"version":"10",
 	"blt_version":2,
 	"hooks":[
 		{"hook_id":"lib/managers/localizationmanager", "script_path":"Base.lua"},

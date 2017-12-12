@@ -1,22 +1,20 @@
 local FullyChargedPerkShotEvent = CopDamage.damage_bullet
-
 local ExplosionHeadshotForceDelay = 0
-
 function CopDamage:damage_bullet(attack_data, ...)
 	local explosion_headshot = {}
+	if managers.player:has_category_upgrade("player", "passive_fully_charged_headshot_ony") and managers.player:upgrade_value("player", "passive_fully_charged_headshot_ony", false) then
+		if attack_data.col_ray and attack_data.col_ray.body and attack_data.col_ray.body:name() then 
+			local head = self._head_body_name and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_head_body_name
+			if not head then
+				return
+			end
+		else
+			return
+		end
+	end
 	if attack_data and attack_data.damage and attack_data.attacker_unit and alive(attack_data.attacker_unit) and attack_data.attacker_unit == managers.player:player_unit() then
 		local player = attack_data.attacker_unit
 		if player then
-			if managers.player:has_category_upgrade("player", "passive_fully_charged_headshot_ony") and managers.player:upgrade_value("player", "passive_fully_charged_headshot_ony", false) then
-				if attack_data.col_ray and attack_data.col_ray.body and attack_data.col_ray.body:name() then 
-					local head = self._head_body_name and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_head_body_name
-					if not head then
-						return
-					end
-				else
-					return
-				end
-			end
 			local damage_ex = player:character_damage()
 			if damage_ex and not damage_ex:arrested() and not damage_ex:need_revive() then
 				if damage_ex:get_real_armor() and managers.player:has_category_upgrade("player", "passive_fully_charged_armor2damage") and managers.player:upgrade_value("player", "passive_fully_charged_armor2damage", false) then
@@ -58,9 +56,11 @@ function CopDamage:damage_bullet(attack_data, ...)
 					}
 				end
 			end
-			managers.player:set_fullycharged_hit(self._unit)
 		end
 	end
+	
+	local Ans = FullyChargedPerkShotEvent(self, attack_data, ...)
+	
 	if explosion_headshot and explosion_headshot.hit_pos and TimerManager:game():time() > ExplosionHeadshotForceDelay then
 		ExplosionHeadshotForceDelay = TimerManager:game():time() + 0.25
 		managers.explosion:play_sound_and_effects(
@@ -85,5 +85,5 @@ function CopDamage:damage_bullet(attack_data, ...)
 			no_raycast_check_characters = false
 		})
 	end
-	return FullyChargedPerkShotEvent(self, attack_data, ...)
+	return Ans
 end

@@ -4,7 +4,7 @@ Hooks:PostHook(PlayerDamage, "init", "SetFullyChargedInvulnerableInit", function
 	self._fully_charged_time2damage_t = 0
 end)
 
-Hooks:PostHook(PlayerDamage, "update", "SetFullyChargedHitInit", function(self, t)
+Hooks:PostHook(PlayerDamage, "update", "SetFullyChargedHitInit", function(self, unit, t)
 	if self._fully_charged_invulnerable then
 		if self._fully_charged_invulnerable_t <= 0 then
 			self._fully_charged_invulnerable_t = t + managers.player:upgrade_value("player", "passive_fully_charged_invulnerable", 0)

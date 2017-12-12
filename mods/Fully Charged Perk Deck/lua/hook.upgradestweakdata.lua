@@ -9,7 +9,7 @@ Hooks:PostHook(UpgradesTweakData, "_player_definitions", "FullyChargedPerkDeckTi
 			category = "player"
 		}
 	}
-	self.values.player.passive_fully_charged_invulnerable = {true}
+	self.values.player.passive_fully_charged_invulnerable = {1}
 	self.definitions.player_fully_charged_invulnerable = {
 		name_id = "player_fully_charged_invulnerable",
 		category = "feature",
