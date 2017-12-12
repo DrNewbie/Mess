@@ -54,9 +54,7 @@ function CopDamage:damage_bullet(attack_data, ...)
 					explosion_headshot = {
 						hit_pos = pos,
 						range = explosive_headshot,
-						alert_radius = explosive_headshot*10,
-						damage = attack_data.damage*0.25,
-						player = player
+						damage = attack_data.damage*10.25,
 					}
 				end
 			end
