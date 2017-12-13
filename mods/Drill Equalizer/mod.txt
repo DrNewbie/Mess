@@ -1,0 +1,12 @@
+{
+	"name": "Drill Equalizer",
+	"description": " ",
+	"Author": "Dr_Newibe",
+	"contact": " ",
+	"version": "2",
+	"blt_version": 2,
+	"hooks": [
+		{"hook_id":"lib/managers/localizationmanager", "script_path":"Base.lua"},
+		{"hook_id":"lib/units/props/drill", "script_path":"Drill.lua"}
+	]
+}
