@@ -3,7 +3,7 @@
 	"description": " ",
 	"Author": "Dr_Newibe",
 	"contact": " ",
-	"version": "2",
+	"version": "3",
 	"blt_version": 2,
 	"hooks": [
 		{"hook_id":"lib/managers/localizationmanager", "script_path":"Base.lua"},

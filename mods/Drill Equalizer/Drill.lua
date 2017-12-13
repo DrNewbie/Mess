@@ -28,13 +28,13 @@ if not Network:is_client() then
 						ans.reduced_alert = true
 					end
 					if upgrades.auto_repair_level_1 > ans.auto_repair_level_1 then
-						ans.auto_repair_level_1 = tonumber(upgrades.auto_repair_level_1) or 0
+						ans.auto_repair_level_1 = upgrades.auto_repair_level_1
 					end
 					if upgrades.auto_repair_level_2 > ans.auto_repair_level_2 then
-						ans.auto_repair_level_2 = tonumber(upgrades.auto_repair_level_2) or 0
+						ans.auto_repair_level_2 = upgrades.auto_repair_level_2
 					end
 					if upgrades.speed_upgrade_level > ans.speed_upgrade_level then
-						ans.speed_upgrade_level = tonumber(upgrades.speed_upgrade_level) or 0
+						ans.speed_upgrade_level = upgrades.speed_upgrade_level
 					end
 				end
 			end
