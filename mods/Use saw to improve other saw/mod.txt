@@ -1,8 +1,8 @@
 {
-	"name" : "Use saw to open safe",
+	"name" : "Use saw to improve other saw",
 	"description" : " ",
 	"author" : "Dr_Newbie",
-	"contact" : "http://modwork.shop/21547",
+	"contact" : "http://modwork.shop/21552",
 	"version" : "3",
 	"priority" : 1,
 	"hooks" : [
