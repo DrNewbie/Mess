@@ -7,12 +7,12 @@ Hooks:PostHook(SawHit, "on_collision", "UseSaw2OpenSafe", function(self, col_ray
 				local health = 0
 				if td:find("safe") then
 					health = 100
-					if td:find("titan") then health = -1 end
 					if td:find("giga") then health = health + 100 end
 					if td:find("large") then health = health + 50 end
 					if td:find("90sec") then health = health + 45 end
 					if td:find("60sec") then health = health + 30 end
 					if td:find("cas") then health = health + 100 end
+					if td:find("titan") then health = -1 end
 				end
 				if health > 0 then
 					hit_unit:base()._addon_saw_open_init = 1
