@@ -1,0 +1,15 @@
+{
+	"name" : "Jump and Duck in Casing Mode",
+	"description" : "Jump and Duck in Casing Mode",
+	"author" : "Dr_Newbie",
+	"contact" : "http://modwork.shop/21592",
+	"blt_version" : 2.0,
+	"version" : "1",
+	"priority" : 1,
+	"hooks" : [
+		{
+			"hook_id" : "lib/units/beings/player/states/playermaskoff",
+			"script_path" : "Lua/hook.playermaskoff.lua"
+		}
+	]		
+}
