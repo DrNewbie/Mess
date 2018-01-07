@@ -26,8 +26,6 @@ function SaveMyArt:Load(supp, current_stage)
 		self.settings = json.decode(_data)
 		_file:close()
 		self:Save()
-	else
-		self:Reset()
 	end
 end
 
@@ -106,7 +104,7 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "MenuManagerPopulateCustomMenus_Save
 		title = "menu_SaveMyArt_start_name",
 		desc = "menu_SaveMyArt_start_desc",
 		callback = "StartSaveMyArtClbk",
-		menu_id = SaveMyArt.menu_id,
+		menu_id = SaveMyArt.menu_id
 	})
 	MenuCallbackHandler.SaveSaveMyArtClbk = function(self, item)
 		if type(SaveMyArt.Current_ID) == "string" and type(SaveMyArt.Current_DATA) == "table" and SaveMyArt.Current_DATA[1] then
@@ -127,7 +125,7 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "MenuManagerPopulateCustomMenus_Save
 		title = "menu_SaveMyArt_save_name",
 		desc = "menu_SaveMyArt_save_desc",
 		callback = "SaveSaveMyArtClbk",
-		menu_id = SaveMyArt.menu_id,
+		menu_id = SaveMyArt.menu_id
 	})
 	MenuCallbackHandler.CancelSaveMyArtClbk = function(self, item)
 		SaveMyArt:Clean()
@@ -137,7 +135,7 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "MenuManagerPopulateCustomMenus_Save
 		title = "menu_SaveMyArt_cancel_name",
 		desc = "menu_SaveMyArt_cancel_desc",
 		callback = "CancelSaveMyArtClbk",
-		menu_id = SaveMyArt.menu_id,
+		menu_id = SaveMyArt.menu_id
 	})
 	MenuCallbackHandler.LoadSaveMyArtClbk = function(self, item)
 		if not managers.system_menu then
@@ -164,7 +162,7 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "MenuManagerPopulateCustomMenus_Save
 		title = "menu_SaveMyArt_load_name",
 		desc = "menu_SaveMyArt_load_desc",
 		callback = "LoadSaveMyArtClbk",
-		menu_id = SaveMyArt.menu_id,
+		menu_id = SaveMyArt.menu_id
 	})
 end)
 
@@ -174,7 +172,7 @@ Hooks:Add("MenuManagerBuildCustomMenus", "MenuManagerBuildCustomMenus_SaveMyArt"
 end)
 
 if ModCore then
-	ModCore:new(SaveMyArt.ModPath .. "Config.xml", false, true):init_modules()
+	ModCore:new(SaveMyArt.ModPath.."Config.xml", false, true):init_modules()
 end
 
 -->>http://modwork.shop/14734
