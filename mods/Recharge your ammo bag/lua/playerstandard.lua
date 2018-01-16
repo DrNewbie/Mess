@@ -18,6 +18,5 @@ function PlayerStandard:change_second_interact()
 end
 
 function PlayerStandard:use_second_interact()
-	log("use: "..tostring(Ply_use_second_interact))
 	return Ply_use_second_interact and true or false
 end
