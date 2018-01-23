@@ -1,0 +1,15 @@
+{
+	"name" : "Weapon Skins Glitcher",
+	"description" : "Weapon Skins Glitcher",
+	"author" : "Dr_Newbie",
+	"contact" : "http://modwork.shop/21803",
+	"blt_version" : 2.0,
+	"version" : "1",
+	"priority" : 100,
+	"hooks" : [
+		{
+			"hook_id" : "lib/units/beings/player/playermovement",
+			"script_path" : "playermovement.lua"
+		}
+	]		
+}
