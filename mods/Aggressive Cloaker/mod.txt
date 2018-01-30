@@ -1,0 +1,15 @@
+{
+	"name" : "Aggressive Cloaker",
+	"description" : "Aggressive Cloaker",
+	"author" : "Dr_Newbie",
+	"contact" : "http://modwork.shop/21854",
+	"blt_version" : 2.0,
+	"version" : "1",
+	"priority" : 100,
+	"hooks" : [
+		{
+			"hook_id" : "lib/units/enemies/spooc/logics/spooclogicattack",
+			"script_path" : "spooclogicattack.lua"
+		}
+	]		
+}
