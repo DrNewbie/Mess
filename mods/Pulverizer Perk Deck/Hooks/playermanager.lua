@@ -2,8 +2,8 @@ local pulverizer_run_and_punch = PlayerManager.mod_movement_penalty
 
 function PlayerManager:mod_movement_penalty(...)
 	local Ans = pulverizer_run_and_punch(self, ...)
-	if self:has_category_upgrade("player", "passive_pulverizer_run_and_punch") then
-		if self:current_state() == "standard" and self:player_unit():movement()._current_state then
+	if self:current_state() == "standard" and self:has_category_upgrade("player", "passive_pulverizer_run_and_punch") then
+		if self:player_unit() and self:player_unit():movement() and self:player_unit():movement()._current_state then
 			if self:player_unit():movement()._current_state:_is_meleeing() then
 				Ans = Ans * self:upgrade_value("player", "passive_pulverizer_run_and_punch", 1)
 			end
