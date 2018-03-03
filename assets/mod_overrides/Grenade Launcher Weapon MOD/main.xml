@@ -1,0 +1,11 @@
+<table name="Grenade Launcher Weapon MOD">
+	<Localization directory="Localization" default="english.txt"/>
+	<AssetUpdates id="16340" name="asset_updates" version="4" folder_name="Grenade Launcher Weapon MOD" provider="modworkshop"/>
+	<Hooks directory="Hooks">
+		<hook file="weaponfactorytweakdata.lua" source_file="lib/tweak_data/weaponfactorytweakdata"/>
+		<hook file="newraycastweaponbase.lua" source_file="lib/units/weapons/newraycastweaponbase"/>
+	</Hooks>
+		<WeaponMod based_on="wpn_fps_upg_a_dragons_breath" id="wpn_grenade_launcher_mod" unit="units/pd2_dlc_gage_assault/weapons/wpn_fps_gre_m79_pts/wpn_fps_gre_m79_barrel_short" type="custom" a_obj="a_fl" drop="false" texture_bundle_folder="berry" is_a_unlockable="true">
+		<stats value="0"/>
+    </WeaponMod>
+</table>
