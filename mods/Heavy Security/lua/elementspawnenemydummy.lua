@@ -33,9 +33,17 @@ function ElementSpawnEnemyDummy:produce(...)
 			"units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3",
 			"units/payday2/characters/ene_spook_1/ene_spook_1",
 			"units/payday2/characters/ene_shield_2/ene_shield_2",
-			"units/payday2/characters/ene_tazer_1/ene_tazer_1"		
+			"units/payday2/characters/ene_tazer_1/ene_tazer_1",
+			"units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
+			"units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"
 		}
 		local _spawn_select = _spawn_list[HeavySecurity.settings.Enemy_Type]
+		if HeavySecurity.settings.Enemy_Type == 9 then
+			HeavySecurity.settings.Enemy_Type = math.random(1, 8)
+			_spawn_select = _spawn_list[HeavySecurity.settings.Enemy_Type]
+		elseif HeavySecurity.settings.Enemy_Type == 10 then
+			_spawn_select = _spawn_list[math.random(1, 8)]
+		end
 		local _level_id = ""
 		if Global.game_settings and Global.game_settings.level_id then
 			_level_id = Global.game_settings.level_id

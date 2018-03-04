@@ -1,15 +1,11 @@
 {
 	"name" : "Heavy Security",
 	"author" : "Dr_Newbie",
-	"version" : "18",
+	"version" : "19",
 	"priority": 1,
 	"blt_version": 2,
-	"libraries" : [
-		{
-			"display_name" : "Announcer",
-			"identifier" : "ANCR",
-			"optional" : "false"
-		}
+	"dependencies" : [
+		"ANCR"
 	],
 	"hooks" : [
 		{ "hook_id" : "lib/managers/localizationmanager", "script_path" : "lua/Menu.lua" },

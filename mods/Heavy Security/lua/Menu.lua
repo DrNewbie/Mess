@@ -52,7 +52,11 @@ Hooks:Add("LocalizationManagerPostInit", "HeavySecurity_loc", function(loc)
 		["HeavySecurity_menu_enemy_type_3"] = "Skull Dozer",
 		["HeavySecurity_menu_enemy_type_4"] = "Cloaker",
 		["HeavySecurity_menu_enemy_type_5"] = "Shield",
-		["HeavySecurity_menu_enemy_type_6"] = "Taser"
+		["HeavySecurity_menu_enemy_type_6"] = "Taser",
+		["HeavySecurity_menu_enemy_type_7"] = "Minigun Dozer",
+		["HeavySecurity_menu_enemy_type_8"] = "Medic Dozer",
+		["HeavySecurity_menu_enemy_type_9"] = "Random One",
+		["HeavySecurity_menu_enemy_type_10"] = "Random All"
 	})
 end)
 
@@ -85,7 +89,18 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "HeavySecurityOptions", function( me
 		title = "HeavySecurity_menu_enemy_type_title",
 		desc = "HeavySecurity_menu_enemy_type_desc",
 		callback = "HeavySecurity_menu_enemy_type_callback",
-		items = {"HeavySecurity_menu_enemy_type_1", "HeavySecurity_menu_enemy_type_2", "HeavySecurity_menu_enemy_type_3", "HeavySecurity_menu_enemy_type_4", "HeavySecurity_menu_enemy_type_5", "HeavySecurity_menu_enemy_type_6"},
+		items = {
+			"HeavySecurity_menu_enemy_type_1",
+			"HeavySecurity_menu_enemy_type_2",
+			"HeavySecurity_menu_enemy_type_3",
+			"HeavySecurity_menu_enemy_type_4",
+			"HeavySecurity_menu_enemy_type_5",
+			"HeavySecurity_menu_enemy_type_6",
+			"HeavySecurity_menu_enemy_type_7",
+			"HeavySecurity_menu_enemy_type_8",
+			"HeavySecurity_menu_enemy_type_9",
+			"HeavySecurity_menu_enemy_type_10"
+		},
 		value = HeavySecurity.settings.Enemy_Type,
 		menu_id = HeavySecurity.options_menu,
 	})
