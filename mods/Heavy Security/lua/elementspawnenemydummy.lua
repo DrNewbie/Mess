@@ -41,8 +41,6 @@ function ElementSpawnEnemyDummy:produce(...)
 		if HeavySecurity.settings.Enemy_Type == 9 then
 			HeavySecurity.settings.Enemy_Type = math.random(1, 8)
 			_spawn_select = _spawn_list[HeavySecurity.settings.Enemy_Type]
-		elseif HeavySecurity.settings.Enemy_Type == 10 then
-			_spawn_select = _spawn_list[math.random(1, 8)]
 		end
 		local _level_id = ""
 		if Global.game_settings and Global.game_settings.level_id then
@@ -67,6 +65,9 @@ function ElementSpawnEnemyDummy:produce(...)
 				is_default = true
 			}
 			for i = 1, HeavySecurity.settings.Level do
+				if HeavySecurity.settings.Enemy_Type == 10 then
+					_spawn_select = _spawn_list[math.random(1, 8)]
+				end
 				_u = safe_spawn_unit(Idstring(_spawn_select), self:get_orientation())
 				if _u then
 					if not team_id then
