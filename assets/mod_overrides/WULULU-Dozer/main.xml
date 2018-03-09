@@ -1,0 +1,7 @@
+<table name="WULULU-Dozer">
+	<AddFiles directory="Assets">
+		<unit path="units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" force="true"/>
+		<unit path="units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_husk" force="true"/>
+		<object path="units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" force="true"/>
+	</AddFiles>
+</table>
