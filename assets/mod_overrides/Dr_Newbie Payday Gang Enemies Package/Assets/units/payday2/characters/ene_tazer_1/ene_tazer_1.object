@@ -2,7 +2,7 @@
 <dynamic_object>
 	#IF DLC_OPERA {
 	<diesel orientation_object="root_point" materials="units/pd2_dlc_opera/characters/npc_criminals_fem_3/mtr_criminal_sydney" />
-	<sequence_manager file="units/payday2/characters/ragdoll" /> <animation_def name="anims/units/enemies/cop/cop_def" />
+	<sequence_manager file="units/pd2_dlc_opera/characters/npc_criminals_fem_3/npc_criminal_sydney" /> <animation_def name="anims/units/enemies/cop/cop_def" />
 
  	<bodies>
 		<body name="body" enabled="true" template="character" collision_group="1" friction="0.6">

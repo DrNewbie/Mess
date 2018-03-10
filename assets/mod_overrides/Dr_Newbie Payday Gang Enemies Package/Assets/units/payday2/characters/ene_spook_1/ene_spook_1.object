@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <dynamic_object>
 	<diesel orientation_object="root_point" materials="units/payday2/characters/npc_criminals_suit_1/mtr_dallas" />
-	<sequence_manager file="units/payday2/characters/ene_spook_1/ene_spook_1" /> <animation_def name="anims/units/enemies/cop/cop_def" />
-
+	<sequence_manager file="units/payday2/characters/npc_criminals_suit_1/npc_criminals_suit_1" /> <animation_def name="anims/units/enemies/cop/cop_def" />	
+	
  	<bodies>
 		<body name="body" enabled="true" template="character" collision_group="1" friction="0.6">
 			<object name="Spine1"/>

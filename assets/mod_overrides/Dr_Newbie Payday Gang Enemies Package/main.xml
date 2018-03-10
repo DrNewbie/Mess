@@ -1,5 +1,5 @@
 <table name="Dr_Newbie Payday Gang Enemies Package">
-	<AssetUpdates id="22086" version="5" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AssetUpdates id="22086" version="6" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
 	<AddFiles directory="Assets">
 		<unit path="units/payday2/characters/ene_tazer_1/ene_tazer_1" force="true"/>
 		<unit path="units/payday2/characters/ene_tazer_1/ene_tazer_1_husk" force="true"/>
@@ -35,6 +35,5 @@
 		<hook file="copbase.lua" source_file="lib/units/enemies/cop/copbase"/>
 		<hook file="copmovement.lua" source_file="lib/units/enemies/cop/copmovement"/>
 		<hook file="copinventory.lua" source_file="lib/units/enemies/cop/copinventory"/>
-		<hook file="copactionhurt.lua" source_file="lib/units/enemies/cop/actions/full_body/copactionhurt"/>
 	</Hooks>
 </table>
