@@ -88,6 +88,12 @@ Hooks:PostHook(CopInventory, "CUS_set_mask_visibility", "Post_CUS_set_mask_visib
 			mesh_obj:set_visibility(true)
 		end
 	end
+	if self._addon_body_name then
+		local unit_damage = self._unit:damage()
+		if unit_damage and unit_damage:has_sequence(self._addon_body_name) then
+			unit_damage:run_sequence_simple(self._addon_body_name)
+		end
+	end
 	if self._addon_armor_name then
 		local unit_damage = self._unit:damage()
 		if unit_damage and unit_damage:has_sequence(self._addon_armor_name) then

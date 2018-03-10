@@ -1,6 +1,11 @@
 <table name="Dr_Newbie Payday Gang Enemies Package">
-	<AssetUpdates id="22086" version="3" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AssetUpdates id="22086" version="5" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
 	<AddFiles directory="Assets">
+		<unit path="units/payday2/characters/ene_tazer_1/ene_tazer_1" force="true"/>
+		<unit path="units/payday2/characters/ene_tazer_1/ene_tazer_1_husk" force="true"/>
+		<model path="units/payday2/characters/ene_tazer_1/ene_tazer_1" force="true"/>
+		<object path="units/payday2/characters/ene_tazer_1/ene_tazer_1" force="true"/>
+		
 		<unit path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic" force="true"/>
 		<unit path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic_husk" force="true"/>
 		<model path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic" force="true"/>
@@ -27,6 +32,7 @@
 	</AddFiles>
 	<Hooks directory="Hooks">
 		<hook file="coresequencemanager.lua" source_file="core/lib/managers/coresequencemanager"/>
+		<hook file="copbase.lua" source_file="lib/units/enemies/cop/copbase"/>
 		<hook file="copmovement.lua" source_file="lib/units/enemies/cop/copmovement"/>
 		<hook file="copinventory.lua" source_file="lib/units/enemies/cop/copinventory"/>
 		<hook file="copactionhurt.lua" source_file="lib/units/enemies/cop/actions/full_body/copactionhurt"/>
