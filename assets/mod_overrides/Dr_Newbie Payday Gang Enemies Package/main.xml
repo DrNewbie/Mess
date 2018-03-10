@@ -1,0 +1,34 @@
+<table name="Dr_Newbie Payday Gang Enemies Package">
+	<AssetUpdates id="22086" version="3" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AddFiles directory="Assets">
+		<unit path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic" force="true"/>
+		<unit path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic_husk" force="true"/>
+		<model path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic" force="true"/>
+		<object path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic" force="true"/>
+		
+		<unit path="units/payday2/characters/ene_sniper_1/ene_sniper_1" force="true"/>
+		<unit path="units/payday2/characters/ene_sniper_2/ene_sniper_2" force="true"/>
+		<unit path="units/payday2/characters/ene_sniper_1/ene_sniper_1_husk" force="true"/>
+		<unit path="units/payday2/characters/ene_sniper_2/ene_sniper_2_husk" force="true"/>
+		<model path="units/payday2/characters/ene_sniper_1/ene_sniper_1" force="true"/>
+		<model path="units/payday2/characters/ene_sniper_2/ene_sniper_2" force="true"/>
+		<object path="units/payday2/characters/ene_sniper_1/ene_sniper_1" force="true"/>
+		<object path="units/payday2/characters/ene_sniper_2/ene_sniper_2" force="true"/>
+		
+		<unit path="units/payday2/characters/ene_spook_1/ene_spook_1" force="true"/>
+		<unit path="units/payday2/characters/ene_spook_1/ene_spook_1_husk" force="true"/>
+		<model path="units/payday2/characters/ene_spook_1/ene_spook_1" force="true"/>
+		<object path="units/payday2/characters/ene_spook_1/ene_spook_1" force="true"/>
+	
+		<unit path="units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2" force="true"/>
+		<unit path="units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2_husk" force="true"/>
+		<model path="units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2" force="true"/>
+		<object path="units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2" force="true"/>
+	</AddFiles>
+	<Hooks directory="Hooks">
+		<hook file="coresequencemanager.lua" source_file="core/lib/managers/coresequencemanager"/>
+		<hook file="copmovement.lua" source_file="lib/units/enemies/cop/copmovement"/>
+		<hook file="copinventory.lua" source_file="lib/units/enemies/cop/copinventory"/>
+		<hook file="copactionhurt.lua" source_file="lib/units/enemies/cop/actions/full_body/copactionhurt"/>
+	</Hooks>
+</table>
