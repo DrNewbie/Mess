@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel orientation_object="root_point" materials="units/payday2/characters/npc_criminals_suit_1/mtr_hoxton" />
+	<sequence_manager file="units/payday2/characters/npc_criminals_suit_1/npc_criminals_suit_1" /> <animation_def name="anims/units/enemies/cop/cop_def" />	
+	
+ 	<bodies>
+		<body name="body" enabled="true" template="character" collision_group="1" friction="0.6">
+			<object name="Spine1"/>
+			<object name="c_capsule_body" collision_type="capsule"/>
+		</body>
+		<body name="head" enabled="true" template="character" collision_group="1" friction="0.6">
+			<object name="Head"/>
+			<object name="c_sphere_head" collision_type="sphere"/>
+		</body>
+	</bodies>
+
+	<decal_surfaces default_material="flesh" />
+
+	<effects>
+		<effect_spawner name="es_e_taser" enabled="false"  object="e_taser" effect="effects/particles/weapons/taser_effect" />
+	</effects>
+
+	<graphics>
+		<graphic_group name="character" enabled="true" culling_object="g_body">
+			<object name="g_head_chains" 		enabled="false" />
+			<object name="g_head_dallas" 		enabled="true" />
+			<object name="g_head_dragan" 		enabled="false" />
+			<object name="g_head_sokol" 		enabled="false" />
+			<object name="g_sokol_mask_on" 		enabled="false" />
+			<object name="g_sokol_mask_off" 	enabled="false" />
+			<object name="g_sokol_hair" 		enabled="false" />
+			<object name="g_head_hoxton" 		enabled="false" />
+			<object name="g_head_old_hoxton" 	enabled="false" />
+			<object name="g_head_john_wick" 	enabled="false" />
+			<object name="g_head_wolf" 			enabled="false" />
+			<object name="g_body" 				enabled="true" />
+			<object name="g_body_jacket" 		enabled="false" />
+			<object name="g_head_jacket" 		enabled="false" />
+			<object name="g_vest_small" 		enabled="false" />
+			<object name="g_vest_thies" 		enabled="false" />
+			<object name="g_vest_neck" 			enabled="false" />
+			<object name="g_vest_shoulder" 		enabled="false" />
+			<object name="g_vest_body" 			enabled="false" />
+			<object name="g_vest_leg_arm" 		enabled="false" />
+			<object name="g_hands" 				enabled="true" />
+			<object name="g_toolbag" 			enabled="false" />
+			<object name="g_ammobag" 			enabled="false" />
+			<object name="g_medicbag" 			enabled="false" />
+			<object name="g_sentrybag" 			enabled="false" />			
+			<object name="g_bodybagsbag" 		enabled="false" />
+			<object name="g_armorbag" 			enabled="false" />
+			<object name="g_firstaidbag" 		enabled="false" />			
+			<object name="g_head_jiro" 			enabled="false" />			
+			<object name="g_body_jiro" 			enabled="false" />			
+			<object name="g_body_bodhi" 		enabled="false" />			
+			<object name="g_head_bodhi" 		enabled="false" />
+			#IF DLC_COCO {
+			<object name="g_head_jimmy" 		enabled="false" />
+			<object name="g_jimmy_mask_on" 		enabled="false" />
+			<object name="g_jimmy_mask_off" 	enabled="false" />
+			<object name="g_body_jimmy" 		enabled="false" />
+			}
+			<object name="s_body" 				enabled="true" shadow_caster="true"/>
+		</graphic_group>
+	</graphics>
+
+</dynamic_object>
