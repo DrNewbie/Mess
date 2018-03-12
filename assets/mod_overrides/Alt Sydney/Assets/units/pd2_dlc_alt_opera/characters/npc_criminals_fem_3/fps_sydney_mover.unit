@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<unit type="being" slot="2">
+
+	<object file="units/payday2/characters/fps_mover/fps_mover" />
+
+	<anim_state_machine name="anims/units/fps_mover/fps_mover" />
+
+	<movers>
+		<mover name="stand" jump_height="0.75" size="60 60 165" push_force="0.0005" max_floor_angle="70" max_hard_floor_angle="80" high_quality="true" mass="80" damping="1" restitution="0" uphill_cost="0.2"/>
+		<mover name="duck" size="60 60 80" jump_height="0.75" push_force="0.0005" max_floor_angle="70" max_hard_floor_angle="80" high_quality="true" mass="80" damping="1" restitution="0" uphill_cost="0"/>
+		<!-- <mover name="prone" size="60 60 80" jump_height="0.75" push_force="0.0005" max_floor_angle="70" max_hard_floor_angle="80" high_quality="true" mass="80" damping="1" restitution="0" uphill_cost="0"/> -->
+	</movers>
+
+	<dependencies>
+		<!-- <depends_on bnk="soundbanks/char_sydney" /> --> <!-- Uncomment when the soundbank is added -->
+		<depends_on unit="units/payday2/characters/fps_criminals_suit_1/fps_criminals_suit_1" />
+		<!--depends_on unit="units/weapons/flash_grenade/flash_grenade" />
+		<depends_on unit="units/weapons/smoke_grenade/smoke_grenade" /-->
+		<depends_on unit="units/payday2/equipment/gen_equipment_sentry/gen_equipment_sentry" />
+		<depends_on unit="units/equipment/handcuffs_first_person/handcuffs_first_person" />
+		<depends_on gui="guis/player_hud" />
+		<depends_on gui="guis/mask_off_hud" />
+		<depends_on gui="guis/player_downed_hud" />
+		<depends_on bnk="soundbanks/regular_sfx" />
+		<depends_on bnk="soundbanks/regular_vox" />
+		<depends_on effect="effects/particles/character/player/blood_screen" />
+		<depends_on effect="effects/particles/weapons/flashlight/flashlight" />
+	</dependencies>
+
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="event_listener" class="EventListenerHolder" />
+		<extension name="inventory" class="PlayerInventory" />
+		<extension name="equipment" class="PlayerEquipment" />
+		<extension name="anim_data" class="PlayerAnimationData" />
+		<extension name="character_damage" class="PlayerDamage" />
+		<extension name="base" class="PlayerBase" >
+			<var name="is_local_player" value="true" />
+		</extension>
+		<extension name="movement" class="PlayerMovement" />
+		<extension name="camera" class="PlayerCamera" />
+		<extension name="network" class="NetworkBaseExtension" />
+		<extension name="drama" class="DramaExt"/>
+		<extension name="sound" class="PlayerSound" />
+		<extension name="hand" class="PlayerHand" />
+	</extensions>
+
+	<network sync="client" remote_unit="units/pd2_dlc_alt_opera/characters/npc_criminals_fem_3/player_criminal_sydney_husk" sync_rotation="false" sync_position="false"/>
+
+	<sounds>
+	<default_soundsource source="rp_mover"/>
+	<soundsource name="root" source="rp_mover"/>
+	</sounds>
+
+</unit>
