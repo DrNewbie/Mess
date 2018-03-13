@@ -1,0 +1,42 @@
+<table name="Vernon Locke">
+	<AssetUpdates id="22099" version="3" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<Localization directory="Loc" default="EN.json"/>
+	<Hooks directory="Hooks">
+		<hook file="economytweakdata.lua" source_file="lib/tweak_data/economytweakdata"/>
+		<hook file="blackmarkettweakdata.lua" source_file="lib/tweak_data/blackmarkettweakdata"/>
+		<hook file="statisticstweakdata.lua" source_file="lib/tweak_data/statisticstweakdata"/>
+		<hook file="maskstweakdata.lua" source_file="lib/tweak_data/blackmarket/maskstweakdata"/>
+		<hook file="guitweakdata.lua" source_file="lib/tweak_data/guitweakdata"/>
+		<hook file="charactertweakdata.lua" source_file="lib/tweak_data/charactertweakdata"/>
+		<hook file="tweakdata.lua" source_file="lib/managers/criminalsmanager"/>
+		<hook file="menuscenemanager.lua" source_file="lib/managers/menu/menuscenemanager"/>
+		<hook file="networkmatchmakingsteam.lua" source_file="lib/network/matchmaking/networkmatchmakingsteam"/>
+	</Hooks>
+	<AddFiles directory="Assets">
+		<texture path="guis/dlcs/fo_sho/textures/pd2/blackmarket/icons/characters/locke_player" force="true"/>
+		<texture path="units/pd2_dlc_fo_sho/characters/fps_criminals_fo_sho/fps_gloves_fo_sho_df" force="true"/>
+		<texture path="units/pd2_dlc_fo_sho/characters/fps_criminals_fo_sho/fps_gloves_fo_sho_nm" force="true"/>
+		<texture path="units/pd2_dlc_fo_sho/characters/fps_criminals_fo_sho/fps_sleeve_fo_sho_df" force="true"/>
+		<texture path="units/pd2_dlc_fo_sho/characters/fps_criminals_fo_sho/fps_sleeve_fo_sho_nm" force="true"/>
+		<material_config path="units/pd2_dlc_fo_sho/characters/fps_criminals_fo_sho/mtr_locke_player" force="true"/>
+		<unit path="units/pd2_dlc_fo_sho/characters/npc_criminals_fo_sho/fps_locke_player_mover" force="true"/>
+		<material_config path="units/pd2_dlc_fo_sho/characters/npc_criminals_fo_sho/mtr_criminal_locke_player" force="true"/>
+		<material_config path="units/pd2_dlc_fo_sho/characters/npc_criminals_fo_sho/mtr_criminal_locke_player_cc" force="true"/>
+		<texture path="units/pd2_dlc_fo_sho/characters/npc_criminals_fo_sho/npc_criminal_fo_sho_head_df" force="true"/>
+		<texture path="units/pd2_dlc_fo_sho/characters/npc_criminals_fo_sho/npc_criminal_fo_sho_head_nm" force="true"/>
+		<texture path="units/pd2_dlc_fo_sho/characters/npc_criminals_fo_sho/npc_criminal_fo_sho_suite_df" force="true"/>
+		<texture path="units/pd2_dlc_fo_sho/characters/npc_criminals_fo_sho/npc_criminal_fo_sho_suite_nm" force="true"/>
+		<cooked_physics path="units/pd2_dlc_fo_sho/characters/npc_criminals_fo_sho/npc_criminal_locke_player" force="true"/>
+		<model path="units/pd2_dlc_fo_sho/characters/npc_criminals_fo_sho/npc_criminal_locke_player" force="true"/>
+		<object path="units/pd2_dlc_fo_sho/characters/npc_criminals_fo_sho/npc_criminal_locke_player" force="true"/>
+		<sequence_manager path="units/pd2_dlc_fo_sho/characters/npc_criminals_fo_sho/npc_criminal_locke_player" force="true"/>
+		<unit path="units/pd2_dlc_fo_sho/characters/npc_criminals_fo_sho/npc_criminal_locke_player_husk" force="true"/>
+		<cooked_physics path="units/pd2_dlc_fo_sho/characters/npc_criminals_fo_sho/npc_criminal_locke_player_menu" force="true"/>
+		<model path="units/pd2_dlc_fo_sho/characters/npc_criminals_fo_sho/npc_criminal_locke_player_menu" force="true"/>
+		<object path="units/pd2_dlc_fo_sho/characters/npc_criminals_fo_sho/npc_criminal_locke_player_menu" force="true"/>
+		<unit path="units/pd2_dlc_fo_sho/characters/npc_criminals_fo_sho/npc_criminal_locke_player_menu" force="true"/>
+		<unit path="units/pd2_dlc_fo_sho/characters/npc_criminals_fo_sho/player_criminal_locke_player_husk" force="true"/>
+		<unit path="units/pd2_dlc_fo_sho/characters/npc_criminals_fo_sho/fo_sho/npc_criminal_fo_sho" force="true"/>
+		<unit path="units/pd2_dlc_fo_sho/characters/npc_criminals_fo_sho/fo_sho/npc_criminal_fo_sho_husk" force="true"/>
+	</AddFiles>
+</table>

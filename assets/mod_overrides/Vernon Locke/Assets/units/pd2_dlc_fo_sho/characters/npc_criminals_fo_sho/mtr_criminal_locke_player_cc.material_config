@@ -1,0 +1,98 @@
+<materials version="3" group="npc_criminal_locke_player">
+	<material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:RL_PLAYERS:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_body">
+		<variable value="0" type="scalar" name="contour_opacity"/>
+		<diffuse_texture file="units/pd2_dlc_fo_sho/characters/npc_criminals_fo_sho/npc_criminal_fo_sho_suite_df"/>
+		<bump_normal_texture file="units/pd2_dlc_fo_sho/characters/npc_criminals_fo_sho/npc_criminal_fo_sho_suite_nm"/>
+		<variable value="0 0 0" type="vector3" name="contour_color"/>
+	</material>
+	<material name="mtr_head" unique="true" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:RL_PLAYERS:SKINNED_3WEIGHTS" version="2">
+		<diffuse_texture file="units/pd2_dlc_fo_sho/characters/npc_criminals_fo_sho/npc_criminal_fo_sho_head_df"/>
+		<bump_normal_texture file="units/pd2_dlc_fo_sho/characters/npc_criminals_fo_sho/npc_criminal_fo_sho_head_nm"/>
+		<variable value="0 0 0" type="vector3" name="contour_color"/>
+		<variable value="0" type="scalar" name="contour_opacity"/>
+	</material>
+	<material name="mtr_hair" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:EXTERNAL_ALPHA_REF:NORMALMAP:SKINNED_3WEIGHTS" version="2">
+	</material>
+	<material name="mtr_hands" unique="true" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:RL_PLAYERS:SKINNED_3WEIGHTS" version="2">
+	</material>
+	<material unique="true" render_template="generic_customizable:CONTOUR:CUBE_ENVIRONMENT_MAPPING:DECAL_STICKER_UV2:DIFFUSE_TEXTURE:GRADIENTMAP:NORMALMAP:PATTERN_GRADIENTMAP:PATTERN_GRADIENTMAP_ANGLE_OFFSET:PATTERN_UV2:RL_PLAYERS:SKINNED_3WEIGHTS:WEAR_TEAR_MASKING" name="mtr_enforcer_vest" version="2">
+		<diffuse_texture file="units/payday2/characters/shared_textures/vest_big_01_df_cc"/>
+		<bump_normal_texture file="units/payday2/characters/shared_textures/vest_big_nm"/>
+		<diffuse_layer1_texture file="units/payday2_cash/safes/default/base_gradient/base_default_df"/>
+		<diffuse_layer2_texture file="units/payday2_cash/safes/default/pattern_gradient/gradient_default_df"/>
+		<diffuse_layer0_texture file="units/payday2_cash/safes/default/pattern/pattern_default_df"/>
+		<reflection_texture type="cube" global_texture="current_global_texture"/>
+		<variable type="vector3" name="pattern_tweak" value="4 0 1"/>
+		<variable type="vector3" name="pattern_pos" value="0 0 0"/>
+		<variable type="scalar" name="wear_tear_value" value="0"/>
+		<variable type="scalar" name="contour_opacity" value="1.4140792656548e+19"/>
+		<variable type="vector3" name="contour_color" value="0 0 0"/>
+		<diffuse_layer3_texture file="units/payday2_cash/safes/default/sticker/sticker_default_df"/>
+		<variable type="vector3" name="uv_scale" value="1 1 1"/>
+		<variable type="vector3" name="uv_offset_rot" value="0 0 0"/>
+		<variable type="vector3" name="cubemap_pattern_control" value="0 0 0"/>
+	</material>
+	<material unique="true" render_template="generic_customizable:CONTOUR:CUBE_ENVIRONMENT_MAPPING:DECAL_STICKER_UV2:DIFFUSE_TEXTURE:GRADIENTMAP:NORMALMAP:PATTERN_GRADIENTMAP:PATTERN_GRADIENTMAP_ANGLE_OFFSET:PATTERN_UV2:RL_PLAYERS:SKINNED_3WEIGHTS:WEAR_TEAR_MASKING" name="mtr_vest_small" version="2">
+		<diffuse_texture file="units/payday2/characters/shared_textures/vest_small_01_df_cc"/>
+		<bump_normal_texture file="units/payday2/characters/shared_textures/vest_small_nm"/>
+		<diffuse_layer1_texture file="units/payday2_cash/safes/default/base_gradient/base_default_df"/>
+		<diffuse_layer2_texture file="units/payday2_cash/safes/default/pattern_gradient/gradient_default_df"/>
+		<diffuse_layer0_texture file="units/payday2_cash/safes/default/pattern/pattern_default_df"/>
+		<reflection_texture type="cube" global_texture="current_global_texture"/>
+		<variable type="vector3" name="pattern_tweak" value="4 0 1"/>
+		<variable type="vector3" name="pattern_pos" value="0 0 0"/>
+		<variable type="scalar" name="wear_tear_value" value="0"/>
+		<variable type="scalar" name="contour_opacity" value="1.4140792656548e+19"/>
+		<variable type="vector3" name="contour_color" value="0 0 0"/>
+		<diffuse_layer3_texture file="units/payday2_cash/safes/default/sticker/sticker_default_df"/>
+		<variable type="vector3" name="uv_scale" value="1 1 1"/>
+		<variable type="vector3" name="uv_offset_rot" value="0 0 0"/>
+		<variable type="vector3" name="cubemap_pattern_control" value="0 0 0"/>
+	</material>
+
+	<material name="mtr_toolbag" unique="true" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:RL_PLAYERS:SKINNED_3WEIGHTS" version="2">
+		<diffuse_texture file="units/payday2/characters/shared_textures/equipment_bag_tools_df"/>
+		<bump_normal_texture file="units/payday2/characters/shared_textures/equipment_bag_nm"/>
+		<variable value="0 0 0" type="vector3" name="contour_color"/>
+		<variable value="0" type="scalar" name="contour_opacity"/>
+	</material>
+	<material name="mtr_medic" unique="true" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:RL_PLAYERS:SKINNED_3WEIGHTS" version="2">
+		<diffuse_texture file="units/payday2/equipment/gen_equipment_medicbag/gen_equipment_medicbag_df"/>
+		<bump_normal_texture file="units/payday2/equipment/gen_equipment_medicbag/gen_equipment_medicbag_nm"/>
+		<variable value="0 0 0" type="vector3" name="contour_color"/>
+		<variable value="0" type="scalar" name="contour_opacity"/>
+	</material>
+	<material name="mtr_ammobag" unique="true" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:RL_PLAYERS:SKINNED_3WEIGHTS" version="2">
+		<diffuse_texture file="units/payday2/characters/shared_textures/equipment_bag_ammo_df"/>
+		<bump_normal_texture file="units/payday2/characters/shared_textures/equipment_bag_nm"/>
+		<variable value="0 0 0" type="vector3" name="contour_color"/>
+		<variable value="0" type="scalar" name="contour_opacity"/>
+	</material>
+
+	<material name="mtr_sentry" unique="true" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:RL_PLAYERS:SKINNED_3WEIGHTS" version="2">
+		<diffuse_texture file="units/payday2/equipment/gen_equipment_sentry/gen_equipment_sentry_df"/>
+		<bump_normal_texture file="units/payday2/equipment/gen_equipment_sentry/gen_equipment_sentry_nm"/>
+		<variable value="0 0 0" type="vector3" name="contour_color"/>
+		<variable value="0" type="scalar" name="contour_opacity"/>
+	</material>
+	<material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+
+	<material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:RL_PLAYERS:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_firstaidbag">
+		<diffuse_texture file="units/payday2/characters/shared_textures/equipment_bag_firstaid_df"/>
+		<bump_normal_texture file="units/payday2/characters/shared_textures/equipment_bag_nm"/>
+		<variable value="0 0 0" type="vector3" name="contour_color"/>
+		<variable value="0" type="scalar" name="contour_opacity"/>
+	</material>
+	<material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:RL_PLAYERS:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_armourbag">
+		<diffuse_texture file="units/payday2/characters/shared_textures/equipment_armor_bag_df"/>
+		<bump_normal_texture file="units/payday2/equipment/gen_equipment_medicbag/gen_equipment_medicbag_nm"/>
+		<variable value="0 0 0" type="vector3" name="contour_color"/>
+		<variable value="0" type="scalar" name="contour_opacity"/>
+	</material>
+	<material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:RL_PLAYERS:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_bodybagsbag">
+		<diffuse_texture file="units/payday2/characters/shared_textures/equipment_bodybagsbag_df"/>
+		<bump_normal_texture file="units/payday2/equipment/gen_equipment_medicbag/gen_equipment_medicbag_nm"/>
+		<variable value="0 0 0" type="vector3" name="contour_color"/>
+		<variable value="0" type="scalar" name="contour_opacity"/>
+	</material>
+</materials>
