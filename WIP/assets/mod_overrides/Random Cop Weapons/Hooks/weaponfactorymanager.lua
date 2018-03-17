@@ -28,7 +28,6 @@ function WeaponFactoryManager:RandomWeaponMapInit()
 				if factory_weapon then
 					local ids_unit_name = Idstring(factory_weapon.unit)
 					if not managers.dyn_resource:is_resource_ready(Idstring("unit"), ids_unit_name, managers.dyn_resource.DYN_RESOURCES_PACKAGE) then
-						log(factory_id.."")
 						managers.dyn_resource:load(Idstring("unit"), ids_unit_name, managers.dyn_resource.DYN_RESOURCES_PACKAGE, nil)
 					end
 				end
@@ -36,7 +35,6 @@ function WeaponFactoryManager:RandomWeaponMapInit()
 				if factory_weapon then
 					local ids_unit_name = Idstring(factory_weapon.unit)
 					if not managers.dyn_resource:is_resource_ready(Idstring("unit"), ids_unit_name, managers.dyn_resource.DYN_RESOURCES_PACKAGE) then
-						log(factory_id.."_npc")
 						managers.dyn_resource:load(Idstring("unit"), ids_unit_name, managers.dyn_resource.DYN_RESOURCES_PACKAGE, nil)
 					end
 				end

@@ -1,6 +1,8 @@
 <table name="Random Cop Weapons" global_key="RndCopWeapGKey">
+	<!--
 	<Localization directory="Loc" default="EN.txt"/>
-	<AssetUpdates id="22126" name="asset_updates" version="16" folder_name="Random Cop Weapons" provider="modworkshop"/>
+	-->
+	<AssetUpdates id="22126" name="asset_updates" version="17" folder_name="Random Cop Weapons" provider="modworkshop"/>
 	<Hooks directory="Hooks">
 		<hook file="copmovement.lua" source_file="lib/units/enemies/cop/copmovement"/>
 		<hook file="copinventory.lua" source_file="lib/units/enemies/cop/copinventory"/>
