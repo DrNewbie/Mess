@@ -1,0 +1,6 @@
+{
+    "rcp_mods_menu_title_id" : "Random Cop Weapons",
+    "rcp_mods_opt_EnableSkins" : "Give Weapon Skins",
+    "rcp_mods_opt_SkinsRate" : "Rate",
+    "EmptyId" : ""
+}
