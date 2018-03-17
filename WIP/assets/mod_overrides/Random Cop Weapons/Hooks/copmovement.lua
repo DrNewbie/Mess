@@ -2,7 +2,7 @@ local CopRandomWeapon = CopMovement.add_weapons
 
 function CopMovement:add_weapons(...)
 	local _default_weapon_id = self._ext_base._default_weapon_id or "m4"
-	if self._unit and alive(self._unit) and self._unit:in_slot(managers.slot:get_mask("enemies")) and managers.weapon_factory and self._unit:inventory() and self._unit:inventory().add_unit_by_factory_name and not self._unit:inventory()._shield_unit_name and _default_weapon_id then
+	if math.random() < 0.75 and self._unit and alive(self._unit) and self._unit:in_slot(managers.slot:get_mask("enemies")) and managers.weapon_factory and self._unit:inventory() and self._unit:inventory().add_unit_by_factory_name and not self._unit:inventory()._shield_unit_name and _default_weapon_id then
 		local usage = nil
 		local crew_wep = _default_weapon_id.."_crew"
 		if tweak_data.weapon[crew_wep] and tweak_data.weapon[crew_wep].usage then
@@ -26,7 +26,23 @@ function CopMovement:add_weapons(...)
 					end
 				end
 				]]
-				self._unit:inventory():add_unit_by_factory_name(weapon, true, true, nil, cosmetics_str)
+				local blueprint_string, blueprint = nil, {}
+				local factory_data = tweak_data.weapon.factory[weapon]
+				if math.random() < 0.45 and type(factory_data) == "table" and type(factory_data.uses_parts) == "table" then
+					local mods_type = {}
+					for i, d in pairs(factory_data.uses_parts) do 
+						if tweak_data.weapon.factory.parts[d] then
+							local mod_type = tostring(tweak_data.weapon.factory.parts[d].type)
+							mods_type[mod_type] = mods_type[mod_type] or {}
+							table.insert(mods_type[mod_type], d)
+						end
+					end
+					for i, d in pairs(mods_type) do 
+						table.insert(blueprint, table.random(d))
+					end
+					blueprint_string = managers.weapon_factory:blueprint_to_string(weapon:gsub("_npc", ""), blueprint)
+				end
+				self._unit:inventory():add_unit_by_factory_name(weapon, true, true, blueprint_string, cosmetics_str)
 			else
 				if prim_weap_name then
 					self._unit:inventory():add_unit_by_name(prim_weap_name)
