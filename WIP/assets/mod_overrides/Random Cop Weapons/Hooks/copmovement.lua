@@ -26,11 +26,7 @@ function CopMovement:add_weapons(...)
 					end
 				end
 				]]
-				self._unit:inventory():add_unit_by_factory_name(weapon, false, false, nil, cosmetics_str)
-				if self._unit:inventory():equipped_unit() and self._unit:inventory():equipped_unit():base() then
-					self._unit:inventory():equipped_unit():base()._hit_player = true
-					self._unit:inventory():equipped_unit():base():weapon_tweak_data().usage = usage
-				end
+				self._unit:inventory():add_unit_by_factory_name(weapon, true, true, nil, cosmetics_str)
 			else
 				if prim_weap_name then
 					self._unit:inventory():add_unit_by_name(prim_weap_name)
@@ -38,6 +34,10 @@ function CopMovement:add_weapons(...)
 				if sec_weap_name and sec_weap_name ~= prim_weap_name then
 					self._unit:inventory():add_unit_by_name(sec_weap_name)
 				end
+			end
+			if self._unit:inventory():equipped_unit() and self._unit:inventory():equipped_unit():base() then
+				self._unit:inventory():equipped_unit():base()._hit_player = true
+				self._unit:inventory():equipped_unit():base():weapon_tweak_data().usage = usage
 			end
 			return
 		end

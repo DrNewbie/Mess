@@ -41,6 +41,22 @@ function WeaponFactoryManager:RandomWeaponMapInit()
 			end
 		end
 	end
+	for i, d in pairs(tweak_data.character) do
+		if type(d) == "table" and type(d.weapon) == "table" then
+			local bb = nil
+			for ii, dd in pairs(d.weapon) do
+				if self.GeneralWeaponWeaponMap[ii] then
+					bb = deep_clone(dd)
+					break
+				end
+			end
+			if bb then
+				for ii, dd in pairs(self.GeneralWeaponWeaponMap) do
+					tweak_data.character[i].weapon[ii] = deep_clone(bb)
+				end
+			end
+		end
+	end
 end
 
 function WeaponFactoryManager:GetFromRandomWeaponMap(usage)
