@@ -1,21 +1,14 @@
-<table name="Random Cop Weapons" global_key="RndCopWeapGKey">
-	<!--
+<table name="Random Cop Weapons">
+	<AssetUpdates id="22126" name="asset_updates" version="21" folder_name="Random Cop Weapons" provider="modworkshop"/>
 	<Localization directory="Loc" default="EN.txt"/>
-	-->
-	<AssetUpdates id="22126" name="asset_updates" version="20" folder_name="Random Cop Weapons" provider="modworkshop"/>
 	<Hooks directory="Hooks">
 		<hook file="copmovement.lua" source_file="lib/units/enemies/cop/copmovement"/>
 		<hook file="copinventory.lua" source_file="lib/units/enemies/cop/copinventory"/>
 		<hook file="weaponfactorymanager.lua" source_file="lib/managers/weaponfactorymanager"/>
+		<hook file="menumanager.lua" source_file="lib/managers/menumanager"/>
+		<!--
 		<hook file="coplogictravel.lua" source_file="lib/units/enemies/cop/logics/coplogictravel"/>
 		<hook file="taserlogicattack.lua" source_file="lib/units/enemies/taser/logics/taserlogicattack"/>
+		-->
 	</Hooks>
-	<!--
-	<Options auto_build_menu="true" auto_load="true">
-		<options title_id="rcp_mods_menu_title_id" desc_id="EmptyId">
-			<option type="boolean" default_value="false" desc_id="EmptyId" title_id="rcp_mods_opt_EnableSkins" name="EnableSkins"/>
-			<option type="number" min="0.01" max="1" step="0.01" default_value="0.1" desc_id="EmptyId" title_id="rcp_mods_opt_SkinsRate" name="SkinsRate"/>
-		</options>
-	</Options>
-	-->
 </table>

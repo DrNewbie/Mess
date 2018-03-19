@@ -1,6 +1,10 @@
 {
     "rcp_mods_menu_title_id" : "Random Cop Weapons",
+    "rcp_mods_opt_EnableDefaultWep" : "Use Default Weapon",
+    "rcp_mods_opt_DefaultWepRate" : "Default Weapon Rate",
     "rcp_mods_opt_EnableSkins" : "Give Weapon Skins",
-    "rcp_mods_opt_SkinsRate" : "Rate",
+    "rcp_mods_opt_SkinsRate" : "Skins Rate",
+    "rcp_mods_opt_EnableWepMods" : "Give Weapon Mods",
+    "rcp_mods_opt_WepModsRate" : "Weapon Mods Rate",
     "EmptyId" : ""
 }
