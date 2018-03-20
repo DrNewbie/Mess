@@ -34,7 +34,9 @@ function CopMovement:add_weapons(...)
 							local weapon_id = managers.weapon_factory:get_weapon_id_by_factory_id(weapon:gsub("_npc", ""))
 							if weapon_id then
 								local skins_key = managers.blackmarket:get_weapon_skins(weapon_id)
-								cosmetics_str = table.random_key(skins_key) .. "-" .. table.random_key(tweak_data.economy.qualities) .. "-0"
+								if type(skins_key) == "table" and table.size(skins_key) > 0 then
+									cosmetics_str = table.random_key(skins_key) .. "-" .. table.random_key(tweak_data.economy.qualities) .. "-0"
+								end
 							end
 						end
 					end
