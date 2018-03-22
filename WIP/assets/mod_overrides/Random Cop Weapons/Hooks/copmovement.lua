@@ -23,11 +23,12 @@ function CopMovement:add_weapons(...)
 		local RandomWeaponMap = managers.weapon_factory:GetFromRandomWeaponMap(usage) or {}
 		local prim_weap_name = self._ext_base:default_weapon_name("primary")
 		local sec_weap_name = self._ext_base:default_weapon_name("secondary")
-		if RandomWeaponMap and table.size(RandomWeaponMap) > 0 then
+		if type(RandomWeaponMap) == "table" and table.size(RandomWeaponMap) > 0 then
 			local weapon = table.random(RandomWeaponMap)
+			--weapon = "wpn_fps_rpg7_npc"
+			local blueprint_string, blueprint = nil, {}
 			if weapon and (prim_weap_name or sec_weap_name) then
 				local cosmetics_str = ""
-				local blueprint_string, blueprint = nil, {}
 				if RndCopWeapGKey and RndCopWeapGKey.Options then
 					if RndCopWeapGKey.Options:GetValue("EnableSkins") then
 						if math.random() < RndCopWeapGKey.Options:GetValue("SkinsRate") then

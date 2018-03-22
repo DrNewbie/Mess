@@ -11,6 +11,9 @@ WeaponFactoryManager.GeneralWeaponWeaponMap = {
 	is_shotgun_mag = true,
 	is_revolver = true
 }
+WeaponFactoryManager.GeneralWeaponWeaponMapFix = {
+	wpn_fps_rpg7 = "is_rifle"
+}
 
 function WeaponFactoryManager:RandomWeaponMapInit()
 	self.RandomWeaponMap = {}
@@ -19,6 +22,7 @@ function WeaponFactoryManager:RandomWeaponMapInit()
 			local factory_id = self:get_factory_id_by_weapon_id(weapon_id:gsub("_crew", ""))
 			if factory_id and tweak_data.weapon.factory[factory_id.."_npc"] then
 				local usage = data.usage
+				usage = self.GeneralWeaponWeaponMapFix[factory_id] or data.usage
 				if self.GeneralWeaponWeaponMap[usage] then
 					usage = "GeneralWeapon"
 				end
