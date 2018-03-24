@@ -1,0 +1,14 @@
+{
+	"name":"Lock n' Load Sprint Animations",
+	"description":"No dumb Lock n Load running anim",
+	"author":"Dr_Newbie",
+	"contact":" ",
+	"version":"1",
+	"blt_version":2,
+	"hooks":
+	[
+		{ 	"hook_id":"lib/units/beings/player/states/playerstandard",
+			"script_path":"playerstandard.lua"
+		}
+	]
+}
