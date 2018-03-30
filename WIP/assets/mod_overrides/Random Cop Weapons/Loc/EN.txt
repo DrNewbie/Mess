@@ -6,5 +6,7 @@
     "rcp_mods_opt_SkinsRate" : "Skins Rate",
     "rcp_mods_opt_EnableWepMods" : "Give Weapon Mods",
     "rcp_mods_opt_WepModsRate" : "Weapon Mods Rate",
+    "rcp_mods_opt_EnableWepGadget" : "Enable Weapon Gadget",
+    "rcp_mods_opt_WepGadgetRate" : "Weapon Gadget Rate",
     "EmptyId" : ""
 }

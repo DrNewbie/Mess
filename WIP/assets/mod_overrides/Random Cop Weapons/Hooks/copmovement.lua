@@ -23,12 +23,11 @@ function CopMovement:add_weapons(...)
 		local RandomWeaponMap = managers.weapon_factory:GetFromRandomWeaponMap(usage) or {}
 		local prim_weap_name = self._ext_base:default_weapon_name("primary")
 		local sec_weap_name = self._ext_base:default_weapon_name("secondary")
-		if type(RandomWeaponMap) == "table" and table.size(RandomWeaponMap) > 0 then
+		if RandomWeaponMap and table.size(RandomWeaponMap) > 0 then
 			local weapon = table.random(RandomWeaponMap)
-			--weapon = "wpn_fps_rpg7_npc"
-			local blueprint_string, blueprint = nil, {}
 			if weapon and (prim_weap_name or sec_weap_name) then
 				local cosmetics_str = ""
+				local blueprint_string, blueprint = nil, {}
 				if RndCopWeapGKey and RndCopWeapGKey.Options then
 					if RndCopWeapGKey.Options:GetValue("EnableSkins") then
 						if math.random() < RndCopWeapGKey.Options:GetValue("SkinsRate") then
@@ -68,9 +67,26 @@ function CopMovement:add_weapons(...)
 					self._unit:inventory():add_unit_by_name(sec_weap_name)
 				end
 			end
-			if self._unit:inventory():equipped_unit() and self._unit:inventory():equipped_unit():base() then
-				self._unit:inventory():equipped_unit():base()._hit_player = true
-				self._unit:inventory():equipped_unit():base():weapon_tweak_data().usage = usage
+			local weapon_base = self._unit:inventory():equipped_unit() and self._unit:inventory():equipped_unit():base() or nil
+			if weapon_base and alive(weapon_base._unit) then
+				weapon_base._hit_player = true
+				weapon_base:weapon_tweak_data().usage = usage
+				if RndCopWeapGKey and RndCopWeapGKey.Options and RndCopWeapGKey.Options:GetValue("EnableWepGadget") then
+					if math.random() < RndCopWeapGKey.Options:GetValue("WepGadgetRate") and weapon_base._parts then
+						local gadget = managers.weapon_factory:get_part_from_weapon_by_type("gadget", weapon_base._parts)
+						if gadget and gadget.unit and alive(gadget.unit) then
+							local part_base = gadget.unit and gadget.unit:base()
+							if part_base then
+								local colors = {
+									laser = Color.red,
+									flashlight = tweak_data.custom_colors.defaults.flashlight
+								}
+								part_base:set_color(colors[part_base.GADGET_TYPE]:with_alpha(part_base.GADGET_TYPE == "laser" and 1 or tweak_data.custom_colors.defaults.laser_alpha))
+								part_base:set_state(true)
+							end
+						end
+					end
+				end
 			end
 			return
 		end

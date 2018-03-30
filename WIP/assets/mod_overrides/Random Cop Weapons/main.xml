@@ -1,13 +1,11 @@
 <table name="Random Cop Weapons">
-	<AssetUpdates id="22126" name="asset_updates" version="23" folder_name="Random Cop Weapons" provider="modworkshop"/>
+	<AssetUpdates id="22126" name="asset_updates" version="24" folder_name="Random Cop Weapons" provider="modworkshop"/>
 	<Localization directory="Loc" default="EN.txt"/>
 	<Hooks directory="Hooks">
 		<hook file="copmovement.lua" source_file="lib/units/enemies/cop/copmovement"/>
 		<hook file="copinventory.lua" source_file="lib/units/enemies/cop/copinventory"/>
 		<hook file="weaponfactorymanager.lua" source_file="lib/managers/weaponfactorymanager"/>
 		<hook file="menumanager.lua" source_file="lib/managers/menumanager"/>
-		<hook file="newnpcraycastweaponbase.lua" source_file="lib/units/weapons/newnpcraycastweaponbase"/>
-		<hook file="projectilebase.lua" source_file="lib/units/weapons/projectiles/projectilebase"/>
 		<!--
 		<hook file="coplogictravel.lua" source_file="lib/units/enemies/cop/logics/coplogictravel"/>
 		<hook file="taserlogicattack.lua" source_file="lib/units/enemies/taser/logics/taserlogicattack"/>
