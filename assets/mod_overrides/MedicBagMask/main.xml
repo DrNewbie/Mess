@@ -1,0 +1,13 @@
+<table name="MedicBagMask"> 
+	<AssetUpdates id="22241" version="1" name="asset_updates" folder_name="MedicBagMask" provider="modworkshop"/>
+	<Localization directory="Loc" default="english.txt"/> 
+    <AddFiles directory="Assets">
+        <texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/dallas_medicbag_beclone"/>
+        <cooked_physics path="units/payday2/masks/msk_dallas_clean/msk_dallas_medicbag_beclone"/>
+        <model path="units/payday2/masks/msk_dallas_clean/msk_dallas_medicbag_beclone"/>
+        <object path="units/payday2/masks/msk_dallas_clean/msk_dallas_medicbag_beclone"/>
+        <unit path="units/payday2/masks/msk_dallas_clean/msk_dallas_medicbag_beclone"/>
+        <material_config path="units/payday2/masks/msk_dallas_clean/msk_dallas_medicbag_beclone"/>
+	</AddFiles>
+	<Mask id="dallas_medicbag_beclone" based_on="dallas_clean" unit="units/payday2/masks/msk_dallas_clean/msk_dallas_medicbag_beclone" name_id="bm_msk_dallas_medicbag_beclone" desc_id="bm_msk_dallas_medicbag_beclone_desc" texture_bundle_folder="mods"/> 
+</table>

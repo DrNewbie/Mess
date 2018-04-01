@@ -1,0 +1,4 @@
+{
+	"bm_msk_dallas_medicbag_beclone":"Medic Bag",
+	"bm_msk_dallas_medicbag_beclone_desc":"Ahhh",
+}

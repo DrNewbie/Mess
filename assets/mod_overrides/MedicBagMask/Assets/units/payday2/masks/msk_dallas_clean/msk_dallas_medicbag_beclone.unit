@@ -1,0 +1,7 @@
+<unit type="static" slot="1" >
+    <object file="units/payday2/masks/msk_dallas_clean/msk_dallas_medicbag_beclone" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+        <extension class="MaskExt" name="base" />
+    </extensions>
+</unit>

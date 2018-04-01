@@ -1,0 +1,16 @@
+<dynamic_object>
+    <diesel orientation_object="rp_gen_equipment_medicbag" materials="units/payday2/masks/msk_dallas_clean/msk_dallas_medicbag_beclone" />
+	<bodies>
+		<body name="static_body" enabled="true" template="dynamic" collision_class="projectile" friction="0.5" sweep="true" restitution="0.4" ang_damping="0.1" pushed_by_mover="false" collides_with_mover="false" >
+			<object name="rp_gen_equipment_medicbag"/>
+			<object name="c_sphere" enabled="true" collision_type="sphere" mass="0.4" padding="-2.5"/>
+			<object name="c_sphere_2" enabled="true" collision_type="sphere" mass="0.1" padding="-2.5"/>
+		</body>
+	</bodies>
+    <graphics>
+        <object name="g_medic_bag" enabled="true"/>
+        <object name="g_kit_2" enabled="true"/>
+        <object name="g_kit_3" enabled="true"/>
+        <object name="g_kit_4" enabled="true"/>
+    </graphics>
+</dynamic_object>
