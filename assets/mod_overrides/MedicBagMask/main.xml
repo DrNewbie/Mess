@@ -1,5 +1,5 @@
 <table name="MedicBagMask"> 
-	<AssetUpdates id="22241" version="1" name="asset_updates" folder_name="MedicBagMask" provider="modworkshop"/>
+	<AssetUpdates id="22241" version="2" name="asset_updates" folder_name="MedicBagMask" provider="modworkshop"/>
 	<Localization directory="Loc" default="english.txt"/> 
     <AddFiles directory="Assets">
         <texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/dallas_medicbag_beclone"/>
