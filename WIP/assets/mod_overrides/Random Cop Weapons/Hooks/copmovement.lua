@@ -76,13 +76,15 @@ function CopMovement:add_weapons(...)
 						local gadget = managers.weapon_factory:get_part_from_weapon_by_type("gadget", weapon_base._parts)
 						if gadget and gadget.unit and alive(gadget.unit) then
 							local part_base = gadget.unit and gadget.unit:base()
-							if part_base then
+							if part_base and type(part_base.GADGET_TYPE) == "string" and part_base.set_color and part_base.set_state then
 								local colors = {
 									laser = Color.red,
 									flashlight = tweak_data.custom_colors.defaults.flashlight
 								}
-								part_base:set_color(colors[part_base.GADGET_TYPE]:with_alpha(part_base.GADGET_TYPE == "laser" and 1 or tweak_data.custom_colors.defaults.laser_alpha))
-								part_base:set_state(true)
+								if colors[part_base.GADGET_TYPE] then
+									part_base:set_color(colors[part_base.GADGET_TYPE]:with_alpha(part_base.GADGET_TYPE == "laser" and 1 or tweak_data.custom_colors.defaults.laser_alpha))
+									part_base:set_state(true)
+								end
 							end
 						end
 					end
