@@ -2,13 +2,16 @@ core:module("CoreElementRandom")
 core:import("CoreMissionScriptElement")
 core:import("CoreTable")
 
-local _f_ElementRandom_on_executed = ElementRandom.on_executed
+ElementRandom = ElementRandom or class(CoreMissionScriptElement.MissionScriptElement)
 
-function ElementRandom:on_executed(instigator)
-	local _id = tostring(self._id)
-	if Global.game_settings then
-		if Global.game_settings.level_id == "gallery" then
-			if _id == "100515" then
+if not Global.game_settings or not Global.game_settings.level_id == "gallery" or not ElementRandom then
+	return
+end
+
+local _F_ElementRandom_on_executed = ElementRandom.on_executed
+
+function ElementRandom:on_executed(...)
+	if Global.game_settings and Global.game_settings.level_id == "gallery" and self._id and self._id == 100515 then
 				if not self._values.enabled then
 					return
 				end
@@ -23,11 +26,11 @@ function ElementRandom:on_executed(instigator)
 				for i = 1, math.min(amount, #self._original_on_executed) do
 					table.insert(self._values.on_executed, self._original_on_executed[self:_get_random_elements()])
 				end
-				ElementRandom.super.on_executed(self, instigator)
+				ElementRandom.super.on_executed(self, ...)
 				return
 			end
 		end
 	end
-	return _f_ElementRandom_on_executed(self, instigator)
+	return _F_ElementRandom_on_executed(self, ...)
 end
 
