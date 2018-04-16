@@ -5,6 +5,19 @@ Hooks:PostHook(PlayerStandard, "update", "PlayerStandardupdate_Deadeye", functio
 	if _PlayerStandardupdate_Deadeye_Delay > t then
 		return
 	end
+	local Get_Crosshair_Enemy = function ()
+		if not managers.player or not managers.player:player_unit() then
+			return nil, 0
+		end
+		local camera = managers.player:player_unit():camera()
+		local mvec_to = Vector3()
+		local from_pos = camera:position()
+		mvector3.set(mvec_to, camera:forward())
+		mvector3.multiply(mvec_to, 20000)
+		mvector3.add(mvec_to, from_pos)
+		local _col_ray = World:raycast("ray", from_pos, mvec_to, "slot_mask", managers.slot:get_mask("enemies"))
+		return _col_ray or nil
+	end
 	_PlayerStandardupdate_Deadeye_Delay = t + 0.05
 	if Rage_Special.Rage_Stop and Rage_Special.Activating and not Rage_Special.Activating_Ready_to_End_RUN then
 		local delta = 0
@@ -34,6 +47,11 @@ Hooks:PostHook(PlayerStandard, "update", "PlayerStandardupdate_Deadeye", functio
 				end
 			end
 			Rage_Special.Shot_Need_To_Do = table.size(Rage_Special.Mark_List)
+			
+			local p = managers.menu_component._main_panel
+			if p and alive(p:child(Rage_Special.PlySoundName)) then
+				p:child(Rage_Special.PlySoundName):set_volume_gain((1-delta)+0.3)
+			end
 		end
 	end
 	local _real_health = ply._unit:character_damage():get_real_health()
@@ -57,6 +75,14 @@ Hooks:PostHook(PlayerStandard, "update", "PlayerStandardupdate_Deadeye", functio
 			Rage_Special.Shot_Need_To_Do = 0
 		end
 	end
+	if Rage_Special.Activating_Ready_to_End_RUN and Rage_Special.PlySoundName then
+		local p = managers.menu_component._main_panel
+		if p and alive(p:child(Rage_Special.PlySoundName)) then
+			p:remove(p:child(Rage_Special.PlySoundName))
+			Rage_Special.PlySoundName = nil
+			Rage_Special.PlySoundPercentage = nil			
+		end	
+	end
 	if t > _Shot_Need_To_Do_Delay and Rage_Special.Activating_Ready_to_End_RUN and table.size(Rage_Special.Mark_List) > 0 and Rage_Special.Prepare_To_Stop == 0 then
 		if weap_base then
 			for _id, _data in pairs(Rage_Special.Mark_List) do
@@ -66,14 +92,15 @@ Hooks:PostHook(PlayerStandard, "update", "PlayerStandardupdate_Deadeye", functio
 						hit_unit = hit_unit:parent()
 					end
 					if _real_health > 0 then
-						if hit_unit:character_damage() and hit_unit:character_damage().damage_bullet then
+						if hit_unit:character_damage() and hit_unit:character_damage().damage_simple then
 							local _action_data = {}
-							_action_data.variant = "bullet"
-							_action_data.damage = 1000
-							_action_data.weapon_unit = ply._equipped_unit
-							_action_data.attacker_unit = ply._unit
-							_action_data.col_ray = _data.col_ray
-							hit_unit:character_damage():damage_bullet(_action_data)
+							hit_unit:character_damage():damage_simple({
+								variant = "explosion",
+								damage = 1000,
+								attacker_unit = ply._unit,
+								pos = ply._unit:position(),
+								attack_dir = ply._unit:rotation():y()
+							})
 						end
 					end
 					Rage_Special.Mark_List[_id] = {}
@@ -87,17 +114,3 @@ Hooks:PostHook(PlayerStandard, "update", "PlayerStandardupdate_Deadeye", functio
 		Rage_Special.Block_SomeThing_Time = 0
 	end
 end)
-
-function Get_Crosshair_Enemy()
-	if not managers.player or not managers.player:player_unit() then
-		return nil, 0
-	end
-	local camera = managers.player:player_unit():camera()
-	local mvec_to = Vector3()
-	local from_pos = camera:position()
-	mvector3.set(mvec_to, camera:forward())
-	mvector3.multiply(mvec_to, 20000)
-	mvector3.add(mvec_to, from_pos)
-	local _col_ray = World:raycast("ray", from_pos, mvec_to, "slot_mask", managers.slot:get_mask("enemies"))
-	return _col_ray or nil
-end

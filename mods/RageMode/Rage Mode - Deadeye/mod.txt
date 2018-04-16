@@ -1,9 +1,14 @@
 {
 	"name" : "Rage Mode - Deadeye",
-	"description" : " ",
-	"author" : "Dr_Newbie",
-	"version" : "4",
+	"description": " ",
+	"author": "Dr_Newbie",
+	"contact": "http://modwork.shop/17679",
+	"version": "9",
+	"priority": 100,
+	"blt_version": 2,
 	"hooks" : [
+		{ "hook_id" : "lib/managers/localizationmanager","script_path" : "Base.lua"},
+		{ "hook_id" : "lib/managers/playermanager","script_path" : "lua/Sound.lua"},
 		{ "hook_id" : "lib/managers/hudmanagerpd2","script_path" : "HudManager.lua"},
 		{ "hook_id" : "lib/units/beings/player/states/playerstandard","script_path" : "lua/Pass_Data.lua"},
 		{ "hook_id" : "lib/units/beings/player/playermovement","script_path" : "lua/Block_Data.lua"},

@@ -1,0 +1,7 @@
+<mod name="High Noon">
+	<AssetUpdates id="17679" version="9" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AddFiles directory="Assets">
+		<!--https://dova-s.jp/se/play986.html-->
+		<movie path="RageModeDeadeyeSound"/>
+	</AddFiles>
+</mod>

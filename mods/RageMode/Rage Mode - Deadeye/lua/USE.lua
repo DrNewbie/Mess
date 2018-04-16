@@ -9,4 +9,5 @@ if Rage_Special.Rage_Point == Rage_Special.Rage_Point_Max and not Rage_Special.A
 	Rage_Special.Activating = true
 	Rage_Special.Expire_Time = Application:time() + Rage_Special.Ready_Time
 	managers.hud:show_interaction_bar(0, Rage_Special.Ready_Time)
+	Rage_Special.PlySoundName, Rage_Special.PlySoundPercentage = managers.player:PlaySpecialSound("RageModeDeadeyeSound")
 end
