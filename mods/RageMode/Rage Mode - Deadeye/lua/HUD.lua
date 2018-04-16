@@ -6,8 +6,8 @@ function Rage_Special:Clean()
 	self.Rage_Point_Last = 0
 	self.Rage_Point = 0
 	self.Rage_Point_Max = 100
-	self.Rage_Point_Gain = 50
-	self.Big_CD = 3
+	self.Rage_Point_Gain = 1
+	self.Big_CD = 30
 	self.Ready_Time = 10
 	self.Activating = false
 	self.Rage_Stop = false
