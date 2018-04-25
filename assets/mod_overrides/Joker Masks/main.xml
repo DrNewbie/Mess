@@ -1,7 +1,7 @@
 <table name="Joker Masks">
-	<AssetUpdates id="22431" version="2" name="asset_updates" folder_name="Joker Masks" provider="modworkshop"/>
+	<AssetUpdates id="22431" version="3" name="asset_updates" folder_name="Joker Masks" provider="modworkshop"/>
 	<Hooks directory="Hooks">
-		<hook file="groupaistatebase.lua" source_file="lib/managers/group_ai_states/groupaistatebase"/>
+		<hook file="copdamage.lua" source_file="lib/units/enemies/cop/copdamage"/>
 		<hook file="copinventory.lua" source_file="lib/units/enemies/cop/copinventory"/>
 	</Hooks>
 </table>
