@@ -1,5 +1,5 @@
 <table name="Garrett Ethan">
-	<AssetUpdates id="22421" version="2" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AssetUpdates id="22421" version="3" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
 	<Hooks directory="Hooks">
 		<hook file="menuscenemanager.lua" source_file="lib/managers/menu/menuscenemanager"/>
 		<hook file="huskplayermovement.lua" source_file="lib/units/beings/player/huskplayermovement"/>
