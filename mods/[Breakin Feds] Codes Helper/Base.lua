@@ -16,9 +16,6 @@ Hooks:PostHook(DialogManager, "queue_dialog", "CodesHelper_Announce", function(s
 			CodesHelper._CodesAns = nil
 		end
 	end
-	if id ~= "Play_loc_tag_83" then
-		self:queue_dialog("Play_loc_tag_83", params)
-	end
 end)
 
 function CodesHelper:Set_Codes(data)
