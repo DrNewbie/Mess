@@ -2,8 +2,8 @@
 	"name":"Lock n' Load Sprint Animations",
 	"description":"No dumb Lock n Load running anim",
 	"author":"Dr_Newbie",
-	"contact":" ",
-	"version":"3",
+	"contact":"http://modwork.shop/22167",
+	"version":"4",
 	"blt_version":2,
 	"hooks":
 	[
