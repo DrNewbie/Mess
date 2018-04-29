@@ -19,7 +19,7 @@ Hooks:PostHook(PlayerStandard, "_start_action_running", "RunAndShootAnim_start_a
 end)
 
 Hooks:PostHook(PlayerStandard, "_check_action_run", "RunAndShootAnim_check_action_run", function(self, t)
-	if self._ext_camera then
+	if self._ext_camera and (self.RUN_AND_RELOAD or self._equipped_unit:base():run_and_shoot_allowed()) then
 		local is_bool = (self:_is_reloading() or self._shooting) and true or false
 		if self._running then
 			if is_bool then
