@@ -1,0 +1,14 @@
+<table name="Kento Ethan">
+	<AssetUpdates id="22484" version="1" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<Hooks directory="Hooks">
+		<hook file="menuscenemanager.lua" source_file="lib/managers/menu/menuscenemanager"/>
+		<hook file="huskplayermovement.lua" source_file="lib/units/beings/player/huskplayermovement"/>
+	</Hooks>
+	<AddFiles directory="Assets">
+		<object path="units/pd2_dlc_ecp/characters/npc_criminals_ecp_male/npc_criminal_ecp_male" force="true"/>
+		<object path="units/pd2_dlc_ecp/characters/npc_criminals_ecp_male/npc_criminal_ecp_male_menu" force="true"/>
+		<material_config path="units/pd2_dlc_ecp/characters/npc_criminals_ecp_male/mtr_criminal_ecp_male" force="true"/>
+		<model path="units/pd2_dlc_ecp/characters/npc_criminals_ecp_male/npc_criminal_ecp_male" force="true"/>
+		<model path="units/pd2_dlc_ecp/characters/npc_criminals_ecp_male/npc_criminal_ecp_male_menu" force="true"/>
+	</AddFiles>
+</table>
