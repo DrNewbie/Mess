@@ -3,12 +3,15 @@
 	"description":"No dumb Lock n Load running anim",
 	"author":"Dr_Newbie",
 	"contact":"http://modwork.shop/22167",
-	"version":"4",
+	"version":"6",
 	"blt_version":2,
 	"hooks":
 	[
 		{ 	"hook_id":"lib/units/beings/player/states/playerstandard",
 			"script_path":"playerstandard.lua"
+		},
+		{ 	"hook_id":"lib/managers/localizationmanager",
+			"script_path":"Base.lua"
 		}
 	]
 }

@@ -1,6 +1,8 @@
 function PlayerStandard:Basic_Check_For_RR()
 	if self._ext_camera and (self.RUN_AND_RELOAD or self._equipped_unit:base():run_and_shoot_allowed()) then
-		return true
+		if not self:_is_meleeing() and not self:_is_throwing_projectile() then
+			return true
+		end
 	end
 	return false
 end
