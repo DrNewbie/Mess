@@ -77,8 +77,6 @@ function CopInventory:CUS_set_mask_visibility(state)
 	end
 	self._unit:link(mask_align:name(), mask_unit, mask_unit:orientation_object():name())
 	self._mask_unit = mask_unit
-	local backside = World:spawn_unit(Idstring("units/payday2/masks/msk_backside/msk_backside"), mask_align:position(), mask_align:rotation())
-	self._mask_unit:link(self._mask_unit:orientation_object():name(), backside, backside:orientation_object():name())
 end
 
 Hooks:PostHook(CopInventory, "CUS_preload_mask", "Post_CUS_set_mask_visibility", function(self)
