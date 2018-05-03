@@ -1,6 +1,31 @@
 <table name="Dr_Newbie Payday Gang Enemies Package">
-	<AssetUpdates id="22086" version="9" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AssetUpdates id="22086" version="14" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
 	<AddFiles directory="Assets">
+		<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy" force="true"/>
+		<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy_husk" force="true"/>
+		<model path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy" force="true"/>
+		<object path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy" force="true"/>
+
+		<unit path="units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870" force="true"/>
+		<unit path="units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870_husk" force="true"/>
+		<model path="units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870" force="true"/>
+		<object path="units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870" force="true"/>
+
+		<unit path="units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36" force="true"/>
+		<unit path="units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36_husk" force="true"/>
+		<model path="units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36" force="true"/>
+		<object path="units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36" force="true"/>
+
+		<unit path="units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1" force="true"/>
+		<unit path="units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1_husk" force="true"/>
+		<model path="units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1" force="true"/>
+		<object path="units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1" force="true"/>
+
+		<unit path="units/payday2/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870" force="true"/>
+		<unit path="units/payday2/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870_husk" force="true"/>
+		<model path="units/payday2/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870" force="true"/>
+		<object path="units/payday2/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870" force="true"/>
+
 		<unit path="units/payday2/characters/ene_medic_r870/ene_medic_r870" force="true"/>
 		<unit path="units/payday2/characters/ene_medic_r870/ene_medic_r870_husk" force="true"/>
 		<model path="units/payday2/characters/ene_medic_r870/ene_medic_r870" force="true"/>

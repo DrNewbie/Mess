@@ -81,23 +81,66 @@ function CopInventory:CUS_set_mask_visibility(state)
 	self._mask_unit:link(self._mask_unit:orientation_object():name(), backside, backside:orientation_object():name())
 end
 
-Hooks:PostHook(CopInventory, "CUS_set_mask_visibility", "Post_CUS_set_mask_visibility", function(self)
+Hooks:PostHook(CopInventory, "CUS_preload_mask", "Post_CUS_set_mask_visibility", function(self)
+	local unit_damage = self._unit:damage()
 	if self._addon_mesh_obj then
 		local mesh_obj = self._unit:get_object(Idstring(self._addon_mesh_obj))
 		if mesh_obj then
 			mesh_obj:set_visibility(true)
 		end
 	end
-	if self._addon_body_name then
-		local unit_damage = self._unit:damage()
-		if unit_damage and unit_damage:has_sequence(self._addon_body_name) then
+	if self._addon_body_name and unit_damage then
+		if unit_damage:has_sequence(self._addon_body_name) then
 			unit_damage:run_sequence_simple(self._addon_body_name)
 		end
 	end
-	if self._addon_armor_name then
-		local unit_damage = self._unit:damage()
-		if unit_damage and unit_damage:has_sequence(self._addon_armor_name) then
+	if self._addon_armor_name and unit_damage then
+		if unit_damage:has_sequence(self._addon_armor_name) then
 			unit_damage:run_sequence_simple(self._addon_armor_name)
+		end
+	end
+	if self._rnd_payday_gang and unit_damage then
+		self._rnd_payday_gang = nil
+		local rnd_payday_gang_list = {
+			chains = {
+				sequence = "var_mtr_chains",
+				mask = tweak_data.blackmarket.masks["chains"].unit
+			},
+			dragan = {
+				sequence = "var_mtr_dragan",
+				mask = tweak_data.blackmarket.masks["dragan"].unit
+			},
+			jacket = {
+				sequence = "var_mtr_jacket",
+				mask = tweak_data.blackmarket.masks["richard_returns"].unit
+			},
+			john_wick = {
+				sequence = "var_mtr_john_wick",
+				mask = tweak_data.blackmarket.masks["jw_shades"].unit
+			},
+			sokol = {
+				sequence = "var_mtr_sokol",
+				mask = tweak_data.blackmarket.masks["sokol"].unit
+			},
+			jiro = {
+				sequence = "var_mtr_jiro",
+				mask = tweak_data.blackmarket.masks["jiro"].unit
+			},
+			bodhi = {
+				sequence = "var_mtr_bodhi",
+				mask = tweak_data.blackmarket.masks["bodhi"].unit
+			},
+			jimmy = {
+				sequence = "var_mtr_jimmy",
+				mask = tweak_data.blackmarket.masks["jimmy_duct"].unit
+			}
+		}
+		local rnd_payday_gang_data = rnd_payday_gang_list[table.random_key(rnd_payday_gang_list)]
+		if unit_damage:has_sequence(rnd_payday_gang_data.sequence) then
+			unit_damage:run_sequence_simple(rnd_payday_gang_data.sequence)
+			self._mask_visibility = false
+			self._mask_unit_name = rnd_payday_gang_data.mask
+			self:CUS_preload_mask()
 		end
 	end
 end)
