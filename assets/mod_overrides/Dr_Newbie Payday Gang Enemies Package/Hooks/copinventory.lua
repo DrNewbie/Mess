@@ -146,6 +146,7 @@ Hooks:PostHook(CopInventory, "CUS_preload_mask", "Post_CUS_set_mask_visibility",
 		end
 	end
 	if self._rnd_suit and unit_damage then
+		self._rnd_suit = nil
 		local _var_model = "var_model_0"..tostring(math.round(math.random()*10)%7+1)
 		local special_materials = tweak_data.blackmarket.characters["max"].special_materials
 		local special_material = table.random(special_materials)
