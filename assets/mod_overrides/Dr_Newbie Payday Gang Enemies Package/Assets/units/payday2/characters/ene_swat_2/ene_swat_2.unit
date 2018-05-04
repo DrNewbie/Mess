@@ -18,10 +18,7 @@
 			<var name="_rnd_suit" value="true"/>
 		</extension>
 		<extension name="brain" class="CopBrain" />
-		<extension name="anim_data" class="PlayerAnimationData">
-			<var name="_mask_unit_name" value="units/pd2_dlc_max/masks/msk_max"/>
-			<var name="_rnd_suit" value="true"/>
-		</extension>
+		<extension name="anim_data" class="PlayerAnimationData"/>
 		<extension name="character_damage" class="CopDamage"/>
 		<extension name="movement" class="CopMovement" >
 			<var name="_footwear" value="hardsole" />

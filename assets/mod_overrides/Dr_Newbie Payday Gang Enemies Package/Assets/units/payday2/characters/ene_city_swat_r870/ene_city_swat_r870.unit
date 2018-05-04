@@ -13,7 +13,10 @@
 			<var name="_tweak_table" value="city_swat" />
 			<var name="_default_weapon_id" value="r870" />
 		</extension>
-		<extension name="inventory" class="CopInventory" />
+		<extension name="inventory" class="CopInventory">
+			<var name="_mask_unit_name" value="units/pd2_dlc_max/masks/msk_max"/>
+			<var name="_rnd_suit" value="true"/>
+		</extension>
 		<extension name="brain" class="CopBrain" />
 		<extension name="anim_data" class="PlayerAnimationData" />
 		<extension name="character_damage" class="CopDamage"/>
