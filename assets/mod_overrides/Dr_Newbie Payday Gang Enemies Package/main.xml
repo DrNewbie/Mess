@@ -1,6 +1,74 @@
 <table name="Dr_Newbie Payday Gang Enemies Package">
-	<AssetUpdates id="22086" version="15" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AssetUpdates id="22086" version="25" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
 	<AddFiles directory="Assets">
+		<unit path="units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1" force="true"/>
+		<unit path="units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1_husk" force="true"/>
+		<model path="units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1" force="true"/>
+		<object path="units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1" force="true"/>
+		
+		<unit path="units/payday2/characters/ene_swat_heavy_r870/ene_swat_heavy_r870" force="true"/>
+		<unit path="units/payday2/characters/ene_swat_heavy_r870/ene_swat_heavy_r870_husk" force="true"/>
+		<model path="units/payday2/characters/ene_swat_heavy_r870/ene_swat_heavy_r870" force="true"/>
+		
+		<unit path="units/payday2/characters/ene_swat_1/ene_swat_1" force="true"/>
+		<unit path="units/payday2/characters/ene_swat_1/ene_swat_1_husk" force="true"/>
+		<model path="units/payday2/characters/ene_swat_1/ene_swat_1" force="true"/>
+		<object path="units/payday2/characters/ene_swat_1/ene_swat_1" force="true"/>	
+	
+		<unit path="units/payday2/characters/ene_swat_2/ene_swat_2" force="true"/>
+		<unit path="units/payday2/characters/ene_swat_2/ene_swat_2_husk" force="true"/>
+		<model path="units/payday2/characters/ene_swat_2/ene_swat_2" force="true"/>
+		<object path="units/payday2/characters/ene_swat_2/ene_swat_2" force="true"/>	
+
+		<unit path="units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1" force="true"/>
+		<unit path="units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1_husk" force="true"/>
+		<model path="units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1" force="true"/>
+		<object path="units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1" force="true"/>		
+
+		<unit path="units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2" force="true"/>
+		<unit path="units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2_husk" force="true"/>
+		<model path="units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2" force="true"/>
+		<object path="units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2" force="true"/>
+		
+		<unit path="units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870" force="true"/>
+		<unit path="units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870_husk" force="true"/>
+		<model path="units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870" force="true"/>
+	
+		<unit path="units/payday2/characters/ene_city_swat_1/ene_city_swat_1" force="true"/>
+		<unit path="units/payday2/characters/ene_city_swat_1/ene_city_swat_1_husk" force="true"/>
+		<model path="units/payday2/characters/ene_city_swat_1/ene_city_swat_1" force="true"/>
+		<object path="units/payday2/characters/ene_city_swat_1/ene_city_swat_1" force="true"/>
+		
+		<unit path="units/payday2/characters/ene_city_swat_2/ene_city_swat_2" force="true"/>
+		<unit path="units/payday2/characters/ene_city_swat_2/ene_city_swat_2_husk" force="true"/>
+		<model path="units/payday2/characters/ene_city_swat_2/ene_city_swat_2" force="true"/>
+		<object path="units/payday2/characters/ene_city_swat_2/ene_city_swat_2" force="true"/>
+		
+		<unit path="units/payday2/characters/ene_city_swat_3/ene_city_swat_3" force="true"/>
+		<unit path="units/payday2/characters/ene_city_swat_3/ene_city_swat_3_husk" force="true"/>
+		<model path="units/payday2/characters/ene_city_swat_3/ene_city_swat_3" force="true"/>
+		<object path="units/payday2/characters/ene_city_swat_3/ene_city_swat_3" force="true"/>
+		
+		<unit path="units/payday2/characters/ene_shield_1/ene_shield_1" force="true"/>
+		<unit path="units/payday2/characters/ene_shield_1/ene_shield_1_husk" force="true"/>
+		<model path="units/payday2/characters/ene_shield_1/ene_shield_1" force="true"/>
+		<object path="units/payday2/characters/ene_shield_1/ene_shield_1" force="true"/>
+		
+		<unit path="units/payday2/characters/ene_shield_2/ene_shield_2" force="true"/>
+		<unit path="units/payday2/characters/ene_shield_2/ene_shield_2_husk" force="true"/>
+		<model path="units/payday2/characters/ene_shield_2/ene_shield_2" force="true"/>
+		<object path="units/payday2/characters/ene_shield_2/ene_shield_2" force="true"/>
+
+		<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield" force="true"/>
+		<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield_husk" force="true"/>
+		<model path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield" force="true"/>
+		<object path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield" force="true"/>
+
+		<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat" force="true"/>
+		<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat_husk" force="true"/>
+		<model path="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat" force="true"/>
+		<object path="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat" force="true"/>
+
 		<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy" force="true"/>
 		<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy_husk" force="true"/>
 		<model path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy" force="true"/>

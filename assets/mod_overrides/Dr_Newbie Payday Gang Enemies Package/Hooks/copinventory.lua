@@ -1,6 +1,6 @@
-Hooks:PostHook(CopInventory, "init", "Cop_SetMaskInit", function(cop)
-	cop._mask_visibility = false
-	cop._mask_unit_name = cop._mask_unit_name or "NONE"
+Hooks:PostHook(CopInventory, "init", "Cop_SetMaskInit", function(self)
+	self._mask_visibility = false
+	self._mask_unit_name = self._mask_unit_name or "NONE"
 end)
 
 function CopInventory:CUS_Can_I_Have_Mask()
@@ -97,7 +97,9 @@ Hooks:PostHook(CopInventory, "CUS_preload_mask", "Post_CUS_set_mask_visibility",
 			unit_damage:run_sequence_simple(self._addon_armor_name)
 		end
 	end
-	if self._rnd_payday_gang and unit_damage then
+	if (self._rnd_payday_gang or self._rnd_payday_gang_no_mask) and unit_damage then
+		local rnd_payday_gang_no_mask = self._rnd_payday_gang_no_mask
+		self._rnd_payday_gang_no_mask = nil
 		self._rnd_payday_gang = nil
 		local rnd_payday_gang_list = {
 			chains = {
@@ -136,9 +138,23 @@ Hooks:PostHook(CopInventory, "CUS_preload_mask", "Post_CUS_set_mask_visibility",
 		local rnd_payday_gang_data = rnd_payday_gang_list[table.random_key(rnd_payday_gang_list)]
 		if unit_damage:has_sequence(rnd_payday_gang_data.sequence) then
 			unit_damage:run_sequence_simple(rnd_payday_gang_data.sequence)
-			self._mask_visibility = false
-			self._mask_unit_name = rnd_payday_gang_data.mask
-			self:CUS_preload_mask()
+			if not rnd_payday_gang_no_mask then
+				self._mask_visibility = false
+				self._mask_unit_name = rnd_payday_gang_data.mask
+				self:CUS_preload_mask()
+			end
+		end
+	end
+	if self._rnd_suit and unit_damage then
+		local _var_model = "var_model_0"..tostring(math.round(math.random()*10)%7+1)
+		local special_materials = tweak_data.blackmarket.characters["max"].special_materials
+		local special_material = table.random(special_materials)
+		local special_material_ids = Idstring(special_material)
+		if unit_damage:has_sequence(_var_model) then
+			unit_damage:run_sequence_simple(_var_model)
+		end
+		if DB:has(Idstring("material_config"), special_material_ids) then
+			self._unit:set_material_config(special_material_ids, true)
 		end
 	end
 end)
