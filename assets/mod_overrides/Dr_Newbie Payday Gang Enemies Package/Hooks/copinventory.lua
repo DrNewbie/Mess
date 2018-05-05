@@ -7,6 +7,9 @@ function CopInventory:CUS_Can_I_Have_Mask()
 	if not self._mask_unit_name or not self._mask_unit_name:find("masks") or self._mask_unit_name:find("NONE") then
 		return false
 	end
+	if not DB:has(Idstring("unit"), Idstring(self._mask_unit_name)) then
+		return false
+	end
 	return true
 end
 
@@ -32,7 +35,7 @@ function CopInventory:CUS_unload_mask()
 end
 
 function CopInventory:CUS_reset_mask_visibility()
-	self:CUS_set_mask_visibility(self._mask_visibility and true or false)
+	self:CUS_set_mask_visibility(self._mask_unit_loaded and true or false)
 end
 
 function CopInventory:CUS_pre_destroy(unit)
