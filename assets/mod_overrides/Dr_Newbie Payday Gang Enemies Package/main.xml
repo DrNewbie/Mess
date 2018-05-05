@@ -1,5 +1,5 @@
 <table name="Dr_Newbie Payday Gang Enemies Package">
-	<AssetUpdates id="22086" version="34" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AssetUpdates id="22086" version="35" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
 	<AddFiles directory="Assets">
 		<unit path="units/payday2/characters/ene_swat_1/ene_swat_1" force="true"/>
 		<unit path="units/payday2/characters/ene_swat_1/ene_swat_1_husk" force="true"/>

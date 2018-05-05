@@ -10,6 +10,9 @@ function CopInventory:CUS_Can_I_Have_Mask()
 	if not DB:has(Idstring("unit"), Idstring(self._mask_unit_name)) then
 		return false
 	end
+	if not self._unit or not alive(self._unit) or self._unit == managers.player:player_unit() then
+		return false
+	end
 	return true
 end
 
@@ -47,9 +50,6 @@ function CopInventory:CUS_set_mask_visibility(state)
 	if not self:CUS_Can_I_Have_Mask() then
 		return
 	end
-	if self._unit == managers.player:player_unit() then
-		return
-	end
 	local character_name = managers.criminals:character_name_by_unit(self._unit)
 	if character_name then
 		return
@@ -62,7 +62,6 @@ function CopInventory:CUS_set_mask_visibility(state)
 				World:delete_unit(linked_unit)
 			end
 			self._mask_unit:unlink()
-			local name = self._mask_unit:name()
 			World:delete_unit(self._mask_unit)
 		end
 		return
