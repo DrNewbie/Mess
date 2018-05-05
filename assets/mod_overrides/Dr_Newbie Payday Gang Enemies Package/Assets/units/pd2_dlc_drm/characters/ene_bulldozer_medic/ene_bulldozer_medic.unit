@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <unit type="being" slot="12">
 	<anim_state_machine name="anims/units/enemies/cop/cop_machine"/>
-	<object file="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"/>
+	<object file="units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1" />
 
 	<dependencies>		
 		<depends_on bnk="soundbanks/regular_vox"/>
@@ -17,6 +17,7 @@
 			<var name="_stats_name" value="medic"/>
 		</extension>
 		<extension name="inventory" class="CopInventory">
+			<var name="_addon_body_name" value="var_mtr_wolf"/>
 			<var name="_addon_mesh_obj" value="g_medicbag"/>
 			<var name="_addon_armor_name" value="var_model_07"/>
 			<var name="_mask_unit_name" value="units/pd2_dlc_cop/masks/msk_wolf_glow/msk_wolf_glow"/>

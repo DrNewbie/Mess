@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <unit type="being" slot="12">
 	<anim_state_machine name="anims/units/enemies/cop/cop_machine" />
-	<object file="units/payday2/characters/ene_sniper_1/ene_sniper_1" />
+	<object file="units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1" />
 
 	<dependencies>
 		<depends_on bnk="soundbanks/regular_vox" />
@@ -15,6 +15,7 @@
 			<var name="_default_weapon_id" value="m14_sniper_npc" />
 		</extension>
 		<extension name="inventory" class="HuskCopInventory">
+			<var name="_addon_body_name" value="var_mtr_old_hoxton"/>
 			<var name="_mask_unit_name" value="units/pd2_dlc_cop/masks/msk_hoxton_glow/msk_hoxton_glow"/>
 		</extension>
 		<extension name="brain" class="HuskCopBrain" />

@@ -22,6 +22,7 @@
 			<var name="_default_weapon_id" value="mp5_tactical" />
 		</extension>
 		<extension name="inventory" class="CopInventory">
+			<var name="_addon_body_name" value="var_mtr_dallas" />
 			<var name="_mask_unit_name" value="units/payday2/masks/msk_dallas/msk_dallas" />
 		</extension>
 		<extension name="brain" class="CopBrain" />

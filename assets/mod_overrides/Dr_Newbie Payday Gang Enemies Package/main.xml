@@ -1,11 +1,20 @@
 <table name="Dr_Newbie Payday Gang Enemies Package">
-	<AssetUpdates id="22086" version="33" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AssetUpdates id="22086" version="34" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
 	<AddFiles directory="Assets">
 		<unit path="units/payday2/characters/ene_swat_1/ene_swat_1" force="true"/>
 		<unit path="units/payday2/characters/ene_swat_1/ene_swat_1_husk" force="true"/>
 		<model path="units/payday2/characters/ene_swat_1/ene_swat_1" force="true"/>
 		<object path="units/payday2/characters/ene_swat_1/ene_swat_1" force="true"/>
-	
+		
+		<unit path="units/payday2/characters/ene_sm_heavy_g36/ene_sm_heavy_g36" force="true"/>
+		<unit path="units/payday2/characters/ene_sm_heavy_g36/ene_sm_heavy_g36_husk" force="true"/>
+
+		<unit path="units/payday2/characters/ene_sm_heavy_r870/ene_sm_heavy_r870" force="true"/>
+		<unit path="units/payday2/characters/ene_sm_heavy_r870/ene_sm_heavy_r870_husk" force="true"/>
+
+		<unit path="units/payday2/characters/ene_sm_swat_1/ene_sm_swat_1" force="true"/>
+		<unit path="units/payday2/characters/ene_sm_swat_1/ene_sm_swat_1_husk" force="true"/>
+		
 		<unit path="units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1" force="true"/>
 		<unit path="units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1_husk" force="true"/>
 
@@ -73,8 +82,6 @@
 
 		<unit path="units/payday2/characters/ene_medic_m4/ene_medic_m4" force="true"/>
 		<unit path="units/payday2/characters/ene_medic_m4/ene_medic_m4_husk" force="true"/>
-		<model path="units/payday2/characters/ene_medic_m4/ene_medic_m4" force="true"/>
-		<object path="units/payday2/characters/ene_medic_m4/ene_medic_m4" force="true"/>
 		
 		<unit path="units/payday2/characters/ene_medic_r870/ene_medic_r870" force="true"/>
 		<unit path="units/payday2/characters/ene_medic_r870/ene_medic_r870_husk" force="true"/>
@@ -86,13 +93,9 @@
 		
 		<unit path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic" force="true"/>
 		<unit path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic_husk" force="true"/>
-		<model path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic" force="true"/>
-		<object path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic" force="true"/>
 		
 		<unit path="units/payday2/characters/ene_sniper_1/ene_sniper_1" force="true"/>
 		<unit path="units/payday2/characters/ene_sniper_1/ene_sniper_1_husk" force="true"/>
-		<object path="units/payday2/characters/ene_sniper_1/ene_sniper_1" force="true"/>
-		<model path="units/payday2/characters/ene_sniper_1/ene_sniper_1" force="true"/>
 		
 		<unit path="units/payday2/characters/ene_sniper_2/ene_sniper_2" force="true"/>
 		<unit path="units/payday2/characters/ene_sniper_2/ene_sniper_2_husk" force="true"/>
@@ -100,9 +103,7 @@
 	
 		<unit path="units/payday2/characters/ene_spook_1/ene_spook_1" force="true"/>
 		<unit path="units/payday2/characters/ene_spook_1/ene_spook_1_husk" force="true"/>
-		<model path="units/payday2/characters/ene_spook_1/ene_spook_1" force="true"/>
-		<object path="units/payday2/characters/ene_spook_1/ene_spook_1" force="true"/>
-	
+		
 		<unit path="units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2" force="true"/>
 		<unit path="units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2_husk" force="true"/>
 		<model path="units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2" force="true"/>
