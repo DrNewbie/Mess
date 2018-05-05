@@ -1,10 +1,16 @@
-Hooks:PostHook(CopInventory, "init", "JOKERMASK_SetMaskInit", function(cop)
-	cop._mask_visibility = false
-	cop._ids_mask = cop._ids_mask or "NONE"
+Hooks:PostHook(CopInventory, "init", "JOKERMASK_SetMaskInit", function(self)
+	self._JOKER_mask_visibility = false
+	self._ids_mask = self._ids_mask or "NONE"
 end)
 
 function CopInventory:JOKERMASK_Can_I_Have_Mask()
 	if not self._ids_mask or not self._ids_mask:find("masks") or self._ids_mask:find("NONE") then
+		return false
+	end
+	if not DB:has(Idstring("unit"), Idstring(self._ids_mask)) then
+		return false
+	end
+	if not self._unit or not alive(self._unit) or self._unit == managers.player:player_unit() then
 		return false
 	end
 	return true
@@ -17,13 +23,13 @@ function CopInventory:JOKERMASK_apply_mask(_ids_mask)
 	if not self:JOKERMASK_Can_I_Have_Mask() then
 		return
 	end
-	self._mask_visibility = true
+	self._JOKER_mask_visibility = true
 	managers.dyn_resource:load(Idstring("unit"), Idstring(self._ids_mask), managers.dyn_resource.DYN_RESOURCES_PACKAGE, callback(self, self, "JOKERMASK_clbk_mask_unit_loaded"))
 end
 
 function CopInventory:JOKERMASK_clbk_mask_unit_loaded(status, asset_type, asset_name)
-	self._mask_unit_loaded = status
-	self:JOKERMASK_reset_mask_visibility()
+	self._JOKER_mask_unit_loaded = status
+	self:JOKERMASK_reset_JOKER_mask_visibility()
 end
 
 function CopInventory:JOKERMASK_unload_mask()
@@ -34,8 +40,8 @@ function CopInventory:JOKERMASK_unload_mask()
 	self._ids_mask = nil
 end
 
-function CopInventory:JOKERMASK_reset_mask_visibility()
-	self:JOKERMASK_set_mask_visibility(self._mask_visibility and true or false)
+function CopInventory:JOKERMASK_reset_JOKER_mask_visibility()
+	self:JOKERMASK_set_JOKER_mask_visibility(self._JOKER_mask_unit_loaded and true or false)
 end
 
 function CopInventory:JOKERMASK_pre_destroy(unit)
@@ -43,18 +49,15 @@ function CopInventory:JOKERMASK_pre_destroy(unit)
 	self:JOKERMASK_unload_mask()
 end
 
-function CopInventory:JOKERMASK_set_mask_visibility(state)
+function CopInventory:JOKERMASK_set_JOKER_mask_visibility(state)
 	if not self:JOKERMASK_Can_I_Have_Mask() then
-		return
-	end
-	if self._unit == managers.player:player_unit() then
 		return
 	end
 	local character_name = managers.criminals:character_name_by_unit(self._unit)
 	if character_name then
 		return
 	end
-	self._mask_visibility = state
+	self._JOKER_mask_visibility = state
 	if alive(self._mask_unit) then
 		if not state then
 			for _, linked_unit in ipairs(self._mask_unit:children()) do
@@ -62,7 +65,6 @@ function CopInventory:JOKERMASK_set_mask_visibility(state)
 				World:delete_unit(linked_unit)
 			end
 			self._mask_unit:unlink()
-			local name = self._mask_unit:name()
 			World:delete_unit(self._mask_unit)
 		end
 		return
@@ -80,8 +82,4 @@ function CopInventory:JOKERMASK_set_mask_visibility(state)
 	end
 	self._unit:link(mask_align:name(), mask_unit, mask_unit:orientation_object():name())
 	self._mask_unit = mask_unit
-	--[[
-	local backside = World:spawn_unit(Idstring("units/payday2/masks/msk_backside/msk_backside"), mask_align:position(), mask_align:rotation())
-	self._mask_unit:link(self._mask_unit:orientation_object():name(), backside, backside:orientation_object():name())
-	]]
 end
