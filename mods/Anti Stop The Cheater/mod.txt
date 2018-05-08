@@ -1,0 +1,12 @@
+{
+	"name":"Anti Stop The Cheater",
+	"author":"Dr_Newbie",
+	"description":"Anti Stop The Cheater",
+	"contact":"http://modwork.shop/22560",
+	"version":"1",
+	"blt_version":2,
+	"hooks": 
+	[
+		{"hook_id": "lib/network/handlers/unitnetworkhandler","script_path": "unitnetworkhandler.lua"}
+	]
+}
