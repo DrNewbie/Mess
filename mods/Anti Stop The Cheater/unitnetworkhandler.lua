@@ -14,10 +14,10 @@ function UnitNetworkHandler:start_timespeed_effect(effect_id, timer_name, affect
 		if not RecordTime[sender] or (RecordTime[sender] and RecordTime[sender].user_id ~= _uid) then
 			RecordTime[sender] = {
 				user_id = _uid,
-				sustain = sustain
+				sustain = math.abs(sustain)
 			}
 		else
-			RecordTime[sender].sustain = RecordTime[sender].sustain + sustain
+			RecordTime[sender].sustain = RecordTime[sender].sustain + math.abs(sustain)
 		end
 		if RecordTime[sender].sustain > 15 then
 			local peer_name = tostring(peer_sender:name())
