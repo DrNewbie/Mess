@@ -7,7 +7,9 @@ function UnitNetworkHandler:start_timespeed_effect(effect_id, timer_name, affect
 	if not self._verify_gamestate(self._gamestate_filter.any_ingame) or not peer_sender then
 		return
 	end
-	if affect_timer_names_str:find("game_animation") or affect_timer_names_str:find("game") or affect_timer_names_str:find("player") then
+	effect_id = tostring(effect_id)
+	affect_timer_names_str = tostring(affect_timer_names_str)
+	if effect_id:find("pause") and (affect_timer_names_str:find("game_animation") or affect_timer_names_str:find("game") or affect_timer_names_str:find("player")) then
 		local _uid = tostring(peer_sender:user_id())
 		if not RecordTime[sender] or (RecordTime[sender] and RecordTime[sender].user_id ~= _uid) then
 			RecordTime[sender] = {
