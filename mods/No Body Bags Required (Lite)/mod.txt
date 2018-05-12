@@ -3,7 +3,7 @@
 	"author":"Dr_Newbie",
 	"description":"No Body Bags Required (Lite)",
 	"contact":"http://modwork.shop/22585",
-	"version":"1",
+	"version":"2",
 	"priority": 100,
 	"blt_version":2,
 	"hooks": 
