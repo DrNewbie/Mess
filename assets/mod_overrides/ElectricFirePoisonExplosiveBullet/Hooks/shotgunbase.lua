@@ -1,6 +1,14 @@
 Hooks:PreHook(ShotgunBase, "_fire_raycast", "change_bullet_class", function(self)
 	if self._ammo_data and self._ammo_data.bullet_class and self._ammo_data.bullet_class_alt then
-		if self._ammo_data.bullet_class_alt.fd == "wpn_fps_electricfirepoisonbullet" then
+		if self._ammo_data.bullet_class_alt.fd == "wpn_fps_electricfirepoisonexplosivebullet" then
+			--[[
+			self._bullet_class_change = self._bullet_class_change or 0
+			self._bullet_class_change = self._bullet_class_change + 1
+			if self._bullet_class_change > #self._ammo_data.bullet_class_alt.class then
+				self._bullet_class_change = 1
+			end
+			self._bullet_class = CoreSerialize.string_to_classtable(self._ammo_data.bullet_class_alt.class[self._bullet_class_change])
+			]]
 			self._bullet_class = CoreSerialize.string_to_classtable(self._ammo_data.bullet_class_alt.class[math.random(#self._ammo_data.bullet_class_alt.class)])
 			self._bullet_slotmask = self._bullet_class:bullet_slotmask()
 			self._blank_slotmask = self._bullet_class:blank_slotmask()
@@ -21,7 +29,7 @@ local bullet_class_alt_PoisonBullet_on_collision = ProjectilesPoisonBulletBase.o
 
 function ProjectilesPoisonBulletBase:on_collision(col_ray, weapon_unit, ...)
 	if weapon_unit.base and not weapon_unit:base()._projectile_entry and weapon_unit:base()._ammo_data and weapon_unit:base()._ammo_data.bullet_class and weapon_unit:base()._ammo_data.bullet_class_alt then
-		if weapon_unit:base()._ammo_data.bullet_class_alt.fd == "wpn_fps_electricfirepoisonbullet" then
+		if weapon_unit:base()._ammo_data.bullet_class_alt.fd == "wpn_fps_electricfirepoisonexplosivebullet" then
 			weapon_unit:base()._projectile_entry = "wpn_prj_four"		
 		end
 	end
@@ -33,7 +41,7 @@ InstantElectricAltBulletBase = InstantElectricAltBulletBase or class(InstantBull
 function InstantElectricAltBulletBase:give_impact_damage(col_ray, weapon_unit, user_unit, damage, armor_piercing)
 	local defense_data = {}
 	if weapon_unit.base and weapon_unit:base()._ammo_data and weapon_unit:base()._ammo_data.bullet_class and weapon_unit:base()._ammo_data.bullet_class_alt then
-		if weapon_unit:base()._ammo_data.bullet_class_alt.fd == "wpn_fps_electricfirepoisonbullet" then
+		if weapon_unit:base()._ammo_data.bullet_class_alt.fd == "wpn_fps_electricfirepoisonexplosivebullet" then
 			local hit_unit = col_ray.unit
 			local action_data = {}
 			action_data.weapon_unit = weapon_unit

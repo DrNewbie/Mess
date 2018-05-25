@@ -1,5 +1,0 @@
-{
-	"bm_wp_wpn_fps_electricfirepoisonbullet" : "Electric Fire Poison Bullet",
-    "bm_wp_wpn_fps_electricfirepoisonbullet_desc" : "Ahhh...",
-    "menu_l_global_wpn_fps_electricfirepoisonbullet" : ""
-}

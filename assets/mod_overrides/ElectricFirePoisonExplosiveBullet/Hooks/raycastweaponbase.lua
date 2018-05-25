@@ -2,7 +2,7 @@ local bullet_class_alt_FlameBullet_give_fire_damage = FlameBulletBase.give_fire_
 
 function FlameBulletBase:give_fire_damage(col_ray, weapon_unit, user_unit, damage, armor_piercing)
 	if weapon_unit.base and weapon_unit:base()._ammo_data and weapon_unit:base()._ammo_data.bullet_class and weapon_unit:base()._ammo_data.bullet_class_alt then
-		if weapon_unit:base()._ammo_data.bullet_class_alt.fd == "wpn_fps_electricfirepoisonbullet" then
+		if weapon_unit:base()._ammo_data.bullet_class_alt.fd == "wpn_fps_electricfirepoisonexplosivebullet" then
 			local action_data = {
 				variant = "fire",
 				damage = damage,
