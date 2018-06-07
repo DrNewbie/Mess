@@ -1,9 +1,9 @@
 {
-	"name": "Randomize Difficulty",
-	"description": "Randomize Difficulty",
+	"name": "Difficulty Go Up",
+	"description": "Difficulty Go Up",
 	"author": "Dr_Newbie",
-	"contact": "http://modwork.shop/22752",
-	"version": "2",
+	"contact": "http://modwork.shop/22760",
+	"version": "5",
 	"priority": 100,
 	"blt_version": 2,
 	"hooks": [

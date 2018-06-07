@@ -21,6 +21,7 @@ function RandomizeDifficulty:ChanageDifficulty()
 			managers.hud._hud_assault_corner:_set_hostage_offseted(true)
 		end
 		
+		tweak_data.character:init(tweak_data)
 		tweak_data:set_difficulty(self.Last_Difficulty)
 
 		local difficulty_data = {
