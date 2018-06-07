@@ -76,7 +76,7 @@ function DifficultyGoUP:ChanageDifficulty()
 						if type(dd) == "table" and type(dd.FALLOFF) == "table" then
 							for iii, ddd in pairs(dd.FALLOFF) do
 								if type(ddd) == "table" and type(ddd.dmg_mul) == "number" then
-									ddd.dmg_mul = ddd.dmg_mul * (1 + 0.1*self.SM_WISH_PLUS)
+									ddd.dmg_mul = ddd.dmg_mul * (1 + 0.05*self.SM_WISH_PLUS)
 								end
 							end
 						end
