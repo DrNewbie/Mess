@@ -1,0 +1,21 @@
+<table name="Akimbo x100">
+	<AssetUpdates id="22772" version="1" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+
+	<Localization directory="Localization" default="english.txt"/>
+	
+	<AddFiles directory="assets">
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_akimbo_x100_wtf"/>
+	</AddFiles>
+	
+	<Hooks directory="Hooks">
+		<hook file="weaponfactorytweakdata.lua" source_file="lib/tweak_data/weaponfactorytweakdata"/>
+		<hook file="inventorydescription.lua" source_file="lib/utils/inventorydescription"/>
+		<hook file="newraycastweaponbase.lua" source_file="lib/units/weapons/newraycastweaponbase"/>
+		<hook file="akimboweaponbase.lua" source_file="lib/units/weapons/akimboweaponbase"/>
+	</Hooks>
+	
+	<WeaponMod id="wpn_fps_akimbo_x100_wtf" based_on="wpn_fps_upg_a_slug" unit="units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy" type="ammo" texture_bundle_folder="mods" is_a_unlockable="true">
+		<stats value="1" akimbo_wtf_buff="100" akimbo_wtf_link="a_o"/>
+		<weapons/>
+    </WeaponMod>
+</table>
