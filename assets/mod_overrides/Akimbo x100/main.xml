@@ -1,5 +1,5 @@
 <table name="Akimbo x100">
-	<AssetUpdates id="22772" version="1" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AssetUpdates id="22772" version="2" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
 
 	<Localization directory="Localization" default="english.txt"/>
 	
@@ -12,6 +12,7 @@
 		<hook file="inventorydescription.lua" source_file="lib/utils/inventorydescription"/>
 		<hook file="newraycastweaponbase.lua" source_file="lib/units/weapons/newraycastweaponbase"/>
 		<hook file="akimboweaponbase.lua" source_file="lib/units/weapons/akimboweaponbase"/>
+		<hook file="menuscenemanager.lua" source_file="lib/managers/menu/menuscenemanager"/>
 	</Hooks>
 	
 	<WeaponMod id="wpn_fps_akimbo_x100_wtf" based_on="wpn_fps_upg_a_slug" unit="units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy" type="ammo" texture_bundle_folder="mods" is_a_unlockable="true">
