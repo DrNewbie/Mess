@@ -1,0 +1,24 @@
+{
+	"name": "C4 Remote Detonator",
+	"description": "C4 Remote Detonator",
+	"author": "Dr_Newbie",
+	"contact": "http://modwork.shop/22804",
+	"version": "1",
+	"priority": 100,
+	"blt_version": 2,
+	"hooks": [
+		{"hook_id":"lib/managers/localizationmanager", "script_path":"Base.lua"}
+		{"hook_id":"lib/units/weapons/trip_mine/tripminebase", "script_path":"Hooks/tripminebase.lua"}
+	],
+	"keybinds":[
+		{
+			"keybind_id":"keybind_RemoteC4_BoomIt_keybind_id",
+			"name":"keybind_RemoteC4_BoomIt_name",
+			"description":"keybind_RemoteC4_BoomIt_desc",
+			"script_path":"Hooks/KeyBinds/RemoteBoomIt.lua",
+			"run_in_menu":false,
+			"run_in_game":true,
+			"localized":true
+		}
+	]
+}
