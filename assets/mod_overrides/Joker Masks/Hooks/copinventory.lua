@@ -16,9 +16,10 @@ function CopInventory:JOKERMASK_Can_I_Have_Mask()
 	return true
 end
 
-function CopInventory:JOKERMASK_apply_mask(_ids_mask)
+function CopInventory:JOKERMASK_apply_mask(_ids_mask, _mask_blueprint)
 	if _ids_mask then
 		self._ids_mask = _ids_mask
+		self._mask_blueprint = type(_mask_blueprint) == "table" and _mask_blueprint.blueprint or nil
 	end
 	if not self:JOKERMASK_Can_I_Have_Mask() then
 		return
@@ -77,6 +78,15 @@ function CopInventory:JOKERMASK_set_JOKER_mask_visibility(state)
 		return
 	end
 	local mask_unit = World:spawn_unit(Idstring(self._ids_mask), mask_align:position(), mask_align:rotation())
+	if self._mask_blueprint then
+		self._mask_blueprint.material = self._mask_blueprint.material or {}
+		self._mask_blueprint.color = self._mask_blueprint.color or {}
+		self._mask_blueprint.pattern = self._mask_blueprint.pattern or {}
+		self._mask_blueprint.material.id = self._mask_blueprint.material.id or "plastic"
+		self._mask_blueprint.color.id = self._mask_blueprint.color.id or "nothing"
+		self._mask_blueprint.pattern.id = self._mask_blueprint.pattern.id or "no_color_no_material"
+		mask_unit:base():apply_blueprint(self._mask_blueprint)
+	end
 	if not mask_unit or not alive(mask_unit) then
 		return
 	end
