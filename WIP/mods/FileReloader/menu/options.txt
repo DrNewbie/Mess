@@ -1,0 +1,15 @@
+{
+	"menu_id":"FileReloader_menu",
+	"parent_menu_id":"blt_options",
+	"title":"FileReloader_menu_title",
+	"description":"FileReloader_menu_desc",
+	"items":[
+		{
+			"type":"button",
+			"id":"FileReloader_Choose_Folder_callback",
+			"title":"FileReloader_menu_change_settings_title",
+			"description":"FileReloader_menu_change_settings_desc",
+			"callback":"FileReloader_Choose_Folder_callback"
+		}
+	]
+}

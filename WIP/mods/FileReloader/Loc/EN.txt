@@ -1,0 +1,9 @@
+{
+	"FileReloader_menu_title":"Load Your Files",
+	"FileReloader_menu_desc":" ",
+	"FileReloader_menu_change_settings_title":"Choose Folder",
+	"FileReloader_menu_change_settings_desc":" ",
+	"FileReloader_menu_change_settings_main_text":"Select what you want",
+	"FileReloader_use4ok":"[OK]",
+	"FileReloader_use4cancel":"[CANCEL]"
+}
