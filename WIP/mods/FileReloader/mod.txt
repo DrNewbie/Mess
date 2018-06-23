@@ -3,7 +3,7 @@
 	"description":"Load Your Files",
 	"author":"Dr_Newbie",
 	"contact":"http://modwork.shop/22828",
-	"version":"1",
+	"version":"2",
 	"blt_version":2,
 	"hooks":[
 		{ "hook_id":"lib/managers/localizationmanager", "script_path":"lua/menu_function.lua" }

@@ -13,13 +13,19 @@ ModCore:new(FileReloader.ModPath.."Config.xml", true, true)
 function FileReloader:choose_folder_after_type(data)
 	local _Directory, _Config = FileReloader.AssetsPath..data.folder, {}
 	for _, d in pairs(data) do
-		if d.path and d.format then
+		if type(d) == "table" and d.path and d.format then
 			table.insert(_Config, {
 				_meta = d.format,
 				path = d.path,
 				force = true
 			})
 		end
+	end
+	if data.listme then
+		local _base_path = Application:base_path()
+		local _new_path = Application:nice_path(_base_path.._Directory, false)
+		local cmd = string.format('DIR "%s\\" /S /A:-D /B /O:N > "%s\\listme.txt"', _new_path, _new_path)
+		os.execute(cmd)
 	end
 	CustomPackageManager:LoadPackageConfig(_Directory, _Config)
 end
