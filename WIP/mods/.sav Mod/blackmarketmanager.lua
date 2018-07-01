@@ -123,10 +123,10 @@ function BlackMarketManager:_outfit_string_mask(...)
 	else
 		log("[BlkManFix] broken equipped")
 		local s = ""
-        s = s .. " " .. "false"
-        s = s .. " " .. "nothing"
-        s = s .. " " .. "no_color_no_material"
-        s = s .. " " .. "plastic"
+		s = s .. " " .. "false"
+		s = s .. " " .. "nothing"
+		s = s .. " " .. "no_color_no_material"
+		s = s .. " " .. "plastic"
 		return s
 	end
 end
