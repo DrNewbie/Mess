@@ -1,8 +1,9 @@
 <table name="Joker Masks">
-	<AssetUpdates id="22431" version="5" name="asset_updates" folder_name="Joker Masks" provider="modworkshop"/>
+	<AssetUpdates id="22431" version="6" name="asset_updates" folder_name="Joker Masks" provider="modworkshop"/>
 	<Hooks directory="Hooks">
 		<hook file="copdamage.lua" source_file="lib/units/enemies/cop/copdamage"/>
 		<hook file="copinventory.lua" source_file="lib/units/enemies/cop/copinventory"/>
+		<hook file="huskcopinventory.lua" source_file="lib/units/enemies/cop/huskcopinventory"/>
 		<hook file="blackmarketgui.lua" source_file="lib/managers/menu/blackmarketgui"/>
 	</Hooks>
 </table>

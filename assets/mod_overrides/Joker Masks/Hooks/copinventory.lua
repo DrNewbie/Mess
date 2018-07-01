@@ -1,4 +1,4 @@
-Hooks:PostHook(CopInventory, "init", "JOKERMASK_SetMaskInit", function(self)
+Hooks:PostHook(CopInventory, "init", "JOKERMASK_CopInventoryInit", function(self)
 	self._JOKER_mask_visibility = false
 	self._ids_mask = self._ids_mask or "NONE"
 end)

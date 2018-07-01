@@ -1,5 +1,5 @@
 <table name="Dr_Newbie Payday Gang Enemies Package">
-	<AssetUpdates id="22086" version="36" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AssetUpdates id="22086" version="37" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
 	<AddFiles directory="Assets">
 		<unit path="units/payday2/characters/ene_swat_1/ene_swat_1" force="true"/>
 		<unit path="units/payday2/characters/ene_swat_1/ene_swat_1_husk" force="true"/>
@@ -113,5 +113,6 @@
 		<hook file="copbrain.lua" source_file="lib/units/enemies/cop/copbrain"/>
 		<hook file="copmovement.lua" source_file="lib/units/enemies/cop/copmovement"/>
 		<hook file="copinventory.lua" source_file="lib/units/enemies/cop/copinventory"/>
+		<hook file="huskcopinventory.lua" source_file="lib/units/enemies/cop/huskcopinventory"/>
 	</Hooks>
 </table>
