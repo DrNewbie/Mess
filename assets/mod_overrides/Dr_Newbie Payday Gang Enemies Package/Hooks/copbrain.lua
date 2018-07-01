@@ -2,10 +2,10 @@ function CopBrain:convert_to_criminal(mastermind_criminal)
 	self._logic_data.is_converted = true
 	self._logic_data.group = nil
 	local mover_col_body = self._unit:body("mover_blocker")
-
+	
 	if mover_col_body then
 		mover_col_body:set_enabled(false)
-	end
+	end	
 
 	local attention_preset = PlayerMovement._create_attention_setting_from_descriptor(self, tweak_data.attention.settings.team_enemy_cbt, "team_enemy_cbt")
 
@@ -76,4 +76,5 @@ function CopBrain:convert_to_criminal(mastermind_criminal)
 
 	self._unit:brain():action_request(action_data)
 	self._unit:sound():say("cn1", true, nil)
+	managers.network:session():send_to_peers_synched("sync_unit_converted", self._unit)
 end

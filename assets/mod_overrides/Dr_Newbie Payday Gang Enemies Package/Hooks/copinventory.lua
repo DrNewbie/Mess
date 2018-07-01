@@ -4,6 +4,9 @@ Hooks:PostHook(CopInventory, "init", "Cop_SetMaskInit", function(self)
 end)
 
 function CopInventory:CUS_Can_I_Have_Mask()
+	if self._rnd_payday_gang then
+		return true
+	end
 	if not self._mask_unit_name or not self._mask_unit_name:find("masks") or self._mask_unit_name:find("NONE") then
 		return false
 	end

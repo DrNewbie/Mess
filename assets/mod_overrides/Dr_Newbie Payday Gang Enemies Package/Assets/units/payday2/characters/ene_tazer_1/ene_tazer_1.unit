@@ -19,7 +19,7 @@
 		</extension>
 		<extension name="inventory" class="CopInventory">
 			<var name="_addon_mesh_obj" value="g_toolbag"/>
-			<var name="_addon_body_name" value="var_mtr_bodhi"/>
+			<var name="_addon_body_name" value="var_mtr_sydney"/>
 			<var name="_mask_unit_name" value="units/pd2_dlc_swm/masks/msk_swm_sydney"/>
 		</extension>
 		<extension name="brain" class="CopBrain"/>
