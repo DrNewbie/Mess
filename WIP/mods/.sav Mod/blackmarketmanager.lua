@@ -59,6 +59,77 @@ function BlackMarketManager:load(data, ...)
 		elseif type(data.blackmarket) ~= "table" then
 			log("[BlkManFix] data.blackmarket is not table.")
 		else
+			if type(save_data.crafted_items) ~= "table" then
+				save_data.crafted_items = nil
+			else
+				if type(save_data.crafted_items.primaries) ~= "table" then
+					save_data.crafted_items.primaries = {}
+				end
+				if type(save_data.crafted_items.secondaries) ~= "table" then
+					save_data.crafted_items.secondaries = {}
+				end
+				if type(save_data.crafted_items.masks) ~= "table" then
+					save_data.crafted_items.masks = {}
+				end
+				if tweak_data.weapon and tweak_data.weapon.factory then
+					for id, data in pairs(save_data.crafted_items.primaries) do
+						if type(data) ~= "table" then
+							log("[BlkManFix] crafted_items.primaries["..id.."] is not table.")
+							save_data.crafted_items.primaries[id] = nil
+						elseif not data.weapon_id then
+							log("[BlkManFix] crafted_items.primaries["..id.."] has no weapon_id.")
+							save_data.crafted_items.primaries[id] = nil
+						elseif not tweak_data.weapon[data.weapon_id] then
+							log("[BlkManFix] broken data.weapon_id: "..tostring(data.weapon_id))
+							save_data.crafted_items.primaries[id] = nil
+						elseif not tweak_data.weapon.factory[data.factory_id] then
+							log("[BlkManFix] broken data.factory_id: "..tostring(data.factory_id))
+							save_data.crafted_items.primaries[id] = nil
+						end
+					end
+					for id, data in pairs(save_data.crafted_items.secondaries) do
+						if type(data) ~= "table" then
+							log("[BlkManFix] crafted_items.secondaries["..id.."] is not table.")
+							save_data.crafted_items.secondaries[id] = nil
+						elseif not data.weapon_id then
+							log("[BlkManFix] crafted_items.secondaries["..id.."] has no weapon_id.")
+							save_data.crafted_items.secondaries[id] = nil
+						elseif not tweak_data.weapon[data.weapon_id] then
+							log("[BlkManFix] broken data.weapon_id: "..tostring(data.weapon_id))
+							save_data.crafted_items.secondaries[id] = nil
+						elseif not tweak_data.weapon.factory[data.factory_id] then
+							log("[BlkManFix] broken data.factory_id: "..tostring(data.factory_id))
+							save_data.crafted_items.secondaries[id] = nil
+						end
+					end
+				end
+				if tweak_data.blackmarket.masks then
+					for id, data in pairs(save_data.crafted_items.masks) do
+						if type(data) ~= "table" then
+							log("[BlkManFix] crafted_items.masks["..id.."] is not table.")
+							save_data.crafted_items.masks[id] = nil
+						elseif not data.mask_id then
+							log("[BlkManFix] crafted_items.masks["..id.."] has no mask_id.")
+							save_data.crafted_items.masks[id] = nil
+						elseif not tweak_data.blackmarket.masks[data.mask_id] then
+							log("[BlkManFix] broken data.mask_id: "..tostring(data.mask_id))
+							save_data.crafted_items.masks[id] = nil
+						end
+					end
+					for id, data in pairs(save_data._selected_henchmen) do
+						if type(data) ~= "table" then
+							log("[BlkManFix] _selected_henchmen["..id.."] is not table.")
+							save_data._selected_henchmen[id] = {mask = "character_locked"}
+						elseif not data.mask then
+							log("[BlkManFix] _selected_henchmen["..id.."] has no mask.")
+							save_data._selected_henchmen[id].mask = "character_locked"
+						elseif not tweak_data.blackmarket.masks[data.mask] then
+							log("[BlkManFix] broken data.mask: "..tostring(data.mask))
+							save_data._selected_henchmen[id].mask = "character_locked"
+						end
+					end
+				end
+			end
 			data.blackmarket._preferred_characters = save_data._preferred_characters or BlkManFix_Default._preferred_characters
 			data.blackmarket.crafted_items = save_data.crafted_items or BlkManFix_Default.crafted_items
 			data.blackmarket._selected_henchmen = save_data._selected_henchmen or BlkManFix_Default._selected_henchmen
