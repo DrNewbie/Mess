@@ -1,0 +1,12 @@
+{
+	"name" : "NO SA",
+	"description" : " ",
+	"author" : " ",
+	"contact" : "http://modwork.shop/22873",
+	"version" : "2",
+	"priority" : 100,
+	"blt_version" : 2,
+	"hooks" : [
+		{"hook_id" : "lib/network/matchmaking/networkmatchmakingsteam", "script_path" : "Nope.lua"}
+	]
+}
