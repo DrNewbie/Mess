@@ -25,6 +25,7 @@ function JokerMask:Get_Mask(joker_unit)
 		end
 		if try <= 0 then
 		else
+			log("key: "..key)
 			_mask_data = self.Mask[key]
 			_mask_unit = tweak_data.blackmarket.masks[_mask_data.mask_id].unit		
 		end

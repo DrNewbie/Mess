@@ -60,14 +60,14 @@ Hooks:PostHook(BlackMarketGui, "_setup", "JokerMask_SetMask", function(self)
 		end
 	end
 	local m_mask2joker = {
-		prio = 1,
+		prio = 999,
 		btn = "BTN_A",
 		pc_btn = nil,
 		name = "JokerMask_apply2jokermask",
 		callback = callback(self, self, "JokerMask_apply2jokermask_callback")
 	}
 	local m_mask3joker = {
-		prio = 1,
+		prio = 999,
 		btn = "BTN_A",
 		pc_btn = nil,
 		name = "JokerMask_remove4jokermask",
@@ -77,23 +77,16 @@ Hooks:PostHook(BlackMarketGui, "_setup", "JokerMask_SetMask", function(self)
 	self._btns["m_mask3joker"] = BlackMarketGuiButtonItem:new(self._buttons, m_mask3joker, 10)
 end)
 
-Hooks:PostHook(BlackMarketGui, "populate_masks_new", "JokerMask_populate_masks_new", function(self, data)
-	for k, v in pairs(data) do
-		if data[k] and type(v) == "table" and v["unlocked"] then
-			if tostring(json.encode({v = v})):find("m_preview") then
-				table.insert(data[k], "m_mask2joker")
-				table.insert(data[k], "m_mask3joker")
-			end
-		end
-	end
-end)
 
-Hooks:PostHook(BlackMarketGui, "populate_masks", "JokerMask_populate_masks", function(self, data)
-	for k, v in pairs(data) do
-		if data[k] and type(v) == "table" and v["unlocked"] then
-			if tostring(json.encode({v = v})):find("m_preview") then
-				table.insert(data[k], "m_mask2joker")
-				table.insert(data[k], "m_mask3joker")
+Hooks:PostHook(BlackMarketGui, "populate_masks_new", "JokerMask_populate_masks_new", function(self, data)
+	for i, datas in pairs(data) do
+		if data[i] and type(datas) == "table" and datas.unlocked then
+			for ii, i_datas in pairs(datas) do
+				if type(ii) == "number" and type(i_datas) == "string" and i_datas == "m_preview" then
+					table.insert(data[i], "m_mask2joker")
+					table.insert(data[i], "m_mask3joker")
+					break
+				end
 			end
 		end
 	end
