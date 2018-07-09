@@ -199,6 +199,22 @@ Hooks:PostHook(BlackMarketManager, 'save', 'Post_BlkManFix_Save', function(self,
 		if data.blackmarket.crafted_items then
 			save2files.crafted_items = data.blackmarket.crafted_items
 		end
+		--Create empty table for empty slot
+		for i = 1, #(save2files.crafted_items.primaries) do
+			if type(save2files.crafted_items.primaries[i]) ~= "table" then
+				save2files.crafted_items.primaries[i] = {}
+			end
+		end
+		for i = 1, #(save2files.crafted_items.secondaries) do
+			if type(save2files.crafted_items.secondaries[i]) ~= "table" then
+				save2files.crafted_items.secondaries[i] = {}
+			end
+		end
+		for i = 1, #(save2files.crafted_items.masks) do
+			if type(save2files.crafted_items.masks[i]) ~= "table" then
+				save2files.crafted_items.masks[i] = {}
+			end
+		end
 		log("[BlkManFix] armors")
 		save2files.armors = BlkManFix_Default.armors
 		if data.blackmarket.armors then
