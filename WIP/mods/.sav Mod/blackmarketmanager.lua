@@ -198,6 +198,42 @@ Hooks:PostHook(BlackMarketManager, 'save', 'Post_BlkManFix_Save', function(self,
 		save2files.crafted_items = BlkManFix_Default.crafted_items
 		if data.blackmarket.crafted_items then
 			save2files.crafted_items = data.blackmarket.crafted_items
+			local last_id = 0
+			for id, data in pairs(save2files.crafted_items.primaries) do
+				if id-1 == last_id then
+					last_id = id
+				else
+					for j = id-1-last_id,1,-1 do
+						--log('[BlkManFix] Primary ID: '..id-j..' is an empty weapon slot')
+						save2files.crafted_items.primaries[id-j] = {}
+					end
+					last_id = id
+				end
+			end
+			last_id = 0
+			for id, data in pairs(save2files.crafted_items.secondaries) do
+				if id-1 == last_id then
+					last_id = id
+				else
+					for j = id-1-last_id,1,-1 do
+						--log('[BlkManFix] Secondary ID: '..id-j..' is an empty weapon slot')
+						save2files.crafted_items.secondaries[id-j] = {}
+					end
+					last_id = id
+				end
+			end
+			last_id = 0
+			for id, data in pairs(save2files.crafted_items.masks) do
+				if id-1 == last_id then
+					last_id = id
+				else
+					for j = id-1-last_id,1,-1 do
+						--log('[BlkManFix] Masks ID: '..id-j..' is an empty mask slot')
+						save2files.crafted_items.masks[id-j] = {}
+					end
+					last_id = id
+				end
+			end
 		end
 		log("[BlkManFix] armors")
 		save2files.armors = BlkManFix_Default.armors
