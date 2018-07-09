@@ -3,7 +3,7 @@
 	"description": ".sav Mod",
 	"author": "Dr_Newbie",
 	"contact": "http://modwork.shop/22865",
-	"version": "9",
+	"version": "9.1",
 	"priority": 100,
 	"blt_version": 2,
 	"undisablable": true,

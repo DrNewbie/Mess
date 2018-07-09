@@ -288,7 +288,7 @@ Hooks:PostHook(BlackMarketManager, 'save', 'Post_BlkManFix_Save', function(self,
 		end
 		log("[BlkManFix] data.ExperienceManager")
 		save2files.exp = BlkManFix_Default.exp
-		local EXP_table = data.ExperienceManager
+		local EXP_table = type(data.ExperienceManager) == "table" and data.ExperienceManager or {}
 		if type(EXP_table.level) == digest_value_type then
 			save2files.exp.level = Application:digest_value(EXP_table.level, false)
 		end
@@ -314,7 +314,7 @@ Hooks:PostHook(BlackMarketManager, 'save', 'Post_BlkManFix_Save', function(self,
 		end
 		log("[BlkManFix] data.MoneyManager")
 		save2files.cash = BlkManFix_Default.cash
-		local Money_table = data.MoneyManager
+		local Money_table = type(data.MoneyManager) == "table" and data.MoneyManager or {}
 		if type(Money_table.total_collected) == digest_value_type then
 			save2files.cash.total_collected = Application:digest_value(Money_table.total_collected, false)
 		end
