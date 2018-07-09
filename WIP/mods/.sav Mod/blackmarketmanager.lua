@@ -1,9 +1,5 @@
 BlkManFix_ModPath = ModPath
 
-if ModCore then
-	ModCore:new(BlkManFix_ModPath .. "Config.xml", true, true)
-end
-
 BlkManFix_Default = {
 	_preferred_characters = {"bodhi"},
 	crafted_items = {
