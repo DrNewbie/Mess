@@ -1,9 +1,12 @@
 <mod name="[Fake] Dynamically change your health colour">
-	<AssetUpdates id="22922" version="2" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AssetUpdates id="22922" version="3" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
 	<Hooks directory="Hooks">
 		<hook file="hudteammate.lua" source_file="lib/managers/hud/hudteammate"/>
 	</Hooks>
-	<AddFiles directory="Assets/100">
-		<texture path="guis/textures/pd2/hud_health_alt" force = "true"/>
+	<AddFiles directory="Assets">
+		<texture path="guis/textures/pd2/hud_health_alt_090" force = "true"/>
+		<texture path="guis/textures/pd2/hud_health_alt_075" force = "true"/>
+		<texture path="guis/textures/pd2/hud_health_alt_050" force = "true"/>
+		<texture path="guis/textures/pd2/hud_health_alt_025" force = "true"/>
 	</AddFiles>
 </mod>

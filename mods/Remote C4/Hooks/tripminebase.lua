@@ -46,9 +46,11 @@ function TripMineBase.RemoteC4_Boom()
 					local max_angle = math.max(8, math.lerp(10, 30, dis / 1200))
 					local angle = vec:angle(cam_fwd)					
 					if angle < max_angle or math.abs(max_angle-angle) < 10 then
+						c4_unit:base()._active = true
 						c4_unit:base():explode()
 						RemoteC4FUN.Record[peer_id].units[i] = nil
 						PlyStandard:_do_action_intimidate(TimerManager:game():time(), "cmd_gogo", "g18", true)
+						break
 					end
 				else
 					RemoteC4FUN.Record[peer_id].units[i] = nil

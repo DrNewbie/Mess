@@ -1,4 +1,0 @@
-{
-	"keybind_RemoteC4_BoomIt_name":"Detonate C4",
-	"keybind_RemoteC4_BoomIt_desc":"KaBoom!!"
-}
