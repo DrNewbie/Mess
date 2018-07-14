@@ -1,0 +1,7 @@
+HuskCopInventory.CUS_Can_I_Have_Mask = CopInventory.CUS_Can_I_Have_Mask
+HuskCopInventory.CUS_preload_mask = CopInventory.CUS_preload_mask
+HuskCopInventory.CUS_clbk_mask_unit_loaded = CopInventory.CUS_clbk_mask_unit_loaded
+HuskCopInventory.CUS_unload_mask = CopInventory.CUS_unload_mask
+HuskCopInventory.CUS_reset_mask_visibility = CopInventory.CUS_reset_mask_visibility
+HuskCopInventory.CUS_pre_destroy = CopInventory.CUS_pre_destroy
+HuskCopInventory.CUS_set_mask_visibility = CopInventory.CUS_set_mask_visibility
