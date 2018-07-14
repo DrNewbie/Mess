@@ -14,8 +14,7 @@
 			<var name="_default_weapon_id" value="r870" />
 		</extension>
 		<extension name="inventory" class="CopInventory">
-			<var name="_mask_unit_name" value="units/pd2_dlc_max/masks/msk_max"/>
-			<var name="_rnd_suit" value="true"/>
+			<var name="_rnd_payday_gang" value="true" />
 		</extension>
 		<extension name="brain" class="CopBrain" />
 		<extension name="anim_data" class="PlayerAnimationData"/>

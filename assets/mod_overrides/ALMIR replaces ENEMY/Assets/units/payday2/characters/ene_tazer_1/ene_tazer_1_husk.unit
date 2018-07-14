@@ -17,8 +17,7 @@
 		</extension>
 		<extension name="inventory" class="HuskCopInventory">
 			<var name="_addon_mesh_obj" value="g_toolbag"/>
-			<var name="_addon_body_name" value="var_mtr_sydney"/>
-			<var name="_mask_unit_name" value="units/pd2_dlc_swm/masks/msk_swm_sydney"/>
+			<var name="_rnd_payday_gang" value="true" />
 		</extension>
 		<extension name="brain" class="HuskCopBrain"/>
 		<extension name="anim_data" class="PlayerAnimationData"/>

@@ -18,8 +18,7 @@
 		</extension>
 		<extension name="inventory" class="CopInventory">
 			<var name="_addon_mesh_obj" value="g_firstaidbag"/>
-			<var name="_addon_body_name" value="var_mtr_hoxton"/>
-			<var name="_mask_unit_name" value="units/payday2/masks/msk_hoxton/msk_hoxton"/>
+			<var name="_rnd_payday_gang" value="true" />
 		</extension>
 		<extension name="brain" class="CopBrain"/>
 		<extension name="anim_data" class="PlayerAnimationData"/>

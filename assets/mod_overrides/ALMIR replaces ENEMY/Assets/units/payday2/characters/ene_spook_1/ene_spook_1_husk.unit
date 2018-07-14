@@ -18,7 +18,7 @@
 		</extension>
 		<extension name="inventory" class="HuskCopInventory">
 			<var name="_addon_body_name" value="var_mtr_dallas" />
-			<var name="_mask_unit_name" value="units/payday2/masks/msk_dallas/msk_dallas" />
+			<var name="_rnd_payday_gang" value="true" />
 		</extension>
 		<extension name="brain" class="HuskCopBrain" />
 		<extension name="anim_data" class="PlayerAnimationData" />

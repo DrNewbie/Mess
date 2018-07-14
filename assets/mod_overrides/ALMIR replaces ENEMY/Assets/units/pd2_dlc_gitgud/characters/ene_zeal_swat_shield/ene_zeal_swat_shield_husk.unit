@@ -15,8 +15,7 @@
 			<var name="_default_weapon_id" value="mp9" />
 		</extension>
 		<extension name="inventory" class="HuskCopInventory" >
-			<var name="_rnd_suit" value="true"/>
-			<var name="_mask_unit_name" value="units/pd2_dlc_wild/masks/rust/msk_rust"/>
+			<var name="_rnd_payday_gang" value="true" />
 			<var name="_shield_unit_name" value="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat/ene_acc_shield_new_swat" />
 		</extension>
 		<extension name="brain" class="HuskCopBrain" />
