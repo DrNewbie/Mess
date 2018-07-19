@@ -1,5 +1,5 @@
 <table name="ALMIR replaces ENEMY ">
-	<AssetUpdates id="22953" version="4" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AssetUpdates id="22953" version="5" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
 	<AddFiles directory="Assets">
 		<texture path="units/pd2_dlc_wild/characters/fps_criminals_wild_1/fps_sleeve_wild_1_df" force="true"/>
 		<texture path="units/pd2_dlc_wild/characters/npc_criminals_wild_1/npc_criminal_wild_1_suite_df" force="true"/>
@@ -44,20 +44,24 @@
 		<unit path="units/payday2/characters/ene_shield_1/ene_shield_1_husk" force="true"/>
 		<unit path="units/payday2/characters/ene_shield_2/ene_shield_2" force="true"/>
 		<unit path="units/payday2/characters/ene_shield_2/ene_shield_2_husk" force="true"/>
-		<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield" force="true"/>
-		<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield_husk" force="true"/>
 		<unit path="units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1" force="true"/>
 		<unit path="units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1_husk" force="true"/>
+		<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield" force="true"/>
+		<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield_husk" force="true"/>
 		<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat" force="true"/>
 		<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat_husk" force="true"/>
+		<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy" force="true"/>
+		<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy_husk" force="true"/>
+		<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_cloaker/ene_zeal_cloaker" force="true"/>
+		<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_cloaker/ene_zeal_cloaker_husk" force="true"/>
+		<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer" force="true"/>
+		<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer_husk" force="true"/>
 		<unit path="units/payday2/characters/ene_sm_swat_1/ene_sm_swat_1" force="true"/>
 		<unit path="units/payday2/characters/ene_sm_swat_1/ene_sm_swat_1_husk" force="true"/>
 		<unit path="units/payday2/characters/ene_sm_shield/ene_sm_shield" force="true"/>
 		<unit path="units/payday2/characters/ene_sm_shield/ene_sm_shield_husk" force="true"/>
 		<unit path="units/payday2/characters/ene_city_shield/ene_city_shield" force="true"/>
 		<unit path="units/payday2/characters/ene_city_shield/ene_city_shield_husk" force="true"/>
-		<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy" force="true"/>
-		<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy_husk" force="true"/>
 		<unit path="units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870" force="true"/>
 		<unit path="units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870_husk" force="true"/>
 		<unit path="units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36" force="true"/>

@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <unit type="being" slot="12">
 	<anim_state_machine name="anims/units/enemies/cop/cop_machine" />
-	<object file="units/payday2/characters/ene_swat_1/ene_swat_1" />	
+	<object file="units/payday2/characters/ene_swat_1/ene_swat_1" />
 
 	<dependencies>
-		<depends_on unit="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat/ene_acc_shield_new_swat" />
+		<depends_on bnk="soundbanks/regular_vox" />
 	</dependencies>
 
 	<extensions>
@@ -20,7 +20,7 @@
 		</extension>
 		<extension name="brain" class="HuskCopBrain" />
 		<extension name="anim_data" class="PlayerAnimationData" />
-		<extension name="character_damage" class="HuskCopDamage" >
+		<extension name="character_damage" class="HuskCopDamage">
 			<var name="_head_body_name" value="head" />
 		</extension>
 		<extension name="movement" class="HuskCopMovement" >
