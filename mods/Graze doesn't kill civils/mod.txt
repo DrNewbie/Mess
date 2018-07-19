@@ -1,0 +1,12 @@
+{
+	"name" : "Graze doesn't kill civils",
+	"description" : " ",
+	"author" : " ",
+	"contact" : "http://modwork.shop/22987",
+	"version" : "1",
+	"priority" : 100,
+	"blt_version" : 2,
+	"hooks" : [
+		{"hook_id" : "lib/units/civilians/civiliandamage", "script_path" : "civiliandamage.lua"}
+	]
+}
