@@ -1,0 +1,5 @@
+{
+	"bm_wp_wpn_fps_backburner" : "Backburner",
+	"bm_wp_wpn_fps_backburner_desc" : "The Backburner guarantee super critical hits whenever it is used on an opponent from behind.",
+	"menu_l_global_wpn_fps_backburner" : ""
+}
