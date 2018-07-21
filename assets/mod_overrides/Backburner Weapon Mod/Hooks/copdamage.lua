@@ -1,4 +1,4 @@
-BackBurnerFunc = BackBurnerFunc or CopDamage.roll_critical_hit
+local BackBurnerFunc = BackBurnerFunc or CopDamage.roll_critical_hit
 
 function CopDamage:roll_critical_hit(attack_data, ...)
 	if attack_data.damage and attack_data.variant and attack_data.variant == "fire" and attack_data.attacker_unit and attack_data.attacker_unit == managers.player:player_unit() and attack_data.weapon_unit then
