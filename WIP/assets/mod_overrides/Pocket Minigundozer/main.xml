@@ -1,8 +1,7 @@
 <table name="Pocket Minigundozer">
 	<Localization directory="Loc" default="english.txt"/>
-	<AssetUpdates id="23001" version="1" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AssetUpdates id="23001" version="2" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
 	<AddFiles directory="Assets">
-		<model path="units/payday2/equipment/gen_equipment_tripmine/gen_equipment_pocket_tank_mini"/>
 		<unit path="units/payday2/equipment/gen_equipment_tripmine/gen_equipment_pocket_tank_mini"/>
 		<unit path="units/payday2/equipment/gen_equipment_tripmine/gen_equipment_pocket_tank_mini_dummy"/>
 		<texture path="guis/textures/pd2/blackmarket/icons/deployables/pocket_tank_mini"/>
