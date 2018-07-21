@@ -50,6 +50,13 @@ BlkManFix_Default = {
 			points = 1,
 			current_points = 0
 		}
+	},
+	ply = {
+		kit = {
+			equipment_slots = {
+				"armor_kit"
+			}
+		}
 	}
 }
 
@@ -80,6 +87,10 @@ function BlackMarketManager:load(data, ...)
 			if type(save_data.cash) ~= "table" then
 				log("[BlkManFix] save_data.cash is not table.")
 				save_data.cash = BlkManFix_Default.cash
+			end
+			if type(save_data.ply) ~= "table" then
+				log("[BlkManFix] save_data.ply is not table.")
+				save_data.ply = BlkManFix_Default.ply
 			end
 			if type(save_data.crafted_items) ~= "table" then
 				save_data.crafted_items = nil
@@ -129,13 +140,13 @@ function BlackMarketManager:load(data, ...)
 					for id, data in pairs(save_data.crafted_items.masks) do
 						if type(data) ~= "table" then
 							log("[BlkManFix] crafted_items.masks["..id.."] is not table.")
-							save_data.crafted_items.masks[id] = nil
+							save_data.crafted_items.masks[id] = {}
 						elseif not data.mask_id then
 							log("[BlkManFix] crafted_items.masks["..id.."] has no mask_id.")
-							save_data.crafted_items.masks[id] = nil
+							save_data.crafted_items.masks[id] = {}
 						elseif not tweak_data.blackmarket.masks[data.mask_id] then
 							log("[BlkManFix] broken data.mask_id: "..tostring(data.mask_id))
-							save_data.crafted_items.masks[id] = nil
+							save_data.crafted_items.masks[id] = {}
 						end
 					end
 					for id, data in pairs(save_data._selected_henchmen) do
@@ -221,6 +232,16 @@ function BlackMarketManager:load(data, ...)
 			else
 				log("[BlkManFix] cash.total is not number")
 				data.MoneyManager.total = Application:digest_value(BlkManFix_Default.cash.total, true)
+			end
+			if type(data.PlayerManager) ~= "table" then
+				log("[BlkManFix] data.PlayerManager is not table")
+			else
+				if type(save_data.ply.kit.equipment_slots[1]) == "string" then
+					data.PlayerManager.kit.equipment_slots[1] = save_data.ply.kit.equipment_slots[1]
+				end
+				if type(save_data.ply.kit.equipment_slots[2]) == "string" then
+					data.PlayerManager.kit.equipment_slots[2] = save_data.ply.kit.equipment_slots[2]
+				end
 			end
 		end		
 	end
@@ -326,6 +347,16 @@ Hooks:PostHook(BlackMarketManager, 'save', 'Post_BlkManFix_Save', function(self,
 		end
 		if type(Money_table.total) == digest_value_type then
 			save2files.cash.total = Application:digest_value(Money_table.total, false)
+		end
+		save2files.ply = BlkManFix_Default.ply
+		data.PlayerManager = data.PlayerManager or {}
+		data.PlayerManager.kit = data.PlayerManager.kit or {}
+		data.PlayerManager.kit.equipment_slots = data.PlayerManager.kit.equipment_slots or {}
+		if type(data.PlayerManager.kit.equipment_slots[1]) == "string" then
+			save2files.ply.kit.equipment_slots[1] = data.PlayerManager.kit.equipment_slots[1]
+		end
+		if type(data.PlayerManager.kit.equipment_slots[2]) == "string" then
+			save2files.ply.kit.equipment_slots[2] = data.PlayerManager.kit.equipment_slots[2]
 		end
 		save2files.Version = os.date("%m/%d/%Y - %X")
 		save_files:write(json.encode(save2files))
