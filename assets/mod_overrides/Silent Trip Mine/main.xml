@@ -1,6 +1,6 @@
 <table name="Silent_Trip_Mine">
 	<Localization directory="Loc" default="english.txt"/>
-	<AssetUpdates id="20327" name="asset_updates" folder_name="Silent Trip Mine" provider="lastbullet"/>
+	<AssetUpdates id="20327" version="5" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
 	<AddFiles directory="Assets">
 		<model path="units/payday2/equipment/gen_equipment_tripmine/gen_equipment_tripmine_silent"/>
 		<unit path="units/payday2/equipment/gen_equipment_tripmine/gen_equipment_tripmine_silent"/>
@@ -13,7 +13,6 @@
 		<hook file="Main_Function.lua" source_file="lib/managers/localizationmanager"/>
 		<hook file="blackmarketmanager.lua" source_file="lib/managers/blackmarketmanager"/>
 		<hook file="playermanager.lua" source_file="lib/managers/playermanager"/>
-		<hook file="explosionmanager.lua" source_file="lib/managers/explosionmanager"/>
 		<hook file="interactionext.lua" source_file="lib/units/interactions/interactionext"/>		
 		<hook file="tripminebase.lua" source_file="lib/units/weapons/trip_mine/tripminebase"/>
 		<hook file="missiondoor.lua" source_file="lib/units/props/missiondoor"/>

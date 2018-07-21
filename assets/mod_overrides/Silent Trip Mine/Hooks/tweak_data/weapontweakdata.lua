@@ -1,4 +1,4 @@
-Hooks:PreHook(WeaponTweakData, "_init_data_player_weapons", "SilentTripMine_init_data_player_weapons", function(self, ...)
+Hooks:PreHook(WeaponTweakData, "_init_data_player_weapons", "SilentTripMine_init_data_player_weapons", function(self)
 	self.trip_mine_silent = {}
 	self.trip_mine_silent.delay = 0.3
 	self.trip_mine_silent.damage = 100

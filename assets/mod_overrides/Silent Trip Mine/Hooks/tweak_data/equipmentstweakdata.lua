@@ -1,4 +1,4 @@
-Hooks:PostHook(EquipmentsTweakData, "init", "SilentTripMine_EquipmentsTweakData", function(self, ...)
+Hooks:PostHook(EquipmentsTweakData, "init", "SilentTripMine_EquipmentsTweakData", function(self)
 	self.trip_mine_silent = {
 		icon = "equipment_trip_mine",
 		use_function_name = "use_trip_mine",

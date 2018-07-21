@@ -1,8 +1,6 @@
-
--- This disables the triggering of achievments
-function AchievmentManager:award(id, ...)
+function AchievmentManager:award(...)
 	return
 end
-function AchievmentManager:award_progress(stat, value, ...)
+function AchievmentManager:award_progress(...)
 	return
 end

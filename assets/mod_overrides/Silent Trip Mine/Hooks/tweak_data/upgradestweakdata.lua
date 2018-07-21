@@ -1,4 +1,4 @@
-Hooks:PostHook(UpgradesTweakData, "_trip_mine_definitions", "SilentTripMine_trip_mine_silent_definitions", function(self, ...)
+Hooks:PostHook(UpgradesTweakData, "_trip_mine_definitions", "SilentTripMine_trip_mine_silent_definitions", function(self)
 	self.definitions.trip_mine_silent = {
 		tree = 2,
 		step = 4,
