@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<unit type="item" slot="14" >
+	<object file="units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />
+	<extensions>		
+	</extensions>
+	<sounds>
+		<default_soundsource source="rp_gen_equipment_tripmine" />
+	</sounds>
+</unit>

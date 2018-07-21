@@ -1,0 +1,6 @@
+{
+	"bm_equipment_pocket_tank_mini" : "Pocket Minigundozer",
+	"bm_equipment_pocket_tank_mini_desc" : "Your friendly support.",
+	"bm_menu_skill_locked_equipment_pocket_tank_mini" : " ",
+	"debug_pocket_tank_mini" : "Pocket Minigundozer"
+}
