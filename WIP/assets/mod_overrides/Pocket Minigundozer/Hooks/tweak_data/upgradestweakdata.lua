@@ -7,7 +7,7 @@ Hooks:PostHook(UpgradesTweakData, "_trip_mine_definitions", "PocketMinigundozer_
 		name_id = "debug_pocket_tank_mini",
 		title_id = "debug_upgrade_new_equipment",
 		subtitle_id = "debug_pocket_tank_mini",
-		icon = "equipment_pocket_tank_mini",
+		icon = "risk_sm_wish",
 		image = "upgrades_tripmines",
 		image_slice = "upgrades_tripmines_slice",
 		description_text_id = "pocket_tank_mini",

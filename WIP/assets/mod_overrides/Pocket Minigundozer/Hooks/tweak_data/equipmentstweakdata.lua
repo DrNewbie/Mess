@@ -4,7 +4,7 @@ Hooks:PostHook(EquipmentsTweakData, "init", "PocketMinigundozer_EquipmentsTweakD
 		text_id = "bm_equipment_pocket_tank_mini",
 		deploy_time = 2,
 		visual_object = "g_toolbag",
-		icon = "equipment_pocket_tank_mini",
+		icon = "risk_sm_wish",
 		description_id = "pocket_tank_mini",
 		use_function_name = "use_pocket_tank_mini",
 		quantity = {1},
