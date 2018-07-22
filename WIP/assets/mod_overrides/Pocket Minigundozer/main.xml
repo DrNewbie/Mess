@@ -1,6 +1,6 @@
 <table name="Pocket Minigundozer">
 	<Localization directory="Loc" default="english.txt"/>
-	<AssetUpdates id="23001" version="2" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AssetUpdates id="23001" version="3" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
 	<AddFiles directory="Assets">
 		<unit path="units/payday2/equipment/gen_equipment_tripmine/gen_equipment_pocket_tank_mini"/>
 		<unit path="units/payday2/equipment/gen_equipment_tripmine/gen_equipment_pocket_tank_mini_dummy"/>
@@ -17,7 +17,6 @@
 		<hook file="tweak_data/equipmentstweakdata.lua" source_file="lib/tweak_data/equipmentstweakdata"/>
 		<hook file="tweak_data/upgradestweakdata.lua" source_file="lib/tweak_data/upgradestweakdata"/>
 		<hook file="tweak_data/weapontweakdata.lua" source_file="lib/tweak_data/weapontweakdata"/>
-		<hook file="tweak_data/interactiontweakdata.lua" source_file="lib/tweak_data/interactiontweakdata"/>
 		
 		<hook file="Prevent/achievmentmanager.lua" source_file="lib/managers/achievmentmanager"/>
 		<hook file="Prevent/networkmatchmakingsteam.lua" source_file="lib/network/matchmaking/networkmatchmakingsteam"/>

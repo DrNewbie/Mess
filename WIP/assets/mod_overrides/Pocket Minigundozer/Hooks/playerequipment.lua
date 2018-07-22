@@ -1,7 +1,7 @@
 function PlayerEquipment:use_pocket_tank_mini()
 	local ray = self:valid_shape_placement("doctor_bag")
 	if ray then
-		managers.statistics:use_trip_mine()
+		--managers.statistics:use_trip_mine()
 		if Network:is_client() then
 			--managers.network:session():send_to_host("place_trip_mine", ray.position, ray.normal, sensor_upgrade)
 		else
