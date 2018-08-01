@@ -27,7 +27,10 @@ function PlayerStandard:_start_ask_bot(t)
 			if prime_target and prime_target.unit and prime_target.unit.base and (prime_target.unit:base().unintimidateable or prime_target.unit:anim_data() and prime_target.unit:anim_data().unintimidateable) then
 				return
 			end
-			local min_equipment = prime_target and prime_target.unit and prime_target.unit:inventory() and prime_target.unit:inventory():min_equipment_amount() > 0 and prime_target.unit:inventory():min_equipment() or nil
+			if not prime_target or not prime_target.unit or not prime_target.unit:inventory() or not prime_target.unit:inventory().min_equipment_amount or not prime_target.unit:inventory():min_equipment_amount() > 0 then
+				return
+			end
+			local min_equipment = prime_target.unit:inventory():min_equipment() or nil
 			if min_equipment then
 				local unit_min, pos, rot
 				pos = prime_target.unit:position()
