@@ -1,0 +1,11 @@
+{
+	"name":"Everyone is cheater",
+	"description":" ",
+	"author":"Dr_Newbie",
+	"contact":"http://modwork.shop/",
+	"version":"1",
+	"blt_version": 2,
+	"hooks" : [
+		{ "hook_id" : "lib/managers/hudmanagerpd2", "script_path" : "hudmanagerpd2.lua" }
+	]
+}
