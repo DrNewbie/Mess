@@ -1,0 +1,44 @@
+<table name="IDW NYAW">
+	<AssetUpdates id="23081" version="1" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<Hooks directory="Scripts">
+		<hook source_file="lib/units/dramaext" file="FuckSound.lua"/>
+	</Hooks>
+	<Sounds directory="assets/sounds">
+		<sound id="2f62378425adc765_001" path="Idw_001.ogg" prefix="first"/>
+		<sound id="2f62378425adc765_002" path="Idw_002.ogg" prefix="first"/>
+		<sound id="2f62378425adc765_003" path="Idw_003.ogg" prefix="first"/>
+		<sound id="2f62378425adc765_004" path="Idw_004.ogg" prefix="first"/>
+		<sound id="2f62378425adc765_005" path="Idw_005.ogg" prefix="first"/>
+		<sound id="2f62378425adc765_006" path="Idw_006.ogg" prefix="first"/>
+		<sound id="2f62378425adc765_007" path="Idw_007.ogg" prefix="first"/>
+		<sound id="2f62378425adc765_008" path="Idw_008.ogg" prefix="first"/>
+		<sound id="2f62378425adc765_009" path="Idw_009.ogg" prefix="first"/>
+		<sound id="2f62378425adc765_010" path="Idw_010.ogg" prefix="first"/>
+		<!--<sound id="2f62378425adc765_011" path="Idw_011.ogg" prefix="first"/>-->
+		<!--<sound id="2f62378425adc765_012" path="Idw_012.ogg" prefix="first"/>-->
+		<sound id="2f62378425adc765_013" path="Idw_013.ogg" prefix="first"/>
+		<sound id="2f62378425adc765_014" path="Idw_014.ogg" prefix="first"/>
+		<sound id="2f62378425adc765_015" path="Idw_015.ogg" prefix="first"/>
+		<!--<sound id="2f62378425adc765_016" path="Idw_016.ogg" prefix="first"/>-->
+		<!--<sound id="2f62378425adc765_017" path="Idw_017.ogg" prefix="first"/>-->
+		<!--<sound id="2f62378425adc765_018" path="Idw_018.ogg" prefix="first"/>-->
+		<!--<sound id="2f62378425adc765_019" path="Idw_019.ogg" prefix="first"/>-->
+		<!--<sound id="2f62378425adc765_020" path="Idw_020.ogg" prefix="first"/>-->
+		<sound id="2f62378425adc765_021" path="Idw_021.ogg" prefix="first"/>
+		<sound id="2f62378425adc765_022" path="Idw_022.ogg" prefix="first"/>
+		<sound id="2f62378425adc765_023" path="Idw_023.ogg" prefix="first"/>
+		<sound id="2f62378425adc765_024" path="Idw_024.ogg" prefix="first"/>
+		<sound id="2f62378425adc765_025" path="Idw_025.ogg" prefix="first"/>
+		<sound id="2f62378425adc765_026" path="Idw_026.ogg" prefix="first"/>
+		<sound id="2f62378425adc765_027" path="Idw_027.ogg" prefix="first"/>
+		<sound id="2f62378425adc765_028" path="Idw_028.ogg" prefix="first"/>
+		<sound id="2f62378425adc765_029" path="Idw_029.ogg" prefix="first"/>
+		<sound id="2f62378425adc765_030" path="Idw_030.ogg" prefix="first"/>
+		<!--<sound id="2f62378425adc765_031" path="Idw_031.ogg" prefix="first"/>-->
+		<sound id="2f62378425adc765_032" path="Idw_032.ogg" prefix="first"/>
+		<sound id="2f62378425adc765_033" path="Idw_033.ogg" prefix="first"/>
+		<!--<sound id="2f62378425adc765_034" path="Idw_034.ogg" prefix="first"/>-->
+		<sound id="2f62378425adc765_035" path="Idw_035.ogg" prefix="first"/>
+		<sound id="2f62378425adc765_036" path="Idw_036.ogg" prefix="first"/>
+	</Sounds>
+</table>
