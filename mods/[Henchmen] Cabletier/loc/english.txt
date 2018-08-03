@@ -1,0 +1,4 @@
+{
+	"menu_crew_cabletier" : "Cabletier",
+	"menu_crew_cabletier_desc" : "Increases the amount of Cable Ties of the player"
+}
