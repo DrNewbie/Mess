@@ -1,8 +1,8 @@
 [
 	{
-		"ident": "anythingyouwant",
-		"hash": "43e7cd36567c755be88e60bde45ba418527c692af982d45fbedb8b5a8c792772",
+		"ident": "SuperBLTUpdateTest",
+		"hash": "80a9f50d014ddd6b36e683fc6747bf57e702ac3f6becaba574823967f447a1a6",
 		"patchnotes_url": "https://superblt.znix.xyz/doc/updates/",
-		"download_url": "https://example.com/other-download.zip"
+		"download": "https://drnewbie.github.io/Mess/WIP/mods/SuperBLTUpdateTest.zip"
 	}
 ]

@@ -15,10 +15,10 @@
 	],
 	"updates" : [
 		{
-			"identifier" : "anythingyouwant",
+			"identifier" : "SuperBLTUpdateTest",
 			"host": {
-				"meta": "https://example.com/my_meta.json",
-				"download": "https://example.com/download.zip",
+				"meta": "https://drnewbie.github.io/Mess/WIP/mods/SuperBLTUpdateTest.meta.json",
+				"download": "https://drnewbie.github.io/Mess/WIP/mods/SuperBLTUpdateTest.zip",
 				"patchnotes": "https://superblt.znix.xyz/doc/updates/"
 			}
 		}
