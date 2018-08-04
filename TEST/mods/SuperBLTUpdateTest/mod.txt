@@ -17,8 +17,8 @@
 		{
 			"identifier" : "SuperBLTUpdateTest",
 			"host": {
-				"meta": "https://drnewbie.github.io/Mess/WIP/mods/SuperBLTUpdateTest.meta.json",
-				"download": "https://drnewbie.github.io/Mess/WIP/mods/SuperBLTUpdateTest.zip",
+				"meta": "https://drnewbie.github.io/Mess/TEST/mods/SuperBLTUpdateTest.meta.json",
+				"download": "https://drnewbie.github.io/Mess/TEST/mods/SuperBLTUpdateTest.zip",
 				"patchnotes": "https://superblt.znix.xyz/doc/updates/"
 			}
 		}
