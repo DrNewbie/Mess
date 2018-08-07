@@ -192,8 +192,10 @@ function HelpfulConverted:on_rescue_SO_failed(data)
 end
 
 function HelpfulConverted:on_rescue_SO_started(data)
-	if self:Is_Data_OK(data) and data.revived:character_damage().pause_downed_timer then
-		data.revived:character_damage():pause_downed_timer()
+	if self:Is_Data_OK(data) then
+		if data.revived:character_damage()._downed_paused_counter then
+			data.revived:character_damage():pause_downed_timer()
+		end
 		self.Runner = data.rescuer
 		self.Playing[data.revived:key()] = data.rescuer
 	end

@@ -3,7 +3,7 @@
 	"description": "Helpful Converted and Teammate",
 	"author": "Dr_Newbie",
 	"contact": "http://modwork.shop/17502",
-	"version": "23",
+	"version": "24",
 	"priority": 1,
 	"blt_version": 2,
 	"hooks": [
