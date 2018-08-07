@@ -94,7 +94,6 @@ function HelpfulConverted:Do_Help(unit)
 	if not _ask_converted or not alive(_ask_converted) then
 		return
 	end
-	
 	local objective_type, objective_action
 	objective_type = "revive"
 	objective_action = "revive"
@@ -107,45 +106,37 @@ function HelpfulConverted:Do_Help(unit)
 		return
 	end
 	local followup_objective = {
+		interrupt_health = 1,
+		interrupt_dis = -1,
 		type = "act",
-		scan = true,
 		action = {
-			type = "act",
+			sync = true,
 			body_part = 1,
-			variant = "crouch",
-			blocks = {
-				action = -1,
-				walk = -1,
-				hurt = -1,
-				heavy_hurt = -1,
-				aim = -1
-			}
+			type = "idle"
 		}
 	}
 	local objective = {
-		type = "revive",
-		follow_unit = _need_help_unit,
-		called = true,
+		type = "act",
+		haste = "run",
 		destroy_clbk_key = false,
 		nav_seg = _need_help_unit:movement():nav_tracker():nav_segment(),
 		pos = _need_help_unit:position(),
 		fail_clbk = callback(self, self, "on_rescue_SO_failed", Ready2Help),
 		complete_clbk = callback(self, self, "on_rescue_SO_completed", Ready2Help),
 		action_start_clbk = callback(self, self, "on_rescue_SO_started", Ready2Help),
-		scan = true,
 		action = {
+			align_sync = true,
 			type = "act",
-			variant = objective_action,
 			body_part = 1,
+			variant = "revive",
 			blocks = {
-				action = -1,
-				walk = -1,
-				hurt = -1,
 				light_hurt = -1,
+				hurt = -1,
+				action = -1,
 				heavy_hurt = -1,
-				aim = -1
-			},
-			align_sync = true
+				aim = -1,
+				walk = -1
+			}
 		},
 		action_duration = tweak_data.interaction.revive.timer,
 		followup_objective = followup_objective
