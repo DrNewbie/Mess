@@ -1,0 +1,10 @@
+{
+	"name" : "Pocket ECM Hack Turret",
+	"description" : "http://modwork.shop/23154",
+	"author" : "Dr_Newbie ; Shiny Hoppip",
+	"blt_version" : 2,
+	"version" : "1",
+	"hooks" : [
+		{ "hook_id" : "lib/units/equipment/sentry_gun/sentrygunmovement", "script_path" : "feedback.lua" }
+	]
+}
