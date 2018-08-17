@@ -1,0 +1,6 @@
+{
+	"CHOD_menu_title" : "Change HOLDOUT Difficulty",
+	"CHOD_menu_desc"  : " ",
+	"CHOD_slider_value_title" : "Difficulty",
+	"CHOD_slider_value_desc"  : " "
+}

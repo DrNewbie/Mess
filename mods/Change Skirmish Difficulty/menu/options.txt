@@ -1,0 +1,24 @@
+{
+	"menu_id" : "CHOD_menu_id",
+	"parent_menu_id" : "blt_options",
+	"title" : "CHOD_menu_title",
+	"description" : "CHOD_menu_desc",
+	"back_callback" : "CHODSave",
+	"items" : [
+		{
+			"type" : "multiple_choice",
+			"id" : "CHOD_slider_value",
+			"title" : "CHOD_slider_value_title",
+			"description" : "CHOD_slider_value_desc",
+			"callback" : "CHOD_slider",
+			"items" : [
+				"menu_difficulty_overkill",
+				"menu_difficulty_easy_wish",
+				"menu_difficulty_apocalypse",
+				"menu_difficulty_sm_wish"
+			],
+			"value" : "CHOD_slider_value",
+			"default_value" : 1
+		}
+	]
+}
