@@ -1,0 +1,12 @@
+{
+	"name" : "Sharp Dressers (ALT)",
+	"description" : "http://modwork.shop/23201",
+	"author" : "Dr_Newbie",
+	"blt_version" : 2,
+	"version" : "1",
+	"hooks" : [
+		{ "hook_id" : "lib/units/player_team/teamaimovement", "script_path" : "teamaimovement.lua" },
+		{ "hook_id" : "lib/network/base/networkpeer", "script_path" : "networkpeer.lua" },
+		{ "hook_id" : "lib/managers/menu/menuscenemanager", "script_path" : "menuscenemanager.lua" }
+	]
+}
