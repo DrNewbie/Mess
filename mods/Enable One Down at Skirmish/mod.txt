@@ -3,7 +3,7 @@
 	"description" : " ",
 	"author" : " ",
 	"contact" : "http://modwork.shop/23229",
-	"version" : "1",
+	"version" : "5",
 	"priority" : 100,
 	"blt_version" : 2,
 	"hooks" : [
