@@ -43,46 +43,33 @@ if CHOD.settings.CHOD_slider_value == nil then
 	self:ResetToDefaultValues()
 end
 
-function MenuCallbackHandler:accept_skirmish_contract(item, node)
-	managers.menu:active_menu().logic:navigate_back(true)
-	managers.menu:active_menu().logic:navigate_back(true)
-	local job_data = {
-		difficulty = "overkill_145",
-		job_id = managers.skirmish:random_skirmish_job_id()
-	}	
-	if CHOD.settings.CHOD_slider_value == 2 then
-		job_data.difficulty = "easy_wish"
-	elseif CHOD.settings.CHOD_slider_value == 3 then
-		job_data.difficulty = "overkill_290"
-	elseif CHOD.settings.CHOD_slider_value == 4 then
-		job_data.difficulty = "sm_wish"
+function CHOD:Apply(them)
+	if self.settings.CHOD_slider_value == 2 then
+		Global.game_settings.difficulty = "easy_wish"
+	elseif self.settings.CHOD_slider_value == 3 then
+		Global.game_settings.difficulty = "overkill_290"
+	elseif self.settings.CHOD_slider_value == 4 then
+		Global.game_settings.difficulty = "sm_wish"
+	elseif self.settings.CHOD_slider_value == 1 then
+		Global.game_settings.difficulty = "overkill_145"
 	end
-	if Global.game_settings.single_player then
-		MenuCallbackHandler:start_single_player_job(job_data)
-	else
-		MenuCallbackHandler:start_job(job_data)
-	end
+	local matchmake_attributes = them:get_matchmake_attributes()
+	local job_id_index = tweak_data.narrative:get_index_from_job_id(managers.job:current_job_id())
+	local level_id_index = tweak_data.levels:get_index_from_level_id(Global.game_settings.level_id)
+	local difficulty_index = tweak_data:difficulty_to_index(Global.game_settings.difficulty)
+	local one_down = Global.game_settings.one_down
+	managers.network:session():send_to_peers("sync_game_settings", job_id_index, level_id_index, difficulty_index, one_down)
+	managers.network.matchmake:set_server_attributes(matchmake_attributes)
+	managers.mutators:update_lobby_info()
+	managers.menu_component:on_job_updated()
+	managers.menu:open_node("lobby")
+	managers.menu:active_menu().logic:refresh_node("lobby", true)
 end
 
-function MenuCallbackHandler:accept_skirmish_weekly_contract(item, node)
-	managers.menu:active_menu().logic:navigate_back(true)
-	managers.menu:active_menu().logic:navigate_back(true)
-	local weekly_skirmish = managers.skirmish:active_weekly()
-	local job_data = {
-		difficulty = "overkill_145",
-		weekly_skirmish = true,
-		job_id = weekly_skirmish.id
-	}
-	if CHOD.settings.CHOD_slider_value == 2 then
-		job_data.difficulty = "easy_wish"
-	elseif CHOD.settings.CHOD_slider_value == 3 then
-		job_data.difficulty = "overkill_290"
-	elseif CHOD.settings.CHOD_slider_value == 4 then
-		job_data.difficulty = "sm_wish"
-	end
-	if Global.game_settings.single_player then
-		MenuCallbackHandler:start_single_player_job(job_data)
-	else
-		MenuCallbackHandler:start_job(job_data)
-	end
-end
+Hooks:PostHook(MenuCallbackHandler, "accept_skirmish_contract", Idstring("CHOD.accept_skirmish_contract"):key(), function(self)
+	CHOD:Apply(self)
+end)
+
+Hooks:PostHook(MenuCallbackHandler, "accept_skirmish_weekly_contract", Idstring("CHOD.accept_skirmish_contract"):key(), function(self)
+	CHOD:Apply(self)
+end)
