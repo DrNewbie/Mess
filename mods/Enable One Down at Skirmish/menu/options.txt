@@ -1,0 +1,18 @@
+{
+	"menu_id" : "EODaS_menu_id",
+	"parent_menu_id" : "blt_options",
+	"title" : "EODaS_menu_title",
+	"description" : "EODaS_menu_desc",
+	"back_callback" : "EODaSSave",
+	"items" : [
+		{
+			"type" : "toggle",
+			"id" : "EODaS_slider_value",
+			"title" : "EODaS_toggle_value_title",
+			"description" : "EODaS_toggle_value_desc",
+			"callback" : "EODaS_toggle",
+			"value" : "EODaS_toggle_value",
+			"default_value" : true
+		}
+	]
+}

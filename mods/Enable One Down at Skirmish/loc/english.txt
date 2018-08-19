@@ -1,0 +1,6 @@
+{
+	"EODaS_menu_title" : "Enable One Down at Holdout",
+	"EODaS_menu_desc"  : " ",
+	"EODaS_toggle_value_title" : "Enable",
+	"EODaS_toggle_value_desc"  : "Enable One Down at Holdout"
+}
