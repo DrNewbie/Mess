@@ -19,7 +19,8 @@ function UnitNetworkHandler:start_timespeed_effect(effect_id, timer_name, affect
 		if not RecordTime[sender] or (RecordTime[sender] and RecordTime[sender].user_id ~= _uid) then
 			RecordTime[sender] = {
 				user_id = _uid,
-				sustain = abs_sustain
+				sustain = abs_sustain,
+				try = 0
 			}
 		else
 			RecordTime[sender].sustain = RecordTime[sender].sustain + abs_sustain
@@ -31,8 +32,9 @@ function UnitNetworkHandler:start_timespeed_effect(effect_id, timer_name, affect
 			managers.chat:feed_system_message(ChatManager.GAME, "Total:{"..RecordTime[sender].sustain.."}")
 			if RecordTime[sender].sustain > 15 or abs_sustain > 7 then
 				local peer_name = tostring(peer_sender:name())
-				if RecordTime[sender].sustain > 120 then
+				if RecordTime[sender].sustain > 120 and RecordTime[sender].try < 5 then
 					managers.chat:feed_system_message(ChatManager.GAME, "[!!] {"..peer_name.."} send too much timespeed effect to you.")
+					RecordTime[sender].try = RecordTime[sender].try + 1
 					peer_sender:send("start_timespeed_effect", "pause", "pausable", "player;game;game_animation", 0.05, 1, 3600, 1)
 				end
 				return
