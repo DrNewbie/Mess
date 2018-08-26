@@ -17,7 +17,7 @@ Hooks:PostHook(SkirmishTweakData, "init", "SkirmishMoreWave_16ebbdd0a81ecdbe", f
 		--self.wave_modifiers[1]
 			if not self.wave_modifiers[1][1].data.waves[lv] then
 				self.wave_modifiers[1][1].data.waves[lv] = {
-					damage = self.wave_modifiers[1][1].data.waves[lv - 1].damage * 1.05
+					damage = self.wave_modifiers[1][1].data.waves[lv - 1].damage * 1.05,
 					health = self.wave_modifiers[1][1].data.waves[lv - 1].health * 1.05
 				}
 			end
