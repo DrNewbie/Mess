@@ -11,24 +11,28 @@ function UnitNetworkHandler:start_timespeed_effect(effect_id, timer_name, affect
 	affect_timer_names_str = tostring(affect_timer_names_str)
 	if effect_id:find("pause") and (affect_timer_names_str:find("game_animation") or affect_timer_names_str:find("game") or affect_timer_names_str:find("player")) then
 		local _uid = tostring(peer_sender:user_id())
+		local abs_sustain = math.abs(sustain)
 		if not RecordTime[sender] or (RecordTime[sender] and RecordTime[sender].user_id ~= _uid) then
 			RecordTime[sender] = {
 				user_id = _uid,
-				sustain = math.abs(sustain)
+				sustain = abs_sustain
 			}
 		else
-			RecordTime[sender].sustain = RecordTime[sender].sustain + math.abs(sustain)
+			RecordTime[sender].sustain = RecordTime[sender].sustain + abs_sustain
 		end
-		if RecordTime[sender].sustain > 15 then
-			local peer_name = tostring(peer_sender:name())
+		if abs_sustain > 0 then
 			managers.chat:feed_system_message(ChatManager.GAME, "[!!] {"..peer_name.."(".._uid..")} is sending some")
 			managers.chat:feed_system_message(ChatManager.GAME, "timespeed effect to you.")
+			managers.chat:feed_system_message(ChatManager.GAME, "Ask:{"..abs_sustain.."}")
 			managers.chat:feed_system_message(ChatManager.GAME, "Total:{"..RecordTime[sender].sustain.."}")
-			if RecordTime[sender].sustain > 120 then
-				managers.chat:feed_system_message(ChatManager.GAME, "[!!] {"..peer_name.."} send too much timespeed effect to you.")
-				peer_sender:send("start_timespeed_effect", "pause", "pausable", "player;game;game_animation", 0.05, 1, 3600, 1)
+			if RecordTime[sender].sustain > 15 or abs_sustain > 7 then
+				local peer_name = tostring(peer_sender:name())
+				if RecordTime[sender].sustain > 120 then
+					managers.chat:feed_system_message(ChatManager.GAME, "[!!] {"..peer_name.."} send too much timespeed effect to you.")
+					peer_sender:send("start_timespeed_effect", "pause", "pausable", "player;game;game_animation", 0.05, 1, 3600, 1)
+				end
+				return
 			end
-			return
 		end
 	end
 	Check_start_timespeed_effect(self, effect_id, timer_name, affect_timer_names_str, speed, fade_in, sustain, fade_out, sender)

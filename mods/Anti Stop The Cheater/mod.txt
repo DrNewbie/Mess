@@ -3,7 +3,7 @@
 	"author":"Dr_Newbie",
 	"description":"Anti Stop The Cheater",
 	"contact":"http://modwork.shop/22560",
-	"version":"3",
+	"version":"5",
 	"blt_version":2,
 	"hooks": 
 	[
