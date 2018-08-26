@@ -12,6 +12,10 @@ function UnitNetworkHandler:start_timespeed_effect(effect_id, timer_name, affect
 	if effect_id:find("pause") and (affect_timer_names_str:find("game_animation") or affect_timer_names_str:find("game") or affect_timer_names_str:find("player")) then
 		local _uid = tostring(peer_sender:user_id())
 		local abs_sustain = math.abs(sustain)
+		local abs_speed = math.abs(speed)
+		if abs_speed < 0.2 then
+			speed = 0.2
+		end
 		if not RecordTime[sender] or (RecordTime[sender] and RecordTime[sender].user_id ~= _uid) then
 			RecordTime[sender] = {
 				user_id = _uid,
