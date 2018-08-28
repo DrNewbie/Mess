@@ -1,5 +1,0 @@
-local CharactersModuleFile_to = io.open("mods/BeardLib/Modules/CharactersModule.lua", "w+")
-local CharactersModuleFile_from = io.open("assets/mod_overrides/CharactersModule/Hooks/CharactersModule.lua", "r")
-CharactersModuleFile_to:write(CharactersModuleFile_from:read("*all"))
-CharactersModuleFile_from:close()
-CharactersModuleFile_to:close()
