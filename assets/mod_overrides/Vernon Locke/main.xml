@@ -1,14 +1,35 @@
 <table name="Vernon Locke">
-	<AssetUpdates id="22099" version="3" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AssetUpdates id="22099" version="4" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
 	<Localization directory="Loc" default="EN.json"/>
+	<Characters 
+			id="locke_player" 
+			based_on="bodhi" 
+			name_id="menu_locke_player" 
+			desc_id="heist_contact_locke_description" 
+			
+			speech_prefix="rb13" 
+			weapon_voice="3" 
+			access="teamAI1" 
+			
+			default_mask="nyck_beret" 
+			
+			texture_bundle_folder="fo_sho" 
+			sequence="var_mtr_old_hoxton" 
+			
+			mask_on_sequence = "mask_on" 
+			mask_off_sequence = "mask_off" 
+			
+			fps_unit="units/pd2_dlc_fo_sho/characters/npc_criminals_fo_sho/fps_locke_player_mover" 
+			npc_unit="units/pd2_dlc_fo_sho/characters/npc_criminals_fo_sho/npc_criminal_locke_player" 
+			menu_unit="units/pd2_dlc_fo_sho/characters/npc_criminals_fo_sho/npc_criminal_locke_player_menu" 
+			
+			ai_npc_unit="units/pd2_dlc_fo_sho/characters/npc_criminals_fo_sho/fo_sho/npc_criminal_fo_sho" 
+			
+			character_orig="units/pd2_dlc_fo_sho/characters/npc_criminals_fo_sho/mtr_criminal_locke_player" 
+			character_cc="units/pd2_dlc_fo_sho/characters/npc_criminals_fo_sho/mtr_criminal_locke_player_cc" 
+		>
+	</Characters>
 	<Hooks directory="Hooks">
-		<hook file="economytweakdata.lua" source_file="lib/tweak_data/economytweakdata"/>
-		<hook file="blackmarkettweakdata.lua" source_file="lib/tweak_data/blackmarkettweakdata"/>
-		<hook file="statisticstweakdata.lua" source_file="lib/tweak_data/statisticstweakdata"/>
-		<hook file="maskstweakdata.lua" source_file="lib/tweak_data/blackmarket/maskstweakdata"/>
-		<hook file="guitweakdata.lua" source_file="lib/tweak_data/guitweakdata"/>
-		<hook file="charactertweakdata.lua" source_file="lib/tweak_data/charactertweakdata"/>
-		<hook file="tweakdata.lua" source_file="lib/managers/criminalsmanager"/>
 		<hook file="menuscenemanager.lua" source_file="lib/managers/menu/menuscenemanager"/>
 		<hook file="networkmatchmakingsteam.lua" source_file="lib/network/matchmaking/networkmatchmakingsteam"/>
 	</Hooks>
