@@ -1,0 +1,24 @@
+{
+	"name":"Chainsaw Reward",
+	"description":" ",
+	"author":"Dr_Newbie",
+	"contact":"http://modwork.shop/23490",
+	"version":"2",
+	"blt_version": 2,
+	"keybinds" : [
+        {
+			"keybind_id":"toggle_bonusmemeleerun",
+			"name":"Cut",
+			"description":" "
+			"script_path":"lua/run.lua",
+			"run_in_menu":false,
+			"run_in_game":true,
+			"localized":false
+		}
+	],
+	"hooks" :
+	[
+		{"hook_id":"lib/units/beings/player/states/playerstandard", "script_path":"lua/playerstandard.lua"},
+		{"hook_id":"lib/managers/blackmarketmanager", "script_path":"lua/blackmarketmanager.lua"}
+	]
+}

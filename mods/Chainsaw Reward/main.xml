@@ -1,0 +1,7 @@
+<table name="Chainsaw Reward">
+	<AssetUpdates id="23490" version="2" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+
+	<Sounds directory="assets/sounds">
+		<sound id="1dc0cd801b7b93eb_001" path="bonus_cut.ogg" prefix="first"/>
+	</Sounds>
+</table>
