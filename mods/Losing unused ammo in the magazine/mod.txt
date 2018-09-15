@@ -1,0 +1,13 @@
+{
+	"name":"Losing unused ammo in the magazine",
+	"author":"Dr_Newbie",
+	"description":" ",
+	"contact":"http://modwork.shop/23540",
+	"version":"1",
+	"blt_version":2,
+	"hooks": 
+	[
+		{"hook_id": "lib/units/weapons/raycastweaponbase","script_path": "raycastweaponbase.lua"},
+		{"hook_id": "lib/tweak_data/weapontweakdata","script_path": "weapontweakdata.lua"}
+	]
+}
