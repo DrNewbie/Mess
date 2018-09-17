@@ -1,0 +1,12 @@
+{
+	"name":"Give SWAT Turret to Bot",
+	"description":" ",
+	"author":"Dr_Newbie",
+	"contact":"http://modwork.shop/23552",
+	"version":"1",
+	"blt_version": 2,
+	"hooks" :
+	[
+		{"hook_id":"lib/units/player_team/teamaimovement", "script_path":"lua/teamaimovement.lua"}
+	]
+}
