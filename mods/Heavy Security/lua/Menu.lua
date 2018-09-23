@@ -55,8 +55,10 @@ Hooks:Add("LocalizationManagerPostInit", "HeavySecurity_loc", function(loc)
 		["HeavySecurity_menu_enemy_type_6"] = "Taser",
 		["HeavySecurity_menu_enemy_type_7"] = "Minigun Dozer",
 		["HeavySecurity_menu_enemy_type_8"] = "Medic Dozer",
-		["HeavySecurity_menu_enemy_type_9"] = "Random One",
-		["HeavySecurity_menu_enemy_type_10"] = "Random All"
+		["HeavySecurity_menu_enemy_type_9"] = "Sniper",
+		["HeavySecurity_menu_enemy_type_10"] = "Random One",
+		["HeavySecurity_menu_enemy_type_11"] = "Random All",
+		["HeavySecurity_menu_enemy_type_12"] = "Themself"
 	})
 end)
 
@@ -99,7 +101,9 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "HeavySecurityOptions", function( me
 			"HeavySecurity_menu_enemy_type_7",
 			"HeavySecurity_menu_enemy_type_8",
 			"HeavySecurity_menu_enemy_type_9",
-			"HeavySecurity_menu_enemy_type_10"
+			"HeavySecurity_menu_enemy_type_10",
+			"HeavySecurity_menu_enemy_type_11",
+			"HeavySecurity_menu_enemy_type_12"
 		},
 		value = HeavySecurity.settings.Enemy_Type,
 		menu_id = HeavySecurity.options_menu,
@@ -113,8 +117,4 @@ end)
 
 if Announcer then
 	Announcer:AddHostMod("Heavy Security, ( http://modwork.shop/16274 )")
-end
-
-if ModCore then
-	ModCore:new(HeavySecurity.ModPath .. "Config.xml", false, true):init_modules()
 end

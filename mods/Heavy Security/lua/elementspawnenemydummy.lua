@@ -37,10 +37,17 @@ function ElementSpawnEnemyDummy:produce(...)
 			"units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
 			"units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"
 		}
-		local _spawn_select = _spawn_list[HeavySecurity.settings.Enemy_Type]
-		if HeavySecurity.settings.Enemy_Type == 9 then
-			HeavySecurity.settings.Enemy_Type = math.random(1, 8)
-			_spawn_select = _spawn_list[HeavySecurity.settings.Enemy_Type]
+		local _spawn_select
+		if _spawn_list[HeavySecurity.settings.Enemy_Type] then
+			_spawn_select = Idstring(_spawn_list[HeavySecurity.settings.Enemy_Type])
+		end
+		if HeavySecurity.settings.Enemy_Type == 10 or HeavySecurity.settings.Enemy_Type == 12 then
+			table.insert(_spawn_list, "units/payday2/characters/ene_sniper_1/ene_sniper_1")
+			table.insert(_spawn_list, "units/payday2/characters/ene_sniper_2/ene_sniper_2")
+			table.insert(_spawn_list, "units/payday2/characters/ene_shield_1/ene_shield_1")
+		end
+		if HeavySecurity.settings.Enemy_Type == 10 then
+			_spawn_select = Idstring(_spawn_list[math.random(#_spawn_list)])
 		end
 		local _level_id = ""
 		if Global.game_settings and Global.game_settings.level_id then
@@ -64,11 +71,26 @@ function ElementSpawnEnemyDummy:produce(...)
 				scan = true,
 				is_default = true
 			}
+			if HeavySecurity.settings.Enemy_Type == 12 then
+				_spawn_select = _cop:name()
+			end
 			for i = 1, HeavySecurity.settings.Level do
-				if HeavySecurity.settings.Enemy_Type == 10 then
-					_spawn_select = _spawn_list[math.random(1, 8)]
+				if HeavySecurity.settings.Enemy_Type == 9 then
+					if math.random() > 0.5 then
+						_spawn_select = Idstring("units/payday2/characters/ene_sniper_1/ene_sniper_1")
+					else
+						_spawn_select = Idstring("units/payday2/characters/ene_sniper_2/ene_sniper_2")			
+					end
+				elseif HeavySecurity.settings.Enemy_Type == 5 then
+					if math.random() > 0.5 then
+						_spawn_select = Idstring("units/payday2/characters/ene_shield_1/ene_shield_1")
+					else
+						_spawn_select = Idstring("units/payday2/characters/ene_shield_2/ene_shield_2")			
+					end
+				elseif HeavySecurity.settings.Enemy_Type == 11 then
+					_spawn_select = Idstring(_spawn_list[math.random(#_spawn_list)])
 				end
-				_u = safe_spawn_unit(Idstring(_spawn_select), self:get_orientation())
+				_u = safe_spawn_unit(_spawn_select, self:get_orientation())
 				if _u then
 					if not team_id then
 						team_id = tweak_data.levels:get_default_team_ID(_u:base():char_tweak().access == "gangster" and "gangster" or "combatant")
@@ -83,7 +105,6 @@ function ElementSpawnEnemyDummy:produce(...)
 					_u:brain():terminate_all_suspicion()
 					_u:movement():set_cool(true)
 					_u:brain():on_cool_state_changed(true)
-					_u = nil
 					managers.groupai:state():_clear_criminal_suspicion_data()
 				end
 			end
