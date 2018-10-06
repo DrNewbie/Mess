@@ -1,0 +1,31 @@
+{
+	"name": "First-person view on the rocket",
+	"description": " ",
+	"author": "Dr_Newbie",
+	"contact": "http://modwork.shop/",
+	"version": "1",
+	"priority": 100,
+	"blt_version": 2,
+	"hooks": [
+		{
+			"hook_id" : "lib/units/beings/player/states/playerstandard",
+			"script_path" : "playerstandard.lua"
+		},
+		{
+			"hook_id" : "lib/units/beings/player/playercamera",
+			"script_path" : "playercamera.lua"
+		},
+		{
+			"hook_id" : "lib/units/weapons/projectiles/projectilebase",
+			"script_path" : "projectilebase.lua"
+		},
+		{
+			"hook_id" : "lib/units/weapons/projectileweaponbase",
+			"script_path" : "projectileweaponbase.lua"
+		},
+		{
+			"hook_id" : "lib/units/weapons/grenades/fraggrenade",
+			"script_path" : "fraggrenade.lua"
+		}
+	]
+}

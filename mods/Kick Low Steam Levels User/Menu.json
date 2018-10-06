@@ -1,0 +1,21 @@
+{
+	"menu_id":"menu_id_JokeSteamLevelsBan",
+	"parent_menu_id":"blt_options",
+	"title":"menu_JokeSteamLevelsBan_title",
+	"description":"menu_JokeSteamLevelsBan_desc",
+	"back_callback":"JokeSteamLevelsBan_Callback_Save",
+	"items":[
+		{
+			"type":"slider",
+			"id":"JokeSteamLevelsBan_low_leves",
+			"title":"JokeSteamLevelsBan_low_leves_title",
+			"description":"JokeSteamLevelsBan_low_leves_desc",
+			"callback":"JokeSteamLevelsBan_low_leves",
+			"value":"low_leves",
+			"default_value":0,
+			"max":9999,
+			"min":0,
+			"step":1
+		}
+	]
+}
