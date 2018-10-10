@@ -4,12 +4,17 @@ JokeSteamLevelsBan.Data = JokeSteamLevelsBan.Data or {low_leves = 0, kick_type =
 
 JokeSteamLevelsBan.Wait = JokeSteamLevelsBan.Wait or {}
 
+JokeSteamLevelsBan.Check = JokeSteamLevelsBan.Check or {}
+
 function JokeSteamLevelsBan:MainFunction(peer)
 	local session = managers.network:session()
 	if not peer or not peer.id or not peer:id() then
 		return
 	end
 	local user_id = peer:user_id()
+	if JokeSteamLevelsBan.Check[Idstring(user_id):key()] then
+		return
+	end
 	local id = peer:id()
 	if Steam and Steam:logged_on() then
 		for _, friend in ipairs(Steam:friends() or {}) do
@@ -20,6 +25,8 @@ function JokeSteamLevelsBan:MainFunction(peer)
 	end
 	dohttpreq("http://steamcommunity.com/profiles/"..user_id.."/?l=english",
 		function (page)
+			JokeSteamLevelsBan.Check[Idstring(user_id):key()] = true
+			
 			page = tostring(page)
 			local levels = 0
 			if not page:find('friendPlayerLevelNum') then
