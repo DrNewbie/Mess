@@ -10,12 +10,40 @@
 			"id":"JokeSteamLevelsBan_low_leves",
 			"title":"JokeSteamLevelsBan_low_leves_title",
 			"description":"JokeSteamLevelsBan_low_leves_desc",
-			"callback":"JokeSteamLevelsBan_low_leves",
+			"callback":"JokeSteamLevelsBan_low_leves_clbk",
 			"value":"low_leves",
 			"default_value":0,
 			"max":9999,
 			"min":0,
 			"step":1
+		},
+		{
+			"type":"multiple_choice",
+			"id":"JokeSteamLevelsBan_kick_type",
+			"title":"JokeSteamLevelsBan_kick_type_title",
+			"description":"JokeSteamLevelsBan_kick_type_desc",
+			"callback":"JokeSteamLevelsBan_kick_type_clbk",
+			"items":[
+				"JokeSteamLevelsBan_kick_type_1",
+				"JokeSteamLevelsBan_kick_type_2"
+			],
+			"value":"kick_type",
+			"default_value":1
+		},
+		{
+			"type":"multiple_choice",
+			"id":"JokeSteamLevelsBan_msg_type",
+			"title":"JokeSteamLevelsBan_msg_type_title",
+			"description":"JokeSteamLevelsBan_msg_type_desc",
+			"callback":"JokeSteamLevelsBan_msg_type_clbk",
+			"items":[
+				"JokeSteamLevelsBan_msg_type_1",
+				"JokeSteamLevelsBan_msg_type_2",
+				"JokeSteamLevelsBan_msg_type_3",
+				"JokeSteamLevelsBan_msg_type_4"
+			],
+			"value":"msg_type",
+			"default_value":1
 		}
 	]
 }

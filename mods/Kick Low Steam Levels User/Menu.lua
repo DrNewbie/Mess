@@ -4,7 +4,7 @@ JokeSteamLevelsBan.ModPath = JokeSteamLevelsBan.ModPath or ModPath
 
 JokeSteamLevelsBan.SavePath = JokeSteamLevelsBan.SavePath or SavePath.."JokeSteamLevelsBan.txt"
 
-JokeSteamLevelsBan.Data = JokeSteamLevelsBan.Data or {low_leves = 0}
+JokeSteamLevelsBan.Data = JokeSteamLevelsBan.Data or {low_leves = 0, kick_type = 1, msg_type = 1}
 
 function JokeSteamLevelsBan:Save()
 	local xfile = io.open(self.SavePath, "w+")
@@ -20,8 +20,17 @@ function JokeSteamLevelsBan:Load()
 		self.Data = json.decode(xfile:read("*all"))
 		xfile:close()
 	else
-		JokeSteamLevelsBan.Data = {low_leves = 0}
+		self.Data = {low_leves = 0, kick_type = 1, msg_type = 1}
 		self:Save()
+	end
+	if type(self.Data.low_leves) ~= "number" then
+		self.Data.low_leves = 0
+	end
+	if type(self.Data.kick_type) ~= "number" then
+		self.Data.low_leves = 1
+	end
+	if type(self.Data.msg_type) ~= "number" then
+		self.Data.msg_type = 1
 	end
 end
 
@@ -32,10 +41,16 @@ end)
 Hooks:Add("MenuManagerInitialize", "MenManInitJokeSteamLevelsBan", function(menu_manager)
 	function MenuCallbackHandler:JokeSteamLevelsBan_Callback_Save()
 		JokeSteamLevelsBan:Save()
-	end	
-	function MenuCallbackHandler:JokeSteamLevelsBan_low_leves(item)
+	end
+	function MenuCallbackHandler:JokeSteamLevelsBan_low_leves_clbk(item)
 		JokeSteamLevelsBan.Data.low_leves = math.round(item:value())
-	end	
+	end
+	function MenuCallbackHandler:JokeSteamLevelsBan_kick_type_clbk(item)
+		JokeSteamLevelsBan.Data.kick_type = item:value()
+	end
+	function MenuCallbackHandler:JokeSteamLevelsBan_msg_type_clbk(item)
+		JokeSteamLevelsBan.Data.msg_type = item:value()
+	end
 	JokeSteamLevelsBan:Load()	
 	MenuHelper:LoadFromJsonFile(JokeSteamLevelsBan.ModPath.."Menu.json", JokeSteamLevelsBan, JokeSteamLevelsBan.Data)
 end)

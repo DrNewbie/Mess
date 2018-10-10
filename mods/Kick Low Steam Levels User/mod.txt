@@ -3,12 +3,12 @@
 	"description":" ",
 	"author":"Dr_Newbie",
 	"contact":"http://modwork.shop/23666",
-	"version":"2",
+	"version":"3",
 	"priority":100,
 	"blt_version":2,
 	"hooks":[
 		{
-			"hook_id":"lib/network/base/networkpeer",
+			"hook_id":"lib/network/base/hostnetworksession",
 			"script_path":"NetWork.lua"
 		},
 		{

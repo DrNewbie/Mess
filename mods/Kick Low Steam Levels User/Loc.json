@@ -2,5 +2,15 @@
 	"menu_JokeSteamLevelsBan_title":"Kick Low Steam Levels User",
 	"menu_JokeSteamLevelsBan_desc":"A stupid mod that kick user who steam levels is lower than your setting.",
 	"JokeSteamLevelsBan_low_leves_title":"Levels",
-	"JokeSteamLevelsBan_low_leves_desc":"(0 = Disable this Mod)"
+	"JokeSteamLevelsBan_low_leves_desc":"(0 = Disable this Mod)",
+	"JokeSteamLevelsBan_kick_type_title":"Kick",
+	"JokeSteamLevelsBan_kick_type_desc":"How to kick them?",
+	"JokeSteamLevelsBan_kick_type_1":"Directly",
+	"JokeSteamLevelsBan_kick_type_2":"Delay",
+	"JokeSteamLevelsBan_msg_type_title":"Message",
+	"JokeSteamLevelsBan_msg_type_desc":"What kind of message do you want to show?",
+	"JokeSteamLevelsBan_msg_type_1":"System",
+	"JokeSteamLevelsBan_msg_type_2":"Chat",
+	"JokeSteamLevelsBan_msg_type_3":"System + Chat",
+	"JokeSteamLevelsBan_msg_type_4":"OFF"
 }
