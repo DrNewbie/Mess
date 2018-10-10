@@ -29,7 +29,7 @@ function JokeSteamLevelsBan:MainFunction(peer)
 				levels = tonumber(levels) or 0
 			end			
 			if levels < self.Data.low_leves then
-				if self.Data.low_leves == 1 then
+				if self.Data.kick_type == 1 then
 					session:on_peer_kicked(peer, id, 0)
 					session:send_to_peers("kick_peer", id, 0)
 				else
