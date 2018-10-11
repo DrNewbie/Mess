@@ -1,0 +1,8 @@
+<table name="ChangeGunModel">
+	<AssetUpdates id="21882" name="asset_updates" folder_name="ChangeGunModel" version="3" provider="modworkshop"/>
+	<Hooks directory="Hooks">
+		<hook file="Menu_Function.lua" source_file="lib/managers/menumanager"/>
+	</Hooks>
+	<AddFiles directory="Assets">
+	</AddFiles>
+</table>
