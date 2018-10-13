@@ -1,22 +1,33 @@
 _G.GunGameGame = _G.GunGameGame or {}
 
+local GunGameBlockPickup = PlayerStandard._find_pickups
+
+function PlayerStandard:_find_pickups(t, ...)
+	if self._find_pickups_block and self._find_pickups_block > t then
+		return
+	end
+	GunGameBlockPickup(self, t, ...)
+end
+
 local GunGameEquipNewWeapon = PlayerStandard._start_action_equip_weapon
 
 function PlayerStandard:_start_action_equip_weapon(t, ...)
 	if self._change_weapon_data.selection_gungame then
 		local wep_data = self._change_weapon_data.wep_data
-		self._ext_inventory:add_unit_by_factory_name(wep_data.factory_id, true, false, wep_data.blueprint, wep_data.cosmetics, wep_data.texture_switches)
-		
-		self:set_animation_weapon_hold(nil)
-		local speed_multiplier = self:_get_swap_speed_multiplier()
-		self._equipped_unit:base():tweak_data_anim_stop("unequip")
-		self._equipped_unit:base():tweak_data_anim_play("equip", speed_multiplier)
-		local tweak_data = self._equipped_unit:base():weapon_tweak_data()
-		self._equip_weapon_expire_t = t + (tweak_data.timers.equip or 0.7) / speed_multiplier
-		self._ext_camera:play_redirect(self:get_animation("equip"), speed_multiplier)
-		self._equipped_unit:base():tweak_data_anim_stop("unequip")
-		self._equipped_unit:base():tweak_data_anim_play("equip", speed_multiplier)
-		managers.upgrades:setup_current_weapon()
+		if wep_data.factory_id and tweak_data.weapon.factory[wep_data.factory_id] then
+			self._find_pickups_block = t + 1.5
+			self._ext_inventory:add_unit_by_factory_name(wep_data.factory_id, true, false, wep_data.blueprint or tweak_data.weapon.factory[wep_data.factory_id].default_blueprint, wep_data.cosmetics, wep_data.texture_switches)
+			if self._equipped_unit and alive(self._equipped_unit) then
+				self:set_animation_weapon_hold(nil)
+				local speed_multiplier = 1
+				local tweak_data = self._equipped_unit:base():weapon_tweak_data()
+				self._equip_weapon_expire_t = t + (tweak_data.timers.equip or 0.7) / speed_multiplier
+				self._ext_camera:play_redirect(self:get_animation("equip"), speed_multiplier)
+				self._equipped_unit:base():tweak_data_anim_stop("unequip")
+				self._equipped_unit:base():tweak_data_anim_play("equip", speed_multiplier)
+				managers.upgrades:setup_current_weapon()
+			end
+		end
 		return
 	end
 	GunGameEquipNewWeapon(self, t, ...)
@@ -64,7 +75,7 @@ Hooks:PostHook(PlayerStandard, "update", "PlySGunGunUpdate", function(self, t ,d
 		local action_forbidden = self:_changing_weapon()
 		action_forbidden = action_forbidden or self:_is_meleeing() or self._use_item_expire_t or self._change_item_expire_t
 		action_forbidden = action_forbidden or self._unit:inventory():num_selections() == 1 or self:_interacting() or self:_is_throwing_projectile() or self:_is_deploying_bipod()
-		if not action_forbidden then
+		if not action_forbidden and not self._running then
 			self._gumgame_req_chanage_weapon = self._gumgame_req_chanage_weapon - dt
 			if self._gumgame_req_chanage_weapon <= 0 then
 				self._gumgame_req_chanage_weapon = nil
