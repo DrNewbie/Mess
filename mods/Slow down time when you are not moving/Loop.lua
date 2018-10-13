@@ -18,22 +18,20 @@ Hooks:PostHook(PlayerStandard, "update", "PlyS"..Idstring("SUPERHOTUPDATE"):key(
 		self:_is_charging_weapon() or 
 		self:_is_reloading() or 
 		self:_changing_weapon() or 
+		self:chk_action_forbidden("interact") or 
 		self._moving then
 		if PAUSE_TOGGLE_PLY == true then
 			PAUSE_TOGGLE_PLY = false
-			--Application:set_pause(false)
-			for _, v in pairs({"player", "game", "game_animation"}) do
-				TimerManager:timer(Idstring(v)):set_multiplier(1)
-			end
+			TimerManager:timer(Idstring("player")):set_multiplier(1)
+			TimerManager:timer(Idstring("game")):set_multiplier(1)
+			TimerManager:timer(Idstring("game_animation")):set_multiplier(1)
 		end
-		return
 	else
 		if PAUSE_TOGGLE_PLY ~= true then
 			PAUSE_TOGGLE_PLY = true
-			--Application:set_pause(true)
-			for _, v in pairs({"player", "game", "game_animation"}) do
-				TimerManager:timer(Idstring(v)):set_multiplier(0.25)
-			end
+			TimerManager:timer(Idstring("player")):set_multiplier(0.25)
+			TimerManager:timer(Idstring("game")):set_multiplier(0.25)
+			TimerManager:timer(Idstring("game_animation")):set_multiplier(0.25)
 		end
 	end
 end)
