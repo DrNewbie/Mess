@@ -1,0 +1,7 @@
+<table name="Free Your Joker">
+	<AssetUpdates id="22886" version="3" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<Hooks directory="Hooks">
+		<hook file="copdamage.lua" source_file="lib/units/enemies/cop/copdamage"/>
+	</Hooks>
+	<Keybind keybind_id="AskJoker2HugeSomeone" name="Go! Joker!" description="Ahh..." localized="false" script_path="Hooks/KeyBinds/HugeSomeone.lua"/>
+</table>
