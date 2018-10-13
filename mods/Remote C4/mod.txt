@@ -3,7 +3,7 @@
 	"description": "C4 Remote Detonator",
 	"author": "Dr_Newbie",
 	"contact": "http://modwork.shop/22804",
-	"version": "2",
+	"version": "3",
 	"priority": 100,
 	"blt_version": 2,
 	"hooks": [
@@ -15,6 +15,15 @@
 			"name":"Detonate C4",
 			"description":"KaBoom!!",
 			"script_path":"Hooks/KeyBinds/RemoteBoomIt.lua",
+			"run_in_menu":false,
+			"run_in_game":true,
+			"localized":false
+		},
+		{
+			"keybind_id":"keybind_RemoteBoomIt_ALL_keybind_id",
+			"name":"Detonate All C4",
+			"description":"KaBoom!!",
+			"script_path":"Hooks/KeyBinds/RemoteBoomIt_ALL.lua",
 			"run_in_menu":false,
 			"run_in_game":true,
 			"localized":false

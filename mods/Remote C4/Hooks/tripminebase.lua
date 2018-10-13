@@ -19,7 +19,7 @@ Hooks:PostHook(TripMineBase, "set_active", "RemoteC4_RecordIt", function(self)
 	end
 end)
 
-function TripMineBase.RemoteC4_Boom()
+function TripMineBase.RemoteC4_Boom(is_all)
 	local weapon_unit = managers.player:equipped_weapon_unit()
 	if not weapon_unit or not alive(weapon_unit) then
 		return
@@ -45,12 +45,14 @@ function TripMineBase.RemoteC4_Boom()
 					local dis = mvector3.normalize(vec)
 					local max_angle = math.max(8, math.lerp(10, 30, dis / 1200))
 					local angle = vec:angle(cam_fwd)					
-					if angle < max_angle or math.abs(max_angle-angle) < 10 then
+					if is_all or (angle < max_angle or math.abs(max_angle-angle) < 10) then
 						c4_unit:base()._active = true
 						c4_unit:base():explode()
 						RemoteC4FUN.Record[peer_id].units[i] = nil
 						PlyStandard:_do_action_intimidate(TimerManager:game():time(), "cmd_gogo", "g18", true)
-						break
+						if not is_all then
+							break
+						end
 					end
 				else
 					RemoteC4FUN.Record[peer_id].units[i] = nil
