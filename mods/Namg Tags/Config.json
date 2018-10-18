@@ -1,0 +1,26 @@
+{
+	"Random": [
+		{
+			"text":"OwO",
+			"color":"Default"
+		},
+		{
+			"text":"XXxx420xxXX",
+			"color":"Default"
+		},
+		{
+			"text":"F2P",
+			"color":"Random"
+		},
+		{
+			"text":"MVP",
+			"color":"FF0000"
+		}
+	],
+	"SteamID": {
+		"76561198085468965":{
+			"text":"Author",
+			"color":"RGB"
+		}
+	}
+}
