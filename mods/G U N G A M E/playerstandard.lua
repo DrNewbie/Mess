@@ -23,8 +23,6 @@ function PlayerStandard:_start_action_equip_weapon(t, ...)
 				local tweak_data = self._equipped_unit:base():weapon_tweak_data()
 				self._equip_weapon_expire_t = t + (tweak_data.timers.equip or 0.7) / speed_multiplier
 				self._ext_camera:play_redirect(self:get_animation("equip"), speed_multiplier)
-				self._equipped_unit:base():tweak_data_anim_stop("unequip")
-				self._equipped_unit:base():tweak_data_anim_play("equip", speed_multiplier)
 				managers.upgrades:setup_current_weapon()
 			end
 		end
