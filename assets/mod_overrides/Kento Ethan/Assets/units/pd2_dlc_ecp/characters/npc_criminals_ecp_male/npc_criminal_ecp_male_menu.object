@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <dynamic_object>
 	#IF dlc_ecp {
-	<diesel orientation_object="root_point" materials="units/pd2_dlc_ecp/characters/npc_criminals_ecp_male/mtr_criminal_ecp_male" />
+	<diesel orientation_object="root_point" materials="units/pd2_dlc_des/characters/civ_male_des/civ_male_des" />
 	<sequence_manager file="units/pd2_dlc_ecp/characters/npc_criminals_ecp_male/npc_criminal_ecp_male" />
 	<animation_def name="anims/units/menu_character/player_criminal/menu_criminal" />
 	
@@ -24,8 +24,7 @@
 
 	<graphics>
 		<graphic_group name="character" enabled="true" culling_object="g_body">
-			<object name="g_head_mask_on"	 	enabled="false" />
-			<object name="g_head_mask_off"	 	enabled="true" />
+			<object name="g_head"	 			enabled="true" />
 			<object name="g_body" 				enabled="true" />
 			<object name="g_vest_small" 		enabled="false" />
 			<object name="g_vest_thies" 		enabled="false" />
@@ -41,7 +40,6 @@
 			<object name="g_bodybagsbag" 		enabled="false" />
 			<object name="g_armorbag" 			enabled="false" />
 			<object name="g_firstaidbag" 		enabled="false" />
-			<object name="g_head" 				enabled="true" />
 			<object name="s_body" 				enabled="true" shadow_caster="true"/>
 		</graphic_group>
 	</graphics>
