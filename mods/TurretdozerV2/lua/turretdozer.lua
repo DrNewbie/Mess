@@ -35,13 +35,9 @@ Hooks:PostHook(CopBrain, "update", "GiveSWATTurrettoBulldozerActiveIt", function
 	end
 end)
 
-Hooks:PostHook(CopBrain, "pre_destroy", "GiveSWATTurrettoBulldozerKillIt", function(self)
+Hooks:PreHook(CopDamage, "die", "GiveSWATTurrettoBulldozerKillIt", function(self)
 	if self._turret_unit_addon then
-		self._turret_unit_addon:base():destroy()
-		if self._turret_unit_addon then
-			self._turret_unit_addon:set_slot(0)
-		end
-		self._turret_unit_addon = nil
+		self._turret_unit_addon:character_damage():die()
 	end
 end)
 
