@@ -1,7 +1,7 @@
 {
-	"name" : "Turretdozer",
+	"name" : "TurretdozerV2",
 	"author" : "Dr_Newbie",
-	"contact" : " ",
+	"contact" : "http://modwork.shop/23764",
 	"priority" : 100,
 	"version":"1",
 	"blt_version": 2,

@@ -12,6 +12,7 @@ Hooks:PostHook(CopInventory, "_chk_spawn_shield", "GiveSWATTurrettoBulldozerGive
 				self._unit:link(align_object:name(), Tu, Tu:orientation_object():name())
 				local extension = Tu["base"](Tu)
 				extension["activate_as_module"](extension, "combatant", "swat_van_turret_module")
+				Tu:character_damage():set_parent_unit(self._unit)
 			end
 		end
 	end
@@ -36,8 +37,13 @@ Hooks:PostHook(CopBrain, "update", "GiveSWATTurrettoBulldozerActiveIt", function
 end)
 
 Hooks:PreHook(CopDamage, "die", "GiveSWATTurrettoBulldozerKillIt", function(self)
-	if self._turret_unit_addon then
-		self._turret_unit_addon:character_damage():die()
+	if self._turret_unit_addon and not self._turret_unit_addon:character_damage():dead() then
+		for _, data in pairs(managers.groupai:state():all_criminals()) do
+			if data and alive(data.unit) and data.status ~= "dead" then
+				self._turret_unit_addon:character_damage():die(data.unit, "explosion")
+				break
+			end
+		end		
 	end
 end)
 
