@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <dynamic_object>
 	#IF dlc_ecp {
-	<diesel orientation_object="root_point" materials="units/pd2_dlc_ecp/characters/npc_criminals_ecp_male/mtr_criminal_ecp_male" />
+	<diesel orientation_object="root_point" materials="units/pd2_dlc_tag/characters/ene_male_commissioner/ene_male_commissioner" />
 	<sequence_manager file="units/pd2_dlc_ecp/characters/npc_criminals_ecp_male/npc_criminal_ecp_male" /> <animation_def name="anims/units/enemies/cop/cop_def" />
 
  	<bodies>
@@ -13,11 +13,6 @@
 			<object name="Head"/>
 			<object name="c_sphere_head" collision_type="sphere"/>
 		</body>
-		<body name="mover_blocker" enabled="true" template="mover_blocker" keyframed="true" collision_class="ragdoll">
-			<object name="root_point"/>
-			<object name="c_capsule_mover_blocker" collision_type="capsule"/>
-		</body>
-		
 		<body name="rag_cloth_01" enabled="true" template="dynamic" friction="0.01" sweep="true" collision_class="hair" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="0.6" ang_damping="20" collides_with="0" tag="flesh" restitution="0">
 			<object name="rightCoatJoint_01" />
 			<object collision_type="box" mass="1" padding="-2.5" name="c_box_01"/>
@@ -49,56 +44,6 @@
 			<object collision_type="capsule" mass="22" padding="-4" name="c_sphere_hips" />
 		</body>
 	</bodies>
-	
-	<constraints>
-		<constraint type="ragdoll" name="cloth_constraint_01" enabled="true">
-			<param body_a="rag_cloth_hips" body_b="rag_cloth_01"/>
-			<param pivot="position:rightCoatJoint_01"/>
- 			<param twist_axis="xaxis:rightCoatJoint_01" twist_min="-10" twist_max="10" twist_freedom="10"/>
-			<param cone_y="5" cone_z="15" cone_freedom="15"/>
-			<param damping="100" spring_constant="100" min_restitution="0.2" max_restitution="0.2"/>
-		</constraint>
-
-		<constraint type="ragdoll" name="cloth_constraint_02" enabled="true">
-			<param body_a="rag_cloth_01" body_b="rag_cloth_02"/>
-			<param pivot="position:rightCoatJoint_02"/>
- 			<param twist_axis="xaxis:rightCoatJoint_02" twist_min="-10" twist_max="10" twist_freedom="10"/>
-			<param cone_y="5" cone_z="15" cone_freedom="15"/>
-			<param damping="100" spring_constant="100" min_restitution="0.2" max_restitution="0.2"/>
-		</constraint>
-
-		<constraint type="ragdoll" name="cloth_constraint_03" enabled="true">
-			<param body_a="rag_cloth_hips" body_b="rag_cloth_03"/>
-			<param pivot="position:backCoatJoint_01"/>
- 			<param twist_axis="xaxis:backCoatJoint_01" twist_min="-10" twist_max="10" twist_freedom="10"/>
-			<param cone_y="5" cone_z="15" cone_freedom="15"/>
-			<param damping="100" spring_constant="100" min_restitution="0.2" max_restitution="0.2"/>
-		</constraint>
-
-		<constraint type="ragdoll" name="cloth_constraint_04" enabled="true">
-			<param body_a="rag_cloth_03" body_b="rag_cloth_04"/>
-			<param pivot="position:backCoatJoint_02"/>
- 			<param twist_axis="xaxis:backCoatJoint_02" twist_min="-10" twist_max="10" twist_freedom="10"/>
-			<param cone_y="5" cone_z="15" cone_freedom="15"/>
-			<param damping="100" spring_constant="100" min_restitution="0.2" max_restitution="0.2"/>
-		</constraint>
-
-		<constraint type="ragdoll" name="cloth_constraint_05" enabled="true">
-			<param body_a="rag_cloth_hips" body_b="rag_cloth_05"/>
-			<param pivot="position:leftCoatJoint_01"/>
- 			<param twist_axis="xaxis:leftCoatJoint_01" twist_min="-10" twist_max="10" twist_freedom="10"/>
-			<param cone_y="5" cone_z="15" cone_freedom="15"/>
-			<param damping="100" spring_constant="100" min_restitution="0.2" max_restitution="0.2"/>
-		</constraint>
-
-		<constraint type="ragdoll" name="cloth_constraint_06" enabled="true">
-			<param body_a="rag_cloth_05" body_b="rag_cloth_06"/>
-			<param pivot="position:leftCoatJoint_02"/>
- 			<param twist_axis="xaxis:leftCoatJoint_02" twist_min="-10" twist_max="10" twist_freedom="10"/>
-			<param cone_y="5" cone_z="15" cone_freedom="15"/>
-			<param damping="100" spring_constant="100" min_restitution="0.2" max_restitution="0.2"/>
-		</constraint>
-	</constraints>
 
 	<decal_surfaces default_material="flesh" />
 
@@ -108,8 +53,8 @@
 
 	<graphics>
 		<graphic_group name="character" enabled="true" culling_object="g_body">
-			<object name="g_head_mask_on"	 	enabled="false" />
-			<object name="g_head_mask_off"	 	enabled="true" />
+			<object name="g_head"	 			enabled="true" />
+			<object name="g_coat" 				enabled="true" />
 			<object name="g_body" 				enabled="true" />
 			<object name="g_vest_small" 		enabled="false" />
 			<object name="g_vest_thies" 		enabled="false" />
@@ -121,12 +66,10 @@
 			<object name="g_toolbag" 			enabled="false" />
 			<object name="g_ammobag" 			enabled="false" />
 			<object name="g_medicbag" 			enabled="false" />
-			<object name="g_sentrybag" 			enabled="false" />		
+			<object name="g_sentrybag" 			enabled="false" />
 			<object name="g_bodybagsbag" 		enabled="false" />
 			<object name="g_armorbag" 			enabled="false" />
 			<object name="g_firstaidbag" 		enabled="false" />
-			<object name="g_head" 				enabled="true" />
-			<object name="g_coat" 				enabled="true" />
 			<object name="s_body" 				enabled="true" shadow_caster="true"/>
 		</graphic_group>	
 	</graphics>
