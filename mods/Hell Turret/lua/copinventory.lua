@@ -20,24 +20,6 @@ Hooks:PostHook(CopInventory, "_chk_spawn_shield", "GiveSWATTurrettoBulldozerGive
 	end
 end)
 
-Hooks:PostHook(CopBrain, "update", "GiveSWATTurrettoBulldozerActiveIt", function(self, unit, t, dt)
-	if not managers.groupai:state():whisper_mode() then
-		if self._turret_unit_addon then		
-			if self._turret_unit_addon:movement():is_inactivated() then
-				if self._reboot_my_turret then
-					self._reboot_my_turret = self._reboot_my_turret - dt
-					if self._reboot_my_turret <= 0 then
-						self._reboot_my_turret = nil
-						self._turret_unit_addon:movement():on_activated()					
-					end
-				else
-					self._reboot_my_turret = 5
-				end
-			end
-		end
-	end
-end)
-
 Hooks:PreHook(CopDamage, "die", "GiveSWATTurrettoBulldozerKillIt", function(self)
 	if self._turret_unit_addon and alive(self._turret_unit_addon) then
 		local Tu = self._turret_unit_addon:base()
