@@ -1,0 +1,16 @@
+{
+	"name":"[Mutators] Doctor On-Scene",
+	"description":" ",
+	"author":"Dr_Newbie",
+	"contact":" ",
+	"version" : "2",
+	"priority": 100,
+	"blt_version": 2,
+	"hooks" :
+	[
+		{"hook_id": "lib/managers/localizationmanager", "script_path": "Base.lua"},
+		{"hook_id" : "lib/mutators/mutatorenemyreplacer", "script_path" : "Base_basemutator.lua"},
+		{"hook_id" : "lib/managers/mutatorsmanager", "script_path" : "Base_mutatorsmanager.lua"},
+		{"hook_id" : "lib/managers/menu/pages/mutatorscategorypage", "script_path" : "Base_mutatorscategorypage.lua"}
+	]
+}
