@@ -1,5 +1,5 @@
 <table name="Medictaser">
-	<AssetUpdates id="23811" version="1" name="asset_updates" folder_name="Medictaser" provider="modworkshop"/>
+	<AssetUpdates id="23811" version="2" name="asset_updates" folder_name="Medictaser" provider="modworkshop"/>
 	<ScriptMods>
         <mod target_file="units/payday2/characters/ragdoll" target_type="sequence_manager" merge_mode="script_merge">
             <tbl>
