@@ -1,0 +1,53 @@
+<table name="[No Mercy] Doctor On-Scene">
+	<AssetUpdates id="23815" name="asset_updates" version="1" folder_name="[No Mercy] Doctor On-Scene" provider="modworkshop"/>
+	<AddFiles directory="Assets">
+		<texture path="units/payday2/characters/shared_textures/medictaser_helmets_df" force="true"/>
+		<texture path="units/payday2/characters/shared_textures/medictaser_body_df" force="true"/>
+		<texture path="units/payday2/characters/shared_textures/medic_lights_shield_df" force="true"/>
+		<material_config path="units/payday2/characters/ene_tazer_1/ene_medictazer_1" force="true"/>
+		<material_config path="units/payday2/characters/ene_tazer_1/ene_medictazer_1_contour" force="true"/>
+		<material_config path="units/payday2/characters/ene_acc_shield_lights/medic_shield_lights" force="true"/>
+<!--
+		<material_config path="units/payday2/characters/ene_acc_shield_small/medic_shield_small" force="true"/>
+-->
+	</AddFiles>
+	<ScriptMods>
+       <mod target_file="units/payday2/characters/ragdoll" target_type="sequence_manager" merge_mode="script_merge">
+			<tbl>
+				<table search="unit" mode="insert">
+					<sequence editable="true" editable_state="false" name="'var_mtr_medictaser'" triggable="true">
+						<material_config name="'units/payday2/characters/ene_tazer_1/ene_medictazer_1'"/>
+					</sequence>
+				</table>
+			</tbl>
+        </mod>
+       <mod target_file="units/payday2/characters/ene_acc_shield_lights/ene_acc_shield_lights" target_type="sequence_manager" merge_mode="script_merge">
+			<tbl>
+				<table search="unit" mode="insert">
+					<sequence name="'var_mtr_medicshield'" triggable="true">
+						<material_config name="'units/payday2/characters/ene_acc_shield_lights/medic_shield_lights'"/>
+					</sequence>
+				</table>
+			</tbl>
+        </mod>
+<!--
+       <mod target_file="units/payday2/characters/ene_acc_shield_small/shield_small" target_type="sequence_manager" merge_mode="script_merge">
+			<tbl>
+				<table search="unit" mode="insert">
+					<sequence name="'var_mtr_medicshield'" triggable="true">
+						<material_config name="'units/payday2/characters/ene_acc_shield_small/medic_shield_small'"/>
+					</sequence>
+				</table>
+			</tbl>
+        </mod>
+-->
+    </ScriptMods>
+	<Hooks directory="Hooks">
+		<hook file="copinventory.lua" source_file="lib/units/enemies/cop/copinventory"/>
+		<hook file="copdamage.lua" source_file="lib/units/enemies/cop/copdamage"/>
+		<hook file="huskcopdamage.lua" source_file="lib/units/enemies/cop/huskcopdamage"/>
+		<hook file="tankcopdamage.lua" source_file="lib/units/enemies/cop/tankcopdamage"/>
+		<hook file="husktankcopdamage.lua" source_file="lib/units/enemies/cop/husktankcopdamage"/>
+		<hook file="enemymanager.lua" source_file="lib/managers/enemymanager"/>
+	</Hooks>
+</table>
