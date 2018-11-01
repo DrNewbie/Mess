@@ -1,0 +1,26 @@
+<table name="Medictaser">
+	<AssetUpdates id="23811" version="1" name="asset_updates" folder_name="Medictaser" provider="modworkshop"/>
+	<ScriptMods>
+        <mod target_file="units/payday2/characters/ragdoll" target_type="sequence_manager" merge_mode="script_merge">
+            <tbl>
+                <table search="unit" mode="insert">
+					<sequence editable="true" editable_state="false" name="'var_mtr_medictaser'" triggable="true">
+						<material_config name="'units/payday2/characters/ene_tazer_1/ene_medictazer_1'"/>
+					</sequence>
+                </table>
+            </tbl>
+        </mod>
+    </ScriptMods>
+	<AddFiles directory="assets">
+		<texture path="units/payday2/characters/shared_textures/medictaser_helmets_df"/>
+		<texture path="units/payday2/characters/shared_textures/medictaser_body_df"/>
+		<material_config path="units/payday2/characters/ene_tazer_1/ene_medictazer_1"/>
+		<material_config path="units/payday2/characters/ene_tazer_1/ene_medictazer_1_contour"/>
+	</table>
+	<Hooks directory="Hooks">
+		<hook file="copinventory.lua" source_file="lib/units/enemies/cop/copinventory"/>
+		<hook file="copdamage.lua" source_file="lib/units/enemies/cop/copdamage"/>
+		<hook file="huskcopdamage.lua" source_file="lib/units/enemies/cop/huskcopdamage"/>
+		<hook file="enemymanager.lua" source_file="lib/managers/enemymanager"/>
+	</Hooks>
+</mod>
