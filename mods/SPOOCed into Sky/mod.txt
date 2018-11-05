@@ -1,0 +1,12 @@
+{
+	"name":"SPOOCed into Sky",
+	"author":"Dr_Newbie",
+	"description":" ",
+	"contact":"http://modwork.shop/23848",
+	"version":"1",
+	"blt_version":2,
+	"hooks": 
+	[
+		{"hook_id": "lib/units/beings/player/playermovement","script_path": "playermovement.lua"}
+	]
+}
