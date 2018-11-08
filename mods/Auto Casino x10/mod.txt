@@ -3,7 +3,7 @@
 	"description" : "(Offshore Payday x10)",
 	"author" : "Dr_Newbie"
 	"contact" : "http://modwork.shop/23871",
-	"version" : "2",
+	"version" : "3",
 	"blt_version": 2,
 	"hooks" : [
 		{"hook_id" : "lib/managers/menu/crimenetcasinogui", "script_path" : "lua/crimenetcasinogui.lua"},

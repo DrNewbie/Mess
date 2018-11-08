@@ -4,8 +4,7 @@ AutoCasino.secure_cards = AutoCasino.secure_cards or 0
 AutoCasino.increase_infamous = AutoCasino.increase_infamous or false
 AutoCasino.preferred_card = AutoCasino.preferred_card or "none"
 
-AutoCasino.place_bet_self = nil
-AutoCasino.place_bet = CrimeNetCasinoGui._place_bet
+local AutoCasino_place_bet = CrimeNetCasinoGui._place_bet
 
 function CrimeNetCasinoGui:_place_bet()
 	local secure_cards, increase_infamous, preferred_card = self:_crimenet_casino_additional_cost()
@@ -17,6 +16,7 @@ function CrimeNetCasinoGui:_place_bet()
 		TimerManager:timer(Idstring("player")):set_multiplier(10)
 		TimerManager:timer(Idstring("game")):set_multiplier(10)
 		TimerManager:timer(Idstring("game_animation")):set_multiplier(10)
+		AutoCasino_place_bet(self)
 		return
 	end
 	secure_cards = AutoCasino.secure_cards or 0
