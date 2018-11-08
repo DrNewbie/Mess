@@ -13,7 +13,7 @@ _G.CodesHelper = _G.CodesHelper or {}
 local CodesHelper = _G.CodesHelper
 
 Hooks:PostHook(ElementRandom, "on_executed", "CodesHelper_GetCodesAns", function(self)
-	if Global.game_settings.level_id == "election_day_1" and self._id == 100631 then
+	if Global.game_settings.level_id == "election_day_1" and self._id == 100631 and CodesHelper then
 		local Ans = self._values.on_executed[1]
 		if Ans and Ans.id then
 			local Ans_id = tonumber(tostring(Ans.id))

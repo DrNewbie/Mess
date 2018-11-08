@@ -7,7 +7,7 @@ _G.CodesHelper = _G.CodesHelper or {}
 CodesHelper._CodesAns = CodesHelper._CodesAns or {}
 
 Hooks:PostHook(DialogManager, 'queue_dialog', 'CodesHelper_Announce', function(self, id, params)
-	if Global.game_settings.level_id == 'election_day_1' and type(CodesHelper._CodesAns) == 'table' and CodesHelper._CodesAns.Truck then
+	if Global.game_settings.level_id == 'election_day_1' and CodesHelper and type(CodesHelper._CodesAns) == 'table' and CodesHelper._CodesAns.Truck then
 		if not CodesHelper._CodesAns.WP then
 			CodesHelper._CodesAns.WP = true
 			managers.hud:add_waypoint(
