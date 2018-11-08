@@ -1,7 +1,9 @@
 {
 	"name" : "MultiJump",
 	"author" : "Dr_Newbie",
-	"version" : "1",
+	"version" : "2",
+	"priority" : 100,
+	"blt_version" : 2,
 	"hooks" : [
 		{ "hook_id" : "lib/units/beings/player/states/playerstandard", "script_path" : "lua/playerstandard.lua" }
 	]

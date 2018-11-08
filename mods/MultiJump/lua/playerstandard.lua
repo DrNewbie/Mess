@@ -1,6 +1,6 @@
 local _f_PlayerStandard_check_action_jump = PlayerStandard._check_action_jump
 
-local _jump_in_air_times = 999
+local _jump_in_air_times = 3
 
 local _jump_in_air_used = 0
 
@@ -9,6 +9,7 @@ function PlayerStandard:_check_action_jump(t, input)
 		_jump_in_air_used = 1
 	end
 	if input and input.btn_jump_press and self._jump_t and _jump_in_air_used < _jump_in_air_times then
+		self._unit:sound():play("Ids_6ede31d70535e2e6")		
 		_jump_in_air_used = _jump_in_air_used + 1
 		local _tmp_t = self._jump_t
 		local _tmp_bool = self._state_data.in_air

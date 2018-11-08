@@ -1,0 +1,5 @@
+<table name="MultiJump">
+	<Sounds directory="Assets/sounds">
+		<sound id="Ids_6ede31d70535e2e6" path="Ids_e6e23505d731de6e.ogg" prefix="first"/>
+	</Sounds>
+</table>
