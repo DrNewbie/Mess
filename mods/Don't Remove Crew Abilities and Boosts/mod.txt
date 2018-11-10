@@ -1,9 +1,9 @@
 {	
 	"name":"Don't Remove Crew Abilities & Boosts",
 	"description":"http://modwork.shop/",
-	"contact":"http://modwork.shop/22475",
+	"contact":"http://modwork.shop/",
 	"author":"Dr_Newbie",
-	"version":"1",
+	"version":"2",
 	"blt_version":2,
 	"hooks":[
 		{"hook_id":"lib/units/player_team/teamaibase", "script_path":"teamaibase.lua"}
