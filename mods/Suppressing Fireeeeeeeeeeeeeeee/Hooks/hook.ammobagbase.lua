@@ -1,5 +1,5 @@
 Hooks:PostHook(AmmoBagBase, "update", "AmmoBagBaseUpdate"..Idstring('Silent multiuv: even more OP lmgs; AlcatToday: Suppressing Fireeeeeeeeeeeeeeee;'):key(), function(self, unit, t, dt)
-	if self._unit and self._ammo_amount > 0 and not self._empty then
+	if self._unit and self._ammo_amount > 0 and not self._empty and managers.player:current_state() == "bipod" then
 		local wpn = managers.player:equipped_weapon_unit()
 		if wpn and wpn:base():is_category("lmg") then
 			local ply_unit = managers.player:player_unit()
