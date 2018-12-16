@@ -36,28 +36,53 @@ Hooks:PostHook(GroupAIStateBase, "update", "JokerThrowLoopEvent", function(self,
 			
 			local choose_unit = table.random(possible_units)
 			
-			if not choose_unit or not choose_unit:movement() or not choose_unit:brain() then
-
+			if not choose_unit or not alive(choose_unit) or not choose_unit:movement() or not choose_unit:brain() then
+				self._joker_throw_event_dt = 1
 			else
 				local logic = tostring(choose_unit:brain()._current_logic_name)
 				
 				if logic == "travel" or logic == "assault" or logic == "idle" or logic == "attack" then
-					choose_unit:movement():play_redirect("throw_grenade")
-					
-					local projectile_type = "concussion"
 					local from_pos = choose_unit:movement():m_head_pos()
-					local mvec_spread_direction = choose_unit:movement():m_fwd() + Vector3(0, 0, math.random())
+					local mvec_spread_direction = choose_unit:movement():m_fwd()
+					local to_pos = Vector3()
+					mvector3.set(to_pos, mvec_spread_direction)
+					mvector3.multiply(to_pos, 800)
+					mvector3.add(to_pos, from_pos)
+					mvector3.set_z(to_pos, from_pos.z)
+					
+					local hits = World:raycast_all("ray", from_pos, to_pos, "sphere_cast_radius", 800, "disable_inner_ray", "slot_mask", managers.slot:get_mask("enemies"))
+
+					local is_ok_throw = false
+					if hits then
+						local enemies_count = 0
+						for _, hit in pairs(hits) do
+							if hit.unit and alive(hit.unit) and managers.enemy:is_enemy(hit.unit) and not self:is_enemy_converted_to_criminal(hit.unit) then
+								enemies_count = enemies_count + 1
+								mvec_spread_direction = hit.unit:position() - choose_unit:position()
+							end
+						end
+						if enemies_count > 3 then
+							is_ok_throw = true
+						end
+					end
+					
+					if not is_ok_throw then
+						self._joker_throw_event_dt = 1
+						return
+					end
+					
+					choose_unit:movement():play_redirect("throw_grenade")
 					
 					if Global.game_settings.single_player or (managers.network:session() and Network:is_server()) then
 						local all_player_criminals = managers.groupai:state():all_player_criminals()
 						local cc_unit = ProjectileBase.spawn("units/pd2_crimefest_2016/fez1/weapons/wpn_fps_gre_pressure/wpn_third_gre_pressure", from_pos, Rotation())
-						cc_unit:base():throw({
-							dir = mvec_spread_direction,
-							owner = managers.player:local_player() or throw_owner_unit
-						})
-					else
-						--local projectile_type_index = tweak_data.blackmarket:get_index_from_projectile_id(projectile_type)
-						--managers.network:session():send_to_host("request_throw_projectile", projectile_type_index, from_pos, mvec_spread_direction)
+						if cc_unit then
+							mvector3.normalize(mvec_spread_direction)
+							cc_unit:base():throw({
+								dir = mvec_spread_direction,
+								owner = managers.player:local_player() or throw_owner_unit
+							})
+						end
 					end				
 				end
 			end
