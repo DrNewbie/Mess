@@ -1,0 +1,25 @@
+{
+  "name": "Spawn Some Things On Menu Background",
+  "description": " ",
+  "author": "Dr_Newbie",
+  "contact": "http://modwork.shop/",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "updates": [
+    {
+      "identifier": "SpawnSomeThingsOnMenuBackgroundGitHubUpdate",
+      "host": {
+        "meta": "https://drnewbie.github.io/Mess/Update/SpawnSomeThingsOnMenuBackground.meta.json",
+        "download": "https://drnewbie.github.io/Mess/Update/SpawnSomeThingsOnMenuBackground.zip",
+        "patchnotes": "https://github.com/DrNewbie/Mess/commits/master"
+      }
+    }
+  ],
+  "hooks": [
+    {
+      "hook_id": "lib/managers/menu/menuscenemanager",
+      "script_path": "menuscenemanager.lua"
+    }
+  ]
+}

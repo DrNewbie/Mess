@@ -1,0 +1,18 @@
+{
+  "1": {
+    "unit": "units/payday2_cash/safes/mxs/safe/eco_safe_mxs",
+    "pos": "70,200,0",
+    "rot": "-45,0,0"
+  },
+   "2": {
+    "unit": "units/payday2_cash/safes/mxs/safe/eco_safe_mxs",
+    "pos": "70,200,150",
+    "rot": "-45,0,0",
+	"key": "eco_safe_mxs_dup2"
+  },
+   "3": {
+    "unit": "units/payday2_cash/safes/lones/safe/eco_safe_lones",
+    "pos": "170,150,-10",
+    "rot": "0,0,0"
+  }
+}
