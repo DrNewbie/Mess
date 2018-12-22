@@ -1,0 +1,32 @@
+<table name="Tediore Reload">
+	<AssetUpdates id="24156" name="asset_updates" version="2" folder_name="TedioreReload" provider="modworkshop"/>
+	<Hooks directory="Hooks">
+		<hook file="playerstandard.lua" source_file="lib/units/beings/player/states/playerstandard"/>
+		<hook file="playerequipment.lua" source_file="lib/units/beings/player/playerequipment"/>
+		<hook file="fpcameraplayerbase.lua" source_file="lib/units/cameras/fpcameraplayerbase"/>
+		<hook file="projectilebase.lua" source_file="lib/units/weapons/projectiles/projectilebase"/>
+	</Hooks>
+	<Localization directory="Localization" default="english.txt"/>	
+	<AddFiles directory="assets">
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_throwandreload"/>
+	</AddFiles>	
+	<WeaponMod based_on="wpn_fps_upg_a_dragons_breath" id="wpn_fps_throwandreload" unit="units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy" type="ammo" drop="false" texture_bundle_folder="mods" is_a_unlockable="true">
+		<stats value="9" total_ammo_mod="-8" damage="-999" spread="-999" moving_spread="12"/>
+		<weapons>
+			<value_node value="wpn_fps_shot_saiga"/>
+			<value_node value="wpn_fps_shot_r870"/>
+			<value_node value="wpn_fps_shot_huntsman"/>
+			<value_node value="wpn_fps_shot_serbu"/>
+			<value_node value="wpn_fps_sho_ben"/>
+			<value_node value="wpn_fps_sho_striker"/>
+			<value_node value="wpn_fps_sho_ksg"/>
+			<value_node value="wpn_fps_pis_judge"/>
+			<value_node value="wpn_fps_sho_spas12"/>
+			<value_node value="wpn_fps_shot_b682"/>
+			<value_node value="wpn_fps_sho_aa12"/>
+			<value_node value="wpn_fps_sho_boot"/>
+			<value_node value="wpn_fps_shot_m37"/>
+			<value_node value="wpn_fps_sho_rota"/>
+		</weapons>
+    </WeaponMod>
+</table>
