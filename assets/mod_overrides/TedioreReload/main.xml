@@ -1,5 +1,5 @@
 <table name="Tediore Reload">
-	<AssetUpdates id="24156" name="asset_updates" version="2" folder_name="TedioreReload" provider="modworkshop"/>
+	<AssetUpdates id="24156" name="asset_updates" version="3" folder_name="TedioreReload" provider="modworkshop"/>
 	<Hooks directory="Hooks">
 		<hook file="playerstandard.lua" source_file="lib/units/beings/player/states/playerstandard"/>
 		<hook file="playerequipment.lua" source_file="lib/units/beings/player/playerequipment"/>

@@ -25,8 +25,18 @@ if (Net and Net:IsHost()) or (Global.game_settings and Global.game_settings.sing
 			local throw_gun = World:spawn_unit(ids_unit_name, Vector3(), Rotation())
 			if throw_gun then
 				throw_gun:base():set_factory_data(wep_base._factory_id)
-				throw_gun:base():set_cosmetics_data(nil)
-				throw_gun:base():assemble(wep_base._factory_id)
+				if wep_base._cosmetics_id then
+					throw_gun:base():set_cosmetics_data({
+						id = wep_base._cosmetics_id,
+						quality = wep_base._cosmetics_quality,
+						bonus = wep_base._cosmetics_bonus
+					})
+				end
+				if wep_base._blueprint then
+					throw_gun:base():assemble_from_blueprint(wep_base._factory_id, wep_base._blueprint)
+				elseif not unit_name then
+					throw_gun:base():assemble(wep_base._factory_id)
+				end
 				throw_gun:base():check_npc()
 				throw_gun:base():setup({
 					user_unit = them._unit,
