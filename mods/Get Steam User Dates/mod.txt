@@ -6,16 +6,6 @@
   "version": "1",
   "priority": 300,
   "blt_version": 2,
-  "updates": [
-    {
-      "identifier": "GetSteamUserDatesGitHubUpdate",
-      "host": {
-        "meta": "https://drnewbie.github.io/Mess/Update/GetSteamUserDates.meta.json",
-        "download": "https://drnewbie.github.io/Mess/Update/GetSteamUserDates.zip",
-        "patchnotes": "https://github.com/DrNewbie/Mess/commits/master"
-      }
-    }
-  ],
   "hooks": [
     {
       "hook_id": "lib/network/base/hostnetworksession",
@@ -24,6 +14,16 @@
     {
       "hook_id": "lib/network/base/clientnetworksession",
       "script_path": "NetWork.lua"
+    }
+  ],
+  "updates": [
+    {
+      "identifier": "GetSteamUserDatesGitHubUpdate",
+      "host": {
+        "meta": "https://drnewbie.github.io/Mess/Update/GetSteamUserDates.meta.json",
+        "download": "https://drnewbie.github.io/Mess/Update/GetSteamUserDates.zip",
+        "patchnotes": "https://github.com/DrNewbie/Mess/commits/master"
+      }
     }
   ]
 }
