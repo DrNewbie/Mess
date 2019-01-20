@@ -1,0 +1,4 @@
+{
+  "menu_CleanAllRandomCat2FFNow_name": "Rnd My Cat Now",
+  "menu_CleanAllRandomCat2FFNow_desc": "!! Warning : Huge Lag !!"
+}
