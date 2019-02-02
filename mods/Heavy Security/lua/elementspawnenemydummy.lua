@@ -41,7 +41,7 @@ function ElementSpawnEnemyDummy:produce(...)
 		if _spawn_list[HeavySecurity.settings.Enemy_Type] then
 			_spawn_select = Idstring(_spawn_list[HeavySecurity.settings.Enemy_Type])
 		end
-		if HeavySecurity.settings.Enemy_Type == 10 or HeavySecurity.settings.Enemy_Type == 12 then
+		if HeavySecurity.settings.Enemy_Type == 10 or HeavySecurity.settings.Enemy_Type == 11 then
 			table.insert(_spawn_list, "units/payday2/characters/ene_sniper_1/ene_sniper_1")
 			table.insert(_spawn_list, "units/payday2/characters/ene_sniper_2/ene_sniper_2")
 			table.insert(_spawn_list, "units/payday2/characters/ene_shield_1/ene_shield_1")
