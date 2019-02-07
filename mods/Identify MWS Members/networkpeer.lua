@@ -10,6 +10,9 @@ function NetworkPeer:Is_MWS_Member()
 	if not self._user_id or not self._name then
 		return
 	end
+	if self == managers.network:session():local_peer() then
+		return
+	end
 	local user_id = tostring(self._user_id)
 	local user_name = tostring(self._name)
 	if Steam:is_user_in_source(user_id, "103582791456186251") then
@@ -21,7 +24,7 @@ function NetworkPeer:Is_MWS_Member()
 				search = tostring(search_page)
 				local mwsuid = tonumber(tostring(string.match(search_page, 'https://www.modworkshop.net/member.php?action=profile&uid=(%d+)')))
 				if mwsuid and mwsuid > 0 then
-					local mwsurl = "www.modworkshop.net/member.php?action=profile&="..mwsuid
+					local mwsurl = "https://www.modworkshop.net/member.php?action=profile&="..mwsuid
 					dohttpreq(mwsuid,
 						function (mws_upage)
 							mws_upage = tostring(search_page)
