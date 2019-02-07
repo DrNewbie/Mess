@@ -1,0 +1,15 @@
+{
+	"blt_version" : 2,
+	"name" : " ",
+	"description" : "",
+	"author" : " ",
+	"contact" : "",
+	"version" : "1",
+	"priority" : 100,
+	"hooks" : [
+		{
+			"hook_id" : "lib/managers/menu/blackmarketgui",
+			"script_path" : "lua/blackmarketgui.lua"
+		}
+	]
+}
