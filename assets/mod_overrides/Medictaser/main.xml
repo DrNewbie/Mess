@@ -1,16 +1,16 @@
 <table name="Medictaser">
 	<AssetUpdates id="23811" version="2" name="asset_updates" folder_name="Medictaser" provider="modworkshop"/>
 	<ScriptMods>
-        <mod target_file="units/payday2/characters/ragdoll" target_type="sequence_manager" merge_mode="script_merge">
-            <tbl>
-                <table search="unit" mode="insert">
+		<mod target_file="units/payday2/characters/ragdoll" target_type="sequence_manager" merge_mode="script_merge">
+			<tbl>
+				<table search="unit" mode="insert">
 					<sequence editable="true" editable_state="false" name="'var_mtr_medictaser'" triggable="true">
 						<material_config name="'units/payday2/characters/ene_tazer_1/ene_medictazer_1'"/>
 					</sequence>
-                </table>
-            </tbl>
-        </mod>
-    </ScriptMods>
+				</table>
+			</tbl>
+		</mod>
+	</ScriptMods>
 	<AddFiles directory="assets">
 		<texture path="units/payday2/characters/shared_textures/medictaser_helmets_df"/>
 		<texture path="units/payday2/characters/shared_textures/medictaser_body_df"/>
