@@ -17,6 +17,14 @@ function RWSN2W:Init()
 	for i, cfg in pairs(configs) do
 		dofile(self.ModPath.."/configs/"..cfg)
 	end
+	--[[
+	for weapon_id, data in pairs(tweak_data.weapon) do
+		if type(data) == "table" and data.categories then
+			tweak_data.weapon[weapon_id].desc_id = tweak_data.weapon[weapon_id].desc_id or RWSN2W_empty_desc
+			tweak_data.weapon[weapon_id].has_description = true
+		end
+	end
+	]]
 end
 
 function RWSN2W:Run(data)
@@ -52,6 +60,18 @@ function RWSN2W:Simple_Set(them, stat_name, txt, color)
 	end
 	if color then
 		them._stats_texts[stat_name].equip:set_color(color)
+	end
+end
+
+function RWSN2W:Simple_Set_Weapon_Title(them, txt, color)
+	if not them._info_texts or not them._info_texts[1] then
+		return
+	end
+	if txt then
+		them._info_texts[1]:set_text(txt)
+	end
+	if color then
+		them._info_texts[1]:set_color(color)
 	end
 end
 
@@ -102,3 +122,11 @@ Hooks:PostHook(BlackMarketGui, "_setup", "RWSN2W_PostHook_setup", function(self)
 end)
 
 RWSN2W:Init()
+
+--[[
+Hooks:Add("LocalizationManagerPostInit", "RWSN2W_AddMyLoc", function(loc)
+	loc:add_localized_strings({
+		RWSN2W_empty_desc = ""
+	})
+end)
+]]
