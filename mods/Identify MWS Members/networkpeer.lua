@@ -7,10 +7,10 @@ local function Peer_Is_MWS_Meber_Announce(user_name, is_bool)
 end
 
 function NetworkPeer:Is_MWS_Member()
-	if not self._user_id or not self._name then
+	if not self not self._user_id or not self._name then
 		return
 	end
-	if self == managers.network:session():local_peer() then
+	if managers.network and self == managers.network:session():local_peer() then
 		return
 	end
 	local user_id = tostring(self._user_id)
