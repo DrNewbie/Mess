@@ -1,22 +1,37 @@
 _G.RWSN2W = _G.RWSN2W or {}
 
 function RWSN2W:Run(data)
-	local weapon_data = data.weapon_data
-	local stat_name = data.stat_name
-	local stat_data = data.stat_data
-	local them = data.them
---==============================================--
---==============================================--
-	if stat_name == "damage" then
-		local damage_e = tonumber(stat_data.equip)
-		if damage_e then
-			if damage_e > 9000 then
-				self:Set(them, "damage", "IT'S OVER 9000!!!!!", Color(1, 0, 0))
-			elseif damage_e > 4000 then
-				self:Set(them, "damage", "IT'S CLOSE TO 9000!!", Color(1, 1, 0))
+	local RunMeNow = function(weapon_data, stat_name, stat_data, them)
+		if stat_name == "damage" then
+			local damage_e = tonumber(stat_data.equip)
+			if damage_e then
+				if damage_e > 9000 then
+					self:Set(them, "damage", "IT'S OVER 9000!!!!!", Color(1, 0, 0))
+				elseif damage_e > 4000 then
+					self:Set(them, "damage", "IT'S CLOSE TO 9000!!", Color(1, 1, 0))
+				elseif damage_e <= 40 then
+					self:Set(them, "damage", "I'd rather kill myself", Color(0, 1, 1))
+				end
 			end
-		end
+		end	
 	end
+	local weapon_data = data.weapon_data
+	--[[
+		weapon_id	string
+		factory_id	string
+		blueprint	table
+	]]
+	local stat_name = data.stat_name
+	--[[
+		"concealment", "suppression", "totalammo",
+		"recoil", "spread", "reload", "damage",
+		"fire_rate", "magazine"
+	]]
+	local stat_data = data.stat_data
+	--[[equip, total, mods, base, skill, name, removed]]
+	local them = data.them
+	--[[BlackMarketGui]]
+	RunMeNow(weapon_data, stat_name, stat_data, them)
 end
 
 function RWSN2W:Set(them, stat_name, txt, color)
@@ -56,19 +71,6 @@ function BlackMarketGui:RWSN2W()
 						removed = tostring(self._stats_texts[stat.name].removed:text()),
 						equip = tostring(self._stats_texts[stat.name].equip:text())
 					},
-					--[[
-					stat.name = {
-						"concealment",
-						"suppression",
-						"totalammo",
-						"recoil",
-						"spread",
-						"reload",
-						"damage",
-						"fire_rate",
-						"magazine"
-					}
-					]]
 					them = self
 				})
 			end

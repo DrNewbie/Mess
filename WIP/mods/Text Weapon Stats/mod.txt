@@ -4,7 +4,7 @@
 	"description" : "",
 	"author" : " ",
 	"contact" : "",
-	"version" : "2",
+	"version" : "3",
 	"priority" : 100,
 	"hooks" : [
 		{
