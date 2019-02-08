@@ -1,20 +1,25 @@
 _G.RWSN2W = _G.RWSN2W or {}
+RWSN2W.ModPath = ModPath
+RWSN2W.Configs = RWSN2W.Configs or {}
+
+function RWSN2W:Add(id, func)
+	if not func then
+		return
+	end
+	if not id then
+		id = Idstring("RWSN2W_"..tostring(func)):key()
+	end
+	RWSN2W.Configs[id] = func
+end
+
+function RWSN2W:Init()
+	local configs = file.GetFiles(self.ModPath.."/configs/")
+	for i, cfg in pairs(configs) do
+		dofile(self.ModPath.."/configs/"..cfg)
+	end
+end
 
 function RWSN2W:Run(data)
-	local RunMeNow = function(weapon_data, stat_name, stat_data, them)
-		if stat_name == "damage" then
-			local damage_e = tonumber(stat_data.equip)
-			if damage_e then
-				if damage_e > 9000 then
-					self:Set(them, "damage", "IT'S OVER 9000!!!!!", Color(1, 0, 0))
-				elseif damage_e > 4000 then
-					self:Set(them, "damage", "IT'S CLOSE TO 9000!!", Color(1, 1, 0))
-				elseif damage_e <= 40 then
-					self:Set(them, "damage", "I'd rather kill myself", Color(0, 1, 1))
-				end
-			end
-		end	
-	end
 	local weapon_data = data.weapon_data
 	--[[
 		weapon_id	string
@@ -31,10 +36,12 @@ function RWSN2W:Run(data)
 	--[[equip, total, mods, base, skill, name, removed]]
 	local them = data.them
 	--[[BlackMarketGui]]
-	RunMeNow(weapon_data, stat_name, stat_data, them)
+	for i, func in pairs(self.Configs) do
+		func(weapon_data, stat_name, stat_data, them)
+	end
 end
 
-function RWSN2W:Set(them, stat_name, txt, color)
+function RWSN2W:Simple_Set(them, stat_name, txt, color)
 	if txt then
 		them._stats_texts[stat_name].base:set_text("")
 		them._stats_texts[stat_name].mods:set_text("")
@@ -93,3 +100,5 @@ end)
 Hooks:PostHook(BlackMarketGui, "_setup", "RWSN2W_PostHook_setup", function(self)
 	self:RWSN2W(4)
 end)
+
+RWSN2W:Init()
