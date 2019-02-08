@@ -1,7 +1,7 @@
 {
   "blt_version": 2,
   "name": "Wordy Statistics",
-  "description": "Verbose Weapon Stats",
+  "description": "verbose weapon stats, suicide propaganda",
   "author": "Dr_Newbie",
   "contact": " ",
   "version": "1",
