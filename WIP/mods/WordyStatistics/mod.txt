@@ -11,15 +11,5 @@
       "hook_id": "lib/managers/menu/blackmarketgui",
       "script_path": "lua/blackmarketgui.lua"
     }
-  ],
-  "updates": [
-    {
-      "identifier": "SuicideVerboseWordyStatisticsGitHubUpdate",
-      "host": {
-        "meta": "https://drnewbie.github.io/Mess/Update/WordyStatistics.meta.json",
-        "download": "https://drnewbie.github.io/Mess/Update/WordyStatistics.zip",
-        "patchnotes": "https://github.com/DrNewbie/Mess/commits/master"
-      }
-    }
   ]
 }
