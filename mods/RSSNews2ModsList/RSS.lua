@@ -1,3 +1,9 @@
+--[[
+	0 = Overrides
+	1 = Insert
+]]
+local Insert_Overrides = 0
+
 JokeRssNewsFromNet = JokeRssNewsFromNet or {}
 
 local function GetRssNews(msg_max)
@@ -17,20 +23,7 @@ local function GetRssNews(msg_max)
 		end
 		return s
 	end
-	local api_key = {
-		'jwkuzoxaywxlnqfx4gyuzaret0kjaplpzs2m8eik',
-		'yfbuldahospobdejfrv59mmcdv0qg0c3e2ftfhho',
-		'b5mdzonbxlpcgaukzsxaathzydybvppiiojnxhog',
-		'2ws4gq7otkooxlhkqezrohlejjhxpphqa755h6ii',
-		'uzzzut6wupuklhxxmtoh3lqxqmpxmy5j04lthhrw',
-		'zofnpv5hsdrmqbitpvsns18ouo1io9acaeht846z',
-		'htwrq9q8y74bcborob1ukaujlyo6ebe7g0sjhgrn',
-		'ybqtqy7nxf0mvxwaddr9kmdalb4sifcgvzdbvxrv',
-		'sbfyugqnuuty6rsap6hessvipbomy12kpy1asccg',
-		'j5jwheese1pa8fv7jvvtp6rtua5o0mucm1gviaw2'
-	}
-	local rss_url = url_encode('https://www.reddit.com/r/paydaytheheist/.rss')
-	local full_url = 'https://api.rss2json.com/v1/api.json?rss_url='.. rss_url ..'&api_key=' .. api_key[math.random(#api_key)]
+	local full_url = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.reddit.com%2Fr%2Fpaydaytheheist%2F.rss'
 	
 	math.randomseed(tostring(os.time()):reverse():sub(1, 6))
 	
@@ -56,13 +49,11 @@ local function GetRssNews(msg_max)
 						local _msg = splitByChunk(tostring(data.items[r].title), 40)
 						for i, v in ipairs(_msg) do
 							local _sp_b = false
-							if _msg[i+1] then
-								if string.len(_msg[i+1]) <= 3 then
-									v = v .. _msg[i+1]
-									_sp_b = true
-								else
-									v = v .. ' ...'
-								end
+							if _msg[i+1] and string.len(_msg[i+1]) <= 3 then
+								v = v .. _msg[i+1]
+								_sp_b = true
+							else
+								v = v .. ' ...'
 							end
 							table.insert(_tmp_rss.Msg, string.format('%q', v))
 							if _sp_b then
@@ -105,7 +96,7 @@ local function UpdateRssNews()
 		end
 	end
 	JokeRssNewsFromNet.last_time = JokeRssNewsFromNet.last_time or 0
-	if os.difftime(os.time(), JokeRssNewsFromNet.last_time) > 600 or not JokeRssNewsFromNet.Msg or not JokeRssNewsFromNet.Msg[1] then
+	if os.difftime(os.time(), JokeRssNewsFromNet.last_time) > 10800 or not JokeRssNewsFromNet.Msg or not JokeRssNewsFromNet.Msg[1] then
 		GetRssNews(-1)
 	end
 end
@@ -123,6 +114,9 @@ local RSS_MenuCallbackHandler_build_mods_list = MenuCallbackHandler.build_mods_l
 function MenuCallbackHandler:build_mods_list()
 	local ori_mod = RSS_MenuCallbackHandler_build_mods_list(self)
 	local msg_ready = JokeRssNewsFromNet and JokeRssNewsFromNet.Msg and JokeRssNewsFromNet.Msg[1] and true or false
+	if Insert_Overrides == 0 then
+		ori_mod = {}
+	end
 	if msg_ready then
 		for _, v in pairs(JokeRssNewsFromNet.Msg) do
 			v = tostring(v)
