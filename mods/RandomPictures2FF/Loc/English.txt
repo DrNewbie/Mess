@@ -1,0 +1,8 @@
+{
+  "menu_RandomDD2FFMain_name": "RNG Pics to FF",
+  "menu_RandomDD2FFMain_desc": " ",
+  "menu_RandomDD2FFNow_name": "Download Picture",
+  "menu_RandomDD2FFNow_desc": "!! Warning : Huge Lag !!",
+  "menu_RandomDD2FFreload_name": "Reload Picture",
+  "menu_RandomDD2FFreload_desc": " "
+}
