@@ -1,0 +1,8 @@
+{
+  "menu_RandomGFSFW2FFMain_name": "Random Raifu to Framing Frame Gallery",
+  "menu_RandomGFSFW2FFMain_desc": " ",
+  "menu_RandomGFSFW2FFNow_name": "Download Picture",
+  "menu_RandomGFSFW2FFNow_desc": "!! Warning : Huge Lag !!",
+  "menu_RandomGFSFW2FFreload_name": "Reload Picture",
+  "menu_RandomGFSFW2FFreload_desc": " "
+}
