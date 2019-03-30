@@ -1,0 +1,17 @@
+{
+  "name": "Mod that removes level requirements for weapons",
+  "description": "http://modwork.shop/24608",
+  "author": " ",
+  "version": "1",
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/tweak_data/upgradestweakdata",
+      "script_path": "hookME.lua"
+    },
+    {
+      "hook_id": "lib/managers/menu/blackmarketgui",
+      "script_path": "hookME.lua"
+    }
+  ]
+}
