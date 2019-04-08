@@ -1,0 +1,19 @@
+{
+  "name": "Difficulty Go UP (Holdout edition)",
+  "description": " ",
+  "author": "Dr_Newbie",
+  "contact": "http://modwork.shop/",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/managers/skirmishmanager",
+      "script_path": "Lua/skirmishmanager.lua"
+    },
+    {
+      "hook_id": "lib/managers/menumanager",
+      "script_path": "Lua/menumanager.lua"
+    }
+  ]
+}
