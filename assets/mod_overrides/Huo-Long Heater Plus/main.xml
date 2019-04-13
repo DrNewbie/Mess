@@ -1,0 +1,7 @@
+<table name="Huo-Long Heater Plus">
+	<AssetUpdates id="24694" name="asset_updates" version="1" provider="lastbullet"/>
+	<Hooks directory="Hooks">
+		<hook file="hook.playermanager.lua" source_file="lib/managers/playermanager"/>
+		<hook file="hook.newraycastweaponbase.lua" source_file="lib/units/weapons/newraycastweaponbase"/>
+	</Hooks>
+</table>
