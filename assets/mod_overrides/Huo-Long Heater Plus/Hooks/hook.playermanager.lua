@@ -61,6 +61,7 @@ Hooks:PostHook(PlayerManager, "update", "Ply_"..Idstring("set ring of flames ohh
 			Vector3(-0.75, 1, 0)
 		}
 		for i_dir = 1, #direction_list do
+			local this_pos = self:local_player():position()
 			local _flame_effect_id = World:effect_manager():spawn({
 				effect = Idstring("effects/payday2/particles/explosions/flamethrower"),
 				position = self:local_player():position(),
@@ -69,8 +70,9 @@ Hooks:PostHook(PlayerManager, "update", "Ply_"..Idstring("set ring of flames ohh
 			table.insert(self._RingOfFlames_Table, {
 				been_alive = true,
 				id = _flame_effect_id,
-				position = self:local_player():position() + Vector3(0, 0, 10),
-				direction = direction_list[i_dir]
+				position = this_pos + Vector3(0, 0, 10),
+				direction = direction_list[i_dir],
+				this_pos = this_pos
 			})
 		end
 	end
@@ -78,18 +80,18 @@ end)
 
 Hooks:PostHook(PlayerManager, "update", "Ply_"..Idstring("and yes, it should be ring of flames around"):key(), function(self, t, dt)
 	if self:local_player() and type(self._RingOfFlames_Table) == "table" then
-		local base_pos = self:local_player() and self:local_player():position() or Vector3(-999999, -999999, -999999)
 		local flame_effect_max_dis = 5000
-		local flame_effect_dt = 10 / dt
+		local flame_effect_dt = 3 / dt
 		local flame_effect_distance = flame_effect_max_dis / flame_effect_dt
 		for id, effect_entry in pairs(self._RingOfFlames_Table) do
 			if effect_entry.been_alive and effect_entry.position and effect_entry.direction then
 				local eff_pos = effect_entry.position
-				local eff_dir = effect_entry.direction				
+				local eff_dir = effect_entry.direction
+				local eff_this_pos = effect_entry.this_pos
 				mvector3.set(mvec1, eff_pos)
 				mvector3.add(eff_pos, eff_dir * flame_effect_distance)
 				World:effect_manager():move(effect_entry.id, eff_pos)
-				local effect_distance = mvector3.distance(eff_pos, base_pos)
+				local effect_distance = mvector3.distance(eff_pos, eff_this_pos)
 				if flame_effect_max_dis < effect_distance then
 					self._RingOfFlames_Table[id].been_alive = nil
 				end
