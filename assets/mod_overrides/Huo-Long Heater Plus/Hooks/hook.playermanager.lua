@@ -80,7 +80,7 @@ end)
 
 Hooks:PostHook(PlayerManager, "update", "Ply_"..Idstring("and yes, it should be ring of flames around"):key(), function(self, t, dt)
 	if self:local_player() and type(self._RingOfFlames_Table) == "table" then
-		local flame_effect_max_dis = 5000
+		local flame_effect_max_dis = 800
 		local flame_effect_dt = 3 / dt
 		local flame_effect_distance = flame_effect_max_dis / flame_effect_dt
 		for id, effect_entry in pairs(self._RingOfFlames_Table) do
