@@ -1,0 +1,6 @@
+<table name="Fix Custom Weapon Dragons Breath Crash">
+	<AssetUpdates id="24695" name="asset_updates" version="3" provider="lastbullet"/>
+	<Hooks directory="Hooks">
+		<hook file="hook.networkbaseextension.lua" source_file="lib/network/base/extensions/networkbaseextension"/>
+	</Hooks>
+</table>
