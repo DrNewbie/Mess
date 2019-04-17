@@ -1,0 +1,18 @@
+{
+  "name": "Heist-specific Automatic Graphics Adjustor",
+  "description": "http://modwork.shop/24710",
+  "author": "Dr_Newbie",
+  "version": "1",
+  "priority": 300,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/managers/menumanager",
+      "script_path": "menumanager.lua"
+    },
+    {
+      "hook_id": "lib/managers/missionmanager",
+      "script_path": "missionmanager.lua"
+    }
+  ]
+}
