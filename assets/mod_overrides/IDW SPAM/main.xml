@@ -1,5 +1,5 @@
 <table name="IDW NYAW">
-	<AssetUpdates id="23081" version="1" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AssetUpdates id="23081" version="2" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
 	<Hooks directory="Scripts">
 		<hook source_file="lib/units/dramaext" file="FuckSound.lua"/>
 	</Hooks>
