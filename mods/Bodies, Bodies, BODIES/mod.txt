@@ -1,0 +1,13 @@
+{
+  "name": "Bodies, Bodies, BODIES",
+  "description": "",
+  "author": "Dr_Newbie ; TdlQ",
+  "contact": "http://modwork.shop/24907",
+  "version": "1",
+  "hooks": [
+    {
+      "hook_id": "lib/units/enemies/cop/copdamage",
+      "script_path": "copdamage.lua"
+    }
+  ]
+}
