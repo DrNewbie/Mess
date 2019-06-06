@@ -1,0 +1,19 @@
+{
+  "name": "Multi Intro",
+  "description": "Multi Intro",
+  "Author": "Dr_Newibe",
+  "contact": " ",
+  "version": "1.0",
+  "blt_version": 2,
+  "keybinds": [
+    {
+      "keybind_id": "lua_Run_MultiIntro_button",
+      "name": "Run Multi Intro",
+      "description": "Run Multi Intro",
+      "script_path": "lua.lua",
+      "run_in_menu": true,
+      "run_in_game": true,
+      "localized": false
+    }
+  ]
+}
