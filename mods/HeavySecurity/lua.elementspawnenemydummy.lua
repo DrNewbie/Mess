@@ -1,7 +1,7 @@
 core:import("CoreMissionScriptElement")
 ElementSpawnEnemyDummy = ElementSpawnEnemyDummy or class(CoreMissionScriptElement.MissionScriptElement)
 
-if not HeavySecurity or not HeavySecurity.settings or not HeavySecurity.settings.Level then
+if not HeavySecurity or not HeavySecurity.settings or not HeavySecurity.settings.Level or not HeavySecurity.settings.Enable then
 	return
 end
 
