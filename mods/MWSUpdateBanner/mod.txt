@@ -11,5 +11,15 @@
       "hook_id": "lib/managers/menu/newheistsgui",
       "script_path": "menucomponentmanager.lua"
     }
+  ],
+  "updates": [
+    {
+      "identifier": "MWSUpdateBannerGitHubUpdate",
+      "host": {
+        "meta": "https://drnewbie.github.io/Mess/Update/MWSUpdateBanner.meta.json",
+        "download": "https://drnewbie.github.io/Mess/Update/MWSUpdateBanner.zip",
+        "patchnotes": "https://github.com/DrNewbie/Mess/commits/master"
+      }
+    }
   ]
 }
