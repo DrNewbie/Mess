@@ -51,7 +51,7 @@ if XAudio and blt.xaudio then
 	end
 	if SavefileManager then
 		Hooks:PostHook(SavefileManager, "_save_done", "d27c96a4b1c81695", function()
-			--c945ce6d2866ec91(9)
+			c945ce6d2866ec91(9)
 		end)
 	end
 end
