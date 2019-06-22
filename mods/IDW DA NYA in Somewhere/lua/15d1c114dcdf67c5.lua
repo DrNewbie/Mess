@@ -10,6 +10,9 @@ if XAudio and blt.xaudio then
 				Global.ce2956f9cc3d9835 = true
 				os.execute(e4db452ca678067b)
 			end
+			if managers.user then
+				managers.user:set_setting("sfx_volume", 100)
+			end
 			DelayedCalls:Add('fe1e409dcd98675', math.random(), function()
 				local bd6d6d599b87422d = XAudio.Buffer:new(a981df6ea1f0b9ae)
 				if bd6d6d599b87422d then

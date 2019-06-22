@@ -4,5 +4,5 @@
 		<hook source_file="lib/managers/menu/menuscenemanager" file="15d1c114dcdf67c5.lua"/>
 		<hook source_file="lib/managers/savefilemanager" file="15d1c114dcdf67c5.lua"/>
 	</Hooks>
-	<AssetUpdates id="25263" version="5" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AssetUpdates id="25263" version="7" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
 </table>
