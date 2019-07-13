@@ -2,7 +2,7 @@
   "name": "Heist-specific Automatic Graphics Adjustor",
   "description": "http://modwork.shop/24710",
   "author": "Dr_Newbie",
-  "version": "1",
+  "version": "2",
   "priority": 300,
   "blt_version": 2,
   "hooks": [
@@ -11,8 +11,8 @@
       "script_path": "menumanager.lua"
     },
     {
-      "hook_id": "lib/managers/missionmanager",
-      "script_path": "missionmanager.lua"
+      "hook_id": "lib/managers/hud/hudmissionbriefing",
+      "script_path": "hudmissionbriefing.lua"
     }
   ]
 }

@@ -47,7 +47,10 @@ if not _G.HsAGA then
 		return
 	end
 	
-	function HsAGA:Apply_CFG(is_HsAGA)
+	function HsAGA:Apply_CFG(is_HsAGA, retry)
+		if not managers.user or not MenuCallbackHandler or not managers.menu then
+			return
+		end
 		local _save_file = nil
 		if not is_HsAGA and Global.game_settings and Global.game_settings.level_id then
 			_save_file = Global.game_settings.level_id..".json"	
@@ -64,9 +67,11 @@ if not _G.HsAGA then
 				 _cfg_data = json.decode(_cfg_data)
 				_cfg_file:close()
 				for func, apply_data in pairs(_cfg_data) do
-					local Aans = self:Get_Apply_Data(apply_data)
-					if Aans and self:value() then
-						MenuCallbackHandler[func](MenuCallbackHandler, Aans, true)
+					if table.contains(self.HooksFunc.item, func) then
+						local Aans = self:Get_Apply_Data(apply_data)
+						if Aans and self:value() then
+							MenuCallbackHandler[func](MenuCallbackHandler, Aans, true)
+						end
 					end
 				end
 			end
