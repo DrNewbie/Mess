@@ -1,0 +1,15 @@
+{
+  "name": "[Mutators Plus] Because of training",
+  "description": "[Mutators Plus] Because of training",
+  "author": "Dr_Newbie",
+  "contact": "http://modwork.shop/25406",
+  "blt_version": 1,
+  "version": "1",
+  "priority": 1,
+  "hooks": [
+    {
+      "hook_id": "lib/mutators/mutatorenemyhealth",
+      "script_path": "mutatorenemyhealth.lua"
+    }
+  ]
+}
