@@ -1,0 +1,6 @@
+<mod name="LogicbombPlus">
+	<AssetUpdates id="25492" version="1" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<Hooks directory="Hooks">
+		<hook file="playerstandard.lua" source_file="lib/units/beings/player/states/playerstandard"/>
+	</Hooks>
+</mod>
