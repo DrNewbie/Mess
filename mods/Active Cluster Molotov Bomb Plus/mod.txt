@@ -1,0 +1,19 @@
+{
+  "name": "Active Cluster Molotov Bomb Plus",
+  "description": " ",
+  "Author": "Dr_Newibe",
+  "contact": " ",
+  "version": "1.0",
+  "blt_version": 2,
+  "keybinds": [
+    {
+      "keybind_id": "lua_active_CMBP_lua_button",
+      "name": "Active Cluster Molotov Bomb Plus",
+      "description": " ",
+      "script_path": "lua.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    }
+  ]
+}
