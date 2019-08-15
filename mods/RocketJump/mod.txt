@@ -1,0 +1,14 @@
+{
+  "name": "Rocket Jump",
+  "description": " ",
+  "author": "Dr_Newbie",
+  "contact": "http://modwork.shop/",
+  "version": "1",
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/units/beings/player/playerdamage",
+      "script_path": "playerdamage.lua"
+    }
+  ]
+}
