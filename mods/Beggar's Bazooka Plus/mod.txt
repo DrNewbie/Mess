@@ -1,0 +1,22 @@
+{
+  "name": "Beggar's Bazooka Plus",
+  "description": " ",
+  "Author": "Dr_Newibe",
+  "contact": " ",
+  "version": "1",
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/units/weapons/grenadelauncherbase",
+      "script_path": "grenadelauncherbase.lua"
+    },
+    {
+      "hook_id": "lib/units/beings/player/states/playerstandard",
+      "script_path": "playerstandard.lua"
+    },
+    {
+      "hook_id": "lib/managers/playermanager",
+      "script_path": "playermanager.lua"
+    }
+  ]
+}
