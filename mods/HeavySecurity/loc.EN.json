@@ -22,5 +22,7 @@
   "HeavySecurity_menu_apply2allenemies_title": "Apply to All Enemies",
   "HeavySecurity_menu_apply2allenemies_desc": " ",
   "HeavySecurity_menu_apply2allcivilians_title": "Apply to All Civilians",
-  "HeavySecurity_menu_apply2allcivilians_desc": " "
+  "HeavySecurity_menu_apply2allcivilians_desc": " ",
+  "HeavySecurity_menu_addonfollower_title": "Addition Follower",
+  "HeavySecurity_menu_addonfollower_desc": "An addition cops that follow you."
 }

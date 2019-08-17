@@ -1,7 +1,7 @@
 {
   "name": "Heavy Security",
   "author": "Dr_Newbie",
-  "version": "26",
+  "version": "27",
   "priority": 1,
   "blt_version": 2,
   "hooks": [

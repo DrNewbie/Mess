@@ -67,10 +67,6 @@
       "default_value": false
     },
     {
-      "type": "divider",
-      "size": 24
-    },
-    {
       "type": "toggle",
       "id": "HeavySecurity_menu_apply2allcivilians_id",
       "title": "HeavySecurity_menu_apply2allcivilians_title",
@@ -78,6 +74,22 @@
       "callback": "HeavySecurity_menu_apply2allcivilians_callback",
       "value": "AllCivilians",
       "default_value": false
+    },
+    {
+      "type": "divider",
+      "size": 24
+    },
+    {
+      "type": "slider",
+      "id": "HeavySecurity_menu_addonfollower_id",
+      "title": "HeavySecurity_menu_addonfollower_title",
+      "description": "HeavySecurity_menu_addonfollower_desc",
+      "callback": "HeavySecurity_menu_addonfollower_callback",
+      "value": "AddonFollower",
+      "default_value": 0,
+      "max": 100,
+      "min": 0,
+      "step": 1
     }
   ]
 }
