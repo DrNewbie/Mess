@@ -3,7 +3,7 @@
   "description": " ",
   "Author": "Dr_Newibe",
   "contact": " ",
-  "version": "1",
+  "version": "6",
   "blt_version": 2,
   "hooks": [
     {

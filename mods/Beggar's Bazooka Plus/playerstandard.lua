@@ -1,16 +1,17 @@
 Hooks:PostHook(PlayerStandard, "_start_action_equip", "F_"..Idstring("PlayerStandard:_start_action_equip:BB"):key(), function(self)
-	if self._equipped_unit and self._equipped_unit:base() and self._equipped_unit:base()._is_beggars_bazooka then
-		self._BB_rld = false
-		self._BB_ready = {}
-		self._BB_hold = nil
-		managers.player:Set_BB(0)
+	if self._equipped_unit and self._equipped_unit:base() and self._equipped_unit:base()._is_beggars_bazooka and not self._equipped_unit:base()._is_beggars_bazooka_check then
 		local weapon = self._equipped_unit:base()
+		weapon._is_beggars_bazooka_check = true
 		weapon._projectile_type = 'west_arrow_exp'
 		weapon:weapon_tweak_data().projectile_type = weapon._projectile_type
 		if weapon._ammo_data and weapon._ammo_data.launcher_grenade then
 			weapon._ammo_data.launcher_grenade = weapon._projectile_type
 		end
 		weapon:on_reload()
+		self._BB_rld = false
+		self._BB_ready = {}
+		self._BB_hold = nil
+		managers.player:Set_BB(0)
 	end
 end)
 
@@ -29,7 +30,7 @@ Hooks:PostHook(PlayerStandard, "_check_action_reload", "F_"..Idstring("PlayerSta
 						self:_start_action_reload_enter(t)
 						if managers.player:Get_BB() > 3 then
 							managers.player:Add_BB(-1)
-							self._BB_ready[Idstring(mT):key()] = {
+							self._BB_ready[Idstring(tostring(mT)):key()] = {
 								t = mT - 0.1,
 								u_unit = self._equipped_unit,
 								dir = Vector3(0, 0, -1)
@@ -44,7 +45,7 @@ Hooks:PostHook(PlayerStandard, "_check_action_reload", "F_"..Idstring("PlayerSta
 					if self._equipped_unit:base() then
 						for iB = 1, BB do
 							local dd_t = mT + 0.25 * (iB - 1)
-							self._BB_ready[Idstring(iB):key()] = {
+							self._BB_ready[Idstring(tostring(iB)):key()] = {
 								t = dd_t,
 								u_unit = self._equipped_unit
 							}
