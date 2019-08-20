@@ -1,3 +1,5 @@
+HeavySecurity = HeavySecurity or nil
+
 core:import("CoreMissionScriptElement")
 ElementSpawnEnemyDummy = ElementSpawnEnemyDummy or class(CoreMissionScriptElement.MissionScriptElement)
 
@@ -45,32 +47,52 @@ Hooks:PostHook(ElementSpawnEnemyDummy, "produce", "F_"..Idstring("Post.ElementSp
 			end
 			if not HeavySecurity.SpawnAtOnce then
 				HeavySecurity.SpawnAtOnce = true
-				DelayedCalls:Add("D_"..Idstring("DelayedModAnnounces_HeavySecurity_SecurityLevel"):key(), 5,  function()
-					managers.chat:_receive_message(1, "Heavy Security MOD", "Current Security Level is " .. HeavySecurity.settings.Level, Color.green)
+				DelayedCalls:Add("D_"..Idstring("DelayedModAnnounce_HeavySecurity_SecurityLevel"):key(), 5,  function()
+					if managers.chat then
+						managers.chat:_receive_message(1, "Heavy Security MOD", "Current Security Level is " .. HeavySecurity.settings.Level, Color.green)
+					end
 				end)
 				if HeavySecurity.settings.AddonFollower > 0 then
-					DelayedCalls:Add("D_"..Idstring("DelayedModAnnounces_HeavySecurity_AddonFollower"):key(), 10,  function()
-						local playerss = managers.groupai:state():all_player_criminals()
-						if not playerss then
-							playerss = {
-								key = {
-									unit = managers.player:player_unit()
-								}
-							}
-						end
-						if playerss then
-							for i = 1, HeavySecurity.settings.AddonFollower do
-								local cc = playerss[table.random_key(playerss)]
-								if cc and cc.unit then
-									local spunit = HeavySecurity:Spawn(_cop, self, cc.unit)
-									if spunit and spunit.contour and spunit:contour() then
-										spunit:contour():add("mark_enemy_damage_bonus", true)
-									end
-								end
-							end
-						end
-					end)
+					if type(HeavySecurity.settings.AddonFollowerReady) ~= "table" then
+						HeavySecurity.settings.AddonFollowerReady = {}
+					end
+					for i = 1, HeavySecurity.settings.AddonFollower do
+						table.insert(HeavySecurity.settings.AddonFollowerReady, {
+							cop = _cop,
+							them = self
+						})
+					end
 				end
+			end
+		end
+	end
+end)
+
+Hooks:Add("GameSetupUpdate", "GameSetupUpdate_HeavySecurity", function()
+	if HeavySecurity and HeavySecurity.settings and HeavySecurity.settings.AddonFollowerReady and Utils:IsInHeist() then
+		local sp_list = HeavySecurity.settings.AddonFollowerReady
+		HeavySecurity.settings.AddonFollowerReady = nil
+		local playerss = managers.groupai:state():all_player_criminals()
+		if not playerss then
+			playerss = {
+				key = {
+					unit = managers.player:player_unit()
+				}
+			}
+		end
+		if playerss then
+			for i, d in pairs(sp_list) do
+				DelayedCalls:Add("D_"..Idstring("DelayedModAnnounce_HeavySecurity_AddonFollower_"):key(), 3,  function()
+					if managers.chat then
+						managers.chat:_receive_message(1, "Heavy Security MOD", "Addon follower level " .. HeavySecurity.settings.AddonFollower, Color.green)
+					end
+				end)
+				DelayedCalls:Add("D_"..Idstring("DelayedMod_HeavySecurity_AddonFollower_"..i):key(), 3 + i*0.25,  function()
+					local cc = playerss[table.random_key(playerss)]
+					if Utils:IsInHeist() and d and cc and cc.unit and alive(cc.unit) and d.cop and alive(d.cop) and d.them then
+						HeavySecurity:Spawn(d.cop, d.them, cc.unit)
+					end
+				end)
 			end
 		end
 	end
