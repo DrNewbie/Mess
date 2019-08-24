@@ -1,0 +1,15 @@
+{
+  "name": "Do not kill people",
+  "description": " ",
+  "Author": "Dr_Newibe",
+  "contact": "http://modwork.shop/25533",
+  "version": "1",
+  "blt_version": 2,
+  "priority": 100,
+  "hooks": [
+    {
+      "hook_id": "lib/managers/playermanager",
+      "script_path": "playermanager.lua"
+    }
+  ]
+}
