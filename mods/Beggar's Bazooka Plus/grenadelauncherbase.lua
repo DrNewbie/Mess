@@ -3,7 +3,12 @@ Hooks:PostHook(GrenadeLauncherBase, "replenish", "F_"..Idstring("GrenadeLauncher
 		self._is_beggars_bazooka = true
 	end
 	if self._is_beggars_bazooka then
+		self:set_ammo_max(999)
 		self:set_ammo_max_per_clip(0)
+		self:set_ammo_total(999)
+		self.reload_speed_multiplier = function()
+			return 1.75
+		end
 	end
 end)
 

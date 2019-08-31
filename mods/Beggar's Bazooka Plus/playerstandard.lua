@@ -71,6 +71,7 @@ Hooks:PostHook(PlayerStandard, "update", "F_"..Idstring("PlayerStandard:update:B
 					local dir = self._unit:movement():m_head_rot():y()
 					self._equipped_unit:base():_fire_sound()
 					self._equipped_unit:base():_fire_raycast(self._unit, self:get_fire_weapon_position(), d.dir or dir, 1, nil, 1.15)
+					self._ext_camera:play_redirect(self:get_animation("idle"))
 				end
 			end
 		end
