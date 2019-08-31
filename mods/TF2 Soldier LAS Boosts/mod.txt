@@ -1,0 +1,19 @@
+{
+  "name": "TF2 Soldier [LAS] Boosts",
+  "description": " ",
+  "author": "Dr_Newbie",
+  "contact": "http://modwork.shop/25587",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/tweak_data/armorskinstweakdata",
+      "script_path": "lua/armorskinstweakdata.lua"
+    },
+    {
+      "hook_id": "lib/units/weapons/grenadelauncherbase",
+      "script_path": "lua/grenadelauncherbase.lua"
+    }
+  ]
+}
