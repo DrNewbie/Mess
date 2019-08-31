@@ -25,3 +25,7 @@ Hooks:PostHook(PlayerStandard, "update", "RoFBuffUpdateLoop",function(self, t, d
 		end
 	end
 end)
+
+Hooks:PostHook(PlayerStandard, "init", "RoFBuffUpdateInit",function(self)
+	self._rof_buff_t = 0
+end)

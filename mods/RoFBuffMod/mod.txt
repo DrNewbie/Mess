@@ -5,7 +5,7 @@
   "contact": "Dakka over Time, rate-of-fire ramp-up, Real Gatling",
   "priority": 300,
   "blt_version": 2,
-  "version": "1",
+  "version": "2",
   "hooks": [
     {
       "hook_id": "lib/units/beings/player/states/playerstandard",
