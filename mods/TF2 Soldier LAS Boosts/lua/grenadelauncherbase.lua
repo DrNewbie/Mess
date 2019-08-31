@@ -11,7 +11,6 @@ Hooks:PostHook(GrenadeLauncherBase, "replenish", "F_"..Idstring("GrenadeLauncher
 			else
 				self._ammo_pickup = {3, 3}
 			end
-			log(json.encode(self._ammo_pickup))
 		end
 	end
 end)
