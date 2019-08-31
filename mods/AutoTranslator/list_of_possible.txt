@@ -1,0 +1,9 @@
+{
+  "en": "English",
+  "zh-TW": "繁中",
+  "zh-CN": "简中",
+  "ja": "Japanese",
+  "fr": "French",
+  "ru": "Russian",
+  "cs": "Czech"
+}
