@@ -1,5 +1,5 @@
 <table name="Doom Slayer [LAS] Boosts">
-	<AssetUpdates id="25615" version="1" provider="modworkshop"/>
+	<AssetUpdates id="25615" version="2" provider="modworkshop"/>
 	<Localization directory="loc" default="english.txt"/>
 	<Sounds directory="Chainsaw Reward/assets/sounds">
 		<sound id="1dc0cd801b7b93eb_001" path="bonus_cut.ogg" prefix="first"/>
