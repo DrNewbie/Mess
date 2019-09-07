@@ -1,0 +1,51 @@
+{
+  "name": "DOOM Slayer [LAS] Boosts",
+  "description": " ",
+  "author": "Dr_Newbie",
+  "contact": "http://modwork.shop/25590",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/tweak_data/armorskinstweakdata",
+      "script_path": "lua/armorskinstweakdata.lua"
+    },
+    {
+      "hook_id": "lib/units/weapons/newraycastweaponbase",
+      "script_path": "lua/newraycastweaponbase.lua"
+    },
+    {
+      "hook_id": "lib/units/beings/player/states/playerstandard",
+      "script_path": "lua/playerstandard.lua"
+    },
+    {
+      "hook_id": "lib/managers/playermanager",
+      "script_path": "lua/playermanager.lua"
+    },
+    {
+      "hook_id": "lib/units/beings/player/playermovement",
+      "script_path": "lua/playermovement.lua"
+    },
+    {
+      "hook_id": "lib/units/beings/player/playerdamage",
+      "script_path": "lua/playerdamage.lua"
+    },
+    {
+      "hook_id": "lib/units/beings/player/states/playerstandard",
+      "script_path": "Chainsaw Reward/lua/playerstandard.lua"
+    },
+    {
+      "hook_id": "lib/managers/blackmarketmanager",
+      "script_path": "Chainsaw Reward/lua/blackmarketmanager.lua"
+    },
+    {
+      "hook_id": "lib/managers/menumanagerpd2",
+      "script_path": "Chainsaw Reward/menu/menumanager.lua"
+    },
+    {
+      "hook_id": "lib/managers/menumanagerpd2",
+      "script_path": "lua/menumanagerpd2.lua"
+    }
+  ]
+}

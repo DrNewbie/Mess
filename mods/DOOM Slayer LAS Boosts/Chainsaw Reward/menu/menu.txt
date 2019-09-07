@@ -1,0 +1,18 @@
+{
+	"menu_id" : "dewmslaya_b_cr_menu_main",
+	"parent_menu_id" : "blt_options",
+	"title" : "bm_askn_dewmslaya_b_key_name",
+	"description" : "bm_askn_dewmslaya_b_key_desc",
+	"items" : [
+		{
+			"type" : "keybind",
+			"id" : "id_b_cr_keybind_1",
+			"title" : "bm_askn_dewmslaya_b_cr_key_name",
+			"description" : "bm_askn_dewmslaya_b_cr_key_desc",
+			"keybind_id" : "b_cr_keybind_1",
+			"binding" : "H",
+			"run_in_game" : true,
+			"func" : "dewmslaya_b_cr_keybind_1"
+		}
+	]
+}

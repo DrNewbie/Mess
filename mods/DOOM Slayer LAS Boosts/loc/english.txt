@@ -1,0 +1,13 @@
+{
+  "bm_askn_dewmslaya_boosts_more_ammo": "[+] Total ammo +100%",
+  "bm_askn_dewmslaya_boosts_more_stamia": "[+] Stamia +1000%",
+  "bm_askn_dewmslaya_boosts_no_reload": "[+] 'No Reload'",
+  "bm_askn_dewmslaya_boosts_glory_kills": "[+] 'Glory Kills'",
+  "bm_askn_dewmslaya_boosts_chainsaw_reward": "[+] 'Chainsaw Reward'",
+  "bm_askn_dewmslaya_boosts_one_life": "[+] 'One Life'",
+  "bm_askn_dewmslaya_b_key_name": "DOOM Slayer [LAS] Boosts",
+  "bm_askn_dewmslaya_b_key_desc": " ",
+  "bm_askn_dewmslaya_b_cr_key_name": "'Chainsaw Reward' Keybind",
+  "bm_askn_dewmslaya_b_cr_key_desc": " ",
+  "bm_askn_dewmslaya_b_cr_popup_name": "Chainsaw Reward"
+}
