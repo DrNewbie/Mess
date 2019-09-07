@@ -1,5 +1,5 @@
 <table name="Astolfo [LAS] Boosts">
-	<AssetUpdates id="25617" version="1" provider="modworkshop"/>
+	<AssetUpdates id="25617" version="2" provider="modworkshop"/>
 	<Localization directory="loc" default="english.txt"/>
 	<Package id="packages/load_car_sound" directory="bnks">
 		<bnk path="soundbanks/car_muscle" force="true"/>

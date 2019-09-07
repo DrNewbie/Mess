@@ -10,6 +10,8 @@ Hooks:PostHook(PlayerStandard, "_update_movement", "F_"..Idstring("PlayerStandar
 		if oobb then
 			local slotmask = managers.slot:get_mask("flesh")
 			local units = World:find_units("intersect", "obb", oobb:center(), oobb:x(), oobb:y(), oobb:z(), slotmask)
+			local dir_hit = self._ext_movement:m_head_rot():y()
+			mvector3.set_z(dir_hit, math.abs(dir_hit.z)*2*math.random())
 			for _, unit in pairs(units) do
 				if unit:in_slot(managers.slot:get_mask("all_criminals")) then
 				
@@ -30,6 +32,9 @@ Hooks:PostHook(PlayerStandard, "_update_movement", "F_"..Idstring("PlayerStandar
 								damage = 1,
 								attacker_unit = self._unit
 							})
+							call_on_next_update(function ()
+								managers.game_play_central:do_shotgun_push(unit, unit:position() + Vector3(math.rand(1), math.rand(1), math.rand(1)), dir_hit * math.random(), math.random(1, 50), self._unit)
+							end)
 						end
 					end
 				end
