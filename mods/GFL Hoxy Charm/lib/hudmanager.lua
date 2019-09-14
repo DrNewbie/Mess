@@ -12,7 +12,6 @@ Hooks:PostHook(HUDManager, "_player_hud_layout", "GflHoxyCharmAnimeInit", functi
 	self._a_hoxy_charm_img = self._a_hoxy_charm_panel:bitmap({
 		texture = "textures/gfl/hoxy_charm",
 		color = Color.white:with_alpha(1),
-		blend_mode = "add",
 		layer = 1
 	})
 	self._hoxy_charm_it = 1

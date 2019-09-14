@@ -3,7 +3,7 @@
   "description": "http://modwork.shop/25642",
   "author": "Dr_Newbie",
   "contact": "http://modwork.shop/25642",
-  "version": "1",
+  "version": "2",
   "hooks": [
     {
       "hook_id": "lib/managers/hudmanager",
