@@ -1,0 +1,5 @@
+<table name="packages/gfl_hoxy_charm_anime">
+	<Package id="packages/gfl_hoxy_charm_anime" directory="assets">
+		<texture path="textures/gfl/hoxy_charm" force="true"/>
+	</Package>
+</table>
