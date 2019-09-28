@@ -1,0 +1,33 @@
+{
+  "name": "OverBurn (First World Bank)",
+  "description": "http://modwork.shop/25691",
+  "author": "Dr_Newbie",
+  "contact": "http://modwork.shop/25691",
+  "version": "1",
+  "blt_version": 2,
+  "priority": 100,
+  "hooks": [
+    {
+      "hook_id": "core/lib/managers/mission/coreelementunitsequencetrigger",
+      "script_path": "hook.coreelementunitsequencetrigger.lua"
+    },
+    {
+      "hook_id": "core/lib/managers/mission/coremissionscriptelement",
+      "script_path": "hook.coremissionscriptelement.lua"
+    },
+    {
+      "hook_id": "core/lib/utils/dev/editor/coreworlddefinition",
+      "script_path": "hook.coreworlddefinition.lua"
+    }
+  ],
+  "updates": [
+    {
+      "identifier": "OverBurnFWBGitHubUpdate",
+      "host": {
+        "meta": "https://drnewbie.github.io/Mess/Update/OverBurnFWB.meta.json",
+        "download": "https://drnewbie.github.io/Mess/Update/OverBurnFWB.zip",
+        "patchnotes": "https://github.com/DrNewbie/Mess/commits/master"
+      }
+    }
+  ]
+}
