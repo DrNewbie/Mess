@@ -22,8 +22,8 @@ function WorldDefinition:make_unit(data, offset, ...)
 	else
 		local old_name = tostring(data.name)
 		if old_name == "units/payday2/pickups/gen_pku_money_multi/gen_pku_money_multi" or old_name == "units/world/props/bank/money_wrap/money_wrap_single_bundle" then
-			data.name = "units/payday2/pickups/gen_pku_gold/gen_pku_gold"
 			if data.position and mvector3.distance(data.position, OverBurnMoneyAreaCenter) < OverBurnMoneyAreaRange then
+				data.name = "units/payday2/pickups/gen_pku_gold/gen_pku_gold"
 				if old_name == "units/world/props/bank/money_wrap/money_wrap_single_bundle" then
 					local s_unit = nil
 					if MassUnitManager:can_spawn_unit(Idstring(data.name)) and not is_editor then
