@@ -20,6 +20,14 @@ function HeavySecurity:Default()
 	}
 end
 
+function HeavySecurity:Save()
+	local file = io.open(self.SaveFile, "w+")
+	if file then
+		file:write(json.encode(self.settings))
+		file:close()
+	end
+end
+
 function HeavySecurity:Reset()
 	self.settings = self:Default()
 	self:Save()
@@ -41,14 +49,6 @@ function HeavySecurity:Load()
 end
 
 HeavySecurity:Load()
-
-function HeavySecurity:Save()
-	local file = io.open(self.SaveFile, "w+")
-	if file then
-		file:write(json.encode(self.settings))
-		file:close()
-	end
-end
 
 function HeavySecurity:Spawn(_cop, them, special_target)
 	local _spawn_list = {
