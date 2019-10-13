@@ -1,0 +1,5 @@
+<table name="packages/hat_in_time_smug_dance">
+	<AddFiles directory="assets">
+		<texture path="textures/hat_in_time/smug_dance"/>
+	</AddFiles>
+</table>

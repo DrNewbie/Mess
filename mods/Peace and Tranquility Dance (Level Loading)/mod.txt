@@ -1,0 +1,13 @@
+{
+  "name": "Peace and Tranquility Dance (Level Loading)",
+  "description": "A Hat in Time",
+  "author": "Dr_Newbie",
+  "contact": "http://modwork.shop/25750",
+  "version": "2",
+  "hooks": [
+    {
+      "hook_id": "lib/utils/levelloadingscreenguiscript",
+      "script_path": "lib/levelloadingscreenguiscript.lua"
+    }
+  ]
+}
