@@ -1,0 +1,5 @@
+<table name="packages/hat_kid_peace_and_tranquility">
+	<AddFiles directory="assets">
+		<movie path="movies/hat_in_time/peace_and_tranquility"/>
+	</AddFiles>
+</table>
