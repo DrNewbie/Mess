@@ -1,0 +1,45 @@
+{
+  "addon_safe_id": "fake_safe_1",
+  "addon_safe_ans": {
+    "cash_1000": {
+      "name_id": "bm_addon_safe_cash_1000_name",
+      "desc_id": "bm_addon_safe_cash_1000_desc",
+      "reward_fuction": "Fake_Safe_1_Reward",
+      "reward_data": 1000,
+	  "rate": 400,
+	  "texture": "guis/fake_safe_1/loot_cards_cash"
+    },
+    "cash_10000": {
+      "name_id": "bm_addon_safe_cash_10000_name",
+      "desc_id": "bm_addon_safe_cash_10000_desc",
+      "reward_fuction": "Fake_Safe_1_Reward",
+      "reward_data": 10000,
+	  "rate": 300,
+	  "texture": "guis/fake_safe_1/loot_cards_cash"
+    },
+    "cash_100000": {
+      "name_id": "bm_addon_safe_cash_100000_name",
+      "desc_id": "bm_addon_safe_cash_100000_desc",
+      "reward_fuction": "Fake_Safe_1_Reward",
+      "reward_data": 100000,
+	  "rate": 200,
+	  "texture": "guis/fake_safe_1/loot_cards_cash"
+    },
+    "cash_1000000": {
+      "name_id": "bm_addon_safe_cash_1000000_name",
+      "desc_id": "bm_addon_safe_cash_1000000_desc",
+      "reward_fuction": "Fake_Safe_1_Reward",
+      "reward_data": 1000000,
+	  "rate": 100,
+	  "texture": "guis/fake_safe_1/loot_cards_cash"
+    },
+    "cash_10000000": {
+      "name_id": "bm_addon_safe_cash_10000000_name",
+      "desc_id": "bm_addon_safe_cash_10000000_desc",
+      "reward_fuction": "Fake_Safe_1_Reward",
+      "reward_data": 10000000,
+	  "rate": 10,
+	  "texture": "guis/fake_safe_1/loot_cards_cash"
+    }
+  }
+}

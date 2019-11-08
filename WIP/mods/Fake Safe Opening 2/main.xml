@@ -1,0 +1,5 @@
+<table name="enm/fake_safe_1">
+	<AddFiles directory="assets">
+		<texture path="guis/fake_safe_1/loot_cards_cash"/>		
+	</AddFiles>
+</table>

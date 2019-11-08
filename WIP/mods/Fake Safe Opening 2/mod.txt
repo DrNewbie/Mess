@@ -9,19 +9,27 @@
   "hooks": [
     {
       "hook_id": "lib/managers/menumanager",
-      "script_path": "hook.menuscenemanager.lua"
+      "script_path": "Base.lua"
     },
     {
-      "hook_id": "lib/tweak_data/economytweakdata",
-      "script_path": "hook.economytweakdata.lua"
+      "hook_id": "lib/managers/menumanagerpd2",
+      "script_path": "lua/hook.menumanagerpd2.lua"
+    },
+    {
+      "hook_id": "lib/managers/menumanager",
+      "script_path": "lua/hook.menuscenemanager.lua"
     },
     {
       "hook_id": "lib/managers/menu/renderers/menunodeeconomysafe",
-      "script_path": "hook.menunodeeconomysafe.lua"
+      "script_path": "lua/hook.menunodeeconomysafe.lua"
     },
     {
       "hook_id": "lib/managers/blackmarketmanager",
-      "script_path": "hook.blackmarketmanager.lua"
+      "script_path": "lua/hook.blackmarketmanager.lua"
+    },
+    {
+      "hook_id": "lib/tweak_data/economytweakdata",
+      "script_path": "safes_tweak/hook.economytweakdata.lua"
     }
   ],
   "keybinds": [
