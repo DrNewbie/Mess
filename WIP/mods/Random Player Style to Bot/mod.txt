@@ -1,0 +1,15 @@
+{
+  "name": "Random Player Style to Bot",
+  "description": "Random Player Style to Bot",
+  "author": "Dr_Newbie",
+  "contact": "http://modwork.shop/25931",
+  "version": "1",
+  "blt_version": 2,
+  "priority": 1,
+  "hooks": [
+    {
+      "hook_id": "lib/units/player_team/huskteamaimovement",
+      "script_path": "lua/huskteamaimovement.lua"
+    }
+  ]
+}
