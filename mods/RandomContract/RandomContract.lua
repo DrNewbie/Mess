@@ -1,36 +1,7 @@
+local ThisModPath = ModPath
+
 Hooks:Add("LocalizationManagerPostInit", "RandomContract_loc", function(loc)
-	LocalizationManager:add_localized_strings({
-    ["menu_roll_contract"] = "Random contract",
-    ["menu_roll_contract_name"] = "Random contract",
-    ["menu_roll_contract_desc"] = "Change your contract to something random",
-	
-    ["roll_contract_all_ovk_title"] = "ALL OVERKILL",
-    ["roll_contract_all_ovk_desc"] = "Give you random contract in OVERKILL",
-    ["roll_contract_all_ew_title"] = "ALL MAYHEM",
-    ["roll_contract_all_ew_desc"] = "Give you random contract in MAYHEM",
-    ["roll_contract_all_dw_title"] = "ALL DEATH WISH",
-    ["roll_contract_all_dw_desc"] = "Give you random contract in DEATH WISH",
-    ["roll_contract_all_od_title"] = "ALL ONE DOWN",
-    ["roll_contract_all_od_desc"] = "Give you random contract in ONE DOWN",
-	
-    ["roll_contract_loud_ovk_title"] = "LOUD OVERKILL",
-    ["roll_contract_loud_ovk_desc"] = "Give you random loud contract in OVERKILL",
-    ["roll_contract_loud_ew_title"] = "LOUD MAYHEM",
-    ["roll_contract_loud_ew_desc"] = "Give you random loud contract in MAYHEM",
-    ["roll_contract_loud_dw_title"] = "LOUD DEATH WISH",
-    ["roll_contract_loud_dw_desc"] = "Give you random loud contract in DEATH WISH",
-    ["roll_contract_loud_od_title"] = "LOUD ONE DOWN",
-    ["roll_contract_loud_od_desc"] = "Give you random loud contract in ONE DOWN",
-	
-    ["roll_contract_stealth_ovk_title"] = "Stealth OVERKILL",
-    ["roll_contract_stealth_ovk_desc"] = "Give you random stealth contract in OVERKILL",
-    ["roll_contract_stealth_ew_title"] = "Stealth MAYHEM",
-    ["roll_contract_stealth_ew_desc"] = "Give you random stealth contract in MAYHEM",
-    ["roll_contract_stealth_dw_title"] = "Stealth DEATH WISH",
-    ["roll_contract_stealth_dw_desc"] = "Give you random stealth contract in DEATH WISH",
-    ["roll_contract_stealth_od_title"] = "Stealth ONE DOWN",
-    ["roll_contract_stealth_od_desc"] = "Give you random stealth contract in ONE DOWN"
-  })
+	loc:load_localization_file(ThisModPath.."Loc.txt")
 end)
 
 Hooks:Add("MenuManagerSetupCustomMenus", "MenuManagerSetupCustomMenus_RandomContract", function(menu_manager, nodes)
@@ -68,7 +39,7 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "MenuManagerPopulateCustomMenus_Rand
 			if _priority:find("ew") then
 				_difficult = "easy_wish"
 			end
-			if _priority:find("od") then
+			if _priority:find("sm") then
 				_difficult = "sm_wish"
 			end
 			if _priority:find("loud") then
@@ -117,14 +88,14 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "MenuManagerPopulateCustomMenus_Rand
 					true
 				)
 			end
-		end
+		end		
 		MenuHelper:AddButton({
 			id = "roll_contract_all_ovk",
 			title = "roll_contract_all_ovk_title",
 			desc = "roll_contract_all_ovk_desc",
 			callback = "Random_Contract_Now",
 			priority = "roll_contract_all_ovk",
-			menu_id = "menu_roll_contract",
+			menu_id = "menu_roll_contract"
 		})
 		MenuHelper:AddButton({
 			id = "roll_contract_all_ew",
@@ -132,7 +103,7 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "MenuManagerPopulateCustomMenus_Rand
 			desc = "roll_contract_all_ew_desc",
 			callback = "Random_Contract_Now",
 			priority = "roll_contract_all_ew",
-			menu_id = "menu_roll_contract",
+			menu_id = "menu_roll_contract"
 		})
 		MenuHelper:AddButton({
 			id = "roll_contract_all_dw",
@@ -140,15 +111,15 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "MenuManagerPopulateCustomMenus_Rand
 			desc = "roll_contract_all_dw_desc",
 			callback = "Random_Contract_Now",
 			priority = "roll_contract_all_dw",
-			menu_id = "menu_roll_contract",
+			menu_id = "menu_roll_contract"
 		})
 		MenuHelper:AddButton({
-			id = "roll_contract_all_od",
-			title = "roll_contract_all_od_title",
-			desc = "roll_contract_all_od_desc",
+			id = "roll_contract_all_sm",
+			title = "roll_contract_all_sm_title",
+			desc = "roll_contract_all_sm_desc",
 			callback = "Random_Contract_Now",
-			priority = "roll_contract_all_od",
-			menu_id = "menu_roll_contract",
+			priority = "roll_contract_all_sm",
+			menu_id = "menu_roll_contract"
 		})
 		MenuHelper:AddButton({
 			id = "roll_contract_loud_ovk",
@@ -156,7 +127,7 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "MenuManagerPopulateCustomMenus_Rand
 			desc = "roll_contract_loud_ovk_desc",
 			callback = "Random_Contract_Now",
 			priority = "roll_contract_loud_ovk",
-			menu_id = "menu_roll_contract",
+			menu_id = "menu_roll_contract"
 		})
 		MenuHelper:AddButton({
 			id = "roll_contract_loud_ew",
@@ -164,7 +135,7 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "MenuManagerPopulateCustomMenus_Rand
 			desc = "roll_contract_loud_ew_desc",
 			callback = "Random_Contract_Now",
 			priority = "roll_contract_loud_ew",
-			menu_id = "menu_roll_contract",
+			menu_id = "menu_roll_contract"
 		})
 		MenuHelper:AddButton({
 			id = "roll_contract_loud_dw",
@@ -172,15 +143,15 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "MenuManagerPopulateCustomMenus_Rand
 			desc = "roll_contract_loud_dw_desc",
 			callback = "Random_Contract_Now",
 			priority = "roll_contract_loud_dw",
-			menu_id = "menu_roll_contract",
+			menu_id = "menu_roll_contract"
 		})
 		MenuHelper:AddButton({
-			id = "roll_contract_loud_od",
-			title = "roll_contract_loud_od_title",
-			desc = "roll_contract_loud_od_desc",
+			id = "roll_contract_loud_sm",
+			title = "roll_contract_loud_sm_title",
+			desc = "roll_contract_loud_sm_desc",
 			callback = "Random_Contract_Now",
-			priority = "roll_contract_loud_od",
-			menu_id = "menu_roll_contract",
+			priority = "roll_contract_loud_sm",
+			menu_id = "menu_roll_contract"
 		})
 		MenuHelper:AddButton({
 			id = "roll_contract_stealth_ovk",
@@ -188,7 +159,7 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "MenuManagerPopulateCustomMenus_Rand
 			desc = "roll_contract_stealth_ovk_desc",
 			callback = "Random_Contract_Now",
 			priority = "roll_contract_stealth_ovk",
-			menu_id = "menu_roll_contract",
+			menu_id = "menu_roll_contract"
 		})
 		MenuHelper:AddButton({
 			id = "roll_contract_stealth_ew",
@@ -196,7 +167,7 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "MenuManagerPopulateCustomMenus_Rand
 			desc = "roll_contract_stealth_ew_desc",
 			callback = "Random_Contract_Now",
 			priority = "roll_contract_stealth_ew",
-			menu_id = "menu_roll_contract",
+			menu_id = "menu_roll_contract"
 		})
 		MenuHelper:AddButton({
 			id = "roll_contract_stealth_dw",
@@ -204,15 +175,15 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "MenuManagerPopulateCustomMenus_Rand
 			desc = "roll_contract_stealth_dw_desc",
 			callback = "Random_Contract_Now",
 			priority = "roll_contract_stealth_dw",
-			menu_id = "menu_roll_contract",
+			menu_id = "menu_roll_contract"
 		})
 		MenuHelper:AddButton({
-			id = "roll_contract_stealth_od",
-			title = "roll_contract_stealth_od_title",
-			desc = "roll_contract_stealth_od_desc",
+			id = "roll_contract_stealth_sm",
+			title = "roll_contract_stealth_sm_title",
+			desc = "roll_contract_stealth_sm_desc",
 			callback = "Random_Contract_Now",
-			priority = "roll_contract_stealth_od",
-			menu_id = "menu_roll_contract",
+			priority = "roll_contract_stealth_sm",
+			menu_id = "menu_roll_contract"
 		})
 	end
 end)
