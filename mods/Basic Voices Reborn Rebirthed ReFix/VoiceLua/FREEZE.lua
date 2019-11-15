@@ -1,0 +1,1 @@
+managers.player:local_player():sound():say("l1n_i02",true,true)

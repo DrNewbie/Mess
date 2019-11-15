@@ -1,0 +1,1 @@
+managers.player:local_player():sound():say("f11d_sin",true,true)

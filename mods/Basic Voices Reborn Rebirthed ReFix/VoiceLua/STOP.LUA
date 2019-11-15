@@ -1,0 +1,1 @@
+managers.player:local_player():sound():say("f48x_any",true,true)

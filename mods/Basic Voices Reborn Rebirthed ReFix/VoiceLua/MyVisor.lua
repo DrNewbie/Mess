@@ -1,0 +1,1 @@
+managers.player:local_player():sound():say("bdz_visor_lost",true,true)

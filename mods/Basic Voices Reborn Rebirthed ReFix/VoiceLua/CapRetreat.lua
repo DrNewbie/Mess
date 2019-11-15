@@ -1,0 +1,1 @@
+managers.player:local_player():sound():say("cpw_a04",true,true)

@@ -1,0 +1,1 @@
+managers.player:local_player():sound():say("tsr_post_tasing_taunt",true,true)

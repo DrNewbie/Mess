@@ -1,0 +1,1 @@
+managers.player:local_player():sound():say("Play_ban_p01",true,true)

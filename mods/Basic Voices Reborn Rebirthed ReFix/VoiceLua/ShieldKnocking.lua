@@ -1,0 +1,1 @@
+managers.player:local_player():sound():say("shield_identification",true,true)

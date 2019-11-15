@@ -1,0 +1,1 @@
+managers.player:local_player():sound():say("play_pln_gen_dir_08",true,true)

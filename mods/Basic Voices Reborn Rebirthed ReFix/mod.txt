@@ -1,0 +1,1126 @@
+{
+  "name": "Basic Voices Reborn Rebirthed ReFix",
+  "description": "https://steamcommunity.com/app/218620/discussions/15/1697175413681264787/",
+  "author": "Danze Fantaztic, modified by toscana 14.95 modified again by USA",
+  "contact": " ",
+  "version": "U198.2",
+  "blt_version": 2,
+  "keybinds": [
+    {
+      "keybind_id": "Bulldozer: Player Kill Line",
+      "name": "Bulldozer: Player Kill Line",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/GotTheRobber.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Captain Winters: Spawn Announcement",
+      "name": "Captain Winters: Spawn Announcement",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/SergeantSummers.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Taser spot",
+      "name": "Taser spot",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/TPA.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Hoxton Only: Body Bag Secured",
+      "name": "Body Bag Secured",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/BBS.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Body Bag Placed",
+      "name": "Body Bag Placed",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/BBP.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Taunt:Loud Only",
+      "name": "Taunt:Loud Only",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/TLO.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "That was loud!",
+      "name": "That was loud!",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/TWL.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Picking The Lock!",
+      "name": "Picking The Lock!",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/PTL.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Whipe them out!",
+      "name": "Whipe them Out!",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/WTO.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Any Second Now",
+      "name": "Any Second Now",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/ASN.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Tasergun set to almost kill",
+      "name": "Tasergun nset to almost kill",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/Lesslethal.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "We're easy targets",
+      "name": "We're easy targets",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/WEA.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Downstairs",
+      "name": "Downstairs",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/downstairs.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Upstairs",
+      "name": "Upstairs",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/Upstairs.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Left",
+      "name": "Left",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/Left.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Right",
+      "name": "Right",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/Right.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Wronng Way",
+      "name": "Wrong Way",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/WrongWay.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Cableties",
+      "name": "CableTies",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/Cableties.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "WatchCivies",
+      "name": "WatchCivies",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/WatchCivies.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Care",
+      "name": "Care",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/Care.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "STOP",
+      "name": "STOP",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/STOP.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "cams",
+      "name": "cams",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/cams.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "GAS",
+      "name": "GAS",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/GAS.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Pager",
+      "name": "Pager",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/Pager.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Time to go",
+      "name": "Time to go",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/TTG.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "I've spotted a body",
+      "name": "I've spotted a body",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/TwoFourBody.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Murkies!",
+      "name": "Murkies!",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/Murkies.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Smells like drugs",
+      "name": "Just say no",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/Drugs.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Found Keycard (Might not work)",
+      "name": "Found Keycard (Might not work)",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/Keycard.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "WHERE'S THE MANAGER?!",
+      "name": "WHERE'S THE MANAGER?!",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/LOST.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Taser!",
+      "name": "Taser!",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/Taser.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Sound the Alarm!",
+      "name": "Sound the Alarm!",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/GuardArlarm.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Tied up Officer",
+      "name": "Tied up Officer",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/GTM.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "HOLD IT!",
+      "name": "HOLD IT!",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/GHI.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "FREEZE",
+      "name": "FREEZE",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/FREEZE.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Megaphone Intro",
+      "name": "Megaphone Intro",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/MGAIntro.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Megaphone Response A list",
+      "name": "MGARAL",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/MGAGA.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Mega- Killed Civie!",
+      "name": "Mega-Killed Civie",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/MGAK.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Mega- Killed Civie two!!",
+      "name": "Mega-Killed Civie",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/MGAK2.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "I QUIT!",
+      "name": "I QUIT",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/quitter.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Deploy Snoipahs!",
+      "name": "Deploy snoipahs",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/Snoipahs.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Gasp",
+      "name": "Gasp",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/Gasp.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "that's Odd",
+      "name": "That's Odd",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/Odd.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Security door open",
+      "name": "Security door open",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/DoorOpen.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "HES GOT A GUN",
+      "name": "HES GOT A GUN",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/GUNNN.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "HELP",
+      "name": "HELP",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/HELP.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Cloaker: Charge Sound",
+      "name": "Cloaker: Charge Sound",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/Cloaker.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Taser: Shockproof Skill Line",
+      "name": "Taser: Shockproof Skill Line",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/ebarjrlarjblkhsb.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Bain: Guys, the Thermal Drill",
+      "name": "Bain: Guys, the Thermal Drill.",
+      "description": "Press Key to Get the Thermal Drill.",
+      "script_path": "VoiceLua/ThermalDrill.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Taser: Burn Scream",
+      "name": "Taser: Burn Scream",
+      "description": "Press Key to scream like a taser.",
+      "script_path": "VoiceLua/TaserScream.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Guard: Fire Report Line",
+      "name": "Guard: Fire Report Line",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/TwoFourFire.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Cloaker: Jingle Bell Charge Sound",
+      "name": "Cloaker: Jingle Bell Charge Sound",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/CloakerBells.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Cloaker: Player Kill Line",
+      "name": "Cloaker: Player Kill Line",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/cloacker.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "FWB: Heat Speech",
+      "name": "FWB: Heat Speech",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/HeatSpeech.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Bain: Keep Em' Coming",
+      "name": "Bain: Keep Em' Coming",
+      "description": "Press Key keep em' coming.",
+      "script_path": "VoiceLua/KeepEmComing.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Aftershock: Analysis of the Air",
+      "name": "Aftershock: Analysis of the Air",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/AnalysisoftheAir.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "FWB: Has Enough Cash Been Recovered?",
+      "name": "FWB: Has Enough Cash Been Recovered?",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/Enough.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "FWB: Negative. More Financial Restitution...",
+      "name": "FWB: Negative. More Financial Restitution...",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/Allofit.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "FWB: Keycard Use Line",
+      "name": "FWB: Keycard Use Line",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/BeepBeep.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Mod: Stop All Sounds",
+      "name": "Mod: Stop All Sounds",
+      "description": "Press Key to stop all sounds.",
+      "script_path": "VoiceLua/StopSounds.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Heisters: Affirmative",
+      "name": "Heisters: Affirmative",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/Affirmative.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Heisters: On My Way!",
+      "name": "Heisters: On My Way!",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/OnMyWay.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Heisters: Loot Bag Secured Line",
+      "name": "Heisters: Loot Bag Secured Line",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/LootBagSecured.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Heisters: Find Gage Package Line",
+      "name": "Heisters: Find Gage Package Line",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/FoundIt.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Heisters: Thank You",
+      "name": "Heisters: Thank You",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/ThankYou.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Bulldozer: Visor Broken Line",
+      "name": "Bulldozer: Visor Broken Line",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/MyVisor.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Taser: Entrance Line",
+      "name": "Taser: Entrance Line",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/LetsAmpThisUp.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Cloaker: Spawn Whistle",
+      "name": "Cloaker: Spawn Whistle",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/CloakerSpawnWhistle.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Shield: Knocking Sound",
+      "name": "Shield: Knocking Sound",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/ShieldKnocking.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Alarms: Bomb Heist",
+      "name": "Alarms: Bomb Heist",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/BombHeistAlarm.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Bain: Police Coming In, 60s",
+      "name": "Bain: Police Coming In, 60s",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/Bain60s.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Bain: Police Coming In, 40s",
+      "name": "Bain: Police Coming In, 40s",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/Bain40s.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Bain: Police Coming In, 30s",
+      "name": "Bain: Police Coming In, 30s",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/Bain30s.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Bain: Police Coming In, 20s",
+      "name": "Bain: Police Coming In, 20s",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/Bain20s.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Bain: Police Are On Their Way",
+      "name": "Bain: Police Are On Their Way",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/PoliceOnTheirWay.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Camera: Alarm Signal",
+      "name": "Camera: Alarm Signal",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/CameraAlarmSignal.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "FWB: Planted C4 Line",
+      "name": "FWB: Planted C4 Line",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/ClearBlastZone.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "FWB: Exploded C4 Line",
+      "name": "FWB: Exploded C4 Line",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/BlowC4.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "FWB: The Drill is Done",
+      "name": "FWB: The Drill is Done",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/DrillisDone.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "FWB: Open This Door",
+      "name": "FWB: Open This Door",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/OpenThisDoor.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "BAIN",
+      "name": "BAIN",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/bain.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Bain to Chains",
+      "name": "Bain to Chains",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/BainChains.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Bain to Hoxton",
+      "name": "Bain to Hoxton",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/BainHoxton.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Bain to Dallas",
+      "name": "Bain to Dallas",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/BainDallas.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Bain to Wolf",
+      "name": "Bain to Chains",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/BainWolf.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Bain YES",
+      "name": "Bain YES",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/BainYES.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Bain NOO",
+      "name": "Bain NOO",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/BainNOOO.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Bain MOVE",
+      "name": "Bain MOVE",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/BainMOVE.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Bain Point of no return",
+      "name": "Bain Point of no return",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/BainPointOFNoReturn.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Bile death",
+      "name": "Bile death",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/bile.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Captain advance",
+      "name": "Captain advance",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/CapAdvance.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Captain Confirmed Sight",
+      "name": "Captain Confirmed Sight",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/CapConfirmed.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Captain Kill Someone",
+      "name": "Captain Kill Someone",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/CapKill.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Captain Tactical withdrawal (retreat)",
+      "name": "Captain Tactical withdrawal (retreat)",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/CapRetreat.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "ALRIGHT CAPTAIN IS HERE",
+      "name": "ALRIGHT CAPTAIN IS HERE",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/CapSpawn.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Excited (YES! YES!!)",
+      "name": "Excited (YES! YES!!)",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/excited.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Flashbang! I can't See fucking shit!",
+      "name": "Flashbang! I can't See fucking shit!",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/flashbang.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Fuck! Oh Fuck!",
+      "name": "Fuck! Oh Fuck!",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/fuck.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Shit!",
+      "name": "Shit!",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/shit.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Fuck! Now What?!",
+      "name": "Fuck! Now What?!",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/fuckNowWhat.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "I said get the fuck DOWN! YOU HEAR WHAT I JUST FUCKING SAID?!",
+      "name": "I said get the fuck DOWN! YOU HEAR WHAT I JUST FUCKING SAID?!",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/GetDown.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Grenade!(Throwing)",
+      "name": "Grenade!(Throwing)",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/grenadeThrow.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Hello!",
+      "name": "Hello!",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/hello.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Hoxton, Follow me",
+      "name": "Hoxton, Follow me",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/HoxtonFollow.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Hoxton, Help!",
+      "name": "Hoxton, Help!",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/HoxtonHelp.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Get the fuck up! Inspire Aced",
+      "name": "Get the fuck up! Inspire Aced",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/Inspire.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Move! Inspire Basic",
+      "name": "Move! Inspire Basic",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/inspireBasic.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Jump!",
+      "name": "Jump!",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/Jump.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Nah, Grab it All",
+      "name": "Nah, Grab it All",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/nahGrabItAll.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Need Medic bag",
+      "name": "Need Medic bag",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/NeedMedic.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Need Ammo bag",
+      "name": "Need Ammo bag",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/NeedAmmo.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Nightclub music",
+      "name": "Nightclub music",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/NightclubMusic.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Nightclub Rock version",
+      "name": "Nightclub Rock version",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/NightclubRock.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "I will give you my all (prob dont work)",
+      "name": "I will give you my all (prob dont work)",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/NightclubMyAll.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Cops! This place is filled with them!",
+      "name": "Cops! This place is filled with them!",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/overrunWithCops.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "PAYDAY!",
+      "name": "PAYDAY!",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/payday.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Shit, it's stuck",
+      "name": "Shit, it's stuck",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/ShitItStuck.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Fire at it!",
+      "name": "Fire at it!",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/ShootItDown.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Taxman: Sit down in this chair, sunshine!",
+      "name": "Taxman: Sit down in this chair, sunshine!",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/SitDown.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Skydive Hype (FUCK YEEEEEEE)",
+      "name": "Skydive Hype (FUCK YEEEEEEE)",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/SkydiveHype.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Taxman: You piece of shit! (interrogation)",
+      "name": "Taxman: You piece of shit! (interrogation)",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/taxman.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Motherfucking Turret!",
+      "name": "Motherfucking Turret!",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/turret.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "Whistle",
+      "name": "Whistle",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/whistle.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "STOP ALL MUSIC AND SHIT",
+      "name": "STOP ALL MUSIC AND SHIT",
+      "description": "Press Key to play sound.",
+      "script_path": "VoiceLua/stopAllMusic.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    }
+  ]
+}

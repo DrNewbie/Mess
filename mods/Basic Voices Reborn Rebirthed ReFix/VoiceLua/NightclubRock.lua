@@ -1,0 +1,1 @@
+managers.player:local_player():sound():say("diegetic_club_rock_music",true,true)

@@ -1,0 +1,1 @@
+managers.player:local_player():sound():say("camera_alarm_signal",true,true)

@@ -1,0 +1,1 @@
+managers.player:local_player():sound():say("mga_intro",true,true)

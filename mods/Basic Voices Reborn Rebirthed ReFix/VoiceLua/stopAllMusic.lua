@@ -1,0 +1,1 @@
+managers.player:local_player():sound():say("Stop_all_music",true,true)

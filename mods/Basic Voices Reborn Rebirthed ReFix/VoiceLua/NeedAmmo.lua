@@ -1,0 +1,1 @@
+managers.player:local_player():sound():say("g81x_plu",true,true)

@@ -1,0 +1,1 @@
+managers.player:local_player():sound():say("dsp_radio_checking_1",true,true)

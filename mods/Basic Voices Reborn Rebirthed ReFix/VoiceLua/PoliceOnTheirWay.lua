@@ -1,0 +1,1 @@
+managers.player:local_player():sound():say("Play_pln_pow_01",true,true)

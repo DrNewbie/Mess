@@ -1,0 +1,1 @@
+managers.player:local_player():sound():say("cloaker_spawn",true,true)

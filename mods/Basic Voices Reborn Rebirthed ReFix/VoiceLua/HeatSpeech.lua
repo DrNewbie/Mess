@@ -1,0 +1,1 @@
+managers.player:local_player():sound():say("v34",true,true)

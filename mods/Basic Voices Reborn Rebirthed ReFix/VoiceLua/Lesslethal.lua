@@ -1,0 +1,1 @@
+managers.player:local_player():sound():say("tsr_g90",true,true)

@@ -1,0 +1,1 @@
+managers.player:local_player():sound():say("Play_plt_a64",true,true)

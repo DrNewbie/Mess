@@ -1,0 +1,1 @@
+managers.player:local_player():sound():say("mga_killed_civ_2nd",true,true)

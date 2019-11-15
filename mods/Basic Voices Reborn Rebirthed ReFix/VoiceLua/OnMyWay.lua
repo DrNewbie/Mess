@@ -1,0 +1,1 @@
+managers.player:local_player():sound():say("r02a_sin",true,true)

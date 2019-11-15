@@ -1,0 +1,1 @@
+managers.player:local_player():sound():say("alarm_the_bomb_on_slow_fade",true,true)
