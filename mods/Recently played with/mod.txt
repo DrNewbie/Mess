@@ -1,0 +1,22 @@
+{
+  "name": "Recently played with...",
+  "author": "Dr_Newbie",
+  "contact": "http://modwork.shop/22346",
+  "blt_version": 2,
+  "priority": 100,
+  "version": "3",
+  "hooks": [
+    {
+      "hook_id": "lib/managers/localizationmanager",
+      "script_path": "lua/Base.lua"
+    },
+    {
+      "hook_id": "lib/network/base/clientnetworksession",
+      "script_path": "lua/Record_History.lua"
+    },
+    {
+      "hook_id": "lib/network/base/hostnetworksession",
+      "script_path": "lua/Record_History.lua"
+    }
+  ]
+}
