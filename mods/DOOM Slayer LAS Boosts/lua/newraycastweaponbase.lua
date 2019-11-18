@@ -12,7 +12,9 @@ Hooks:PostHook(NewRaycastWeaponBase, "replenish", "F_"..Idstring("NewRaycastWeap
 	end
 end)
 
-Hooks:PostHook(NewRaycastWeaponBase, "add_ammo", "F_"..Idstring("NewRaycastWeaponBase:add_ammo:DewmSlayaLASBoosts"):key(), function(self)
+local old_add_ammo = NewRaycastWeaponBase.add_ammo
+
+function NewRaycastWeaponBase:add_ammo(...)
 	if self._unit and alive(self._unit) and not self._is_super_shotgun_type and managers.player:Is_LAS_DewmSlaya() and self:can_reload() then
 		if self:clip_empty() then
 			self:on_reload()
@@ -20,4 +22,5 @@ Hooks:PostHook(NewRaycastWeaponBase, "add_ammo", "F_"..Idstring("NewRaycastWeapo
 			self._ask_forced_reload = TimerManager:game():time() + 0.5
 		end
 	end
-end)
+	return old_add_ammo(self, ...)
+end
