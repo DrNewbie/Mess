@@ -1,0 +1,14 @@
+{
+  "name": "Use saw to open safe and something else",
+  "description": " ",
+  "author": "Dr_Newbie",
+  "contact": "http://modwork.shop/21547",
+  "version": "5",
+  "priority": 1,
+  "hooks": [
+    {
+      "hook_id": "lib/units/weapons/sawweaponbase",
+      "script_path": "hook.sawweaponbase.lua"
+    }
+  ]
+}
