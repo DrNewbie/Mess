@@ -49,9 +49,6 @@ Hooks:PostHook(SawHit, "on_collision", "F_"..Idstring("PostHook:SawHit:on_collis
 						hit_unit:base()._addon_saw_open_health = nil
 						if type(hit_unit:base()._devices) == "table" then
 							local is_ok
-							if hit_unit:base()._devices.drill then
-							
-							end
 							for _, _type in pairs({"drill", "key", "c4"}) do
 								if hit_unit:base()._devices[_type] then
 									hit_unit:base():device_completed(_type)
