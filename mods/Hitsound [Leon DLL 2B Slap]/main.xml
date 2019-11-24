@@ -1,0 +1,8 @@
+<table name="Hitsound [Leon DLL 2B Slap]">
+	<Hooks directory="Scripts">
+		<hook source_file="lib/managers/playermanager" file="Hitsound.lua"/>
+	</Hooks>
+	<Sounds directory="assets/sounds">
+		<sound id="Hitsound" path="Hitsound.ogg" prefix="first"/>
+	</Sounds>
+</table>
