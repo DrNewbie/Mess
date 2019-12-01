@@ -1,4 +1,4 @@
-Hooks:PostHook(GroupAIStateBase, "init", "F_"..Idstring("PostHook:GroupAIStateBase:init:Last Man Standing Track Event"):key(), function(self, t, dt)
+Hooks:PostHook(GroupAIStateBase, "init", "F_"..Idstring("PostHook:GroupAIStateBase:init:Last Man Standing Track Event"):key(), function(self)
 	self._lmste_OwO_t = 5
 	self._lmste_OwO_event = 0
 	self._lmste_OwO_old_track = ""
