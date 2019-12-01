@@ -14,7 +14,7 @@ Hooks:PostHook(GroupAIStateBase, "update", "F_"..Idstring("PostHook:GroupAIState
 		local all_criminals = self:all_char_criminals()
 		local _is_lmste_tmp
 		if player and player:base() then
-			if self:num_alive_criminals() == 1 then
+			if self:num_alive_criminals() == 1 and managers.trade:num_in_trade_queue() > 0 then
 				_is_lmste_tmp = true
 			end
 		end
