@@ -1,0 +1,15 @@
+{
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "core/lib/managers/mission/coremissionscriptelement",
+      "script_path": "coremissionscriptelement.lua"
+    }
+  ],
+  "contact": "http://modwork.shop/26111",
+  "priority": 100,
+  "version": "1",
+  "description": "",
+  "name": "No Mercy Lights Off",
+  "author": "Dr_Newbie"
+}
