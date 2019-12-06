@@ -4,7 +4,7 @@
   "contact": "http://modwork.shop/22346",
   "blt_version": 2,
   "priority": 100,
-  "version": "3",
+  "version": "4",
   "hooks": [
     {
       "hook_id": "lib/managers/localizationmanager",
