@@ -1,0 +1,14 @@
+{
+  "name": "game crashes if you kill a civilian",
+  "description": " ",
+  "author": "Dr_Newbie",
+  "version": "1",
+  "blt_version": 2,
+  "contact": "http://modwork.shop/26121",
+  "hooks": [
+    {
+      "hook_id": "lib/managers/group_ai_states/groupaistatebase",
+      "script_path": "groupaistatebase.lua"
+    }
+  ]
+}
