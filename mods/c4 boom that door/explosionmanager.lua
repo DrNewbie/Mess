@@ -8,7 +8,7 @@ Hooks:PostHook(ExplosionManager, "detect_and_give_dmg", Idstring("C4Boom:Explosi
 			for id, hit_unit in pairs(units) do
 				if hit_unit:base() and type(hit_unit:base()._devices) == "table" and type(hit_unit:base()._devices.c4) == "table" and type(hit_unit:base()._devices.c4.amount) == "number" then
 					if not hit_unit:base()._devices.c4.max_health then
-						hit_unit:base()._devices.c4.max_health = hit_unit:base()._devices.c4.amount * 1000
+						hit_unit:base()._devices.c4.max_health = hit_unit:base()._devices.c4.amount * 500
 					end
 					if hit_unit:base()._devices.c4.max_health then
 						hit_unit:base()._devices.c4.max_health = hit_unit:base()._devices.c4.max_health - dmg

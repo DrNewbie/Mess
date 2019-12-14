@@ -1,3 +1,5 @@
 <mod name="c4 boom that door">
-	<AssetUpdates id="23298" version="1" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+    <AssetUpdates id="c4 boom that door" version="3">
+        <custom_provider version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/c4 boom that door.txt" download_url="https://drnewbie.github.io/Mess/UpdateProvider/c4%20boom%20that%20door.zip"/>
+    </AssetUpdates>
 </mod>
