@@ -65,7 +65,7 @@ function NGBTOwO:Check(peer_id)
 						if _hoursOnRecord then
 							managers.chat:_receive_message(1, "[NGBTOwO]", "'"..user_name.."' has played ".._hoursOnRecord.." hours.", Color.green)
 						else
-							managers.chat:_receive_message(1, "[NGBTOwO]", "I can't read how many hours '"..user_name.."' has played.", Color.green)
+							managers.chat:_receive_message(1, "[NGBTOwO]", "'"..user_name.."' has hidden profiles.", Color.green)
 						end
 					end
 				)
