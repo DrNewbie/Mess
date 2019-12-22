@@ -1,0 +1,25 @@
+{
+  "name": "No Post Processing (Post Hook Function)",
+  "description": "http://modwork.shop/26205",
+  "author": " ",
+  "contact": " ",
+  "version": "1",
+  "blt_version": 2,
+  "priority": 5,
+  "hooks": [
+    {
+      "hook_id": "core/lib/managers/managerbase/coremanagerbase",
+      "script_path": "hook.coremanagerbase.lua"
+    }
+  ],
+  "updates": [
+    {
+      "identifier": "NoPostProcessingPostHookFunctionGitHubUpdate",
+      "host": {
+        "meta": "https://drnewbie.github.io/Mess/Update/No%20Post%20Processing%20(Post%20Hook%20Function).meta.json",
+        "download": "https://drnewbie.github.io/Mess/Update/No%20Post%20Processing%20(Post%20Hook%20Function).zip",
+        "patchnotes": "https://github.com/DrNewbie/Mess/commits/master"
+      }
+    }
+  ]
+}
