@@ -27,11 +27,11 @@ Hooks:PostHook(ManagerBase, "_prioritize_and_activate", "F_"..Idstring("PostHook
 						self:_old_set_post_processor_effect("World", Idstring("reflection_visualization"), Idstring("empty"))
 						self:_old_set_post_processor_effect("World", Idstring("glossiness_visualization"), Idstring("empty"))
 						self:_old_set_post_processor_effect("World", Idstring("specular_visualization"), Idstring("empty"))
-						self:_old_set_post_processor_effect("World", Idstring("hdr_post_processor"), Idstring("empty"))
-						self:_old_set_post_processor_effect("World", Idstring("bloom_combine_post_processor"), Idstring("bloom_combine_empty"))
-						self:_old_set_post_processor_effect("World", Idstring("bloom_combine"), Idstring("bloom_combine_empty"))
-						self:_old_set_post_processor_effect("World", Idstring("shadow_modifier"), Idstring("empty"))
-						self:_old_set_post_processor_effect("World", Idstring("shadow_rendering"), Idstring("empty"))
+						--self:_old_set_post_processor_effect("World", Idstring("hdr_post_processor"), Idstring("empty"))
+						--self:_old_set_post_processor_effect("World", Idstring("bloom_combine_post_processor"), Idstring("bloom_combine_empty"))
+						--self:_old_set_post_processor_effect("World", Idstring("bloom_combine"), Idstring("bloom_combine_empty"))
+						--self:_old_set_post_processor_effect("World", Idstring("shadow_modifier"), Idstring("empty"))
+						--self:_old_set_post_processor_effect("World", Idstring("shadow_rendering"), Idstring("empty"))
 					end
 					vp_exp.set_post_processor_effect = new_set
 				end
