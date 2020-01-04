@@ -16,20 +16,45 @@ Hooks:PostHook(GageAssignmentInteractionExt, "interact", "F_"..Idstring("PostHoo
 						weapon.unit:base():add_ammo_from_bag(100)
 					end
 				end
+				HudChallengeNotification.queue(
+					"[ Powerup ]",
+					"Green Mantis: You get the ability to shoot without depleting ammunition for 10 seconds. Your ammo replenishes.",
+					"equipment_gasoline"
+				)
 			end,
 			["yellow_bull"] = function (ply) --first aid kit regenerate
 				ply:character_damage():band_aid_health()
+				HudChallengeNotification.queue(
+					"[ Powerup ]",
+					"Yellow Bull: Your health regenerates.",
+					"equipment_gasoline"
+				)
 			end,
 			["red_spider"] = function (ply) --medic bag regenerate
 				ply:character_damage():recover_health()
+				HudChallengeNotification.queue(
+					"[ Powerup ]",
+					"Red Spider: Your health regenerates and resets your down counter.",
+					"equipment_gasoline"
+				)
 			end
 			,
 			["blue_eagle"] = function (ply) --10s no dmg
 				ply:character_damage()._next_allowed_dmg_t = Application:digest_value(managers.player:player_timer():time() + 10, true)
 				ply:character_damage()._last_received_dmg = math.huge
+				HudChallengeNotification.queue(
+					"[ Powerup ]",
+					"Blue Eagle: You are immune to enemy damage for 10 seconds.",
+					"equipment_gasoline"
+				)
 			end,
 			["purple_snake"] = function (ply) --10s burn all enemies
 				managers.player:ask_loop_fire_to_all(10)
+				HudChallengeNotification.queue(
+					"[ Powerup ]",
+					"Purple Snake: All enemies burn for 10 seconds.",
+					"equipment_gasoline"
+				)
 			end
 		}
 		if type(_buffs[_type]) == "function" then
