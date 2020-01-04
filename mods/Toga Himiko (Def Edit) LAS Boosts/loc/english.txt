@@ -1,0 +1,3 @@
+{
+  "bm_gt_defedit_las_boosts": "[+] Meleeing a Cop will make them ignore you for a short time."
+}
