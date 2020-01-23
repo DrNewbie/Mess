@@ -1,0 +1,5 @@
+<table name="Crowbar Standalone Plus">
+	<Hooks>
+		<hook file="playermanager.lua" source_file="lib/managers/playermanager"/>
+	</Hooks>
+</table>
