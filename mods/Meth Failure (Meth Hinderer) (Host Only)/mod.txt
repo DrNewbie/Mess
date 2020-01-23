@@ -1,5 +1,5 @@
 {
-  "name": "Meth Failure (Host Only)",
+  "name": "Meth Failure (Meth Hinderer) (Host Only)",
   "author": "Dr_Newbie",
   "description": "sending random dialogue request to client player",
   "blt_version": 2,
