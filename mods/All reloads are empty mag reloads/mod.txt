@@ -1,0 +1,15 @@
+{
+  "name": "All reloads are empty mag reloads",
+  "description": "All reloads are empty mag reloads",
+  "author": "Dr_Newbie",
+  "contact": "http://modwork.shop/",
+  "blt_version": 2,
+  "version": "1",
+  "priority": 100,
+  "hooks": [
+    {
+      "hook_id": "lib/units/beings/player/states/playerstandard",
+      "script_path": "playerstandard.lua"
+    }
+  ]
+}
