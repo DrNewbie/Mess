@@ -1,0 +1,15 @@
+{
+  "name": "I dun goosed",
+  "description": "OVENGRILL_RexToday: Requesting a mod that prints in chat 'I dun goosed' every time you go into Swan Song.",
+  "author": "Dr_Newbie",
+  "contact": "http://modwork.shop/",
+  "blt_version": 2,
+  "version": "1",
+  "priority": 100,
+  "hooks": [
+    {
+      "hook_id": "lib/units/beings/player/playerdamage",
+      "script_path": "playerdamage.lua"
+    }
+  ]
+}
