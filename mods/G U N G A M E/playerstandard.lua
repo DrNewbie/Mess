@@ -1,21 +1,14 @@
 _G.GunGameGame = _G.GunGameGame or {}
 
-local GunGameBlockPickup = PlayerStandard._find_pickups
+local GunGameGame_ids = Idstring("GunGameGame")
+local GunGameGame_key = Idstring("GunGameGame"):key()
+local GunGameGame_now_t = '___'..GunGameGame_key..'_now_t'
 
-function PlayerStandard:_find_pickups(t, ...)
-	if self._find_pickups_block and self._find_pickups_block > t then
-		return
-	end
-	GunGameBlockPickup(self, t, ...)
-end
-
-local GunGameEquipNewWeapon = PlayerStandard._start_action_equip_weapon
-
-function PlayerStandard:_start_action_equip_weapon(t, ...)
-	if self._change_weapon_data.selection_gungame then
+Hooks:PreHook(PlayerStandard, "_update_equip_weapon_timers", "F_"..Idstring("PostHook:PlayerStandard:_update_equip_weapon_timers:G U N G A M E"):key(), function(self, t, input)
+	if self._change_weapon_data and self._change_weapon_data.selection_gungame then
+		self._change_weapon_data.selection_gungame = nil
 		local wep_data = self._change_weapon_data.wep_data
 		if wep_data.factory_id and tweak_data.weapon.factory[wep_data.factory_id] then
-			self._find_pickups_block = t + 1.5
 			self._ext_inventory:add_unit_by_factory_name(wep_data.factory_id, true, false, wep_data.blueprint or tweak_data.weapon.factory[wep_data.factory_id].default_blueprint, wep_data.cosmetics, wep_data.texture_switches)
 			if self._equipped_unit and alive(self._equipped_unit) then
 				self:set_animation_weapon_hold(nil)
@@ -26,9 +19,32 @@ function PlayerStandard:_start_action_equip_weapon(t, ...)
 				managers.upgrades:setup_current_weapon()
 			end
 		end
+		self._unequip_weapon_expire_t = nil
+		self._equip_weapon_expire_t = nil
 		return
 	end
-	GunGameEquipNewWeapon(self, t, ...)
+end)
+
+function PlayerStandard:DoGunGuChanageWeaponNow(data)
+	local t = self[GunGameGame_now_t] and self[GunGameGame_now_t] or 0
+	if type(data) == "table" and type(data.wep_data) == "table" and type(data.wep_data.blueprint) == "table" then
+		local is_fine = true
+		for _, _default_part in pairs(data.wep_data.blueprint) do
+			local _f_p = tweak_data.weapon.factory.parts[_default_part]
+			if _f_p and _f_p.unit then
+				if not managers.dyn_resource:is_resource_ready(Idstring("unit"), Idstring(_f_p.unit), managers.dyn_resource.DYN_RESOURCES_PACKAGE) then
+					managers.dyn_resource:load(Idstring("unit"), Idstring(_f_p.unit), managers.dyn_resource.DYN_RESOURCES_PACKAGE, callback(self, self, "DoGunGuChanageWeaponNow", data))
+					is_fine = nil
+					break
+				end
+			end
+		end
+		if is_fine then
+			self._change_weapon_pressed_expire_t = t + 1.66
+			self:_start_action_unequip_weapon(t, data)
+			managers.player:send_message(Message.OnSwitchWeapon)
+		end
+	end
 end
 
 function PlayerStandard:DoGunGuChanageWeapon(t)
@@ -49,15 +65,35 @@ function PlayerStandard:DoGunGuChanageWeapon(t)
 		if _weapon_id then
 			local _factory_id = managers.weapon_factory:get_factory_id_by_weapon_id(_weapon_id)
 			wep_data = {
+				addon = true,
+				weapon_id = _weapon_id,
 				factory_id = _factory_id,
 				blueprint = tweak_data.weapon.factory[_factory_id].default_blueprint,
 				selection_wanted = tweak_data.weapon[_weapon_id].use_data.selection_index
 			}
 		end
 	end
-	self._change_weapon_pressed_expire_t = t + 0.33
-	self:_start_action_unequip_weapon(t, {selection_gungame = wep_data.selection_wanted, wep_data = wep_data})
-	managers.player:send_message(Message.OnSwitchWeapon)
+	if math.random()*100 <= GunGameGame.settings.rndMod and wep_data and wep_data.addon and type(wep_data.blueprint) == "table" then
+		--[[
+			https://github.com/segabl/pd2-player-randomizer/blob/master/randomizer.lua
+		]]
+		local _dropable_mods = managers.blackmarket:get_dropable_mods_by_weapon_id(wep_data.weapon_id)
+		for part_type, parts in pairs(_dropable_mods) do
+			local skip_chance = math.random()
+			local skip_part_type = part_type == "custom" and skip_chance <= 0.7 or part_type == "ammo" and skip_chance <= 0.4 or skip_chance <= 0.2
+			if not skip_part_type then
+				local filtered_parts = table.filter_list(parts, function (part_id)
+					local part = tweak_data.weapon.factory.parts[part_id[1]]
+					return not managers.weapon_factory:_get_forbidden_parts(wep_data.factory_id, wep_data.blueprint)[part_id[1]] and (not part.dlc or managers.dlc:is_dlc_unlocked(part.dlc))
+				end)
+				local part_id = table.random(filtered_parts)
+				if part_id then
+					managers.weapon_factory:change_part_blueprint_only(wep_data.factory_id, part_id[1], wep_data.blueprint)
+				end
+			end
+		end
+	end
+	self:DoGunGuChanageWeaponNow({selection_gungame = wep_data.selection_wanted, wep_data = wep_data})
 end
 
 function PlayerStandard:AskGunGunRun()
@@ -68,7 +104,7 @@ function PlayerStandard:AskGunGunRun()
 	self._gumgame_req_chanage_weapon = 1
 end
 
-Hooks:PostHook(PlayerStandard, "update", "PlySGunGunUpdate", function(self, t ,dt)
+Hooks:PostHook(PlayerStandard, "update", "F_"..Idstring("PostHook:PlayerStandard:update:G U N G A M E"):key(), function(self, t ,dt)
 	if self._gumgame_times and self._gumgame_req_chanage_weapon then
 		local action_forbidden = self:_changing_weapon()
 		action_forbidden = action_forbidden or self:_is_meleeing() or self._use_item_expire_t or self._change_item_expire_t
@@ -81,9 +117,10 @@ Hooks:PostHook(PlayerStandard, "update", "PlySGunGunUpdate", function(self, t ,d
 			end
 		end
 	end
+	self[GunGameGame_now_t] = t
 end)
 
-Hooks:PostHook(PlayerStandard, "init", "PlySGunGunInit", function(self)
+Hooks:PostHook(PlayerStandard, "init", "F_"..Idstring("PostHook:PlayerStandard:init:G U N G A M E"):key(), function(self)
 	if managers.blackmarket and Global.blackmarket_manager and type(Global.blackmarket_manager.crafted_items) == "table" then
 		self._gumgame_times = 1
 		self._gumgame_weps = {}

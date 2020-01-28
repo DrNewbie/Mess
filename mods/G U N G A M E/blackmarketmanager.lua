@@ -11,7 +11,8 @@ GunGameGame.settings = GunGameGame.settings or {}
 
 function GunGameGame:Reset()
 	self.settings = {
-		chance = 30
+		chance = 30,
+		rndMod = 0
 	}
 	self:Save()
 end
@@ -42,7 +43,8 @@ Hooks:Add("LocalizationManagerPostInit", "GunGameGame_loc", function(loc)
 	LocalizationManager:add_localized_strings({
 		["GunGameGame_menu_title"] = "G U N G A M E",
 		["GunGameGame_menu_desc"] = "",
-		["GunGameGame_menu_chance_title"] = "Chance of Additional Weapons"
+		["GunGameGame_menu_chance_title"] = "Chance of Additional Weapons",
+		["GunGameGame_menu_rndMod_title"] = "Chance of Randomizer (Additional Weps)"
 	})
 end)
 
@@ -60,6 +62,21 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "GunGameGameOptions", function( menu
 		title = "GunGameGame_menu_chance_title",
 		callback = "GunGameGame_menu_chance_callback",
 		value = GunGameGame.settings.chance,
+		min = 0,
+		max = 100,
+		step = 1,
+		show_value = true,
+		menu_id = GunGameGame.options_menu,  
+	})
+	MenuCallbackHandler.GunGameGame_menu_rndMod_callback = function(self, item)
+		GunGameGame.settings.rndMod = math.floor(item:value())
+		GunGameGame:Save()
+	end
+	MenuHelper:AddSlider({
+		id = "GunGameGame_menu_rndMod_slider",
+		title = "GunGameGame_menu_rndMod_title",
+		callback = "GunGameGame_menu_rndMod_callback",
+		value = GunGameGame.settings.rndMod,
 		min = 0,
 		max = 100,
 		step = 1,
