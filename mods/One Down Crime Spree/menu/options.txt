@@ -1,0 +1,18 @@
+{
+	"menu_id" : "ee198082e5d36d96_toggle_value_menu_id",
+	"parent_menu_id" : "blt_options",
+	"title" : "ee198082e5d36d96_toggle_value_menu_title",
+	"description" : "ee198082e5d36d96_toggle_value_menu_desc",
+	"back_callback" : "ee198082e5d36d96_toggle_valueSave",
+	"items" : [
+		{
+			"type" : "toggle",
+			"id" : "ee198082e5d36d96_toggle_value_slider_value",
+			"title" : "ee198082e5d36d96_toggle_value_toggle_value_title",
+			"description" : "ee198082e5d36d96_toggle_value_toggle_value_desc",
+			"callback" : "ee198082e5d36d96_toggle",
+			"value" : "ee198082e5d36d96_toggle_value",
+			"default_value" : true
+		}
+	]
+}

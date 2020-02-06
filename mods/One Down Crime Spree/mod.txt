@@ -1,0 +1,19 @@
+{
+  "name": "One Down Crime Spree",
+  "description": "https://modworkshop.net/mod/26543",
+  "author": "Dr_Newbie",
+  "contact": " ",
+  "version": "1",
+  "blt_version": 2,
+  "priority": 100,
+  "hooks": [
+    {
+      "hook_id": "lib/managers/crimespreemanager",
+      "script_path": "crimespreemanager.lua"
+    },
+    {
+      "hook_id": "lib/managers/menumanager",
+      "script_path": "menumanager.lua"
+    }
+  ]
+}

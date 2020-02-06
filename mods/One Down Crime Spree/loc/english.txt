@@ -1,0 +1,6 @@
+{
+	"ee198082e5d36d96_toggle_value_menu_title" : "One Down Crime Spree",
+	"ee198082e5d36d96_toggle_value_menu_desc"  : " ",
+	"ee198082e5d36d96_toggle_value_toggle_value_title" : "Enable",
+	"ee198082e5d36d96_toggle_value_toggle_value_desc"  : "Enable One Down at Crime Spree"
+}
