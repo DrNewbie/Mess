@@ -7,9 +7,6 @@ Hooks:PostHook(CrimeSpreeManager, "_setup_global_from_mission_id", "F_"..Idstrin
 		if type(is_one_down) ~= type(true) then
 			is_one_down = false
 		end
-		Global.game_settings.difficulty = tweak_data.crime_spree.base_difficulty
 		Global.game_settings.one_down = is_one_down
-		Global.game_settings.level_id = mission_data.level.level_id
-		Global.game_settings.mission = mission_data.mission or "none"
 	end
 end)
