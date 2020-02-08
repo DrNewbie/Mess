@@ -1,0 +1,75 @@
+{
+	"lpi_options_menu_title" : "Lobby Player Info",
+	"lpi_options_menu_desc"  : "Cambia la informacion mostrada en el Lobby",
+
+	"lpi_options_show_perkdeck_mode_title" : "Mostrar talentos",
+	"lpi_options_show_perkdeck_mode_desc"  : "Mostrar el talento seleccionado",
+	
+	"lpi_options_show_perkdeck_progression_title" : "Mostrar progreso de talento",
+	"lpi_options_show_perkdeck_progression_desc"  : "Muestra que tanto se ha desbloqueado de ese Talento",
+
+	"lpi_options_hide_complete_perkdeck_progression_title" : "Esconder progreso numerico de Talento",
+	"lpi_options_hide_complete_perkdeck_progression_desc"  : "Esconder los numeros (9/9) a la izquierda del nombre del Talento",
+
+	"lpi_options_show_perkdeck_progression_graphically_title" : "Representar graficamente el progreso en el Talento",
+	"lpi_options_show_perkdeck_progression_graphically_desc"  : "Usar una barra de color, en vez del tipico '(x/9)'",
+
+	"lpi_options_show_perkdeck_in_loadout_title" : "Mostrar Talento en la pantalla de carga",
+	"lpi_options_show_perkdeck_in_loadout_desc"  : "Reemplaza el nombre del personaje por el Talento equipado",
+
+	"lpi_options_show_skills_mode_title" : "Hab. del compañero",
+	"lpi_options_show_skills_mode_desc"  : "Mostrar el numero de puntos invertidos en cada habilidad",
+
+	"lpi_options_multi_show_mode_a" : "Nunca",
+	"lpi_options_multi_show_mode_b" : "Al pasar el raton",
+	"lpi_options_multi_show_mode_c" : "Siempre",
+
+	"lpi_options_skills_layout_title" : "Hab. en Lobby",
+	"lpi_options_skills_layout_desc"  : "Horizontal: Todos los arboles en una linea, Vertical: Una linea por arbol",
+	"lpi_options_multi_skills_layout_a" : "Horizontal",
+	"lpi_options_multi_skills_layout_b" : "Vertical",
+	"lpi_options_multi_skills_layout_c" : "Grafico",
+
+	"lpi_options_skills_font_size_title" : "Fuente de las Hab.",
+	"lpi_options_skills_font_size_desc"  : "El tamaño de la fuente para mostrar las Hab.",
+
+	"lpi_options_team_skills_mode_title" : "Hab. del Equipo",
+	"lpi_options_team_skills_mode_desc"  : "Muestra la sumatoria de las Hab. del equipo",
+
+	"lpi_options_multi_team_skills_a" : "Apagado",
+	"lpi_options_multi_team_skills_b" : "Estrellas",
+	"lpi_options_multi_team_skills_c" : "Icono de la mayor habilidad",
+	"lpi_options_multi_team_skills_d" : "Iconos de Hab.",
+
+	"lpi_options_play_time_font_size_title" : "Fuente de tiempo de juego",
+	"lpi_options_play_time_font_size_desc"  : "El tamaño de la letra para mostrar el tiempo de juego",
+
+	"lpi_options_multi_font_size_a" : "Pequeño",
+	"lpi_options_multi_font_size_b" : "Mediano",
+	"lpi_options_multi_font_size_c" : "Grande",
+	"lpi_options_multi_font_size_d" : "EXTRA GRANDE",
+
+	"lpi_options_skills_details_title" : "Detalles",
+	"lpi_options_skills_details_desc" : "Informacion a mostrar si esta activada la opcion 'Vertical' en mostrar las Hab.",
+
+	"lpi_options_multi_details_a" : "Puntos por Arbol",
+	"lpi_options_multi_details_b" : "Puntos por Rama",
+	"lpi_options_multi_details_c" : "Ambos",
+
+	"lpi_options_default_values_title" : "Reiniciar",
+	"lpi_options_default_values_desc"  : "Reiniciar a los valores de fabrica",
+
+	"lpi_options_show_play_time_title" : "Mostrar tiempo de juego",
+	"lpi_options_show_play_time_desc"  : "Mostrar el tiempo de juego de los demas jugadores (Solo perfiles publicos)",
+
+	"lpi_options_keep_pre68_character_name_position_title" : "Mantener nombres antes de la actualizacion 68",
+	"lpi_options_keep_pre68_character_name_position_desc"  : "Ubicar los nombres justo donde estaban antes de la actualizacion 68",
+
+	"lpi_options_show_skills_in_stats_screen_title" : "Mostrar Talento y Hab. en juego",
+	"lpi_options_show_skills_in_stats_screen_desc"  : "Se mostraran cuando presiones 'TAB'",
+
+	"lpi_hours" : " hrs",
+	"lpi_team_skills" : "Habilidades del Equipo",
+	"lpi_packet_loss" : "Paquete perdido",
+	"menu_lpi_fake_deck" : "Info. Falsa"
+}

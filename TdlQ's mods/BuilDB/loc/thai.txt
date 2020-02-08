@@ -1,0 +1,9 @@
+{
+	"buildb_save_current" : "บันทึกสายโปรไฟล์ปัจจุบัน",
+	"buildb_export_to_pd2skills" : "ส่งออกไปที่เว็บไซต์ pd2skills",
+	"buildb_export_to_pd2builder" : "ส่งออกไปที่เว็บไซต์ pd2builder",
+	"buildb_open_db" : "เปิดไฟล์สายโปรไฟล์ของผู้เล่น",
+	"buildb_import" : "นำเข้าไฟล์",
+	"buildb_dialog_import_message" : "คุณกำลังเปลี่ยนสายโปรไฟล์ปัจจุบันของคุณ!",
+	"buildb_dialog_import_btn_preview" : "ดภาพตัวอย่าง"
+}

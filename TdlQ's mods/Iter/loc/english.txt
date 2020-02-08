@@ -1,0 +1,124 @@
+{
+	"itr_options_menu_title" : "Iter",
+	"itr_options_menu_desc"  : "",
+
+	"itr_options_streamline_path_title" : "Improve AI pathing",
+	"itr_options_streamline_path_desc" : "Streamlined paths, improved queueing for things like ladders",
+
+	"itr_options_map_change_jolly_title" : "$heist_jolly",
+	"itr_options_map_change_jolly_desc" : "added access to the 4 ladders leading to the bridge",
+
+	"itr_options_map_change_gallery_title" : "$heist_gallery",
+	"itr_options_map_change_gallery_desc" : "added access to main hall when front doors are closed",
+
+	"itr_options_map_change_branchbank_title" : "$heist_branchbank",
+	"itr_options_map_change_branchbank_desc" : "made sure that AI can always enter the vault",
+
+	"itr_options_map_change_pbr_title" : "$heist_pbr",
+	"itr_options_map_change_pbr_desc" : "fixed AI access to 2 entrance control rooms",
+
+	"itr_options_map_change_big_title" : "$heist_big",
+	"itr_options_map_change_big_desc" : "fixed guards stuck in inner area\nfixed jiggly bus escape",
+
+	"itr_options_map_change_welcome_to_the_jungle_2_title" : "$heist_welcome_to_the_jungle ($heist_welcome_to_the_jungle_2_hl)",
+	"itr_options_map_change_welcome_to_the_jungle_2_desc" : "fixed AI access to computer room of 1st floor if opened with a drill or a keycard",
+
+	"itr_options_map_change_pbr2_title" : "$heist_pbr2",
+	"itr_options_map_change_pbr2_desc" : "fixed access to roof of gas station",
+
+	"itr_options_map_change_mad_title" : "$heist_mad",
+	"itr_options_map_change_mad_desc" : "fixed issue with blown up wall on the left",
+
+	"itr_options_map_change_brb_title" : "$heist_brb",
+	"itr_options_map_change_brb_desc" : "fixed navigation in the sewers entrance",
+
+	"itr_options_map_change_rat_title" : "$heist_rat",
+	"itr_options_map_change_rat_desc" : "added roof access to the bots",
+
+	"itr_options_map_change_dah_title" : "$heist_dah",
+	"itr_options_map_change_dah_desc" : "optimized performances",
+
+	"itr_options_map_change_family_title" : "$heist_family",
+	"itr_options_map_change_family_desc" : "fixed door between security room and store when opened by AI",
+
+	"itr_options_map_change_escape_garage_title" : "$heist_escape_garage_hl",
+	"itr_options_map_change_escape_garage_desc" : "fixed navigation when some doors are opened with a saw",
+
+	"itr_options_map_change_firestarter_1_title" : "$heist_firestarter ($heist_firestarter_1_hl)",
+	"itr_options_map_change_firestarter_1_desc" : "fixed navigation around 2 random fences",
+
+	"itr_options_map_change_firestarter_3_title" : "$heist_firestarter ($heist_firestarter_3_hl)",
+	"itr_options_map_change_firestarter_3_desc" : "made sure that AI can always enter the vault",
+
+	"itr_options_map_change_framing_frame_1_title" : "$heist_framing_frame ($heist_framing_frame_1_hl)",
+	"itr_options_map_change_framing_frame_1_desc" : "added access to main hall when front doors are closed",
+
+	"itr_options_map_change_peta_title" : "$heist_peta ($heist_peta_hl)",
+	"itr_options_map_change_peta_desc" : "fixed navigation around a random white truck",
+
+	"itr_options_map_change_kenaz_title" : "$heist_kenaz_hl",
+	"itr_options_map_change_kenaz_desc" : "make vault accessible to bots in stealth",
+
+	"itr_options_map_change_glace_title" : "$heist_glace",
+	"itr_options_map_change_glace_desc" : "fixed truck loot type",
+
+	"itr_options_map_change_mia_1_title" : "$heist_mia ($heist_mia_1_hl)",
+	"itr_options_map_change_mia_1_desc" : "fixed multiple issues with segments going underground and many glitchy hiding places",
+
+	"itr_options_map_change_jewelry_store_title" : "$heist_jewelry_store",
+	"itr_options_map_change_jewelry_store_desc" : "added navigation between a cop car and a parked car",
+
+	"itr_options_map_change_flat_title" : "$heist_flat",
+	"itr_options_map_change_flat_desc" : "better performances regarding windows broken by rappelling, fixed toothbrush drop",
+
+	"itr_options_map_change_pines_title" : "$heist_pines",
+	"itr_options_map_change_pines_desc" : "fixed sandwich drop",
+
+	"itr_options_map_change_alex_1_title" : "$heist_alex ($heist_alex_1_hl)",
+	"itr_options_map_change_alex_1_desc" : "added roof access to the bots",
+
+	"itr_options_map_change_alex_2_title" : "$heist_alex ($heist_alex_2_hl)",
+	"itr_options_map_change_alex_2_desc" : "added wooden bridge access to all AI",
+
+	"itr_options_map_change_rvd1_title" : "$heist_rvd ($heist_rvd1_hl)",
+	"itr_options_map_change_rvd1_desc" : "fixed navigation when a fence locker is shot open",
+
+	"itr_options_map_change_chill_combat_title" : "$heist_chill_combat",
+	"itr_options_map_change_chill_combat_desc" : "optimized performances",
+
+	"itr_options_map_change_cane_title" : "$heist_cane",
+	"itr_options_map_change_cane_desc" : "fixed navigation with some stairs",
+
+	"itr_options_map_change_friend_title" : "$heist_friend",
+	"itr_options_map_change_friend_desc" : "fixed navigation around the crashed cadillac",
+
+	"itr_options_map_change_kosugi_title" : "$heist_kosugi",
+	"itr_options_map_change_kosugi_desc" : "fixed stuck guards in the warehouse",
+
+	"itr_options_map_change_moon_title" : "$heist_moon",
+	"itr_options_map_change_moon_desc" : "fixed access to the backroom of the shoe store",
+
+	"itr_options_map_change_mus_title" : "$heist_mus",
+	"itr_options_map_change_mus_desc" : "fixed navigation blocker of the museum entrance",
+
+	"itr_options_map_change_born_title" : "$heist_born ($heist_born_hl)",
+	"itr_options_map_change_born_desc" : "fixed navigation around the underground entrance",
+
+	"itr_options_map_change_chew_title" : "$heist_born ($heist_chew_hl)",
+	"itr_options_map_change_chew_desc" : "fixed several blocked paths",
+
+	"itr_options_map_change_vit_title" : "$heist_vit",
+	"itr_options_map_change_vit_desc" : "fixed guard near landpad that can be killed by physics hiccups",
+
+	"itr_options_map_change_arm_for_title" : "$heist_arm_for",
+	"itr_options_map_change_arm_for_desc" : "fixed accessibility to TF-WAGON 1 at the entrance which is close to TF-WAGON 2\nfixed AI access to vaults opened during stealth",
+
+	"itr_options_map_change_dinner_title" : "$heist_dinner",
+	"itr_options_map_change_dinner_desc" : "fixed accessibility to the top of a container",
+
+	"itr_options_map_change_watchdogs_1_title" : "$heist_watchdogs ($heist_watchdogs_1_hl)",
+	"itr_options_map_change_watchdogs_1_desc" : "fixed navigation around police car in front of spawn truck",
+
+	"itr_options_map_change_mex_title" : "$heist_mex",
+	"itr_options_map_change_mex_desc" : "fixed navigation with some stairs in plane hangars"
+}

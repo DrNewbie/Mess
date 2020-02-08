@@ -1,0 +1,37 @@
+{
+	"blt_version" : 2,
+	"name" : "No Duplicated Bullets",
+	"description" : "Prevents to generate, as a client, damage normally done only by host. And other things.",
+	"author" : "TdlQ",
+	"image" : "tdlq.png",
+	"color" : "0.52 1 0",
+	"contact" : "",
+	"version" : "5",
+	"updates" : [
+		{
+			"identifier" : "NDB"
+		}
+	],
+	"hooks" : [
+		{
+			"hook_id" : "lib/network/handlers/unitnetworkhandler",
+			"script_path" : "unitnetworkhandler.lua"
+		},
+		{
+			"hook_id" : "lib/units/contourext",
+			"script_path" : "contourext.lua"
+		},
+		{
+			"hook_id" : "lib/units/enemies/cop/copdamage",
+			"script_path" : "copdamage.lua"
+		},
+		{
+			"hook_id" : "lib/units/enemies/cop/huskcopdamage",
+			"script_path" : "huskcopdamage.lua"
+		},
+		{
+			"hook_id" : "lib/units/weapons/sentrygunweapon",
+			"script_path" : "sentrygunweapon.lua"
+		}
+	]
+}

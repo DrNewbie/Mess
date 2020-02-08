@@ -1,0 +1,140 @@
+{
+	"menu_id" : "kpr_options_menu",
+	"parent_menu_id" : "blt_options",
+	"title" : "kpr_options_menu_title",
+	"description" : "kpr_options_menu_desc",
+	"back_callback" : "KeepersSave",
+	"items" : [
+		{
+			"type" : "multiple_choice",
+			"id" : "kpr_multi_primary_mode",
+			"title" : "kpr_options_primary_mode_title",
+			"description" : "kpr_options_primary_mode_desc",
+			"callback" : "KeepersModePrimary",
+			"items" : [
+				"kpr_options_multi_interaction_mode_a",
+				"kpr_options_multi_interaction_mode_b",
+				"kpr_options_multi_interaction_mode_c",
+				"kpr_options_multi_interaction_mode_d"
+			],
+			"value" : "primary_mode"
+		},
+		{
+			"type" : "multiple_choice",
+			"id" : "kpr_multi_secondary_mode",
+			"title" : "kpr_options_secondary_mode_title",
+			"description" : "kpr_options_secondary_mode_desc",
+			"callback" : "KeepersModeSecondary",
+			"items" : [
+				"kpr_options_multi_interaction_mode_a",
+				"kpr_options_multi_interaction_mode_b",
+				"kpr_options_multi_interaction_mode_c",
+				"kpr_options_multi_interaction_mode_d"
+			],
+			"value" : "secondary_mode"
+		},
+		{
+			"type" : "multiple_choice",
+			"id" : "kpr_multi_filter_mode",
+			"title" : "kpr_options_filter_mode_title",
+			"description" : "kpr_options_filter_mode_desc",
+			"callback" : "KeepersFilterMode",
+			"items" : [
+				"kpr_options_multi_filter_mode_a",
+				"kpr_options_multi_filter_mode_b",
+				"kpr_options_multi_filter_mode_c"
+			],
+			"value" : "filter_mode"
+		},
+		{
+			"type" : "divider",
+			"size" : 8
+		},
+
+		{
+			"type" : "toggle",
+			"id" : "show_joker_health",
+			"title" : "kpr_options_show_joker_health_title",
+			"description" : "kpr_options_show_joker_health_desc",
+			"callback" : "KeepersMenuCheckboxClbk",
+			"value" : "show_joker_health"
+		},
+		{
+			"type" : "toggle",
+			"id" : "show_my_joker_name",
+			"title" : "kpr_options_show_my_joker_name_title",
+			"description" : "kpr_options_show_my_joker_name_desc",
+			"callback" : "KeepersMenuCheckboxClbk",
+			"value" : "show_my_joker_name"
+		},
+		{
+			"type" : "input",
+			"id" : "kpr_input_joker_name",
+			"title" : "kpr_options_joker_name_title",
+			"description" : "kpr_options_joker_name_desc",
+			"callback" : "KeepersSetJokerName",
+			"value" : "my_joker_name"
+		},
+		{
+			"type" : "toggle",
+			"id" : "send_my_joker_name",
+			"title" : "kpr_options_send_my_joker_name_title",
+			"description" : "kpr_options_send_my_joker_name_desc",
+			"callback" : "KeepersMenuCheckboxClbk",
+			"value" : "send_my_joker_name"
+		},
+		{
+			"type" : "toggle",
+			"id" : "show_other_jokers_names",
+			"title" : "kpr_options_show_other_jokers_names_title",
+			"description" : "kpr_options_show_other_jokers_names_desc",
+			"callback" : "KeepersMenuCheckboxClbk",
+			"value" : "show_other_jokers_names"
+		},
+		{
+			"type" : "toggle",
+			"id" : "jokers_run_like_teamais",
+			"title" : "kpr_options_joker_speed_title",
+			"description" : "kpr_options_joker_speed_desc",
+			"callback" : "KeepersMenuCheckboxClbk",
+			"value" : "jokers_run_like_teamais"
+		},
+		{
+			"type" : "divider",
+			"size" : 8
+		},
+
+		{
+			"type" : "keybind",
+			"id" : "kpr_keybind_follow",
+			"title" : "kpr_keybind_follow_title",
+			"description" : "kpr_keybind_follow_desc",
+			"keybind_id" : "keepers_follow",
+			"run_in_game" : true,
+			"func" : "KeybindFollow"
+		},
+		{
+			"type" : "keybind",
+			"id" : "kpr_keybind_stay",
+			"title" : "kpr_keybind_stay_title",
+			"description" : "kpr_keybind_stay_desc",
+			"keybind_id" : "keepers_stay",
+			"run_in_game" : true,
+			"func" : "KeybindStay"
+		},
+		{
+			"type" : "multiple_choice",
+			"id" : "kpr_multi_keybind_mode",
+			"title" : "kpr_options_keybind_mode_title",
+			"description" : "kpr_options_keybind_mode_desc",
+			"callback" : "KeepersModeKeybind",
+			"items" : [
+				"kpr_options_multi_interaction_mode_a",
+				"kpr_options_multi_interaction_mode_b",
+				"kpr_options_multi_interaction_mode_c",
+				"kpr_options_multi_interaction_mode_d"
+			],
+			"value" : "keybind_mode"
+		}
+	]
+}

@@ -1,0 +1,161 @@
+Revision 42:
+- fixed interactions so it doesn't break Keepers' filter shouts option
+
+Revision 41:
+- fixed unwanted routes creation related to loot taken from shelf and dropped nearby
+
+Revision 40:
+- fixed an issue with SO introduced in r39
+
+Revision 39:
+- added support for putting back into place bags stolen by cops (explicit orders through Keepers)
+
+Revision 38:
+- fixed a crash when id of special objective is not a string
+
+Revision 37:
+- fixed a crash introduced by r36 when dropzone is a vehicle
+- fixed revive objectives not prioritized over carry objectives
+
+Revision 36:
+- changed behaviour of reset keybind so it cancels everything
+- added support for bag filters on dropzones (for example, on GGC, a bot won't throw his carried painting where only winch parts are accepted)
+
+Revision 35:
+- fixed case where TeamAI could pick up a bag already being taken away by a cop
+
+Revision 34:
+- updated use of cops' tags (padded with recent "law" addition)
+
+Revision 33:
+- added thai translation by NewPJzuza
+
+Revision 32:
+- reworked bag updating
+
+Revision 31:
+- updated stuff for Brooklyn heist
+
+Revision 30:
+- fixed players activity that could interfere with bots' objectives (effect of bot carrying an imaginary bag)
+
+Revision 29:
+- fixed a risk of route corruption when destination is a dropzone
+
+Revision 28:
+- fixed triggers for mission bags when picked up by bots (Go Bank's cage)
+
+Revision 27:
+- fixed a source zone check using a sphere instead of a cylinder (could match bags on other levels)
+- reinstated a fix that was inadvertently rollbacked
+
+Revision 26:
+- fixed bags being registered more than required (effect of bot taking a bag previously thrown)
+
+Revision 25:
+- fixed a crash when a bot picks up a bag
+
+Revision 24:
+- fixed a crash when danger evaluation tries to process a thing without character data
+
+Revision 23:
+- fixed an issue with dropzone association still considering disabled areas
+- fixed a case where last pick up position was not reset, letting very strange routes to be created
+
+Revision 22:
+- changed opposite route detection to use bag landing position instead of throw position
+- improved collision accounting so narrow windows don't prevent route creation (eg, on Cook Off, stick to window when throwing)
+- added automatic route removal for those with no bags waiting (but any route has a minimum lifetime, so routing ahead shouldn't be too affected)
+- reworked how danger is evaluated to go pick a bag or not (overall increased required ammount but specials weight much more now)
+
+Revision 21:
+- added cage bags to the carryable list
+- fixed an issue where bots would keep their bag rather than mimicking the player they follow when he throws something in a lootdrop zone
+
+Revision 20:
+- changed route creation requirement, distance between pickup position and bag's first collision's position must be over 7 meters (was distance between pickup pos and player's pos)
+
+Revision 19:
+- changed event triggering route creation (was "bag has stopped" but Slaughterhouse's conveyor belts ruined the idea)
+- fixed route priority not taking dropzone enabled state into account
+
+Revision 18:
+- added route priority so bots will take bags of older routes first (except if it evaluates a bag is in a too dangerous location)
+- fixed some dropzones that were not detected (on Santa's Workshop for example)
+
+Revision 17:
+- fixed check to know if loot is inside a dropzone
+
+Revision 16:
+- added support for vehicles (they register correctly as route destinations)
+
+Revision 15:
+- changed bots' behavior commanding bag dropping: no drop for bags thrown to them unless a route is set
+- added activity icons for "going to get a bag" and "carrying a bag somewhere" (requires Keepers to be displayed)
+- fixed route cancellation (broken by r14)
+- let a route be created despite too short distance if destination is a lootdrop area
+
+Revision 14:
+- taking a bag from a bot doesn't register as a route start anymore
+- made sure that a bot won't take a bag from someone else
+- don't create a new route when throwing (outside of start zone) a bag to a bot (though if bot doesn't catch it, enjoy the mess)
+
+Revision 13:
+- when a player takes a bag, if a bot had it as his objective, said objective is immediately cancelled
+
+Revision 12:
+- added a keybind to delete all established routes (host only)
+- added a check on dropzone availability when bots pick up a bag
+- improved behavior regarding dropping carried bag when followed player drops his own (wait 2 sec to verify if it has been thrown to another bot)
+
+Revision 11:
+- added a missing alive() check
+
+Revision 10:
+- added checks so bots don't throw bags in disabled dropzones (boat of Watchdogs D2, helicopter of The Diamond, etc)
+- fixed bots always prefering carry to revive objectives
+- fixed bots acting weird when bag they want to take is intercepted
+- fixed objective attribution when a player throws a bag to a bot
+- fixed objective renewal when a player takes a bag carried by a bot
+- fixed bot sometimes incorrectly keeping his bag
+- fixed objective attribution that could give reservation to a stopped bot
+- fixed bots not always looking where they throw their bags
+- a revived bot carrying a bag will continue his original objective
+
+Revision 9:
+- added ability to carry winch (GGC) and thermal lance (Big Bank)
+- bots don't take a bag like you if you're close to a zipline
+
+Revision 8:
+- fixed function GetBagsAround() that could return stuff other than bags (leading to crash)
+
+Revision 7:
+- shortly after a player has taken a bag, bots following him will take a bag too, see https://youtu.be/5roRx-HoHbE
+- when a player drops his bag, bots following him will drop their bags the same way
+- bots will ignore all carry objectives when Captain Winters is present (so follow players in priority)
+- changed threshold to accept a carry objective to scale with difficulty
+- added a sanity check to prevent one more type of crash
+- fixed an issue occuring when a player would throw a bag to a bot already having a pickup/carry objective
+
+Revision 6:
+- added a simple check to prevent bots from going to a certain death if there are too many cops on their way to lootbags
+- fixed pickup of paintings and Aftershock's safes
+- fixed a crash when carried item pass through a delivery area before being dropped (namely, bot walks through truck on Aftershock)
+
+Revision 5:
+- fixed a crash when bag to move has been intercepted by a player
+- fixed a flag related to shouts in stealth that wasn't properly (un)initialized
+
+Revision 4:
+- fixed several crashes
+- fixed conflict between bots and cops carry/steal objectives
+- removed pickup interrupt parameter
+
+Revision 3:
+- increased height of search zone (so on Watchdogs D2, bags on floor and in pickup are all taken)
+- fixed wrong rotation of bots when dropping their bag
+
+Revision 2:
+- decreased minimum distance to create a route from 10 meters down to 7 (easier to use on Slaughterhouse)
+- improved route start trigger: bagging from a showcase is accounted if there are no existing routes at this location
+- fixed bots ignoring some items like goat or painting (but not Aftershock's safes yet, they have a funny behavior)

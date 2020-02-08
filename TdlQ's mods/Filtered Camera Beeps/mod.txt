@@ -1,0 +1,21 @@
+{
+	"blt_version" : 2,
+	"name" : "Filtered Camera Beeps",
+	"description" : "Security cameras will beep only if you are concerned.",
+	"author" : "TdlQ",
+	"image" : "tdlq.png",
+	"color" : "0.52 1 0",
+	"contact" : "",
+	"version" : "16",
+	"updates" : [
+		{
+			"identifier" : "FCB"
+		}
+	],
+	"hooks" : [
+		{
+			"hook_id" : "lib/units/props/securitycamera",
+			"script_path" : "securitycamera.lua"
+		}
+	]
+}

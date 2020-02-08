@@ -1,0 +1,4 @@
+{
+	"menu_crew_pied_piper" : "Pied Piper",
+	"menu_crew_pied_piper_desc" : "Players can move simultaneously several hostages:\n- up to 4 if solo;\n- up to 2 if duo.\n\nBots have 4 cable ties each and will share them as players use their own."
+}

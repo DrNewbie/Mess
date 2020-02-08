@@ -1,0 +1,35 @@
+{
+	"blt_version" : 2,
+	"name": "Goonmod's Custom Waypoints",
+	"description": "Allows players to set waypoints for themselves and friends",
+	"author": "Wilko, modified and extended by TdlQ\n    thai translation by NewPJzuza\n    swedish translation by TheBreakingBenny",
+	"image" : "tdlq.png",
+	"color" : "0.52 1 0",
+	"contact": "",
+	"version": "34",
+	"updates" : [
+		{
+			"identifier" : "GCW"
+		}
+	],
+	"pre_hooks" : [
+		{
+			"hook_id": "lib/managers/menumanager",
+			"script_path": "lua/menumanager.lua"
+		}
+	],
+	"hooks": [
+		{
+			"hook_id": "lib/network/base/basenetworksession",
+			"script_path": "lua/basenetworksession.lua"
+		},
+		{
+			"hook_id": "lib/managers/hudmanager",
+			"script_path": "lua/hudmanager.lua"
+		},
+		{
+			"hook_id" : "lib/units/props/carrydata",
+			"script_path" : "lua/carrydata.lua"
+		}
+	]
+}

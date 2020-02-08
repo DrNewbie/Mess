@@ -1,0 +1,37 @@
+{
+	"menu_id" : "mrk_options_menu",
+	"parent_menu_id" : "blt_options",
+	"title" : "mrk_options_menu_title",
+	"description" : "mrk_options_menu_desc",
+	"back_callback" : "MarkingSave",
+	"items" : [
+		{
+			"type" : "toggle",
+			"id" : "mark_aim",
+			"title" : "mrk_options_mark_aim_title",
+			"description" : "mrk_options_mark_aim_desc",
+			"callback" : "MarkingMenuCheckboxClbk",
+			"value" : "mark_aim"
+		},
+		{
+			"type" : "divider",
+			"size" : 32
+		},
+		{
+			"type" : "toggle",
+			"id" : "ignore_disabled_cams",
+			"title" : "mrk_options_ignore_disabled_cams_title",
+			"description" : "mrk_options_ignore_disabled_cams_desc",
+			"callback" : "MarkingMenuCheckboxClbk",
+			"value" : "ignore_disabled_cams"
+		},
+		{
+			"type" : "toggle",
+			"id" : "prioritize_intimidated",
+			"title" : "mrk_options_prioritize_intimidated_title",
+			"description" : "mrk_options_prioritize_intimidated_desc",
+			"callback" : "MarkingMenuCheckboxClbk",
+			"value" : "prioritize_intimidated"
+		}
+	]
+}

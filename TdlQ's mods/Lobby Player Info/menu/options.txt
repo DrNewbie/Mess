@@ -1,0 +1,187 @@
+{
+	"menu_id" : "lpi_options_menu",
+	"parent_menu_id" : "blt_options",
+	"title" : "lpi_options_menu_title",
+	"description" : "lpi_options_menu_desc",
+	"back_callback" : "LobbyPlayerInfoSave",
+	"items" : [
+		{
+			"type" : "multiple_choice",
+			"id" : "lpi_multi_show_perkdeck_mode",
+			"title" : "lpi_options_show_perkdeck_mode_title",
+			"description" : "lpi_options_show_perkdeck_mode_desc",
+			"callback" : "LobbyPlayerInfoShowPerkDeckMode",
+			"items" : [
+				"lpi_options_multi_show_mode_a",
+				"lpi_options_multi_show_mode_b",
+				"lpi_options_multi_show_mode_c"
+			],
+			"value" : "show_perkdeck_mode"
+		},
+		{
+			"type" : "toggle",
+			"id" : "lpi_toggle_show_perkdeck_progression",
+			"title" : "lpi_options_show_perkdeck_progression_title",
+			"description" : "lpi_options_show_perkdeck_progression_desc",
+			"callback" : "LobbyPlayerInfoShowPerkDeckProgression",
+			"value" : "show_perkdeck_progression"
+		},
+		{
+			"type" : "toggle",
+			"id" : "lpi_toggle_show_perkdeck_progression_graphically",
+			"title" : "lpi_options_show_perkdeck_progression_graphically_title",
+			"description" : "lpi_options_show_perkdeck_progression_graphically_desc",
+			"callback" : "LobbyPlayerInfoShowPerkdeckProgressionGraphically",
+			"value" : "show_perkdeck_progression_graphically"
+		},
+		{
+			"type" : "toggle",
+			"id" : "lpi_toggle_hide_complete_perkdeck_progression",
+			"title" : "lpi_options_hide_complete_perkdeck_progression_title",
+			"description" : "lpi_options_hide_complete_perkdeck_progression_desc",
+			"callback" : "LobbyPlayerInfoHideCompletePerkDeckProgression",
+			"value" : "hide_complete_perkdeck_progression"
+		},
+		{
+			"type" : "toggle",
+			"id" : "lpi_toggle_show_perkdeck_in_loadout",
+			"title" : "lpi_options_show_perkdeck_in_loadout_title",
+			"description" : "lpi_options_show_perkdeck_in_loadout_desc",
+			"callback" : "LobbyPlayerInfoShowPerkDeckInLoadout",
+			"value" : "show_perkdeck_in_loadout"
+		},
+		{
+			"type" : "divider",
+			"size" : 16
+		},
+		{
+			"type" : "multiple_choice",
+			"id" : "lpi_multi_team_skills_mode",
+			"title" : "lpi_options_team_skills_mode_title",
+			"description" : "lpi_options_team_skills_mode_desc",
+			"callback" : "LobbyPlayerInfoTeamSkillsMode",
+			"items" : [
+				"lpi_options_multi_team_skills_a",
+				"lpi_options_multi_team_skills_b",
+				"lpi_options_multi_team_skills_c",
+				"lpi_options_multi_team_skills_d"
+			],
+			"value" : "team_skills_mode"
+		},
+		{
+			"type" : "multiple_choice",
+			"id" : "lpi_multi_show_skills_mode",
+			"title" : "lpi_options_show_skills_mode_title",
+			"description" : "lpi_options_show_skills_mode_desc",
+			"callback" : "LobbyPlayerInfoShowSkillsMode",
+			"items" : [
+				"lpi_options_multi_show_mode_a",
+				"lpi_options_multi_show_mode_b",
+				"lpi_options_multi_show_mode_c"
+			],
+			"value" : "show_skills_mode"
+		},
+		{
+			"type" : "multiple_choice",
+			"id" : "lpi_multi_skills_layout",
+			"title" : "lpi_options_skills_layout_title",
+			"description" : "lpi_options_skills_layout_desc",
+			"callback" : "LobbyPlayerInfoSetLayout",
+			"items" : [
+				"lpi_options_multi_skills_layout_a",
+				"lpi_options_multi_skills_layout_b",
+				"lpi_options_multi_skills_layout_c"
+			],
+			"value" : "skills_layout"
+		},
+		{
+			"type" : "multiple_choice",
+			"id" : "lpi_multi_skills_font_size",
+			"title" : "lpi_options_skills_font_size_title",
+			"description" : "lpi_options_skills_font_size_desc",
+			"callback" : "LobbyPlayerInfoSetFontSizeForSkills",
+			"items" : [
+				"lpi_options_multi_font_size_a",
+				"lpi_options_multi_font_size_b",
+				"lpi_options_multi_font_size_c",
+				"lpi_options_multi_font_size_d"
+			],
+			"value" : "skills_font_size"
+		},
+		{
+			"type" : "multiple_choice",
+			"id" : "lpi_multi_skills_details",
+			"title" : "lpi_options_skills_details_title",
+			"description" : "lpi_options_skills_details_desc",
+			"callback" : "LobbyPlayerInfoSetDetailsForSkills",
+			"items" : [
+				"lpi_options_multi_details_a",
+				"lpi_options_multi_details_b",
+				"lpi_options_multi_details_c"
+			],
+			"value" : "skills_details"
+		},
+		{
+			"type" : "divider",
+			"size" : 16
+		},
+		{
+			"type" : "multiple_choice",
+			"id" : "lpi_multi_show_play_time",
+			"title" : "lpi_options_show_play_time_title",
+			"description" : "lpi_options_show_play_time_desc",
+			"callback" : "LobbyPlayerInfoShowPlayTime",
+			"items" : [
+				"lpi_options_multi_show_mode_a",
+				"lpi_options_multi_show_mode_b",
+				"lpi_options_multi_show_mode_c"
+			],
+			"value" : "show_play_time_mode"
+		},
+		{
+			"type" : "multiple_choice",
+			"id" : "lpi_multi_play_time_font_size",
+			"title" : "lpi_options_play_time_font_size_title",
+			"description" : "lpi_options_play_time_font_size_desc",
+			"callback" : "LobbyPlayerInfoSetFontSizeForPlayTime",
+			"items" : [
+				"lpi_options_multi_font_size_a",
+				"lpi_options_multi_font_size_b",
+				"lpi_options_multi_font_size_c",
+				"lpi_options_multi_font_size_d"
+			],
+			"value" : "play_time_font_size"
+		},
+		{
+			"type" : "divider",
+			"size" : 16
+		},
+		{
+			"type" : "toggle",
+			"id" : "lpi_toggle_keep_pre68_character_name_position",
+			"title" : "lpi_options_keep_pre68_character_name_position_title",
+			"description" : "lpi_options_keep_pre68_character_name_position_desc",
+			"callback" : "LobbyPlayerInfoKeepPre68CharacterNamePosition",
+			"value" : "keep_pre68_character_name_position"
+		},
+		{
+			"type" : "toggle",
+			"id" : "lpi_toggle_show_skills_in_stats_screen",
+			"title" : "lpi_options_show_skills_in_stats_screen_title",
+			"description" : "lpi_options_show_skills_in_stats_screen_desc",
+			"callback" : "LobbyPlayerInfoShowSkillsInStatsScreen",
+			"value" : "show_skills_in_stats_screen"
+		},
+		{
+			"type" : "divider",
+			"size" : 16
+		},
+		{
+			"type" : "button",
+			"id" : "lpi_button_reset",
+			"title" : "lpi_options_default_values_title",
+			"description" : "lpi_options_default_values_desc",
+			"callback" : "LobbyPlayerInfoResetToDefaultValues"
+		}
+	]
+}

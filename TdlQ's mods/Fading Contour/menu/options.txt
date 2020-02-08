@@ -1,0 +1,64 @@
+{
+	"menu_id" : "fc_options_menu",
+	"parent_menu_id" : "blt_options",
+	"title" : "fc_options_menu_title",
+	"description" : "fc_options_menu_desc",
+	"focus_changed_callback" : "FadingContourChangedFocus",
+	"items" : [
+		{
+			"type"        : "slider",
+			"id"          : "fc_slider_fade_from",
+			"title"       : "fc_options_fade_from_title",
+			"description" : "fc_options_fade_from_desc",
+			"callback"    : "FadingContourFadeFrom",
+			"value"       : "fade_from",
+			"min"         : 0,
+			"max"         : 1,
+			"step"        : 0.01,
+			"default_value" : 1
+		},
+		{
+			"type"        : "multiple_choice",
+			"id"          : "fc_toggle_fade_method",
+			"title"       : "fc_options_fade_method_title",
+			"description" : "fc_options_fade_method_desc",
+			"callback"    : "FadingContourFadeMethod",
+			"items" : [
+					"fc_options_fade_method_multi_a",
+					"fc_options_fade_method_multi_b"
+			],
+			"value"       : "fade_method"
+		},
+		{
+			"type" : "divider",
+			"size" : 32
+		},
+		{
+			"type" : "toggle",
+			"id" : "fc_toggle_override_hvt_basic",
+			"title" : "fc_options_override_hvt_basic_title",
+			"description" : "fc_options_override_hvt_basic_desc",
+			"callback" : "FadingContourSetOverrideHVTB",
+			"value" : "override_hvtb_color"
+		},
+		{
+			"type" : "toggle",
+			"id" : "fc_toggle_override_hvt_aced",
+			"title" : "fc_options_override_hvt_aced_title",
+			"description" : "fc_options_override_hvt_aced_desc",
+			"callback" : "FadingContourSetOverrideHVTA",
+			"value" : "override_hvta_color"
+		},
+		{
+			"type" : "divider",
+			"size" : 32
+		},
+		{
+			"type" : "button",
+			"id" : "test_contour",
+			"title" : "fc_options_test_contour_title",
+			"description" : "fc_options_test_contour_desc",
+			"callback" : "FadingContourTestContour"
+		}
+	]
+}

@@ -1,0 +1,60 @@
+{
+	"lpi_options_menu_title" : "Lobby Player Info",
+	"lpi_options_menu_desc"  : "로비에 보여질 정보들을 수정합니다",
+
+	"lpi_options_show_perkdeck_mode_title" : "퍽덱 보이기",
+	"lpi_options_show_perkdeck_mode_desc"  : "선택된 퍽덱을 보입니다",
+	
+	"lpi_options_show_perkdeck_progression_title" : "퍽덱 진행도 보이기",
+	"lpi_options_show_perkdeck_progression_desc"  : "퍽덱이 얼마나 진행되었는지 보입니다",
+
+	"lpi_options_hide_complete_perkdeck_progression_title" : "완성된 덱의 진행도 감추기",
+	"lpi_options_hide_complete_perkdeck_progression_desc"  : "퍽덱의 꽉찬 진행도 창이나 이름의 오른쪽에 있는 (9/9) 표시를 감춥니다",
+
+	"lpi_options_show_perkdeck_progression_graphically_title" : "퍽덱 진행도 시각화",
+	"lpi_options_show_perkdeck_progression_graphically_desc"  : "'(x/9)'문자 대신 진행도 창으로 대체하여 표시합니다.",
+
+	"lpi_options_show_perkdeck_in_loadout_title" : "로드아웃에서 퍽덱 보이기",
+	"lpi_options_show_perkdeck_in_loadout_desc"  : "팀원의 장비(crew setup)탭에서 팀원의 이름 대신 해당 플레이어가 사용중인 퍽덱의 이름을 표시합니다.",
+
+	"lpi_options_show_skills_mode_title" : "플레이어 스킬 보이기",
+	"lpi_options_show_skills_mode_desc"  : "각각의 플레이어의 클래스당 스킬찍은 수를 표시합니다.",
+
+	"lpi_options_multi_show_mode_a" : "표시 안함",
+	"lpi_options_multi_show_mode_b" : "마우스를 올릴때만",
+	"lpi_options_multi_show_mode_c" : "항상",
+
+	"lpi_options_skills_layout_title" : "스킬 레이아웃",
+	"lpi_options_skills_layout_desc"  : "가로: 한줄에 표시될 모든 클래스, 세로: 한줄당 클래스",
+	"lpi_options_multi_skills_layout_a" : "가로",
+	"lpi_options_multi_skills_layout_b" : "세로",
+
+	"lpi_options_skills_font_size_title" : "스킬 폰트 크기",
+	"lpi_options_skills_font_size_desc"  : "스킬 분배를 표시할 폰트의 크기",
+
+	"lpi_options_show_team_skills_title" : "팀스킬 개관 보이기",
+	"lpi_options_show_team_skills_desc"  : "트리당 스킬을 얼마나 찍었는지에 따라 별로 표시합니다.(기준치: 11, 16, 28)",
+
+	"lpi_options_play_time_font_size_title" : "총 플레이 시간 폰트 크기",
+	"lpi_options_play_time_font_size_desc"  : "총 플레이 시간을 표시할 폰트의 크기",
+
+	"lpi_options_multi_font_size_a" : "작음",
+	"lpi_options_multi_font_size_b" : "중간",
+	"lpi_options_multi_font_size_c" : "큼",
+	"lpi_options_multi_font_size_d" : "매우큼",
+
+	"lpi_options_default_values_title" : "초기화",
+	"lpi_options_default_values_desc"  : "기본값으로 초기화합니다",
+
+	"lpi_options_show_play_time_title" : "총 플레이 시간 보이기",
+	"lpi_options_show_play_time_desc"  : "다른 사람의 총 플레이 시간을 표시합니다 (공개된 프로파일만 가능)",
+
+	"lpi_options_keep_pre68_character_name_position_title" : "업데이트 68 이전의 이름도 표시하기",
+	"lpi_options_keep_pre68_character_name_position_desc"  : "업데이트 68 이전의 플레이어 이름도 표시합니다.",
+
+	"lpi_options_show_skills_in_stats_screen_title" : "스탯창에서 팀원 스킬과 퍽덱 보이기",
+	"lpi_options_show_skills_in_stats_screen_desc"  : "게임중 TAB 키를 눌러서 나오는 창에서 팀원 스킬과 퍽덱을 보입니다.",
+
+	"lpi_hours" : " 시간",
+	"lpi_team_skills" : "팀원 스킬"
+}

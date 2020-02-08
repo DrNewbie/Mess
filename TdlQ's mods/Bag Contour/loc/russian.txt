@@ -1,0 +1,23 @@
+{
+	"bc_options_menu_title" : "Bag Contour",
+	"bc_options_menu_desc"  : "Измените цвета контуров",
+
+	"bc_options_light_r_title" : "Красный / легкая сумка",
+	"bc_options_light_g_title" : "Зеленый / легкая сумка",
+	"bc_options_light_b_title" : "Синий / легкая сумка",
+
+	"bc_options_heavy_r_title" : "Красный / тяжелая сумка",
+	"bc_options_heavy_g_title" : "Зеленый / тяжелая сумка",
+	"bc_options_heavy_b_title" : "Синий / тяжелая сумка",
+
+	"bc_options_body_r_title" : "Красный / сумка с трупом",
+	"bc_options_body_g_title" : "Зеленый / сумка с трупом",
+	"bc_options_body_b_title" : "Синий / сумка с трупом",
+
+	"bc_options_r_desc" : "Значение красного в цвете контура",
+	"bc_options_g_desc" : "Значение зеленого в цвете контура",
+	"bc_options_b_desc" : "Значение синего в цвете контура",
+
+	"bc_options_reset_title" : "Восстановить значения цвета по умолчанию",
+	"bc_options_reset_desc"  : "Сброс всех цветов на значения по умолчанию"
+}

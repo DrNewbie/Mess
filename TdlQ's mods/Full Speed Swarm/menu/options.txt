@@ -1,0 +1,108 @@
+{
+	"menu_id" : "fs_options_menu",
+	"parent_menu_id" : "blt_options",
+	"title" : "fs_options_menu_title",
+	"description" : "fs_options_menu_desc",
+	"focus_changed_callback" : "FullSpeedSwarmChangedFocus",
+	"back_callback" : "FullSpeedSwarmSave",
+	"items" : [
+		{
+			"type" : "slider",
+			"id" : "task_throughput",
+			"title" : "fs_options_task_throughput_title",
+			"description" : "fs_options_task_throughput_desc",
+			"callback" : "FullSpeedSwarmSetTaskThroughput",
+			"value" : "task_throughput",
+			"default_value" : 600,
+			"min" : 0,
+			"max" : 3000,
+			"step" : 50
+		},
+		{
+			"type" : "multiple_choice",
+			"id" : "walking_quality",
+			"title" : "fs_options_walking_quality_title",
+			"description" : "fs_options_walking_quality_desc",
+			"callback" : "FullSpeedSwarmMenuValueClbk",
+			"items" : [
+				"fs_options_walking_quality_multi_a",
+				"fs_options_walking_quality_multi_b",
+				"fs_options_walking_quality_multi_c"
+			],
+			"value" : "walking_quality"
+		},
+		{
+			"type" : "multiple_choice",
+			"id" : "lod_updater",
+			"title" : "fs_options_lod_updater_title",
+			"description" : "fs_options_lod_updater_desc",
+			"callback" : "FullSpeedSwarmMenuValueClbk",
+			"items" : [
+				"fs_options_lod_updater_multi_a",
+				"fs_options_lod_updater_multi_b",
+				"fs_options_lod_updater_multi_c"
+			],
+			"value" : "lod_updater"
+		},
+		{
+			"type" : "toggle",
+			"id" : "optimized_inputs",
+			"title" : "fs_options_optimized_inputs_title",
+			"description" : "fs_options_optimized_inputs_desc",
+			"callback" : "FullSpeedSwarmMenuCheckboxClbk",
+			"value" : "optimized_inputs"
+		},
+		{
+			"type" : "divider",
+			"size" : 32
+		},
+		{
+			"type" : "toggle",
+			"id" : "fastpaced",
+			"title" : "fs_options_fastpaced_title",
+			"description" : "fs_options_fastpaced_desc",
+			"callback" : "FullSpeedSwarmMenuCheckboxClbk",
+			"value" : "fastpaced"
+		},
+		{
+			"type" : "toggle",
+			"id" : "iter_chase",
+			"title" : "fs_options_iter_chase_title",
+			"description" : "fs_options_iter_chase_desc",
+			"callback" : "FullSpeedSwarmMenuCheckboxClbk",
+			"value" : "iter_chase"
+		},
+		{
+			"type" : "toggle",
+			"id" : "nervous_game",
+			"title" : "fs_options_nervous_game_title",
+			"description" : "fs_options_nervous_game_desc",
+			"callback" : "FullSpeedSwarmMenuCheckboxClbk",
+			"value" : "nervous_game"
+		},
+		{
+			"type" : "toggle",
+			"id" : "custom_assault",
+			"title" : "fs_options_custom_assault_title",
+			"description" : "fs_options_custom_assault_desc",
+			"callback" : "FullSpeedSwarmMenuCheckboxClbk",
+			"value" : "custom_assault"
+		},
+		{
+			"type" : "toggle",
+			"id" : "cop_awareness",
+			"title" : "fs_options_cop_awareness_title",
+			"description" : "fs_options_cop_awareness_desc",
+			"callback" : "FullSpeedSwarmMenuCheckboxClbk",
+			"value" : "cop_awareness"
+		},
+		{
+			"type" : "toggle",
+			"id" : "spawn_delay",
+			"title" : "fs_options_spawn_delay_title",
+			"description" : "fs_options_spawn_delay_desc",
+			"callback" : "FullSpeedSwarmMenuCheckboxClbk",
+			"value" : "spawn_delay"
+		}
+	]
+}

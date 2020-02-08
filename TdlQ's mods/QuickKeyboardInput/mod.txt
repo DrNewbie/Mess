@@ -1,0 +1,25 @@
+{
+	"blt_version" : 2,
+	"name" : "QuickKeyboardInput",
+	"description" : "Provide a QuickKeyboardInput dialog.",
+	"author" : "TdlQ",
+	"image" : "tdlq.png",
+	"color" : "0.52 1 0",
+	"contact" : "",
+	"version" : "1",
+	"updates" : [
+		{
+			"identifier" : "QKI"
+		}
+	],
+	"hooks" : [
+		{
+			"hook_id" : "lib/managers/systemmenumanager",
+			"script_path" : "systemmenumanager.lua"
+		},
+		{
+			"hook_id" : "lib/managers/menu/textboxgui",
+			"script_path" : "textboxgui.lua"
+		}
+	]
+}

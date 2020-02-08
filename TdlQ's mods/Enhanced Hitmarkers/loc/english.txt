@@ -1,0 +1,41 @@
+{
+	"eh_options_menu_title" : "Enhanced Hitmarkers",
+	"eh_options_menu_desc"  : "Change hitmarkers colors and textures",
+
+	"eh_options_help_title" : "Help",
+	"eh_options_info_popup_close" : "Close",
+
+	"eh_options_info_popup_message_help" : "The game originally shows 2 hitmarkers: normal hit and critical hit.\n\nThis mod differenciates 6 cases:\n- the shape of the hitmarker tells if the hit was lethal or not ;\n- the color indicates the type of damage inflicted: body shot, head shot or critical hit.\n\nIf none of the texture pleases you, you can add yours in the folder\n\"\\assets\\mod_overrides\\Enhanced Hitmarkers\\guis\\textures\\pd2\".\nYou have nothing else to do: the texture lists of the option menu are done dynamically.",
+
+	"eh_options_r_desc" : "The amount of red in the color",
+	"eh_options_g_desc" : "The amount of green in the color",
+	"eh_options_b_desc" : "The amount of blue in the color",
+
+	"eh_options_body_r_title" : "Red / body shot",
+	"eh_options_body_g_title" : "Green / body shot",
+	"eh_options_body_b_title" : "Blue / body shot",
+
+	"eh_options_head_r_title" : "Red / head shot",
+	"eh_options_head_g_title" : "Green / head shot",
+	"eh_options_head_b_title" : "Blue / head shot",
+
+	"eh_options_crit_r_title" : "Red / crit shot",
+	"eh_options_crit_g_title" : "Green / crit shot",
+	"eh_options_crit_b_title" : "Blue / crit shot",
+
+	"eh_options_texture_hit_title" : "Hit texture",
+	"eh_options_texture_hit_desc"  : "Select the texture to use for hits",
+	"eh_options_texture_kill_title" : "Kill texture",
+	"eh_options_texture_kill_desc"  : "Select the texture to use for kills",
+
+	"eh_options_shake_hitmarker_title" : "Shake hitmarkers",
+	"eh_options_shake_hitmarker_desc" : "Apply a slight random rotation on each hitmarker",
+
+	"eh_options_set_blend_mode_title" : "Blend mode",
+	"eh_options_set_blend_mode_desc"  : "",
+	"eh_options_multi_blend_mode_a"   : "Additive",
+	"eh_options_multi_blend_mode_b"   : "Normal",
+
+	"eh_options_reset_title" : "Reset to default colors",
+	"eh_options_reset_desc"  : "Reset all colors to their default values"
+}

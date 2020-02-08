@@ -1,0 +1,3 @@
+{
+	"mdf_clue_found" : "$peer_name ค้นพบเบาะแส!"
+}

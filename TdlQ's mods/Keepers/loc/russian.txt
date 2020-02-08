@@ -1,0 +1,29 @@
+{
+	"kpr_options_menu_title" : "Keepers",
+	"kpr_options_menu_desc"  : "",
+
+	"kpr_options_filter_mode_title" : "Фильтр криков",
+	"kpr_options_filter_mode_desc" : "Выбор криков для командных ИИ, для которых необходимо удерживать дополнительную клавишу.\nКлавиша по умолчанию - 'левый shift'. Вы можете поменять ее в 'mods/saves/keepers.txt'.",
+
+	"kpr_options_multi_filter_mode_a" : "Нет",
+	"kpr_options_multi_filter_mode_b" : "Только для охраны",
+	"kpr_options_multi_filter_mode_c" : "Все",
+
+	"kpr_options_show_joker_health_title" : "Показывать здоровье джокера",
+	"kpr_options_show_joker_health_desc" : "Отображать здоровье джокера справа от его имени.",
+
+	"kpr_options_show_my_joker_name_title" : "Показывать собственное имя джокера",
+	"kpr_options_show_my_joker_name_desc" : "Использовать пользовательское имя джокера.\nВы можете поменять его в 'mods/saves/keepers.txt'",
+
+	"kpr_options_send_my_joker_name_title" : "Отправлять собственное имя джокера",
+	"kpr_options_send_my_joker_name_desc" : "Синхронизация вашего имени джокера.",
+
+	"kpr_options_show_other_jokers_names_title" : "Показывать имена других джокеров",
+	"kpr_options_show_other_jokers_names_desc" : "Отображать пользовательские имена, заданные другими игроками для своих джокеров.",
+
+	"kpr_keybind_follow_title" : "Приказать всем ботам следовать за вами",
+	"kpr_keybind_follow_desc" : "",
+
+	"kpr_keybind_stay_title" : "Приказать всем ботам оборонять их позиции",
+	"kpr_keybind_stay_desc" : ""
+}

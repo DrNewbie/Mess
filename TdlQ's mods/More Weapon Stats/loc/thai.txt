@@ -1,0 +1,42 @@
+{
+	"mws_reload_partial"     : "รีโหลดบางส่วน",
+	"mws_reload_full"        : "รีโหลดทั้งแม็ก",
+	"mws_ammo_pickup"        : "การหยิบกระสุน",
+	"mws_falloff"            : "ค.รุนแรงที่หายไป",
+	"mws_accuracy_ads"       : "ค.แม่นมีศูนย์เล็ง",
+	"mws_accuracy_crouching" : "ค.แม่นขณะหมอบ",
+	"mws_accuracy_standing"  : "ค.แม่นยำขณะยืน",
+	"mws_recoil_horiz"       : "แรงดีดแนวนอน",
+	"mws_recoil_vert"        : "แรงดีดแนวตั้ง",
+	"mws_equip_delay"        : "ค.ช้าก.ใช้อาวุธ",
+	
+	"mws_attack_delay"       : "ค.ล่าช้าก.โจมตี",
+	"mws_cooldown"           : "คูลดาวน์",
+	"mws_unequip_delay"      : "ค.ล่าช้าก.เลิกใช้อาวุธ",
+	
+	"mws_options_menu_title" : "ค่าสถิติของอาวุธแต่ละชนิด",
+	"mws_options_menu_desc" : "More Weapon Stats: แสดงค่าทุกชนิดของอาวุธแต่ละชนิดทางขวามมือของหน้าจอ\nรวมถึงจำนวนกระสุนที่จะใช้ในการฆ่าศัตรู 1 ตัว หรือค่าเบรคพ้อยท์ (breakpoints)",
+	"mws_options_show_dlc_info_title" : "แสดงเนื้อหาเพิ่มเติม",
+	"mws_options_show_dlc_info_desc" : "Show DLC information: แสดงเนื้อหาเพิ่มเติมที่จำเป็นในการใช้อาวุธนี้\nเช่น ปืน Thanatos .50 cal 'อุปกรณ์นี้เป็นเนื้อหาเพิ่มเติมของ Gage Weapon Pack!'",
+	"mws_options_show_all_hit_nr_bp_title" : "แสดงจำนวนกระสุนที่จะใช้ฆ่าศัตรู 1 ตัว (ค่าเบรคพ้อยท์ )",
+	"mws_options_show_all_hit_nr_bp_desc" : "Show all numbers of hits (breakpoints): แสดงจำนวนกระสุนที่จะใช้ในการฆ่าศัตรู 1 ตัวตามแต่ทักษะที่ผู้เล่นสามารถเปิดใช้งาน",
+	"mws_options_use_preview_key_to_switch_bp_title" : "ใช้แป้นพิมพ์ 'เพื่อดู' เพื่อแสดงค่าเบรคพ้อยท์",
+	"mws_options_use_preview_key_to_switch_bp_desc" : "",
+
+	"mws_bp_show" : "แสดงค่าเบรคพ้อยท์",
+	"mws_bp_hide" : "ซ่อนค่าเบรคพ้อยท์",
+
+	"mws_bp_option_headshot" : "ยิงหัว",
+	"mws_bp_option_crits"    : "ยิงติดคริติคอล",
+	"mws_bp_option_underdog" : "Underdog",
+	"mws_bp_option_hvt"      : "HVT",
+	"mws_bp_option_triggerhappy" : "Trigger Happy",
+	"mws_bp_option_overkill" : "Overkill",
+
+	"mws_bp_option_swat"   : "SWAT",
+	"mws_bp_option_heavy_swat" : "Heavy SWAT",
+	"mws_bp_option_sniper" : "Sniper",
+	"mws_bp_option_taser"  : "Taser",
+	"mws_bp_option_spooc"  : "Cloaker",
+	"mws_bp_option_tank"   : "Bulldozer"
+}

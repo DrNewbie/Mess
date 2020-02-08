@@ -1,0 +1,243 @@
+Revision 76:
+- enabled cheater flag for damage verification
+- added sensor for surefire aced
+- fixed upgrade ids of 2 sensors
+- reworked a few things in skills verification
+
+Revision 75:
+- added damage verification for melee hits
+- added damage verification for bullets of types normal and fire
+- added damage verification for fire dots
+- added sensor for underdog
+- added sensor for overdog
+- added sensor for shotgun impact
+- added sensor for far away
+- added sensor for overkill
+- added sensor for body expertise
+- added sensor for one handed talent
+- added sensor for trigger happy
+- added sensor for bloodthirst
+- added sensor for pumping iron
+- added sensor for berserker
+- fixed sensor for shockproof
+- added sensor for counterstrike basic
+
+Revision 74:
+- disabled cheater marking when crimse spree assets are unlocked
+- added sensor for graze basic
+- accounted slomo for swan song check
+- code clean up
+
+Revision 73:
+- fixed wrong weapon stats calculations due to skin boost presence incorrectly parsed
+
+Revision 72:
+- disabled timer checks if a slow motion effect happened
+
+Revision 71:
+- added a generic fix for weapon selection index when synchronizing ammo
+- extended workaround of r65 to be generic (found +10 issues like the one fixed in r65)
+
+Revision 70:
+- fixed a race issue in interaction time validation between clients
+
+Revision 69:
+- fixed issue with time measurement on very early interactions
+- added check on inspire cooldown
+
+Revision 68:
+- updated some checks on ammo bags and sentries
+
+Revision 67:
+- fixed bad handling of incomplete/bogus announced skill points distribution
+
+Revision 66:
+- fixed a crash when profile is desynch
+
+Revision 65:
+- fixed base game bug + false positive related to ammo synced with wrong selected weapon index
+
+Revision 64:
+- updated to U180
+
+Revision 63:
+- updated to U178
+
+Revision 62:
+- fixed timer not evaluated to equal in some cases due to number rounding
+
+Revision 61:
+- fixed checked amount of first aid kits
+
+Revision 60:
+- fixed missing parameter "secondary" of function long_dis_interaction
+
+Revision 59:
+- replaced unclear warning "too many skill points" by problematic upgrade name
+
+Revision 58:
+- improved text report for interactions
+- ignore interactions executed by bots and reported as done by host
+
+Revision 57:
+- added sanity checks in CheckAmmo()
+
+Revision 56:
+- fixed false positive due to a vanilla bug related to bodybags asset
+
+Revision 55:
+- fixed handling of instantaneous interaction timers
+- fixed a potential crash
+- reduced volume of logs
+- added sensor for maniac perk
+
+Revision 54:
+- fixed some timers rounding
+- fixed false positive with timer overrides
+
+Revision 53:
+- fixed a false positive when interacting with the pager of an intimidated guard
+
+Revision 52:
+- even more absolutely essential BLT2 integration
+
+Revision 51:
+- more absolutely essential BLT2 integration
+
+Revision 50:
+- BLT2
+- fixed a crash when trying to check a profile too early
+- fixed false positive when crew ability "quick" is active
+
+Revision 49:
+- fixed false positive on reusable throwables
+- fixed crash with some instant interactions
+
+Revision 48:
+- removed obsolete check on saw
+- added sensor for jack of all trades
+- added sensor for fire trap
+- updated check of trip mines amount
+
+Revision 47:
+- added sensor for fully loaded aced
+
+Revision 46:
+- fixed missed changes from U104 related to ECM
+
+Revision 45:
+- added checks on weapon mods
+
+Revision 44:
+- added more readable logs regarding weapons
+
+Revision 43:
+- removed an obsolete check on akimbo
+- added check on weapon level requirement
+
+Revision 42:
+- fixed mag size calculation
+
+Revision 41:
+- fixed profile changing
+
+Revision 40:
+- fixed false positives with perks anarchist and biker
+- fixed checks for skill points requirements
+- added sensor for high value target
+
+Revision 39:
+- updated to U152
+
+Revision 38:
+- (mostly?) updated to U151
+- added hit ratio (printed in stats panel of LPI)
+
+Revision 37:
+- probably updated to U96
+
+Revision 36:
+- skins bonuses should be taken into account (total ammo modifiers, untested)
+- skill/perk checks are done even with profile announcing an extra skill tree
+
+Revision 35:
+- fixed false positive for overridden interaction timers (like "hold_place_strap" on Birth of Sky)
+
+Revision 34:
+- fixed a potential crash related to special melee skills
+- print full warning message in chat rather than "weird x anomaly"
+
+Revision 33:
+- fixed a case where clients couldn't buy assets
+
+Revision 32:
+- don't mix-up player's sentry with asset sentry (GGC)
+
+Revision 31:
+- fix check when placing a first aid kit
+
+Revision 30:
+- disable check for bag catched mid-air: network lag can lead to false positive
+
+Revision 29:
+- fix gambler detection (U71 introduced a register_grenade event that broke it)
+
+Revision 28:
+- fix timer calculation when multiple bonuses are involved (mostly burglar atm)
+
+Revision 27:
+- fix unfinished sensor for bullseye
+
+Revision 26:
+- added sensors for swan song, gambler and bullseye
+
+Revision 25:
+- timers evaluations are kept longer and overall stats are shown when an irregularity is detected
+- added the basic reason to the chat message
+
+Revision 24:
+- fix timer of bags catched mid-air
+
+Revision 23:
+- fix sensor for player_morale_boost
+
+Revision 22:
+- fix requirements checking for ecm_jammer (mix up with deploy and interact)
+
+Revision 21:
+- fix confusion between new melee weapon "buzzer" and shockproof
+- now calculating ammo amount as it is done for raycastweapon (instead of the potentially wrong method used in blackmarketgui)
+
+Revision 20:
+- adapted total ammo calculation to a rounding bug of the game (silly...)
+- more timers cleanup
+
+Revision 19:
+- fixed copdamage things (shockproof, counter strike, ...)
+- fixed timers
+
+Revision 18:
+- adapted a few network things to U70
+- distinguish timer for interaction and equipment use
+
+Revision 17:
+- fixed a last bug with ammo check for akimbo aced
+
+Revision 16:
+- fix initialization problem on disconnect
+- reworked timers once more
+- minor things
+
+Revision 15:
+- fixed wrong infamy0 skill to point requirements
+- fixed ammo check... again
+- disabled some timers
+
+Revision 14:
+- interactions were broken, now they might be fixed... "to be tested"
+
+Revision 13:
+- finally got CheckAmmo() working properly...
+
+Revision 12:
+- fix total ammo calculation

@@ -1,0 +1,74 @@
+{
+	"blt_version" : 2,
+	"name" : "Iter",
+	"description" : "Improved navigation for all AIs, fixed a few levels.",
+	"author" : "TdlQ\n    thai translation by NewPJzuza\n    swedish translation by TheBreakingBenny",
+	"image" : "tdlq.png",
+	"color" : "0.52 1 0",
+	"contact" : "",
+	"version" : "119",
+	"priority" : 50,
+	"updates" : [
+		{
+			"identifier" : "ITR"
+		}
+	],
+	"hooks" : [
+		{
+			"hook_id" : "core/lib/managers/coreportalmanager",
+			"script_path" : "lua/coreportalmanager.lua"
+		},
+		{
+			"hook_id" : "core/lib/managers/coresequencemanager",
+			"script_path" : "lua/coresequencemanager.lua"
+		},
+		{
+			"hook_id" : "core/lib/managers/coreworldinstancemanager",
+			"script_path" : "lua/coreworldinstancemanager.lua"
+		},
+		{
+			"hook_id" : "core/lib/managers/mission/coremissionmanager",
+			"script_path" : "lua/coremissionmanager.lua"
+		},
+		{
+			"hook_id" : "core/lib/utils/dev/editor/coreworlddefinition",
+			"script_path" : "lua/coreworlddefinition.lua"
+		},
+		{ 
+			"hook_id" : "lib/managers/localizationmanager",
+			"script_path" : "lua/localizationmanager.lua"
+		},
+		{
+			"hook_id" : "lib/managers/missionmanager",
+			"script_path" : "lua/missionmanager.lua"
+		},
+		{
+			"hook_id" : "lib/managers/navigationmanager",
+			"script_path" : "lua/navigationmanager.lua"
+		},
+		{
+			"hook_id" : "lib/units/civilians/logics/civilianlogictravel",
+			"script_path" : "lua/civilianlogictravel.lua"
+		},
+		{
+			"hook_id" : "lib/units/enemies/cop/copbrain",
+			"script_path" : "lua/copbrain.lua"
+		},
+		{
+			"hook_id" : "lib/units/enemies/cop/actions/lower_body/copactionwalk",
+			"script_path" : "lua/copactionwalk.lua"
+		},
+		{
+			"hook_id" : "lib/units/enemies/cop/logics/coplogicidle",
+			"script_path" : "lua/coplogicidle.lua"
+		},
+		{
+			"hook_id" : "lib/units/enemies/cop/logics/coplogictravel",
+			"script_path" : "lua/coplogictravel.lua"
+		},
+		{
+			"hook_id" : "lib/units/props/drill",
+			"script_path" : "lua/drill.lua"
+		}
+	]
+}

@@ -1,0 +1,550 @@
+Revision 157:
+- fixed limited call distance
+
+Revision 156:
+- improved significantly efficiency of friendly AI to cross long distances, see https://youtu.be/OPghZ2Li7NE
+- prevent reset of objective (and pathfinding) when calling a bot already running to revive you
+
+Revision 155:
+- added chinese translation by Shark_Yi
+
+Revision 154:
+- made sure that mugshot's interaction circle is visible (sadly doesn't work with MUI)
+- changed icons for assist, stationary and patrol
+
+Revision 153:
+- fixed a crash when retrieving a bag which disappears during the process
+
+Revision 152:
+- fixed option "shouts filter"
+
+Revision 151:
+- [Border Crossing] finally made a proper joker transfer...
+- prevent some useless mod messages related to bot state changes
+
+Revision 150:
+- [Border Crossing] reworked again how jokers follow from Arizona to Mexico
+
+Revision 149:
+- [Border Crossing] reworked how jokers follow from Arizona to Mexico (r148 was causing a bot to follow in stealth)
+
+Revision 148:
+- [Border Crossing] jokers made in Arizona will follow to Mexico
+
+Revision 147:
+- improved how bots can be ordered to retrieve bags taken by cops, see https://youtu.be/EJWg0oeyKaw
+- (stealth only) bots waken up and moved to a position always use the stationary setting, independently of the configuration
+
+Revision 146:
+- fixed assistants keeping their objective if downed player is not rescued and sent to custody
+
+Revision 145:
+- improved group placement around a single position
+
+Revision 144:
+- fixed a crash when a bot sent to interact with something is recruited to assist a revive operation
+
+Revision 143:
+- reworked how rescuers are sent back to their initial positions to handle properly concurrent revives, reassignments and retries
+
+Revision 142:
+- fixed a crash when a bot goes down
+- fixed an issue when an assistant receives a revive objective (was interrupted)
+
+Revision 141:
+- changed revive objectives: a fixed bot will switch temporarily his objective to revive and then go back to his original assigned position
+- added "assist medic" behaviour, see https://youtu.be/CakZN9pqva0
+
+Revision 140:
+- reworked option "Jokers move like TeamAIs"
+
+Revision 139:
+- added a safety check when updating a joker's healthbar
+
+Revision 138:
+- fixed when a TeamAI fails to interact with marked object and loops
+
+Revision 137:
+- added italian translation by LycanCHKN
+
+Revision 136:
+- fixed wrong id for a few options (making it not possible to change from default value)
+- cleaned up store and access to Keepers' variables
+
+Revision 135:
+- added support for Iter's direct-to-pos functionality
+
+Revision 134:
+- updated for compatibility with Moveable Intimidated Cop and Please Go There use of "Stop AI" control
+
+Revision 133:
+- fixed r132's check that didn't consider special carry types like paintings
+
+Revision 132:
+- made sure that a bot already carrying a bag won't try to take another one if sent to a waypoint near a bag
+
+Revision 131:
+- improved placement when multiple AI are sent to the same waypoint, see https://youtu.be/cldprcNuJx0
+- fixed animation sync with vanilla clients
+- added "No Duplicated Bullets" as a dependency, a client-side mod only that prevents clients from doing the host's job
+
+Revision 130:
+- fixed a crash when TeamAI's followed player quits or go into custody while bot is sent on another objective
+
+Revision 129:
+- added thai translation by NewPJzuza
+
+Revision 128:
+- removed obsolete code
+- fixed a graphical glitch with MUI Optional Assets
+
+Revision 127:
+- use proper revive objective when a bot is ordered with a manually set waypoint (not using prev/next functions)
+
+Revision 126:
+- fixed a crash when player goes down
+
+Revision 124:
+- improved handling of revive objectives
+
+Revision 123:
+- a bot can be sent to revive another bot or a player via waypoint
+- a bot sent to interact will stay around if a custom waypoint is nearby
+
+Revision 122:
+- prevent players in custody to issue SO orders
+- when sent to a waypoint, bots will drop their bag once arrived
+
+Revision 121:
+- prevent some interactions to block game (for those cases, special equipment is transfered to host)
+
+Revision 120:
+- removed a crashy debug leftover
+
+Revision 119:
+- forgot a case in r118
+
+Revision 118:
+- fixed interaction circle for revive objectives
+
+Revision 117:
+- added code that should prevent a rare vanilla crash related to joker removal
+- changed again some interaction threshold
+
+Revision 116:
+- changed objective acceptance threshold so it's not impossible to place a bot to guard bags close to him
+
+Revision 115:
+- improved compatibility with MUI (hoping it was the cause of name labels sometimes getting misplaced)
+
+Revision 114:
+- fixed a crash when a joker is exchanged
+
+Revision 113:
+- added a check for presence of interaction circle (blabla custom hud blabla crash)
+
+Revision 112:
+- prevent bots from interacting with players' deployables
+
+Revision 111:
+- added basic lootbag support, see https://youtu.be/tPklhMa8zuk
+- improved slightly if a bot should leave or stay after having interacted with something
+
+Revision 110:
+- fixed recent network changes that broke stop commands for clients
+
+Revision 109:
+- fixed an issue when a bot on an interaction objective gets replaced by a player
+- fixed bot's weapon still visible for clients during lockpick animation
+- fixed loot taken by bots not always synchronized on clients
+
+Revision 108:
+- fixed a serious compatibility issue with non-modded clients
+
+Revision 107:
+- fixed a crash with patrol covers
+
+Revision 106:
+- don't assume panel ID are the same for host and clients
+- fixed generic interaction animation synchronization with clients (but non-modded clients won't see it)
+- fixed bots turning away when executing a generic interaction animation
+
+Revision 105:
+- blocked ability to send bots doing objectives having a waypoint but not yet reachable
+- fixed interaction orientation in a few cases
+
+Revision 104:
+- changed icon used for revive interaction in teammate panel so difference between providing help and needing help is clear
+- fixed a crash when managers.hud is not available
+- improved method to find best interaction position
+- blacklisted a few bogus interaction types
+
+Revision 103:
+- added interaction circle for bots reviving players
+- fixed team panel icons not correctly reset
+- fixed vertical issues mostly seen on Undercover
+
+Revision 102:
+- fixed some crash issues with interaction UI elements
+- fixed interaction with armored car on Hoxton Breakout D1 (some locations don't work due to navdata being picky)
+- (MUI only) fixed interaction circle not removed for cancelled interaction
+
+Revision 101:
+- added interaction circle and description for bots
+
+Revision 100:
+- changed a few animations
+- made sure a bot doesn't get stuck, looping an interaction animation forever
+- fixed a crash with objects lacking a position (computer of jewelry store of Stealing Xmas)
+
+Revision 99:
+- added checks so bots won't interact on wrong side of a door/wall
+- fixed incorrect animations with some drills
+- some crashes have disappeared without me remembering the exact reason
+- due to the lack of proper animation for long+high interactions, bots will convince objects to act solely through power of words! (I'll have to ask for one to OVERKILL for Christmas... actually, I might just do that)
+
+Revision 98:
+- extended support for interaction on waypoint, see https://youtu.be/OCdTeoJ008g
+it includes anything without skill or equipment requirements, from repairing a drill to getting a code number on GGC
+known bug: bots try to interact on the wrong side of some doors
+
+Revision 97:
+- fixed bots' icons not appearing at all for clients
+
+Revision 96:
+- removed forgotten debug leftovers
+- fixed a crash on clients
+
+Revision 95:
+- fixed bots' icons not removed client-side
+- bots can't be interrupted when executing an objective having the forced attribute
+
+Revision 94:
+- changed and delayed bot response to order so all characters have something to say
+- changed player's gesture when sending a bot to a waypoint (stop replaced by move)
+
+Revision 93:
+- fixed bots' interaction position with powerbox
+- reworked scan of powerbox in mission scripts: wasn't working on certain maps such as Election or The Diamond, afaik Counterfeit is the only not working one 
+
+Revision 92:
+- improved positioning of bots when sending them to a custom waypoint put on a wall
+- reworked how teammates' icons are set
+- added medic icon on bots having an objective of type "revive", see https://youtu.be/YQGfROmP6QM
+- added ability to repair powerboxes, see https://youtu.be/xwmTztNwiQ4
+
+Revision 91:
+- fixed a crash when marking a camera
+
+Revision 90:
+- fixed a crash when shouting at another player
+
+Revision 89:
+- updated to U162
+- added ability to control bots woken up by Monkeepers in stealth
+
+Revision 88:
+- removed Announcer
+
+Revision 87:
+- fixed option to give jokers same speed than bots (did nothing)
+
+Revision 86:
+- added code to prevent multiple mod loading
+
+Revision 85:
+- fixed mod.txt dependencies section
+- fixed keybinds
+
+Revision 84:
+- even more absolutely essential BLT2 integration
+
+Revision 83:
+- more absolutely essential BLT2 integration
+
+Revision 82:
+- BLT2
+
+Revision 81:
+- added an option to give jokers same speed than bots
+
+Revision 80:
+- don't show cover positions within distance but on different level as usable ("use cover" only)
+- added extra checks in convert_hostage_to_criminal()
+
+Revision 79:
+- fixed despawn of jokers on Birth of Sky's plane
+
+Revision 78:
+- added Goonmod's Custom Waypoints as a dependency
+
+Revision 77:
+- fixed malformed JSON when a bot enters surrender logic
+
+Revision 76:
+- removed code that's been integrated in last BLT
+- fixed a vanilla crash occuring when bots's masks take too long to load
+
+Revision 75:
+- fixed JSON errors
+
+Revision 74:
+- like normal bots, jokers won't move crouched anymore (and follow better)
+
+Revision 73:
+- compatibility update for FSS r79
+
+Revision 72:
+- fixed an oversight in r70 preventing to call jokers while carrying a bag
+
+Revision 71:
+- added synchronization of jokers for dropped-in players (works with non-modded clients too)
+
+Revision 70:
+- fixed a crash when calling a joker while in an arrested state
+
+Revision 69:
+- fixed jokers that forced to set their attention on Charon (vanilla bug)
+
+Revision 68:
+- fixed despawn of jokers on Beneath the Mountain and Hoxton Breakout
+- changed one generic despawn method so it doesn't affect jokers (Hotline Miami D2)
+- the shout filter "only blocks" does not affect secondary interaction anymore
+
+Revision 67:
+- reverted some changes from r66 that broke use cover and patrol modes for jokers
+
+Revision 66:
+- fixed a case where a bot would not shoot after being revived
+- bots in patrol mode will take better covers when attacked
+
+Revision 65:
+- fixed shown cover positions when a client uses a custom waypoint to stop a bot
+
+Revision 64:
+- fixed a crash related to automatically changed default joker name (bis)
+
+Revision 63:
+- fixed a crash related to automatically changed default joker name
+- added some sanity checks to prevent searching a cover nearby an inexistant position
+
+Revision 62:
+- added a menu option to ease the setting of a custom joker name
+- fixed mode when using keybind "all hold"
+
+Revision 61:
+- fixed visual hints of r60 (that relied on data not available when debug is not enabled)
+
+Revision 60:
+- added visual hints to show the position of available covers
+- each mode has a specific icon ("go to" icon for stationary, "shield" for use cover and "running" for patrol)
+- added an option to set the mode to use when using the "all hold" keybind
+
+Revision 59:
+- changed mode "defend area" to "patrol" (the bot will scout his segment randomly)
+- fixed how a bot in "use cover" mode would return to his assigned position
+
+Revision 58:
+- several bug and crash fixes
+
+Revision 57:
+- added mode "restricted" where the bot can move up to 4 meters from his assigned position
+- added mode "defend area" where the bot can move in the whole segment where he is assigned
+- added options to associate a mode to primary and secondary interactions
+
+Revision 56:
+- jokers stop immediately when told to hold their position
+- fixed label deletion of despawned jokers
+- fixed the destination used when a bot is asked to get back on his assigned position after being hurt (if assigned a new position while hurt, it ended up doing a back and forth between old and new positions)
+
+Revision 55:
+- moved all path improvements into an external library: Iter
+
+Revision 54:
+- improved path streamliner
+
+Revision 53:
+- r52 broke jokers for clients... fixed
+
+Revision 52:
+- streamlined paths
+
+Revision 51:
+- remove the assigned position of a bot when he is teleported elsewhere
+
+Revision 50:
+- increased priority of path calculation of jokers
+- made sure that jokers are always flagged "important"
+
+Revision 49:
+- properly fixed a bug with the skill Inspire aced
+
+Revision 48:
+- changed the method used by bots to go back to their assigned positions
+- fixed a bug with the skill Inspire aced
+- team ais and jokers go back to their assigned positions after executing a dodge movement
+- removed values for Partner in Crime's damage reduction as they were fixed in U119
+
+Revision 47:
+- fixed values for Partner in Crime's damage reduction
+
+Revision 46:
+- don't change the bot objective when exiting an interrupted hurt action (might solve the "chk_should_turn" crash)
+
+Revision 45:
+- changed the pathing of TeamAIs and jokers so they join you faster
+- fixed an issue after inspiring a bot, he'd try to leave his position
+
+Revision 44:
+- clean-up the fix for stuck jokers
+- using the right method to access Announcer
+
+Revision 43:
+- switched announcement code to library Announcer
+
+Revision 42:
+- fixed some callbacks that were not updated when AI objective changed
+
+Revision 41:
+- fixed properly the vanilla bug making jokers to stop following
+- reworked objective and logic assignments
+
+Revision 40:
+- definitely fixed the bug that permitted to change the objective of a downed bot (checked on "dead" and "bleed_out" states but not "fatal")
+- fixed some occurences of a vanilla bug making jokers to stop following
+- added some code to ensure a joker follows his converter rather than just the closest player
+
+Revision 39:
+- added more checks to prevent from changing the objective of downed bots
+- really prevent a bot to leave his assigned place to take cover :s
+
+Revision 38:
+- prevent a bot to leave his assigned place to take cover
+- fixed a crash when using the "all join" keybind while a TeamAI is in disabled state
+
+Revision 37:
+- the fix of r36 but done properly this time :s
+
+Revision 36:
+- fixed a bug that made vanilla clients to crash when a joker was set to hold his position
+
+Revision 35:
+- instead of ignoring task delays of jokers, they now receive the logic tag "important", making them more efficient while somehow sticking more to the rules
+- fixed jokers' health bar that was not visible with vanilla HUD (worked perfectly with MUI though)
+
+Revision 34:
+- updated to U107
+
+Revision 33:
+- enhanced reactivity of converted cops (they will shoot more and follow like normal bots)
+
+Revision 32:
+- fixed a crash when going to jail while a converted cop is holding his position
+
+Revision 31:
+- the player can manage his 2 jokers (skill "confident" aced)
+
+Revision 30:
+- added a check to prevent a crash in GroupAIStateBase:_determine_objective_for_criminal_AI()
+
+Revision 29:
+- added russian translation by chrom[K]a
+
+Revision 28:
+- like r23's "fixed bot returning from custody or replacing a leaving player not having his shield icon", but really this time :s
+
+Revision 27:
+- fixed keybinds trigged while typing a message
+- fixed the "dont_follow" objectives that were partially reset
+
+Revision 26:
+- prevent keybinds to issue an order to bots already in the wanted state
+
+Revision 25:
+- added 2 keybinds to order all bots to follow/hold their position
+
+Revision 24:
+- fixed 2 crashes when the player to follow is not alive anymore
+
+Revision 23:
+- changed behaviour: if the player shouting at a bot holding his position has an active waypoint then the bot will directly hold the new position
+- fixed bot returning from custody or replacing a leaving player not having his shield icon
+
+Revision 22:
+- changed a bit how jokers' names are handled
+
+Revision 21:
+- the host-only task of getting back the assigned position after taking damages was executed on clients too
+
+Revision 20:
+- reworked the announce so it tells about all gameplay changing mods in only one chat message
+
+Revision 19:
+- simplified the filter settings
+
+Revision 18:
+- added an option menu
+- added the possibility to filter only blocking shouts
+
+Revision 17:
+- a better implementation of what's done in the previous revision
+
+Revision 16:
+- changed pathfinding so jokers can follow us wherever we go
+
+Revision 15:
+- make all bots leave their position when all players are in fatal state
+
+Revision 14:
+- major code clean-up
+
+Revision 13:
+- fixed the filter so only AI are excluded
+
+Revision 12:
+- added an optional control key to filter shouts (if not pressed, bots are excluded from the target list)
+
+Revision 11:
+- fixed assignable position for jokers (was broken by new feature of r10)
+
+Revision 10:
+- you have to be followed by a TeamAI first before being able to stop him (2nd shout)
+- team AI don't leave its assigned position when you enter a vehicle
+
+Revision 9:
+- fixed again sync of the keeper state/icon when a non modded interact with team AI (was broken by jokers' custom names)
+
+Revision 8:
+- far GoonMod's custom waypoints can now be reached
+- adjusted position of health indicator of jokers
+
+Revision 7:
+- the name of a joker gets the color of his owner
+- added health indicator to jokers (not mandatory, change the value of show_joker_health in mods/saves/keepers.txt)
+
+Revision 6:
+- silly me disabled in r5 the fix of r4
+- customisable joker name (can be synched, no options GUI yet)
+- fixed bot leaving its position when tased
+
+Revision 5:
+- called jokers will come to your position instead of weirdly lonewolfing
+- block voice call to a joker when in bleedout
+- (like in r3 but really this time) jokers never leave their assigned position
+
+Revision 4:
+- fixed the team AI unsolicited revive (reintroduced by cleanups of r3)
+
+Revision 3:
+- inform clients through the chat that the mod is active
+- jokers never leave their assigned position (they were patrolling their area)
+- several minor cleanups
+
+Revision 2:
+- fixed travel loop (and anim) when trying to go to unreachable coordinates
+- fixed team AI's shield icon unrecovered after going into custody
+- when in bleedout you can't stop a bot anymore
+- added some sanity checks
+- fixed team AI leaving by itself its assigned position when you are in bleedout
+  (this probably fixed the issue with tased team AI)
+- fixed sync of the keeper state/icon when a non modded interact with team AI

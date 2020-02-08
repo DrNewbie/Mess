@@ -1,0 +1,9 @@
+{
+	"buildb_save_current" : "Сохранить текущий",
+	"buildb_export_to_pd2skills" : "Экспортировать в pd2skills",
+	"buildb_export_to_pd2builder" : "Экспортировать в pd2builder",
+	"buildb_open_db" : "Открыть файл со сборками",
+	"buildb_import" : "Импортировать из файла",
+	"buildb_dialog_import_message" : "Вы собираетесь заменить текущий набор навыков!",
+	"buildb_dialog_import_btn_preview" : "Посмотреть"
+}

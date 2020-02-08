@@ -1,0 +1,41 @@
+{
+	"eh_options_menu_title" : "เป้าเมื่อยิงถูกศัตรูเวอร์ชันปรับปรุง",
+	"eh_options_menu_desc"  : "Enhanced Hitmarkers: เปลี่ยนสีและรูปภาพที่ปรากฎบนเป้าเมื่อยิงถูกศัตรู",
+
+	"eh_options_help_title" : "ขอความช่วยเหลือ",
+	"eh_options_info_popup_close" : "ปิดหน้าต่างนี้",
+
+	"eh_options_info_popup_message_help" : "โดยปรกติ เกมนี้จะแสดงเป้าเมื่อยิงถูกศัตรูอยู่ 2 แบบ: ยิงถูกศัตรูแบบปรกติและยิงติดคริติคอล\n\nMod นี้แสดงความแตกต่างถึง 6 กรณี:\n- รูปร่างของเป้าที่ยิงถูกศัตรูในตำแหน่งที่ร้ายแรงหรือไม่;\n- สีที่บ่งบอกถึงความเสียหายที่เกิดขึ้น: ยิงถูกตัว, ยิงถูกหัว หรือยิงติดคริติคอล\n\nถ้าไม่มีรูปภาพใดๆ ที่ทำให้คุณรู้สึกพึงพอใจได้, คุณก็สามารถใส่รูปภาพของคุณเองลงไปที่ห้อง\n\"\\assets\\mod_overrides\\Enhanced Hitmarkers\\guis\\textures\\pd2\".\nถ้าคุณนึกไม่ออกว่าจะทำอะไรเพิ่มเติม: รายการรูปภาพจะแสดงผลให้เห็นอย่างต่อเนื่อง",
+
+	"eh_options_r_desc" : "ค่าสีสีแดง",
+	"eh_options_g_desc" : "ค่าสีสีเขียว",
+	"eh_options_b_desc" : "ค่าสีสีน้ำเงิน",
+
+	"eh_options_body_r_title" : "แดง / ยิงถูกตัว",
+	"eh_options_body_g_title" : "เขียว / ยิงถูกตัว",
+	"eh_options_body_b_title" : "น้ำเงิน / ยิงถูกตัว",
+
+	"eh_options_head_r_title" : "แดง / ยิงถูกหัว",
+	"eh_options_head_g_title" : "เขียว / ยิงถูกหัว",
+	"eh_options_head_b_title" : "น้ำเงิน / ยิงถูกหัว",
+
+	"eh_options_crit_r_title" : "แดง / ยิงติดคริติคอล",
+	"eh_options_crit_g_title" : "เขียว / ยิงติดคริติคอล",
+	"eh_options_crit_b_title" : "น้ำเงิน / ยิงติดคริติคอล",
+
+	"eh_options_texture_hit_title" : "รูปภาพแทนเป้าที่ยิงถูกศัตรู",
+	"eh_options_texture_hit_desc"  : "เลือกพื้นผิวที่จะใช้แทนเป้าที่ยิงถูกศัตรู",
+	"eh_options_texture_kill_title" : "รูปภาพแทนเป้าที่ฆ่าศัตรู",
+	"eh_options_texture_kill_desc"  : "เลือกพื้นผิวที่จะใช้แทนเป้าที่ฆ่าศัตรู",
+
+	"eh_options_shake_hitmarker_title" : "เป้าเมื่อยิงถูกศัตรูแบบสั่น",
+	"eh_options_shake_hitmarker_desc" : "เมื่อเลือก จะเกิดการสุ่มหมุนเล็กน้อยต่อเป้าเมื่อยิงถูกศัตรูแต่ละรูปแบบ",
+
+	"eh_options_set_blend_mode_title" : "โหมดการผสมผสาน",
+	"eh_options_set_blend_mode_desc"  : "Blend mode",
+	"eh_options_multi_blend_mode_a"   : "เจือจาง",
+	"eh_options_multi_blend_mode_b"   : "ปรกติ",
+
+	"eh_options_reset_title" : "รีเซ็ตสีเป็นค่าเริ่มต้น",
+	"eh_options_reset_desc"  : "รีเซ็ตสีของเป้าเมื่อยิงถูกศัตรูแต่ละชนิดเป็นค่าเริ่มต้น"
+}

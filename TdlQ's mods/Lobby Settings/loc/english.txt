@@ -1,0 +1,16 @@
+{
+	"ls_menu_reject_vac" : "Reject VAC banned players",
+	"ls_menu_reject_vac_help" : "This restriction doesn't concern your direct Steam friends.",
+
+	"ls_menu_reject_play_time_threshold" : "Reject by play time",
+	"ls_menu_reject_play_time_threshold_help" : "Players under the specified play time threshold (in hours) won't be allowed.",
+
+	"ls_menu_reject_unknown_play_time" : "Reject unknown play time",
+	"ls_menu_reject_unknown_play_time_help" : "Spare those with private profiles/game details, or not.\nThis restriction doesn't concern your direct Steam friends.",
+
+	"ls_menu_max_players" : "Max players",
+	"ls_menu_max_players_help" : "Set this to 3 if you want to keep a slot for a bot.",
+
+	"ls_menu_infamy_permission" : "Infamy limit",
+	"ls_menu_infamy_permission_help" : ""
+}

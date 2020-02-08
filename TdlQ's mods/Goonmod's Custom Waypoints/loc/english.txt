@@ -1,0 +1,31 @@
+{
+	"gm_options_custom_waypoints_menu_title" : "GoonMod's Custom Waypoints",
+	"gm_options_custom_waypoints_menu_desc" : "Change settings for your customizable waypoints.",
+
+	"gm_options_custom_waypoints_place_title" : "Place waypoint",
+	"gm_options_custom_waypoints_place_desc" : "",
+
+	"gm_options_custom_waypoints_remove_title" : "Remove waypoint",
+	"gm_options_custom_waypoints_remove_desc" : "",
+
+	"gm_options_custom_waypoints_distance_title" : "Show distance on waypoints",
+	"gm_options_custom_waypoints_distance_desc" : "Display how far away you are from custom waypoints.",
+
+	"gm_options_custom_waypoints_always_show_my_waypoint_title" : "Always show my waypoint",
+	"gm_options_custom_waypoints_always_show_my_waypoint_desc" : "",
+
+	"gm_options_custom_waypoints_always_show_others_waypoints_title" : "Always show others' waypoints",
+	"gm_options_custom_waypoints_always_show_others_waypoints_desc" : "",
+
+	"gm_options_custom_waypoints_previous_title" : "Previous waypoint",
+	"gm_options_custom_waypoints_previous_desc" : "Set your custom waypoint on a game objective.",
+
+	"gm_options_custom_waypoints_next_title" : "Next waypoint",
+	"gm_options_custom_waypoints_next_desc" : "Set your custom waypoint on a game objective.",
+
+	"gm_options_custom_waypoints_include_bags_title" : "Bags are objects of interest",
+	"gm_options_custom_waypoints_include_bags_desc" : "Include lootbags in waypoints list used to cycle.",
+
+	"gm_options_custom_waypoints_include_hostages_title" : "Hostages are objects of interest",
+	"gm_options_custom_waypoints_include_hostages_desc" : "Include hostages in waypoints list used to cycle."
+}

@@ -1,0 +1,75 @@
+{
+	"lpi_options_menu_title" : "Lobby Player Info",
+	"lpi_options_menu_desc"  : "Change the information displayed in the lobby",
+
+	"lpi_options_show_perkdeck_mode_title" : "Show perk deck",
+	"lpi_options_show_perkdeck_mode_desc"  : "Show the selected perk deck",
+	
+	"lpi_options_show_perkdeck_progression_title" : "Show perk deck progression",
+	"lpi_options_show_perkdeck_progression_desc"  : "Show how many perks of the deck are validated",
+
+	"lpi_options_hide_complete_perkdeck_progression_title" : "Hide progression of complete decks",
+	"lpi_options_hide_complete_perkdeck_progression_desc"  : "Hide full progress bar or the (9/9) on the right of the name of the deck",
+
+	"lpi_options_show_perkdeck_progression_graphically_title" : "Represent deck progression graphically",
+	"lpi_options_show_perkdeck_progression_graphically_desc"  : "Use a progress bar instead of the text '(x/9)'",
+
+	"lpi_options_show_perkdeck_in_loadout_title" : "Show the perk deck in the loadout screen",
+	"lpi_options_show_perkdeck_in_loadout_desc"  : "Replace the character's name by the selected perk deck in the crew setup tab",
+
+	"lpi_options_show_skills_mode_title" : "Show players skills",
+	"lpi_options_show_skills_mode_desc"  : "Show the number of skill points per tree for each player",
+
+	"lpi_options_multi_show_mode_a" : "Never",
+	"lpi_options_multi_show_mode_b" : "On mouse over",
+	"lpi_options_multi_show_mode_c" : "Always",
+
+	"lpi_options_skills_layout_title" : "Skill layout",
+	"lpi_options_skills_layout_desc"  : "Horizontal: all trees on 1 line, vertical: 1 line per tree",
+	"lpi_options_multi_skills_layout_a" : "Horizontal",
+	"lpi_options_multi_skills_layout_b" : "Vertical",
+	"lpi_options_multi_skills_layout_c" : "Graphical",
+
+	"lpi_options_skills_font_size_title" : "Skill font size",
+	"lpi_options_skills_font_size_desc"  : "The font size of the skill distribution",
+
+	"lpi_options_team_skills_mode_title" : "Team skills",
+	"lpi_options_team_skills_mode_desc"  : "Show an overview of team skills",
+
+	"lpi_options_multi_team_skills_a" : "Off",
+	"lpi_options_multi_team_skills_b" : "Stars",
+	"lpi_options_multi_team_skills_c" : "Major skill icons",
+	"lpi_options_multi_team_skills_d" : "Skill icons",
+
+	"lpi_options_play_time_font_size_title" : "Play time font size",
+	"lpi_options_play_time_font_size_desc"  : "The font size of the play time",
+
+	"lpi_options_multi_font_size_a" : "Small",
+	"lpi_options_multi_font_size_b" : "Medium",
+	"lpi_options_multi_font_size_c" : "Big",
+	"lpi_options_multi_font_size_d" : "OVERBIG",
+
+	"lpi_options_skills_details_title" : "Details",
+	"lpi_options_skills_details_desc" : "Informations to display when the vertical layout is enabled",
+
+	"lpi_options_multi_details_a" : "Points per tree",
+	"lpi_options_multi_details_b" : "Points per subtree",
+	"lpi_options_multi_details_c" : "All",
+
+	"lpi_options_default_values_title" : "Reset",
+	"lpi_options_default_values_desc"  : "Reset to default values",
+
+	"lpi_options_show_play_time_title" : "Show play time",
+	"lpi_options_show_play_time_desc"  : "Show the play time of the other players (public profiles only)",
+
+	"lpi_options_keep_pre68_character_name_position_title" : "Keep names where they were before U68",
+	"lpi_options_keep_pre68_character_name_position_desc"  : "Keep players' names where they were before Update 68",
+
+	"lpi_options_show_skills_in_stats_screen_title" : "Show players' perk and skills in stats screen",
+	"lpi_options_show_skills_in_stats_screen_desc"  : "The stats screen is displayed when pressing the TAB key while in game",
+
+	"lpi_hours" : " hrs",
+	"lpi_team_skills" : "Team skills",
+	"lpi_packet_loss" : "packet loss",
+	"menu_lpi_fake_deck" : "Fake deck"
+}

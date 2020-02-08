@@ -1,0 +1,57 @@
+{
+	"menu_id" : "mws_options_menu",
+	"parent_menu_id" : "blt_options",
+	"title" : "mws_options_menu_title",
+	"description" : "mws_options_menu_desc",
+	"back_callback" : "MoreWeaponStatsSave",
+	"items" : [
+		{
+			"type" : "toggle",
+			"id" : "show_dlc_info",
+			"title" : "mws_options_show_dlc_info_title",
+			"description" : "mws_options_show_dlc_info_desc",
+			"callback" : "MoreWeaponStatsMenuCheckboxClbk",
+			"value" : "show_dlc_info"
+		},
+		{
+			"type" : "toggle",
+			"id" : "fill_breakpoints",
+			"title" : "mws_options_show_all_hit_nr_bp_title",
+			"description" : "mws_options_show_all_hit_nr_bp_desc",
+			"callback" : "MoreWeaponStatsMenuCheckboxClbk",
+			"value" : "fill_breakpoints"
+		},
+		{
+			"type" : "toggle",
+			"id" : "use_preview_to_switch_breakpoints",
+			"title" : "mws_options_use_preview_key_to_switch_bp_title",
+			"description" : "mws_options_use_preview_key_to_switch_bp_desc",
+			"callback" : "MoreWeaponStatsMenuCheckboxClbk",
+			"value" : "use_preview_to_switch_breakpoints"
+		},
+		{
+			"type" : "toggle",
+			"id" : "enable_trigger_happy_for_first_bullet",
+			"title" : "mws_options_enable_trigger_happy_for_first_bullet_title",
+			"description" : "mws_options_enable_trigger_happy_for_first_bullet_desc",
+			"callback" : "MoreWeaponStatsMenuCheckboxClbk",
+			"value" : "enable_trigger_happy_for_first_bullet"
+		},
+		{
+			"type" : "divider",
+			"size" : 32
+		},
+		{
+			"type" : "slider",
+			"id" : "clicks_per_second",
+			"title" : "mws_options_clicks_per_second_title",
+			"description" : "mws_options_clicks_per_second_desc",
+			"callback" : "MoreWeaponStatsMenuValueClbk",
+			"value" : "clicks_per_second",
+			"default_value" : 5,
+			"min" : 3,
+			"max" : 8,
+			"step" : 1
+		}
+	]
+}

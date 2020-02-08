@@ -1,0 +1,72 @@
+{
+	"lpi_options_menu_title" : "Lobby Player Info",
+	"lpi_options_menu_desc"  : "Измените информацию, отображаемую в лобби",
+
+	"lpi_options_show_perkdeck_mode_title" : "Показать перкдек",
+	"lpi_options_show_perkdeck_mode_desc"  : "Показать выбранный перкдек",
+	
+	"lpi_options_show_perkdeck_progression_title" : "Показать прогресс перкдека",
+	"lpi_options_show_perkdeck_progression_desc"  : "Показать как много перков открыто",
+
+	"lpi_options_hide_complete_perkdeck_progression_title" : "Скрыть прогресс завершенных перкдеков",
+	"lpi_options_hide_complete_perkdeck_progression_desc"  : "Скрыть индикатор прогресса заполненного перкдека или (9/9) справа от названия перкдека",
+
+	"lpi_options_show_perkdeck_progression_graphically_title" : "Отобразить прогресс перкдека графически",
+	"lpi_options_show_perkdeck_progression_graphically_desc"  : "Использовать индикатор прогресса вместо текста '(x/9)'",
+
+	"lpi_options_show_perkdeck_in_loadout_title" : "Показать перкдек на экране снаряжения",
+	"lpi_options_show_perkdeck_in_loadout_desc"  : "При наведении мышью на имя персонажа на экране снаряжения будет отображена информация о перках игрока.",
+
+	"lpi_options_show_skills_mode_title" : "Показать навыки",
+	"lpi_options_show_skills_mode_desc"  : "Показать кол-во навыков в дереве навыков для каждого игрока",
+
+	"lpi_options_multi_show_mode_a" : "Никогда",
+	"lpi_options_multi_show_mode_b" : "Наведение мышью",
+	"lpi_options_multi_show_mode_c" : "Всегда",
+
+	"lpi_options_skills_layout_title" : "Компоновка навыков",
+	"lpi_options_skills_layout_desc"  : "Горизонтальная: все группы навыков в 1 строку, вертикальная: все группы навыков в 1 ряд",
+	"lpi_options_multi_skills_layout_a" : "Горизонтальная",
+	"lpi_options_multi_skills_layout_b" : "Вертикальная",
+
+	"lpi_options_skills_font_size_title" : "Шрифт навыков",
+	"lpi_options_skills_font_size_desc"  : "Размер шрифта распределиваемых навыков",
+	
+	"lpi_options_team_skills_mode_title" : "Навыки команды",
+	"lpi_options_team_skills_mode_desc"  : "Показать обзор навыков команды",
+
+	"lpi_options_multi_team_skills_a" : "Выключить",
+	"lpi_options_multi_team_skills_b" : "Звезды",
+	"lpi_options_multi_team_skills_c" : "Основные иконки навыков",
+	"lpi_options_multi_team_skills_d" : "Иконки навыков",
+
+	"lpi_options_play_time_font_size_title" : "Шрифт времени в игре",
+	"lpi_options_play_time_font_size_desc"  : "Размер шрифта времени, которое человек провёл в игре",
+	
+	"lpi_options_multi_font_size_a" : "Маленький",
+	"lpi_options_multi_font_size_b" : "Средний",
+	"lpi_options_multi_font_size_c" : "Большой",
+	"lpi_options_multi_font_size_d" : "ОГРОМНЫЙ",
+	
+	"lpi_options_skills_details_title" : "Детали",
+	"lpi_options_skills_details_desc" : "Информация будет отображаться когда будет включено вертикальное расположение",
+
+	"lpi_options_multi_details_a" : "Очки в дереве",
+	"lpi_options_multi_details_b" : "Очки в поддереве",
+	"lpi_options_multi_details_c" : "Все",
+
+	"lpi_options_default_values_title" : "Сброс",
+	"lpi_options_default_values_desc"  : "Сбросить все значения по умолчанию",
+
+	"lpi_options_show_play_time_title" : "Показать время в игре",
+	"lpi_options_show_play_time_desc"  : "Показать время в игре других игроков (только для открытых профилей)",
+
+	"lpi_options_keep_pre68_character_name_position_title" : "Поддерживать имена до патча 68",
+	"lpi_options_keep_pre68_character_name_position_desc"  : "Поддерживать имена игроков, которые были до обновления 68",
+
+	"lpi_options_show_skills_in_stats_screen_title" : "Инфо игроков на экране статистики",
+	"lpi_options_show_skills_in_stats_screen_desc"  : "Экран статистики отображается, когда вы нажимаете TAB в игре",
+
+	"lpi_hours" : " ч.",
+	"lpi_team_skills" : "Командные навыки"
+}

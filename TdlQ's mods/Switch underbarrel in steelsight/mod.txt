@@ -1,0 +1,21 @@
+{
+	"blt_version" : 2,
+	"name" : "Switch underbarrel in steelsight",
+	"description" : "",
+	"author" : "TdlQ",
+	"image" : "tdlq.png",
+	"color" : "0.52 1 0",
+	"contact" : "",
+	"version" : "5",
+	"updates" : [
+		{
+			"identifier" : "SUIS"
+		}
+	],
+	"hooks" : [
+		{
+			"hook_id" : "lib/units/beings/player/states/playerstandard",
+			"script_path" : "playerstandard.lua"
+		}
+	]
+}

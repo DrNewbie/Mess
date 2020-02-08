@@ -1,0 +1,329 @@
+{
+	"blt_version" : 2,
+	"name" : "Full Speed Swarm",
+	"description" : "Some code optimizations to be able to handle hundreds of responsive cops.",
+	"author" : "TdlQ\n    thai translation by NewPJzuza\n    swedish translation by TheBreakingBenny\n    italian translation by LycanCHKN\n    russian translation by dgesd",
+	"image" : "tdlq.png",
+	"color" : "0.52 1 0",
+	"contact" : "",
+	"version" : "210",
+	"priority" : 400,
+	"updates" : [
+		{
+			"identifier" : "FS"
+		}
+	],
+	"dependencies" : [
+		"NDB"
+	],
+	"hooks" : [
+		{
+			"hook_id" : "lib/managers/menumanager",
+			"script_path" : "lua/menumanager.lua"
+		},
+		{
+			"hook_id" : "core/lib/managers/coreportalmanager",
+			"script_path" : "lua/coreportalmanager.lua"
+		},
+		{
+			"hook_id" : "core/lib/managers/coreshapemanager",
+			"script_path" : "lua/coreshapemanager.lua"
+		},
+		{
+			"hook_id" : "core/lib/managers/controller/corecontrollerwrapper",
+			"script_path" : "lua/corecontrollerwrapper.lua"
+		},
+		{
+			"hook_id" : "core/lib/managers/controller/corecontrollerwrappersettings",
+			"script_path" : "lua/corecontrollerwrappersettings.lua"
+		},
+		{
+			"hook_id" : "core/lib/managers/mission/coreelementarea",
+			"script_path" : "lua/coreelementarea.lua"
+		},
+		{
+			"hook_id" : "core/lib/managers/mission/coreelementshape",
+			"script_path" : "lua/coreelementshape.lua"
+		},
+		{
+			"hook_id" : "core/lib/managers/mission/coremissionmanager",
+			"script_path" : "lua/coremissionmanager.lua"
+		},
+		{
+			"hook_id" : "core/lib/utils/coreclass",
+			"script_path" : "lua/blt_delayed_calls.lua"
+		},
+		{
+			"hook_id" : "core/lib/utils/corecode",
+			"script_path" : "lua/corecode.lua"
+		},
+		{
+			"hook_id" : "core/lib/utils/coreevent",
+			"script_path" : "lua/coreevent.lua"
+		},
+		{
+			"hook_id" : "core/lib/utils/coremath",
+			"script_path" : "lua/coremath.lua"
+		},
+		{
+			"hook_id" : "core/lib/utils/coretable",
+			"script_path" : "lua/coretable.lua"
+		},
+		{
+			"hook_id" : "lib/managers/blackmarketmanager",
+			"script_path" : "lua/blackmarketmanager.lua"
+		},
+		{
+			"hook_id" : "lib/managers/crimespreemanager",
+			"script_path" : "lua/crimespreemanager.lua"
+		},
+		{
+			"hook_id" : "lib/managers/criminalsmanager",
+			"script_path" : "lua/criminalsmanager.lua"
+		},
+		{
+			"hook_id" : "lib/managers/enemymanager",
+			"script_path" : "lua/enemymanager.lua"
+		},
+		{
+			"hook_id" : "lib/managers/gameplaycentralmanager",
+			"script_path" : "lua/gameplaycentralmanager.lua"
+		},
+		{
+			"hook_id" : "lib/managers/hudmanager",
+			"script_path" : "lua/hudmanager.lua"
+		},
+		{
+			"hook_id" : "lib/managers/modifiersmanager",
+			"script_path" : "lua/modifiersmanager.lua"
+		},
+		{
+			"hook_id" : "lib/managers/mutatorsmanager",
+			"script_path" : "mutators/mutatorsmanager.lua"
+		},
+		{
+			"hook_id" : "lib/managers/objectinteractionmanager",
+			"script_path" : "lua/objectinteractionmanager.lua"
+		},
+		{
+			"hook_id" : "lib/managers/playermanager",
+			"script_path" : "lua/playermanager.lua"
+		},
+		{
+			"hook_id" : "lib/managers/statisticsmanager",
+			"script_path" : "lua/statisticsmanager.lua"
+		},
+		{
+			"hook_id" : "lib/managers/trademanager",
+			"script_path" : "lua/trademanager.lua"
+		},
+		{
+			"hook_id" : "lib/managers/weaponfactorymanager",
+			"script_path" : "lua/weaponfactorymanager.lua"
+		},
+		{
+			"hook_id" : "lib/managers/group_ai_states/groupaistatebase",
+			"script_path" : "lua/groupaistatebase.lua"
+		},
+		{
+			"hook_id" : "lib/managers/group_ai_states/groupaistatebesiege",
+			"script_path" : "lua/groupaistatebesiege.lua"
+		},
+		{
+			"hook_id" : "lib/managers/menu/menuscenemanager",
+			"script_path" : "lua/menuscenemanager.lua"
+		},
+		{
+			"hook_id" : "lib/managers/mission/elementareatrigger",
+			"script_path" : "lua/elementareatrigger.lua"
+		},
+		{
+			"hook_id" : "lib/network/base/basenetworksession",
+			"script_path" : "lua/basenetworksession.lua"
+		},
+		{
+			"hook_id" : "lib/network/handlers/unitnetworkhandler",
+			"script_path" : "lua/unitnetworkhandler.lua"
+		},
+		{
+			"hook_id" : "lib/setups/setup",
+			"script_path" : "lua/blt_hooks.lua"
+		},
+		{
+			"hook_id" : "lib/states/ingamewaitingforplayers",
+			"script_path" : "lua/ingamewaitingforplayers.lua"
+		},
+		{
+			"hook_id" : "lib/tweak_data/achievementstweakdata",
+			"script_path" : "lua/achievementstweakdata.lua"
+		},
+		{
+			"hook_id" : "lib/units/beings/player/huskplayerinventory",
+			"script_path" : "lua/huskplayerinventory.lua"
+		},
+		{
+			"hook_id" : "lib/units/beings/player/huskplayermovement",
+			"script_path" : "lua/huskplayermovement.lua"
+		},
+		{
+			"hook_id" : "lib/units/beings/player/playerdamage",
+			"script_path" : "lua/playerdamage.lua"
+		},
+		{
+			"hook_id" : "lib/units/beings/player/playermovement",
+			"script_path" : "lua/playermovement.lua"
+		},
+		{
+			"hook_id" : "lib/units/beings/player/playerinventory",
+			"script_path" : "lua/playerinventory.lua"
+		},
+		{
+			"hook_id" : "lib/units/beings/player/states/playerdriving",
+			"script_path" : "lua/playerdriving.lua"
+		},
+		{
+			"hook_id" : "lib/units/beings/player/states/playerstandard",
+			"script_path" : "lua/playerstandard.lua"
+		},
+		{
+			"hook_id" : "lib/units/beings/player/states/playertased",
+			"script_path" : "lua/playertased.lua"
+		},
+		{
+			"hook_id" : "lib/units/characters/characterattentionobject",
+			"script_path" : "lua/characterattentionobject.lua"
+		},
+		{
+			"hook_id" : "lib/units/enemies/cop/copbase",
+			"script_path" : "lua/copbase.lua"
+		},
+		{
+			"hook_id" : "lib/units/enemies/cop/copbrain",
+			"script_path" : "lua/copbrain.lua"
+		},
+		{
+			"hook_id" : "lib/units/enemies/cop/copdamage",
+			"script_path" : "lua/copdamage.lua"
+		},
+		{
+			"hook_id" : "lib/units/enemies/cop/copmovement",
+			"script_path" : "lua/copmovement.lua"
+		},
+		{
+			"hook_id" : "lib/units/enemies/cop/huskcopbrain",
+			"script_path" : "lua/huskcopbrain.lua"
+		},
+		{
+			"hook_id" : "lib/units/enemies/cop/actions/full_body/copactionhurt",
+			"script_path" : "lua/copactionhurt.lua"
+		},
+		{
+			"hook_id" : "lib/units/enemies/cop/actions/full_body/copactionshoot",
+			"script_path" : "lua/copactionshoot.lua"
+		},
+		{
+			"hook_id" : "lib/units/enemies/cop/actions/lower_body/copactionwalk",
+			"script_path" : "lua/copactionwalk.lua"
+		},
+		{
+			"hook_id" : "lib/units/enemies/cop/logics/coplogicarrest",
+			"script_path" : "lua/coplogicarrest.lua"
+		},
+		{
+			"hook_id" : "lib/units/enemies/cop/logics/coplogicattack",
+			"script_path" : "lua/coplogicattack.lua"
+		},
+		{
+			"hook_id" : "lib/units/enemies/cop/logics/coplogicbase",
+			"script_path" : "lua/coplogicbase.lua"
+		},
+		{
+			"hook_id" : "lib/units/enemies/cop/logics/coplogicidle",
+			"script_path" : "lua/coplogicidle.lua"
+		},
+		{
+			"hook_id" : "lib/units/enemies/cop/logics/coplogicphalanxminion",
+			"script_path" : "lua/coplogicphalanxminion.lua"
+		},
+		{
+			"hook_id" : "lib/units/enemies/cop/logics/coplogicsniper",
+			"script_path" : "lua/coplogicsniper.lua"
+		},
+		{
+			"hook_id" : "lib/units/enemies/cop/logics/coplogictravel",
+			"script_path" : "lua/coplogictravel.lua"
+		},
+		{
+			"hook_id" : "lib/units/enemies/spooc/actions/lower_body/actionspooc",
+			"script_path" : "lua/actionspooc.lua"
+		},
+		{
+			"hook_id" : "lib/units/equipment/sentry_gun/sentrygundamage",
+			"script_path" : "lua/sentrygundamage.lua"
+		},
+		{
+			"hook_id" : "lib/units/interactions/interactionext",
+			"script_path" : "lua/interactionext.lua"
+		},
+		{
+			"hook_id" : "lib/units/player_team/teamaibrain",
+			"script_path" : "lua/teamaibrain.lua"
+		},
+		{
+			"hook_id" : "lib/units/player_team/huskteamaimovement",
+			"script_path" : "lua/huskteamaimovement.lua"
+		},
+		{
+			"hook_id" : "lib/units/player_team/teamaimovement",
+			"script_path" : "lua/teamaimovement.lua"
+		},
+		{
+			"hook_id" : "lib/units/player_team/logics/teamailogicbase",
+			"script_path" : "lua/teamailogicbase.lua"
+		},
+		{
+			"hook_id" : "lib/units/props/aiattentionobject",
+			"script_path" : "lua/aiattentionobject.lua"
+		},
+		{
+			"hook_id" : "lib/units/props/carrydata",
+			"script_path" : "lua/carrydata.lua"
+		},
+		{
+			"hook_id" : "lib/units/props/securitycamera",
+			"script_path" : "lua/securitycamera.lua"
+		},
+		{
+			"hook_id" : "lib/units/props/textgui",
+			"script_path" : "lua/textgui.lua"
+		},
+		{
+			"hook_id" : "lib/units/props/timergui",
+			"script_path" : "lua/timergui.lua"
+		},
+		{
+			"hook_id" : "lib/units/vehicles/vehiclestateparked",
+			"script_path" : "lua/vehiclestateparked.lua"
+		},
+		{
+			"hook_id" : "lib/units/weapons/newnpcraycastweaponbase",
+			"script_path" : "lua/newnpcraycastweaponbase.lua"
+		},
+		{
+			"hook_id" : "lib/units/weapons/newraycastweaponbase",
+			"script_path" : "lua/newraycastweaponbase.lua"
+		},
+		{
+			"hook_id" : "lib/units/weapons/raycastweaponbase",
+			"script_path" : "lua/raycastweaponbase.lua"
+		},
+		{
+			"hook_id" : "lib/utils/coroutinemanager",
+			"script_path" : "lua/coroutinemanager.lua"
+		},
+		{
+			"hook_id" : "lib/utils/messagesystem",
+			"script_path" : "lua/messagesystem.lua"
+		}
+	]
+}

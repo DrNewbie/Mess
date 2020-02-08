@@ -1,0 +1,72 @@
+{
+	"lpi_options_menu_title" : "Lobby Player Info",
+	"lpi_options_menu_desc"  : "Personnaliser les informations affichées dans le salon (lobby)",
+
+	"lpi_options_show_perkdeck_mode_title" : "Voir la spécialisation",
+	"lpi_options_show_perkdeck_mode_desc"  : "Affiche la spécialisation choisie par chaque joueur",
+	
+	"lpi_options_show_perkdeck_progression_title" : "Afficher le niveau de spécialisation",
+	"lpi_options_show_perkdeck_progression_desc"  : "Affiche combien d'atouts sont validés dans la spécialisation sélectionnée (perk deck)",
+
+	"lpi_options_hide_complete_perkdeck_progression_title" : "Cacher le niveau des spéc. complètes",
+	"lpi_options_hide_complete_perkdeck_progression_desc"  : "N'affiche que le nom des spécialisations complètes",
+
+	"lpi_options_show_perkdeck_progression_graphically_title" : "Représenter graphiquement le niveau",
+	"lpi_options_show_perkdeck_progression_graphically_desc"  : "Remplace le niveau numérique d'avancement des spécialisations par une barre de progression",
+
+	"lpi_options_show_perkdeck_in_loadout_title" : "Afficher la spécialisation lors du briefing",
+	"lpi_options_show_perkdeck_in_loadout_desc"  : "Remplace le nom du personnage par la spécialisation dans l'onglet 'Config. équipe'",
+
+	"lpi_options_show_skills_mode_title" : "Voir les compétences",
+	"lpi_options_show_skills_mode_desc"  : "Affiche les points de compétence dont les joueurs disposent par arbre",
+
+	"lpi_options_multi_show_mode_a" : "Jamais",
+	"lpi_options_multi_show_mode_b" : "Survol seulement",
+	"lpi_options_multi_show_mode_c" : "Toujours",
+
+	"lpi_options_skills_layout_title" : "Disposition",
+	"lpi_options_skills_layout_desc"  : "Horizontale : tous les arbres de compétences sont sur une ligne, verticale : une ligne par arbre",
+	"lpi_options_multi_skills_layout_a" : "Horizontale",
+	"lpi_options_multi_skills_layout_b" : "Verticale",
+
+	"lpi_options_skills_font_size_title" : "Dimension",
+	"lpi_options_skills_font_size_desc"  : "La taille des caractères utilisés pour afficher les points de compétence",
+
+	"lpi_options_team_skills_mode_title" : "Compétences d'équipe",
+	"lpi_options_team_skills_mode_desc"  : "Affiche une vue d'ensemble des compétences de l'équipe",
+
+	"lpi_options_multi_team_skills_a" : "Aucune",
+	"lpi_options_multi_team_skills_b" : "étoiles",
+	"lpi_options_multi_team_skills_c" : "Icônes importantes",
+	"lpi_options_multi_team_skills_d" : "Icônes",
+
+	"lpi_options_play_time_font_size_title" : "Dimension",
+	"lpi_options_play_time_font_size_desc"  : "La taille des caractères utilisés pour afficher le temps de jeu",
+
+	"lpi_options_multi_font_size_a" : "Petite",
+	"lpi_options_multi_font_size_b" : "Moyenne",
+	"lpi_options_multi_font_size_c" : "Grande",
+	"lpi_options_multi_font_size_d" : "OVERGRANDE",
+
+	"lpi_options_skills_details_title" : "Détails",
+	"lpi_options_skills_details_desc" : "Niveau d'information pour la représentation verticale des points de compétence",
+
+	"lpi_options_multi_details_a" : "Total sur 5 arbres",
+	"lpi_options_multi_details_b" : "15 arbres",
+	"lpi_options_multi_details_c" : "Tout",
+
+	"lpi_options_default_values_title" : "Réinitialiser",
+	"lpi_options_default_values_desc"  : "Remettre les valeurs par défaut",
+
+	"lpi_options_show_play_time_title" : "Voir le temps de jeu",
+	"lpi_options_show_play_time_desc"  : "Affiche le nombre d'heures passées sur Payday 2 par les autres joueurs (dont le profil est public)",
+
+	"lpi_options_keep_pre68_character_name_position_title" : "Garder l'ancien emplacement des noms",
+	"lpi_options_keep_pre68_character_name_position_desc"  : "Place les noms des joueurs comme avant la mise à jour 68",
+
+	"lpi_options_show_skills_in_stats_screen_title" : "Afficher les profils sur le panneau de stats",
+	"lpi_options_show_skills_in_stats_screen_desc"  : "Le panneau de stats est ouvert en pressant la touche TAB pendant la partie",
+
+	"lpi_hours" : " h",
+	"lpi_team_skills" : "Compétences de l'équipe"
+}

@@ -1,0 +1,46 @@
+{
+	"fs_options_menu_title" : "สปีดเต็มความเร็ว",
+	"fs_options_menu_desc"  : "Full Speed Swarm หรือ FSS",
+
+	"fs_options_task_throughput_title" : "จำนวนงานต่อวินาที",
+	"fs_options_task_throughput_desc" : "ค่าดั้งเดิมคือ 600, หากตั้งค่ามากกว่านี้จะเหมาะสมกับการตั้งค่าการปรากฎตัวของกลุ่มศัตรู\nหากค่าต่ำกว่านี้จะทำให้การตอบสนองของตำรวจดียิ่งขึ้น 0 คือค่าพิเศษซึ่งหมายถึง การตอบสนองอย่างไม่มีขีดจำกัด",
+
+	"fs_options_walking_quality_title" : "คุณภาพการเคลื่อนไหว",
+	"fs_options_walking_quality_desc" : "แทนที่คุณภาพการเคลื่อนไหวสำหรับการเคลื่อนที่ของศัตรู ศัตรูจะมีการเคลื่อนไหวอย่างน้อย 1 ครั้งในทุกๆ 2 เฟรมในเระดับ สูงกว่าปรกติ และทุกเฟรมในระดับ สูงสุดขีด จำเป็นต้องมีการรีสตาร์ทด่านเพื่อให้การเปลี่ยนแปลงนี้ส่งผลลัพธ์",
+	"fs_options_walking_quality_multi_a" : "ปรกติ",
+	"fs_options_walking_quality_multi_b" : "สูงกว่าปรกติ",
+	"fs_options_walking_quality_multi_c" : "สูงสุดขีด",
+
+	"fs_options_lod_updater_title" : "การอัพเดทอัตโนมัติ LOD",
+	"fs_options_lod_updater_desc" : "จำเป็นต้องมีการรีสตาร์ทด่านเพื่อให้การเปลี่ยนแปลงนี้ส่งผลลัพธ์",
+	"fs_options_lod_updater_multi_a" : "กำหนดเอง (รวดเร็ว)",
+	"fs_options_lod_updater_multi_b" : "กำหนดเอง (คุณภาพ)",
+	"fs_options_lod_updater_multi_c" : "ปรกติ",
+
+	"fs_options_optimized_inputs_title" : "ปรับแต่งค่าอินพุตทั้งหมด",
+	"fs_options_optimized_inputs_desc" : "ไม่เลือกหากค่าอินพุตของคุณทั้งหมดถูกทำให้เสียหายเละเทะ.",
+
+	"fs_options_fastpaced_title" : "เกมโหมดรวดเร็ว",
+	"fs_options_fastpaced_desc" : "คำเตือน! แม้ว่า mod นี้จะไม่ได้เพิ่มระดับความยากเกินกว่าที่ OVERKILL ได้ออกแบบไว้, ตัวเลือกนี้สามารถทำได้\nลบช่วงพักการจู่โจมด้านการกระทำของตำรวจแต่ละนาย",
+
+	"fs_options_iter_chase_title" : "ปรับปรุงการไล่ล่า",
+	"fs_options_iter_chase_desc" : "จำเป็นต้องมี mod Iter ตำรวจจะกระตือรือร้นมากขึ้นเพื่อไล่ล่าและเอาชนะคุณ",
+
+	"fs_options_nervous_game_title" : "เกมโหมดน่าหงุดหงิด",
+	"fs_options_nervous_game_desc" : "คำเตือน! แม้ว่า mod นี้จะไม่ได้เพิ่มระดับความยากเกินกว่าที่ OVERKILL ได้ออกแบบไว้, ตัวเลือกนี้สามารถทำได้\nตำรวจรู้ตำแหน่งของคุณและสามารถระบุตัวตนของคุณได้ทันที (โหมดบู๊เท่านั้น)",
+
+	"fs_options_custom_assault_title" : "การจู่โจมแบบกำหนดเอง",
+	"fs_options_custom_assault_desc" : "ทำให้ตำรวจเว้นระยะห่างระหว่างผู้เล่นมากยิ่งขึ้น \nเช่นในด่าน Panic Room บนดาดฟ้าของตึก ตำรวจจะยิงใส่ผู้เล่นจากที่สูง",
+	
+	"fs_options_cop_awareness_title" : "ความตระหนักของตำรวจ",
+	"fs_options_cop_awareness_desc" : "ตำรวจจะเผชิญหน้ากับอันตรายมากยิ่งขึ้น (และยิงใส่ผู้เล่นบ่อยครั้งยิ่งขึ้นด้วย)",
+	
+	"fs_mutator_bigparty_name" : "FSS จำนวนศัตรูขนาดมหึมา",
+	"fs_mutator_bigparty_desc" : "เพิ่มระดับการปรากฎตัวของศัตรู",
+	"fs_mutator_bigparty_longdesc" : "",
+	"fs_menu_mutator_cops_nr" : "เพิ่มจำนวนตำรวจสูงสุด",
+	
+	"fs_mutator_realelastic_name" : "FSS ยืดเยื้อสมจริง",
+	"fs_mutator_realelastic_desc" : "ทำให้เกมยืดเยื้อมากยิ่งขึ้น",
+	"fs_mutator_realelastic_longdesc" : ""
+}

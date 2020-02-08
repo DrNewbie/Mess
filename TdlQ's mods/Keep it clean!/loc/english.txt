@@ -1,0 +1,18 @@
+{
+	"kic_options_menu_title" : "Keep It Clean!",
+	"kic_options_menu_desc"  : "",
+
+	"kic_options_set_cops_in_disguise_title"  : "Cops in disguise",
+	"kic_options_set_cops_in_disguise_desc"  : "Defines probability of a killed civilian to trigger a pager call.\nIt doesn't apply to being alerted or tied.",
+	"kic_options_set_cops_in_disguise_multi_5"  : "5%",
+	"kic_options_set_cops_in_disguise_multi_10"  : "10%",
+	"kic_options_set_cops_in_disguise_multi_20"  : "20%",
+	"kic_options_set_cops_in_disguise_multi_50"  : "50%",
+	"kic_options_set_cops_in_disguise_multi_100"  : "100%",
+
+	"kic_options_set_attractiveness_title"  : "Attractiveness",
+	"kic_options_set_attractiveness_desc"  : "For each killed civilian, killer is more likely to be targeted by x%.\nEffect similar to Meat Shield of Muscle perk.",
+	"kic_options_set_attractiveness_multi_2"  : "2%",
+	"kic_options_set_attractiveness_multi_4"  : "4%",
+	"kic_options_set_attractiveness_multi_6"  : "6%"
+}

@@ -1,0 +1,30 @@
+{
+	"blt_version" : 2,
+	"name" : "Less Inaccurate Weapon Laser",
+	"description" : "",
+	"author" : "TdlQ",
+	"image" : "tdlq.png",
+	"color" : "0.52 1 0",
+	"contact" : "",
+	"version" : "5",
+	"priority" : 200,
+	"updates" : [
+		{
+			"identifier" : "LIWL"
+		}
+	],
+	"hooks" : [
+		{
+			"hook_id" : "lib/units/beings/player/playerinventory",
+			"script_path" : "playerinventory.lua"
+		},
+		{
+			"hook_id" : "lib/units/weapons/weapongadgetbase",
+			"script_path" : "weapongadgetbase.lua"
+		},
+		{
+			"hook_id" : "lib/units/weapons/weaponlaser",
+			"script_path" : "weaponlaser.lua"
+		}
+	]
+}

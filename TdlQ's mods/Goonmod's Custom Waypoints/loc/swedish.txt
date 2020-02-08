@@ -1,0 +1,31 @@
+{
+	"gm_options_custom_waypoints_menu_title" : "GoonMod's Custom Waypoints",
+	"gm_options_custom_waypoints_menu_desc" : "Byta inställningar för dina anpassningsbara vägpunkter.",
+
+	"gm_options_custom_waypoints_place_title" : "Placera vägpunkt",
+	"gm_options_custom_waypoints_place_desc" : "",
+
+	"gm_options_custom_waypoints_remove_title" : "Ta bort vägpunkt",
+	"gm_options_custom_waypoints_remove_desc" : "",
+
+	"gm_options_custom_waypoints_distance_title" : "Visa avstånd på vägpunkter",
+	"gm_options_custom_waypoints_distance_desc" : "Visar hur långt ifrån du är från egna vägpunkter.",
+
+	"gm_options_custom_waypoints_always_show_my_waypoint_title" : "Visa alltid min vägpunkt",
+	"gm_options_custom_waypoints_always_show_my_waypoint_desc" : "",
+
+	"gm_options_custom_waypoints_always_show_others_waypoints_title" : "Visa alltid andras vägpunkter",
+	"gm_options_custom_waypoints_always_show_others_waypoints_desc" : "",
+
+	"gm_options_custom_waypoints_previous_title" : "Tidigare vägpunkt",
+	"gm_options_custom_waypoints_previous_desc" : "Rikta in din egna vägpunkt på ett speluppdrag.",
+
+	"gm_options_custom_waypoints_next_title" : "Nästa vägpunkt",
+	"gm_options_custom_waypoints_next_desc" : "Rikta in din egna vägpunkt på ett speluppdrag.",
+
+	"gm_options_custom_waypoints_include_bags_title" : "Väskor är intressanta objekt",
+	"gm_options_custom_waypoints_include_bags_desc" : "Inkludera bytesväskor i kretsloppslistan fär vägpunkter.",
+
+	"gm_options_custom_waypoints_include_hostages_title" : "Gisslan är intressanta objekt",
+	"gm_options_custom_waypoints_include_hostages_desc" : "Inkludera gisslan i kretsloppslistan för vägpunkter."
+}

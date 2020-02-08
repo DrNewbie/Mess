@@ -1,0 +1,49 @@
+{
+	"kpr_options_menu_title" : "Keepers",
+	"kpr_options_menu_desc"  : "",
+
+	"kpr_options_filter_mode_title" : "Filter shouts",
+	"kpr_options_filter_mode_desc" : "Orders are blocked unless you hold the control key.\nThe default key is 'left shift', you can change it in 'mods/saves/keepers.txt'.",
+
+	"kpr_options_multi_filter_mode_a" : "None",
+	"kpr_options_multi_filter_mode_b" : "Only blocks",
+	"kpr_options_multi_filter_mode_c" : "All",
+
+	"kpr_options_show_joker_health_title" : "Show jokers' health",
+	"kpr_options_show_joker_health_desc" : "Display the joker's health bar at the right of his name.",
+
+	"kpr_options_show_my_joker_name_title" : "Show my jokers' name",
+	"kpr_options_show_my_joker_name_desc" : "Use a custom name for your jokers.",
+
+	"kpr_options_send_my_joker_name_title" : "Send my jokers' name",
+	"kpr_options_send_my_joker_name_desc" : "Synchronize your jokers' name.",
+
+	"kpr_options_show_other_jokers_names_title" : "Show other jokers' names",
+	"kpr_options_show_other_jokers_names_desc" : "Display the custom names defined by other players for their jokers.",
+
+	"kpr_keybind_follow_title" : "Order all bots to follow",
+	"kpr_keybind_follow_desc" : "",
+
+	"kpr_keybind_stay_title" : "Order all bots to hold their position",
+	"kpr_keybind_stay_desc" : "",
+
+	"kpr_options_primary_mode_title" : "On control 'Shout'",
+	"kpr_options_primary_mode_desc" : "Set the mode to apply when using the primary interaction control, ie 'Shout/Interact'.",
+
+	"kpr_options_secondary_mode_title" : "On control 'Stop AI'",
+	"kpr_options_secondary_mode_desc" : "Set the mode to apply when using the secondary interaction control, ie 'Stop AI'.",
+
+	"kpr_options_keybind_mode_title" : "Keybind mode",
+	"kpr_options_keybind_mode_desc" : "Set the mode to apply when using the 'all hold' keybind.",
+
+	"kpr_options_multi_interaction_mode_a" : "Nothing",
+	"kpr_options_multi_interaction_mode_b" : "Stationary",
+	"kpr_options_multi_interaction_mode_c" : "Use cover",
+	"kpr_options_multi_interaction_mode_d" : "Patrol",
+
+	"kpr_options_joker_name_title" : "My jokers' name",
+	"kpr_options_joker_name_desc"  : "Give a name to your jokers.",
+
+	"kpr_options_joker_speed_title" : "Jokers move like TeamAIs",
+	"kpr_options_joker_speed_desc"  : "Jokers will use the speed and suppression settings used by bots."
+}

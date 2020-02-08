@@ -1,0 +1,46 @@
+{
+	"fs_options_menu_title" : "Full Speed Swarm",
+	"fs_options_menu_desc"  : "",
+
+	"fs_options_task_throughput_title" : "Количество задач в секунду",
+	"fs_options_task_throughput_desc" : "Значение по умолчанию - 600, большее полезно только для измененных настроек спавнов.\nНизкое значение ухудшит реакцию полицейских.",
+
+	"fs_options_walking_quality_title" : "Качество ходьбы",
+	"fs_options_walking_quality_desc" : "Изменяет качество анимации ходьбы. На очень высокой бот будет анимироваться хотя бы один раз каждые два кадра, а также каждый кадр на ультра. Чтобы изменения вступили в силу, нужно перезапустить контракт.",
+	"fs_options_walking_quality_multi_a" : "Оригинальная",
+	"fs_options_walking_quality_multi_b" : "Очень высокая",
+	"fs_options_walking_quality_multi_c" : "Ультра",
+
+	"fs_options_lod_updater_title" : "Обновл. детализации",
+	"fs_options_lod_updater_desc" : "Чтобы изменения вступили в силу, нужно перезапустить контракт.",
+	"fs_options_lod_updater_multi_a" : "Пользовательское (быстро)",
+	"fs_options_lod_updater_multi_b" : "Пользовательское (качество)",
+	"fs_options_lod_updater_multi_c" : "Оригинальное",
+
+	"fs_options_optimized_inputs_title" : "Оптимизированные вводные значения",
+	"fs_options_optimized_inputs_desc" : "Отключите, если все ваши вводные значения нарушены.",
+
+	"fs_options_fastpaced_title" : "Ускоренный темп игры",
+	"fs_options_fastpaced_desc" : "Значительно сокращает паузу между каждыми действиями полицейских. Проще говоря, они двигаются быстрее.",
+
+	"fs_options_iter_chase_title" : "Улучшенная погоня",
+	"fs_options_iter_chase_desc" : "Требуется мод Iter. Навигация полицейских создается наперед, поэтому они не будут останавливаться во время движения.",
+
+	"fs_options_nervous_game_title" : "Нервная игра",
+	"fs_options_nervous_game_desc" : "Полицейские знают, кто вы, и моментально разоблачат вас, а также будут более склонны к стрельбе! (Только громко.)",
+
+	"fs_options_custom_assault_title" : "Пользовательский штурм",
+	"fs_options_custom_assault_desc" : "Полицейские будут тактичнее.",
+
+	"fs_options_cop_awareness_title" : "Осведомленность полицейских",
+	"fs_options_cop_awareness_desc" : "Полицейские будут смотреть на опасность (и в итоге чаще стрелять в нее).",
+
+	"fs_mutator_bigparty_name" : "FSS: Большая компания",
+	"fs_mutator_bigparty_desc" : "Увеличивает частоту спавнов.",
+	"fs_mutator_bigparty_longdesc" : "",
+	"fs_menu_mutator_cops_nr" : "Максимальное число полицейских",
+
+	"fs_mutator_realelastic_name" : "FSS: Настоящая затянутость",
+	"fs_mutator_realelastic_desc" : "Делает игру затяжнее.",
+	"fs_mutator_realelastic_longdesc" : ""
+}

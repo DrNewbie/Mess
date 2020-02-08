@@ -1,0 +1,43 @@
+{
+	"mws_reload_partial"     : "不完全装弹",
+	"mws_reload_full"        : "完全装弹",
+	"mws_ammo_pickup"        : "拾弹量",
+	"mws_falloff"            : "伤害削弱距离",
+	"mws_spread"             : "精准度",
+	"mws_accuracy_ads"       : "移动精准度",
+	"mws_accuracy_crouching" : "蹲伏精准度",
+	"mws_accuracy_standing"  : "站立精准度",
+	"mws_recoil_horiz"       : "水平后座力",
+	"mws_recoil_vert"        : "垂直后座力",
+	"mws_equip_delay"        : "切换该装备时间",
+	
+	"mws_attack_delay"       : "恢复射击时间",
+	"mws_cooldown"           : "冷却",
+	"mws_unequip_delay"      : "放回该装备时间",
+	
+	"mws_options_menu_title" : "更多武器信息",
+	"mws_options_menu_desc" : "",
+	"mws_options_show_dlc_info_title" : "显示DLC信息",
+	"mws_options_show_dlc_info_desc" : "显示使用的武器所需DLC",
+	"mws_options_show_all_hit_nr_bp_title" : "显示所有的射击次数(统计页面)",
+	"mws_options_show_all_hit_nr_bp_desc" : "",
+	"mws_options_use_preview_key_to_switch_bp_title" : "使用预览键切换统计页面",
+	"mws_options_use_preview_key_to_switch_bp_desc" : "预览键默认为空格键(Space Key)",
+
+	"mws_bp_show" : "显示统计页面",
+	"mws_bp_hide" : "隐藏统计页面",
+
+	"mws_bp_option_headshot" : "爆头伤害",
+	"mws_bp_option_crits"    : "暴击伤害",
+	"mws_bp_option_underdog" : "困兽之斗",
+	"mws_bp_option_hvt"      : "悬赏头榜",
+	"mws_bp_option_triggerhappy" : "狂战士",
+	"mws_bp_option_overkill" : "大开杀戒",
+
+	"mws_bp_option_swat"   : "特警",
+	"mws_bp_option_heavy_swat" : "重型特警",
+	"mws_bp_option_sniper" : "狙击手",
+	"mws_bp_option_taser"  : "泰瑟特警",
+	"mws_bp_option_spooc"  : "隐伏特警",
+	"mws_bp_option_tank"   : "推土机特警"
+}

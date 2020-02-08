@@ -1,0 +1,49 @@
+{
+	"kpr_options_menu_title" : "Keepers",
+	"kpr_options_menu_desc"  : "",
+
+	"kpr_options_filter_mode_title" : "Filtra urli",
+	"kpr_options_filter_mode_desc" : "Gli ordini di fermarsi sono disattivati a meno che non si tenga premuto il tasto control.\nIl tasto predefinito è 'shift sinistro', puoi cambiarlo in 'mods/saves/keepers.txt'.",
+
+	"kpr_options_multi_filter_mode_a" : "Nessuno",
+	"kpr_options_multi_filter_mode_b" : "Solo i blocchi",
+	"kpr_options_multi_filter_mode_c" : "Tutti",
+
+	"kpr_options_show_joker_health_title" : "Mostra salute dei Jokers",
+	"kpr_options_show_joker_health_desc" : "Mostra la barra della salute dei Jokers a destra del loro nome.",
+
+	"kpr_options_show_my_joker_name_title" : "Mostra il nome dei miei Jokers",
+	"kpr_options_show_my_joker_name_desc" : "Usa un nome personalizzato per i tuoi Jokers.",
+
+	"kpr_options_send_my_joker_name_title" : "Invia il nome dei miei Jokers",
+	"kpr_options_send_my_joker_name_desc" : "Sincronizza il nome dei tuoi Jokers.",
+
+	"kpr_options_show_other_jokers_names_title" : "Mostra nome dei Jokers degli altri",
+	"kpr_options_show_other_jokers_names_desc" : "Mostra i nomi personalizzati dati dagli altri giocatori ai Jokers.",
+
+	"kpr_keybind_follow_title" : "Ordina a tutti i bot di seguirti",
+	"kpr_keybind_follow_desc" : "",
+
+	"kpr_keybind_stay_title" : "Ordina a tutti i bot di mantenere la posizione",
+	"kpr_keybind_stay_desc" : "",
+
+	"kpr_options_primary_mode_title" : "Interazione primaria",
+	"kpr_options_primary_mode_desc" : "Seleziona la modalità da applicare quando utilizzi l'interazione primaria (tasto 'Urlo/Interazione').",
+
+	"kpr_options_secondary_mode_title" : "Interazione secondaria",
+	"kpr_options_secondary_mode_desc" : "Seleziona la modalità da applicare quando utilizzi l'interazione secondaria (tasto 'Ferma IA').",
+
+	"kpr_options_keybind_mode_title" : "Settaggio Tasti",
+	"kpr_options_keybind_mode_desc" : "Seleziona la modalità da applicare quando si utilizza il tasto per far 'mantenere la posizione'.",
+
+	"kpr_options_multi_interaction_mode_a" : "Niente",
+	"kpr_options_multi_interaction_mode_b" : "Stazionaria",
+	"kpr_options_multi_interaction_mode_c" : "Usa copertura",
+	"kpr_options_multi_interaction_mode_d" : "Pattuglia",
+
+	"kpr_options_joker_name_title" : "Il Nome dei miei Jokers",
+	"kpr_options_joker_name_desc"  : "Dai un nome ai tuoi Jokers.",
+
+	"kpr_options_joker_speed_title" : "Jokers veloci come l'IA della squadra",
+	"kpr_options_joker_speed_desc"  : "I Jokers useranno la velocità dell'IA della squadra."
+}

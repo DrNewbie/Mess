@@ -1,0 +1,53 @@
+{
+	"mws_reload_partial"     : "TACT. RELOAD",
+	"mws_reload_full"        : "RELOAD",
+	"mws_ammo_pickup"        : "AMMO PICKUP",
+	"mws_falloff"            : "DMG. FALLOFF",
+	"mws_accuracy_ads"       : "ACC. ADS",
+	"mws_accuracy_crouching" : "ACC. CROUCH",
+	"mws_accuracy_standing"  : "ACC. STAND",
+	"mws_recoil_horiz"       : "RECOIL L./R.",
+	"mws_recoil_vert"        : "RECOIL U./D.",
+	"mws_equip_delay"        : "EQUIP DELAYS",
+	"mws_spread"             : "SPREAD",
+	"mws_spread_horiz"       : "SPREAD HORIZ.",
+	"mws_spread_vert"        : "SPREAD VERT.",
+
+	"mws_attack_delay"       : "ATTACK DELAY",
+	"mws_cooldown"           : "COOLDOWN",
+	"mws_unequip_delay"      : "UNEQUIP DELAY",
+	"mws_special"            : "SPECIAL",
+	"mws_dot_length"         : "DMG OVER TIME",
+
+	"mws_options_menu_title" : "More Weapon Stats",
+	"mws_options_menu_desc" : "",
+	"mws_options_show_dlc_info_title" : "Show DLC information",
+	"mws_options_show_dlc_info_desc" : "Display the DLC required to use a weapon.",
+	"mws_options_show_all_hit_nr_bp_title" : "Show all numbers of hits (breakpoints)",
+	"mws_options_show_all_hit_nr_bp_desc" : "",
+	"mws_options_use_preview_key_to_switch_bp_title" : "Use preview key to switch breakpoints",
+	"mws_options_use_preview_key_to_switch_bp_desc" : "",
+	"mws_options_clicks_per_second_title" : "Maximum clicks per second",
+	"mws_options_clicks_per_second_desc" : "Used in breakpoints calculations for time limited bonuses when weapon's fire rate is physically impossible to reach.",
+	"mws_options_enable_trigger_happy_for_first_bullet_title" : "Enable trigger happy for 1st bullet",
+	"mws_options_enable_trigger_happy_for_first_bullet_desc" : "If disabled, when calculating breakpoints with trigger happy, the first bullet doesn't have the damage bonus and acts as a trigger for the skill.",
+
+	"mws_stance" : "Set stance:",
+
+	"mws_bp_show" : "Show breakpoints",
+	"mws_bp_hide" : "Hide breakpoints",
+
+	"mws_bp_option_headshot" : "Headshot",
+	"mws_bp_option_crits"    : "Crits",
+	"mws_bp_option_underdog" : "Underdog",
+	"mws_bp_option_hvt"      : "HVT",
+	"mws_bp_option_triggerhappy" : "Trigger Happy",
+	"mws_bp_option_overkill" : "Overkill",
+
+	"mws_bp_option_swat"   : "SWAT",
+	"mws_bp_option_heavy_swat" : "Heavy SWAT",
+	"mws_bp_option_sniper" : "Sniper",
+	"mws_bp_option_taser"  : "Taser",
+	"mws_bp_option_spooc"  : "Cloaker",
+	"mws_bp_option_tank"   : "Bulldozer"
+}

@@ -1,0 +1,21 @@
+{
+	"menu_id" : "rtr_options_menu",
+	"parent_menu_id" : "blt_options",
+	"title" : "rtr_options_menu_title",
+	"description" : "rtr_options_menu_desc",
+	"back_callback" : "ReloadThenRunSave",
+	"items" : [
+		{
+			"type"        : "slider",
+			"id"          : "rtr_slider_block_after",
+			"title"       : "rtr_options_block_after_title",
+			"description" : "rtr_options_block_after_desc",
+			"callback"    : "ReloadThenRunBlockAfter",
+			"value"       : "block_after_pct",
+			"min"         : 0,
+			"max"         : 1,
+			"step"        : 0.01,
+			"default_value" : 0.85
+		}
+	]
+}

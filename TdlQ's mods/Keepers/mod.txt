@@ -1,0 +1,158 @@
+{
+	"blt_version" : 2,
+	"name" : "Keepers",
+	"description" : "Give the ability to issue orders to your AI teammates and jokers.",
+	"author" : "TdlQ\n    russian translation by chrom[K]a\n    thai translation by NewPJzuza\n    italian translation by LycanCHKN\n	chinese translation by Shark_Yi",
+	"image" : "tdlq.png",
+	"color" : "0.52 1 0",
+	"contact" : "",
+	"version" : "157",
+	"updates" : [
+		{
+			"identifier" : "KPR"
+		}
+	],
+	"dependencies" : [
+		"GCW",
+		"ITR",
+		"NDB"
+	],
+	"hooks" : [
+		{
+			"hook_id" : "core/lib/managers/mission/coremissionmanager",
+			"script_path" : "lua/coremissionmanager.lua"
+		},
+		{
+			"hook_id" : "lib/managers/criminalsmanager",
+			"script_path" : "lua/criminalsmanager.lua"
+		},
+		{
+			"hook_id" : "lib/managers/hudmanagerpd2",
+			"script_path" : "lua/hudmanagerpd2.lua"
+		},
+		{
+			"hook_id" : "lib/managers/menumanager",
+			"script_path" : "lua/menumanager.lua"
+		},
+		{
+			"hook_id" : "lib/managers/navigationmanager",
+			"script_path" : "lua/navigationmanager.lua"
+		},
+		{
+			"hook_id" : "lib/managers/group_ai_states/groupaistatebase",
+			"script_path" : "lua/groupaistatebase.lua"
+		},
+		{
+			"hook_id" : "lib/managers/mission/elementequipment",
+			"script_path" : "lua/elementequipment.lua"
+		},
+		{
+			"hook_id" : "lib/managers/mission/elementspawnenemydummy",
+			"script_path" : "lua/elementspawnenemydummy.lua"
+		},
+		{
+			"hook_id" : "lib/network/base/hostnetworksession",
+			"script_path" : "lua/hostnetworksession.lua"
+		},
+		{
+			"hook_id" : "lib/network/base/extensions/networkbaseextension",
+			"script_path" : "lua/networkbaseextension.lua"
+		},
+		{
+			"hook_id" : "lib/network/handlers/unitnetworkhandler",
+			"script_path" : "lua/unitnetworkhandler.lua"
+		},
+		{
+			"hook_id" : "lib/units/beings/player/huskplayermovement",
+			"script_path" : "lua/huskplayermovement.lua"
+		},
+		{
+			"hook_id" : "lib/units/beings/player/states/playerbleedout",
+			"script_path" : "lua/playerbleedout.lua"
+		},
+		{
+			"hook_id" : "lib/units/beings/player/states/playerstandard",
+			"script_path" : "lua/playerstandard.lua"
+		},
+		{
+			"hook_id" : "lib/units/enemies/cop/huskcopbrain",
+			"script_path" : "lua/huskcopbrain.lua"
+		},
+		{
+			"hook_id" : "lib/units/enemies/cop/copbrain",
+			"script_path" : "lua/copbrain.lua"
+		},
+		{
+			"hook_id" : "lib/units/enemies/cop/copdamage",
+			"script_path" : "lua/copdamage.lua"
+		},
+		{
+			"hook_id" : "lib/units/enemies/cop/copmovement",
+			"script_path" : "lua/copmovement.lua"
+		},
+		{
+			"hook_id" : "lib/units/enemies/cop/actions/full_body/copactionact",
+			"script_path" : "lua/copactionact.lua"
+		},
+		{
+			"hook_id" : "lib/units/enemies/cop/actions/full_body/copactiondodge",
+			"script_path" : "lua/copactiondodge.lua"
+		},
+		{
+			"hook_id" : "lib/units/enemies/cop/actions/full_body/copactionhurt",
+			"script_path" : "lua/copactionhurt.lua"
+		},
+		{
+			"hook_id" : "lib/units/enemies/cop/actions/full_body/copactionwarp",
+			"script_path" : "lua/copactionwarp.lua"
+		},
+		{
+			"hook_id" : "lib/units/enemies/cop/actions/lower_body/copactionwalk",
+			"script_path" : "lua/copactionwalk.lua"
+		},
+		{
+			"hook_id" : "lib/units/enemies/cop/logics/coplogicattack",
+			"script_path" : "lua/coplogicattack.lua"
+		},
+		{
+			"hook_id" : "lib/units/enemies/cop/logics/coplogicidle",
+			"script_path" : "lua/coplogicidle.lua"
+		},
+		{
+			"hook_id" : "lib/units/enemies/cop/logics/coplogictrade",
+			"script_path" : "lua/coplogictrade.lua"
+		},
+		{
+			"hook_id" : "lib/units/enemies/cop/logics/coplogictravel",
+			"script_path" : "lua/coplogictravel.lua"
+		},
+		{
+			"hook_id" : "lib/units/interactions/interactionext",
+			"script_path" : "lua/interactionext.lua"
+		},
+		{
+			"hook_id" : "lib/units/player_team/teamaibrain",
+			"script_path" : "lua/teamaibrain.lua"
+		},
+		{
+			"hook_id" : "lib/units/player_team/logics/teamailogicdisabled",
+			"script_path" : "lua/teamailogicdisabled.lua"
+		},
+		{
+			"hook_id" : "lib/units/player_team/logics/teamailogicidle",
+			"script_path" : "lua/teamailogicidle.lua"
+		},
+		{
+			"hook_id" : "lib/units/player_team/logics/teamailogicsurrender",
+			"script_path" : "lua/teamailogicsurrender.lua"
+		},
+		{
+			"hook_id" : "lib/units/player_team/logics/teamailogictravel",
+			"script_path" : "lua/teamailogictravel.lua"
+		},
+		{
+			"hook_id" : "lib/utils/playerskill",
+			"script_path" : "lua/playerskill.lua"
+		}
+	]
+}

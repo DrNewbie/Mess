@@ -1,0 +1,49 @@
+{
+	"kpr_options_menu_title" : "ผู้บังคับการ",
+	"kpr_options_menu_desc"  : "Keepers: กำหนดตำแหน่งและการกระทำของบอทและตำรวจที่ถูกกล่อมให้เป็นพวก ด้วยปุ่มลัด ฯลฯ",
+
+	"kpr_options_filter_mode_title" : "กรองคำสั่งจากการตะโกน",
+	"kpr_options_filter_mode_desc" : "Filter shouts: หยุดทุกคำสั่งยกเว้นว่าคุณกดปุ่มควบคุมค้างไว้\nปุ่มควบคุมดั้งเดิมคือ 'Shift ทางซ้ายมือ' คุณสามารถเปลี่ยนปุ่มได้ใน 'mods / saves / keepers.txt'",
+
+	"kpr_options_multi_filter_mode_a" : "ไม่มี",
+	"kpr_options_multi_filter_mode_b" : "บล็อกเท่านั้น",
+	"kpr_options_multi_filter_mode_c" : "ทั้งหมด",
+
+	"kpr_options_show_joker_health_title" : "แสดงพลังชีวิตของโจ๊กเกอร์",
+	"kpr_options_show_joker_health_desc" : "แสดงค่าพลังชีวิตของตำรวจที่ถูกกล่อมให้เป็นพวก(Joker) ทางด้านขวาของชื่อของพวกเขา",
+
+	"kpr_options_show_my_joker_name_title" : "แสดงชื่อของโจ๊กเกอร์",
+	"kpr_options_show_my_joker_name_desc" : "แสดงชื่อแบบกำหนดเองของตำรวจที่ถูกกล่อมให้เป็นพวก",
+
+	"kpr_options_send_my_joker_name_title" : "แสดงชื่อโจ๊กเกอร์ของฉัน",
+	"kpr_options_send_my_joker_name_desc" : "ส่งชื่อแบบกำหนดเองของตำรวจที่ถูกกล่อมให้เป็นพวกของฉันให้แก่ผู้เล่นอื่น",
+
+	"kpr_options_show_other_jokers_names_title" : "แสดงชื่อโจ๊กเกอร์ของผู้เล่นอื่น",
+	"kpr_options_show_other_jokers_names_desc" : "แสดงชื่อแบบกำหนดเองของตำรวจที่ถูกกล่อมให้เป็นของผู้เล่นอื่น",
+
+	"kpr_keybind_follow_title" : "สั่งบอทและโจ๊กเกอร์ให้ติดตามผู้เล่น",
+	"kpr_keybind_follow_desc" : "ปุ่มลัด หากถูกเรียกใช้งาน บอทและโจ๊กเกอร์ทั้งหมดจะติดตามผู้เล่น",
+
+	"kpr_keybind_stay_title" : "สั่งบอทและโจ๊กเกอร์อยู่ในตำแหน่งของตนเอง",
+	"kpr_keybind_stay_desc" : "ปุ่มลัด หากถูกเรียกใช้งาน บอทและโจ๊กเกอร์ทั้งหมดจะอยู่ในตำแหน่งของตนเอง",
+
+	"kpr_options_primary_mode_title" : "การปฏิสัมพันธ์หลัก",
+	"kpr_options_primary_mode_desc" : "ตั้งค่าโหมดเพื่อใช้ในการออกคำสั่งเมื่อมีการใช้การปฏิสัมพันธ์หลัก (ปุ่ม 'ตะโกน/ปฏิสัมพันธ์')",
+
+	"kpr_options_secondary_mode_title" : "การปฏิสัมพันธ์รอง",
+	"kpr_options_secondary_mode_desc" : "ตั้งค่าโหมดเพื่อใช้ในการออกคำสั่งเมื่อมีการใช้การปฏิสัมพันธ์รอง (ปุ่ม 'หยุดบอท').",
+
+	"kpr_options_keybind_mode_title" : "โหมดปุ่มลัด",
+	"kpr_options_keybind_mode_desc" : "ตั้งค่าโหมดที่จะใช้ในการออกคำสั่งผ่านปุ่มลัด 'สั่งบอทและโจ๊กเกอร์อยู่ในตำแหน่งของตนเอง'",
+
+	"kpr_options_multi_interaction_mode_a" : "ไม่มี",
+	"kpr_options_multi_interaction_mode_b" : "ประจำสถานีรบ",
+	"kpr_options_multi_interaction_mode_c" : "ใช้ที่กำบัง",
+	"kpr_options_multi_interaction_mode_d" : "ลาดตระเวณ",
+
+	"kpr_options_joker_name_title" : "กำหนดชื่อโจ๊กเกอร์ของชั้น",
+	"kpr_options_joker_name_desc"  : "กำหนดชื่อตำรวจที่ถูกกล่อมให้เป็นพวกของคุณ",
+
+	"kpr_options_joker_speed_title" : "โจ๊กเกอร์จะวิ่งเร็วเท่ากับบอท",
+	"kpr_options_joker_speed_desc"  : "ตำรวจที่ถูกกล่อมให้เป็นพวกจะมีค่าความเร็วเทียบเท่ากับค่าความเร็วที่ถูกกำหนดในบอท"
+}

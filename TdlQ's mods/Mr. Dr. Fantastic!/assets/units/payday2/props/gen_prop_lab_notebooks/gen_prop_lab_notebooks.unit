@@ -1,0 +1,11 @@
+<unit type="gen" slot="1" >
+	<network sync="spawn"/>
+    <object file="units/payday2/props/gen_prop_lab_notebooks/gen_prop_lab_notebooks" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+		<extension name="damage" class="UnitDamage" />
+		<extension name="interaction" class="BigOilClueInteractionExt">
+			<var name="tweak_data" value="safe_loot_pickup" />
+		</extension>	
+    </extensions>
+</unit>

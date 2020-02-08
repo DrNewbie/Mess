@@ -1,0 +1,420 @@
+Revision 119:
+- fixed several issues when loaded as a client
+
+Revision 118:
+- [Hotline Miami D1] updated navmesh patches
+
+Revision 117:
+- [Boiling Point] remade old fix of r1 properly
+- [Hotline Miami D1] remade old fix of r1 properly
+- added workarounds for several jiggly physics issues
+
+Revision 116:
+- [The White House] reworked fix of r111
+
+Revision 115:
+- [Big Bank] fixed jiggly bus escape
+
+Revision 114:
+- [Border Crossing] fixed navigation issues leading to guards stuck at Culebras building in Mexico
+- [Border Crossing] disabled killzone of first part after a while
+
+Revision 113:
+- [Border Crossing] (most probably) fixed explosives for tunnel entrance disarmed with no one around
+
+Revision 112:
+- [Border Crossing] fixed navigation with some stairs in plane hangars
+- [Shadow Raid] updated navigation changes
+- [The Biker Heist D2] removed obsolete fixes
+
+Revision 111:
+- [The White House] fixed guard near landpad that can be killed by physics hiccups
+- updated reader of FSS's settings
+
+Revision 110:
+- [White Xmas] fixed sandwich loot drop areas not disabled when helicopter leaves
+
+Revision 109:
+- fixed guards stuck because of unreachable/cancelled noise alerts
+
+Revision 108:
+- [Slaughterhouse] fixed accessibility to the top of a container
+
+Revision 107:
+- fixed more cases of stuck guards (than done in r99)
+
+Revision 106:
+- [Transport Train] fixed half-baked fix
+- reworked fix for _optimize_path()
+- reworked _chk_shortcut_pos_to_pos()
+- added a tool to compute long paths in one shot (and give a chance to streamline the whole thing, used by Keepers & co)
+
+Revision 105:
+- [Transport Train] updated r1's navigation patches
+- [Transport Train] fixed access to vaults opened during stealth
+- added swedish translation by TheBreakingBenny
+
+Revision 104:
+- [Alaskan Deal] removed r63's fix for boat access
+- added an extended _chk_shortcut_pos_to_pos(), see https://youtu.be/gD9MXBdA29g
+
+Revision 103:
+- [Car Shop] removed r89's fix for ECM
+
+Revision 102:
+- [Shadow Raid] removed r15's fix for collision with a ladder (fixed in U180)
+- [Shadow Raid] updated navigation patches to U180
+
+Revision 101:
+- fixed CivilianLogicTravel._optimize_path() so hostages don't walk through floors (prevent some cases of flying too), see https://youtu.be/FMhbwqYkUDE
+
+Revision 100:
+- changed priority for a compatibility issue with Please Go There
+
+Revision 99:
+- fixed some cases of stuck guards
+
+Revision 98:
+- updated to U176
+
+Revision 97:
+- improved detection of choke points
+
+Revision 96:
+- [The Biker Heist D2] fixed another blocked path, again
+
+Revision 95:
+- [Big Bank] fixed guards stuck in inner area
+
+Revision 94:
+- added compatibility stuff for FSS
+
+Revision 93:
+- finetuned proxy finding threshold
+
+Revision 92:
+- [Aftershock] let civilians reach flee points
+- fixed a rare crash involving navlinks having negative delays (can be found at least on Aftershock)
+
+Revision 91:
+- [Firestarter D3] made sure that AI can always enter the vault
+- [Jewelry Store] added navigation between a cop car and a parked car
+- [The Biker Heist D2] fixed another blocked path
+
+Revision 90:
+- fixed/improved path streamlining (changes visible mainly in stealth)
+
+Revision 89:
+- [Car Shop] fixed computer bricked by ECM
+
+Revision 88:
+- [Bank Heist: X] made sure that AI can always enter the vault
+
+Revision 87:
+- [Safe House Raid] fixed spawn of civilian heister after a player has left
+
+Revision 86:
+- added thai translation by NewPJzuza
+
+Revision 85:
+- added code to prevent asking again and again blocked/impossible coarse paths
+
+Revision 84:
+- added code to improve cop movement (it's a gameplay change so this can only be enabled through FSS's option menu)
+
+Revision 83:
+- [Reservoir Dogs D1] fixed navigation when a fence locker is shot open
+
+Revision 82:
+- fixed a crash when a bot follows a player who's instantly sent in jail
+
+Revision 81:
+- added a generic workaround for navlinks not properly erased (meaning no more cops going through planked windows on Reservoir Dogs and a few other funny things)
+
+Revision 80:
+- [Brooklyn Bank] fixed navigation in the sewers entrance
+
+Revision 79:
+- [Diamond Store] fixed door between security room and store when opened by AI
+
+Revision 78:
+- [Big Oil D2] fixed AI access to computer room of 1st floor if opened with a drill or a keycard
+
+Revision 77:
+- [Green Bridge] forced truck to contain only types of loot able to trigger drop zones
+from http://steamcommunity.com/app/218620/discussions/14/135514287302619401#c135514507318007216
+
+Revision 76:
+- [Beneath The Mountain] fixed a wrong room id from r71 update
+
+Revision 75:
+- [Big Bank] fixed positioning after entering the vault through thermite hole (and before fence door is opened)
+
+Revision 74:
+- [Diamond Heist] unnoticeable polish
+
+Revision 73:
+- [Diamond Heist] restored portal definitions that were removed in a recent game update, which disabled all Iter's optimizations
+
+Revision 72:
+- [The Diamond] added opening by explosion case for front door
+- [The Diamond] removed r53's fix for glitched hiding place in war room (fixed in U167)
+- [Watchdogs D1] removed r19's fix for broken bridge (fixed in U167)
+
+Revision 71:
+- [Beneath The Mountain] fixed AI access to 2 entrance control rooms
+- [Golden Grin Casino] make vault accessible to bots in stealth
+- [The Diamond] fixed blocker and kick script of the front door
+
+Revision 70:
+- [Watchdogs D1] forgot to update 2 doors between modified segments causing streamliner to crash
+
+Revision 69:
+- [Transport Train] fixed navigation when warehouse's doors are open with c4 or a saw
+- [Transport Train] decreased use interval for a lot of navlinks
+
+Revision 68:
+- [Watchdogs D1] fixed navigation around (random) police car right in front of truck (spawn)
+- removed an obsolete mechanism (r41's stuff not needed since r51)
+
+Revision 67:
+- [Diamond Heist] fixed crash when relocating a glass object while playing as a client
+
+Revision 66:
+- [Diamond Heist] cleaned up plenty of things, grabbed a few more fps
+
+Revision 65:
+- [Diamond Heist] more additions to portals
+
+Revision 64:
+- [Diamond Heist] optimized (gained around 15 fps)
+
+Revision 63:
+- [Alaskan Deal] fixed AI navigation for boat access (prow side)
+
+Revision 62:
+- [Safe House Raid] a collision element was wrongly removed in stairs leading to armory
+
+Revision 61:
+- fixed another issue with non-modded hosts
+
+Revision 60:
+- changed how Iter's specific data are sent to clients to prevent compatibility issues with non-modded clients
+
+Revision 59:
+- fix of r58 was quite bad, redone properly
+
+Revision 58:
+- fixed some crashes when host doesn't use Iter
+
+Revision 57:
+- improved use of alternative path when a navlink is congested
+- [The Biker Heist D2] fixed several blocked paths, also decreased interval for navlink use
+
+Revision 56:
+- [Safe House Raid] optimized (removed +3000 useless units, gained 30 fps)
+
+Revision 55:
+- levels having a night version would not get their specific modifications applied in night mode
+
+Revision 54:
+- [Escape: Garage] fixed navigation when some doors are opened with a saw
+
+Revision 53:
+- [Art Gallery] extended friendly AI navigation so they can enter/exit entrance hall when front doors are closed
+- [Go Bank] fixed a glitched hiding place in Jimbo's
+- [The Diamond] fixed a glitched hiding place in war room
+
+Revision 52:
+- added a generic workaround for a vanilla bug leading to a crash when trying to spawn an effect without a position
+
+Revision 51:
+- improved further algorithm for coarse paths
+
+Revision 50:
+- [Hotline Miami D1] removed ability to evade from cops by going to specific (and numerous) hiding places in motel rooms, now cops will ALWAYS find you
+
+Revision 49:
+- added code to prevent multiple mod loading
+
+Revision 48:
+- [Birth of Sky] fixed access to roof of gas station
+
+Revision 47:
+- [Rats D2] AI can now use the wooden bridge between buildings
+
+Revision 46:
+- even more absolutely essential BLT2 integration
+
+Revision 45:
+- more absolutely essential BLT2 integration
+
+Revision 44:
+- BLT2
+
+Revision 43:
+- added code so pathfinding failures don't break special objectives loop (meaning for example no stuck guards on Murky Station's underground level)
+
+Revision 42:
+- increased change in altitude thresholds
+
+Revision 41:
+- prefer paths with no change in altitude
+
+Revision 40:
+- fixed a crash when no coarse path exists
+
+Revision 39:
+- fix of r38 properly done
+
+Revision 38:
+- fixed a crash occuring when trying to read a simplified path that is too short
+
+Revision 37:
+- fixed a crash related to walk actions not having a simplified path
+- fixed path cancellation when coarse path is modified on the fly
+- fixed final orientation (objective's specification could be ignored)
+
+Revision 36:
+- added new feature for bots and jokers: they won't stop moving when changing navigation segment
+	before: https://youtu.be/nd1S1b8FgrI
+	after: https://youtu.be/Qzk9Lm2FPqY
+
+Revision 35:
+- [Goat Simulator D1] fixed navigation so AI can enter the truck (when it's under a bridge)
+
+Revision 34:
+- [The Biker Heist D1] fixed navigation around the bunker entrance
+- granted jokers the right to "path ahead"
+- reworked the follow system so new data is appended to coarse path
+- follower's path is reevaluated: cut in and outs off, look at segments' neighbours for shortcuts
+	before: https://youtu.be/8IAOXzo3IoA
+	after: https://youtu.be/GdmicEU58Ko
+
+Revision 33:
+- prevent Winters and his minions to go out of formation
+
+Revision 32:
+- reworked AI conditions to stop advancing when they follow
+
+Revision 31:
+- added generic workaround to pass specific broken cases
+	original: https://youtu.be/YhIIAGrfAfc
+	modded: https://youtu.be/7exv-K6bUGg
+
+Revision 30:
+- [Shadow Raid] fixed stuck guards in the warehouse (different issue than the one fixed by r15)
+
+Revision 29:
+- [First World Bank] fixed inaccessible destination for the insider when opening the left gate
+
+Revision 28:
+- added a check to prevent a crash when no doors/links are available
+
+Revision 27:
+- fixed issues leading to bots standing on the same position
+- reworked proxy finder (=> better streamlining)
+
+Revision 26:
+- [Panic Room] fixed multiple navigation problems due to door blockers 5 cm too high
+
+Revision 25:
+- [Alesso] fixed 12 navlinks (11 in the main hall)
+- [Stealing Xmas] fixed 4 navlinks
+- improved path streamlining with choke point proxies
+- reworked contiguity check code
+
+Revision 24:
+- fixed JSON errors
+
+Revision 23:
+- [Aftershock] added a navlink so AI can directly go out of the rail car facing the exit way
+	original: https://youtu.be/34LFau8oUeU and https://youtu.be/sKPB_l2VHko
+	modded: https://youtu.be/0X95vCgrgds
+- [Aftershock] replaced 2 navlinks by a navmesh extension to reach a room near the exit point
+
+Revision 22:
+- [Firestarter D1] added navigation fix of segment 24 when there is no wall
+- [Firestarter D1] added navigation fix of segment 108/109 when padlock is shot
+- fixed a potential cover reservation not released
+
+Revision 21:
+- fixed a too restrictive check (introduced in r20)
+
+Revision 20:
+- enhanced streamlining for some very specific cases
+- fixed cover position when waiting availability of a congested navlink
+
+Revision 19:
+- [Cook Off] fixed a crash when joining a game whose host hasn't the roof extension enabled
+- [Watchdogs D1] fixed an issue with AI unable to jump the bridge in both ways
+
+Revision 18:
+- fixed a bug to determine the best aligned door between 2 segments
+
+Revision 17:
+- [Alesso] removed 2 useless area triggers
+- [Panic Room] fixed second toothbrush drop area
+- [Panic Room] better performance
+
+Revision 16:
+- [Stealing Xmas] updated navfix to U130
+
+Revision 15:
+- [Shadow Raid] fixed stuck guards in the warehouse
+- [Shadow Raid] fixed a collision with a ladder near the docks
+
+Revision 14:
+- [Santa's Workshop] fixed stairs (r1's claim was wrong)
+
+Revision 13:
+- improved slightly the path streamliner
+
+Revision 12:
+- [Scarface Mansion] fixed navigation issues involving the crashed cadillac
+
+Revision 11:
+- more tuning to give priority to paths without navlinks
+
+Revision 10:
+- [Goat Simulator D1] fixed an issue where the presence of a white truck was preventing AI to pass
+- reworked how AIs are waiting their turn for a busy navlink (ladders, etc)
+
+Revision 9:
+- fixed an oversight that disabled a part of the streamliner
+- fine tuned some thresholds related to congestion
+
+Revision 8:
+- fixed a major issue that broke civilians, Keepers, MIC & PGT
+
+Revision 7:
+- added load sharing for navlinks
+
+Revision 6:
+- added description to options menu's items
+
+Revision 5:
+- introduced a new way of handling congestion for navlinks
+
+Revision 4:
+- [Stealing Xmas] fixed addition that handled segment neighbours wrongly
+- improved some parts of the path calculation
+- disabled congestion handling
+
+Revision 3:
+- fixed mod.txt
+
+Revision 2:
+- make an AI wait for a bit before letting it use an alternate path when all navlinks are busy
+
+Revision 1:
+- [Aftershock] added access to the 4 ladders leading to the bridge
+- [Boiling Point] fixed issue with blown up wall on the left
+- [Cook Off] added roof access to the bots
+- [Hotline Miami D1] fixed multiple issues with segments going underground
+- [Rats D1] added roof access to the bots
+- [Santa's Workshop] fixed issue with some stairs (edit: nope, it was not)
+- [Stealing Xmas] added access to the backroom of the shoe store
+- [Transport Train] fixed accessibility in the entrance of TF-WAGON 1 which is close to TF-WAGON 2
+- replaced the vanilla optimistic coarse pathing by a flood approach
+- added path streamliner

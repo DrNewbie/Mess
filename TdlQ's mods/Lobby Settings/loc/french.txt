@@ -1,0 +1,16 @@
+{
+	"ls_menu_reject_vac" : "Rejeter les joueurs bannis par VAC",
+	"ls_menu_reject_vac_help" : "Cette restriction ne s'applique pas à vos amis Steam.",
+
+	"ls_menu_reject_play_time_threshold" : "Filtrer temps de jeu",
+	"ls_menu_reject_play_time_threshold_help" : "Les joueurs ayant un nombre d'heures de jeu inférieur à la limite spécifiée ne seront pas acceptés.",
+
+	"ls_menu_reject_unknown_play_time" : "Rejeter les profils cachant leur temps de jeu",
+	"ls_menu_reject_unknown_play_time_help" : "Cette restriction ne s'applique pas à vos amis.",
+
+	"ls_menu_max_players" : "Nb de joueurs",
+	"ls_menu_max_players_help" : "",
+
+	"ls_menu_infamy_permission" : "Limite d'infamie",
+	"ls_menu_infamy_permission_help" : ""
+}

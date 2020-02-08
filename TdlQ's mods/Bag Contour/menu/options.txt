@@ -1,0 +1,142 @@
+{
+	"menu_id" : "bc_options_menu",
+	"parent_menu_id" : "blt_options",
+	"title" : "bc_options_menu_title",
+	"description" : "bc_options_menu_desc",
+	"focus_changed_callback" : "BagContourChangedFocus",
+	"back_callback" : "BagContourSave",
+	"items" : [
+		{
+			"type" : "slider",
+			"id" : "LH",
+			"title" : "bc_options_light_h_title",
+			"description" : "bc_options_h_desc",
+			"callback" : "BagContourSetColor",
+			"default_value" : 0,
+			"min" : 0,
+			"max" : 360,
+			"step" : 0.1
+		},
+		{
+			"type" : "slider",
+			"id" : "LS",
+			"title" : "bc_options_light_s_title",
+			"description" : "bc_options_s_desc",
+			"callback" : "BagContourSetColor",
+			"default_value" : 1,
+			"min" : 0,
+			"max" : 1,
+			"step" : 0.01
+		},
+		{
+			"type" : "slider",
+			"id" : "LV",
+			"title" : "bc_options_light_v_title",
+			"description" : "bc_options_v_desc",
+			"callback" : "BagContourSetColor",
+			"default_value" : 255,
+			"min" : 0,
+			"max" : 255,
+			"step" : 1
+		},
+		{
+			"type" : "divider",
+			"size" : 16
+		},
+
+		{
+			"type" : "slider",
+			"id" : "HH",
+			"title" : "bc_options_heavy_h_title",
+			"description" : "bc_options_h_desc",
+			"callback" : "BagContourSetColor",
+			"default_value" : 0,
+			"min" : 0,
+			"max" : 360,
+			"step" : 0.1
+		},
+		{
+			"type" : "slider",
+			"id" : "HS",
+			"title" : "bc_options_heavy_s_title",
+			"description" : "bc_options_s_desc",
+			"callback" : "BagContourSetColor",
+			"default_value" : 1,
+			"min" : 0,
+			"max" : 1,
+			"step" : 0.01
+		},
+		{
+			"type" : "slider",
+			"id" : "HV",
+			"title" : "bc_options_heavy_v_title",
+			"description" : "bc_options_v_desc",
+			"callback" : "BagContourSetColor",
+			"default_value" : 255,
+			"min" : 0,
+			"max" : 255,
+			"step" : 1
+		},
+		{
+			"type" : "divider",
+			"size" : 16
+		},
+
+		{
+			"type" : "slider",
+			"id" : "BH",
+			"title" : "bc_options_body_h_title",
+			"description" : "bc_options_h_desc",
+			"callback" : "BagContourSetColor",
+			"default_value" : 0,
+			"min" : 0,
+			"max" : 360,
+			"step" : 0.1
+		},
+		{
+			"type" : "slider",
+			"id" : "BS",
+			"title" : "bc_options_body_s_title",
+			"description" : "bc_options_s_desc",
+			"callback" : "BagContourSetColor",
+			"default_value" : 1,
+			"min" : 0,
+			"max" : 1,
+			"step" : 0.01
+		},
+		{
+			"type" : "slider",
+			"id" : "BV",
+			"title" : "bc_options_body_v_title",
+			"description" : "bc_options_v_desc",
+			"callback" : "BagContourSetColor",
+			"default_value" : 255,
+			"min" : 0,
+			"max" : 255,
+			"step" : 1
+		},
+		{
+			"type" : "divider",
+			"size" : 16
+		},
+		{
+			"type" : "button",
+			"id" : "bc_button_custom_bags",
+			"title" : "bc_options_custom_bags_title",
+			"description" : "bc_options_custom_bags_desc",
+			"callback" : "BagContourCustomBags"
+		},
+		{
+			"type" : "divider",
+			"size" : 16
+		},
+
+		{
+			"type" : "button",
+			"id" : "bc_button_reset",
+			"title" : "bc_options_reset_title",
+			"description" : "bc_options_reset_desc",
+			"callback" : "BagContourReset"
+		}
+	]
+}

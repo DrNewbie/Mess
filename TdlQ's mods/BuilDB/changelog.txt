@@ -1,0 +1,91 @@
+Revision 28:
+- added a button "copy" (build url to clipboard)
+
+Revision 27:
+- added possibility to use custom base urls and override settings (stored in saves/buildb_settings.txt)
+
+Revision 26:
+- added support for second deployable (jack of all trades)
+
+Revision 25:
+- added import/export support for pd2builder.netlify.com urls (import of old pd2skills.com urls still works)
+
+Revision 24:
+- added thai translation by NewPJzuza
+
+Revision 23:
+- added filler perk code for Tag Team
+
+Revision 22:
+- added filler perk code for Stoic
+
+Revision 21:
+- even more absolutely essential BLT2 integration
+
+Revision 20:
+- more absolutely essential BLT2 integration
+
+Revision 19:
+- added spanish translation by Adrian Leon
+
+Revision 18:
+- BLT2
+- added filler perk code for Sicario
+
+Revision 17:
+- fixed JSON errors
+
+Revision 16:
+- added filler perk codes for Biker and Kingpin
+- fixed the import that could unlock skills without having enough points
+
+Revision 15:
+- added a "Save current" [build] button
+
+Revision 14:
+- replaced beta.pd2skills.com by pd2skills.com
+
+Revision 13:
+- updated to skill trees of U100
+- (WIP) temporary codes used for perks Maniac and Anarchist
+- (WIP) using beta.pd2skills.com as base export URL
+
+Revision 12:
+- prevent a crash occuring when no build entries are found (non empty file with no valid builds)
+
+Revision 11:
+- added russian translation by chrom[K]a
+- added support for the Ex-President perk (assuming pd2skills.com will use the code "E")
+
+Revision 10:
+- adapted to U78
+
+Revision 9:
+- added support for the Yakuza perk
+
+Revision 8:
+- changed the import menu event handling for open/close operations
+
+Revision 7:
+- blurred background so the build list appears more clearly
+- display the first 2 lines of the long description of a build
+
+Revision 6:
+- moved BuilDB in its own file
+- added support for the Grinder perk
+
+Revision 5:
+- added german translation by TyranT
+
+Revision 4:
+- fixed a bug with cable guy/oppressor/rifleman/dead presidents/daredevil (these damn 1-based arrays...)
+
+Revision 3:
+- empty tree were not processed correctly
+
+Revision 2:
+- minor code and graphic cleanups
+- better error handling 
+
+Revision 1:
+- initial release

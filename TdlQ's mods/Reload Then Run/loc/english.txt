@@ -1,0 +1,7 @@
+{
+	"rtr_options_menu_title" : "Reload Then Run",
+	"rtr_options_menu_desc"  : "Change the fading settings",
+
+	"rtr_options_block_after_title" : "Block after %",
+	"rtr_options_block_after_desc"  : "Change the percentage of the reload to wait before preventing you from running and cancelling it\n(0.85 means 85%)"
+}
