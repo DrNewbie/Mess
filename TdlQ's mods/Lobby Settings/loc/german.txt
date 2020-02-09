@@ -1,4 +1,0 @@
-{
-	"ls_menu_infamy_permission" : "Berüchtigtsein-Limit",
-	"ls_menu_infamy_permission_help" : ""
-}

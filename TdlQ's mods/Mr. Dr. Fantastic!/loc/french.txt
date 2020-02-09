@@ -1,3 +1,0 @@
-{
-	"mdf_clue_found" : "$peer_name a trouvé un indice !"
-}

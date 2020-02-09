@@ -1,7 +1,0 @@
-{
-	"mkp_options_menu_title" : "มาบอท! มาขนของกัน!",
-	"mkp_options_menu_desc"  : "Monkeepers: เพิ่มความสามารถให้บอทสามารถช่วยขนของที่ปล้นได้ทั้งในโหมดลอบเร้นและโหมดบู๊\nเปิด/ปิดใช้งานความสามารถนี้ในแต่ละด่าน",
-
-	"mkp_options_keybind_delete_routes_title" : "ลบเส้นทางทั้งหมด",
-	"mkp_options_keybind_delete_routes_desc"  : "Delete all routes: เจ้าของล็อบบี๊สามารถยกเลิกเส้นทางที่กำหนดไว้ทั้งหมด"
-}

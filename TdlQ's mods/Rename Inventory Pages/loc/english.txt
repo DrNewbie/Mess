@@ -1,4 +1,0 @@
-{
-	"rip_change_page_name" : "Change page's name",
-	"rip_from_x_to" : "From \"$name\" to:"
-}

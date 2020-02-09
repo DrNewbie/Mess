@@ -1,7 +1,0 @@
-{
-	"mkp_options_menu_title" : "Monkeepers",
-	"mkp_options_menu_desc"  : "Enable/disable its features per level.",
-
-	"mkp_options_keybind_delete_routes_title" : "Delete all routes",
-	"mkp_options_keybind_delete_routes_desc"  : "Host can cancel all established routes."
-}

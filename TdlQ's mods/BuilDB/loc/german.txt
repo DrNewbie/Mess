@@ -1,8 +1,0 @@
-{
-	"buildb_export_to_pd2skills" : "Zu pd2skills exportieren",
-	"buildb_export_to_pd2builder" : "Zu pd2builder exportieren",
-	"buildb_open_db" : "Build-Datei öffnen",
-	"buildb_import" : "Aus Datei importieren",
-	"buildb_dialog_import_message" : "Diese Aktion wird das aktuelle Skillset ersetzen!",
-	"buildb_dialog_import_btn_preview" : "Vorschau"
-}
