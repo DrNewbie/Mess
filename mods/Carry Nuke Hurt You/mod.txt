@@ -1,0 +1,15 @@
+{
+  "name": "Carry Nuke Hurt You",
+  "description": " ",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/26641",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/units/beings/player/states/playercarry",
+      "script_path": "playercarry.lua"
+    }
+  ]
+}
