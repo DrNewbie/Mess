@@ -1,0 +1,48 @@
+{
+  "name": "Noob HUD",
+  "description": "https://modworkshop.net/mod/26669",
+  "author": "Dr_Newbie",
+  "version": "2",
+  "blt_version": 2,
+  "priority": 100,
+  "hooks": [
+    {
+      "hook_id": "lib/managers/hudmanagerpd2",
+      "script_path": "MyHP.lua"
+    },
+    {
+      "hook_id": "lib/units/beings/player/playerdamage",
+      "script_path": "MyHP.lua"
+    },
+    {
+      "hook_id": "lib/managers/hudmanagerpd2",
+      "script_path": "MyArmor.lua"
+    },
+    {
+      "hook_id": "lib/units/beings/player/playerdamage",
+      "script_path": "MyArmor.lua"
+    },
+    {
+      "hook_id": "lib/managers/hudmanagerpd2",
+      "script_path": "MyAmmo.lua"
+    },
+    {
+      "hook_id": "lib/units/beings/player/playerdamage",
+      "script_path": "MyAmmo.lua"
+    },
+    {
+      "hook_id": "lib/managers/hudmanagerpd2",
+      "script_path": "HideDefaultHud.lua"
+    }
+  ],
+  "updates": [
+    {
+      "identifier": "NoobHUDGitHubUpdate",
+      "host": {
+        "meta": "https://drnewbie.github.io/Mess/Update/NoobHUD.meta.json",
+        "download": "https://drnewbie.github.io/Mess/Update/NoobHUD.zip",
+        "patchnotes": "https://github.com/DrNewbie/Mess/commits/master"
+      }
+    }
+  ]
+}
