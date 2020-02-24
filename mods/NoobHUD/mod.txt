@@ -2,7 +2,7 @@
   "name": "Noob HUD",
   "description": "https://modworkshop.net/mod/26669",
   "author": "Dr_Newbie",
-  "version": "2",
+  "version": "3",
   "blt_version": 2,
   "priority": 100,
   "hooks": [
@@ -33,6 +33,14 @@
     {
       "hook_id": "lib/managers/hudmanagerpd2",
       "script_path": "HideDefaultHud.lua"
+    },
+    {
+      "hook_id": "lib/managers/hudmanagerpd2",
+      "script_path": "MyGrenades.lua"
+    },
+    {
+      "hook_id": "lib/managers/hudmanagerpd2",
+      "script_path": "MyDeployable.lua"
     }
   ],
   "updates": [
