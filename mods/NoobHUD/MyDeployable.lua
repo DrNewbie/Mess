@@ -75,13 +75,13 @@ if string.lower(RequiredScript) == "lib/managers/hudmanagerpd2" then
 	end
 
 	Hooks:PostHook(HUDManager, "set_deployable_equipment", "F_"..Idstring("PostHook:PlayerDamage:set_deployable_equipment:HUDQUAKEDEPLOYABLE:OwO"):key(), function(self, i, data)
-		if managers.hud and managers.hud.quake_deployable and type(data) == "table" then 
+		if managers.hud and managers.hud.quake_deployable and type(data) == "table" and type(i) == type(HUDManager.PLAYER_PANEL) and i == HUDManager.PLAYER_PANEL then 
 			managers.hud:quake_deployable(data.amount, data.icon)
 		end
 	end)
 
 	Hooks:PostHook(HUDManager, "set_teammate_deployable_equipment_amount", "F_"..Idstring("PostHook:PlayerDamage:set_teammate_deployable_equipment_amount:HUDQUAKEDEPLOYABLE:OwO"):key(), function(self, i, data)
-		if managers.hud and managers.hud.quake_deployable and type(data) == "table" then 
+		if managers.hud and managers.hud.quake_deployable and type(data) == "table" and type(i) == type(HUDManager.PLAYER_PANEL) and i == HUDManager.PLAYER_PANEL then 
 			managers.hud:quake_deployable(data.amount, data.icon)
 		end
 	end)
