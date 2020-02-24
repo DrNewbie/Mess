@@ -26,7 +26,7 @@ if string.lower(RequiredScript) == "lib/managers/hudmanagerpd2" then
 			h = 64,
 			layer = 1,
 			color = Color.white,
-			font = tweak_data.hud_corner.assault_font,
+			font = "fonts/font_large_mf",
 			font_size = 32
 		})
 		
