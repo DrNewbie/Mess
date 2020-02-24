@@ -31,15 +31,27 @@ if string.lower(RequiredScript) == "lib/managers/hudmanagerpd2" then
 		})
 		
 
-		local _quake_hp_icon = self.__quake_hp_panel:bitmap({
-			name = "_quake_hp_icon",
-			texture = "guis/textures/pd2/skilltree/icons_atlas",
-			texture_rect = { 1 * 64, 1 * 64, 64, 64 },
-			valign = "top",
-			layer = 1,
-			w = 96,
-			h = 96
-		})		
+		local _quake_hp_icon
+		if DB:has(Idstring("texture"), Idstring("guis/textures/pd2/noob_hud/better_icon/health")) then
+			_quake_hp_icon = self.__quake_hp_panel:bitmap({
+				name = "_quake_hp_icon",
+				texture = "guis/textures/pd2/noob_hud/better_icon/health",
+				valign = "top",
+				layer = 1,
+				w = 96,
+				h = 96
+			})
+		else
+			_quake_hp_icon = self.__quake_hp_panel:bitmap({
+				name = "_quake_hp_icon",
+				texture = "guis/textures/pd2/skilltree/icons_atlas",
+				texture_rect = { 1 * 64, 1 * 64, 64, 64 },
+				valign = "top",
+				layer = 1,
+				w = 96,
+				h = 96
+			})
+		end
 		_quake_hp_icon:set_right(_quake_hp_box:parent():w())
 		_quake_hp_icon:set_center_y(_quake_hp_box:h() / 2)
 		_quake_hp_box:set_right(_quake_hp_icon:left())

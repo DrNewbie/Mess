@@ -31,15 +31,27 @@ if string.lower(RequiredScript) == "lib/managers/hudmanagerpd2" then
 		})
 		
 
-		local _quake_ammo_icon = self.__quake_ammo_panel:bitmap({
-			name = "_quake_ammo_icon",
-			texture = "guis/textures/pd2/skilltree/icons_atlas",
-			texture_rect = { 2 * 64, 0 * 64, 64, 64 },
-			valign = "top",
-			layer = 1,
-			w = 96,
-			h = 96
-		})		
+		local _quake_ammo_icon
+		if DB:has(Idstring("texture"), Idstring("guis/textures/pd2/noob_hud/better_icon/ammo")) then
+			_quake_ammo_icon = self.__quake_ammo_panel:bitmap({
+				name = "_quake_ammo_icon",
+				texture = "guis/textures/pd2/noob_hud/better_icon/ammo",
+				valign = "top",
+				layer = 1,
+				w = 96,
+				h = 96
+			})
+		else
+			_quake_ammo_icon = self.__quake_ammo_panel:bitmap({
+				name = "_quake_ammo_icon",
+				texture = "guis/textures/pd2/skilltree/icons_atlas",
+				texture_rect = { 2 * 64, 0 * 64, 64, 64 },
+				valign = "top",
+				layer = 1,
+				w = 96,
+				h = 96
+			})
+		end
 		_quake_ammo_icon:set_right(_quake_ammo_box:parent():w())
 		_quake_ammo_icon:set_center_y(_quake_ammo_box:h() / 2)
 		_quake_ammo_box:set_right(_quake_ammo_icon:left())

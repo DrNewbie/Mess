@@ -31,21 +31,34 @@ if string.lower(RequiredScript) == "lib/managers/hudmanagerpd2" then
 		})
 		
 
-		local _quake_armor_icon = self.__quake_armor_panel:bitmap({
-			name = "_quake_armor_icon",
-			texture = "guis/textures/pd2/skilltree/icons_atlas",
-			texture_rect = { 2 * 64, 12 * 64, 64, 64 },
-			valign = "top",
-			layer = 1,
-			w = 96,
-			h = 96
-		})
+		local _quake_armor_icon		
+		if DB:has(Idstring("texture"), Idstring("guis/textures/pd2/noob_hud/better_icon/armor")) then
+			_quake_armor_icon = self.__quake_armor_panel:bitmap({
+				name = "_quake_armor_icon",
+				texture = "guis/textures/pd2/noob_hud/better_icon/armor",
+				valign = "top",
+				layer = 1,
+				w = 96,
+				h = 96
+			})
+		else
+			_quake_armor_icon = self.__quake_armor_panel:bitmap({
+				name = "_quake_armor_icon",
+				texture = "guis/textures/pd2/skilltree/icons_atlas",
+				texture_rect = { 2 * 64, 12 * 64, 64, 64 },
+				valign = "top",
+				layer = 1,
+				w = 96,
+				h = 96
+			})
+		end
+
 		
 		_quake_armor_icon:set_right(_quake_armor_box:parent():w())
 		_quake_armor_icon:set_center_y(_quake_armor_box:h() / 2)
 		_quake_armor_box:set_right(_quake_armor_icon:left())
 		
-		self.__quake_armor_panel:set_visible(true)			
+		self.__quake_armor_panel:set_visible(true)
 	end
 		
 	function HUDQUAKEARMOR:update(t)

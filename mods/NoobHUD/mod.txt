@@ -2,7 +2,7 @@
   "name": "Noob HUD",
   "description": "https://modworkshop.net/mod/26669",
   "author": "Dr_Newbie",
-  "version": "3.1",
+  "version": "3.3",
   "blt_version": 2,
   "priority": 100,
   "hooks": [
