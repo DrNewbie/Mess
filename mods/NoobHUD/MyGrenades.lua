@@ -12,7 +12,7 @@ if string.lower(RequiredScript) == "lib/managers/hudmanagerpd2" then
 		})
 		
 		self.__quake_grenades_panel:set_bottom(self._hud_panel:h()-16)
-		self.__quake_grenades_panel:set_right(self._hud_panel:w()*0.1 + 32)
+		self.__quake_grenades_panel:set_right(self._hud_panel:w()-128-32)
 			
 		local _quake_grenades_box = HUDBGBox_create(self.__quake_grenades_panel, {w = 64, h = 64}, {})
 		

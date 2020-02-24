@@ -12,7 +12,7 @@ if string.lower(RequiredScript) == "lib/managers/hudmanagerpd2" then
 		})
 		
 		self.__quake_deployable_panel:set_bottom(self._hud_panel:h()-16)
-		self.__quake_deployable_panel:set_right(self._hud_panel:w()*0.1 + 128 + 32)
+		self.__quake_deployable_panel:set_right(self._hud_panel:w()-32)
 			
 		local _quake_deployable_box = HUDBGBox_create(self.__quake_deployable_panel, {w = 64, h = 64}, {})
 		
@@ -80,7 +80,7 @@ if string.lower(RequiredScript) == "lib/managers/hudmanagerpd2" then
 		end
 	end)
 
-	Hooks:PostHook(HUDManager, "set_teammate_deployable_equipment_amount", "F_"..Idstring("PostHook:PlayerDamage:set_teammate_deployable_equipment_amount:HUDQUAKEDEPLOYABLE:OwO"):key(), function(self, i, data)
+	Hooks:PostHook(HUDManager, "set_teammate_deployable_equipment_amount", "F_"..Idstring("PostHook:PlayerDamage:set_teammate_deployable_equipment_amount:HUDQUAKEDEPLOYABLE:OwO"):key(), function(self, i, index, data)
 		if managers.hud and managers.hud.quake_deployable and type(data) == "table" and type(i) == type(HUDManager.PLAYER_PANEL) and i == HUDManager.PLAYER_PANEL then 
 			managers.hud:quake_deployable(data.amount, data.icon)
 		end
