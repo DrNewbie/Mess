@@ -1,21 +1,34 @@
 {
-	"name":"Bot carry a mini-deployable",
-	"description":"Bot carry a mini-deployable",
-	"author":"Dr_Newbie",
-	"contact":"http://modwork.shop/21887",
-	"version":"2",
-	"blt_version": 2,
-	"hooks":
-	[
-		{"hook_id":"lib/managers/localizationmanager", "script_path":"Base.lua"},
-		{"hook_id":"lib/units/player_team/teamaiinventory", "script_path":"Hooks/teamaiinventory.lua"},
-		{"hook_id":"lib/units/equipment/doctor_bag/doctorbagbase", "script_path":"Hooks/doctorbagbase.lua"},
-		{"hook_id":"lib/units/equipment/ammo_bag/ammobagbase", "script_path":"Hooks/ammobagbase.lua"},
-		{"hook_id":"lib/units/beings/player/states/playerstandard", "script_path":"Hooks/playerstandard.lua"},
-		{"hook_id":"lib/managers/achievmentmanager", "script_path":"Hooks/Block/achievmentmanager.lua"},
-		{"hook_id":"lib/network/matchmaking/networkmatchmakingsteam", "script_path":"Hooks/Block/networkmatchmakingsteam.lua"}
-	],
-	"dependencies":[
-		"bot_weapons"
-	]
+  "name": "Bot carry a mini-deployable",
+  "description": "Bot carry a mini-deployable",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/21887",
+  "version": "3",
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/units/player_team/teamaiinventory",
+      "script_path": "Hooks/teamaiinventory.lua"
+    },
+    {
+      "hook_id": "lib/units/equipment/doctor_bag/doctorbagbase",
+      "script_path": "Hooks/doctorbagbase.lua"
+    },
+    {
+      "hook_id": "lib/units/equipment/ammo_bag/ammobagbase",
+      "script_path": "Hooks/ammobagbase.lua"
+    },
+    {
+      "hook_id": "lib/units/beings/player/states/playerstandard",
+      "script_path": "Hooks/playerstandard.lua"
+    },
+    {
+      "hook_id": "lib/managers/achievmentmanager",
+      "script_path": "Hooks/Block/achievmentmanager.lua"
+    },
+    {
+      "hook_id": "lib/network/matchmaking/networkmatchmakingsteam",
+      "script_path": "Hooks/Block/networkmatchmakingsteam.lua"
+    }
+  ]
 }
