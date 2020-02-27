@@ -2,10 +2,9 @@
   "description": "mod that removes medics actually",
   "name": "mod that removes medics actually",
   "author": "Dr_Newbie",
-  "contact": "http://modwork.shop/24775",
-  "version": "1",
+  "contact": "https://modworkshop.net/mod/24775",
+  "version": "11",
   "priority": 100,
-  "color": "0 0 0",
   "blt_version": 2,
   "hooks": [
     {
