@@ -16,19 +16,19 @@
 	</dependencies>
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
-		<extension name="base" class="CopBase" >
-			<var name="can_be_marked" value="false" />
-			<var name="_tweak_table" value="tank" />
+		<extension name="base" class="HuskCopBase" >
+			<var name="can_be_marked" value="true" />
+			<var name="_tweak_table" value="tank_mini" />
 			<var name="_default_weapon_id" value="mini" />
 			<var name="_stats_name" value="tank_skull" />
 		</extension>
-		<extension name="inventory" class="CopInventory" />
-		<extension name="brain" class="CopBrain" />
+		<extension name="inventory" class="HuskCopInventory" />
+		<extension name="brain" class="HuskCopBrain" />
 		<extension name="anim_data" class="PlayerAnimationData" />
-		<extension name="character_damage" class="TankCopDamage">
+		<extension name="character_damage" class="HuskTankCopDamage" >
 			<var name="_head_body_name" value="head" />
 		</extension>
-		<extension name="movement" class="CopMovement" >
+		<extension name="movement" class="HuskCopMovement" >
 			<var name="_footwear" value="bulldozer" />
 			<var name="_anim_global" value="tank" />
 		</extension>
@@ -42,7 +42,7 @@
 		<extension name="contour" class="ContourExt" />
 		<extension name="sound" class="CopSound" />
 	</extensions>
-	<network sync="spawn" remote_unit="units/payday2/equipment/gen_equipment_tripmine/gen_equipment_pocket_tank_mini_husk"/>
+	<network sync="husk" remote_unit=""/>
 	<sounds>
 		<default_soundsource source="Hips"/>
 	</sounds>

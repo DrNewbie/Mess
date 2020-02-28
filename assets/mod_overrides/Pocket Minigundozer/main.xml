@@ -1,10 +1,11 @@
 <table name="Pocket Minigundozer">
 	<Localization directory="Loc" default="english.txt"/>
-	<AssetUpdates id="Pocket Minigundozer" version="1">
-        <custom_provider version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Pocket Minigundozer.txt" download_url="https://drnewbie.github.io/Mess/UpdateProvider/Pocket%20Minigundozer.zip"/>
+	<AssetUpdates id="Pocket Minigundozer" version="10">
+        <custom_provider version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Pocket%20Minigundozer.txt" download_url="https://drnewbie.github.io/Mess/UpdateProvider/Pocket%20Minigundozer.zip"/>
     </AssetUpdates>
 	<AddFiles directory="Assets">
 		<unit path="units/payday2/equipment/gen_equipment_tripmine/gen_equipment_pocket_tank_mini"/>
+		<unit path="units/payday2/equipment/gen_equipment_tripmine/gen_equipment_pocket_tank_mini_husk"/>
 		<unit path="units/payday2/equipment/gen_equipment_tripmine/gen_equipment_pocket_tank_mini_dummy"/>
 		<texture path="guis/textures/pd2/blackmarket/icons/deployables/pocket_tank_mini"/>
 	</AddFiles>
