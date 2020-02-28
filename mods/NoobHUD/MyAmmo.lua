@@ -78,7 +78,6 @@ elseif string.lower(RequiredScript) == "lib/units/beings/player/playerdamage" th
 	Hooks:PostHook(PlayerDamage, "update", "F_"..Idstring("PostHook:PlayerDamage:update:HUDQUAKEAMMO:OwO"):key(), function(self)
 		if managers.hud and managers.hud.quake_ammo and self._unit and self._unit:inventory() and self._unit:inventory():equipped_unit() then
 			local _, _current_clip, _current_left, _ = self._unit:inventory():equipped_unit():base():ammo_info()
-			_current_left = _current_left - _current_clip
 			managers.hud:quake_ammo(_current_clip, _current_left)
 		end
 	end)
