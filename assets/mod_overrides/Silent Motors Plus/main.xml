@@ -1,0 +1,23 @@
+<table name="Silent Motors Plus">
+    <AssetUpdates id="Silent Motors Plus" version="1">
+        <custom_provider version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Silent%20Motors%20Plus.txt" download_url="https://drnewbie.github.io/Mess/UpdateProvider/Silent%20Motors%20Plus.zip"/>
+    </AssetUpdates>
+	
+	<Localization directory="Localization" default="english.txt"/>
+	
+	<AddFiles directory="assets">
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_saw_body_silent_plus"/>
+	</AddFiles>
+	
+	<Hooks directory="Hooks">
+		<hook file="sawweaponbase.lua" source_file="lib/units/weapons/sawweaponbase"/>
+	</Hooks>
+	
+	<WeaponMod based_on="wpn_fps_saw_body_silent" id="wpn_fps_saw_body_silent_plus" type="lower_reciever" drop="false" texture_bundle_folder="mods" is_a_unlockable="true">
+		<stats value="1" alert_size="99999" damage="-10" total_ammo_mod="10"/>
+		<custom_stats rof_mult="0.05"/>
+		<weapons>
+			<value_node value="wpn_fps_saw"/>
+		</weapons>
+    </WeaponMod>
+</table>
