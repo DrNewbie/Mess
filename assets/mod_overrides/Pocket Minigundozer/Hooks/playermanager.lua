@@ -1,5 +1,4 @@
-function PlayerManager:availible_equipment(slot)
-	local equipment = {}
+Hooks:PreHook(PlayerManager, "availible_equipment", "F_"..Idstring("PreHook:PlayerManager:availible_equipment:PocketMinigundozer"):key(), function(self)
 	self._global.equipment["pocket_tank_mini"] = {
 		tree = 2,
 		step = 4,
@@ -16,10 +15,4 @@ function PlayerManager:availible_equipment(slot)
 		prio = "high",
 		slot = 1
 	}
-	for name, data in pairs(self._global.equipment) do
-		if not slot or slot and tweak_data.upgrades.definitions[name].slot == slot then
-			table.insert(equipment, name)
-		end
-	end
-	return equipment
-end
+end)
