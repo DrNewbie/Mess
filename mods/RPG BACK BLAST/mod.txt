@@ -1,0 +1,14 @@
+{
+  "name": "RPG BACK BLAST",
+  "description": "https://modworkshop.net/mod/26716",
+  "author": "Dr_Newbie",
+  "version": "1",
+  "blt_version": 2,
+  "priority": 100,
+  "hooks": [
+    {
+      "hook_id": "lib/units/weapons/projectileweaponbase",
+      "script_path": "projectileweaponbase.lua"
+    }
+  ]
+}
