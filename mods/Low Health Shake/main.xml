@@ -1,5 +1,5 @@
 <table name="Low Health Shake">
-    <AssetUpdates id="Low Health Shake" version="1">
+    <AssetUpdates id="Low Health Shake" version="2">
         <custom_provider version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Low%20Health%20Shake.txt" download_url="https://drnewbie.github.io/Mess/UpdateProvider/Low%20Health%20Shake.zip"/>
     </AssetUpdates>
 </table>
