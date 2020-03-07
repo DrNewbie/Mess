@@ -1,3 +1,5 @@
+LegendaryArmours = LegendaryArmours or {}
+
 Hooks:Add("LocalizationManagerPostInit", "TF2SoldierLASBoosts_loc", function(loc)
 	if LegendaryArmours.soldier then
 		loc:add_localized_strings({
