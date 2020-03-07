@@ -1,7 +1,7 @@
 LegendaryArmours = LegendaryArmours or {}
 
 Hooks:PostHook(GrenadeLauncherBase, "replenish", "F_"..Idstring("GrenadeLauncherBase:replenish:TF2SoldierLASBoosts"):key(), function(self)
-	local las = tostring(managers.blackmarket:equipped_armor_skin())
+	local las = tostring(managers.blackmarket:equipped_player_style())
 	if LegendaryArmours[las] and (las == "soldier_blu" or las == "soldier") then
 		if type(self._ammo_pickup) == "table" and type(self._ammo_pickup[1]) == "number" and type(self._ammo_pickup[2]) == "number" then
 			if self._ammo_pickup[2] < 0.1 then

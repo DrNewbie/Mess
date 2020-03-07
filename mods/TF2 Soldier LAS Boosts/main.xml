@@ -1,3 +1,5 @@
 <table name="TF2 Soldier [LAS] Boosts">
-	<AssetUpdates id="25587" version="3" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+    <AssetUpdates id="TF2 Soldier [LAS] Boosts" version="4">
+        <custom_provider version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/TF2%20Soldier%20LAS%20Boosts.txt" download_url="https://drnewbie.github.io/Mess/UpdateProvider/TF2%20Soldier%20LAS%20Boosts.zip"/>
+    </AssetUpdates>
 </table>
