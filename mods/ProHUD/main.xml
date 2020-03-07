@@ -1,0 +1,7 @@
+<table name="NoobHUD">
+	<AddFiles directory="Assets">
+		<texture path="guis/textures/pd2/noob_hud/better_icon/armor" force = "true"/>
+		<texture path="guis/textures/pd2/noob_hud/better_icon/health" force = "true"/>
+		<texture path="guis/textures/pd2/noob_hud/better_icon/ammo" force = "true"/>
+	</AddFiles>
+</table>
