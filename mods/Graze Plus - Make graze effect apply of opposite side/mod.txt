@@ -1,0 +1,15 @@
+{
+  "name": "Graze Plus - Make graze effect apply of opposite side",
+  "description": " ",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/26915",
+  "version": "1",
+  "priority": 1,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/managers/player/snipergrazedamage",
+      "script_path": "snipergrazedamage.lua"
+    }
+  ]
+}
