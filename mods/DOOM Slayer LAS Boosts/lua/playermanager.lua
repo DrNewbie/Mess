@@ -1,8 +1,8 @@
 LegendaryArmours = LegendaryArmours or {}
 
 Hooks:PostHook(PlayerManager, "init_finalize", "F_"..Idstring("PostHook:PlayerManager:init_finalize:DewmSlayaLASBoosts"):key(), function(self)
-	local las = tostring(managers.blackmarket:equipped_armor_skin())
-	if LegendaryArmours[las] and las == "dewmslaya" then
+	local las = tostring(managers.blackmarket:equipped_player_style())
+	if las == "las_dewmslaya" then
 		self._is_dewmslaya = true
 	else
 		self._is_dewmslaya = nil

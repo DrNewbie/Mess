@@ -1,5 +1,7 @@
+LegendaryArmours = LegendaryArmours or {}
+
 Hooks:Add("LocalizationManagerPostInit", "DewmSlayaLASBoosts_loc", function(loc)
-	if tweak_data.economy.armor_skins.dewmslaya then
+	if LegendaryArmours.dewmslaya then
 		local add_buff = {
 			loc:text("bm_askn_dewmslaya_boosts_more_ammo"),
 			loc:text("bm_askn_dewmslaya_boosts_more_stamia"),
