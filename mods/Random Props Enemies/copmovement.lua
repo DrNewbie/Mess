@@ -43,6 +43,7 @@ _G[__props_unit_ids] = _G[__props_unit_ids] or nil
 
 Hooks:PostHook(CopMovement, "post_init", "F_"..Idstring("PostHook:CopMovement:post_init:Plant Head:PwP"):key(), function(self)
 	if self._unit then
+		--[[
 		self._unit:set_visible(false)
 		if self._unit.spawn_manager and self._unit:spawn_manager() and self._unit:spawn_manager():linked_units() then
 			for unit_id, _ in pairs( self._unit:spawn_manager():linked_units() ) do
@@ -52,6 +53,7 @@ Hooks:PostHook(CopMovement, "post_init", "F_"..Idstring("PostHook:CopMovement:po
 				end
 			end
 		end
+		]]
 		if not _G[__props_unit_ids] then
 			_G[__props_unit_ids] = {}
 			local __units = World:find_units_quick("all", managers.slot:get_mask("trip_mine_placeables"))
@@ -61,7 +63,7 @@ Hooks:PostHook(CopMovement, "post_init", "F_"..Idstring("PostHook:CopMovement:po
 		end
 	end
 end)
-
+--[[
 Hooks:PostHook(CopMovement, "update", "F_"..Idstring("PostHook:CopMovement:update:Plant Head:PwP"):key(), function(self) 
 	if self._unit then
 		self._unit:set_visible(false)
@@ -75,7 +77,7 @@ Hooks:PostHook(CopMovement, "update", "F_"..Idstring("PostHook:CopMovement:updat
 		end
 	end
 end)
-
+]]
 Hooks:PostHook(CopMovement, "set_character_anim_variables", "F_"..Idstring("PostHook:CopMovement:set_character_anim_variables:Plant Head:PwP"):key(), function(self)
 	if self._unit then
 		self._unit:set_visible(false)
