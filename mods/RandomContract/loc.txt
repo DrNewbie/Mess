@@ -25,5 +25,9 @@
   "roll_contract_stealth_dw_title": "Stealth DEATH WISH",
   "roll_contract_stealth_dw_desc": "Give you random stealth contract in DEATH WISH",
   "roll_contract_stealth_sm_title": "Stealth DEATH SENTENCE",
-  "roll_contract_stealth_sm_desc": "Give you random stealth contract in DEATH SENTENCE"
+  "roll_contract_stealth_sm_desc": "Give you random stealth contract in DEATH SENTENCE",
+  "roll_contract_loud_sm_od_title": "LOUD DSOD",
+  "roll_contract_loud_sm_od_desc": "Give you random loud contract in DEATH SENTENCE and ONE DOWN",
+  "roll_contract_stealth_sm_od_title": "Stealth DSOD",
+  "roll_contract_stealth_sm_od_desc": "Give you random stealth contract in DEATH SENTENCE and ONE DOWN"
 }

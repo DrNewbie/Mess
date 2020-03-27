@@ -1,4 +1,20 @@
 local ThisModPath = ModPath
+local __menu_possible = {
+	"all_ovk",
+	"all_ew",
+	"all_dw",
+	"all_sm",
+	"stealth_ovk",
+	"stealth_ew",
+	"stealth_dw",
+	"stealth_sm",
+	"stealth_sm_od",
+	"loud_ovk",
+	"loud_ew",
+	"loud_dw",
+	"loud_sm",
+	"loud_sm_od"
+}
 
 Hooks:Add("LocalizationManagerPostInit", "RandomContract_loc", function(loc)
 	loc:load_localization_file(ThisModPath.."Loc.txt")
@@ -24,9 +40,14 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "MenuManagerPopulateCustomMenus_Rand
 				local difficulty_id = tweak_data:difficulty_to_index(data.difficulty)
 				managers.money:on_buy_premium_contract(data.job_id, difficulty_id)
 				managers.job:on_buy_job(data.job_id, difficulty_id)
-				MenuCallbackHandler:start_job({job_id = data.job_id, difficulty = data.difficulty})
 				MenuCallbackHandler:save_progress()
+				if Global.game_settings.single_player then
+					MenuCallbackHandler:start_single_player_job(data)
+				else
+					MenuCallbackHandler:start_job(data)
+				end
 			end
+			local __job = {}
 			local job_id_list = tweak_data.narrative:get_jobs_index()
 			local rnd_job_id_list = {}
 			local job_tweak_data, is_not_dlc_or_got, choose_job, can_afford, retries
@@ -42,6 +63,11 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "MenuManagerPopulateCustomMenus_Rand
 			if _priority:find("sm") then
 				_difficult = "sm_wish"
 			end
+			if _priority:find("od") then
+				__job.one_down = true
+			else
+				__job.one_down = false
+			end
 			if _priority:find("loud") then
 				for k, job in pairs(job_id_list) do
 					for k2, day in pairs(tweak_data.narrative.jobs[job].chain) do
@@ -55,7 +81,7 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "MenuManagerPopulateCustomMenus_Rand
 			elseif _priority:find("stealth") then
 				for k, job in pairs(job_id_list) do
 					for k2, day in pairs(tweak_data.narrative.jobs[job].chain) do
-						log(tostring(day))
+						--log(tostring(day))
 						if day and day.level_id and tweak_data.levels[day.level_id] then
 							if tweak_data.levels[day.level_id].ghost_bonus then
 								table.insert(rnd_job_id_list, job)
@@ -77,7 +103,9 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "MenuManagerPopulateCustomMenus_Rand
 				retries = (retries or 0) + 1
 			end
 			if retries and retries < retry_limit then
-				create_job({ difficulty = _difficult, job_id = choose_job })
+				__job.difficulty = _difficult
+				__job.job_id = choose_job
+				create_job(__job)
 			else
 				QuickMenu:new(
 					"Random Contrect",
@@ -88,102 +116,75 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "MenuManagerPopulateCustomMenus_Rand
 					true
 				)
 			end
-		end		
-		MenuHelper:AddButton({
-			id = "roll_contract_all_ovk",
-			title = "roll_contract_all_ovk_title",
-			desc = "roll_contract_all_ovk_desc",
-			callback = "Random_Contract_Now",
-			priority = "roll_contract_all_ovk",
-			menu_id = "menu_roll_contract"
-		})
-		MenuHelper:AddButton({
-			id = "roll_contract_all_ew",
-			title = "roll_contract_all_ew_title",
-			desc = "roll_contract_all_ew_desc",
-			callback = "Random_Contract_Now",
-			priority = "roll_contract_all_ew",
-			menu_id = "menu_roll_contract"
-		})
-		MenuHelper:AddButton({
-			id = "roll_contract_all_dw",
-			title = "roll_contract_all_dw_title",
-			desc = "roll_contract_all_dw_desc",
-			callback = "Random_Contract_Now",
-			priority = "roll_contract_all_dw",
-			menu_id = "menu_roll_contract"
-		})
-		MenuHelper:AddButton({
-			id = "roll_contract_all_sm",
-			title = "roll_contract_all_sm_title",
-			desc = "roll_contract_all_sm_desc",
-			callback = "Random_Contract_Now",
-			priority = "roll_contract_all_sm",
-			menu_id = "menu_roll_contract"
-		})
-		MenuHelper:AddButton({
-			id = "roll_contract_loud_ovk",
-			title = "roll_contract_loud_ovk_title",
-			desc = "roll_contract_loud_ovk_desc",
-			callback = "Random_Contract_Now",
-			priority = "roll_contract_loud_ovk",
-			menu_id = "menu_roll_contract"
-		})
-		MenuHelper:AddButton({
-			id = "roll_contract_loud_ew",
-			title = "roll_contract_loud_ew_title",
-			desc = "roll_contract_loud_ew_desc",
-			callback = "Random_Contract_Now",
-			priority = "roll_contract_loud_ew",
-			menu_id = "menu_roll_contract"
-		})
-		MenuHelper:AddButton({
-			id = "roll_contract_loud_dw",
-			title = "roll_contract_loud_dw_title",
-			desc = "roll_contract_loud_dw_desc",
-			callback = "Random_Contract_Now",
-			priority = "roll_contract_loud_dw",
-			menu_id = "menu_roll_contract"
-		})
-		MenuHelper:AddButton({
-			id = "roll_contract_loud_sm",
-			title = "roll_contract_loud_sm_title",
-			desc = "roll_contract_loud_sm_desc",
-			callback = "Random_Contract_Now",
-			priority = "roll_contract_loud_sm",
-			menu_id = "menu_roll_contract"
-		})
-		MenuHelper:AddButton({
-			id = "roll_contract_stealth_ovk",
-			title = "roll_contract_stealth_ovk_title",
-			desc = "roll_contract_stealth_ovk_desc",
-			callback = "Random_Contract_Now",
-			priority = "roll_contract_stealth_ovk",
-			menu_id = "menu_roll_contract"
-		})
-		MenuHelper:AddButton({
-			id = "roll_contract_stealth_ew",
-			title = "roll_contract_stealth_ew_title",
-			desc = "roll_contract_stealth_ew_desc",
-			callback = "Random_Contract_Now",
-			priority = "roll_contract_stealth_ew",
-			menu_id = "menu_roll_contract"
-		})
-		MenuHelper:AddButton({
-			id = "roll_contract_stealth_dw",
-			title = "roll_contract_stealth_dw_title",
-			desc = "roll_contract_stealth_dw_desc",
-			callback = "Random_Contract_Now",
-			priority = "roll_contract_stealth_dw",
-			menu_id = "menu_roll_contract"
-		})
-		MenuHelper:AddButton({
-			id = "roll_contract_stealth_sm",
-			title = "roll_contract_stealth_sm_title",
-			desc = "roll_contract_stealth_sm_desc",
-			callback = "Random_Contract_Now",
-			priority = "roll_contract_stealth_sm",
-			menu_id = "menu_roll_contract"
-		})
+		end
+		for _, _opt in pairs(__menu_possible) do
+			MenuHelper:AddButton({
+				id = "roll_contract_".._opt,
+				title = "roll_contract_".._opt.."_title",
+				desc = "roll_contract_".._opt.."_desc",
+				callback = "Random_Contract_Now",
+				priority = "roll_contract_".._opt,
+				menu_id = "menu_roll_contract"
+			})
+		end
 	end
 end)
+
+if RequiredScript == "lib/managers/crimenetmanager" then
+	Hooks:PostHook(CrimeNetGui, "init", "RandomContractInitGUI", function(self, ws, fullscreeen_ws, node)
+		if Global.game_settings.single_player then
+			for _i, _opt in pairs(__menu_possible) do
+				local __roll_contract = self._panel:text({
+					name = "__roll_contract_".._opt,
+					text = "--> "..managers.localization:to_upper_text("roll_contract_".._opt.."_title"),
+					font_size = tweak_data.menu.pd2_small_font_size,
+					font = tweak_data.menu.pd2_small_font,
+					color = tweak_data.screen_colors.button_stage_3,
+					layer = 40,
+					y = 80 + tweak_data.menu.pd2_small_font_size * (_i - 1) * 1.5,
+					blend_mode = "add"
+				})
+				self:make_fine_text(__roll_contract)
+				__roll_contract:set_right(self._panel:w() - 10)
+			end
+		end
+	end)
+	local orig_mouse_pressed = CrimeNetGui.mouse_pressed
+	function CrimeNetGui:mouse_pressed(o, button, x, y, ...)
+		if not self._crimenet_enabled or self._getting_hacked then
+			return
+		end
+		for _i, _opt in pairs(__menu_possible) do
+			local __button = self._panel:child("__roll_contract_".._opt)
+			if alive(__button) then
+				if __button:inside(x, y) then
+					MenuCallbackHandler:Random_Contract_Now({_priority = "roll_contract_".._opt})
+					return true
+				end
+			end
+		end
+		return orig_mouse_pressed(self, o, button, x, y, ...)
+	end
+	Hooks:PostHook(CrimeNetGui, "mouse_moved", "ReconnectTSMouseMoved", function(self, o, x, y)
+		if not self._crimenet_enabled or self._getting_hacked then
+		
+		else
+			for _i, _opt in pairs(__menu_possible) do
+				local __button = self._panel:child("__roll_contract_".._opt)
+				local __highlighted = "__roll_contract__highlighted_".._opt
+				if alive(__button) then
+					if __button:inside(x, y) then
+						if not self[__highlighted] then
+							self[__highlighted] = true
+							__button:set_color(tweak_data.screen_colors.risk)
+							managers.menu_component:post_event("highlight")
+						end
+					elseif self[__highlighted] then
+						self[__highlighted] = false
+						__button:set_color(tweak_data.screen_colors.button_stage_3)
+					end
+				end
+			end
+		end
+	end)
+end

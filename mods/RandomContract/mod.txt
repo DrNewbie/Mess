@@ -1,12 +1,16 @@
 {
   "name": "Random Contract",
   "description": "Random Contract",
-  "author": "Dr_Newbie and BangL",
-  "version": "3",
+  "author": "Dr_Newbie and BangL , https://modworkshop.net/mod/14596",
+  "version": "4",
   "blt_version": 2,
   "hooks": [
     {
       "hook_id": "lib/managers/menumanager",
+      "script_path": "RandomContract.lua"
+    },
+    {
+      "hook_id": "lib/managers/crimenetmanager",
       "script_path": "RandomContract.lua"
     }
   ]
