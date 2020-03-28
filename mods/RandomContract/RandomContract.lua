@@ -15,6 +15,29 @@ local __menu_possible = {
 	"loud_sm",
 	"loud_sm_od"
 }
+local __roll_contract_blacklist = {"__"}
+
+function __roll_contract_blacklist_save()
+	local _file = io.open(ThisModPath.."__blacklist.txt", "w+")
+	if _file then
+		_file:write(json.encode(__roll_contract_blacklist))
+		_file:close()
+	end
+end
+
+function __roll_contract_blacklist_load()
+	local _file = io.open(ThisModPath.."__blacklist.txt", "r")
+	if _file then
+		__roll_contract_blacklist = json.decode(_file:read("*all"))
+		_file:close()
+	else
+		__roll_contract_blacklist = {["__"] = true}
+		__roll_contract_blacklist_save()
+		__roll_contract_blacklist_load()
+	end
+end
+
+__roll_contract_blacklist_load()
 
 Hooks:Add("LocalizationManagerPostInit", "RandomContract_loc", function(loc)
 	loc:load_localization_file(ThisModPath.."Loc.txt")
@@ -22,15 +45,18 @@ end)
 
 Hooks:Add("MenuManagerSetupCustomMenus", "MenuManagerSetupCustomMenus_RandomContract", function(menu_manager, nodes)
 	if nodes["lobby"] then
-		MenuHelper:NewMenu( "menu_roll_contract" )
+		MenuHelper:NewMenu("menu_roll_contract")
 	end
+	MenuHelper:NewMenu("menu_roll_contract_blacklist")
 end)
 
 Hooks:Add("MenuManagerBuildCustomMenus", "MenuManagerBuildCustomMenus_RandomContract", function(menu_manager, nodes)
-	if nodes["lobby"] and ( not LuaNetworking:IsMultiplayer() or ( LuaNetworking:IsMultiplayer() and LuaNetworking:IsHost() ) ) then
-		nodes["menu_roll_contract"] = MenuHelper:BuildMenu( "menu_roll_contract" )
-		MenuHelper:AddMenuItem(nodes["lobby"], "menu_roll_contract", "menu_roll_contract_name", "menu_roll_contract_desc" )
+	if nodes["lobby"] and (not LuaNetworking:IsMultiplayer() or (LuaNetworking:IsMultiplayer() and LuaNetworking:IsHost())) then
+		nodes["menu_roll_contract"] = MenuHelper:BuildMenu("menu_roll_contract")
+		MenuHelper:AddMenuItem(nodes["lobby"], "menu_roll_contract", "menu_roll_contract_name", "menu_roll_contract_desc")
 	end
+	nodes["menu_roll_contract_blacklist"] = MenuHelper:BuildMenu("menu_roll_contract_blacklist")
+	MenuHelper:AddMenuItem(nodes["blt_options"], "menu_roll_contract_blacklist", "menu_roll_contract_blacklist_name", "menu_roll_contract_blacklist_desc")
 end)
 
 Hooks:Add("MenuManagerPopulateCustomMenus", "MenuManagerPopulateCustomMenus_RandomContract", function(menu_manager, nodes)
@@ -70,21 +96,24 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "MenuManagerPopulateCustomMenus_Rand
 			end
 			if _priority:find("loud") then
 				for k, job in pairs(job_id_list) do
-					for k2, day in pairs(tweak_data.narrative.jobs[job].chain) do
-						if day and day.level_id and tweak_data.levels[day.level_id] then
-							if not tweak_data.levels[day.level_id].ghost_bonus then
-								table.insert(rnd_job_id_list, job)
+					if not __roll_contract_blacklist[job] then
+						for k2, day in pairs(tweak_data.narrative.jobs[job].chain) do
+							if day and day.level_id and tweak_data.levels[day.level_id] then
+								if not tweak_data.levels[day.level_id].ghost_bonus then
+									table.insert(rnd_job_id_list, job)
+								end
 							end
 						end
 					end
 				end
 			elseif _priority:find("stealth") then
 				for k, job in pairs(job_id_list) do
-					for k2, day in pairs(tweak_data.narrative.jobs[job].chain) do
-						--log(tostring(day))
-						if day and day.level_id and tweak_data.levels[day.level_id] then
-							if tweak_data.levels[day.level_id].ghost_bonus then
-								table.insert(rnd_job_id_list, job)
+					if not __roll_contract_blacklist[job] then
+						for k2, day in pairs(tweak_data.narrative.jobs[job].chain) do
+							if day and day.level_id and tweak_data.levels[day.level_id] then
+								if tweak_data.levels[day.level_id].ghost_bonus then
+									table.insert(rnd_job_id_list, job)
+								end
 							end
 						end
 					end
@@ -96,7 +125,7 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "MenuManagerPopulateCustomMenus_Rand
 				return				
 			end
 			while (not is_not_dlc_or_got or not can_afford) and ((retries or 0) < retry_limit) do
-				choose_job = rnd_job_id_list[math.random( #rnd_job_id_list )]
+				choose_job = rnd_job_id_list[math.random(#rnd_job_id_list)]
 				job_tweak_data = tweak_data.narrative.jobs[choose_job]
 				is_not_dlc_or_got = not job_tweak_data.dlc or managers.dlc:is_dlc_unlocked(job_tweak_data.dlc)
 				can_afford = managers.money:can_afford_buy_premium_contract(choose_job, tweak_data:difficulty_to_index(_difficult))
@@ -128,10 +157,31 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "MenuManagerPopulateCustomMenus_Rand
 			})
 		end
 	end
+	local __job_id_list = tweak_data.narrative:get_jobs_index()
+	for k, job in pairs(__job_id_list) do
+		local job_data = tweak_data.narrative.jobs[job]
+		local __ids_key = Idstring("menu_roll_contract_blacklist_"..job):key()
+		MenuCallbackHandler["C_"..__ids_key] = function(self, item)
+			if tostring(item:value()) == "on" then
+				__roll_contract_blacklist[job] = true
+			else
+				__roll_contract_blacklist[job] = false
+			end
+			__roll_contract_blacklist_save()
+		end
+		MenuHelper:AddToggle({
+			id = "M_"..__ids_key,
+			title = managers.localization:to_upper_text(tostring(job_data.name_id or job_data.description_id)).." -- "..managers.localization:to_upper_text(tostring(job_data.contact and (tweak_data.narrative.contacts[job_data.contact].name_id or tweak_data.narrative.contacts[job_data.contact].description_id) or "nil")),
+			callback = "C_"..__ids_key,
+			value = __roll_contract_blacklist[job] and true or false,
+			menu_id = "menu_roll_contract_blacklist",
+			localized = false
+		})
+	end
 end)
 
 if RequiredScript == "lib/managers/crimenetmanager" then
-	Hooks:PostHook(CrimeNetGui, "init", "RandomContractInitGUI", function(self, ws, fullscreeen_ws, node)
+	Hooks:PostHook(CrimeNetGui, "init", "F_"..Idstring("PostHook:CrimeNetGui:init:RandomContract"):key(), function(self, ws, fullscreeen_ws, node)
 		if Global.game_settings.single_player then
 			for _i, _opt in pairs(__menu_possible) do
 				local __roll_contract = self._panel:text({
@@ -165,7 +215,7 @@ if RequiredScript == "lib/managers/crimenetmanager" then
 		end
 		return orig_mouse_pressed(self, o, button, x, y, ...)
 	end
-	Hooks:PostHook(CrimeNetGui, "mouse_moved", "ReconnectTSMouseMoved", function(self, o, x, y)
+	Hooks:PostHook(CrimeNetGui, "mouse_moved", "F_"..Idstring("PostHook:CrimeNetGui:mouse_moved:RandomContract"):key(), function(self, o, x, y)
 		if not self._crimenet_enabled or self._getting_hacked then
 		
 		else

@@ -29,5 +29,7 @@
   "roll_contract_loud_sm_od_title": "LOUD DSOD",
   "roll_contract_loud_sm_od_desc": "Give you random loud contract in DEATH SENTENCE and ONE DOWN",
   "roll_contract_stealth_sm_od_title": "Stealth DSOD",
-  "roll_contract_stealth_sm_od_desc": "Give you random stealth contract in DEATH SENTENCE and ONE DOWN"
+  "roll_contract_stealth_sm_od_desc": "Give you random stealth contract in DEATH SENTENCE and ONE DOWN",
+  "menu_roll_contract_blacklist_name": "Random contract Blacklist",
+  "menu_roll_contract_blacklist_desc": " "
 }

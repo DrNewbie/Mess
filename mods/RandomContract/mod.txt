@@ -2,7 +2,7 @@
   "name": "Random Contract",
   "description": "Random Contract",
   "author": "Dr_Newbie and BangL , https://modworkshop.net/mod/14596",
-  "version": "4",
+  "version": "5",
   "blt_version": 2,
   "hooks": [
     {
