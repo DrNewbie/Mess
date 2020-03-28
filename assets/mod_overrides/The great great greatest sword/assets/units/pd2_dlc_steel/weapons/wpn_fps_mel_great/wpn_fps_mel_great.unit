@@ -3,6 +3,7 @@
 	<dependencies>
 		<depends_on bnk="soundbanks/melee_great"/>
 		<depends_on effect="effects/particles/fire/small_light_fire" />
+		<depends_on effect="effects/payday2/particles/character/taser_thread" />
 	</dependencies>
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
