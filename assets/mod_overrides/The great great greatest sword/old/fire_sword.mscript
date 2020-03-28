@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<modelscript>
+    <object3d name="e_effect_001" mode="add">
+        <parent name="rp_wpn_fps_mel_great" />
+        <position x="0" y="10" z="0" />
+        <rotation w="1" x="0" y="0" z="0" />
+    </object3d>
+    <object3d name="e_effect_002" mode="add">
+        <parent name="rp_wpn_fps_mel_great" />
+        <position x="0" y="20" z="0" />
+        <rotation w="1" x="0" y="0" z="0" />
+    </object3d>
+    <object3d name="e_effect_003" mode="add">
+        <parent name="rp_wpn_fps_mel_great" />
+        <position x="0" y="30" z="0" />
+        <rotation w="1" x="0" y="0" z="0" />
+    </object3d>
+    <object3d name="e_effect_004" mode="add">
+        <parent name="rp_wpn_fps_mel_great" />
+        <position x="0" y="40" z="0" />
+        <rotation w="1" x="0" y="0" z="0" />
+    </object3d>
+    <object3d name="e_effect_005" mode="add">
+        <parent name="rp_wpn_fps_mel_great" />
+        <position x="0" y="50" z="0" />
+        <rotation w="1" x="0" y="0" z="0" />
+    </object3d>
+    <object3d name="e_effect_006" mode="add">
+        <parent name="rp_wpn_fps_mel_great" />
+        <position x="0" y="60" z="0" />
+        <rotation w="1" x="0" y="0" z="0" />
+    </object3d>
+    <object3d name="e_effect_007" mode="add">
+        <parent name="rp_wpn_fps_mel_great" />
+        <position x="0" y="70" z="0" />
+        <rotation w="1" x="0" y="0" z="0" />
+    </object3d>
+    <object3d name="e_effect_008" mode="add">
+        <parent name="rp_wpn_fps_mel_great" />
+        <position x="0" y="80" z="0" />
+        <rotation w="1" x="0" y="0" z="0" />
+    </object3d>
+    <object3d name="e_effect_009" mode="add">
+        <parent name="rp_wpn_fps_mel_great" />
+        <position x="0" y="90" z="0" />
+        <rotation w="1" x="0" y="0" z="0" />
+    </object3d>
+</modelscript>

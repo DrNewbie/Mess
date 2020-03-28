@@ -1,0 +1,17 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_steel/weapons/wpn_fps_mel_great/wpn_fps_mel_great" orientation_object="rp_wpn_fps_mel_great" />
+	<graphics>
+		<object name="g_great" enabled="true" />
+	</graphics>
+	<effects>
+        <effect_spawner name="effect_001" enabled="true" object="e_effect_001" effect="effects/particles/fire/small_light_fire"/>
+	    <effect_spawner name="effect_002" enabled="true" object="e_effect_002" effect="effects/particles/fire/small_light_fire"/>
+	    <effect_spawner name="effect_003" enabled="true" object="e_effect_003" effect="effects/particles/fire/small_light_fire"/>
+	    <effect_spawner name="effect_004" enabled="true" object="e_effect_004" effect="effects/particles/fire/small_light_fire"/>
+	    <effect_spawner name="effect_005" enabled="true" object="e_effect_005" effect="effects/particles/fire/small_light_fire"/>
+	    <effect_spawner name="effect_006" enabled="true" object="e_effect_006" effect="effects/particles/fire/small_light_fire"/>
+	    <effect_spawner name="effect_007" enabled="true" object="e_effect_007" effect="effects/particles/fire/small_light_fire"/>
+	    <effect_spawner name="effect_008" enabled="true" object="e_effect_008" effect="effects/particles/fire/small_light_fire"/>
+	    <effect_spawner name="effect_009" enabled="true" object="e_effect_008" effect="effects/particles/fire/small_light_fire"/>
+	</effects>
+</dynamic_object>

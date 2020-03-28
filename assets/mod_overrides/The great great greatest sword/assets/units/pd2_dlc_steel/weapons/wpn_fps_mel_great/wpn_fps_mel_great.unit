@@ -1,0 +1,10 @@
+<unit type="wpn" slot="1">
+	<object file="units/pd2_dlc_steel/weapons/wpn_fps_mel_great/wpn_fps_mel_great" />
+	<dependencies>
+		<depends_on bnk="soundbanks/melee_great"/>
+		<depends_on effect="effects/particles/fire/small_light_fire" />
+	</dependencies>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+	</extensions>
+</unit>
