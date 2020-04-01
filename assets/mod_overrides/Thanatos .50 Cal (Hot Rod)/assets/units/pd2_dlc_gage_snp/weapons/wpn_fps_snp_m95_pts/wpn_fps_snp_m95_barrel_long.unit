@@ -1,0 +1,9 @@
+<unit type="wpn" slot="1" >
+    <object file="units/pd2_dlc_gage_snp/weapons/wpn_fps_snp_m95_pts/wpn_fps_snp_m95_barrel_long" />
+	<dependencies>
+		<depends_on effect="effects/particles/fire/small_light_fire" />
+	</dependencies>
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

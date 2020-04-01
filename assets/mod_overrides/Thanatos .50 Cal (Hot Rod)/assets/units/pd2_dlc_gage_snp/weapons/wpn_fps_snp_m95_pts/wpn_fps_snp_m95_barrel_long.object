@@ -1,0 +1,14 @@
+<dynamic_object>
+	<diesel orientation_object="rp_wpn_fps_snp_m95_barrel_long" materials="units/pd2_dlc_gage_snp/weapons/wpn_fps_snp_m95_pts/wpn_fps_snp_m95_barrel_long" />	
+	<graphics>
+		<object enabled="true" inherit_bounding_volume="co_culling" name="g_long" />
+	</graphics>
+	<effects>
+        <effect_spawner name="effect_001" enabled="true" object="e_effect_001" effect="effects/particles/fire/small_light_fire"/>
+	    <effect_spawner name="effect_002" enabled="true" object="e_effect_002" effect="effects/particles/fire/small_light_fire"/>
+	    <effect_spawner name="effect_003" enabled="true" object="e_effect_003" effect="effects/particles/fire/small_light_fire"/>
+	    <effect_spawner name="effect_004" enabled="true" object="e_effect_004" effect="effects/particles/fire/small_light_fire"/>
+	    <effect_spawner name="effect_005" enabled="true" object="e_effect_005" effect="effects/particles/fire/small_light_fire"/>
+	    <effect_spawner name="effect_006" enabled="true" object="e_effect_006" effect="effects/particles/fire/small_light_fire"/>
+	</effects>
+</dynamic_object>
