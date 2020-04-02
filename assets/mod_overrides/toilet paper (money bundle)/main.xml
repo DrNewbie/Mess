@@ -1,0 +1,10 @@
+<table name="toilet paper (money bundle)">
+    <AddFiles directory="assets">
+		<material_config path="units/world/props/bank/money_wrap/money_wrap_single_bundle" force="true" reload="true" />
+		<object path="units/world/props/bank/money_wrap/money_wrap_single_bundle" force="true" reload="true" />
+		<model path="units/world/props/bank/money_wrap/money_wrap_single_bundle" force="true" reload="true" />
+	</AddFiles>
+	<Hooks directory="Hooks">
+		<hook file="playermanager.lua" source_file="lib/managers/playermanager"/>
+	</Hooks>
+</table>
