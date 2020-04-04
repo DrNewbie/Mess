@@ -1,0 +1,10 @@
+<table name="Thanatos .50 Cal (Hot Rod)">
+    <AddFiles directory="assets">
+		<unit path="units/pd2_dlc_gage_snp/weapons/wpn_fps_snp_m95_pts/wpn_fps_snp_m95_barrel_long" force="true" reload="true" />
+		<object path="units/pd2_dlc_gage_snp/weapons/wpn_fps_snp_m95_pts/wpn_fps_snp_m95_barrel_long" force="true" reload="true" />
+		<model path="units/pd2_dlc_gage_snp/weapons/wpn_fps_snp_m95_pts/wpn_fps_snp_m95_barrel_long" force="true" reload="true" />
+		<material_config path="units/pd2_dlc_gage_snp/weapons/wpn_fps_snp_m95_pts/wpn_fps_snp_m95_barrel_long" force="true" reload="true" />
+		<material_config path="units/pd2_dlc_gage_snp/weapons/wpn_fps_snp_m95_pts/wpn_fps_snp_m95_barrel_long_thq" force="true" reload="true" />
+		<texture path="units/pd2_dlc_gage_snp/weapons/wpn_fps_snp_m95_pts/glow_material_edf" force="true" reload="true" />
+	</AddFiles>
+</table>
