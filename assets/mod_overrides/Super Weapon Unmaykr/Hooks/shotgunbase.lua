@@ -18,19 +18,31 @@ end)
 
 Hooks:PostHook(ShotgunBase, "_fire_raycast", "F_"..Idstring("PostHook:ShotgunBase:_fire_raycast:Super Weapon: Unmaykr"):key(), function(self, __user_unit, __from_pos, __direction)
 	if Utils and self.__is_wpn_fps_sss_unmaykr then
-		local __unit = safe_spawn_unit(self.__wpn_fps_sss_unmaykr_unit_name, __from_pos, Rotation())
-		if __unit then
-			local camera = managers.player:player_unit():movement()._current_state._ext_camera
-			local __mvec_to = Vector3()
-			mvector3.set(__mvec_to, camera:forward())
-			mvector3.multiply(__mvec_to, 100)
-			mvector3.add(__mvec_to, __unit:position())
-			table.insert(self.__wpn_fps_sss_unmaykr_bomb, {
-				__dead_t = TimerManager:game():time() + 5,
-				__to_pos = __mvec_to,
-				__from_pos = __unit:position(),
-				__unit = __unit
-			})
+		local camera = managers.player:player_unit():movement()._current_state._ext_camera
+		local __camera_pos = camera:forward()
+		local __now = TimerManager:game():time()
+		local __now_ids = Idstring(tostring(__now)):key()
+		local __offset = {
+			Rotation(30, 0, 0),
+			Rotation(0, 0, 0),
+			Rotation(-30, 0, 0),
+		}
+		for __i = 1, 3 do
+			if not self.__wpn_fps_sss_unmaykr_bomb["M_"..__i.."_"..__now_ids] then
+				local __mvec_to = Vector3()
+				local __unit = safe_spawn_unit(self.__wpn_fps_sss_unmaykr_unit_name, __from_pos, Rotation())
+				if __unit then
+					mvector3.set(__mvec_to, __camera_pos + __camera_pos:rotate_with(__offset[__i]))
+					mvector3.multiply(__mvec_to, 100)
+					mvector3.add(__mvec_to, __unit:position())
+					self.__wpn_fps_sss_unmaykr_bomb["M_"..__i.."_"..__now_ids] = {
+						__dead_t = TimerManager:game():time() + 5,
+						__to_pos = __mvec_to,
+						__from_pos = __unit:position(),
+						__unit = __unit
+					}
+				end
+			end
 		end
 	end
 end)
