@@ -12,7 +12,7 @@ Hooks:PostHook(PlayerStandard, "update", "F_"..Idstring("PostHook:PlayerStandard
 					mvector3.add(__mvec2, __mvec1 * 20)
 					__x_data.__unit:set_position(__mvec2)
 					__x_data.__unit:set_rotation(Rotation(math.random(360), math.random(360), math.random(360)))
-					local __units = World:find_units("sphere", __mvec2, 50, self._equipped_unit:base().__wpn_fps_sss_unmaykr_hit_slot, "ignore_unit", {self._equipped_unit, self._unit})
+					local __units = World:find_units("sphere", __mvec2, 150, self._equipped_unit:base().__wpn_fps_sss_unmaykr_hit_slot, "ignore_unit", {self._equipped_unit, self._unit})
 					if __units then
 						local __is_hit
 						for _, __hit in pairs(__units) do

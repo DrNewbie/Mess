@@ -1,6 +1,6 @@
 <table name="Super Weapon: Unmaykr">
 	<Localization directory="Localization" default="english.txt"/>	
-    <AssetUpdates id="Super Weapon: Unmaykr" version="2">
+    <AssetUpdates id="Super Weapon: Unmaykr" version="3">
         <custom_provider version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Super%20Weapon%20Unmaykr.txt" download_url="https://drnewbie.github.io/Mess/UpdateProvider/Super%20Weapon%20Unmaykr.zip"/>
     </AssetUpdates>
 	<AddFiles directory="assets">
