@@ -1,0 +1,20 @@
+<table name="Addition Spear Bullet">
+	<Localization directory="Localization" default="english.txt"/>	
+    <AssetUpdates id="Addition Spear Bullet" version="4">
+        <custom_provider version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Addon%20Spear%20Bullet.txt" download_url="https://drnewbie.github.io/Mess/UpdateProvider/Addon%20Spear%20Bullet.zip"/>
+    </AssetUpdates>
+	<AddFiles directory="assets">
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_sss_spear"/>
+	</AddFiles>	
+	<Hooks directory="Hooks">
+		<hook file="newraycastweaponbase.lua" source_file="lib/units/weapons/newraycastweaponbase"/>
+		<hook file="playerstandard.lua" source_file="lib/units/beings/player/states/playerstandard"/>
+		<hook file="weaponfactorytweakdata.lua" source_file="lib/tweak_data/weaponfactorytweakdata"/>
+	</Hooks>	
+	<WeaponMod based_on="wpn_fps_upg_a_custom_free" id="wpn_fps_sss_spear" unit="units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy" type="ammo" drop="false" texture_bundle_folder="mods" is_a_unlockable="true">
+		<stats value="9" total_ammo_mod="-12" damage="-4" spread="-12" moving_spread="-12"/>
+		<weapons>
+			<value_node value="wpn_fps_ass_m14"/>
+		</weapons>
+    </WeaponMod>
+</table>

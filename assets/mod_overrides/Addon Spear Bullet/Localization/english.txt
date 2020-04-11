@@ -1,0 +1,5 @@
+{
+	"bm_wp_wpn_fps_sss_spear" : "Addon: Spear",
+    "bm_wp_wpn_fps_sss_spear_desc" : " ",
+    "menu_l_global_value_sss_spear" : " "
+}
