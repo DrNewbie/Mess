@@ -1,0 +1,14 @@
+{
+  "name": "Bullet Hit Effect: Party Mode",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/27229",
+  "version": "1",
+  "blt_version": 2,
+  "priority": 1,
+  "hooks": [
+    {
+      "hook_id": "lib/units/weapons/newraycastweaponbase",
+      "script_path": "lua/newraycastweaponbase.lua"
+    }
+  ]
+}

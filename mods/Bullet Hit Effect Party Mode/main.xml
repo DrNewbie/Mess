@@ -1,0 +1,10 @@
+<table name="Bullet Hit Effect: Party Mode">
+	<Package id="package/balloon_pop_effect" directory="assets/balloon_pop_effect">
+		<effect path="effects/payday2/particles/explosions/balloon_pop_purple" force="true"/>
+		<effect path="effects/payday2/particles/explosions/balloon_pop_blue" force="true"/>
+		<effect path="effects/payday2/particles/explosions/balloon_pop_orange" force="true"/>
+		<effect path="effects/payday2/particles/explosions/balloon_pop_green" force="true"/>
+		<effect path="effects/payday2/particles/explosions/balloon_pop_red" force="true"/>
+		<effect path="effects/payday2/particles/explosions/balloon_pop_white" force="true"/>
+	</Package>
+</table>
