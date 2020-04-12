@@ -1,0 +1,9 @@
+<mod name="Magic Powder (Maniac)">
+	<Localization directory="Loc" default="EN.txt"/>
+    <AssetUpdates id="Magic Powder (Maniac)" version="1">
+        <custom_provider version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Maniac%20Magic%20Powder.txt" download_url="https://drnewbie.github.io/Mess/UpdateProvider/Maniac%20Magic%20Powder.zip"/>
+    </AssetUpdates>
+	<AddFiles directory="Assets">
+		<texture path="guis/dlcs/magic_powder/textures/pd2/blackmarket/icons/grenades/magic_powder" force="true"/>
+	</AddFiles>
+</mod>

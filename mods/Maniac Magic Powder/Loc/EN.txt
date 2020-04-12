@@ -1,0 +1,5 @@
+{
+	"bm_grenade_magic_powder":"Magic Powder",
+	"bm_grenade_magic_powder_desc":"Fully charged your Hysteria Stacks.",
+	"bm_menu_skill_locked_magic_powder":"Require: Maniac Perk Deck!!"
+}
