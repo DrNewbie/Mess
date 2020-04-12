@@ -1,6 +1,6 @@
 <mod name="Magic Powder (Maniac)">
 	<Localization directory="Loc" default="EN.txt"/>
-    <AssetUpdates id="Magic Powder (Maniac)" version="2">
+    <AssetUpdates id="Magic Powder (Maniac)" version="3">
         <custom_provider version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Maniac%20Magic%20Powder.txt" download_url="https://drnewbie.github.io/Mess/UpdateProvider/Maniac%20Magic%20Powder.zip"/>
     </AssetUpdates>
 	<AddFiles directory="Assets">
