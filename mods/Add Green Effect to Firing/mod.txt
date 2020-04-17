@@ -1,0 +1,19 @@
+{
+  "name": "Add Green Effect to Firing",
+  "description": "Appii",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/27300",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/units/weapons/newraycastweaponbase",
+      "script_path": "boom.lua"
+    },
+    {
+      "hook_id": "lib/units/weapons/shotgun/shotgunbase",
+      "script_path": "boom.lua"
+    }
+  ]
+}
