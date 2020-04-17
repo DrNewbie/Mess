@@ -1,3 +1,7 @@
+Hooks:PostHook(PlayerMovement, "post_init", "F_"..Idstring("PostHook:PlayerMovement:post_init:Detection No Down"):key(), function(self)
+	self.__suspicion_ratio_hold = 0
+end)
+
 Hooks:PostHook(PlayerMovement, "_calc_suspicion_ratio_and_sync", "F_"..Idstring("PostHook:PlayerMovement:_calc_suspicion_ratio_and_sync:Detection No Down"):key(), function(self, observer_unit, status)
 	if self._suspicion and type(self._suspicion_ratio) == "number" then
 		local max_suspicion = nil
@@ -28,6 +32,17 @@ Hooks:PostHook(PlayerMovement, "_calc_suspicion_ratio_and_sync", "F_"..Idstring(
 				end
 			end
 			self._suspicion_ratio = max_suspicion
+			self.__suspicion_ratio_hold = max_suspicion
 		end
+	end
+end)
+
+Hooks:PostHook(PlayerMovement, "_feed_suspicion_to_hud", "F_"..Idstring("PostHook:PlayerMovement:_feed_suspicion_to_hud:Detection No Down"):key(), function(self)
+	local susp_ratio = self._suspicion_ratio
+	if type(susp_ratio) ~= "number" then
+		susp_ratio = self.__suspicion_ratio_hold
+		local offset = self._unit:base():suspicion_settings().hud_offset
+		susp_ratio = susp_ratio * (1 - offset) + offset
+		managers.hud:set_suspicion(susp_ratio)
 	end
 end)
