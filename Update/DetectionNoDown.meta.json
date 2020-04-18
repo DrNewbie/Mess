@@ -1,7 +1,7 @@
 [
   {
     "ident": "DetectionNoDownGitHubUpdate",
-    "hash": "7d3f9c0e4290f3c0249572381c465019fc1c21cf9f48ead7c5bc76f09628b10c",
+    "hash": "b9812bcc66b7114b632e9839e4cd0a04ac89e1205bfcc355fda54ead3fcc9480",
     "patchnotes": "https://github.com/DrNewbie/Mess/commits/master",
     "download": "https://drnewbie.github.io/Mess/Update/DetectionNoDown.zip"
   }

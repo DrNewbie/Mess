@@ -46,13 +46,5 @@ Hooks:PostHook(GroupAIStateBase, "on_criminal_suspicion_progress", "F_"..Idstrin
 		else
 			self.__suspicion_peek_dt = __now
 		end
-		local max_suspicion = 0
-		if local_player and local_player:movement() and local_player:movement()._suspicion then
-			for u_key, val in pairs(local_player:movement()._suspicion) do
-				if max_suspicion < val then
-					max_suspicion = val
-				end
-			end
-		end
 	end
 end)
