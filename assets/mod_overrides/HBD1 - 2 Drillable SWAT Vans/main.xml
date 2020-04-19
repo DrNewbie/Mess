@@ -1,0 +1,5 @@
+<table name="HBD1 - 2 Drillable SWAT Vans">
+    <AddFiles directory="assets">
+		<mission path="levels/instances/unique/hox_breakout_road001/world/world" force="true" />
+	</AddFiles>
+</table>
