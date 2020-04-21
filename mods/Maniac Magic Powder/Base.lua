@@ -24,6 +24,13 @@ if PlayerManager then
 		end
 		return
 	end
+	Hooks:PostHook(PlayerManager, "spawned_player", "F_"..Idstring("__ManiacMagicPowde_spawned_player"):key(), function(self)
+		if self:IsEquipManiacMagicPowde() then
+			self:register_message(Message.OnEnemyKilled, "__"..Idstring("Magic Powder (Maniac): Speed it Up!!"):key(), function ()
+				managers.player:speed_up_grenade_cooldown(2)
+			end)
+		end
+	end)
 end
 
 if BlackMarketTweakData then
