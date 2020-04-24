@@ -16,6 +16,10 @@
       "script_path": "Hooks/network.lua"
     },
     {
+      "hook_id": "lib/network/base/networkpeer",
+      "script_path": "Hooks/network.lua"
+    },
+    {
       "hook_id": "lib/managers/localizationmanager",
       "script_path": "Hooks/base.lua"
     }

@@ -21,11 +21,12 @@ function NGBTOwO:Check(peer_id)
 	end
 	local steamid64 = tostring(peer_now:user_id())
 	local user_name = tostring(peer_now:name())
-	dohttpreq("https://crowbar.steamstat.us/Barney",
+	dohttpreq("https://steamstat.us/",
 		function(steam_check)
 			steam_check = tostring(steam_check)
-			local json_steam_check = json.decode(steam_check)
-			if json_steam_check and json_steam_check.success and json_steam_check.services and json_steam_check.services and json_steam_check.services.community and tostring(json_steam_check.services.community.status) == "good" then
+			local is_steam_ok = tostring(string.match(steam_check, 'id="community">Normal</span>'))
+			--if json_steam_check and json_steam_check.success and json_steam_check.services and json_steam_check.services and json_steam_check.services.community and tostring(json_steam_check.services.community.status) == "good" then
+			if true then
 				log("[Steamstat]:\tIt's good.")
 				dohttpreq("http://steamcommunity.com/profiles/".. steamid64 .. "/games?l=english&tab=all&xml=1",
 					function(page)
@@ -66,6 +67,10 @@ function NGBTOwO:Check(peer_id)
 							managers.chat:_receive_message(1, "[NGBTOwO]", "'"..user_name.."' has played ".._hoursOnRecord.." hours.", Color.green)
 						else
 							managers.chat:_receive_message(1, "[NGBTOwO]", "'"..user_name.."' has hidden profiles.", Color.green)
+							if Network:is_server() then
+								managers.network:session():send_to_peers("kick_peer", peer_id, 2)
+								managers.network:session():on_peer_kicked(peer_now, peer_id, 2)
+							end
 						end
 					end
 				)
@@ -78,6 +83,9 @@ function NGBTOwO:Check(peer_id)
 end
 
 function NGBTOwO:Check_All()
+	if not managers.network or not managers.network:session() or not managers.network:session():peers() then
+		return
+	end
 	local _dt = 0
 	for peer_id, _ in pairs(managers.network:session():peers()) do
 		_dt = _dt + 3
