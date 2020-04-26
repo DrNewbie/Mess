@@ -1,0 +1,7 @@
+{
+  "menu_deck10_1_desc": "On ammo pick up, you regenerate from ##16## to ##32## health.\n\nThis cannot occur more than once every ##1## second.\n\nIf your current health is lower than another player's, the health regeneration effect is increased by an additional ##30%##. Can stack up to ##3## times, for the total of ##90%##.",
+  "menu_deck10_3_desc": "On ammo pick up, you trigger an ammo pick up for ##50%## of normal ammo pick up for other crew members.\n\nThis cannot occur more than once every ##2.5## seconds.\n\nYour maximum health is increased by ##20%##.",
+  "menu_deck10_5_desc": "On ammo pick up, your crew members will also get healed by ##100%## of the amount you got.\n\nYour maximum health is increased by an additional ##20%##, for a total of ##40%##.",
+  "menu_deck10_7_desc": "Minimum and maximum health regeneration is increased by an additional ##8## health, for a total of ##32## to ##40## health.",
+  "menu_deck10_9_desc": "Minimum and maximum health regeneration is increased by an additional ##8## health, for a total of ##40## to ##48## health.\n\n##Your shared healing and ammo effect is now twice as effective.##\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a Payday is increased by ##10%##."
+}
