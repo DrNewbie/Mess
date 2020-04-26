@@ -1,5 +1,5 @@
 <mod name="Gambler Perk Deck Buff">
-	<AssetUpdates id="Gambler Perk Deck Buff" version="2">
+	<AssetUpdates id="Gambler Perk Deck Buff" version="2.1">
         <custom_provider version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Gambler%20Perk%20Deck%20Buff.txt" download_url="https://drnewbie.github.io/Mess/UpdateProvider/Gambler%20Perk%20Deck%20Buff.zip"/>
     </AssetUpdates>
 </mod>

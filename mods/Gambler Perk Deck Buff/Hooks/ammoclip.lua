@@ -23,7 +23,6 @@ Hooks:PreHook(AmmoClip, "_pickup", "F_"..Idstring("PreHook:AmmoClip:_pickup:Gamb
 				if player_manager:has_category_upgrade("player", "loose_ammo_restore_health_give_team") then
 					managers.network:session():send_to_peers_synched_except(managers.network:session():local_peer():id(), "sync_unit_event_id_16", self._unit, "pickup", 2 + 13)
 				end
-				log(1)
 			end
 		end
 	end
