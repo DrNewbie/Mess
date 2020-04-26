@@ -2,8 +2,8 @@
   "name": "Gambler Perk Deck Buff",
   "description": " ",
   "author": "Dr_Newbie",
-  "contact": "https://modworkshop.net/",
-  "version": "1",
+  "contact": "https://modworkshop.net/mod/27423",
+  "version": "2",
   "priority": 100,
   "blt_version": 2,
   "hooks": [
