@@ -1,5 +1,5 @@
 <mod name="Sicario Perk Deck Buff">
-	<AssetUpdates id="Sicario Perk Deck Buff" version="1">
+	<AssetUpdates id="Sicario Perk Deck Buff" version="2">
         <custom_provider version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Sicario%20Perk%20Deck%20Buff.txt" download_url="https://drnewbie.github.io/Mess/UpdateProvider/Sicario%20Perk%20Deck%20Buff.zip"/>
     </AssetUpdates>
 </mod>
