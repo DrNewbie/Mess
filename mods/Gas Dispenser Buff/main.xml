@@ -1,0 +1,5 @@
+<mod name="Gas Dispenser Buff">
+	<AssetUpdates id="Gas Dispenser Buff" version="1">
+        <custom_provider version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Gas%20Dispenser%20Buff.txt" download_url="https://drnewbie.github.io/Mess/UpdateProvider/Gas%20Dispenser%20Buff.zip"/>
+    </AssetUpdates>
+</mod>
