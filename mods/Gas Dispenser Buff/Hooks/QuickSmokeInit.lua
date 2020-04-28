@@ -12,11 +12,16 @@ __old_attempt_tag_team = __old_attempt_tag_team or PlayerManager._attempt_tag_te
 
 function PlayerManager:_attempt_tag_team(...)
 	local __ans = __old_attempt_tag_team(self, ...)
-	if self:player_unit() and not __ans then
-		if self._coroutine_mgr:is_running("tag_team") then
-		
-		else
-			self:add_coroutine("tag_team", PlayerAction.TagTeam, self:player_unit(), self:player_unit())
+	if self:player_unit() then
+		if not __ans then
+			if self._coroutine_mgr:is_running("tag_team") then
+			
+			else
+				self:add_coroutine("tag_team", PlayerAction.TagTeam, self:player_unit(), self:player_unit())
+				__ans = true
+			end
+		end
+		if __ans then
 			local base_values = managers.player:upgrade_value("player", "tag_team_base")
 			if type(base_values) == "table" and type(base_values.duration) == "number" then
 				if self.__QuickSmokeHuskAlt and self.__QuickSmokeHuskAlt._timer then
@@ -30,7 +35,6 @@ function PlayerManager:_attempt_tag_team(...)
 					table.insert(self._smoke_screen_effects, self.__QuickSmokeHuskAlt)
 				end
 			end
-			return true
 		end
 	end
 	return __ans
