@@ -1,0 +1,13 @@
+{
+  "name": "Disable and Decline Telemetry Agreement",
+  "description": " ",
+  "author": "Dr_Newbie",
+  "contact": " ",
+  "version": "1",
+  "hooks": [
+    {
+      "hook_id": "lib/managers/menumanagerdialogs",
+      "script_path": "mod.lua"
+    }
+  ]
+}
