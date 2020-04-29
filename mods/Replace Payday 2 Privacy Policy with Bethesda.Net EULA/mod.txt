@@ -1,0 +1,13 @@
+{
+  "name": "Replace Payday 2 Privacy Policy for Bethesda.Net EULA",
+  "description": " ",
+  "author": "Dr_Newbie",
+  "contact": " ",
+  "version": "1",
+  "hooks": [
+    {
+      "hook_id": "lib/managers/dialogs/documentdialog",
+      "script_path": "mod2.lua"
+    }
+  ]
+}
