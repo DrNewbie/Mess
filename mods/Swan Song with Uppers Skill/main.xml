@@ -1,0 +1,5 @@
+<mod name="Swan Song with Uppers Skill">
+	<AssetUpdates id="Swan Song with Uppers Skill" version="1">
+        <custom_provider version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Swan%20Song%20with%20Uppers%20Skill.txt" download_url="https://drnewbie.github.io/Mess/UpdateProvider/Swan%20Song%20with%20Uppers%20Skill.zip"/>
+    </AssetUpdates>
+</mod>
