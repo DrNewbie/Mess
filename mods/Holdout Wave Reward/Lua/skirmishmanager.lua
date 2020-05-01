@@ -10,14 +10,14 @@ function SkirmishManager:Spawn_Holdout_Wave_Reward()
 			local __civilians = World:find_units_quick("all", managers.slot:get_mask("civilians"))
 			if __civilians then
 				local __spawn_ammo_bag = function(__pos, __rot)				
-					local __spawn_unit = AmmoBagBase.spawn(__pos + Vector3(100, 0, 0), __rot, 0, 9999)
+					local __spawn_unit = AmmoBagBase.spawn(__pos + Vector3(100, 0, 0), __rot, 0)
 					if __spawn_unit then
 						table.insert(self.__Wave_Rewards, __spawn_unit)
 					end
 					return
 				end
 				local __spawn_medic_bag = function(__pos, __rot)				
-					local __spawn_unit = DoctorBagBase.spawn(__pos + Vector3(-100, 0, 0), __rot, 0, 9999)
+					local __spawn_unit = DoctorBagBase.spawn(__pos + Vector3(-100, 0, 0), __rot, 0)
 					if __spawn_unit then
 						table.insert(self.__Wave_Rewards, __spawn_unit)
 					end
@@ -27,6 +27,9 @@ function SkirmishManager:Spawn_Holdout_Wave_Reward()
 					local __spawn_unit = GrenadeCrateBase.spawn(__pos + Vector3(-100, -100, 0), __rot)
 					if __spawn_unit then
 						table.insert(self.__Wave_Rewards, __spawn_unit)
+						if __spawn_unit:interaction() then
+							__spawn_unit:interaction():interact(managers.player:player_unit())
+						end
 					end
 					return
 				end
@@ -51,17 +54,17 @@ function SkirmishManager:Remove_Holdout_Wave_Reward()
 		for __, __unit in pairs(self.__Wave_Rewards) do
 			if __unit and alive(__unit) then
 				if __unit:name() == __ammo_bag_unit_name then
+					managers.network:session():send_to_peers_synched("sync_ammo_bag_ammo_taken", __unit, (__unit:base()._ammo_amount or 1) * 2)
 					__unit:base()._ammo_amount = 0
-					managers.network:session():send_to_peers_synched("sync_unit_event_id_16", self._unit, "base", 1)
 					__unit:base():_set_empty()
-				elseif __unit:name() == __ammo_bag_unit_name then
+					World:delete_unit(__unit)
+				elseif __unit:name() == __medic_bag_unit_name then
+					managers.network:session():send_to_peers_synched("sync_doctor_bag_taken", __unit, (__unit:base()._amount or 4) * 2)
 					__unit:base()._amount = 0
-					managers.network:session():send_to_peers_synched("sync_unit_event_id_16", self._unit, "base", 1)
 					__unit:base():_set_empty()
+					World:delete_unit(__unit)
 				elseif __unit:name() == __grenade_crate_unit_name then
-					__unit:base()._grenade_amount = 0
-					managers.network:session():send_to_peers_synched("sync_unit_event_id_16", self._unit, "base", 1)
-					__unit:base():_set_empty()
+					
 				end
 			end
 		end
