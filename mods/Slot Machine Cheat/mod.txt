@@ -2,13 +2,13 @@
   "name": "Slot Machine Cheat",
   "description": "http://modwork.shop/24781",
   "author": "Dr_Newbie",
-  "blt_version": 2,
-  "version": "1",
+  "blt_version": 2,  
+  "priority": 100,
+  "version": "2",
   "hooks": [
     {
       "hook_id": "core/lib/managers/mission/coreelementlogicchance",
       "script_path": "coreelementlogicchance.lua"
     }
-  ],
-  "priority": 100
+  ]
 }
