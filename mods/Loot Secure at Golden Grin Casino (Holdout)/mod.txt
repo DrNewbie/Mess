@@ -1,0 +1,15 @@
+{
+  "name": "Loot Secure at Golden Grin Casino (Holdout)",
+  "description": " ",
+  "author": " ",
+  "contact": "https://modworkshop.net/mod/27494",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/units/props/carrydata",
+      "script_path": "carrydata.lua"
+    }
+  ]
+}
