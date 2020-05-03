@@ -1,0 +1,14 @@
+{
+  "name": "Slot Machine Buff",
+  "description": "https://modworkshop.net/mod/27492",
+  "author": "Dr_Newbie",
+  "blt_version": 2,
+  "priority": 100,
+  "version": "1",
+  "hooks": [
+    {
+      "hook_id": "lib/managers/mission/missionscriptelement",
+      "script_path": "missionscriptelement.lua"
+    }
+  ]
+}
