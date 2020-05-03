@@ -1,12 +1,15 @@
 {
-	"name" : "Change HOLDOUT Difficulty",
-	"description" : " ",
-	"author" : " ",
-	"contact" : "http://modwork.shop/23209",
-	"version" : "5",
-	"priority" : 100,
-	"blt_version" : 2,
-	"hooks" : [
-		{"hook_id" : "lib/managers/menumanager", "script_path" : "menumanager.lua"}
-	]
+  "name": "Change HOLDOUT Difficulty",
+  "description": " ",
+  "author": " ",
+  "contact": "http://modwork.shop/23209",
+  "version": "6",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/managers/menumanager",
+      "script_path": "menumanager.lua"
+    }
+  ]
 }
