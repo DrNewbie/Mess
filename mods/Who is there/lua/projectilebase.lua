@@ -89,8 +89,6 @@ Hooks:PostHook(ProjectileBase, "clbk_impact", "F_"..Idstring("PostHook:Projectil
 	if type(playerss) == "table" then
 		local cc = playerss[table.random_key(playerss)]
 		if cc and cc.unit and alive(cc.unit) then
-			log("1: " .. tostring(cc.unit:position()) )
-			log("1: " .. tostring(position) )
 			Sound_Moving.Data.ply = cc.unit:base()
 			Sound_Moving:Create_Point(position)
 		end
