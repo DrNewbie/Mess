@@ -1,0 +1,13 @@
+{
+  "name": "Who is there",
+  "description": " ",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/27547",
+  "version": "1",
+  "hooks": [
+    {
+      "hook_id": "lib/units/weapons/projectiles/projectilebase",
+      "script_path": "lua/projectilebase.lua"
+    }
+  ]
+}
