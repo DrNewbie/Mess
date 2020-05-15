@@ -1,0 +1,5 @@
+<mod name="Infiltrator Perk Deck Buff">
+	<AssetUpdates id="Infiltrator Perk Deck Buff" version="2">
+        <custom_provider version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Infiltrator%20Perk%20Deck%20Buff.txt" download_url="https://drnewbie.github.io/Mess/UpdateProvider/Infiltrator%20Perk%20Deck%20Buff.zip"/>
+    </AssetUpdates>
+</mod>
