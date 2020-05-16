@@ -1,0 +1,12 @@
+{
+  "menu_JokeSteamPriceBan_title": "Warning Low Steam Account Value User",
+  "menu_JokeSteamPriceBan_desc": "A stupid mod that warning you who steam account value (By: steamdb.info) is lower than your setting.",
+  "JokeSteamPriceBan_low_value_title": "Lowest Prices",
+  "JokeSteamPriceBan_low_value_desc": "(0 = Disable this Mod)",
+  "JokeSteamPriceBan_msg_type_title": "Message",
+  "JokeSteamPriceBan_msg_type_desc": "What kind of message do you want to show?",
+  "JokeSteamPriceBan_msg_type_1": "System",
+  "JokeSteamPriceBan_msg_type_2": "Chat",
+  "JokeSteamPriceBan_msg_type_3": "System + Chat",
+  "JokeSteamPriceBan_msg_type_4": "OFF"
+}

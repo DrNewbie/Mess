@@ -1,0 +1,36 @@
+{
+	"menu_id":"menu_id_JokeSteamPriceBan",
+	"parent_menu_id":"blt_options",
+	"title":"menu_JokeSteamPriceBan_title",
+	"description":"menu_JokeSteamPriceBan_desc",
+	"back_callback":"JokeSteamPriceBan_Callback_Save",
+	"items":[
+		{
+			"type":"slider",
+			"id":"JokeSteamPriceBan_low_value",
+			"title":"JokeSteamPriceBan_low_value_title",
+			"description":"JokeSteamPriceBan_low_value_desc",
+			"callback":"JokeSteamPriceBan_low_value_clbk",
+			"value":"low_value",
+			"default_value":0,
+			"max":9999999999,
+			"min":0,
+			"step":1
+		},
+		{
+			"type":"multiple_choice",
+			"id":"JokeSteamPriceBan_msg_type",
+			"title":"JokeSteamPriceBan_msg_type_title",
+			"description":"JokeSteamPriceBan_msg_type_desc",
+			"callback":"JokeSteamPriceBan_msg_type_clbk",
+			"items":[
+				"JokeSteamPriceBan_msg_type_1",
+				"JokeSteamPriceBan_msg_type_2",
+				"JokeSteamPriceBan_msg_type_3",
+				"JokeSteamPriceBan_msg_type_4"
+			],
+			"value":"msg_type",
+			"default_value":1
+		}
+	]
+}
