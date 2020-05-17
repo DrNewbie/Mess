@@ -1,0 +1,15 @@
+{
+  "name": "HeadShot Melee",
+  "description": "Melee did 2x damage while headshot.",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/27647",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/units/enemies/cop/copdamage",
+      "script_path": "Hooks/copdamage.lua"
+    }
+  ]
+}
