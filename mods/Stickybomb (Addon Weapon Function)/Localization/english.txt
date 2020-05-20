@@ -1,0 +1,5 @@
+{
+	"bm_wp_wpn_fps_sss_stickybomb" : "Addon: Stickybomb",
+    "bm_wp_wpn_fps_sss_stickybomb_desc" : "Use keybind to remote boom all of sticky at once.\nMaximum sticky: 4",
+    "menu_l_global_value_sss_stickybomb" : " "
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Stickybomb Remote Detonator",
+  "description": "",
+  "author": "Dr_Newbie",
+  "contact": " ",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "keybinds": [
+    {
+      "keybind_id": "keybind_RemoteStickybomb_BoomIt_keybind_id",
+      "name": "Detonate Stickybomb",
+      "description": "KaBoom!!",
+      "script_path": "Hooks/KeyBinds/RemoteBoomIt.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    }
+  ]
+}
