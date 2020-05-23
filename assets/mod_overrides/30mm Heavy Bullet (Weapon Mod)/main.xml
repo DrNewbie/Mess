@@ -1,12 +1,12 @@
 <table name="30mm Heavy Bullet (Weapon Mod)">
-	<AssetUpdates id="30mm Heavy Bullet (Weapon Mod)" version="1">
+	<AssetUpdates id="30mm Heavy Bullet (Weapon Mod)" version="2">
         <custom_provider version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/30mm%20Heavy%20Bullet%20(Weapon%20Mod).txt" download_url="https://drnewbie.github.io/Mess/UpdateProvider/30mm%20Heavy%20Bullet%20(Weapon%20Mod).zip"/>
     </AssetUpdates>
 	<Localization directory="Localization" default="english.txt"/>	
 	<AddFiles directory="Assets">
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_sss_30mmmoballol"/>
 	</AddFiles>	
-	<WeaponMod based_on="wpn_fps_upg_ass_m4_b_beowulf" id="wpn_fps_sss_30mmmoballol" unit="units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy" type="ammo" drop="false" texture_bundle_folder="mods" is_a_unlockable="true">
+	<WeaponMod based_on="wpn_fps_upg_a_slug" id="wpn_fps_sss_30mmmoballol" unit="units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy" type="ammo" drop="false" texture_bundle_folder="mods" is_a_unlockable="true">
 		<stats value="-100" total_ammo_mod="-16" damage="244"/>
 		<weapons>
 			<value_node value="wpn_fps_pis_chinchilla"/>
