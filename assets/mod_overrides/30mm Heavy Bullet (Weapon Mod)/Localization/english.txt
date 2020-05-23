@@ -1,0 +1,5 @@
+{
+	"bm_wp_wpn_fps_sss_30mmmoballol" : "Addon: 30mm Heavy Bullet",
+    "bm_wp_wpn_fps_sss_30mmmoballol_desc" : "Huge damage and stunning",
+    "menu_l_global_value_sss_30mmmoballol" : " "
+}
