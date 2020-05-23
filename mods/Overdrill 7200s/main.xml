@@ -1,0 +1,5 @@
+<table name="Overdrill 7200s">
+	<AddFiles directory="Assets">
+		<sequence_manager path="units/equipment/vault_drill/vault_drill" force="true"/>
+	</AddFiles>	
+</table>
