@@ -1,5 +1,5 @@
 <table name="30mm Heavy Bullet (Weapon Mod)">
-	<AssetUpdates id="30mm Heavy Bullet (Weapon Mod)" version="2">
+	<AssetUpdates id="30mm Heavy Bullet (Weapon Mod)" version="3">
         <custom_provider version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/30mm%20Heavy%20Bullet%20(Weapon%20Mod).txt" download_url="https://drnewbie.github.io/Mess/UpdateProvider/30mm%20Heavy%20Bullet%20(Weapon%20Mod).zip"/>
     </AssetUpdates>
 	<Localization directory="Localization" default="english.txt"/>	
@@ -14,6 +14,5 @@
     </WeaponMod>
 	<Hooks directory="Hooks">
 		<hook file="newraycastweaponbase.lua" source_file="lib/units/weapons/newraycastweaponbase"/>
-		<hook file="playermanager.lua" source_file="lib/managers/playermanager"/>
 	</Hooks>	
 </table>

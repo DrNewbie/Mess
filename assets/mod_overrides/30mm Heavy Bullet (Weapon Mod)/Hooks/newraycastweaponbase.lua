@@ -43,5 +43,9 @@ Hooks:PostHook(NewRaycastWeaponBase, "_fire_raycast", "F_"..Idstring("PostHook:N
 		managers.enemy:add_delayed_clbk("TrMiexpl", callback(TripMineBase, TripMineBase, "_dispose_of_sound", {
 			sound_source = sound_source
 		}), TimerManager:game():time() + 4)
+		local damage_ext = user_unit:character_damage()
+		if damage_ext then
+			damage_ext:_calc_health_damage({damage = 6, variant = "melee"})
+		end
 	end
 end)
