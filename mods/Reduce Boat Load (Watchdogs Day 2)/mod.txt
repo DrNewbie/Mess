@@ -1,0 +1,15 @@
+{
+  "name": "Reduce Boat Load (Watchdogs - Day 2)",
+  "description": " ",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/27830",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "core/lib/managers/mission/coreelementcounter",
+      "script_path": "lua/coreelementcounter.lua"
+    }
+  ]  
+}
