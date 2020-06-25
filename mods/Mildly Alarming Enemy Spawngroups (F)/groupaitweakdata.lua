@@ -1,4 +1,4 @@
-Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_categories", function(self, difficulty_index)
+Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "F_"..Idstring("cock_init_unit_categories"):key(), function(self, difficulty_index)
 	local access_type_walk_only = {
 		walk = true
 	}
@@ -6,9 +6,9 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 		acrobatic = true,
 		walk = true
 	}
-
+	local __new_special_unit_spawn_limits = {}
 	if difficulty_index <= 2 then
-		self.special_unit_spawn_limits = {
+		__new_special_unit_spawn_limits = {
 			shield = 2,
 			medic = 3,
 			taser = 1,
@@ -16,7 +16,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 			spooc = 0
 		}
 	elseif difficulty_index == 3 then
-		self.special_unit_spawn_limits = {
+		__new_special_unit_spawn_limits = {
 			shield = 4,
 			medic = 3,
 			taser = 2,
@@ -24,7 +24,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 			spooc = 0
 		}
 	elseif difficulty_index == 4 then
-		self.special_unit_spawn_limits = {
+		__new_special_unit_spawn_limits = {
 			shield = 4,
 			medic = 2,
 			taser = 2,
@@ -32,7 +32,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 			spooc = 2
 		}
 	elseif difficulty_index == 5 then
-		self.special_unit_spawn_limits = {
+		__new_special_unit_spawn_limits = {
 			shield = 4,
 			medic = 4,
 			taser = 3,
@@ -40,7 +40,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 			spooc = 2
 		}
 	elseif difficulty_index == 6 then
-		self.special_unit_spawn_limits = {
+		__new_special_unit_spawn_limits = {
 			shield = 6,
 			medic = 4,
 			taser = 3,
@@ -48,7 +48,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 			spooc = 3
 		}
 	elseif difficulty_index == 7 then
-		self.special_unit_spawn_limits = {
+		__new_special_unit_spawn_limits = {
 			shield = 8,
 			medic = 4,
 			taser = 3,
@@ -56,7 +56,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 			spooc = 3
 		}
 	elseif difficulty_index == 8 then
-		self.special_unit_spawn_limits = {
+		__new_special_unit_spawn_limits = {
 			shield = 8,
 			medic = 4,
 			taser = 4,
@@ -64,7 +64,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 			spooc = 3
 		}
 	else
-		self.special_unit_spawn_limits = {
+		__new_special_unit_spawn_limits = {
 			shield = 8,
 			medic = 4,
 			taser = 4,
@@ -72,11 +72,15 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 			spooc = 3
 		}
 	end
+	for i_1, d_1 in pairs(__new_special_unit_spawn_limits) do
+		if type(self.special_unit_spawn_limits[i_1]) == type(d_1) then
+			self.special_unit_spawn_limits[i_1] = d_1
+		end
+	end
 
-	self.unit_categories = {}
-
+	local __new_unit_categories = {}
 	if difficulty_index == 8 then
-		self.unit_categories.spooc = {
+		__new_unit_categories.spooc = {
 			special_type = "spooc",
 			unit_types = {
 				america = {
@@ -95,7 +99,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 			access = access_type_all
 		}
 	else
-		self.unit_categories.spooc = {
+		__new_unit_categories.spooc = {
 			special_type = "spooc",
 			unit_types = {
 				america = {
@@ -115,7 +119,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 		}
 	end
 
-	self.unit_categories.CS_cop_C45_R870 = { --i wanna include these for hard and below so fuckign bad dude but they just randomly crash the game in some maps with access violations for some reason??????
+	__new_unit_categories.CS_cop_C45_R870 = { --i wanna include these for hard and below so fuckign bad dude but they just randomly crash the game in some maps with access violations for some reason??????
 		unit_types = {
 			america = {
 				Idstring("units/payday2/characters/ene_cop_1/ene_cop_1"),
@@ -136,7 +140,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 		},
 		access = access_type_walk_only
 	}
-	self.unit_categories.CS_cop_stealth_MP5 = {
+	__new_unit_categories.CS_cop_stealth_MP5 = {
 		unit_types = {
 			america = {
 				Idstring("units/payday2/characters/ene_cop_2/ene_cop_2")
@@ -155,7 +159,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 	}
 
 	if difficulty_index == 8 then
-		self.unit_categories.CS_swat_MP5 = {
+		__new_unit_categories.CS_swat_MP5 = {
 			unit_types = {
 				america = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat")
@@ -172,7 +176,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 			},
 			access = access_type_all
 		}
-		self.unit_categories.CS_swat_R870 = {
+		__new_unit_categories.CS_swat_R870 = {
 			unit_types = {
 				america = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat")
@@ -190,7 +194,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 			access = access_type_all
 		}
 	else
-		self.unit_categories.CS_swat_MP5 = {
+		__new_unit_categories.CS_swat_MP5 = {
 			unit_types = {
 				america = {
 					Idstring("units/payday2/characters/ene_swat_1/ene_swat_1")
@@ -207,7 +211,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 			},
 			access = access_type_all
 		}
-		self.unit_categories.CS_swat_R870 = {
+		__new_unit_categories.CS_swat_R870 = {
 			unit_types = {
 				america = {
 					Idstring("units/payday2/characters/ene_swat_2/ene_swat_2")
@@ -227,7 +231,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 	end
 
 	if difficulty_index == 8 then
-		self.unit_categories.CS_heavy_M4 = {
+		__new_unit_categories.CS_heavy_M4 = {
 			unit_types = {
 				america = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy")
@@ -244,7 +248,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 			},
 			access = access_type_all
 		}
-		self.unit_categories.CS_heavy_R870 = {
+		__new_unit_categories.CS_heavy_R870 = {
 			unit_types = {
 				america = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy")
@@ -261,7 +265,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 			},
 			access = access_type_all
 		}
-		self.unit_categories.CS_heavy_M4_w = {
+		__new_unit_categories.CS_heavy_M4_w = {
 			unit_types = {
 				america = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy")
@@ -279,7 +283,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 			access = access_type_walk_only
 		}
 	else
-		self.unit_categories.CS_heavy_M4 = {
+		__new_unit_categories.CS_heavy_M4 = {
 			unit_types = {
 				america = {
 					Idstring("units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1")
@@ -296,7 +300,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 			},
 			access = access_type_all
 		}
-		self.unit_categories.CS_heavy_R870 = {
+		__new_unit_categories.CS_heavy_R870 = {
 			unit_types = {
 				america = {
 					Idstring("units/payday2/characters/ene_swat_heavy_r870/ene_swat_heavy_r870")
@@ -313,7 +317,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 			},
 			access = access_type_all
 		}
-		self.unit_categories.CS_heavy_M4_w = {
+		__new_unit_categories.CS_heavy_M4_w = {
 			unit_types = {
 				america = {
 					Idstring("units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1")
@@ -333,7 +337,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 	end
 
 	if difficulty_index == 8 then
-		self.unit_categories.CS_tazer = {
+		__new_unit_categories.CS_tazer = {
 			special_type = "taser",
 			unit_types = {
 				america = {
@@ -352,7 +356,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 			access = access_type_all
 		}
 	else
-		self.unit_categories.CS_tazer = {
+		__new_unit_categories.CS_tazer = {
 			special_type = "taser",
 			unit_types = {
 				america = {
@@ -373,7 +377,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 	end
 
 	if difficulty_index == 8 then
-		self.unit_categories.CS_shield = {
+		__new_unit_categories.CS_shield = {
 			special_type = "shield",
 			unit_types = {
 				america = {
@@ -392,7 +396,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 			access = access_type_walk_only
 		}
 	else
-		self.unit_categories.CS_shield = {
+		__new_unit_categories.CS_shield = {
 			special_type = "shield",
 			unit_types = {
 				america = {
@@ -412,7 +416,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 		}
 	end
 
-	self.unit_categories.FBI_suit_C45_M4 = {
+	__new_unit_categories.FBI_suit_C45_M4 = {
 		unit_types = {
 			america = {
 				Idstring("units/payday2/characters/ene_fbi_1/ene_fbi_1"),
@@ -432,7 +436,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 		},
 		access = access_type_all
 	}
-	self.unit_categories.FBI_suit_M4_MP5 = {
+	__new_unit_categories.FBI_suit_M4_MP5 = {
 		unit_types = {
 			america = {
 				Idstring("units/payday2/characters/ene_fbi_1/ene_fbi_1"), --he deals 65 damage on dw, slightly less than smg units so i was hesitant but eeeeeeeeeeeh.
@@ -453,7 +457,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 		},
 		access = access_type_all
 	}
-	self.unit_categories.FBI_suit_stealth_MP5 = {
+	__new_unit_categories.FBI_suit_stealth_MP5 = {
 		unit_types = {
 			america = {
 				Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3")
@@ -472,7 +476,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 	}
 
 	if difficulty_index < 6 then
-		self.unit_categories.FBI_swat_M4 = {
+		__new_unit_categories.FBI_swat_M4 = {
 			unit_types = {
 				america = {
 					Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
@@ -496,7 +500,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 			access = access_type_all
 		}
 	elseif difficulty_index < 8 then
-		self.unit_categories.FBI_swat_M4 = {
+		__new_unit_categories.FBI_swat_M4 = {
 			unit_types = {
 				america = {
 					Idstring("units/payday2/characters/ene_city_swat_1/ene_city_swat_1"),
@@ -520,7 +524,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 			access = access_type_all
 		}
 	else
-		self.unit_categories.FBI_swat_M4 = {
+		__new_unit_categories.FBI_swat_M4 = {
 			unit_types = {
 				america = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat")
@@ -544,7 +548,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 	end
 
 	if difficulty_index < 6 then
-		self.unit_categories.FBI_swat_R870 = {
+		__new_unit_categories.FBI_swat_R870 = {
 			unit_types = {
 				america = {
 					Idstring("units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2")
@@ -562,7 +566,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 			access = access_type_all
 		}
 	elseif difficulty_index < 8 then
-		self.unit_categories.FBI_swat_R870 = {
+		__new_unit_categories.FBI_swat_R870 = {
 			unit_types = {
 				america = {
 					Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2")
@@ -580,7 +584,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 			access = access_type_all
 		}
 	else
-		self.unit_categories.FBI_swat_R870 = {
+		__new_unit_categories.FBI_swat_R870 = {
 			unit_types = {
 				america = {
 					Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2")
@@ -600,7 +604,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 	end
 
 	if difficulty_index < 6 then
-		self.unit_categories.FBI_heavy_G36 = {
+		__new_unit_categories.FBI_heavy_G36 = {
 			unit_types = {
 				america = {
 					Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
@@ -618,7 +622,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 			access = access_type_all
 		}
 	elseif difficulty_index < 8 then
-		self.unit_categories.FBI_heavy_G36 = {
+		__new_unit_categories.FBI_heavy_G36 = {
 			unit_types = {
 				america = {
 					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36")
@@ -636,7 +640,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 			access = access_type_all
 		}
 	else
-		self.unit_categories.FBI_heavy_G36 = {
+		__new_unit_categories.FBI_heavy_G36 = {
 			unit_types = {
 				america = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy")
@@ -656,7 +660,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 	end
 
 	if difficulty_index < 6 then
-		self.unit_categories.FBI_heavy_R870 = {
+		__new_unit_categories.FBI_heavy_R870 = {
 			unit_types = {
 				america = {
 					Idstring("units/payday2/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870")
@@ -674,7 +678,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 			access = access_type_all
 		}
 	elseif difficulty_index < 8 then
-		self.unit_categories.FBI_heavy_R870 = {
+		__new_unit_categories.FBI_heavy_R870 = {
 			unit_types = {
 				america = {
 					Idstring("units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870")
@@ -692,7 +696,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 			access = access_type_all
 		}
 	else
-		self.unit_categories.FBI_heavy_R870 = {
+		__new_unit_categories.FBI_heavy_R870 = {
 			unit_types = {
 				america = {
 					Idstring("units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870")
@@ -712,7 +716,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 	end
 
 	if difficulty_index < 8 then
-		self.unit_categories.FBI_heavy_G36_w = {
+		__new_unit_categories.FBI_heavy_G36_w = {
 			unit_types = {
 				america = {
 					Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
@@ -730,7 +734,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 			access = access_type_walk_only
 		}
 	else
-		self.unit_categories.FBI_heavy_G36_w = {
+		__new_unit_categories.FBI_heavy_G36_w = {
 			unit_types = {
 				america = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy")
@@ -750,7 +754,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 	end
 
 	if difficulty_index < 6 then
-		self.unit_categories.FBI_shield = {
+		__new_unit_categories.FBI_shield = {
 			special_type = "shield",
 			unit_types = {
 				america = {
@@ -769,7 +773,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 			access = access_type_walk_only
 		}
 	elseif difficulty_index < 8 then
-		self.unit_categories.FBI_shield = {
+		__new_unit_categories.FBI_shield = {
 			special_type = "shield",
 			unit_types = {
 				america = {
@@ -788,7 +792,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 			access = access_type_walk_only
 		}
 	else
-		self.unit_categories.FBI_shield = {
+		__new_unit_categories.FBI_shield = {
 			special_type = "shield",
 			unit_types = {
 				america = {
@@ -809,7 +813,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 	end
 
 	if difficulty_index <= 4 then
-		self.unit_categories.FBI_tank = {
+		__new_unit_categories.FBI_tank = {
 			special_type = "tank",
 			unit_types = {
 				america = {
@@ -828,7 +832,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 			access = access_type_walk_only
 		}
 	elseif difficulty_index == 5 then
-		self.unit_categories.FBI_tank = {
+		__new_unit_categories.FBI_tank = {
 			special_type = "tank",
 			unit_types = {
 				america = {
@@ -851,7 +855,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 			access = access_type_walk_only
 		}
 	elseif difficulty_index == 6 then
-		self.unit_categories.FBI_tank = {
+		__new_unit_categories.FBI_tank = {
 			special_type = "tank",
 			unit_types = {
 				america = {
@@ -878,7 +882,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 			access = access_type_walk_only
 		}
 	elseif difficulty_index == 7 then
-		self.unit_categories.FBI_tank = {
+		__new_unit_categories.FBI_tank = {
 			special_type = "tank",
 			unit_types = {
 				america = {
@@ -909,7 +913,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 			access = access_type_walk_only
 		}
 	else
-		self.unit_categories.FBI_tank = {
+		__new_unit_categories.FBI_tank = {
 			special_type = "tank",
 			unit_types = {
 				america = {
@@ -945,7 +949,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 		}
 	end
 
-	self.unit_categories.medic_M4 = {
+	__new_unit_categories.medic_M4 = {
 		special_type = "medic",
 		unit_types = {
 			america = {
@@ -963,7 +967,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 		},
 		access = access_type_all
 	}
-	self.unit_categories.medic_R870 = {
+	__new_unit_categories.medic_R870 = {
 		special_type = "medic",
 		unit_types = {
 			america = {
@@ -981,7 +985,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 		},
 		access = access_type_all
 	}
-	self.unit_categories.Phalanx_minion = {
+	__new_unit_categories.Phalanx_minion = {
 		is_captain = true,
 		special_type = "shield",
 		unit_types = {
@@ -1000,7 +1004,7 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 		},
 		access = access_type_walk_only
 	}
-	self.unit_categories.Phalanx_vip = {
+	__new_unit_categories.Phalanx_vip = {
 		is_captain = true,
 		special_type = "shield",
 		unit_types = {
@@ -1019,9 +1023,33 @@ Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "cock_init_unit_catego
 		},
 		access = access_type_walk_only
 	}
+	local __possible_unit_types = table.map_keys(self.unit_categories.spooc.unit_types)
+	for i_1, d_1 in pairs(__possible_unit_types) do
+		for i_2, d_2 in pairs(__new_unit_categories) do
+			if not __new_unit_categories[i_2].unit_types[d_1] then
+				local __fix = false
+				if not __fix and __new_unit_categories[i_2].unit_types.america then
+					__fix = true
+					__new_unit_categories[i_2].unit_types[d_1] = __new_unit_categories[i_2].unit_types.america
+				end
+				if not __fix and self.unit_categories[i_2].unit_types[d_1] then
+					__fix = true
+					__new_unit_categories[i_2].unit_types[d_1] = self.unit_categories[i_2].unit_types[d_1]
+				end
+				if not __fix then
+					__new_unit_categories[i_2].unit_types[d_1] = {
+						Idstring("units/payday2/characters/ene_cop_1/ene_cop_1")
+					}
+				end
+			end
+		end
+	end
+	for i_1, d_1 in pairs(__new_unit_categories) do
+		self.unit_categories[i_1] = d_1
+	end
 end)
 
-Hooks:PostHook(GroupAITweakData, "_init_enemy_spawn_groups", "cock_init_enemy_spawn_groups", function(self, difficulty_index)
+Hooks:PostHook(GroupAITweakData, "_init_enemy_spawn_groups", "F_"..Idstring("cock_init_enemy_spawn_groups"):key(), function(self, difficulty_index)
 	self._tactics = {
 		Phalanx_minion = {
 			"shield",
@@ -3159,7 +3187,7 @@ Hooks:PostHook(GroupAITweakData, "_init_enemy_spawn_groups", "cock_init_enemy_sp
 	self.enemy_spawn_groups.FBI_spoocs = self.enemy_spawn_groups.single_spooc
 end)
 
-Hooks:PostHook(GroupAITweakData, "_init_task_data", "cock_init_task_data", function(self, difficulty_index, difficulty)
+Hooks:PostHook(GroupAITweakData, "_init_task_data", "F_"..Idstring("cock_init_task_data"):key(), function(self, difficulty_index, difficulty)
 	local is_console = SystemInfo:platform() ~= Idstring("WIN32")
 	self.max_nr_simultaneous_boss_types = 0
 	self.difficulty_curve_points = {
@@ -4387,11 +4415,3 @@ Hooks:PostHook(GroupAITweakData, "_init_task_data", "cock_init_task_data", funct
 	self.safehouse = deep_clone(self.besiege)
 end
 )
-
---i guess ill leave this here, since you're reading my code and all
---i have other mods too
---you should check them out
---this isnt the only thing ive made, nor is it the thing im most proud of
---nor is anything in modworkshop, for that matter
---the only thing im proud of is me drinking half a bottle of champagne when i was 5 and getting drunk off my ass while playing on my ps2
---so uh in general just go fuck yourself and go download my other mods lol
