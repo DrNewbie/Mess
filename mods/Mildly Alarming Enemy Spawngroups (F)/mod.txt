@@ -1,0 +1,13 @@
+{
+  	"name" : "Mildly Alarming Enemy Spawngroups",
+    "description" : "Re-structures enemy spawngroups so they are slightly more complex.",
+    "author" : "Fuglore"
+	"contact" : "D ONT FUKING  T O U C H  ME",
+	"version" : "1.2",
+	"blt_version" : 2
+	"hooks" : [
+	   {   "hook_id" : "lib/tweak_data/groupaitweakdata",
+		   "script_path" : "groupaitweakdata.lua"
+	   }
+	]
+}
