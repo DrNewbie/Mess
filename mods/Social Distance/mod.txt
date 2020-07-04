@@ -1,6 +1,6 @@
 {
   "name": "Social Distance",
-  "description": "https://modworkshop.net/",
+  "description": "https://modworkshop.net/mod/28078",
   "author": "Dr_Newbie",
   "blt_version": 2,
   "priority": 100,
