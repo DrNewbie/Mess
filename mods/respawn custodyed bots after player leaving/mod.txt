@@ -1,0 +1,19 @@
+{
+  "name": "respawn custodyed bots after player leaving",
+  "description": " ",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/28158",
+  "blt_version": 2,
+  "version": "1",
+  "priority": 100,
+  "hooks": [
+    {
+      "hook_id": "lib/network/base/basenetworksession",
+      "script_path": "basenetworksession.lua"
+    },
+    {
+      "hook_id": "lib/managers/trademanager",
+      "script_path": "trademanager.lua"
+    }
+  ]
+}
