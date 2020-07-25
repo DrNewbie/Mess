@@ -1,6 +1,9 @@
 GiveMask = GiveMask or {}
 
 function GiveMask:__ApplyMaskToThis(them)
+	if not them._unit or not alive(them._unit) or them._unit == managers.player:player_unit() or not them._unit.get_object then
+		return
+	end
 	local mask_align = them._unit:get_object(Idstring("Head"))
 	if not mask_align then
 		return
