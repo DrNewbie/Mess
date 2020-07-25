@@ -1,0 +1,15 @@
+{
+  "name": "spin interaction circle",
+  "description": " ",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/28317",
+  "version": "1",
+  "priority": 900,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/managers/hud/hudinteraction",
+      "script_path": "Hooks/function.lua"
+    }
+  ]
+}
