@@ -1,0 +1,21 @@
+{
+	"name" : "--- Fake Skins Checker ---",
+	"author" : "Dr_Newbie",
+	"contact" : "Check player weapon skins is legal or not",
+	"version" : "beta.1",
+	"priority" : 0,
+	"hooks" : [
+		{	"hook_id" : "lib/managers/menumanager",	"script_path" : "lua/fakeskinschecker.lua"	}
+	],
+	"keybinds" : [
+		{
+			"keybind_id" : "keybind_fakeskinscheckerr",
+			"name" : "Fake Skins Checker",
+			"description" : ""
+			"script_path" : "lua/fakeskinschecker.lua",
+			"run_in_menu" : true,
+			"run_in_game" : true,
+        		"localized" : false,
+		}
+	]
+}
