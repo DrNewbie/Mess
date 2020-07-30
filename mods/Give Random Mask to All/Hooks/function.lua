@@ -1,23 +1,27 @@
 GiveMask = GiveMask or {}
 
 function GiveMask:__ApplyMaskToThis(them)
-	if not them._unit or not alive(them._unit) or them._unit == managers.player:player_unit() or not them._unit.get_object then
+	if not managers.dyn_resource or not them or not them.__ids_mask or not them._unit or not alive(them._unit) or them._unit == managers.player:player_unit() or not them._unit.get_object then
 		return
 	end
 	local mask_align = them._unit:get_object(Idstring("Head"))
-	if not mask_align then
+	if not mask_align or not mask_align.position or not mask_align.rotation then
 		return
 	end
-	local mask_unit = World:spawn_unit(them.__ids_mask, mask_align:position(), mask_align:rotation())
+	if not managers.dyn_resource:is_resource_ready(Idstring("unit"), them.__ids_mask, managers.dyn_resource.DYN_RESOURCES_PACKAGE) then
+		return
+	end
+	local mask_unit = safe_spawn_unit(them.__ids_mask, mask_align:position(), mask_align:rotation())
 	if not mask_unit or not alive(mask_unit) then
 		return
 	end
 	them._unit:link(mask_align:name(), mask_unit, mask_unit:orientation_object():name())
 	them.__mask_unit = mask_unit
+	return
 end
 
 function GiveMask:__GiveMaskToThis(them)
-	if not them._unit or not alive(them._unit) or them._unit == managers.player:player_unit() then
+	if not managers.dyn_resource or not them._unit or not alive(them._unit) or them._unit == managers.player:player_unit() then
 		return
 	end
 	local __mask_unit, __try = nil, 30
