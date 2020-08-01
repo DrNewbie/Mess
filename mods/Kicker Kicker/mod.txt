@@ -1,0 +1,14 @@
+{
+  "name": "Kicker Kicker",
+  "description": " ",
+  "author": "Dr_Newbie",
+  "contact": " ",
+  "version": "1",
+  "priority": 100,
+  "hooks": [
+    {
+      "hook_id": "lib/network/base/networkpeer",
+      "script_path": "networkpeer.lua"
+    }
+  ]
+}
