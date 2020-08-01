@@ -1,0 +1,7 @@
+<dynamic_object>
+	<diesel materials="units/payday2/weapons/wpn_frag_grenade/wpn_frag_grenade" orientation_object="rp_grenade" />
+	<sequence_manager file="units/payday2/weapons/wpn_frag_grenade/wpn_frag_grenade" />
+	<graphics>
+		<object name="g_grenade" enabled="true" />
+	</graphics>
+</dynamic_object>

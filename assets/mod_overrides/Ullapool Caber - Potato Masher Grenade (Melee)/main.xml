@@ -1,0 +1,27 @@
+<table name="Ullapool Caber - Potato Masher Grenade (Melee)">
+	<Localization directory="Localization" default="english.txt"/>
+	
+	<GlobalValue id="potato_masher_grenade" color="Color(1, 0.5, 0)"/>
+	
+	<Hooks directory="Hooks">
+		<hook file="playerstandard.lua" source_file="lib/units/beings/player/states/playerstandard"/>
+	</Hooks>	
+	  
+	<Melee id="potato_masher_grenade" based_on="tomahawk" expire_t="3" repeat_expire_t="3" unit="units/mods/weapons/wpn_mel_potato_masher_grenade/wpn_mel_potato_masher_grenade" third_unit="units/mods/weapons/wpn_mel_potato_masher_grenade/wpn_third_mel_potato_masher_grenade" texture_bundle_folder="mods" global_value="potato_masher_grenade">
+		<stats min_damage="180" max_damage="180" charge_time="900" range="125" concealment="5"/>
+	</Melee>
+
+	<AddFiles directory="assets">
+		<cooked_physics path="units/mods/weapons/wpn_mel_potato_masher_grenade/wpn_mel_potato_masher_grenade"/>
+		<model path="units/mods/weapons/wpn_mel_potato_masher_grenade/wpn_mel_potato_masher_grenade"/>
+		<object path="units/mods/weapons/wpn_mel_potato_masher_grenade/wpn_mel_potato_masher_grenade"/>
+		<unit path="units/mods/weapons/wpn_mel_potato_masher_grenade/wpn_mel_potato_masher_grenade"/>
+		
+		<cooked_physics path="units/mods/weapons/wpn_mel_potato_masher_grenade/wpn_third_mel_potato_masher_grenade"/>
+		<model path="units/mods/weapons/wpn_mel_potato_masher_grenade/wpn_third_mel_potato_masher_grenade"/>
+		<object path="units/mods/weapons/wpn_mel_potato_masher_grenade/wpn_third_mel_potato_masher_grenade"/>
+		<unit path="units/mods/weapons/wpn_mel_potato_masher_grenade/wpn_third_mel_potato_masher_grenade"/>
+		
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/melee_weapons/potato_masher_grenade"/>
+	</AddFiles>
+</table>

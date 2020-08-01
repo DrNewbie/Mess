@@ -1,0 +1,9 @@
+<unit type="wpn" slot="1" >
+	<object file="units/mods/weapons/wpn_mel_potato_masher_grenade/wpn_mel_potato_masher_grenade" />
+	<dependencies>
+		<depends_on bnk="soundbanks/melee_tomahawk"/>
+	</dependencies>
+	<extensions>
+		<extension class="ScriptUnitData" name="unit_data" />
+	</extensions>
+</unit>

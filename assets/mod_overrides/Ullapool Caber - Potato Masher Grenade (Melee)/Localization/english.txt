@@ -1,0 +1,4 @@
+{
+    "bm_melee_potato_masher_grenade" : "Ullapool Caber"
+    "menu_l_global_value_potato_masher_grenade" : " "
+}
