@@ -43,6 +43,8 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 			position = shoot_pos,
 			normal = self._unit:rotation():y()
 		})
+		travel_dis = travel_dis or 100
+		linear_dis = linear_dis or 100
 		local sound_source = SoundDevice:create_source("TripMineBase")
 		sound_source:set_position(shoot_pos)
 		sound_source:post_event("trip_mine_explode")
