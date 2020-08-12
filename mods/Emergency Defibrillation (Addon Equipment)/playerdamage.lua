@@ -7,35 +7,49 @@ local _gHP_ids = '_gHP_'..Idstring('gHP:'..mod_ids):key()
 local _dtHP_ids = '_dtHP_'..Idstring('dtHP:'..mod_ids):key()
 local _cdHP_ids = '_cdHP_'..Idstring('cdHP:'..mod_ids):key()
 
+local function __pre_check(them)
+	if them and them._unit and managers.player:player_unit() and them._unit == managers.player:player_unit() then
+		return true
+	else
+		return false
+	end
+end
+
 local function __post_init(them)
-	them[_now_ids] = 1
-	them[_dt_ids] = 0
-	them[_cd_ids] = 600
-	them[_rHP_ids] = 0.01
-	them[_gHP_ids] = 0.15
-	them[_dtHP_ids] = 0
-	them[_cdHP_ids] = 7
+	if __pre_check(them) then
+		them[_now_ids] = 1
+		them[_dt_ids] = 0
+		them[_cd_ids] = 600
+		them[_rHP_ids] = 0.01
+		them[_gHP_ids] = 0.15
+		them[_dtHP_ids] = 0
+		them[_cdHP_ids] = 7
+	end
 	return them
 end
 
 local function __post_update(them, t)
-	them[_now_ids] = t
+	if __pre_check(them) then
+		them[_now_ids] = t
+	end
 	return them
 end
 
 local function __pre_calc_health_damage(them, dmg)
-	if type(dmg) == "number" and dmg < 0 then
-		dmg = -dmg
-		local __hp_after_dmg = them:get_real_health() - dmg
-		local __ratio = __hp_after_dmg / them:_max_health()
-		if them[_dt_ids] <= them[_now_ids] and __ratio <= them[_rHP_ids] then
-			them[_dt_ids] = them[_now_ids] + them[_cd_ids]
-			them[_dtHP_ids] = them[_now_ids] + them[_cdHP_ids]
-			them:set_health(them:_max_health() * them[_gHP_ids])
-			return them, true
-		end
-		if them[_dtHP_ids] >= them[_now_ids] then
-			return them, true
+	if __pre_check(them) then
+		if type(dmg) == "number" and dmg < 0 then
+			dmg = -dmg
+			local __hp_after_dmg = them:get_real_health() - dmg
+			local __ratio = __hp_after_dmg / them:_max_health()
+			if them[_dt_ids] <= them[_now_ids] and __ratio <= them[_rHP_ids] then
+				them[_dt_ids] = them[_now_ids] + them[_cd_ids]
+				them[_dtHP_ids] = them[_now_ids] + them[_cdHP_ids]
+				them:set_health(them:_max_health() * them[_gHP_ids])
+				return them, true
+			end
+			if them[_dtHP_ids] >= them[_now_ids] then
+				return them, true
+			end
 		end
 	end
 	return them, false
