@@ -22,7 +22,7 @@ Hooks:PostHook(WeaponTweakData, "_init_new_weapons", "F_"..Idstring("PostHook:We
 	}
 	
 	local __get_cat_ids = function (__cat)
-		return "id_"..Idstring(tostring(json.encode(__cat))):key()
+		return "id_"..Idstring("DefaultModGun:"..tostring(json.encode(__cat))):key()
 	end
 	
 	local ids_assault_rifle = __get_cat_ids(self.ak74.categories)
@@ -58,7 +58,6 @@ Hooks:PostHook(WeaponTweakData, "_init_new_weapons", "F_"..Idstring("PostHook:We
 	for weapon_id, data in pairs(self) do
 		if not data.ignore_statistics and not string.match(weapon_id, "_npc") and not string.match(weapon_id, "_crew") and data.name_id and not data.ECM_HACKABLE and not data.ACC_PITCH then
 			local __cat_ids = __get_cat_ids(data.categories)
-			log( __cat_ids )
 			if __mapping[__cat_ids] and __mapping[__cat_ids].overhaul and weapon_id ~= __mapping[__cat_ids].from then
 				for _, __d in pairs(__mapping[__cat_ids].overhaul) do
 					if self[weapon_id] and weapon_id and __d then
