@@ -80,10 +80,12 @@ function CopInventory:JOKERMASK_set_JOKER_mask_visibility(state)
 	local mask_unit = World:spawn_unit(Idstring(self._ids_mask), mask_align:position(), mask_align:rotation())
 	if self._mask_blueprint then
 		self._mask_blueprint.material = self._mask_blueprint.material or {}
-		self._mask_blueprint.color = self._mask_blueprint.color or {}
+		self._mask_blueprint.color_a = self._mask_blueprint.color_a or {}
+		self._mask_blueprint.color_b = self._mask_blueprint.color_b or {}
 		self._mask_blueprint.pattern = self._mask_blueprint.pattern or {}
 		self._mask_blueprint.material.id = self._mask_blueprint.material.id or "plastic"
-		self._mask_blueprint.color.id = self._mask_blueprint.color.id or "nothing"
+		self._mask_blueprint.color_a.id = self._mask_blueprint.color_a.id or "nothing"
+		self._mask_blueprint.color_b.id = self._mask_blueprint.color_b.id or "nothing"
 		self._mask_blueprint.pattern.id = self._mask_blueprint.pattern.id or "no_color_no_material"
 		mask_unit:base():apply_blueprint(self._mask_blueprint)
 	end
