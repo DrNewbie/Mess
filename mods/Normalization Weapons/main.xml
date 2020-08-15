@@ -1,5 +1,5 @@
 <table name="Normalization Weapons">
-	<AssetUpdates id="Normalization Weapons" version="3">
+	<AssetUpdates id="Normalization Weapons" version="4">
         <custom_provider version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Normalization%20Weapons.txt" download_url="https://drnewbie.github.io/Mess/UpdateProvider/Normalization%20Weapons.zip"/>
     </AssetUpdates>
 </table>
