@@ -20,28 +20,49 @@ Hooks:PostHook(WeaponTweakData, "_init_new_weapons", "F_"..Idstring("PostHook:We
 		"DAMAGE",
 		"timers"
 	}
+	
+	local __get_cat_ids = function (__cat)
+		return "id_"..Idstring(tostring(json.encode(__cat))):key()
+	end
+	
+	local ids_assault_rifle = __get_cat_ids(self.ak74.categories)
+	local ids_lmg = __get_cat_ids(self.hk21.categories)
 	local __mapping = {
-		["assault_rifle"] = {
+		[ids_assault_rifle] = {
 			["from"] = "ak74",
 			["overhaul"] = __ge_overhaul
 		},
-		["lmg"] = {
+		[ids_lmg] = {
 			["from"] = "hk21",
 			["overhaul"] = __ge_overhaul
 		}
 	}
 	
-	local __old = {}	
+	for weapon_id, data in pairs(self) do
+		if not data.ignore_statistics and not string.match(weapon_id, "_npc") and not string.match(weapon_id, "_crew") and data.name_id and not data.ECM_HACKABLE and not data.ACC_PITCH then
+			local __cat_ids = __get_cat_ids(data.categories)
+			if not __mapping[__cat_ids] then				
+				__mapping[__cat_ids] = {
+					["from"] = weapon_id,
+					["overhaul"] = __ge_overhaul				
+				}
+			end
+		end
+	end
+	
+	local __old = {}
 	for _, __d in pairs(__mapping) do
 		__old[__d.from] = self[__d.from]
 	end
 	
 	for weapon_id, data in pairs(self) do
 		if not data.ignore_statistics and not string.match(weapon_id, "_npc") and not string.match(weapon_id, "_crew") and data.name_id and not data.ECM_HACKABLE and not data.ACC_PITCH then
-			if __mapping[self[weapon_id].categories[1]] and weapon_id ~= __mapping[self[weapon_id].categories[1]].from then
-				for _, __d in pairs(__mapping[self[weapon_id].categories[1]].overhaul) do
+			local __cat_ids = __get_cat_ids(data.categories)
+			log( __cat_ids )
+			if __mapping[__cat_ids] and __mapping[__cat_ids].overhaul and weapon_id ~= __mapping[__cat_ids].from then
+				for _, __d in pairs(__mapping[__cat_ids].overhaul) do
 					if self[weapon_id] and weapon_id and __d then
-						self[weapon_id][__d] = __old[__mapping[self[weapon_id].categories[1]].from][__d]
+						self[weapon_id][__d] = __old[__mapping[__cat_ids].from][__d]
 					end
 				end
 			end
