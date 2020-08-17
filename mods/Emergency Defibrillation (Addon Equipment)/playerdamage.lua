@@ -72,7 +72,7 @@ if PlayerDamage then
 		return old_calc_health_damage(self, attack_data, ...)
 	end
 end
-
+--[[
 if HuskPlayerDamage then
 	Hooks:PostHook(HuskPlayerDamage, "init", 'F_'..Idstring("PostHook:HuskPlayerDamage:init:"..mod_ids):key(), function(self)
 		self = __post_init(self)
@@ -90,3 +90,4 @@ if HuskPlayerDamage then
 		return old_husk_calc_health_damage(self, attack_data, ...)
 	end
 end
+]]
