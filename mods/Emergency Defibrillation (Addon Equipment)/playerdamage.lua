@@ -8,15 +8,17 @@ local _dtHP_ids = '_dtHP_'..Idstring('dtHP:'..mod_ids):key()
 local _cdHP_ids = '_cdHP_'..Idstring('cdHP:'..mod_ids):key()
 
 local function __pre_check(them)
-	if them and them._unit and managers.player:player_unit() and them._unit == managers.player:player_unit() then
+	if them and them._unit and managers.player:player_unit() and them._unit == managers.player:player_unit() and type(them[_now_ids]) == "number" then
 		return true
 	else
 		return false
 	end
 end
 
-local function __post_init(them)
+local function __post_update(them, t)
 	if __pre_check(them) then
+		them[_now_ids] = t
+	else
 		them[_now_ids] = 1
 		them[_dt_ids] = 0
 		them[_cd_ids] = 600
@@ -28,24 +30,19 @@ local function __post_init(them)
 	return them
 end
 
-local function __post_update(them, t)
-	if __pre_check(them) then
-		them[_now_ids] = t
-	end
-	return them
-end
-
 local function __pre_calc_health_damage(them, dmg)
 	if __pre_check(them) then
 		if type(dmg) == "number" and dmg < 0 then
 			dmg = -dmg
 			local __hp_after_dmg = them:get_real_health() - dmg
-			local __ratio = __hp_after_dmg / them:_max_health()
-			if them[_dt_ids] <= them[_now_ids] and __ratio <= them[_rHP_ids] then
-				them[_dt_ids] = them[_now_ids] + them[_cd_ids]
-				them[_dtHP_ids] = them[_now_ids] + them[_cdHP_ids]
-				them:set_health(them:_max_health() * them[_gHP_ids])
-				return them, true
+			local __ratio = math.min(__hp_after_dmg / them:_max_health(), 1)
+			if them[_dt_ids] <= them[_now_ids] then
+				if __ratio <= them[_rHP_ids] then
+					them[_dt_ids] = them[_now_ids] + them[_cd_ids]
+					them[_dtHP_ids] = them[_now_ids] + them[_cdHP_ids]
+					them:set_health(them:_max_health() * them[_gHP_ids])
+					return them, true
+				end
 			end
 			if them[_dtHP_ids] >= them[_now_ids] then
 				return them, true
@@ -56,9 +53,6 @@ local function __pre_calc_health_damage(them, dmg)
 end
 
 if PlayerDamage then
-	Hooks:PostHook(PlayerDamage, "init", 'F_'..Idstring("PostHook:PlayerDamage:init:"..mod_ids):key(), function(self)
-		self = __post_init(self)
-	end)
 	Hooks:PostHook(PlayerDamage, "update", 'F_'..Idstring("PostHook:PlayerDamage:update:"..mod_ids):key(), function(self, unit, t, dt)
 		self = __post_update(self, t)
 	end)
@@ -72,22 +66,3 @@ if PlayerDamage then
 		return old_calc_health_damage(self, attack_data, ...)
 	end
 end
---[[
-if HuskPlayerDamage then
-	Hooks:PostHook(HuskPlayerDamage, "init", 'F_'..Idstring("PostHook:HuskPlayerDamage:init:"..mod_ids):key(), function(self)
-		self = __post_init(self)
-	end)
-	Hooks:PostHook(HuskPlayerDamage, "update", 'F_'..Idstring("PostHook:HuskPlayerDamage:update:"..mod_ids):key(), function(self, unit, t, dt)
-		self = __post_update(self, t)
-	end)
-	local old_husk_calc_health_damage = HuskPlayerDamage._calc_health_damage
-	function HuskPlayerDamage:_calc_health_damage(attack_data, ...)
-		local __ans
-		self, __ans = __pre_calc_health_damage(self, -attack_data.damage)
-		if __ans then
-			return 0
-		end
-		return old_husk_calc_health_damage(self, attack_data, ...)
-	end
-end
-]]
