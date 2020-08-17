@@ -1,0 +1,19 @@
+{
+  "name": "Assault Wave Multipliers",
+  "description": "This mod multiplies the enemy health and damage values for each consecutive assault wave during a heist, similarly to the bug that was introduced when Holdout was first released.",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/managers/group_ai_states/groupaistatebesiege",
+      "script_path": "lua/function.lua"
+    },
+    {
+      "hook_id": "lib/managers/group_ai_states/groupaistatestreet",
+      "script_path": "lua/function.lua"
+    }
+  ]
+}
