@@ -2,7 +2,7 @@
   "name": "Assault Wave Multipliers",
   "description": "This mod multiplies the enemy health and damage values for each consecutive assault wave during a heist, similarly to the bug that was introduced when Holdout was first released.",
   "author": "Dr_Newbie",
-  "contact": "https://modworkshop.net/",
+  "contact": "https://modworkshop.net/mod/28633",
   "version": "1",
   "priority": 100,
   "blt_version": 2,
