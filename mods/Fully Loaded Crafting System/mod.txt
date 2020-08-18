@@ -1,0 +1,36 @@
+{
+  "name": "Fully Loaded Crafting System",
+  "description": "http://modwork.shop/25639",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/28636",
+  "version": "1",
+  "hooks": [
+    {
+      "hook_id": "lib/managers/hudmanager",
+      "script_path": "lib/hudmanager.lua"
+    },
+    {
+      "hook_id": "lib/units/beings/player/states/playerstandard",
+      "script_path": "lib/playerstandard.lua"
+    },
+    {
+      "hook_id": "lib/managers/playermanager",
+      "script_path": "lib/playermanager.lua"
+    },
+    {
+      "hook_id": "lib/units/beings/player/playermovement",
+      "script_path": "lib/playermovement.lua"
+    }
+  ],
+	"keybinds" : [
+		{
+			"keybind_id" : "toggleFLCraftingSystemAvtive",
+			"name" : "Fully Loaded Crafting Avtive",
+			"description" : " ",
+			"script_path" : "lib/USE.lua",
+			"run_in_menu" : false,
+			"run_in_game" : true,
+			"localized" : false
+		}
+	]
+}
