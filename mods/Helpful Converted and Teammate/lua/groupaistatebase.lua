@@ -18,7 +18,8 @@ local HelpfulConverted_check_gameover_conditions = GroupAIStateBase.check_gameov
 
 function GroupAIStateBase:check_gameover_conditions(...)
 	local _gameover = HelpfulConverted_check_gameover_conditions(self, ...)
-	if _gameover and HelpfulConverted.Runner and alive(HelpfulConverted.Runner) then
+	--if _gameover and HelpfulConverted.Runner and alive(HelpfulConverted.Runner) then
+	if _gameover then
 		local _converted = HelpfulConverted:Get_Converted()
 		if _converted then
 			_gameover = false
@@ -73,7 +74,7 @@ function HelpfulConverted:Check_Unit(r_unit)
 end
 
 function HelpfulConverted:Do_Help(unit)
-	if Network:is_client() or not unit or not alive(unit) then
+	if (Network and Network:is_client()) or not unit or not alive(unit) then
 		return
 	end
 	if not managers.groupai or not managers.groupai:state():all_criminals()[unit:key()] then
@@ -106,19 +107,27 @@ function HelpfulConverted:Do_Help(unit)
 		return
 	end
 	local followup_objective = {
-		interrupt_health = 1,
-		interrupt_dis = -1,
+		scan = true,
 		type = "act",
 		action = {
-			sync = true,
+			variant = "crouch",
 			body_part = 1,
-			type = "idle"
+			type = "act",
+			blocks = {
+				heavy_hurt = -1,
+				hurt = -1,
+				action = -1,
+				aim = -1,
+				walk = -1
+			}
 		}
 	}
 	local objective = {
-		type = "act",
-		haste = "run",
+		type = "revive",
+		called = true,
+		scan = true,
 		destroy_clbk_key = false,
+		follow_unit = _need_help_unit,
 		nav_seg = _need_help_unit:movement():nav_tracker():nav_segment(),
 		pos = _need_help_unit:position(),
 		fail_clbk = callback(self, self, "on_rescue_SO_failed", Ready2Help),
@@ -142,6 +151,9 @@ function HelpfulConverted:Do_Help(unit)
 		followup_objective = followup_objective
 	}
 	_ask_converted:brain():set_objective(objective)
+	DelayedCalls:Add('DelayedMod_Help_'..Idstring(tostring(_need_help_unit:key())):key(), tweak_data.interaction.revive.timer + 5, function()
+		HelpfulConverted:Do_Help(_need_help_unit)
+	end)
 end
 
 function HelpfulConverted:Is_Anyone_Need_Help()

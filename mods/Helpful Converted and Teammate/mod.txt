@@ -1,23 +1,23 @@
 {
-	"name": "Helpful Converted and Teammate",
-	"description": "Helpful Converted and Teammate",
-	"author": "Dr_Newbie",
-	"contact": "http://modwork.shop/17502",
-	"version": "24",
-	"priority": 1,
-	"blt_version": 2,
-	"hooks": [
-		{
-			"hook_id": "lib/units/beings/player/playerdamage",
-			"script_path": "lua/playerdamage.lua"
-		},
-		{
-			"hook_id": "lib/network/handlers/unitnetworkhandler",
-			"script_path": "lua/unitnetworkhandler.lua"
-		},
-		{
-			"hook_id": "lib/managers/group_ai_states/groupaistatebase",
-			"script_path": "lua/groupaistatebase.lua"
-		}
-	]
+  "name": "Helpful Converted and Teammate",
+  "description": "Helpful Converted and Teammate",
+  "author": "Dr_Newbie",
+  "contact": "http://modwork.shop/17502",
+  "version": "25",
+  "priority": 1,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/units/beings/player/playerdamage",
+      "script_path": "lua/playerdamage.lua"
+    },
+    {
+      "hook_id": "lib/network/handlers/unitnetworkhandler",
+      "script_path": "lua/unitnetworkhandler.lua"
+    },
+    {
+      "hook_id": "lib/managers/group_ai_states/groupaistatebase",
+      "script_path": "lua/groupaistatebase.lua"
+    }
+  ]
 }
