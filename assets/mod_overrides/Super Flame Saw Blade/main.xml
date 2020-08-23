@@ -1,4 +1,7 @@
 <table name="Super Flame Saw Blade">
+	<AssetUpdates id="Super Flame Saw Blade" version="3">
+        <custom_provider version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Super%20Flame%20Saw%20Blade.txt" download_url="https://drnewbie.github.io/Mess/UpdateProvider/Super%20Flame%20Saw%20Blade.zip"/>
+    </AssetUpdates>
 	<Localization directory="Localization" default="english.txt"/>
     <AddFiles directory="assets">
 		<unit path="units/payday2/weapons/wpn_fps_saw_pts/wpn_fps_saw_m_blade_flame" force="true"/>
