@@ -1,6 +1,6 @@
 <table name="Addition Spear Bullet">
 	<Localization directory="Localization" default="english.txt"/>	
-    <AssetUpdates id="Addition Spear Bullet" version="4">
+    <AssetUpdates id="Addition Spear Bullet" version="5">
         <custom_provider version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Addon%20Spear%20Bullet.txt" download_url="https://drnewbie.github.io/Mess/UpdateProvider/Addon%20Spear%20Bullet.zip"/>
     </AssetUpdates>
 	<AddFiles directory="assets">

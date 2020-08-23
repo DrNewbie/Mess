@@ -1,5 +1,5 @@
 Hooks:PostHook(WeaponFactoryTweakData, "init", "F_"..Idstring("PostHook:WeaponFactoryTweakData:init:Addition Spear Bullet"):key(), function(self)
-	self.parts.wpn_fps_sss_unmaykr.wpn_fps_sss_spear = {
+	self.parts.wpn_fps_sss_spear.custom_stats = {
 		armor_piercing_add = 0,
 		can_shoot_through_enemy = false, 
 		can_shoot_through_shield = true, 
