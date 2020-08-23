@@ -1,0 +1,22 @@
+<dynamic_object>
+    <diesel materials="units/payday2/weapons/wpn_fps_saw_pts/wpn_fps_saw_m_blade" orientation_object="rp_wpn_fps_saw_m_blade"/>
+	<animations>
+		<animation_group name="reload">
+			<object name="anim_blade_reload" enabled="true"/>
+			<object name="anim_handle_upper_blade" enabled="true"/>
+			<object name="anim_handle_lower_blade" enabled="true"/>
+		</animation_group>
+		<animation_group name="recoil">
+			<object name="anim_blade_recoil" enabled="true"/>
+		</animation_group>
+    </animations>
+    <graphics>
+        <object enabled="true" name="g_blade_lod0"/>
+        <object enabled="true" name="g_core_lod0"/>
+        <object enabled="true" name="g_handle_upper_lod0"/>
+        <object enabled="true" name="g_handle_lower_lod0"/>
+    </graphics>
+	<effects>
+        <effect_spawner name="effect_001" enabled="true" object="rp_wpn_fps_saw_m_blade" effect="effects/particles/fire/small_light_fire"/>
+	</effects>
+</dynamic_object>

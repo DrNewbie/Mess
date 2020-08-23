@@ -1,0 +1,23 @@
+<table name="Super Flame Saw Blade">
+	<Localization directory="Localization" default="english.txt"/>
+    <AddFiles directory="assets">
+		<unit path="units/payday2/weapons/wpn_fps_saw_pts/wpn_fps_saw_m_blade_flame" force="true"/>
+		<object path="units/payday2/weapons/wpn_fps_saw_pts/wpn_fps_saw_m_blade_flame" force="true"/>
+		<model path="units/payday2/weapons/wpn_fps_saw_pts/wpn_fps_saw_m_blade_flame" force="true"/>
+		<cooked_physics path="units/payday2/weapons/wpn_fps_saw_pts/wpn_fps_saw_m_blade_flame" force="true"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_saw_m_blade_flame"/>
+	</AddFiles>	
+	<Hooks directory="Hooks">
+		<hook file="sawweaponbase.lua" source_file="lib/units/weapons/sawweaponbase"/>
+	</Hooks>
+	<WeaponMod based_on="wpn_fps_saw_m_blade_sharp" id="wpn_fps_saw_m_blade_flame" unit="units/payday2/weapons/wpn_fps_saw_pts/wpn_fps_saw_m_blade_flame" drop="false" texture_bundle_folder="mods" is_a_unlockable="true">
+		<stats value="1" damage="1" total_ammo_mod="200"/>
+		<custom_stats 
+			rof_mult="2.5" 
+		/>
+		<weapons>
+			<value_node value="wpn_fps_saw"/>
+			<value_node value="wpn_fps_saw_secondary"/>
+		</weapons>
+    </WeaponMod>
+</table>

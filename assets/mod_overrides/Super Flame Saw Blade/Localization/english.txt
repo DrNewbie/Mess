@@ -1,0 +1,4 @@
+{
+	"bm_wp_wpn_fps_saw_m_blade_flame" : "Super Flame Saw Blade",
+	"bm_wp_wpn_fps_saw_m_blade_flame_desc" : " "
+}

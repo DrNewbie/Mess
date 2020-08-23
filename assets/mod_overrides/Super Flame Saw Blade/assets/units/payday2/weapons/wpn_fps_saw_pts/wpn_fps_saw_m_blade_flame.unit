@@ -1,0 +1,9 @@
+<unit type="wpn" slot="1" >
+    <object file="units/payday2/weapons/wpn_fps_saw_pts/wpn_fps_saw_m_blade_flame" />
+	<dependencies>
+		<depends_on effect="effects/particles/fire/small_light_fire" />
+	</dependencies>
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>
