@@ -47,6 +47,7 @@ local take_ammo = function(t, dt)
 			_success = true
 		end
 	end
+	managers.player:local_player():sound():play("pickup_ammo", nil, true)
 	return _success
 end
 
