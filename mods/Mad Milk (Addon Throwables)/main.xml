@@ -1,0 +1,9 @@
+<mod name="Mad Milk (Addon Throwables)">
+	<Localization directory="Loc" default="EN.txt"/>
+	<AssetUpdates id="Mad Milk (Addon Throwables)" version="3">
+        <custom_provider version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Mad%20Milk%20(Addon%20Throwables).txt" download_url="https://drnewbie.github.io/Mess/UpdateProvider/Mad%20Milk%20(Addon%20Throwables).zip"/>
+    </AssetUpdates>
+	<AddFiles directory="Assets">
+		<texture path="guis/dlcs/mad_milk/textures/pd2/blackmarket/icons/grenades/mad_milk" force="true"/>
+	</AddFiles>
+</mod>
