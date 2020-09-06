@@ -1,4 +1,4 @@
 {
 	"bm_grenade_mad_milk":"Mad Milk",
-	"bm_grenade_mad_milk_desc":"Recharges upon damage taken and dealt and when full can be used to heal 15% and starts health regen for 5 seconds."
+	"bm_grenade_mad_milk_desc":"Recharges upon damage taken and when full can be used to heal 15% and starts health regen for 5 seconds."
 }
