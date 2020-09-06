@@ -1,0 +1,14 @@
+{
+  "name": "Passive Buff (Dallas)",
+  "description": "https://modworkshop.net/mod/28980",
+  "author": "Dr_Newbie",
+  "blt_version": 2,
+  "priority": 100,
+  "version": "1",
+  "hooks": [
+    {
+      "hook_id": "lib/units/beings/player/playerdamage",
+      "script_path": "playerdamage.lua"
+    }
+  ]
+}
