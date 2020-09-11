@@ -1,0 +1,19 @@
+{
+  "name": "Add Animation: Injector",
+  "description": " ",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/29069",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/tweak_data/blackmarkettweakData",
+      "script_path": "Base.lua"
+    },
+    {
+      "hook_id": "lib/units/beings/player/playerequipment",
+      "script_path": "Base.lua"
+    }
+  ]
+}
