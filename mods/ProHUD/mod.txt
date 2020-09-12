@@ -59,7 +59,7 @@
     {
       "identifier": "ProHUDGitHubUpdate",
       "host": {
-        "meta": "https://drnewbie.github.io/Mess/Update/ProHUDGitHubUpdate.meta.json"
+        "meta": "https://drnewbie.github.io/Mess/Update/ProHUD.meta.json"
       }
     }
   ]
