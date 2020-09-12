@@ -1,0 +1,39 @@
+{
+  "name": "Lock away all non beardlib weapons",
+  "description": "Lock away all non beardlib weapons",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/21056",
+  "version": "4",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/managers/localizationmanager",
+      "script_path": "UpdateMe.lua"
+    },
+    {
+      "hook_id": "lib/tweak_data/weapontweakdata",
+      "script_path": "weapontweakdata.lua"
+    },
+    {
+      "hook_id": "lib/tweak_data/dlctweakdata",
+      "script_path": "dlctweakdata.lua"
+    },
+    {
+      "hook_id": "lib/managers/dlcmanager",
+      "script_path": "dlcmanager.lua"
+    },
+    {
+      "hook_id": "lib/tweak_data/tweakdata",
+      "script_path": "tweakdata.lua"
+    },
+    {
+      "hook_id": "lib/tweak_data/lootdroptweakdata",
+      "script_path": "lootdroptweakdata.lua"
+    },
+    {
+      "hook_id": "lib/managers/blackmarketmanager",
+      "script_path": "blackmarketmanager.lua"
+    }
+  ]
+}
