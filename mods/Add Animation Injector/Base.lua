@@ -28,8 +28,8 @@ if PlayerEquipment then
 	function PlayerEquipment:throw_grenade(...)
 		local grenade_name = managers.blackmarket:equipped_grenade()
 		local grenade_tweak = tweak_data.blackmarket.projectiles[grenade_name]
-		if type(grenade_tweak) == "table" and grenade_tweak.ability then
-			managers.player:on_throw_grenade()
+		if type(grenade_tweak) == "table" and grenade_tweak.ability and grenade_name == "chico_injector" then
+			managers.player:attempt_ability("chico_injector")
 			managers.player:local_player():sound():play("pickup_fak_skill")
 			return
 		end
