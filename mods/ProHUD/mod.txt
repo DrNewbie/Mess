@@ -1,6 +1,6 @@
 {
   "name": "Pro HUD",
-  "description": "https://modworkshop.net/mod/26669",
+  "description": "https://modworkshop.net/mod/29081",
   "author": "Dr_Newbie",
   "version": "4",
   "blt_version": 2,
