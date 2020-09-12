@@ -1,4 +1,4 @@
-if string.lower(RequiredScript) == "lib/managers/hudmanagerpd2" then
+if HUDManager and string.lower(RequiredScript) == "lib/managers/hudmanagerpd2" then
 	function HUDManager:__HideDefaultHud()
 		for i, _ in pairs(self._teammate_panels) do
 			local teammate_panel = self._teammate_panels[i]
@@ -34,5 +34,11 @@ if string.lower(RequiredScript) == "lib/managers/hudmanagerpd2" then
 	
 	Hooks:PostHook(HUDManager, "_create_teammates_panel", "F_"..Idstring("PostHook:_create_teammates_panel:HideDefaultHud"):key(), function(self)
 		self:__HideDefaultHud()
+	end)
+end
+
+if HUDAssaultCorner and string.lower(RequiredScript) == "lib/managers/hud/hudassaultcorner" then
+	Hooks:PostHook(HUDAssaultCorner, "_show_hostages", "F_"..Idstring("PostHook:_show_hostages:HideDefaultHud"):key(), function(self)
+		self:_hide_hostages()
 	end)
 end
