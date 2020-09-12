@@ -1,4 +1,7 @@
-<table name="NoobHUD">
+<table name="Pro HUD">
+	<AssetUpdates id="Pro HUD" version="4">
+        <custom_provider version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/ProHUD.txt" download_url="https://drnewbie.github.io/Mess/UpdateProvider/ProHUD.zip"/>
+    </AssetUpdates>
 	<AddFiles directory="Assets">
 		<texture path="guis/textures/pd2/noob_hud/better_icon/armor" force = "true"/>
 		<texture path="guis/textures/pd2/noob_hud/better_icon/health" force = "true"/>

@@ -54,13 +54,5 @@
       "hook_id": "lib/units/beings/player/playerdamage",
       "script_path": "HUD/MyCharacter.lua"
     }
-  ],
-  "updates": [
-    {
-      "identifier": "ProHUDGitHubUpdate",
-      "host": {
-        "meta": "https://drnewbie.github.io/Mess/Update/ProHUD.meta.json"
-      }
-    }
   ]
 }
