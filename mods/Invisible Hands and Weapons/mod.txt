@@ -1,0 +1,26 @@
+{
+  "name": "Invisible Hands and Weapons",
+  "description": " ",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/29091",
+  "blt_version": 2,
+  "version": "1",
+  "priority": 100,
+  "hooks": [
+    {
+      "hook_id": "lib/units/cameras/fpcameraplayerbase",
+      "script_path": "fpcameraplayerbase.lua"
+    }
+  ],
+  "keybinds": [
+    {
+      "keybind_id": "toggle_r_drawviewmodel",
+      "name": "Invisible Hands and Weapons",
+      "description": "Toggle On\\Off",
+      "script_path": "toggle_r_drawviewmodel.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    }
+  ]
+}
