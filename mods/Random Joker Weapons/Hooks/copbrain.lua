@@ -1,6 +1,5 @@
 local AllowWeapons = {
 	Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
-	Idstring("units/payday2/weapons/wpn_npc_c45/wpn_npc_c45"),
 	Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull"),
 	Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4"),
 	Idstring("units/payday2/weapons/wpn_npc_m4_yellow/wpn_npc_m4_yellow"),
