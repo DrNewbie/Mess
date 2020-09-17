@@ -1,9 +1,9 @@
 {
 	"name": "Stoic Slurp",
 	"description": "Sluuuuuuuuurp",
-	"author": "Maple Maniac",
-	"version": "1",
-	"priority": 1,
+	"author": "https://modworkshop.net/mod/21518",
+	"version": "2",
+	"priority": 100,
 	"color": "0 0 0",
 	"blt_version": 2,
 	"hooks": [

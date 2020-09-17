@@ -8,13 +8,11 @@ else
 		cooldown = "perkdeck_cooldown_over"
 	}
 	
-	local Use_attempt_damage_control = PlayerManager.add_grenade_amount
-	function PlayerManager:add_grenade_amount(amount, sync)
+	Hooks:PostHook(FPCameraPlayerBase, "update", "F_"..Idstring("PostHook:PlayerManager:add_grenade_amount:StoicSlurp"):key(), function(self, amount) 
 		if amount == -1 and managers.blackmarket:equipped_grenade() == "damage_control" then
 			StoicSlurp:Play("UseStoicSlurp")
-		end
-		Use_attempt_damage_control(self, amount, sync)
-	end
+		end	
+	end)
 	
 	local movie_ids = Idstring("movie")
 	function StoicSlurp:Play(sound)

@@ -1,12 +1,12 @@
 <mod name="StoicSlurp" global_key="StoicSlurp">
 	<Localization directory="Loc" default="EN.txt"/>
-	<AssetUpdates id="21518" version="1" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AssetUpdates id="21518" version="2" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
 	<AddFiles directory="Assets">
 		<movie path="UseStoicSlurp"/>
 	</AddFiles>
 	<Options build_menu="true" auto_load="true">
 		<options>
-			<option type="boolean" default_value="false" desc_id="EmptyId" name="OnUseStoicSlurp"/>
+			<option type="boolean" default_value="true" desc_id="EmptyId" name="OnUseStoicSlurp"/>
 		</options>
 	</Options>
 </mod>
