@@ -45,7 +45,7 @@ if Steam and Steam:sa_handler() then
 	--[[
 	table.insert(__list, "heist_dropin")
 	table.insert(__list, "heist_failed")
-	table.insert(__list, "heist_success")	
+	table.insert(__list, "heist_success")
 	]]
 	for _, __name in pairs(enemy_list) do
 		table.insert(__list, "enemy_kills_"..__name)
