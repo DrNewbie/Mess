@@ -9,6 +9,7 @@ if Steam and Steam:sa_handler() then
 	table.insert(__list, "gadget_used_first_aid")
 	table.insert(__list, "gadget_used_body_bag")
 	table.insert(__list, "gadget_used_armor_bag")
+	table.insert(__list, "gadget_used_doctor_bag")	
 	for _, __name in pairs(weapon_list) do
 		table.insert(__list, "weapon_used_"..__name)
 		table.insert(__list, "weapon_shots_"..__name)
@@ -26,11 +27,9 @@ if Steam and Steam:sa_handler() then
 	for _, __name in pairs(mask_list) do
 		table.insert(__list, "mask_used_"..__name)
 	end	
-	--[[
 	for _, __name in pairs(armor_list) do
 		table.insert(__list, "armor_used_"..__name)
 	end
-	]]
 	for _, __name in pairs(character_list) do
 		table.insert(__list, "character_used_"..__name)
 	end
