@@ -1,0 +1,20 @@
+{
+  "name": "FBI Files Reset",
+  "description": " ",
+  "author": "Dr_Newbie. Daneii",
+  "contact": " ",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "keybinds": [
+    {
+      "keybind_id": "keybind_FBIFilesReset",
+      "name": "FBI Files Reset",
+      "description": " ",
+      "script_path": "keybind.lua",
+      "run_in_menu": true,
+      "run_in_game": true,
+      "localized": false
+    }
+  ]
+}
