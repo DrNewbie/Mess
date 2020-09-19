@@ -16,5 +16,15 @@
       "run_in_game": true,
       "localized": false
     }
+  ],
+  "updates": [
+    {
+      "identifier": "FBIFilesResetGitHubUpdate",
+      "host": {
+        "meta": "https://drnewbie.github.io/Mess/Update/FBIFilesReset.meta.json",
+        "download": "https://drnewbie.github.io/Mess/Update/FBIFilesReset.zip",
+        "patchnotes": "https://github.com/DrNewbie/Mess/commits/master"
+      }
+    }
   ]
 }
