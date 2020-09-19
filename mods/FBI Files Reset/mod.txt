@@ -3,7 +3,7 @@
   "description": " ",
   "author": "Dr_Newbie. Daneii",
   "contact": " ",
-  "version": "1",
+  "version": "2",
   "priority": 100,
   "blt_version": 2,
   "keybinds": [
