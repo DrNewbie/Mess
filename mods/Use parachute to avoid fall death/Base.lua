@@ -1,7 +1,12 @@
 local mod_ids = Idstring("Use parachute to avoid fall death"):key()
 local is_loaded = PackageManager:loaded("packages/narr_jerry2")
+local old_1 = "__old_"..Idstring("old_1:"..mod_ids):key()
+local old_2 = "__old_"..Idstring("old_2:"..mod_ids):key()
+local old_3 = "__old_"..Idstring("old_3:"..mod_ids):key()
+local old_4 = "__old_"..Idstring("old_4:"..mod_ids):key()
+local old_5 = "__old_"..Idstring("old_5:"..mod_ids):key()
 
-if PlayerStandard then
+if PlayerStandard and RequiredScript == "lib/units/beings/player/states/playerstandard" then
 	Hooks:PreHook(PlayerStandard, "_update_foley", "F_"..Idstring("_update_foley:"..mod_ids):key(), function(self)
 		if self._state_data.on_zipline then
 		
@@ -16,8 +21,8 @@ if PlayerStandard then
 	end)
 end
 
-if IngameParachuting then
-	IngameParachuting.__old_at_exit = IngameParachuting.__old_at_exit or IngameParachuting.at_exit
+if IngameParachuting and RequiredScript == "lib/states/ingameparachuting" then
+	IngameParachuting[old_1] = IngameParachuting[old_1] or IngameParachuting.at_exit
 	function IngameParachuting:at_exit(...)
 		if not is_loaded then
 			local player = managers.player:player_unit()
@@ -28,12 +33,12 @@ if IngameParachuting then
 			managers.hud:hide(PlayerBase.PLAYER_INFO_HUD_FULLSCREEN)
 			return
 		end
-		self:__old_at_exit(...)
+		self[old_1](self, ...)
 	end
 end
 
-if HuskPlayerMovement then
-	HuskPlayerMovement.__old_cleanup_previous_state = HuskPlayerMovement.__old_cleanup_previous_state or HuskPlayerMovement._cleanup_previous_state
+if HuskPlayerMovement and RequiredScript == "lib/units/beings/player/huskplayermovement" then
+	HuskPlayerMovement[old_2] = HuskPlayerMovement[old_2] or HuskPlayerMovement._cleanup_previous_state
 	function HuskPlayerMovement:_cleanup_previous_state(previous_state, ...)
 		if not is_loaded and alive(self._parachute_unit) and (previous_state == "jerry2" or previous_state == "parachute") then
 			if self._tase_effect then
@@ -48,9 +53,9 @@ if HuskPlayerMovement then
 			self._unit:inventory():show_equipped_unit()
 			return
 		end
-		self:__old_cleanup_previous_state(previous_state, ...)
+		self[old_2](self, previous_state, ...)
 	end
-	HuskPlayerMovement.__old_sync_movement_state_parachute = HuskPlayerMovement.__old_sync_movement_state_parachute or HuskPlayerMovement._sync_movement_state_parachute
+	HuskPlayerMovement[old_3] = HuskPlayerMovement[old_3] or HuskPlayerMovement._sync_movement_state_parachute
 	function HuskPlayerMovement:_sync_movement_state_parachute(event_descriptor, ...)
 		if not is_loaded then
 			self._unit:inventory():hide_equipped_unit()
@@ -71,13 +76,13 @@ if HuskPlayerMovement then
 			self:set_movement_updator(self._upd_move_no_animations)
 			return
 		end
-		self:__old_sync_movement_state_parachute(event_descriptor, ...)
+		self[old_3](self, event_descriptor, ...)
 	end
 end
 
-if PlayerParachutingVR then
+if PlayerParachutingVR and RequiredScript == "lib/units/beings/player/states/vr/playerparachutingvr" then
 	local __enter = PlayerParachuting.enter
-	PlayerParachutingVR.__old_enter = PlayerParachutingVR.__old_enter or PlayerParachutingVR.enter
+	PlayerParachutingVR[old_4] = PlayerParachutingVR[old_4] or PlayerParachutingVR.enter
 	function PlayerParachutingVR:enter(...)
 		if not is_loaded then
 			__enter(self, ...)
@@ -89,6 +94,25 @@ if PlayerParachutingVR then
 			managers.vr:add_setting_changed_callback("zipline_screen", self._comfort_screen_setting_changed_clbk)
 			return
 		end
-		self:__old_enter(...)
+		self[old_4](self, ...)
+	end
+end
+
+if PlayerMovement and RequiredScript == "lib/units/beings/player/playermovement" then
+	PlayerMovement[old_5] = PlayerMovement[old_5] or PlayerMovement.change_state
+	function PlayerMovement:change_state(name, ...)
+		if not is_loaded and tostring(name) == "jerry2" then
+			local exit_data = nil
+			if self._current_state then
+				exit_data = self._current_state:exit(self._state_data, name)
+			end
+			local new_state = self._states[name]
+			self._current_state = new_state
+			self._current_state_name = name
+			self._state_enter_t = managers.player:player_timer():time()
+			new_state:enter(self._state_data, exit_data)
+			return
+		end
+		self[old_5](self, name, ...)
 	end
 end
