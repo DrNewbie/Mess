@@ -75,7 +75,7 @@ if HuskPlayerMovement then
 	end
 end
 
-if PlayerParachuting then
+if PlayerParachutingVR then
 	local __enter = PlayerParachuting.enter
 	PlayerParachutingVR.__old_enter = PlayerParachutingVR.__old_enter or PlayerParachutingVR.enter
 	function PlayerParachutingVR:enter(...)
