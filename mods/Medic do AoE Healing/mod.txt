@@ -1,0 +1,15 @@
+{
+  "name": "Medic do AoE Healing",
+  "description": " ",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/29196",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/units/enemies/medic/medicdamage",
+      "script_path": "Hooks/medicdamage.lua"
+    }
+  ]
+}
