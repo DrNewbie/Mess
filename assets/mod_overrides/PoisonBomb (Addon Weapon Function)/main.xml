@@ -1,0 +1,21 @@
+<table name="PoisonBomb (Addon Weapon Function)">
+	<AssetUpdates id="PoisonBomb (Addon Weapon Function)" version="1">
+        <custom_provider version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/PoisonBomb%20(Addon%20Weapon%20Function).txt" download_url="https://drnewbie.github.io/Mess/UpdateProvider/PoisonBomb%20(Addon%20Weapon%20Function).zip"/>
+    </AssetUpdates>
+	<Localization directory="Localization" default="english.txt"/>	
+	<AddFiles directory="Assets">
+		<unit path="units/payday2/equipment/gen_equipment_tripmine/gen_equipment_tripmine_husk" force="true"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_sss_poisonbomb"/>
+	</AddFiles>	
+	<WeaponMod based_on="wpn_fps_upg_a_grenade_launcher_incendiary_arbiter" id="wpn_fps_sss_poisonbomb" unit="units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy" type="ammo" drop="false" texture_bundle_folder="mods" is_a_unlockable="true">
+		<stats value="9" total_ammo_mod="12"/>
+		<weapons>
+			<value_node value="wpn_fps_gre_m32"/>
+		</weapons>
+    </WeaponMod>
+	<Hooks directory="Hooks">
+		<hook file="grenadelauncherbase.lua" source_file="lib/units/weapons/grenadelauncherbase"/>
+		<hook file="tripminebase.lua" source_file="lib/units/weapons/trip_mine/tripminebase"/>
+	</Hooks>	
+</table>
+
