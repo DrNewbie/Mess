@@ -1,0 +1,8 @@
+<table name="Mademoiselle Pocket ECM">
+	<Hooks directory="Scripts">
+		<hook source_file="lib/units/beings/player/playerinventory" file="ThisSound.lua"/>
+	</Hooks>
+	<Sounds directory="assets/sounds">
+		<sound id="errrrrrrrrrr_001" path="errrrrrrrrrr.ogg" prefix="first"/>
+	</Sounds>
+</table>
