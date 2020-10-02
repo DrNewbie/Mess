@@ -2,7 +2,7 @@
 	"name": "Stoic Slurp",
 	"description": "Sluuuuuuuuurp",
 	"author": "https://modworkshop.net/mod/21518",
-	"version": "2",
+	"version": "4",
 	"priority": 100,
 	"color": "0 0 0",
 	"blt_version": 2,

@@ -8,7 +8,7 @@ else
 		cooldown = "perkdeck_cooldown_over"
 	}
 	
-	Hooks:PostHook(FPCameraPlayerBase, "update", "F_"..Idstring("PostHook:PlayerManager:add_grenade_amount:StoicSlurp"):key(), function(self, amount) 
+	Hooks:PostHook(PlayerManager, "add_grenade_amount", "F_"..Idstring("PostHook:PlayerManager:add_grenade_amount:StoicSlurp"):key(), function(self, amount) 
 		if amount == -1 and managers.blackmarket:equipped_grenade() == "damage_control" then
 			StoicSlurp:Play("UseStoicSlurp")
 		end	
