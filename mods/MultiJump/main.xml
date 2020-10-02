@@ -1,6 +1,6 @@
 <table name="MultiJump">
-	<AssetUpdates id="16946" version="2" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
-	<Sounds directory="Assets/sounds">
-		<sound id="Ids_6ede31d70535e2e6" path="Ids_e6e23505d731de6e.ogg" prefix="first"/>
+	<AssetUpdates id="16946" version="3" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<Sounds directory="Assets">
+		<sound id="jumppfunny_001" path="sounds/jumppfunny001.ogg"/>
 	</Sounds>
 </table>
