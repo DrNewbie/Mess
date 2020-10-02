@@ -1,0 +1,5 @@
+<table name="Gun Melee">
+	<Hooks directory="Hooks">
+		<hook file="fpcameraplayerbase.lua" source_file="lib/units/cameras/fpcameraplayerbase"/>
+	</Hooks>
+</table>
