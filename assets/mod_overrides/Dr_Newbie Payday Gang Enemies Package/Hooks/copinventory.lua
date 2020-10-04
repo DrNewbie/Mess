@@ -24,7 +24,11 @@ function CopInventory:CUS_preload_mask()
 		return
 	end
 	self._mask_visibility = true
-	managers.dyn_resource:load(Idstring("unit"), Idstring(self._mask_unit_name), managers.dyn_resource.DYN_RESOURCES_PACKAGE, callback(self, self, "CUS_clbk_mask_unit_loaded"))
+	if not managers.dyn_resource:is_resource_ready(Idstring("unit"), Idstring(self._mask_unit_name), managers.dyn_resource.DYN_RESOURCES_PACKAGE) then
+		managers.dyn_resource:load(Idstring("unit"), Idstring(self._mask_unit_name), managers.dyn_resource.DYN_RESOURCES_PACKAGE, callback(self, self, "CUS_clbk_mask_unit_loaded"))
+	else
+		self:CUS_clbk_mask_unit_loaded(true)
+	end
 	
 	local unit_damage = self._unit:damage()
 	if self._addon_mesh_obj then
@@ -33,9 +37,11 @@ function CopInventory:CUS_preload_mask()
 			mesh_obj:set_visibility(true)
 		end
 	end
+	local __char_sequence = nil
 	if self._addon_body_name and unit_damage then
 		if unit_damage:has_sequence(self._addon_body_name) then
 			unit_damage:run_sequence_simple(self._addon_body_name)
+			__char_sequence = self._addon_body_name
 		end
 	end
 	if self._addon_armor_name and unit_damage then
@@ -84,6 +90,7 @@ function CopInventory:CUS_preload_mask()
 		local rnd_payday_gang_data = rnd_payday_gang_list[table.random_key(rnd_payday_gang_list)]
 		if unit_damage:has_sequence(rnd_payday_gang_data.sequence) then
 			unit_damage:run_sequence_simple(rnd_payday_gang_data.sequence)
+			__char_sequence = rnd_payday_gang_data.sequence
 			if not rnd_payday_gang_no_mask then
 				self._mask_visibility = false
 				self._mask_unit_name = rnd_payday_gang_data.mask
@@ -91,17 +98,45 @@ function CopInventory:CUS_preload_mask()
 			end
 		end
 	end
+	if __char_sequence then
+		for __char, __data in pairs(tweak_data.blackmarket.characters) do
+			if type(__data) == "table" and __data.sequence and __data.material_config and __data.sequence == __char_sequence then
+				local material_config = __data.material_config
+				if material_config.npc then
+					local special_material_ids = Idstring(material_config.npc)
+					if DB:has(Idstring("material_config"), special_material_ids) then
+						self._unit:set_material_config(special_material_ids, true)
+					end
+				end
+			end
+		end
+		for __char, __data in pairs(tweak_data.blackmarket.characters.locked) do
+			if type(__data) == "table" and __data.sequence and __data.material_config and __data.sequence == __char_sequence then
+				local material_config = __data.material_config
+				if material_config.npc then
+					local special_material_ids = Idstring(material_config.npc)
+					if DB:has(Idstring("material_config"), special_material_ids) then
+						self._unit:set_material_config(special_material_ids, true)
+					end
+				end
+			end
+		end
+	end
 	if self._rnd_suit and unit_damage then
 		self._rnd_suit = nil
 		local _var_model = "var_model_0"..tostring(math.round(math.random()*10)%7+1)
-		local special_materials = tweak_data.blackmarket.characters["max"].special_materials
-		local special_material = table.random(special_materials)
-		local special_material_ids = Idstring(special_material)
 		if unit_damage:has_sequence(_var_model) then
 			unit_damage:run_sequence_simple(_var_model)
 		end
-		if DB:has(Idstring("material_config"), special_material_ids) then
-			self._unit:set_material_config(special_material_ids, true)
+		local special_materials = tweak_data.blackmarket.characters["max"].material_config
+		if type(special_materials) == "table" then
+			local special_material = table.random(special_materials)
+			if type(special_material) == "table" and type(special_material.npc) == "string" then
+				local special_material_ids = Idstring(special_material.npc)
+				if DB:has(Idstring("material_config"), special_material_ids) then
+					self._unit:set_material_config(special_material_ids, true)
+				end
+			end
 		end
 	end
 end
@@ -115,7 +150,6 @@ function CopInventory:CUS_unload_mask()
 	if not self:CUS_Can_I_Have_Mask() then
 		return
 	end
-	managers.dyn_resource:unload(Idstring("unit"), Idstring(self._mask_unit_name), DynamicResourceManager.DYN_RESOURCES_PACKAGE, false)
 	self._mask_unit_name = nil
 end
 
