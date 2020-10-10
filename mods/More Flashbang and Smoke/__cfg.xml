@@ -1,0 +1,16 @@
+<mod name="MoreFlashbangandSmoke" global_key="MoreFlashbangandSmoke">
+	<AssetUpdates id="More Flashbang and Smoke" version="1">
+        <custom_provider version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/More%20Flashbang%20and%20Smoke.txt" download_url="https://drnewbie.github.io/Mess/UpdateProvider/More%20Flashbang%20and%20Smoke.zip"/>
+    </AssetUpdates>
+	<Localization directory="loc" default="EN.txt"/>
+	<Options build_menu="true" auto_load="true">
+		<options>
+			<option type="boolean" default_value="true" desc_id="Empty4Id" name="__enable"/>
+			<option type="number" min="1" max="10" step="1" default_value="3" show_value="true" desc_id="Empty4Id" name="__max_ppl_in_row"/>
+			<option type="number" min="1" max="10" step="1" default_value="3" show_value="true" desc_id="Empty4Id" name="__rnd_frag_in_row"/>
+			<option type="number" min="100" max="10000" step="100" default_value="3000" show_value="true" desc_id="Empty4Id" name="__distance"/>
+			<option type="number" min="1" max="60" step="1" default_value="2" show_value="true" desc_id="Empty4Id" name="__delay_constant"/>
+			<option type="number" min="1" max="60" step="1" default_value="8" show_value="true" desc_id="Empty4Id" name="__delay_rnd"/>
+		</options>
+	</Options>
+</mod>

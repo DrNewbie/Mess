@@ -1,0 +1,11 @@
+{
+  "MoreFlashbangandSmokeOptionsButtonTitleID": "More Flashbang and Smoke",
+  "MoreFlashbangandSmokeOptionsButtonDescID": " ",
+  "MoreFlashbangandSmoke__enableTitleID": "Enable this Mod",
+  "MoreFlashbangandSmoke__max_ppl_in_rowTitleID": "Thrower",
+  "MoreFlashbangandSmoke__rnd_frag_in_rowTitleID": "Frags for Thrower",
+  "MoreFlashbangandSmoke__distanceTitleID": "Detection Distance",
+  "MoreFlashbangandSmoke__delay_constantTitleID": "Function Delay",
+  "MoreFlashbangandSmoke__delay_rndTitleID": "Function Addon Rand Delay",
+  "Empty4Id": " "
+}

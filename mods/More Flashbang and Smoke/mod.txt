@@ -1,6 +1,6 @@
 {
-  "name": "Cops Throw Grenades",
-  "description": " ",
+  "name": "More Flashbang and Smoke",
+  "description": "https://modworkshop.net/mod/29388",
   "author": "Dr_Newbie",
   "contact": " ",
   "blt_version": 2,
@@ -10,6 +10,10 @@
     {
       "hook_id": "lib/units/beings/player/playermovement",
       "script_path": "lua/playermovement.lua"
+    },
+    {
+      "hook_id": "lib/managers/playermanager",
+      "script_path": "lua/playermanager.lua"
     }
   ]
 }
