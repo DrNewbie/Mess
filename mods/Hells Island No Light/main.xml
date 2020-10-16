@@ -1,0 +1,8 @@
+<table name="Hell Island No Light">
+	<AssetUpdates id="Hell Island No Light" version="1">
+        <custom_provider version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Hell%20Island%20No%20Light.txt" download_url="https://drnewbie.github.io/Mess/UpdateProvider/Hell%20Island%20No%20Light.zip"/>
+    </AssetUpdates>
+	<Hooks directory="Hooks">
+		<hook file="lua/Core.lua" source_file="core/lib/managers/coresequencemanager"/>
+	</Hooks>
+</table>
