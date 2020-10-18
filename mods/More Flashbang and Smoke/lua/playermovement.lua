@@ -36,10 +36,6 @@ PlayerMovement[__func5] = function(__var)
 	return __list[__var] or 0
 end
 
-function PlayerMovement:__smoke_grenade_quick_loaded()
-	self[__func4] = true
-end
-
 local __delay = function ()
 	return PlayerMovement[__func5]("__delay_constant") + math.random() * PlayerMovement[__func5]("__delay_rnd")
 end
