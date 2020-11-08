@@ -1,0 +1,23 @@
+<table name="Phlogistinator Weapon Mod">
+	<AssetUpdates id="29741" version="4" provider="modworkshop"/>	
+	<Localization directory="Localization" default="english.txt"/>	
+	<AddFiles directory="assets">
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_phlogistinator"/>
+	</AddFiles>
+	<Sounds directory="assets/sounds">
+		<sound id="pyro_laughlong01" path="pyro_laughlong01.ogg" prefix="first"/>
+		<sound id="pyro_paincrticialdeath01" path="pyro_paincrticialdeath01.ogg" prefix="first"/>
+	</Sounds>
+	<Hooks directory="Hooks">
+		<hook file="copdamage.lua" source_file="lib/units/enemies/cop/copdamage"/>
+		<hook file="newflamethrowerbase.lua" source_file="lib/units/weapons/newflamethrowerbase"/>
+		<hook file="playerstandard.lua" source_file="lib/units/beings/player/states/playerstandard"/>
+	</Hooks>	
+	<WeaponMod based_on="wpn_fps_upg_a_dragons_breath" id="wpn_fps_phlogistinator" unit="units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy" type="ammo" drop="false" texture_bundle_folder="mods" is_a_unlockable="true">
+		<stats value="5" total_ammo_mod="-5" damage="-5" spread="-5" moving_spread="-5"/>
+		<weapons>
+			<value_node value="wpn_fps_fla_mk2"/>
+			<value_node value="wpn_fps_fla_system"/>
+		</weapons>
+    </WeaponMod>
+</table>

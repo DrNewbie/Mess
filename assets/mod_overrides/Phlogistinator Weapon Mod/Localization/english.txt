@@ -1,0 +1,5 @@
+{
+	"bm_wp_wpn_fps_phlogistinator" : "Phlogistinator",
+	"bm_wp_wpn_fps_phlogistinator_desc" : "Build 'Mmmph' by dealing damage.\nAlt-Fire on full 'Mmmph': Taunt to gain crit for several seconds.",
+	"menu_l_global_wpn_fps_phlogistinator" : ""
+}
