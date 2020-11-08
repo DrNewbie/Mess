@@ -6,7 +6,11 @@ Hooks:PreHook(CopDamage, "damage_fire", "F_"..Idstring("BackBurnerFunc_damage_fi
 		if from_behind then
 			local critical_hits = self._char_tweak.critical_hits or {}
 			local critical_damage_mul = critical_hits.damage_mul or 1.5
-			attack_data.damage = attack_data.damage * critical_damage_mul
+			local __old_damage = attack_data.damage
+			local __damage_gain = math.max(__old_damage * critical_damage_mul - __old_damage, 0)
+			attack_data.damage = __damage_gain
+			self:damage_fire(attack_data)
+			attack_data.__old_damage = __old_damage
 			attack_data.__backburner_bonus = true
 			managers.hud:on_crit_confirmed()
 		end
