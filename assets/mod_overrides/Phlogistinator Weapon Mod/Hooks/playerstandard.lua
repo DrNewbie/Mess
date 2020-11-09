@@ -10,7 +10,7 @@ Hooks:PostHook(PlayerStandard, "_check_action_steelsight", func20, function(self
 	if alive(self._equipped_unit) then
 		local weap_base = self._equipped_unit:base()
 		if input.btn_steelsight_press then
-			if not weap_base[func6] and weap_base[func5] > 1000 and weap_base[is_mod] then
+			if not weap_base[func6] and type(weap_base[func5]) == "number" and weap_base[func5] > 1000 and weap_base[is_mod] then
 				managers.player:local_player():sound_source():post_event("pyro_paincrticialdeath01")
 				weap_base[func40] = false
 				weap_base[func6] = true

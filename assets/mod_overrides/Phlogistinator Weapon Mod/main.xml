@@ -1,5 +1,5 @@
 <table name="Phlogistinator Weapon Mod">
-	<AssetUpdates id="29741" version="4" provider="modworkshop"/>	
+	<AssetUpdates id="29741" version="5" provider="modworkshop"/>	
 	<Localization directory="Localization" default="english.txt"/>	
 	<AddFiles directory="assets">
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_phlogistinator"/>
