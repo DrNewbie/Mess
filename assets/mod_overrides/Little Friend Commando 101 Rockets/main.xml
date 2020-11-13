@@ -1,0 +1,19 @@
+<table>
+    <Localization directory="Localization" default="english.txt"/>
+    <WeaponMod based_on="wpn_fps_saw_m_blade_sharp" id="wpn_fps_ass_contraband_gl_m203_cc101" unit="units/mods/weapons/wpn_fps_ass_contraband_gl_m203_incen/wpn_fps_ass_contraband_gl_m203_cc101" type="underbarrel" drop="false" texture_bundle_folder="mods" a_obj="a_gl" is_a_unlockable="true" internal_part="true">
+		<stats damage="0"/>
+		<forbids value="wpn_fps_ass_contraband_gl_m203"/>
+		<animations bipod_reload="reload_ul"/>
+		<perks value="underbarrel"/>
+		<weapons>
+			<value_node value="wpn_fps_ass_contraband"/>
+		</weapons>
+    </WeaponMod>	
+	<AddFiles directory="assets">
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_ass_contraband_gl_m203_cc101"/>
+		<unit path="units/mods/weapons/wpn_fps_ass_contraband_gl_m203_incen/wpn_fps_ass_contraband_gl_m203_cc101"/>
+	</AddFiles>
+	<Hooks directory="Hooks">
+		<hook file="weaponfactorytweakdata.lua" source_file="lib/tweak_data/weaponfactorytweakdata"/>
+	</Hooks>
+</table>

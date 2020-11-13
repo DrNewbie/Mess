@@ -1,0 +1,11 @@
+<unit type="wpn" slot="1">
+	<object file="units/pd2_dlc_friend/weapons/wpn_fps_gre_ray_pts/wpn_fps_gre_ray_body" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+        <extension name="base" class="WeaponUnderbarrelLauncher">
+			<var name="name_id" value="contraband_m203" />
+			<var name="anim" value="flip_up" />
+			<var name="launcher_projectile" value="rocket_ray_frag" />
+		</extension>
+	</extensions>
+</unit>

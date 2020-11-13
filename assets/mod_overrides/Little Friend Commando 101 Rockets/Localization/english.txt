@@ -1,0 +1,4 @@
+{
+    "bm_wp_wpn_fps_ass_contraband_gl_m203_cc101" : "Commando 101 Rocket",
+    "bm_menu_underbarrel" : "Underbarrel"
+}
