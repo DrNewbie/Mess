@@ -9,7 +9,7 @@ local func7 = "F_"..Idstring("func7:"..mod_ids):key()
 local func40 = "F_"..Idstring("func40:"..mod_ids):key()
 
 Hooks:PreHook(CopDamage, "damage_fire", func2, function(self, attack_data)
-	if not attack_data[func3] and attack_data.weapon_unit:base()[func6] and attack_data.weapon_unit and attack_data.weapon_unit.base and attack_data.weapon_unit:base()[is_mod] then
+	if not attack_data[func3] and attack_data.weapon_unit and attack_data.weapon_unit:base()[func6] and attack_data.weapon_unit and attack_data.weapon_unit.base and attack_data.weapon_unit:base()[is_mod] then
 		attack_data[func3] = true
 		local critical_hits = self._char_tweak.critical_hits or {}
 		local critical_damage_mul = critical_hits.damage_mul or 1.5
