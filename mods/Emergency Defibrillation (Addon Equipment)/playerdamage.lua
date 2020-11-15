@@ -38,6 +38,7 @@ local function __pre_calc_health_damage(them, dmg)
 			local __ratio = math.min(__hp_after_dmg / them:_max_health(), 1)
 			if them[_dt_ids] <= them[_now_ids] then
 				if __ratio <= them[_rHP_ids] then
+					managers.player:local_player():sound_source():post_event("doom2016_low_on_health")
 					them[_dt_ids] = them[_now_ids] + them[_cd_ids]
 					them[_dtHP_ids] = them[_now_ids] + them[_cdHP_ids]
 					them:set_health(them:_max_health() * them[_gHP_ids])

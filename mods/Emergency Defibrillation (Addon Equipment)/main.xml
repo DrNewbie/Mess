@@ -1,0 +1,5 @@
+<table name="Emergency Defibrillation (Addon Equipment)">
+	<Sounds directory="assets/sounds">
+		<sound id="doom2016_low_on_health" path="doom2016_low_on_health.ogg" prefix="first"/>
+	</Sounds>
+</table>
