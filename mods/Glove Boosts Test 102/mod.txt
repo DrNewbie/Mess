@@ -1,0 +1,23 @@
+{
+  "name": "Glove Boosts Test 101",
+  "description": " ",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/29862",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/tweak_data/blackmarket/glovestweakdata",
+      "script_path": "lua/glovestweakdata.lua"
+    },
+    {
+      "hook_id": "lib/managers/playermanager",
+      "script_path": "lua/playermanager.lua"
+    },
+    {
+      "hook_id": "lib/units/enemies/cop/copdamage",
+      "script_path": "lua/copdamage.lua"
+    }
+  ]
+}
