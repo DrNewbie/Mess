@@ -1,0 +1,27 @@
+{
+  "name": "Infamy 3.0 Mod",
+  "description": "https://modworkshop.net/mod/29929",
+  "author": "Dr_Newbie",
+  "contact": " ",
+  "blt_version": 2,
+  "version": "1",
+  "priority": 100,
+  "hooks": [
+    {
+      "hook_id": "lib/tweak_data/tweakdata",
+      "script_path": "lua/overlevel100_table.lua"
+    },
+    {
+      "hook_id": "lib/managers/experiencemanager",
+      "script_path": "lua/experiencemanager.lua"
+    },
+    {
+      "hook_id": "lib/managers/skilltreemanager",
+      "script_path": "lua/skilltreemanager.lua"
+    },
+    {
+      "hook_id": "lib/managers/menumanager",
+      "script_path": "lua/menumanager.lua"
+    }
+  ]
+}
