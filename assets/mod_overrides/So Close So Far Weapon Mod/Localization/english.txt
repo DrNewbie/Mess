@@ -1,0 +1,5 @@
+{
+	"bm_wp_wpn_fps_ddlion_so_close_so_far" : "So Close, Yes So Far",
+	"bm_wp_wpn_fps_ddlion_so_close_so_far_desc" : "Upon attacking a target, damage dealt increases by 3% per distance of 1m from the target.",
+	"menu_l_global_wpn_fps_ddlion_so_close_so_far" : ""
+}
