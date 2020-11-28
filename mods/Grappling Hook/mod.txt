@@ -3,7 +3,7 @@
   "description": " ",
   "Author": "Dr_Newibe",
   "contact": "http://modwork.shop/25373",
-  "version": "1.0",
+  "version": "2",
   "blt_version": 2,
   "keybinds": [
     {

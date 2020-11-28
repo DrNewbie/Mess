@@ -11,5 +11,5 @@
 		<texture path="units/payday2/equipment/gen_equipment_zipline_motor_alt/metal_wire_01_df"/>
 		<texture path="units/payday2/equipment/gen_equipment_zipline_motor_alt/metal_wire_01_nm"/>
 	</AddFiles>
-	<AssetUpdates id="25373" version="1" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AssetUpdates id="25373" version="2" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
 </table>
