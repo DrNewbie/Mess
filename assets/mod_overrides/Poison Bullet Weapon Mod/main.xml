@@ -1,5 +1,5 @@
 <table name="Poison Bullet (Weapon Mod)">
-	<AssetUpdates id="30051" version="1" provider="modworkshop"/>	
+	<AssetUpdates id="30051" version="2" provider="modworkshop"/>	
 	<Localization directory="Localization" default="english.txt"/>	
 	<AddFiles directory="assets">
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_ddlion_poison_bullet"/>
@@ -8,7 +8,7 @@
 		<hook file="copdamage.lua" source_file="lib/units/enemies/cop/copdamage"/>
 	</Hooks>
 	<WeaponMod based_on="wpn_fps_upg_a_slug" id="wpn_fps_ddlion_poison_bullet" unit="units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy" type="ammo" drop="false" texture_bundle_folder="mods" is_a_unlockable="true">
-		<stats value="5" total_ammo_mod="-4" damage="-36"/>
+		<stats value="5" total_ammo_mod="-4" damage="-96"/>
 		<weapons>
 			<value_node value="wpn_fps_snp_m95"/>
 		</weapons>
