@@ -1,0 +1,5 @@
+{
+	"bm_wp_wpn_fps_ddlion_poison_bullet" : "Poison Bullet",
+	"bm_wp_wpn_fps_ddlion_poison_bullet_desc" : "Attacking a target grants the target 100% chance to trigger [Poison].",
+	"menu_l_global_wpn_fps_ddlion_poison_bullet" : ""
+}
