@@ -55,34 +55,36 @@ Hooks:PostHook(PlayerMovement, 'init', __func1, function(self)
 end)
 
 Hooks:PostHook(PlayerMovement, '_upd_underdog_skill', __func2, function(self, t)
-	if self[__func5]("__enable") and self[__func3] and self[__func4] and managers.groupai and self[__dt] < t and type(self._attackers) == "table" then
-		self[__dt] = t + __delay()
-		local __all_criminals = managers.groupai:state():all_char_criminals()
-		if type(__all_criminals) == "table" then
-			local __try = self[__func5]("__max_ppl_in_row")
-			for _, __Tcop in pairs(self._attackers) do
-				local u_key = table.random_key(__all_criminals)
-				local u_data = __all_criminals[u_key]
-				if __try <= 0 then break end
-				if u_data and u_data.unit then
-					if mvector3.distance(u_data.unit:position(), __Tcop:position()) < self[__func5]("__distance") then
-						__try = __try - 1
-						__Tcop:movement():play_redirect("throw_grenade")
-						local __position = u_data.unit:position()
-						for i = 1, math.random(1, self[__func5]("__rnd_frag_in_row")) do
-							local __id = Idstring(math.random()..":"..i..":"..tostring(u_key)):key()
-							local __duration = 2 * i + math.random()
-							local __ignore_control = true
-							local __is_flashbang = true
-							if __flash_smoke() then __is_flashbang = false end
-							managers.groupai:state():queue_smoke_grenade(
-								__id, 
-								__position + __pos_offset(), 
-								__duration, 
-								__ignore_control, 
-								__is_flashbang
-							)
-							managers.groupai:state():detonate_world_smoke_grenade(__id)
+	if (Global.game_settings and Global.game_settings.single_player) or (Network and Network:is_server()) then
+		if self[__func5]("__enable") and self[__func3] and self[__func4] and managers.groupai and self[__dt] < t and type(self._attackers) == "table" then
+			self[__dt] = t + __delay()
+			local __all_criminals = managers.groupai:state():all_char_criminals()
+			if type(__all_criminals) == "table" then
+				local __try = self[__func5]("__max_ppl_in_row")
+				for _, __Tcop in pairs(self._attackers) do
+					local u_key = table.random_key(__all_criminals)
+					local u_data = __all_criminals[u_key]
+					if __try <= 0 then break end
+					if u_data and u_data.unit then
+						if mvector3.distance(u_data.unit:position(), __Tcop:position()) < self[__func5]("__distance") then
+							__try = __try - 1
+							__Tcop:movement():play_redirect("throw_grenade")
+							local __position = u_data.unit:position()
+							for i = 1, math.random(1, self[__func5]("__rnd_frag_in_row")) do
+								local __id = Idstring(math.random()..":"..i..":"..tostring(u_key)):key()
+								local __duration = 2 * i + math.random()
+								local __ignore_control = true
+								local __is_flashbang = true
+								if __flash_smoke() then __is_flashbang = false end
+								managers.groupai:state():queue_smoke_grenade(
+									__id, 
+									__position + __pos_offset(), 
+									__duration, 
+									__ignore_control, 
+									__is_flashbang
+								)
+								managers.groupai:state():detonate_world_smoke_grenade(__id)
+							end
 						end
 					end
 				end

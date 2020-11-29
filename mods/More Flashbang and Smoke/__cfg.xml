@@ -1,5 +1,5 @@
 <mod name="MoreFlashbangandSmoke" global_key="MoreFlashbangandSmoke">
-	<AssetUpdates id="More Flashbang and Smoke" version="2">
+	<AssetUpdates id="More Flashbang and Smoke" version="3">
         <custom_provider version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/More%20Flashbang%20and%20Smoke.txt" download_url="https://drnewbie.github.io/Mess/UpdateProvider/More%20Flashbang%20and%20Smoke.zip"/>
     </AssetUpdates>
 	<Localization directory="loc" default="EN.txt"/>
