@@ -1,0 +1,15 @@
+<table name="XP Bullet (Weapon Mod)">
+	<Localization directory="Localization" default="english.txt"/>	
+	<AddFiles directory="assets">
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_mws_xp_bullet"/>
+	</AddFiles>
+	<Hooks directory="Hooks">
+		<hook file="newraycastweaponbase.lua" source_file="lib/units/weapons/newraycastweaponbase"/>
+	</Hooks>
+	<WeaponMod based_on="wpn_fps_upg_a_slug" id="wpn_fps_mws_xp_bullet" unit="units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy" type="ammo" drop="false" texture_bundle_folder="mods" is_a_unlockable="true">
+		<stats damage="-512" total_ammo_mod="64" />
+		<weapons>
+			<value_node value="wpn_fps_snp_m95"/>
+		</weapons>
+    </WeaponMod>
+</table>
