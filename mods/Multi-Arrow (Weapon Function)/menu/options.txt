@@ -1,0 +1,19 @@
+{
+  "menu_id": "rrmodtest001_options",
+  "parent_menu_id": "blt_options",
+  "title": "rrmodtest001_menu_title",
+  "description": "rrmodtest001_menu_desc",
+  "callback": "callback_rrmodtest001_close",
+  "items": [
+    {
+      "type": "keybind",
+      "id": "rrmodtest001_option_keybind_open_menu",
+      "title": "rrmodtest001_option_keybind_open_menu_title",
+      "description": "rrmodtest001_option_keybind_open_menu_desc",
+      "keybind_id": "rrmodtest001_open_menu",
+      "run_in_game": true,
+      "run_in_menu": false,
+      "func": "callback_rrmodtest001_open_menu"
+    }
+  ]
+}

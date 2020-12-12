@@ -1,0 +1,7 @@
+{
+  "rrmodtest001_ammo_standard": "Standard Ammo",
+  "rrmodtest001_menu_title": "Arrow Menu",
+  "rrmodtest001_menu_desc": " ",
+  "rrmodtest001_option_keybind_open_menu_title": "Keybind: Sentry Control Menu",
+  "rrmodtest001_option_keybind_open_menu_desc": "Opens the Sentry Control Menu."
+}
