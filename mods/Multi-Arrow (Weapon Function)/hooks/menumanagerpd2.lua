@@ -4,11 +4,7 @@ RRModTest001._path = ModPath
 RRModTest001._save_path = SavePath .. "RRModTest001Settings.txt"
 
 RRModTest001.settings = {
-	menu_behavior = 1,
-	teammate_laser_alpha = 0.05,
-	keybind_select = "j",
-	keybind_deselect = "k",
-	keybind_menu = "l",
+	rrmodtest001_open_menu = "l",
 	menu_click_on_release = true
 }
 
@@ -29,8 +25,6 @@ RRModTest001.__weapon_ammo = {
 	poison = 1,
 	explosion = 1
 }
-
-RRModTest001._selections = {}
 
 function RRModTest001:UsingRightWeapon()
 	if not managers.player or not managers.player:local_player() or not managers.player:local_player():inventory() then
@@ -91,16 +85,12 @@ function RRModTest001:SetMouseClickOnMenuClose(value)
 	self.settings.menu_click_on_release = value
 end
 
-function RRModTest001:GetMenuBehavior()
-	return self.settings.menu_behavior
-end
-
 function RRModTest001:GetOpenMenuKeybind()
-	return self.settings.keybind_menu
+	return self.settings.rrmodtest001_open_menu
 end
 
 function RRModTest001:SetOpenMenuKeybind(key)
-	self.settings.keybind_menu = key
+	self.settings.rrmodtest001_open_menu = key
 end
 
 function RRModTest001:_create_panel(unit)
@@ -315,15 +305,12 @@ end)
 
 Hooks:Add("MenuManagerInitialize", "F_"..Idstring("RRModTest001:MenuInit"):key(), function(menu_manager)
 	MenuCallbackHandler.callback_rrmodtest001_open_menu = function(self)
-		if RRModTest001:GetMenuBehavior() == 2 then 
-			if RRModTest001.action_radial then 
-				RRModTest001.action_radial:Toggle()
-			end
+		if RRModTest001.action_radial then 
+			RRModTest001.action_radial:Toggle()
 		end
 	end
 	MenuCallbackHandler.callback_rrmodtest001_close = function(self)
-
+		RRModTest001:Save()
 	end
 	RRModTest001:Load()
-	MenuHelper:LoadFromJsonFile(RRModTest001._path .. "menu/options.txt", RRModTest001, RRModTest001.settings)
 end)

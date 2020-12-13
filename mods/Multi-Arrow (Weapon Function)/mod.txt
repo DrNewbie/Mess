@@ -3,13 +3,24 @@
   "description": " ",
   "author": "Dr_Newbie",
   "contact": "https://modworkshop.net/mod/30228",
-  "version": "1",
+  "version": "2",
   "priority": 100,
   "blt_version": 2,
   "hooks": [
     {
       "hook_id": "lib/managers/menumanagerpd2",
-      "script_path": "Core.lua"
+      "script_path": "hooks/menumanagerpd2.lua"
+    }
+  ],
+  "keybinds": [
+    {
+      "keybind_id": "rrmodtest001_open_menu",
+      "name": "rrmodtest001_option_keybind_open_menu_title",
+      "description": "rrmodtest001_option_keybind_open_menu_desc",
+      "func": "callback_rrmodtest001_open_menu",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": true
     }
   ]
 }
