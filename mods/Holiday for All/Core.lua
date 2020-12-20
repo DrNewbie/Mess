@@ -31,7 +31,7 @@ end
 if PlayerManager then
 	PlayerManager[hook3] = PlayerManager[hook3] or PlayerManager.get_limited_exp_multiplier
 	function PlayerManager:get_limited_exp_multiplier(job_id, level_id, ...)
-		local multiplier = PlayerManager[hook3](job_id, level_id, ...)
+		local multiplier = self[hook3](self, job_id, level_id, ...)
 		local job_data = tweak_data.narrative:job_data(job_id) or {}
 		local level_data = level_id and tweak_data.levels[level_id] or {}
 		if level_data.is_christmas_heist and level_data.is_christmas_heist_fake then
