@@ -1,0 +1,5 @@
+{
+	"bm_wp_wpn_fps_dd_expanding_bullet" : "Expanding Bullet",
+	"bm_wp_wpn_fps_dd_expanding_bullet_desc" : "Rounds that expand on hit, always dealing critical damage. Cannot penetrate body armor, enemies, shields or walls.",
+	"menu_l_global_wpn_fps_dd_expanding_bullet" : ""
+}
