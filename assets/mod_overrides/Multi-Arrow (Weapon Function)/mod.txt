@@ -3,12 +3,16 @@
   "description": " ",
   "author": "Dr_Newbie",
   "contact": "https://modworkshop.net/mod/30228",
-  "version": "2",
+  "version": "10",
   "priority": 100,
   "blt_version": 2,
   "hooks": [
     {
       "hook_id": "lib/managers/menumanagerpd2",
+      "script_path": "hooks/menumanagerpd2.lua"
+    },
+    {
+      "hook_id": "lib/units/beings/player/playerinventory",
       "script_path": "hooks/menumanagerpd2.lua"
     }
   ],

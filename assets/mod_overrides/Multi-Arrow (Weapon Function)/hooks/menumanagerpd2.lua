@@ -35,10 +35,50 @@ function RRModTest001:UsingRightWeapon()
 	if not ply_inv:equipped_unit() or not ply_inv:equipped_unit():base() then
 		return false
 	end
-	if ply_inv:equipped_unit():base():get_name_id() ~= "plainsrider" then
+	local name_id = ply_inv:equipped_unit():base():get_name_id()
+	if not name_id then
+		return false
+	end
+	local factory_id = managers.weapon_factory:get_factory_id_by_weapon_id(name_id)
+	if not factory_id then
+		return false
+	end
+	local factory_data = tweak_data.weapon.factory[factory_id]
+	if not factory_id or not factory_data.uses_parts then
 		return false
 	end
 	return ply_inv:equipped_unit():base()
+end
+
+function RRModTest001:InitWeaponArrowData(weapon_base)
+	weapon_base = weapon_base or self:UsingRightWeapon()
+	if weapon_base then
+		local name_id = weapon_base:get_name_id()
+		if name_id then
+			local factory_id = managers.weapon_factory:get_factory_id_by_weapon_id(name_id)
+			if factory_id then
+				local factory_data = tweak_data.weapon.factory[factory_id]
+				if factory_data then
+					self.__ammo_poison = nil
+					self.__ammo_explosive = nil
+					self.__ammo_standard = nil
+					for _, f_data in pairs(factory_data.uses_parts) do
+						if tweak_data.weapon.factory.parts[f_data] then
+							local __d = tweak_data.weapon.factory.parts[f_data]
+							if __d.sub_type == "ammo_poison" and __d.custom_stats and __d.custom_stats.launcher_grenade then
+								self.__ammo_poison = f_data
+							elseif __d.sub_type == "ammo_explosive" and __d.custom_stats and __d.custom_stats.launcher_grenade then
+								self.__ammo_explosive = f_data
+							elseif __d.type == "ammo" and not __d.sub_type and (not __d.custom_stats or not __d.custom_stats.launcher_grenade) then
+								self.__ammo_standard = f_data
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+	return
 end
 
 function RRModTest001:GetBLTKeybind(id,...)
@@ -158,7 +198,9 @@ function RRModTest001:Update(t, dt)
 				self.__next_weapon_dt = nil
 				if type(self.__next_weapon) == type(self.__now_weapon) and self.__next_weapon ~= self.__now_weapon then
 					self.__now_weapon = self.__next_weapon
-					wep_base:set_ammo(math.max(self.__weapon_ammo[self.__next_weapon], 0))
+					self.__weapon_ammo[wep_base:get_name_id()] = self.__weapon_ammo[wep_base:get_name_id()] or {}
+					self.__weapon_ammo[wep_base:get_name_id()][self.__next_weapon] = self.__weapon_ammo[wep_base:get_name_id()][self.__next_weapon] or 1
+					wep_base:set_ammo(math.max(self.__weapon_ammo[wep_base:get_name_id()][self.__next_weapon], 0))
 					managers.hud:set_ammo_amount(wep_base:selection_index(), wep_base:ammo_info())
 				end
 			end
@@ -188,22 +230,23 @@ function RRModTest001:SelectAmmo(ammo)
 		end
 		return __return_blueprint, old_one
 	end
-	if table.contains(wep_blueprint, "wpn_fps_bow_plainsrider_m_standard") then
+	if table.contains(wep_blueprint, self.__ammo_standard) then
 		self.__now_weapon = "standard"
-	elseif table.contains(wep_blueprint, "wpn_fps_upg_a_bow_poison") then
+	elseif table.contains(wep_blueprint, self.__ammo_poison) then
 		self.__now_weapon = "poison"
-	elseif table.contains(wep_blueprint, "wpn_fps_upg_a_bow_explosion") then
+	elseif table.contains(wep_blueprint, self.__ammo_explosive) then
 		self.__now_weapon = "explosion"
 	else
 		return
 	end
-	self.__weapon_ammo[self.__now_weapon] = wep_base:get_ammo_total() / wep_base:get_ammo_max()
+	self.__weapon_ammo[wep_base:get_name_id()] = self.__weapon_ammo[wep_base:get_name_id()] or {}
+	self.__weapon_ammo[wep_base:get_name_id()][self.__now_weapon] = wep_base:get_ammo_total() / wep_base:get_ammo_max()
 	if ammo == "standard" then
-		wep_blueprint = __new_wep_blueprint(wep_blueprint, "wpn_fps_bow_plainsrider_m_standard", "wpn_fps_upg_a_bow_explosion", "wpn_fps_upg_a_bow_poison")
+		wep_blueprint = __new_wep_blueprint(wep_blueprint, self.__ammo_standard, self.__ammo_explosive, self.__ammo_poison)
 	elseif ammo == "poison" then
-		wep_blueprint = __new_wep_blueprint(wep_blueprint, "wpn_fps_upg_a_bow_poison", "wpn_fps_bow_plainsrider_m_standard", "wpn_fps_upg_a_bow_explosion")
+		wep_blueprint = __new_wep_blueprint(wep_blueprint, self.__ammo_poison, self.__ammo_standard, self.__ammo_explosive)
 	elseif ammo == "explosion" then
-		wep_blueprint = __new_wep_blueprint(wep_blueprint, "wpn_fps_upg_a_bow_explosion", "wpn_fps_bow_plainsrider_m_standard", "wpn_fps_upg_a_bow_poison")
+		wep_blueprint = __new_wep_blueprint(wep_blueprint, self.__ammo_explosive, self.__ammo_standard, self.__ammo_poison)
 	else
 		return
 	end
@@ -222,62 +265,6 @@ function RRModTest001:SetActionMenu(menu)
 	managers.hud:add_updator("F_"..Idstring("RRModTest001:Update"):key(), callback(self, self, "Update"))
 	self._gui = World:newgui()
 end
-
-Hooks:Add("BaseNetworkSessionOnLoadComplete", "F_"..Idstring("RRModTest001:RadialMouseMenu:Init"):key(),function()
-	RRModTest001:RefreshKeybinds()
-	RadialMouseMenu:new({
-		name = managers.localization:text("rrmodtest001_menu_title"),
-		radius = 200,
-		deadzone = 50,
-		items = {
-			{
-				text = managers.localization:text("rrmodtest001_ammo_standard"),
-				icon = {
-					texture = tweak_data.hud_icons.wp_arrow.texture,
-					texture_rect = tweak_data.hud_icons.wp_arrow.texture_rect,
-					layer = 3,
-					w = 16,
-					h = 16,
-					alpha = 0.7,
-					color = Color.yellow
-				},
-				show_text = true,
-				stay_open = false,
-				callback =  callback(RRModTest001, RRModTest001, "SelectAmmo", "standard")
-			},
-			{
-				text = managers.localization:text("bm_wp_upg_a_bow_poison"),
-				icon = {
-					texture = tweak_data.hud_icons.wp_arrow.texture,
-					texture_rect = tweak_data.hud_icons.wp_arrow.texture_rect,
-					layer = 3,
-					w = 16,
-					h = 16,
-					alpha = 0.7,
-					color = Color.green
-				},
-				show_text = true,
-				stay_open = false,
-				callback =  callback(RRModTest001, RRModTest001, "SelectAmmo", "poison")
-			},
-			{
-				text = managers.localization:text("bm_wpn_fps_upg_a_bow_explosion"),
-				icon = {
-					texture = tweak_data.hud_icons.wp_arrow.texture,
-					texture_rect = tweak_data.hud_icons.wp_arrow.texture_rect,
-					layer = 3,
-					w = 16,
-					h = 16,
-					alpha = 0.7,
-					color = Color.red
-				},
-				show_text = true,
-				stay_open = false,
-				callback = callback(RRModTest001, RRModTest001, "SelectAmmo", "explosion")
-			}
-		}
-	},callback(RRModTest001,RRModTest001,"SetActionMenu"))
-end)
 
 function RRModTest001:Load()
 	local file = io.open(self._save_path, "r")
@@ -314,3 +301,72 @@ Hooks:Add("MenuManagerInitialize", "F_"..Idstring("RRModTest001:MenuInit"):key()
 	end
 	RRModTest001:Load()
 end)
+
+if PlayerInventory then
+	Hooks:PostHook(PlayerInventory, '_call_listeners', "F_"..Idstring("RRModTest001:RadialMouseMenu:Init"):key(), function(self, event)
+		if tostring(event) == "equip" then
+			RRModTest001:RefreshKeybinds()
+			RRModTest001:InitWeaponArrowData()
+			if RRModTest001.__ammo_standard then
+				local __items = {}
+				if RRModTest001.__ammo_standard then
+					table.insert(__items, {
+						text = managers.localization:text("rrmodtest001_ammo_standard"),
+						icon = {
+							texture = tweak_data.hud_icons.wp_arrow.texture,
+							texture_rect = tweak_data.hud_icons.wp_arrow.texture_rect,
+							layer = 3,
+							w = 16,
+							h = 16,
+							alpha = 0.7,
+							color = Color.yellow
+						},
+						show_text = true,
+						stay_open = false,
+						callback =  callback(RRModTest001, RRModTest001, "SelectAmmo", "standard")
+					})
+				end
+				if RRModTest001.__ammo_poison then
+					table.insert(__items, {
+						text = managers.localization:text("bm_wp_upg_a_bow_poison"),
+						icon = {
+							texture = tweak_data.hud_icons.wp_arrow.texture,
+							texture_rect = tweak_data.hud_icons.wp_arrow.texture_rect,
+							layer = 3,
+							w = 16,
+							h = 16,
+							alpha = 0.7,
+							color = Color.green
+						},
+						show_text = true,
+						stay_open = false,
+						callback =  callback(RRModTest001, RRModTest001, "SelectAmmo", "poison")
+					})
+				end
+				if RRModTest001.__ammo_explosive then
+					table.insert(__items, {
+						text = managers.localization:text("bm_wpn_fps_upg_a_bow_explosion"),
+						icon = {
+							texture = tweak_data.hud_icons.wp_arrow.texture,
+							texture_rect = tweak_data.hud_icons.wp_arrow.texture_rect,
+							layer = 3,
+							w = 16,
+							h = 16,
+							alpha = 0.7,
+							color = Color.red
+						},
+						show_text = true,
+						stay_open = false,
+						callback = callback(RRModTest001, RRModTest001, "SelectAmmo", "explosion")
+					})
+				end
+				RadialMouseMenu:new({
+					name = managers.localization:text("rrmodtest001_menu_title"),
+					radius = 200,
+					deadzone = 50,
+					items = __items
+				},callback(RRModTest001,RRModTest001,"SetActionMenu"))
+			end
+		end
+	end)
+end
