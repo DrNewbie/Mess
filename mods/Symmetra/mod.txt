@@ -1,27 +1,19 @@
 {
-	"name": "Symmetra",
-	"description": "Unlock the sentry position",
-	"author": "Dr_Newbie",
-	"contact": "http://modwork.shop/21086",
-	"version": "2",
-	"priority": 1,
-	"blt_version": 2,
-	"hooks": [
-		{
-			"hook_id": "lib/managers/localizationmanager",
-			"script_path": "Base.lua"
-		},
-		{
-			"hook_id": "lib/units/beings/player/playerequipment",
-			"script_path": "lua/playerequipment.lua"
-		},
-		{
-			"hook_id": "lib/units/beings/player/states/playerstandard",
-			"script_path": "lua/playerstandard.lua"
-		},
-		{
-			"hook_id": "lib/managers/playermanager",
-			"script_path": "lua/playermanager.lua"
-		}
-	]
+  "name": "Symmetra",
+  "description": "Unlock the sentry position",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/21086",
+  "version": "5",
+  "priority": 1,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/units/beings/player/playerequipment",
+      "script_path": "lua/playerequipment.lua"
+    },
+    {
+      "hook_id": "lib/managers/playermanager",
+      "script_path": "lua/playermanager.lua"
+    }
+  ]
 }
