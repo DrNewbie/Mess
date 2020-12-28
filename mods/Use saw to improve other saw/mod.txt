@@ -1,18 +1,14 @@
 {
-	"name" : "Use saw to improve other saw",
-	"description" : " ",
-	"author" : "Dr_Newbie",
-	"contact" : "http://modwork.shop/21552",
-	"version" : "4",
-	"priority" : 1,
-	"hooks" : [
-		{
-			"hook_id" : "lib/units/weapons/sawweaponbase",
-			"script_path" : "hook.sawweaponbase.lua"
-		},
-		{
-			"hook_id" : "lib/managers/localizationmanager",
-			"script_path" : "Update.lua"
-		}
-	]		
+  "name": "Use saw to improve other saw",
+  "description": " ",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/21552",
+  "version": "5",
+  "priority": 1,
+  "hooks": [
+    {
+      "hook_id": "lib/units/weapons/sawweaponbase",
+      "script_path": "hook.sawweaponbase.lua"
+    }
+  ]
 }
