@@ -32,9 +32,9 @@ function PlayerEquipment:use_sentry_gun(selected_index, unit_idstring_index, ...
 		end
 		local _valid_look_at_placement = false
 		local ray = self:valid_shape_placement()	
-		if not ray then
+		if not ray and managers.player:selected_equipment() then
 			_valid_look_at_placement = true
-			ray = self:valid_look_at_placement()
+			ray = self:valid_look_at_placement(managers.player:selected_equipment())
 		end
 		if ray and self:_can_place("sentry_gun") then
 			local pos = ray.position
