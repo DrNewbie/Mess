@@ -1,4 +1,8 @@
 <table name="Crucible (Doom Eternal) (Melee)">
+	<AssetUpdates id="Crucible (Doom Eternal) (Melee)" version="3">
+        <custom_provider version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Crucible%20(Custom%20Weapon).txt" download_url="https://drnewbie.github.io/Mess/UpdateProvider/Crucible%20(Custom%20Weapon).zip"/>
+    </AssetUpdates>
+	
 	<Localization directory="Localization" default="english.txt"/>
 	
 	<GlobalValue id="crucible_doom_eternal" color="Color(1, 0.5, 0)"/>
@@ -7,8 +11,8 @@
 		<hook file="playerstandard.lua" source_file="lib/units/beings/player/states/playerstandard"/>
 	</Hooks>
 	  
-	<Melee id="crucible_doom_eternal" based_on="iceaxe" expire_t="0.8" repeat_expire_t="0.8" unit="units/mods/weapons/wpn_mel_crucible_doom_eternal/wpn_mel_crucible_doom_eternal" third_unit="units/mods/weapons/wpn_mel_crucible_doom_eternal/wpn_third_mel_crucible_doom_eternal" texture_bundle_folder="mods" global_value="crucible_doom_eternal">
-		<stats min_damage="99999.9" max_damage="99999.9" charge_time="0.1" range="500" concealment="1"/>
+	<Melee id="crucible_doom_eternal" based_on="iceaxe" expire_t="10" repeat_expire_t="10" unit="units/mods/weapons/wpn_mel_crucible_doom_eternal/wpn_mel_crucible_doom_eternal" third_unit="units/mods/weapons/wpn_mel_crucible_doom_eternal/wpn_third_mel_crucible_doom_eternal" texture_bundle_folder="mods" global_value="crucible_doom_eternal">
+		<stats min_damage="99999.9" max_damage="99999.9" charge_time="1" range="500" concealment="1"/>
 	</Melee>
 
 	<AddFiles directory="assets">
