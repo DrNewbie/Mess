@@ -1,0 +1,4 @@
+{
+    "bm_melee_crucible_doom_eternal" : "Crucible"
+    "menu_l_global_value_crucible_doom_eternal" : " "
+}

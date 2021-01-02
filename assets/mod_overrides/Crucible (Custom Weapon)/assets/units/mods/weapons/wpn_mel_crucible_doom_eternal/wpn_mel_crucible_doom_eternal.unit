@@ -1,0 +1,9 @@
+<unit type="wpn" slot="1">
+	<object file="units/mods/weapons/wpn_mel_crucible_doom_eternal/wpn_mel_crucible_doom_eternal"/>
+	<dependencies>
+		<depends_on bnk="soundbanks/melee_mining_pick"/>
+	</dependencies>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+	</extensions>
+</unit>
