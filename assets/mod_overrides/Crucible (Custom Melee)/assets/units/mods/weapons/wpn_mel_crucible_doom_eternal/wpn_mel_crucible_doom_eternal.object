@@ -1,0 +1,6 @@
+<dynamic_object>
+	<diesel materials="units/mods/weapons/wpn_mel_crucible_doom_eternal/wpn_mel_crucible_doom_eternal" orientation_object="rp_wpn_fps_mel_topaz2000" />
+	<graphics>
+		<object name="g_axe" enabled="true" />
+	</graphics>
+</dynamic_object>

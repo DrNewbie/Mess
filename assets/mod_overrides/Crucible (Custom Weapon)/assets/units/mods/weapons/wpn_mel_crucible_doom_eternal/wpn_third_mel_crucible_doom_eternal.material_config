@@ -1,6 +1,0 @@
-<materials version="3">
-	<material name="mat_axe_third" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
-		<diffuse_texture file="units/mods/weapons/wpn_mel_crucible_doom_eternal/wpn_third_mel_crucible_doom_eternal_df" />
-		<bump_normal_texture file="units/mods/weapons/wpn_mel_crucible_doom_eternal/wpn_third_mel_crucible_doom_eternal_nm" />
-	</material>
-</materials>
