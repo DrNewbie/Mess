@@ -1,0 +1,17 @@
+{
+  "name": "Bullet Decapitations",
+  "description": "A headshot from a bullet will decapitate an enemy's head with gory effects.",
+  "author": "Undeadsewer",
+  "blt_version": 2,
+  "version": "15.a1",
+  "hooks": [
+    {
+      "hook_id": "lib/units/enemies/cop/copdamage",
+      "script_path": "lua/CopDamage.lua"
+    },
+    {
+      "hook_id": "lib/units/enemies/cop/copmovement",
+      "script_path": "lua/CopMovement.lua"
+    }
+  ]
+}
