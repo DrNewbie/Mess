@@ -3,11 +3,7 @@
 		<texture path="guis/textures/pd2/blackmarket/icons/armors/level_9" force="true"/>
 	</AddFiles>
 	<Hooks directory="Hooks">
-		<hook file="coresequencemanager.lua" source_file="core/lib/managers/coresequencemanager"/>
-		<hook file="networkpeer.lua" source_file="lib/network/base/networkpeer"/>
 		<hook file="blackmarketmanager.lua" source_file="lib/managers/blackmarketmanager"/>
-		<hook file="managespawnedunits.lua" source_file="lib/units/props/managespawnedunits"/>
-		<hook file="teamaimovement.lua" source_file="lib/units/player_team/teamaimovement"/>
 		<hook file="menuscenemanager.lua" source_file="lib/managers/menu/menuscenemanager"/>
 		<hook file="blackmarkettweakdata.lua" source_file="lib/tweak_data/blackmarkettweakdata"/>
 		<hook file="upgradestweakdata.lua" source_file="lib/tweak_data/upgradestweakdata"/>

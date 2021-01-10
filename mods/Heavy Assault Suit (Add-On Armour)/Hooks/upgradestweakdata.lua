@@ -1,4 +1,4 @@
-Hooks:PostHook(UpgradesTweakData, "_player_definitions", "Dr_Newbie_CustomArmourPackage_player_definitions", function(self)	
+Hooks:PostHook(UpgradesTweakData, "_player_definitions", "F_"..Idstring("Heavy Assault Suit (Armour):3"):key(), function(self)	
 	self.definitions.body_armor8 = {
 		name_id = "bm_armor_level_9",
 		armor_id = "level_9",
@@ -6,7 +6,7 @@ Hooks:PostHook(UpgradesTweakData, "_player_definitions", "Dr_Newbie_CustomArmour
 	}
 end)
 
-Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "Dr_Newbie_CustomArmourPackage_init_pd2_values", function(self)
+Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "F_"..Idstring("Heavy Assault Suit (Armour):4"):key(), function(self)
 	self.values.player.body_armor.armor[9] = self.values.player.body_armor.armor[7] * 2
 	self.values.player.body_armor.movement[9] = self.values.player.body_armor.movement[7] * 0.5
 	self.values.player.body_armor.concealment[9] = self.values.player.body_armor.concealment[7] * 0.1

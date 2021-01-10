@@ -1,4 +1,4 @@
-Hooks:PostHook(BlackMarketTweakData, "_init_armors", "Dr_Newbie_CustomArmourPackage_init_armors", function(self)	
+Hooks:PostHook(BlackMarketTweakData, "_init_armors", "F_"..Idstring("Heavy Assault Suit (Armour):2"):key(), function(self)	
 	self.armors.level_9 = {
 		name_id = "bm_askn_heavy_armor",
 		sequence = "var_model_07",
