@@ -1,0 +1,35 @@
+{
+  "name": "Everyone is 46th",
+  "description": "Everyone is 46th",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/30621",
+  "version": "3",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/units/enemies/cop/copmovement",
+      "script_path": "Hooks/function.lua"
+    },
+    {
+      "hook_id": "lib/units/enemies/cop/huskcopmovement",
+      "script_path": "Hooks/function.lua"
+    },
+    {
+      "hook_id": "lib/units/beings/player/playermovement",
+      "script_path": "Hooks/function.lua"
+    },
+    {
+      "hook_id": "lib/units/beings/player/huskplayermovement",
+      "script_path": "Hooks/function.lua"
+    },
+    {
+      "hook_id": "lib/units/player_team/teamaimovement",
+      "script_path": "Hooks/function.lua"
+    },
+    {
+      "hook_id": "lib/units/player_team/huskteamaimovement",
+      "script_path": "Hooks/function.lua"
+    }
+  ]
+}
