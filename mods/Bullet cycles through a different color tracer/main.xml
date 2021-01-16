@@ -1,0 +1,17 @@
+<table name="Bullet cycles through a different color tracer">
+    <AddFiles directory="assets">
+		<effect path="effects/payday2/particles/weapons/streaks/blue_long_streak"/>
+		<effect path="effects/payday2/particles/weapons/streaks/cyan_long_streak"/>
+		<effect path="effects/payday2/particles/weapons/streaks/green_long_streak"/>
+		<effect path="effects/payday2/particles/weapons/streaks/magenta_long_streak"/>
+		<effect path="effects/payday2/particles/weapons/streaks/orange_long_streak"/>
+		<effect path="effects/payday2/particles/weapons/streaks/red_long_streak"/>
+		<effect path="effects/payday2/particles/weapons/streaks/violet_long_streak"/>
+		<effect path="effects/payday2/particles/weapons/streaks/white_long_streak"/>
+		<effect path="effects/payday2/particles/weapons/streaks/yellow_long_streak"/>
+		<effect path="effects/payday2/particles/weapons/streaks/long_streak" force="true"/>
+	</AddFiles>
+	<Hooks directory="Hooks">
+		<hook file="playerstandard.lua" source_file="lib/units/beings/player/states/playerstandard"/>
+	</Hooks>
+</table>
