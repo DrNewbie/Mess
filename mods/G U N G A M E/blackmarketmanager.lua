@@ -1,9 +1,5 @@
 _G.GunGameGame = _G.GunGameGame or {}
 
-if Network:is_client() then
-	return
-end
-
 GunGameGame.options_menu = "GunGameGame_menu"
 GunGameGame.ModPath = ModPath
 GunGameGame.SaveFile = GunGameGame.SaveFile or SavePath .. "GunGameGame.txt"

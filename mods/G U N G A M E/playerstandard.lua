@@ -39,6 +39,11 @@ function PlayerStandard:DoGunGuChanageWeaponNow(data)
 	end
 end
 
+GunGameGame = GunGameGame or {}
+GunGameGame.settings = GunGameGame.settings or {}
+GunGameGame.settings.chance = GunGameGame.settings.chance or 30
+GunGameGame.settings.rndMod = GunGameGame.settings.rndMod or 0
+
 function PlayerStandard:DoGunGuChanageWeapon(t)
 	if not self._gumgame_times or type(self._gumgame_weps) ~= "table" or not self._gumgame_weps[1] then
 		return
