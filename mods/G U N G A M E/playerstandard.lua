@@ -28,18 +28,10 @@ end)
 function PlayerStandard:DoGunGuChanageWeaponNow(data)
 	local t = self[GunGameGame_now_t] and self[GunGameGame_now_t] or 0
 	if type(data) == "table" and type(data.wep_data) == "table" and type(data.wep_data.blueprint) == "table" then
-		local is_fine = true
-		for _, _default_part in pairs(data.wep_data.blueprint) do
-			local _f_p = tweak_data.weapon.factory.parts[_default_part]
-			if _f_p and _f_p.unit then
-				if not managers.dyn_resource:is_resource_ready(Idstring("unit"), Idstring(_f_p.unit), managers.dyn_resource.DYN_RESOURCES_PACKAGE) then
-					managers.dyn_resource:load(Idstring("unit"), Idstring(_f_p.unit), managers.dyn_resource.DYN_RESOURCES_PACKAGE, callback(self, self, "DoGunGuChanageWeaponNow", data))
-					is_fine = nil
-					break
-				end
-			end
-		end
-		if is_fine then
+		local _f_p = tweak_data.weapon.factory[data.wep_data.factory_id]
+		if not managers.dyn_resource:is_resource_ready(Idstring("unit"), Idstring(_f_p.unit), managers.dyn_resource.DYN_RESOURCES_PACKAGE) then
+			managers.dyn_resource:load(Idstring("unit"), Idstring(_f_p.unit), managers.dyn_resource.DYN_RESOURCES_PACKAGE, callback(self, self, "DoGunGuChanageWeaponNow", data))
+		else
 			self._change_weapon_pressed_expire_t = t + 1.66
 			self:_start_action_unequip_weapon(t, data)
 			managers.player:send_message(Message.OnSwitchWeapon)
