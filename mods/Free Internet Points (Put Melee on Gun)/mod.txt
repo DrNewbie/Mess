@@ -1,0 +1,14 @@
+{
+  "name": "Free Internet Points (Put Melee on Gun)",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/30655",
+  "version": "1",
+  "blt_version": 2,
+  "priority": 100,
+  "hooks": [
+    {
+      "hook_id": "lib/units/cameras/fpcameraplayerbase",
+      "script_path": "lua/fpcameraplayerbase.lua"
+    }
+  ]
+}
