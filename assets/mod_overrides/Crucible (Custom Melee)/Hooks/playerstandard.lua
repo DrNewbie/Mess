@@ -26,5 +26,5 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 			user = self._unit
 		})
 	end
-	return col_ray
+	return old_do_melee_damage(self, t, bayonet_melee, melee_hit_ray, melee_entry, ...)
 end
