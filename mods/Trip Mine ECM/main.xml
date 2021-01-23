@@ -1,0 +1,8 @@
+<table name="Trip Mine ECM">
+	<AssetUpdates id="Trip Mine ECM" version="3">
+        <custom_provider 
+			version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Trip%20Mine%20ECM.txt" 
+			download_url="https://drnewbie.github.io/Mess/UpdateProvider/Trip%20Mine%20ECM.zip"
+		/>
+    </AssetUpdates>
+</table>

@@ -1,0 +1,15 @@
+{
+  "name": "Trip Mine ECM",
+  "description": "https://modworkshop.net/mod/30737",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/30737",
+  "version": "3",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/units/weapons/trip_mine/tripminebase",
+      "script_path": "tripminebase.lua"
+    }
+  ]
+}
