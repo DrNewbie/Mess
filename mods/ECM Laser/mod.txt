@@ -1,0 +1,15 @@
+{
+  "name": "ECM Laser",
+  "description": "https://modworkshop.net/mod/30735",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/30735",
+  "version": "3",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/units/equipment/ecm_jammer/ecmjammerbase",
+      "script_path": "ecmjammerbase.lua"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+<table name="ECM Laser">
+	<AssetUpdates id="ECM Laser" version="3">
+        <custom_provider 
+			version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/ECM%20Laser.txt" 
+			download_url="https://drnewbie.github.io/Mess/UpdateProvider/ECM%20Laser.zip"
+		/>
+    </AssetUpdates>
+</table>
