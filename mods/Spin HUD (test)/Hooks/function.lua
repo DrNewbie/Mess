@@ -1,3 +1,6 @@
+local mod_ids = Idstring("CircleSpin"):key()
+local func1 = "F_"..Idstring("func1:0:"..mod_ids):key()
+
 local function __anim_this_to_spin(o, __stop)
 	if o and o.animate then
 		local function spin_anim(o)
@@ -33,7 +36,7 @@ function __anim_me(them, __func, __stop)
 end
 
 if HUDTeammate then
-	Hooks:PostHook(HUDTeammate, "init", "F_"..Idstring("HUDTeammate:init:CircleSpin"):key(), function(self)
+	function HUDTeammate:__reRun()
 		__anim_me(self, {
 			["_cable_ties_panel"] = {
 				["cable_ties"] = true
@@ -49,6 +52,10 @@ if HUDTeammate then
 				["grenades_icon_ghost"] = true
 			}
 		}, true)
+	end
+
+	Hooks:PostHook(HUDTeammate, "init", "F_"..Idstring("HUDTeammate:init:CircleSpin"):key(), function(self)
+		self:__reRun()
 	end)
 
 	Hooks:PostHook(HUDTeammate, "set_cable_tie", "F_"..Idstring("HUDTeammate:set_cable_tie:CircleSpin"):key(), function(self)
@@ -109,6 +116,14 @@ if HUDTeammate then
 					}
 				})
 			end
+		end
+	end)
+end
+
+if PlayerManager then
+	Hooks:PostHook(PlayerManager, "update_deployable_equipment_amount_to_peers", "F_"..Idstring("PlayerManager:update_deployable_equipment_amount_to_peers:CircleSpin"):key(), function(self)
+		if managers.hud and managers.hud[func1] then
+			managers.hud[func1] = nil
 		end
 	end)
 end

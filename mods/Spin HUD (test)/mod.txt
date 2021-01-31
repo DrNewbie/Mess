@@ -3,13 +3,27 @@
   "description": " ",
   "author": "Dr_Newbie",
   "contact": "https://modworkshop.net/mod/28328",
-  "version": "1",
+  "version": "2",
   "priority": 900,
   "blt_version": 2,
   "hooks": [
     {
       "hook_id": "lib/managers/hud/hudteammate",
       "script_path": "Hooks/function.lua"
+    },
+    {
+      "hook_id": "lib/managers/hudmanagerpd2",
+      "script_path": "Hooks/function2.lua"
+    }
+  ],
+  "updates": [
+    {
+      "identifier": "SpinHUD100GitHubUpdate",
+      "host": {
+        "meta": "https://drnewbie.github.io/Mess/Update/SpinHUD100.meta.json",
+        "download": "https://drnewbie.github.io/Mess/Update/SpinHUD100.zip",
+        "patchnotes": "https://github.com/DrNewbie/Mess/commits/master"
+      }
     }
   ]
 }
