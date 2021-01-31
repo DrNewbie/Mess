@@ -75,7 +75,6 @@ Hooks:PreHook(MenuCallbackHandler, 'unban_player', "F_"..Idstring("MenuCallbackH
 			yes_button,
 			no_button
 		}
-		log( "https://steamrep.com/profiles/"..tostring(item:parameters().identifier) )
 		managers.system_menu:show(dialog_data)
 		return
 	end
