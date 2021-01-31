@@ -18,18 +18,21 @@ function BanListManager:__read_banned_list()
 		self:__save_banned_list()
 	else
 		local function urlEncode(s)
-			return string.gsub(s, "([^%w%.%- ])", function(c) return string.format("%%%02X", string.byte(c)) end)
+			return string.sub(string.gsub(s, "([^%w%.%- ])", function(c) return string.format("%%%02X", string.byte(c)) end), 1, 32)
 		end
 		local __data = json.decode(__file:read("*all"))
 		__data.__date = nil
-		Global.ban_list = {}
-		self._global = Global.ban_list
-		self._global.banned = {}
+		for _, __ban in pairs(self:ban_list()) do
+			if type(__ban) == "table" and __ban.identifier then
+				self:unban(__ban.identifier)
+			end
+		end
 		for _, __ban in pairs(__data) do
 			if type(__ban) == "table" and __ban.name and __ban.identifier then
 				self:ban(urlEncode(__ban.identifier), urlEncode(__ban.name))
 			end			
 		end
+		self:__save_banned_list()
 	end
 end
 
@@ -72,6 +75,7 @@ Hooks:PreHook(MenuCallbackHandler, 'unban_player', "F_"..Idstring("MenuCallbackH
 			yes_button,
 			no_button
 		}
+		log( "https://steamrep.com/profiles/"..tostring(item:parameters().identifier) )
 		managers.system_menu:show(dialog_data)
 		return
 	end
