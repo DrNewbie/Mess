@@ -1,6 +1,7 @@
 local __ModPath = ModPath
 
 function BanListManager:__save_banned_list()
+	local __tmp = {}
 	local __time = tostring(os.date("!%H:%M:%S"))
 	local __data = self:ban_list()
 	__data.__date = __time.." , "..Idstring(tostring(os.time()).." "..__time):key()
@@ -14,25 +15,44 @@ end
 
 function BanListManager:__read_banned_list()
 	local __file = io.open(__ModPath.."__banned_list.txt", "r")
+	local __tmp = {}
 	if not __file then
 		self:__save_banned_list()
 	else
+		local __text = __file:read("*all")		
 		local function urlEncode(s)
 			return string.sub(string.gsub(s, "([^%w%.%- ])", function(c) return string.format("%%%02X", string.byte(c)) end), 1, 32)
 		end
-		local __data = json.decode(__file:read("*all"))
-		__data.__date = nil
 		for _, __ban in pairs(self:ban_list()) do
-			if type(__ban) == "table" and __ban.identifier then
+			if type(__ban) == "table" and not __text:find('"identifier":"'..tostring(__ban.identifier)..'"') then
 				self:unban(__ban.identifier)
 			end
 		end
-		for _, __ban in pairs(__data) do
-			if type(__ban) == "table" and __ban.name and __ban.identifier then
-				self:ban(urlEncode(__ban.identifier), urlEncode(__ban.name))
-			end			
+		for __w in string.gmatch(__text, '"identifier":"(%d+)"') do
+			local __key = "K_"..Idstring(tostring(__w)):key()
+			if not __tmp[__key] then
+				__tmp[__key] = true
+				dohttpreq("http://steamcommunity.com/profiles/".. __w .. "/games?l=english&xml=1",
+					function(page)
+						if not self:banned(__w) and page:find('<steamID><!%[CDATA%[(.*)%]%]></steamID>') then
+							local player_steam_name = tostring(string.match(page, '<steamID><!%[CDATA%[(.*)%]%]></steamID>'))
+							self:ban(urlEncode(__w), urlEncode(player_steam_name))
+						end
+					end
+				)
+			end
 		end
-		self:__save_banned_list()
+		local __tmp2 = {}
+		for __id, __ban in pairs(self:ban_list()) do
+			if type(__ban) == "table" and __ban.identifier then
+				local __key = "K_"..Idstring(tostring(__ban.identifier)):key()
+				if not __tmp2[__key] then
+					__tmp2[__key] = true
+				else
+					table.remove(self._global.banned, __id)
+				end
+			end
+		end
 	end
 end
 
