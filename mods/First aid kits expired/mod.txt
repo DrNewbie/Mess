@@ -1,5 +1,5 @@
 {
-  "name": "First aid kits expire",
+  "name": "First aid kits expired",
   "description": "https://modworkshop.net/mod/30896",
   "author": "Dr_Newbie",
   "contact": "https://modworkshop.net/mod/30896",
