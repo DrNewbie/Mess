@@ -1,0 +1,8 @@
+<table name="Multi-Shotgun-Ammo (Weapon Function)">
+	<AssetUpdates id="Multi-Shotgun-Ammo (Weapon Function)" version="10">
+        <custom_provider 
+			version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Multi-Shotgun-Ammo%20(Weapon%20Function).txt" 
+			download_url="https://drnewbie.github.io/Mess/UpdateProvider/Multi-Shotgun-Ammo%20(Weapon%20Function).zip"
+		/>
+    </AssetUpdates>
+</table>

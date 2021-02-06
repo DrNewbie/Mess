@@ -1,0 +1,30 @@
+{
+  "name": "Multi-Shotgun-Ammo",
+  "description": " ",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/30228",
+  "version": "10",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/managers/menumanagerpd2",
+      "script_path": "hooks/menumanagerpd2.lua"
+    },
+    {
+      "hook_id": "lib/units/beings/player/playerinventory",
+      "script_path": "hooks/menumanagerpd2.lua"
+    }
+  ],
+  "keybinds": [
+    {
+      "keybind_id": "rrmodtest002_open_menu",
+      "name": "rrmodtest002_option_keybind_open_menu_title",
+      "description": "rrmodtest002_option_keybind_open_menu_desc",
+      "func": "callback_rrmodtest002_open_menu",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": true
+    }
+  ]
+}

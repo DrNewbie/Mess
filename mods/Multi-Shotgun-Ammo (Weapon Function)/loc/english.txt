@@ -1,0 +1,7 @@
+{
+  "rrmodtest002_ammo_standard": "Standard Ammo",
+  "rrmodtest002_menu_title": "Multi-Ammo Menu",
+  "rrmodtest002_menu_desc": " ",
+  "rrmodtest002_option_keybind_open_menu_title": "Keybind: Shotgun-Ammo Menu",
+  "rrmodtest002_option_keybind_open_menu_desc": "Opens the Shotgun-Ammo Menu."
+}
