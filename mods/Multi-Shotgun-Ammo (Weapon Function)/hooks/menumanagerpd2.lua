@@ -48,6 +48,9 @@ function RRModTest002:UsingRightWeapon()
 	if not factory_id or not factory_data.uses_parts then
 		return false
 	end
+	if not ply_inv:equipped_unit():base():is_category("shotgun") then
+		return false
+	end
 	return ply_inv:equipped_unit():base()
 end
 
@@ -317,21 +320,6 @@ if PlayerInventory then
 			RRModTest002:InitWeaponArrowData()
 			if true then
 				local __items = {}
-				table.insert(__items, {
-					text = managers.localization:text("rrmodtest002_ammo_standard"),
-					icon = {
-						texture = tweak_data.hud_icons.wp_arrow.texture,
-						texture_rect = tweak_data.hud_icons.wp_arrow.texture_rect,
-						layer = 3,
-						w = 16,
-						h = 16,
-						alpha = 0.7,
-						color = Color.yellow
-					},
-					show_text = true,
-					stay_open = false,
-					callback =  callback(RRModTest002, RRModTest002, "SelectAmmo", "standard")
-				})
 				if RRModTest002.__ammo_poison then
 					table.insert(__items, {
 						text = managers.localization:text("bm_wp_upg_a_dragons_breath"),
@@ -383,12 +371,29 @@ if PlayerInventory then
 						callback = callback(RRModTest002, RRModTest002, "SelectAmmo", "AP")
 					})
 				end
-				RadialMouseMenu:new({
-					name = managers.localization:text("RRModTest002_menu_title"),
-					radius = 200,
-					deadzone = 50,
-					items = __items
-				},callback(RRModTest002,RRModTest002,"SetActionMenu"))
+				if __items[1] then
+					table.insert(__items, {
+						text = managers.localization:text("rrmodtest002_ammo_standard"),
+						icon = {
+							texture = tweak_data.hud_icons.wp_arrow.texture,
+							texture_rect = tweak_data.hud_icons.wp_arrow.texture_rect,
+							layer = 3,
+							w = 16,
+							h = 16,
+							alpha = 0.7,
+							color = Color.yellow
+						},
+						show_text = true,
+						stay_open = false,
+						callback =  callback(RRModTest002, RRModTest002, "SelectAmmo", "standard")
+					})
+					RadialMouseMenu:new({
+						name = managers.localization:text("RRModTest002_menu_title"),
+						radius = 200,
+						deadzone = 50,
+						items = __items
+					},callback(RRModTest002,RRModTest002,"SetActionMenu"))
+				end
 			end
 		end
 	end)
