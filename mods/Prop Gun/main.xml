@@ -1,0 +1,8 @@
+<table name="Prop Gun">
+	<AssetUpdates id="Prop Gun" version="1">
+        <custom_provider 
+			version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Prop%20Gun.txt" 
+			download_url="https://drnewbie.github.io/Mess/UpdateProvider/Prop%20Gun.zip"
+		/>
+    </AssetUpdates>
+</table>
