@@ -1,4 +1,4 @@
-if not Global.game_settings or not Global.game_settings.level_id or not Global.game_settings.level_id == "cage" then
+if not Global.game_settings or not Global.game_settings.level_id or tostring(Global.game_settings.level_id) ~= "cage" then
 
 else
 	local mod_ids = Idstring("[Car Shop] Add zipline between start and end"):key()
@@ -6,7 +6,7 @@ else
 	local zipline_motor_alt_ids = Idstring("units/payday2/equipment/gen_equipment_zipline_motor_alt/gen_equipment_zipline_motor_alt")
 
 	Hooks:PostHook(DialogManager, "queue_dialog", "F_"..mod_ids, function(self, id)
-		if self["B_"..mod_ids] or not Global.game_settings or not Global.game_settings.level_id or not Global.game_settings.level_id == "cage" then
+		if self["B_"..mod_ids] or not Global.game_settings or not Global.game_settings.level_id or managers.job:current_level_id() ~= "cage" then
 		
 		else
 			if DB:has(Idstring("unit"), zipline_motor_alt_ids) then
