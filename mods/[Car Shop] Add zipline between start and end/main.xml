@@ -1,0 +1,14 @@
+<table name="[Car Shop] Add Zipline">
+	<AddFiles directory="assets">
+		<cooked_physics path="units/payday2/equipment/gen_equipment_zipline_motor_alt/gen_equipment_zipline_motor_alt"/>
+		<material_config path="units/payday2/equipment/gen_equipment_zipline_motor_alt/gen_equipment_zipline_motor_alt"/>
+		<model path="units/payday2/equipment/gen_equipment_zipline_motor_alt/gen_equipment_zipline_motor_alt"/>
+		<object path="units/payday2/equipment/gen_equipment_zipline_motor_alt/gen_equipment_zipline_motor_alt"/>
+		<sequence_manager path="units/payday2/equipment/gen_equipment_zipline_motor_alt/gen_equipment_zipline_motor_alt"/>
+		<unit path="units/payday2/equipment/gen_equipment_zipline_motor_alt/gen_equipment_zipline_motor_alt"/>
+		<texture path="units/payday2/equipment/gen_equipment_zipline_motor_alt/gen_equipment_zipline_motor_df"/>
+		<texture path="units/payday2/equipment/gen_equipment_zipline_motor_alt/gen_equipment_zipline_motor_nm"/>
+		<texture path="units/payday2/equipment/gen_equipment_zipline_motor_alt/metal_wire_01_df"/>
+		<texture path="units/payday2/equipment/gen_equipment_zipline_motor_alt/metal_wire_01_nm"/>
+	</AddFiles>
+</table>
