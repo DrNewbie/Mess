@@ -1,0 +1,5 @@
+<table name="[KingPin Injector Sound] Gura Scream">
+	<Sounds directory="assets/sounds">
+		<sound id="gawrgurascream0001" path="gawrgurascream0001.ogg" volume="1"/>
+	</Sounds>
+</table>
