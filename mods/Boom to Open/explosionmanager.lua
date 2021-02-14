@@ -2,8 +2,8 @@ Hooks:PostHook(ExplosionManager, "detect_and_give_dmg", Idstring("Boom to Open:E
 	if managers.player:local_player() then
 		local hit_pos = type(params) == "table" and params.hit_pos or nil
 		local dmg = params.damage or nil
-		if hit_pos and dmg and dmg > 60 then
-			local units = World:find_units("sphere", hit_pos, 300, managers.slot:get_mask("all"), "ray_type", "body bullet lock")
+		if hit_pos and dmg then
+			local units = World:find_units("sphere", hit_pos, 300*math.min(dmg/60, 1), managers.slot:get_mask("all"), "ray_type", "body bullet lock")
 			if type(units) == "table" and units[1] then
 				for id, hit_unit in pairs(units) do
 					if hit_unit:damage() and type(hit_unit:num_bodies()) == "number" then
