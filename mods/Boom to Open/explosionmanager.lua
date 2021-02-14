@@ -1,4 +1,4 @@
-Hooks:PostHook(ExplosionManager, "detect_and_give_dmg", Idstring("boom the deposit boxes:ExplosionManager:detect_and_give_dmg"):key(), function(self, params)
+Hooks:PostHook(ExplosionManager, "detect_and_give_dmg", Idstring("Boom to Open:ExplosionManager:detect_and_give_dmg"):key(), function(self, params)
 	if managers.player:local_player() then
 		local hit_pos = type(params) == "table" and params.hit_pos or nil
 		local dmg = params.damage or nil
