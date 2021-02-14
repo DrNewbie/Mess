@@ -1,9 +1,12 @@
+local __slot_mask = World:make_slot_mask(1, 2, 8, 11, 12, 14, 17, 18, 21, 22, 25, 26, 33, 34, 35, 39)
+
 Hooks:PostHook(ExplosionManager, "detect_and_give_dmg", Idstring("Boom to Open:ExplosionManager:detect_and_give_dmg"):key(), function(self, params)
 	if managers.player:local_player() then
 		local hit_pos = type(params) == "table" and params.hit_pos or nil
 		local dmg = params.damage or nil
 		if hit_pos and dmg then
-			local units = World:find_units("sphere", hit_pos, 300*math.min(dmg/60, 1), managers.slot:get_mask("all"), "ray_type", "body bullet lock")
+			local __fix_from_dmg = math.min(dmg/600, 1)
+			local units = World:find_units("sphere", hit_pos, 300*__fix_from_dmg, __slot_mask, "ray_type", "body bullet lock")
 			if type(units) == "table" and units[1] then
 				for id, hit_unit in pairs(units) do
 					if hit_unit:damage() and type(hit_unit:num_bodies()) == "number" then
@@ -20,7 +23,7 @@ Hooks:PostHook(ExplosionManager, "detect_and_give_dmg", Idstring("Boom to Open:E
 									math.UP, 
 									hit_unit:position(), 
 									hit_unit:rotation():y(), 
-									10000000
+									1000*__fix_from_dmg
 								)
 							end
 						end
