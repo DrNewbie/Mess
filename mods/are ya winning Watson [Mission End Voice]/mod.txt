@@ -1,0 +1,15 @@
+{
+  "name": "are ya winning Watson [Mission End Voice]",
+  "description": " ",
+  "author": "Dr_Newbie",
+  "contact": " ",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/managers/menu/stageendscreengui",
+      "script_path": "lua/stageendscreengui.lua"
+    }
+  ]
+}
