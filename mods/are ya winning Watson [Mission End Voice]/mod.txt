@@ -1,6 +1,6 @@
 {
   "name": "are ya winning Watson [Mission End Voice]",
-  "description": " ",
+  "description": "https://modworkshop.net/mod/31013",
   "author": "Dr_Newbie",
   "contact": " ",
   "version": "1",
