@@ -8,10 +8,12 @@ if MissionScriptElement and Global.game_settings and Global.game_settings.level_
 	local CaseFilesHelper = _G.CaseFilesHelper
 	
 	local function CaseFilesHelper_WPAttachedFunc(id, name)
-		if id == 104781 and name == "enter_archives_trigger" then
-			CaseFilesHelper:WPON()
-		elseif id == 103917 and name == "found_intelligence" then
-			CaseFilesHelper:WPOFF()
+		if managers.job:current_level_id() == "hox_2" then
+			if id == 104781 and name == "enter_archives_trigger" then
+				CaseFilesHelper:WPON()
+			elseif id == 103917 and name == "found_intelligence" then
+				CaseFilesHelper:WPOFF()
+			end
 		end
 		return
 	end

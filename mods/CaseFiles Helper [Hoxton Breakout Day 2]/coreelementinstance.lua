@@ -8,24 +8,26 @@ if ElementInstanceInputEvent and Global.game_settings and Global.game_settings.l
 	local CaseFilesHelper = _G.CaseFilesHelper
 	
 	local function SetAnsToCaseFilesHelper(id)
-		if id == 103948 then
-			CaseFilesHelper:SetAns(Vector3(375, 3350, -800))
-		elseif id == 103949 then
-			CaseFilesHelper:SetAns(Vector3(375, 3050, -800))
-		elseif id == 103950 then
-			CaseFilesHelper:SetAns(Vector3(375, 2450, -800))
-		elseif id == 103951 then
-			CaseFilesHelper:SetAns(Vector3(75, 335, -800))
-		elseif id == 103952 then
-			CaseFilesHelper:SetAns(Vector3(75, 3050, -800))
-		elseif id == 103953 then
-			CaseFilesHelper:SetAns(Vector3(75, 2450, -800))
-		elseif id == 103954 then
-			CaseFilesHelper:SetAns(Vector3(-225, 3050, -800))
-		elseif id == 103955 then
-			CaseFilesHelper:SetAns(Vector3(-225, 3050, -800))
-		elseif id == 103956 then
-			CaseFilesHelper:SetAns(Vector3(-225, 2450, -800))
+		if managers.job:current_level_id() == "hox_2" then
+			if id == 103948 then
+				CaseFilesHelper:SetAns(Vector3(375, 3350, -800))
+			elseif id == 103949 then
+				CaseFilesHelper:SetAns(Vector3(375, 3050, -800))
+			elseif id == 103950 then
+				CaseFilesHelper:SetAns(Vector3(375, 2450, -800))
+			elseif id == 103951 then
+				CaseFilesHelper:SetAns(Vector3(75, 335, -800))
+			elseif id == 103952 then
+				CaseFilesHelper:SetAns(Vector3(75, 3050, -800))
+			elseif id == 103953 then
+				CaseFilesHelper:SetAns(Vector3(75, 2450, -800))
+			elseif id == 103954 then
+				CaseFilesHelper:SetAns(Vector3(-225, 3050, -800))
+			elseif id == 103955 then
+				CaseFilesHelper:SetAns(Vector3(-225, 3050, -800))
+			elseif id == 103956 then
+				CaseFilesHelper:SetAns(Vector3(-225, 2450, -800))
+			end
 		end
 		return
 	end
