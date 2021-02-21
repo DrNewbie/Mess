@@ -31,7 +31,22 @@ if not _G.HsAGA then
 			"toggle_adaptive_quality",
 			"toggle_window_zoom",
 			"toggle_arm_animation",
-			"choice_choose_video_adapter"
+			"choice_choose_video_adapter",
+			"set_brightness"
+		}
+	}
+	HsAGA.CheckApply = {
+		["choice_choose_texture_quality"] = {
+			"RenderSettings",
+			"texture_quality_default"
+		},
+		["choice_choose_shadow_quality"] = {
+			"RenderSettings",
+			"shadow_quality_default"
+		},
+		["choice_choose_anisotropic"] = {
+			"RenderSettings",
+			"max_anisotropy"
 		}
 	}
 	
@@ -70,7 +85,18 @@ if not _G.HsAGA then
 					if table.contains(self.HooksFunc.item, func) then
 						local Aans = self:Get_Apply_Data(apply_data)
 						if Aans and self:value() then
-							MenuCallbackHandler[func](MenuCallbackHandler, Aans, true)
+							local __apply = true
+							if self.CheckApply[func] then --don't need to re-apply
+								local __v1 = self.CheckApply[func]
+								if __v1[1] and __v1[1] == "RenderSettings" then
+									if type(RenderSettings[__v1[2]]) == type(Aans:value()) and RenderSettings[__v1[2]] == Aans:value() then
+										__apply = false
+									end
+								end
+							end
+							if __apply then
+								MenuCallbackHandler[func](MenuCallbackHandler, Aans, true)
+							end
 						end
 					end
 				end
