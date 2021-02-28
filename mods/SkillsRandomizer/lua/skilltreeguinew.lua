@@ -1,16 +1,20 @@
-local mod_ids = Idstring("Skills Randomizer"):key()
-local func1 = "F_"..Idstring("func1::"..mod_ids):key()
-local func2 = "F_"..Idstring("func2::"..mod_ids):key()
-local func3 = "F_"..Idstring("func3::"..mod_ids):key()
-local func4 = "F_"..Idstring("func4::"..mod_ids):key()
-local func5 = "F_"..Idstring("func5::"..mod_ids):key()
-local func6 = "F_"..Idstring("func6::"..mod_ids):key()
-local func7 = "F_"..Idstring("func7::"..mod_ids):key()
-local func8 = "F_"..Idstring("func8::"..mod_ids):key()
-local func9 = "F_"..Idstring("func9::"..mod_ids):key()
-local funcB = "F_"..Idstring("funcB::"..mod_ids):key()
+_G.SKRR = _G.SKRR or {}
 
-Hooks:PostHook(NewSkillTreeGui, "_setup", func2, function(self)
+function SKRR:do_invest(tree, skill_id, tier)
+	if managers.skilltree:has_enough_skill_points(skill_id) and managers.skilltree:unlock(skill_id) then
+		local skill_step = managers.skilltree:skill_step(skill_id)
+		local points = managers.skilltree:skill_cost(tier, skill_step)
+		local skill_points = managers.skilltree:spend_points(points)
+		managers.menu_component._skilltree_gui:set_skill_point_text(skill_points)
+		managers.skilltree:_set_points_spent(tree, managers.skilltree:points_spent(tree) + points)
+		return true
+	end
+	return false
+end
+
+local skrr_original_skilltreeguinew_setup = NewSkillTreeGui._setup
+function NewSkillTreeGui:_setup()
+	skrr_original_skilltreeguinew_setup(self)
 	local do_skills_randomizer_setup = self._panel:text({
 		name = "do_skills_randomizer_setup",
 		text = managers.localization:to_upper_text("menu_skillsrandomizer_run"),
@@ -26,78 +30,65 @@ Hooks:PostHook(NewSkillTreeGui, "_setup", func2, function(self)
 	do_skills_randomizer_setup:set_bottom(self._panel:bottom())
 	do_skills_randomizer_setup:set_right(self._panel:child("SkillsRootPanel"):right() - 20)
 	self._skills_randomizer_highlight = true
-end)
+end
 
-Hooks:PostHook(NewSkillTreeGui, "mouse_pressed", func3, function(self, button, x, y)
-	if not self._renaming_skill_switch and self._enabled and button == Idstring("0") then
+local skrr_skilltreeguinew_mousepressed = NewSkillTreeGui.mouse_pressed
+function NewSkillTreeGui:mouse_pressed(button, x, y)
+	if self._renaming_skill_switch then
+		self:_stop_rename_skill_switch()
+		return
+	end
+	if not self._enabled then
+		return
+	end
+	skrr_skilltreeguinew_mousepressed(self, button, x, y)
+	if button == Idstring("0") then
 		if self._panel:child("do_skills_randomizer_setup"):inside(x, y) then
-			self:_dialog_respec_all_yes()
-			local all_items = {}
-			local now_tree
-			for i = 1, #self._tab_items do
-				now_tree = self._tree_items[i]
-				local get_trees, get_tiers, get_skills
-				if type(now_tree._trees) == "table" then
-					for __i, __d in pairs(now_tree._trees) do
-						if type(__d._tiers) == "table" then
-							for __ii, __dd in pairs(__d._tiers) do
-								if type(__dd._skills_ordered) == "table" then
-									for __iii, __ddd in pairs(__dd._skills_ordered) do
-										table.insert(all_items, {
-											__page = i,
-											__trees = __i,
-											__tiers = __ii,
-											__skills_ordered = __ddd
-										})
-									end
-								end
-							end
+			if not managers or not managers.menu_component or not managers.menu_component._skilltree_gui then
+				return
+			end
+			local SkillsRandomizer_Get = function()		
+				managers.menu_component._skilltree_gui:_dialog_respec_all_yes()
+				local _skilltree_table = {}
+				for _tree, _data1 in pairs(tweak_data.skilltree.trees) do
+					for _tier, _skills in pairs(tweak_data.skilltree.trees[_tree].tiers) do
+						for _, _skill_id in pairs(_skills) do
+							table.insert(
+								_skilltree_table,
+								{
+									skill_id = _skill_id,
+									tree = _tree,
+									tier = _tier,
+									aced = false
+								}
+							)
 						end
 					end
 				end
-			end
-			self[func4] = true
-			self[func9] = 0.05
-			self[func6] = self[func9]
-			self[funcB] = 1000
-			self[func7] = self[funcB]
-			self[func8] = all_items
-		end
-	end
-end)
-
-Hooks:PostHook(NewSkillTreeGui, "update", func5, function(self, t, dt)
-	if self[func4] then
-		if type(self[func6]) == "number" and self[func6] > 0 then
-			self[func6] = self[func6] - dt
-		else
-			self[func6] = self[func9]
-			if type(self[func7]) == "number" and self[func7] > 0 then
-				self[func7] = self[func7] - 1
-				local all_items, rnd_pick, now_tree, item
-				all_items = self[func8]
-				rnd_pick = math.random(1, #all_items)
-				get_pick = all_items[rnd_pick]
-				self:set_active_page(get_pick.__page)
-				now_tree = self._tree_items[self._active_page]
-				item = now_tree:item(get_pick.__trees, get_pick.__tiers, get_pick.__skills_ordered)
-				if item then
-					self:set_selected_item(item, true)
-					self:invest_point(item)
-					if math.random() > 0.6 then
-						self:refund_point(item)
+				local _try = 1000
+				while _try > 0 and table.size(_skilltree_table) > 0 do
+					local _idx = math.random(table.size(_skilltree_table))
+					if _skilltree_table[_idx] then
+						local _ans = SKRR:do_invest(_skilltree_table[_idx].tree, _skilltree_table[_idx].skill_id, _skilltree_table[_idx].tier)
+						if _skilltree_table[_idx].aced then
+							_skilltree_table[_idx] = nil
+						else
+							_skilltree_table[_idx].aced = true
+						end
 					end
-					item = nil
+					_try = _try - 1
 				end
-			else
-				self[func4] = false
+				return
 			end
+			SkillsRandomizer_Get()
+			return
 		end
 	end
-end)
+end
 
 function NewSkillTreeGui:check_skillsrandomizer_button(x, y, panel_name, highlight_var_name)
 	local inside = false
+
 	if x and y and self._panel:child(panel_name):inside(x, y) then
 		if not self[highlight_var_name] then
 			self[highlight_var_name] = true
@@ -109,17 +100,20 @@ function NewSkillTreeGui:check_skillsrandomizer_button(x, y, panel_name, highlig
 		self[highlight_var_name] = false
 		self._panel:child(panel_name):set_color(managers.menu:is_pc_controller() and tweak_data.screen_colors.button_stage_3 or Color.black)
 	end
+
 	return inside
 end
 
-local old_skrr_mousemoved = NewSkillTreeGui.mouse_moved
-function NewSkillTreeGui:mouse_moved(o, x, y, ...)
-	local inside, pointer = old_skrr_mousemoved(self, o, x, y, ...)
+local skrr_original_skilltreeguinew_mousemoved = NewSkillTreeGui.mouse_moved
+function NewSkillTreeGui:mouse_moved(o, x, y)
+	local inside, pointer = skrr_original_skilltreeguinew_mousemoved(self, o, x, y)
+
 	if self._enabled then
 		if self:check_skillsrandomizer_button(x, y, "do_skills_randomizer_setup", "_skills_randomizer_highlight") then
 			inside = true
 			pointer = "link"
 		end
 	end
+
 	return inside, pointer
 end
