@@ -1,0 +1,14 @@
+{
+  "name": "Put sentry on head",
+  "description": " ",
+  "author": "Dr_Newbie",
+  "contact": " ",
+  "version": "1",
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/units/equipment/sentry_gun/sentrygunbase",
+      "script_path": "lua/sentrygunbase.lua"
+    }
+  ]
+}
