@@ -1,0 +1,15 @@
+{
+  "name": "Damage Resistance Decline",
+  "description": "https://modworkshop.net/mod/31235",
+  "author": "Dr_Newbie",
+  "contact": " ",
+  "blt_version": 2,
+  "version": "1",
+  "priority": 100,
+  "hooks": [
+    {
+      "hook_id": "lib/managers/playermanager",
+      "script_path": "Hooks/hook.playermanager.lua"
+    }
+  ]
+}
