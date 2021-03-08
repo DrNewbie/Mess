@@ -1,0 +1,15 @@
+{
+  "name": "Enable Restart on Crime Spree",
+  "description": "https://modworkshop.net/mod/31266",
+  "author": "Dr_Newbie",
+  "contact": " ",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "core/lib/managers/menu/items/coremenuitem",
+      "script_path": "coremenuitem.lua"
+    }
+  ]
+}
