@@ -1,0 +1,15 @@
+{
+  "name": "Whenever a Medic is killed, all cops within the Medic's healing range are instantly healed.",
+  "description": " ",
+  "author": "Dr_Newbie",
+  "contact": " ",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/managers/enemymanager",
+      "script_path": "enemymanager.lua"
+    }
+  ]
+}
