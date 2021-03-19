@@ -1,0 +1,15 @@
+{
+  "name": "sniper does lower damage in close range",
+  "description": " ",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/31409",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/tweak_data/weapontweakdata",
+      "script_path": "weapontweakdata.lua"
+    }
+  ]
+}
