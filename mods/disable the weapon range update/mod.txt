@@ -1,0 +1,19 @@
+{
+  "name": "Disable the weapon range update",
+  "description": "https://modworkshop.net/mod/31404",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/31404",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/units/weapons/newraycastweaponbase",
+      "script_path": "newraycastweaponbase.lua"
+    },
+    {
+      "hook_id": "lib/units/weapons/shotgun/shotgunbase",
+      "script_path": "shotgunbase.lua"
+    }
+  ]
+}
