@@ -15,7 +15,11 @@ function GuardianBonusBuff:Default()
 		increase_maximum_health = 0,
 		increase_maximum_health__max_level_max = 20,
 		increase_maximum_armor = 0,
-		increase_maximum_armor__max_level_max = 20
+		increase_maximum_armor__max_level_max = 20,
+		increase_addon_critical = 0,
+		increase_addon_critical__max_level_max = 20,
+		increase_addon_dodge = 0,
+		increase_addon_dodge__max_level_max = 20
 	}
 end
 
@@ -230,6 +234,12 @@ Hooks:Add("MenuManagerInitialize", "M_"..Idstring("MenuManagerInitialize:Guardia
 	end
 	MenuCallbackHandler.callback_Guardian_increase_maximum_armor = function(self)
 		GuardianBonusBuff:AskUpgrade("increase_maximum_armor")
+	end
+	MenuCallbackHandler.callback_Guardian_increase_addon_critical = function(self)
+		GuardianBonusBuff:AskUpgrade("increase_addon_critical")
+	end
+	MenuCallbackHandler.callback_Guardian_increase_addon_dodge = function(self)
+		GuardianBonusBuff:AskUpgrade("increase_addon_dodge")
 	end
 	MenuHelper:LoadFromJsonFile(GuardianBonusBuff.ModPath.."menu/menu.json", GuardianBonusBuff, GuardianBonusBuff._data)
 end)

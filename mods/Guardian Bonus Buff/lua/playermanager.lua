@@ -9,9 +9,12 @@ function PlayerManager:upgrade_value(category, upgrade, ...)
 	if GuardianBonusBuff and GuardianBonusBuff.GetBonusPercent then
 		if category == "player" and upgrade == "health_multiplier" then
 			Ans = Ans + (GuardianBonusBuff:GetBonusPercent("increase_maximum_health")/100)
-		end
-		if category == "player" and upgrade == "armor_multiplier" then
+		elseif category == "player" and upgrade == "armor_multiplier" then
 			Ans = Ans + (GuardianBonusBuff:GetBonusPercent("increase_maximum_armor")/100)
+		elseif category == "player" and upgrade == "critical_hit_chance" then
+			Ans = Ans + (GuardianBonusBuff:GetBonusPercent("increase_addon_critical")/100)
+		elseif category == "player" and upgrade == "passive_dodge_chance" then
+			Ans = Ans + (GuardianBonusBuff:GetBonusPercent("increase_addon_dodge")/100)
 		end
 	end
 	return Ans

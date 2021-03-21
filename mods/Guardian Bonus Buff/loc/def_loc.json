@@ -8,5 +8,11 @@
   "Guardian_increase_maximum_health_name_w_var": "Maximum Health",
   "Guardian_increase_maximum_armor_name": "Maximum Armor",
   "Guardian_increase_maximum_armor_desc": " ",
-  "Guardian_increase_maximum_armor_name_w_var": "Maximum Armor"
+  "Guardian_increase_maximum_armor_name_w_var": "Maximum Armor",
+  "Guardian_increase_addon_critical_name": "Addon Critical",
+  "Guardian_increase_addon_critical_desc": " ",
+  "Guardian_increase_addon_critical_name_w_var": "Addon Critical",
+  "Guardian_increase_addon_dodge_name": "Addon Dodge",
+  "Guardian_increase_addon_dodge_desc": " ",
+  "Guardian_increase_addon_dodge_name_w_var": "Addon Dodge"
 }
