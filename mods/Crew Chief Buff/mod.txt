@@ -1,0 +1,37 @@
+{
+  "name": "Crew Chief Buff",
+  "description": " ",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/31449",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/managers/playermanager",
+      "script_path": "playermanager.lua"
+    },
+    {
+      "hook_id": "lib/tweak_data/upgradestweakdata",
+      "script_path": "upgradestweakdata.lua"
+    },
+    {
+      "hook_id": "lib/tweak_data/skilltreetweakdata",
+      "script_path": "skilltreetweakdata.lua"
+    },
+    {
+      "hook_id": "lib/managers/menumanagerpd2",
+      "script_path": "menumanager.lua"
+    }
+  ],
+  "updates": [
+    {
+      "identifier": "CrewChiefBuffGitHubUpdate",
+      "host": {
+        "meta": "https://drnewbie.github.io/Mess/Update/CrewChiefBuff.meta.json",
+        "download": "https://drnewbie.github.io/Mess/Update/CrewChiefBuff.zip",
+        "patchnotes": "https://github.com/DrNewbie/Mess/commits/master"
+      }
+    }
+  ]
+}

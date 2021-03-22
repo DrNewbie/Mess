@@ -1,0 +1,3 @@
+{
+  "menu_deck1_9_desc": "For every hostage and/or converted enemy, you and your crew's maximum health, armor and stamina will be increased by ##6%## and ##12%##, respectively. Can stack up to ##4## times, for a total of ##24%## maximum health, armor and ##48%## stamina.\n\nWhile having at least ##1## hostage and/or converted enemy, you and your crew will receive an ##8%## damage reduction.\n\nNote: Perks with the same effect do not stack with other Crew Chief users.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a Payday is increased by ##10%##."
+}
