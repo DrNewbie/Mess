@@ -14,4 +14,16 @@ Hooks:PostHook(UpgradesTweakData, "_player_definitions", func2, function(self)
 			category = "armor"
 		}
 	}
+	self.values.player.ccb_intimidate_range_mul = {
+		true
+	}
+	self.definitions.ccb_player_intimidate_range_mul = {
+		name_id = "menu_player_intimidate_range_mul",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "ccb_intimidate_range_mul",
+			category = "player"
+		}
+	}
 end)
