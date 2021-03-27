@@ -14,5 +14,8 @@
   "Guardian_increase_addon_critical_name_w_var": "Addon Critical",
   "Guardian_increase_addon_dodge_name": "Addon Dodge",
   "Guardian_increase_addon_dodge_desc": " ",
-  "Guardian_increase_addon_dodge_name_w_var": "Addon Dodge"
+  "Guardian_increase_addon_dodge_name_w_var": "Addon Dodge",
+  "Guardian_increase_addon_weapon_switch_speed_name": "Weapon Switch Speed",
+  "Guardian_increase_addon_weapon_switch_speed_desc": " ",
+  "Guardian_increase_addon_weapon_switch_speed_name_w_var": "Weapon Switch Speed"
 }

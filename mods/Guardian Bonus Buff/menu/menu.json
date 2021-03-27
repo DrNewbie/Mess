@@ -31,6 +31,13 @@
       "title": "Guardian_increase_addon_dodge_name_w_var",
       "description": "Guardian_increase_addon_dodge_desc",
       "callback": "callback_Guardian_increase_addon_dodge"
+    },
+    {
+      "type": "button",
+      "id": "id4Guardian_increase_addon_weapon_switch_speed",
+      "title": "Guardian_increase_addon_weapon_switch_speed_name_w_var",
+      "description": "Guardian_increase_addon_weapon_switch_speed_desc",
+      "callback": "callback_Guardian_increase_addon_weapon_switch_speed"
     }
   ]
 }

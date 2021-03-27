@@ -15,6 +15,8 @@ function PlayerManager:upgrade_value(category, upgrade, ...)
 			Ans = Ans + (GuardianBonusBuff:GetBonusPercent("increase_addon_critical")/100)
 		elseif category == "player" and upgrade == "passive_dodge_chance" then
 			Ans = Ans + (GuardianBonusBuff:GetBonusPercent("increase_addon_dodge")/100)
+		elseif category == "weapon" and upgrade == "passive_swap_speed_multiplier" then
+			Ans = Ans + (GuardianBonusBuff:GetBonusPercent("increase_addon_weapon_switch_speed")/100)
 		end
 	end
 	return Ans

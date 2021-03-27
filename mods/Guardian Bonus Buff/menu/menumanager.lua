@@ -19,7 +19,9 @@ function GuardianBonusBuff:Default()
 		increase_addon_critical = 0,
 		increase_addon_critical__max_level_max = 20,
 		increase_addon_dodge = 0,
-		increase_addon_dodge__max_level_max = 20
+		increase_addon_dodge__max_level_max = 20,
+		increase_addon_weapon_switch_speed = 0,
+		increase_addon_weapon_switch_speed__max_level_max = 20
 	}
 end
 
@@ -98,6 +100,9 @@ function GuardianBonusBuff:GetBonusPercent(__buff_name, __lv)
 	if __lv <= 0 then
 		return 0
 	end
+	if __buff_name == "increase_addon_weapon_switch_speed" then
+		return math.round( __lv*0.75*10 ) / 5
+	end
 	return math.round( __lv*0.75*10 ) / 10
 end
 
@@ -167,15 +172,6 @@ function GuardianBonusBuff:AskUpgrade(__buff_name)
 		):Show()
 		return
 	end
-	if not self:IsCoinEnough(__buff_name) then
-		QuickMenu:new(
-			managers.localization:to_upper_text("GuardianBonusBuff_menu_title"),
-			"You don't have enough coins. (Require: ".. self:GetNextLevelReqCoinAmount(__buff_name) .. ")",
-			{{text = "Ok", is_cancel_button = true}},
-			true
-		):Show()
-		return
-	end
 	local __check_level = self:ReachMaxLevel(__buff_name)
 	if __check_level == 0 then
 		QuickMenu:new(
@@ -204,6 +200,15 @@ function GuardianBonusBuff:AskUpgrade(__buff_name)
 		):Show()
 		return
 	end
+	if not self:IsCoinEnough(__buff_name) then
+		QuickMenu:new(
+			managers.localization:to_upper_text("GuardianBonusBuff_menu_title"),
+			"You don't have enough coins. (Require: ".. self:GetNextLevelReqCoinAmount(__buff_name) .. ")",
+			{{text = "Ok", is_cancel_button = true}},
+			true
+		):Show()
+		return
+	end	
 	local __level = self:IsGuardianOK(__buff_name)
 	local __txt = managers.localization:to_upper_text("GuardianBonusBuff_ready_to_upgrade")
 	__txt = __txt .. "\n" .. "[ Level "..__level.." --> "..(__level+1).." ]"
@@ -240,6 +245,9 @@ Hooks:Add("MenuManagerInitialize", "M_"..Idstring("MenuManagerInitialize:Guardia
 	end
 	MenuCallbackHandler.callback_Guardian_increase_addon_dodge = function(self)
 		GuardianBonusBuff:AskUpgrade("increase_addon_dodge")
+	end
+	MenuCallbackHandler.callback_Guardian_increase_addon_weapon_switch_speed = function(self)
+		GuardianBonusBuff:AskUpgrade("increase_addon_weapon_switch_speed")
 	end
 	MenuHelper:LoadFromJsonFile(GuardianBonusBuff.ModPath.."menu/menu.json", GuardianBonusBuff, GuardianBonusBuff._data)
 end)
