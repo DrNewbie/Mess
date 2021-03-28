@@ -68,27 +68,59 @@ function GuardianBonusBuff:GetReqCoinAmount(__buff_name, __lv)
 	if not self:IsGuardianOK(__buff_name) then
 		return 0
 	end
+	--[[
 	__lv =__lv or self.Settings[__buff_name]
 	return math.round(math.exp(__lv))
+	]]
+	return 1
 end
 
 function GuardianBonusBuff:GetNextLevelReqCoinAmount(__buff_name, __lv)
 	if not self:IsGuardianOK(__buff_name) then
 		return 0
 	end
+	--[[
 	__lv =__lv or self.Settings[__buff_name]
 	__lv = __lv + 1
 	return math.round(math.exp(__lv))
+	]]
+	return 1
+end
+
+function GuardianBonusBuff:GetCoinUsed()
+	local __def_var = self:Default()
+	local __used_point = 0
+	for __i, __v in pairs(__def_var) do
+		if __i and not __i:find('max_level_max') then
+			__used_point = __used_point + self.Settings[__i]
+		end
+	end
+	return __used_point
+end
+
+function GuardianBonusBuff:GetCoinHave()
+	if managers.experience then
+		return math.max(managers.experience:current_rank() - self:GetCoinUsed(), 0)
+	else
+		return 0
+	end
 end
 
 function GuardianBonusBuff:IsCoinEnough(__buff_name, __lv)
-	if not self:IsGuardianOK(__buff_name) then
+	if not self:IsGuardianOK(__buff_name) or not managers.experience then
 		return
 	end
+	--[[
 	if managers.custom_safehouse:coins() > self:GetNextLevelReqCoinAmount(__buff_name, __lv) then
 		return true
 	else
 		return false
+	end
+	]]
+	if self:GetCoinUsed() > managers.experience:current_rank() then
+		return false
+	else
+		return true
 	end
 end
 
@@ -143,7 +175,7 @@ end
 function GuardianBonusBuff:DoUpgrade(data)
 	local __buff_name = data.__buff_name
 	local __req_coin = data.__req_coin
-	managers.custom_safehouse:deduct_coins(__req_coin)
+	--managers.custom_safehouse:deduct_coins(__req_coin)
 	local __old_desc =  self:GetLevelUpgradeDesc(__buff_name, self.Settings[__buff_name])
 	local __new_desc = self:GetLevelUpgradeDesc(__buff_name, self.Settings[__buff_name] + 1)
 	self.Settings[__buff_name] = self.Settings[__buff_name] + 1
@@ -212,10 +244,12 @@ function GuardianBonusBuff:AskUpgrade(__buff_name)
 	local __level = self:IsGuardianOK(__buff_name)
 	local __txt = managers.localization:to_upper_text("GuardianBonusBuff_ready_to_upgrade")
 	__txt = __txt .. "\n" .. "[ Level "..__level.." --> "..(__level+1).." ]"
-	__txt = __txt .. "\n" .. "[ Req. Coin: "..self:GetNextLevelReqCoinAmount(__buff_name, __lv).." ]"
 	local __old_desc =  self:GetLevelUpgradeDesc(__buff_name, self.Settings[__buff_name])
 	local __new_desc = self:GetLevelUpgradeDesc(__buff_name, self.Settings[__buff_name] + 1)
 	__txt = __txt .. "\n" .. __old_desc .. " -> \n" .. __new_desc
+	__txt = __txt .. "\n"
+	__txt = __txt .. "\n" .. "[ Req. Coin: "..self:GetNextLevelReqCoinAmount(__buff_name, __lv).." ]"
+	__txt = __txt .. "\n" .. "[ Coin you have: "..self:GetCoinHave().." ]"
 	managers.system_menu:show({
 		title = managers.localization:to_upper_text("GuardianBonusBuff_menu_title"),
 		text = __txt,
@@ -223,7 +257,7 @@ function GuardianBonusBuff:AskUpgrade(__buff_name)
 			{text = "No", is_cancel_button = true},
 			{text = "Yes", callback_func = callback(self, self, "DoUpgrade", {__buff_name = __buff_name, __req_coin = self:GetNextLevelReqCoinAmount(__buff_name, __lv)})}
 		},
-		id = Idstring(tostring(math.random(0,0xFFFFFFFF))):key()
+		id = "F_"..Idstring(tostring(math.random(0,0xFFFFFFFF))):key()
 	})
 end
 

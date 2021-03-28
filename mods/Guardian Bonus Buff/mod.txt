@@ -4,7 +4,7 @@
   "author": "Dr_Newbie",
   "contact": "https://modworkshop.net/mod/27416",
   "priority": 100,
-  "version": "3",
+  "version": "5",
   "blt_version": 2,
   "hooks": [
     {
