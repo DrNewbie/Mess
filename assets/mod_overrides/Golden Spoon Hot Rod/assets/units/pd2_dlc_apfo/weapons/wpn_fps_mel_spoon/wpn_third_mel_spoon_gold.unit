@@ -1,0 +1,10 @@
+<unit type="wpn" slot="1" >
+    <object file="units/pd2_dlc_apfo/weapons/wpn_fps_mel_spoon/wpn_third_mel_spoon_gold" />
+	<dependencies>
+		<depends_on bnk="soundbanks/melee_spoon"/>
+		<depends_on effect="effects/particles/fire/small_light_fire" />
+	</dependencies>
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

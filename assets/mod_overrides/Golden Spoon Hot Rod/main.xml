@@ -1,0 +1,13 @@
+<table name="Golden Spoon | Hot Rod">
+    <AddFiles directory="assets">
+		<unit path="units/pd2_dlc_apfo/weapons/wpn_fps_mel_spoon/wpn_fps_mel_spoon_gold" reload="true"/>
+		<object path="units/pd2_dlc_apfo/weapons/wpn_fps_mel_spoon/wpn_fps_mel_spoon_gold" reload="true"/>
+		<model path="units/pd2_dlc_apfo/weapons/wpn_fps_mel_spoon/wpn_fps_mel_spoon_gold" reload="true"/>
+		<unit path="units/pd2_dlc_apfo/weapons/wpn_fps_mel_spoon/wpn_third_mel_spoon_gold" reload="true"/>
+		<object path="units/pd2_dlc_apfo/weapons/wpn_fps_mel_spoon/wpn_third_mel_spoon_gold" reload="true"/>
+		<model path="units/pd2_dlc_apfo/weapons/wpn_fps_mel_spoon/wpn_third_mel_spoon_gold" reload="true"/>
+	</AddFiles>
+	<Hooks directory="Hooks"> 
+		<hook file="meleeweaponstweakdata.lua" source_file="lib/tweak_data/blackmarket/meleeweaponstweakdata"/> 
+	</Hooks> 
+</table>

@@ -1,0 +1,11 @@
+<dynamic_object>
+    <diesel orientation_object="rp_wpn_fps_mel_spoon" materials="units/pd2_dlc_apfo/weapons/wpn_fps_mel_spoon/wpn_fps_mel_spoon_gold" />
+    <graphics>
+        <object enabled="true" name="g_spoon" />
+    </graphics>
+	<effects>
+        <effect_spawner name="effect_001" enabled="true" object="e_effect_001" effect="effects/particles/fire/small_light_fire"/>
+	    <effect_spawner name="effect_002" enabled="true" object="e_effect_002" effect="effects/particles/fire/small_light_fire"/>
+	    <effect_spawner name="effect_003" enabled="true" object="e_effect_003" effect="effects/particles/fire/small_light_fire"/>
+	</effects>
+</dynamic_object>
