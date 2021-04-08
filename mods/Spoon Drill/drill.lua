@@ -7,7 +7,7 @@ local func6 = "F_"..Idstring("func5::"..mod_ids):key()
 local spoon_gold_ids = Idstring("units/pd2_dlc_apfo/weapons/wpn_fps_mel_spoon/wpn_third_mel_spoon_gold")
 
 Drill[func5] = function(self)
-	if self._unit then
+	if self._unit and self._unit:name():key() == "584bea03f3b5d712" then
 		if self[func3] then
 			self[func3]:unlink()
 			World:delete_unit(self[func3])
@@ -28,9 +28,6 @@ Hooks:PostHook(Drill, "_start_drill_effect", func1, function(self)
 end)
 
 Hooks:PreHook(Drill, "destroy", func6, function(self)
-	if self._unit then
-		self._unit:set_visible(true)
-	end
 	if self[func3] then
 		self[func3]:unlink()
 		World:delete_unit(self[func3])
