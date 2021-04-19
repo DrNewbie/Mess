@@ -3,12 +3,14 @@ local sp_dt = "DT_"..Idstring("DT::Inspire Skill Mod"):key()
 local sp_max = "MAX_"..Idstring("MAX::Inspire Skill Mod"):key()
 local sp_now = "NOW_"..Idstring("NOW::Inspire Skill Mod"):key()
 local sp_cpr = "CPR_"..Idstring("CPR::Inspire Skill Mod"):key()
+local sp_tmp = "TMP_"..Idstring("TMP::Inspire Skill Mod"):key()
 
 Hooks:PostHook(PlayerStandard, "init", "InspireSkillModInitHelp", function(self)
 	if managers.player:has_category_upgrade("player", "long_dis_revive_mod") then
 		self[sp_max] = 5
 		self[sp_now] = self[sp_max]
 		self[sp_dt] = 0
+		self[sp_tmp] = 0
 	end
 	if managers.player:has_category_upgrade("player", "cpr_this_crew") then
 		self[sp_cpr] = managers.player:upgrade_value("player", "cpr_this_crew")
@@ -24,6 +26,15 @@ Hooks:PreHook(PlayerStandard, "_start_action_intimidate", "InspireSkillModPreHel
 			--No more Inspire(long_dis_revive)
 			managers.player:disable_cooldown_upgrade("cooldown", "long_dis_revive")
 		else
+			Aim_Pos = Utils:GetPlayerAimPos(managers.player:local_player(), 10000)
+			if tostring(Aim_Pos):find("Vector3") then
+				local from = self._unit:movement():m_head_pos()
+				col_ray = self._unit:raycast("ray", from, Aim_Pos, "slot_mask", self._slotmask_long_distance_interaction, "sphere_cast_radius", sphere_cast_radius)
+				if not col_ray or not alive(col_ray.unit) or not managers.groupai:state():all_char_criminals()[col_ray.unit:key()] then
+					self[sp_tmp] = t
+					managers.player:disable_cooldown_upgrade("cooldown", "long_dis_revive")
+				end
+			end
 			if managers.player:has_enabled_cooldown_upgrade("cooldown", "long_dis_revive") then
 				self[sp_dt] = t
 			end
@@ -37,6 +48,9 @@ Hooks:PostHook(PlayerStandard, "_start_action_intimidate", "InspireSkillModPostH
 			if self[sp_dt] > 0 and math.abs(t - self[sp_dt]) < 1 then
 				self[sp_dt] = 0
 				self[sp_now] = self[sp_now] - 1
+			end
+			if self[sp_tmp] > 0 and math.abs(t - self[sp_tmp]) < 1 then
+				self[sp_tmp] = 0
 			end
 		end
 	end
