@@ -26,7 +26,7 @@ Hooks:PreHook(PlayerStandard, "_start_action_intimidate", "InspireSkillModPreHel
 			--No more Inspire(long_dis_revive)
 			managers.player:disable_cooldown_upgrade("cooldown", "long_dis_revive")
 		else
-			Aim_Pos = Utils:GetPlayerAimPos(managers.player:local_player(), 10000)
+			local Aim_Pos = Utils:GetPlayerAimPos(managers.player:local_player(), 10000)
 			if tostring(Aim_Pos):find("Vector3") then
 				local from = self._unit:movement():m_head_pos()
 				col_ray = self._unit:raycast("ray", from, Aim_Pos, "slot_mask", self._slotmask_long_distance_interaction, "sphere_cast_radius", sphere_cast_radius)

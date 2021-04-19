@@ -4,7 +4,7 @@
   "author": "Dr_Newbie",
   "contact": " ",
   "blt_version": 2,
-  "version": "2",
+  "version": "3",
   "priority": 100,
   "hooks": [
     {
