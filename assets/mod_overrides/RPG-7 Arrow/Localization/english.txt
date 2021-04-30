@@ -1,0 +1,5 @@
+{
+	"bm_wp_wpn_fps_rpg7_arrow" : "RPG-7 Arrow",
+	"bm_wp_wpn_fps_rpg7_arrow_desc" : " ",
+	"menu_l_global_wpn_fps_rpg7_arrow" : " "
+}

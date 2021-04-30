@@ -1,0 +1,18 @@
+<table name="RPG-7 Arrow (Weapon Mod)">
+	<Localization directory="Localization" default="english.txt"/>	
+	<AddFiles directory="assets">
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_rpg7_arrow"/>
+	</AddFiles>
+	<WeaponMod based_on="wpn_fps_bow_long_m_poison" id="wpn_fps_rpg7_arrow" dlc="overkill_pack" unit="units/pd2_dlc_overkill_pack/weapons/wpn_fps_rpg7_pts/wpn_fps_rpg7_m_rocket" third_unit="units/pd2_dlc_overkill_pack/weapons/wpn_third_rpg7_pts/wpn_third_rpg7_m_rocket" drop="false" texture_bundle_folder="mods" is_a_unlockable="true">
+		<stats
+			damage="0"
+			total_ammo_mod="-12"
+		/>
+		<custom_stats
+			launcher_grenade="rocket_frag"
+		/>
+		<weapons>
+			<value_node value="wpn_fps_bow_long"/>
+		</weapons>
+    </WeaponMod>
+</table>
