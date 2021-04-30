@@ -1,0 +1,23 @@
+{
+  "name": "Unmasked Buluc Mod",
+  "description": "https://modworkshop.net/mod/32093",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/32093",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/units/civilians/civilianbrain",
+      "script_path": "Core3.lua"
+    },
+    {
+      "hook_id": "lib/units/enemies/cop/copbrain",
+      "script_path": "Core3.lua"
+    },
+    {
+      "hook_id": "lib/units/vehicles/animatedvehiclebase",
+      "script_path": "Core3.lua"
+    }
+  ]
+}
