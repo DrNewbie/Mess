@@ -1,0 +1,15 @@
+{
+  "name": "Unmasked Biker Boss",
+  "description": "https://modworkshop.net/mod/32097",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/32097",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/units/enemies/cop/copbrain",
+      "script_path": "Core3.lua"
+    }
+  ]
+}
