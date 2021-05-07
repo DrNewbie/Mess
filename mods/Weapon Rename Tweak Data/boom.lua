@@ -37,6 +37,11 @@ function GGWEPNENAME:GetNewNameFromWeaponMods(data)
 				for _, func in pairs(GGWEPNENAME.Configs) do
 					try_name = func(data, tostring(W_data.factory_id), W_data.blueprint, W_data)
 				end
+				for i, part_id in pairs(W_data.blueprint) do
+					if tweak_data.weapon.factory.parts[part_id] and tweak_data.weapon.factory.parts[part_id].weapon_rename_overwrite then
+						try_name = tweak_data.weapon.factory.parts[part_id].weapon_rename_overwrite
+					end
+				end
 			end
 		end
 	end
