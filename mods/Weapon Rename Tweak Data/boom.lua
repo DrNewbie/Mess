@@ -39,7 +39,7 @@ function GGWEPNENAME:GetNewNameFromWeaponMods(data)
 				end
 				for i, part_id in pairs(W_data.blueprint) do
 					if tweak_data.weapon.factory.parts[part_id] and tweak_data.weapon.factory.parts[part_id].weapon_rename_overwrite then
-						try_name = tweak_data.weapon.factory.parts[part_id].weapon_rename_overwrite
+						try_name = managers.localization:text(tweak_data.weapon.factory.parts[part_id].weapon_rename_overwrite)
 					end
 				end
 			end
