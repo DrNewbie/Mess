@@ -30,17 +30,15 @@ function GGWEPNENAME:GetNewNameFromWeaponMods(data)
 	data[bool1] = false
 	local try_name = data.name_localized
 	local G_BMC = Global.blackmarket_manager.crafted_items
-	if type(G_BMC) == "table" and type(data) == "table" then
-		if (data.category == "primaries" or data.secondary == "secondaries") and type(G_BMC[data.category]) == "table" and type(G_BMC[data.category][data.slot]) == "table" then
-			local W_data = G_BMC[data.category][data.slot]
-			if type(W_data.blueprint) == "table" then
-				for _, func in pairs(GGWEPNENAME.Configs) do
-					try_name = func(data, tostring(W_data.factory_id), W_data.blueprint, W_data)
-				end
-				for i, part_id in pairs(W_data.blueprint) do
-					if tweak_data.weapon.factory.parts[part_id] and tweak_data.weapon.factory.parts[part_id].weapon_rename_overwrite then
-						try_name = managers.localization:text(tweak_data.weapon.factory.parts[part_id].weapon_rename_overwrite)
-					end
+	if (data.category == "primaries" or data.secondary == "secondaries") and type(G_BMC[data.category]) == "table" and type(G_BMC[data.category][data.slot]) == "table" then
+		local W_data = G_BMC[data.category][data.slot]
+		if type(W_data.blueprint) == "table" then
+			for _, func in pairs(GGWEPNENAME.Configs) do
+				try_name = func(data, tostring(W_data.factory_id), W_data.blueprint, W_data)
+			end
+			for i, part_id in pairs(W_data.blueprint) do
+				if tweak_data.weapon.factory.parts[part_id] and tweak_data.weapon.factory.parts[part_id].weapon_rename_overwrite then
+					try_name = managers.localization:text(tweak_data.weapon.factory.parts[part_id].weapon_rename_overwrite)
 				end
 			end
 		end
