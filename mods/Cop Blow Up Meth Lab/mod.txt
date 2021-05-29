@@ -1,0 +1,15 @@
+{
+  "name": "Cop Blow Up Meth Lab",
+  "description": "https://modworkshop.net/mod/32515",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/32515",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/managers/enemymanager",
+      "script_path": "lua/enemymanager.lua"
+    }
+  ]  
+}
