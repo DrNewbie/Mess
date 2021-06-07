@@ -10,7 +10,7 @@ Hooks:PostHook(HUDManager, "activate_teammate_ability_radial", "F_"..Idstring("P
 				visible = false,
 				texture = __texture,
 				layer = 0,
-				color = Color(1, 0.6, 0),
+				color = Color(0.8, 0.8, 0.8),
 				blend_mode = "add",
 				w = hud.panel:w(),
 				h = hud.panel:h(),
