@@ -1,0 +1,13 @@
+{
+  "name": "Hacker PCM Effect",
+  "description": " ",
+  "author": "https://modworkshop.net/mod/20132",
+  "contact": "https://modworkshop.net/mod/32646",
+  "version": "1",
+  "hooks": [
+    {
+      "hook_id": "lib/managers/hudmanagerpd2",
+      "script_path": "hook.hudmanagerpd2.lua"
+    }
+  ]
+}

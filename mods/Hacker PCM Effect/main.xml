@@ -1,0 +1,5 @@
+<table name="AddThisTextureToHackerPCMEffect">
+	<AddFiles directory="assets">
+		<texture path="gui/this_hacker_pcm_effect"/>
+	</AddFiles>
+</table>
