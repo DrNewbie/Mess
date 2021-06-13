@@ -1,0 +1,13 @@
+<materials version="3">
+	<material name="mat_chl_prop_scorer" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/mods/chl_prop_workshop_scorer/chl_prop_damage_counter/chl_prop_damager_counter_df" mip="4" />
+		<bump_normal_texture file="units/mods/chl_prop_workshop_scorer/chl_prop_damage_counter/chl_prop_damager_counter_nm" mip="4" />
+	</material>
+	<material name="mat_workshop_cupobard" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/mods/chl_prop_workshop_scorer/chl_prop_garage_cabinets_b/chl_prop_garage_cabinets_b_df" mip="4" />
+		<bump_normal_texture file="units/mods/chl_prop_workshop_scorer/chl_prop_garage_cabinets_b/chl_prop_garage_cabinets_b_nm" mip="4" />
+	</material>
+	<material name="mat_workshop_cupobard_lod" render_template="generic:DIFFUSE_TEXTURE" version="2">
+		<diffuse_texture file="units/mods/chl_prop_workshop_scorer/chl_prop_garage_cabinets_b/chl_prop_garage_cabinets_b_df" mip="4" />		
+	</material>
+</materials>
