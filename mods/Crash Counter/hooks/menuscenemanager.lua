@@ -1,6 +1,6 @@
 local ThisModPath = ModPath
 local ThisModSave = io.open(ThisModPath.."__record.json", "r")
-local ThisModJson = {Times = 0, Hash = 'none'}
+local ThisModJson = {Times = 0, Hash = 'none', Since = tostring(os.date("%Y-%m-%d"))}
 if ThisModSave then
 	ThisModJson = json.decode(ThisModSave:read("*all"))
 	ThisModSave:close()
@@ -25,6 +25,57 @@ local banner_unit_ids = Idstring(banner_unit)
 
 local crashlog_path = Application:nice_path(os.getenv("LOCALAPPDATA")..'/PAYDAY 2/', true)..'crashlog.txt'
 
+local function ThisModSpawnCounter()
+	local __logger = World:spawn_unit(logger_unit_ids, Vector3(70, 200, 0), Rotation())
+	if __logger then
+		ThisUnitLinkToWep.__logger_unit = __logger
+		if __logger.digital_gui and __logger:digital_gui() then
+			__logger:digital_gui():number_set(math.min(ThisModJson.Times, 99999))
+		end
+	end
+	return
+end
+
+local function ThisModSpawnBanner()
+	local __banner = World:spawn_unit(banner_unit_ids, Vector3(24, 150, 45), Rotation(0, 90, 0))
+	if __banner then
+		ThisUnitLinkToWep.__banner_unit = __banner
+		if __banner.editable_gui and __banner:editable_gui() then
+			__banner:editable_gui():set_text("CRASH COUNTER")
+			__banner:editable_gui():set_font_size(0.87)
+			__banner:editable_gui():set_font_color(Vector3(1, 1, 1))
+			__banner:editable_gui():set_font("fonts/font_eroded")
+			__banner:editable_gui():set_align("left")
+			__banner:editable_gui():set_vertical("center")
+			__banner:editable_gui():set_blend_mode("normal")
+			__banner:editable_gui():set_render_template("diffuse_vc_decal")
+			__banner:editable_gui():set_wrap(false)
+			__banner:editable_gui():set_word_wrap(false)
+			__banner:editable_gui():set_alpha(1)
+			__banner:editable_gui():set_shape({0, 0, 1, 1})
+		end
+	end
+	local __desc_since = World:spawn_unit(banner_unit_ids, Vector3(65, 150, 5), Rotation(0, 90, 0))
+	if __desc_since then
+		ThisUnitLinkToWep.__desc_since_unit = __desc_since
+		if __desc_since.editable_gui and __desc_since:editable_gui() then
+			__desc_since:editable_gui():set_text("SINCE: "..tostring(ThisModJson.Since))
+			__desc_since:editable_gui():set_font_size(0.40)
+			__desc_since:editable_gui():set_font_color(Vector3(1, 1, 1))
+			__desc_since:editable_gui():set_font("fonts/font_eroded")
+			__desc_since:editable_gui():set_align("left")
+			__desc_since:editable_gui():set_vertical("center")
+			__desc_since:editable_gui():set_blend_mode("normal")
+			__desc_since:editable_gui():set_render_template("diffuse_vc_decal")
+			__desc_since:editable_gui():set_wrap(false)
+			__desc_since:editable_gui():set_word_wrap(false)
+			__desc_since:editable_gui():set_alpha(1)
+			__desc_since:editable_gui():set_shape({0, 0, 1, 1})
+		end
+	end
+	return
+end
+
 Hooks:Add("MenuManagerOnOpenMenu", "F_"..Idstring("Crash Counter::logger"):key(), function(self, menu)
 	if menu == "menu_main" then
 		DelayedCalls:Add("F_"..Idstring("DelayedCalls:Crash Counter::logger"):key(), 0.5, function()
@@ -34,10 +85,7 @@ Hooks:Add("MenuManagerOnOpenMenu", "F_"..Idstring("Crash Counter::logger"):key()
 					if ThisModJson.Hash ~= "none" then
 						ThisModJson.Times = ThisModJson.Times + 1
 					else
-						local __date_table = os.date("*t")
-						local __hour, __minute, __second = __date_table.hour, __date_table.min, __date_table.sec
-						local __year, __month, __day = __date_table.year, __date_table.month, __date_table.wday
-						ThisModJson.Since = string.format("%d-%d-%d %d:%d:%d", __year, __month, __day, __hour, __minute, __second)
+						ThisModJson.Since = tostring( os.date("%Y-%m-%d") )
 					end
 					ThisModJson.Hash = __crash_log_text_ids
 					ThisModSave = io.open(ThisModPath.."__record.json", "w+")
@@ -55,34 +103,15 @@ Hooks:Add("MenuManagerOnOpenMenu", "F_"..Idstring("Crash Counter::logger"):key()
 				World:delete_unit(ThisUnitLinkToWep.__banner_unit)
 				ThisUnitLinkToWep.__banner_unit = nil
 			end
-			if DB:has("unit", logger_unit) then
-				local __logger = World:spawn_unit(logger_unit_ids, Vector3(70, 200, 0), Rotation())
-				if __logger then
-					ThisUnitLinkToWep.__logger_unit = __logger
-					if __logger.digital_gui and __logger:digital_gui() then
-						__logger:digital_gui():number_set(math.min(ThisModJson.Times, 99999))
-					end
-				end
+			if ThisUnitLinkToWep.__desc_since_unit and alive(ThisUnitLinkToWep.__desc_since_unit) then
+				World:delete_unit(ThisUnitLinkToWep.__desc_since_unit)
+				ThisUnitLinkToWep.__desc_since_unit = nil
 			end
-			if DB:has("unit", banner_unit) then
-				local __banner = World:spawn_unit(banner_unit_ids, Vector3(24, 150, 45), Rotation(0, 90, 0))
-				if __banner then
-					ThisUnitLinkToWep.__banner_unit = __banner
-					if __banner.editable_gui and __banner:editable_gui() then
-						__banner:editable_gui():set_text("CRASH COUNTER")
-						__banner:editable_gui():set_font_size(0.87)
-						__banner:editable_gui():set_font_color(Vector3(1, 1, 1))
-						__banner:editable_gui():set_font("fonts/font_eroded")
-						__banner:editable_gui():set_align("left")
-						__banner:editable_gui():set_vertical("center")
-						__banner:editable_gui():set_blend_mode("normal")
-						__banner:editable_gui():set_render_template("diffuse_vc_decal")
-						__banner:editable_gui():set_wrap(false)
-						__banner:editable_gui():set_word_wrap(false)
-						__banner:editable_gui():set_alpha(1)
-						__banner:editable_gui():set_shape({0, 0, 1, 1})
-					end
-				end
+			if DB:has("unit", logger_unit) and managers.dyn_resource then
+				managers.dyn_resource:load(Idstring("unit"), logger_unit_ids, managers.dyn_resource.DYN_RESOURCES_PACKAGE, ThisModSpawnCounter)
+			end
+			if DB:has("unit", banner_unit) and managers.dyn_resource then
+				managers.dyn_resource:load(Idstring("unit"), banner_unit_ids, managers.dyn_resource.DYN_RESOURCES_PACKAGE, ThisModSpawnBanner)
 			end
 		end)
 	end
