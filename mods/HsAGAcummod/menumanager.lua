@@ -68,7 +68,7 @@ if not _G.HsAGA then
 		end
 		local _save_file = nil
 		if not is_HsAGA and Global.game_settings and Global.game_settings.level_id then
-			_save_file = Global.game_settings.level_id..".json"	
+			_save_file = managers.job:current_job_id()..".json"	
 		else
 			_save_file = "def.ault.json"
 		end
