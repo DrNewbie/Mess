@@ -26,6 +26,9 @@ local banner_unit_ids = Idstring(banner_unit)
 local crashlog_path = Application:nice_path(os.getenv("LOCALAPPDATA")..'/PAYDAY 2/', true)..'crashlog.txt'
 
 local function ThisModSpawnCounter()
+	if not managers.dyn_resource:is_resource_ready(Idstring("unit"), logger_unit_ids, managers.dyn_resource.DYN_RESOURCES_PACKAGE) then
+		return
+	end
 	local __logger = World:spawn_unit(logger_unit_ids, Vector3(70, 200, 0), Rotation())
 	if __logger then
 		ThisUnitLinkToWep.__logger_unit = __logger
@@ -37,6 +40,9 @@ local function ThisModSpawnCounter()
 end
 
 local function ThisModSpawnBanner()
+	if not managers.dyn_resource:is_resource_ready(Idstring("unit"), banner_unit_ids, managers.dyn_resource.DYN_RESOURCES_PACKAGE) then
+		return
+	end
 	local __banner = World:spawn_unit(banner_unit_ids, Vector3(24, 150, 45), Rotation(0, 90, 0))
 	if __banner then
 		ThisUnitLinkToWep.__banner_unit = __banner
@@ -78,7 +84,7 @@ end
 
 Hooks:Add("MenuManagerOnOpenMenu", "F_"..Idstring("Crash Counter::logger"):key(), function(self, menu)
 	if menu == "menu_main" then
-		DelayedCalls:Add("F_"..Idstring("DelayedCalls:Crash Counter::logger"):key(), 0.5, function()
+		DelayedCalls:Add("F_"..Idstring("DelayedCalls:Crash Counter::logger"):key(), 3, function()
 			if io.file_is_readable(crashlog_path) then
 				local __crash_log_text_ids = file.FileHash(crashlog_path)
 				if __crash_log_text_ids ~= ThisModJson.Hash then

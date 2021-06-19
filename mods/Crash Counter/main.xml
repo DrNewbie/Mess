@@ -2,7 +2,7 @@
 	<Hooks directory="hooks">
 		<hook file="menuscenemanager.lua" source_file="lib/managers/menu/menuscenemanager"/>
 	</Hooks>
-	<AssetUpdates id="Crash Counter" version="2">
+	<AssetUpdates id="Crash Counter" version="3">
         <custom_provider 
 			version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Crash%20Counter.txt" 
 			download_url="https://drnewbie.github.io/Mess/UpdateProvider/Crash%20Counter.zip"/>
