@@ -1,0 +1,19 @@
+{
+  "name": "Always Almir's sandwich [White Xmas]",
+  "description": "https://modworkshop.net/mod/32809",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/32809",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "core/lib/managers/mission/coreelementlogicchance",
+      "script_path": "lua/coreelementlogicchance.lua"
+    },
+    {
+      "hook_id": "core/lib/managers/mission/coreelementrandom",
+      "script_path": "lua/coreelementrandom.lua"
+    }
+  ]  
+}
