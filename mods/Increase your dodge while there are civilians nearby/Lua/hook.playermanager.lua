@@ -13,7 +13,7 @@ function PlayerManager:is_less_targeted()
 	return
 end
 
-LessHitMe_PlyM_dodge_chance = PlayerManager.skill_dodge_chance
+LessHitMe_PlyM_dodge_chance = LessHitMe_PlyM_dodge_chance or PlayerManager.skill_dodge_chance
 
 function PlayerManager:skill_dodge_chance(...)
 	local chance = LessHitMe_PlyM_dodge_chance(self, ...)

@@ -1,15 +1,15 @@
 {
-	"name" : "Increase your dodge while there are civilians nearby",
-	"description" : " ",
-	"author" : "Dr_Newbie",
-	"contact" : "http://modwork.shop/",
-	"blt_version" : 2.0,
-	"version" : "1",
-	"priority" : 100,
-	"hooks" : [
-		{
-			"hook_id" : "lib/managers/playermanager",
-			"script_path" : "Lua/hook.playermanager.lua"
-		}
-	]		
+  "name": "Increase your dodge while there are civilians nearby",
+  "description": "https://modworkshop.net/mod/23604",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/23604",
+  "blt_version": 2,
+  "version": "2",
+  "priority": 100,
+  "hooks": [
+    {
+      "hook_id": "lib/managers/playermanager",
+      "script_path": "Lua/hook.playermanager.lua"
+    }
+  ]
 }
