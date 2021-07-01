@@ -1,0 +1,22 @@
+<table name="XXX DAYS SINCE LAST CRASH">
+	<Hooks directory="hooks">
+		<hook file="menuscenemanager.lua" source_file="lib/managers/menu/menuscenemanager"/>
+	</Hooks>
+	<AddFiles directory="assets">
+		<material_config path="units/mods/chl_prop_workshop_scorer/chl_prop_workshop_scorer"/>
+		<model path="units/mods/chl_prop_workshop_scorer/chl_prop_workshop_scorer"/>
+		<object path="units/mods/chl_prop_workshop_scorer/chl_prop_workshop_scorer"/>
+		<sequence_manager path="units/mods/chl_prop_workshop_scorer/chl_prop_workshop_scorer"/>
+		<unit path="units/mods/chl_prop_workshop_scorer/chl_prop_workshop_scorer"/>
+		<cooked_physics path="units/mods/chl_prop_workshop_scorer/chl_prop_workshop_scorer"/>
+		<texture path="units/mods/chl_prop_workshop_scorer/chl_prop_damage_counter/chl_prop_damager_counter_df"/>
+		<texture path="units/mods/chl_prop_workshop_scorer/chl_prop_damage_counter/chl_prop_damager_counter_nm"/>
+		<texture path="units/mods/chl_prop_workshop_scorer/chl_prop_garage_cabinets_b/chl_prop_garage_cabinets_b_df"/>
+		<texture path="units/mods/chl_prop_workshop_scorer/chl_prop_garage_cabinets_b/chl_prop_garage_cabinets_b_nm"/>
+		<material_config path="units/mods/chl_prop_workshop_scorer/editable_text_short/editable_text_short"/>
+		<model path="units/mods/chl_prop_workshop_scorer/editable_text_short/editable_text_short"/>
+		<object path="units/mods/chl_prop_workshop_scorer/editable_text_short/editable_text_short"/>
+		<unit path="units/mods/chl_prop_workshop_scorer/editable_text_short/editable_text_short"/>
+		<cooked_physics path="units/mods/chl_prop_workshop_scorer/editable_text_short/editable_text_short"/>
+	</AddFiles>
+</table>

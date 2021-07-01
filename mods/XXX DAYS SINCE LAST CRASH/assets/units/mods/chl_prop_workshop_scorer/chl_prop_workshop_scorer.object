@@ -1,0 +1,24 @@
+<dynamic_object>
+	<diesel materials="units/mods/chl_prop_workshop_scorer/chl_prop_workshop_scorer" orientation_object="rp_chl_prop_workshop_scorer" />
+	<sequence_manager file="units/mods/chl_prop_workshop_scorer/chl_prop_workshop_scorer" />
+	<bodies>
+		<body name="body0" enabled="true" template="static">
+			<object name="rp_chl_prop_workshop_scorer" />
+			<object name="c_box_01" collision_type="box" padding="-2.5" />
+			<object name="c_box_02" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<decal_surfaces default_material="plastic">
+		<decal_mesh name="dm_plastic" enabled="true" material="plastic" />
+		<decal_mesh name="dm_metal" enabled="true" material="metal" />
+	</decal_surfaces>
+	<graphics>
+		<object name="g_display" enabled="true" />
+		<object name="g_g" enabled="true" />
+		<lod_object name="lod_g">
+			<object name="g_board_lod0" enabled="true" max_distance="1500" />
+			<object name="g_board_lod1" enabled="true" max_distance="3000" />
+			<object name="g_board_lod2" enabled="true" />
+		</lod_object>
+	</graphics>
+</dynamic_object>
