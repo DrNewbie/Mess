@@ -1,0 +1,5 @@
+<table name="packages/memes_rollin001">
+	<Package id="packages/memes_rollin001" directory="assets">
+		<texture path="textures/memes/rollin001"/>
+	</Package>
+</table>

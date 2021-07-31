@@ -1,0 +1,13 @@
+{
+  "name": "Racon Rollin",
+  "description": "https://modworkshop.net/mod/33423",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/33423",
+  "version": "1",
+  "hooks": [
+    {
+      "hook_id": "lib/managers/hudmanager",
+      "script_path": "lib/hudmanager.lua"
+    }
+  ]
+}
