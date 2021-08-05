@@ -1,0 +1,15 @@
+{
+  "name": "Buy weapons in the preplanning screen",
+  "description": "https://modworkshop.net/mod/33499",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/33499",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/managers/menu/missionbriefinggui",
+      "script_path": "boom.lua"
+    }
+  ]
+}
