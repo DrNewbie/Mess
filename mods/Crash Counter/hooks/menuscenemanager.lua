@@ -83,43 +83,58 @@ local function ThisModSpawnBanner()
 end
 
 Hooks:Add("MenuManagerOnOpenMenu", "F_"..Idstring("Crash Counter::logger"):key(), function(self, menu)
-	if menu == "menu_main" then
-		DelayedCalls:Add("F_"..Idstring("DelayedCalls:Crash Counter::logger"):key(), 3, function()
-			if io.file_is_readable(crashlog_path) then
-				local __crash_log_text_ids = file.FileHash(crashlog_path)
-				if __crash_log_text_ids ~= ThisModJson.Hash then
-					if ThisModJson.Hash ~= "none" then
-						ThisModJson.Times = ThisModJson.Times + 1
-					else
-						ThisModJson.Since = tostring( os.date("%Y-%m-%d") )
-					end
-					ThisModJson.Hash = __crash_log_text_ids
-					ThisModSave = io.open(ThisModPath.."__record.json", "w+")
-					if ThisModSave then
-						ThisModSave:write(json.encode(ThisModJson))
-						ThisModSave:close()
-					end
+	if menu == "menu_main" and managers.dyn_resource and DB:has("unit", logger_unit) and DB:has("unit", banner_unit) then
+		if io.file_is_readable(crashlog_path) then
+			local __crash_log_text_ids = file.FileHash(crashlog_path)
+			if __crash_log_text_ids ~= ThisModJson.Hash then
+				if ThisModJson.Hash ~= "none" then
+					ThisModJson.Times = ThisModJson.Times + 1
+				else
+					ThisModJson.Since = tostring( os.date("%Y-%m-%d") )
+				end
+				ThisModJson.Hash = __crash_log_text_ids
+				ThisModSave = io.open(ThisModPath.."__record.json", "w+")
+				if ThisModSave then
+					ThisModSave:write(json.encode(ThisModJson))
+					ThisModSave:close()
 				end
 			end
-			if ThisUnitLinkToWep.__logger_unit and alive(ThisUnitLinkToWep.__logger_unit) then
-				World:delete_unit(ThisUnitLinkToWep.__logger_unit)
-				ThisUnitLinkToWep.__logger_unit = nil
-			end
-			if ThisUnitLinkToWep.__banner_unit and alive(ThisUnitLinkToWep.__banner_unit) then
-				World:delete_unit(ThisUnitLinkToWep.__banner_unit)
-				ThisUnitLinkToWep.__banner_unit = nil
-			end
-			if ThisUnitLinkToWep.__desc_since_unit and alive(ThisUnitLinkToWep.__desc_since_unit) then
-				World:delete_unit(ThisUnitLinkToWep.__desc_since_unit)
-				ThisUnitLinkToWep.__desc_since_unit = nil
-			end
-			if DB:has("unit", logger_unit) and managers.dyn_resource then
-				managers.dyn_resource:load(Idstring("unit"), logger_unit_ids, managers.dyn_resource.DYN_RESOURCES_PACKAGE, ThisModSpawnCounter)
-			end
-			if DB:has("unit", banner_unit) and managers.dyn_resource then
-				managers.dyn_resource:load(Idstring("unit"), banner_unit_ids, managers.dyn_resource.DYN_RESOURCES_PACKAGE, ThisModSpawnBanner)
-			end
-		end)
+		end
+		if ThisUnitLinkToWep.__logger_unit and alive(ThisUnitLinkToWep.__logger_unit) then
+			World:delete_unit(ThisUnitLinkToWep.__logger_unit)
+			ThisUnitLinkToWep.__logger_unit = nil
+		end
+		if ThisUnitLinkToWep.__banner_unit and alive(ThisUnitLinkToWep.__banner_unit) then
+			World:delete_unit(ThisUnitLinkToWep.__banner_unit)
+			ThisUnitLinkToWep.__banner_unit = nil
+		end
+		if ThisUnitLinkToWep.__desc_since_unit and alive(ThisUnitLinkToWep.__desc_since_unit) then
+			World:delete_unit(ThisUnitLinkToWep.__desc_since_unit)
+			ThisUnitLinkToWep.__desc_since_unit = nil
+		end		
+		managers.dyn_resource:load(Idstring("unit"), logger_unit_ids, managers.dyn_resource.DYN_RESOURCES_PACKAGE, ThisModSpawnCounter)
+		managers.dyn_resource:load(Idstring("unit"), banner_unit_ids, managers.dyn_resource.DYN_RESOURCES_PACKAGE, ThisModSpawnBanner)
+	end
+end)
+
+Hooks:PreHook(MenuSceneManager, "pre_unload", "F_"..Idstring("Crash Counter::RGB::pre_unload"):key(), function(self)
+	if type(ThisUnitLinkToWep) == "table" then
+		local __del_unit
+		if ThisUnitLinkToWep.__banner_unit and alive(ThisUnitLinkToWep.__banner_unit) then
+			__del_unit = ThisUnitLinkToWep.__banner_unit
+			ThisUnitLinkToWep.__banner_unit = nil
+			World:delete_unit(__del_unit)
+		end
+		if ThisUnitLinkToWep.__logger_unit and alive(ThisUnitLinkToWep.__logger_unit) then
+			__del_unit = ThisUnitLinkToWep.__logger_unit
+			ThisUnitLinkToWep.__logger_unit = nil
+			World:delete_unit(__del_unit)
+		end
+		if ThisUnitLinkToWep.__desc_since_unit and alive(ThisUnitLinkToWep.__desc_since_unit) then
+			__del_unit = ThisUnitLinkToWep.__desc_since_unit
+			ThisUnitLinkToWep.__desc_since_unit = nil
+			World:delete_unit(__del_unit)
+		end
 	end
 end)
 
