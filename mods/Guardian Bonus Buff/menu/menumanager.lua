@@ -21,7 +21,15 @@ function GuardianBonusBuff:Default()
 		increase_addon_dodge = 0,
 		increase_addon_dodge__max_level_max = 20,
 		increase_addon_weapon_switch_speed = 0,
-		increase_addon_weapon_switch_speed__max_level_max = 20
+		increase_addon_weapon_switch_speed__max_level_max = 20,
+		increase_addon_weapon_damage_multiplier = 0,
+		increase_addon_weapon_damage_multiplier__max_level_max = 20,
+		increase_addon_pick_up_ammo_multiplier = 0,
+		increase_addon_pick_up_ammo_multiplier__max_level_max = 5,
+		increase_addon_armor_regen_time_mul = 0,
+		increase_addon_armor_regen_time_mul__max_level_max = 20,
+		increase_crouch_speed_multiplier = 0,
+		increase_crouch_speed_multiplier__max_level_max = 5,
 	}
 end
 
@@ -132,10 +140,27 @@ function GuardianBonusBuff:GetBonusPercent(__buff_name, __lv)
 	if __lv <= 0 then
 		return 0
 	end
-	if __buff_name == "increase_addon_weapon_switch_speed" then
-		return math.round( __lv*0.75*10 ) / 5
+	return self:GetBonusPrePercent(__buff_name, __lv)/100
+end
+
+function GuardianBonusBuff:GetBonusPrePercent(__buff_name, __lv)
+	if not self:IsGuardianOK(__buff_name) then
+		return 0
 	end
-	return math.round( __lv*0.75*10 ) / 10
+	__lv =__lv or self.Settings[__buff_name]
+	if __lv <= 0 then
+		return 0
+	end
+	if __buff_name == "increase_addon_weapon_switch_speed" then
+		return math.round( __lv*7.5 ) / 5
+	elseif __buff_name == "increase_addon_weapon_damage_multiplier" then
+		return math.round( __lv*7.5 ) / 5
+	elseif __buff_name == "increase_addon_pick_up_ammo_multiplier" then
+		return math.round( __lv*20 )
+	elseif __buff_name == "increase_crouch_speed_multiplier" then
+		return math.round( __lv*10 )
+	end
+	return math.round( __lv*7.5 ) / 10
 end
 
 function GuardianBonusBuff:ReachMaxLevel(__buff_name, __lv)
@@ -153,7 +178,7 @@ end
 
 function GuardianBonusBuff:GetLevelUpgradeDesc(__buff_name, __lv)
 	local __old_desc = self.__loc:text("Guardian_"..__buff_name.."_name")
-	local __new_perc = self:GetBonusPercent(__buff_name, __lv)
+	local __new_perc = self:GetBonusPrePercent(__buff_name, __lv)
 	local __lv_now = self:ReachMaxLevel(__buff_name) == 1 and "Max" or (__lv or self:IsGuardianOK(__buff_name))
 	return string.upper(__old_desc.." + "..__new_perc.." %".." (Lv."..__lv_now..")")
 end
@@ -282,6 +307,18 @@ Hooks:Add("MenuManagerInitialize", "M_"..Idstring("MenuManagerInitialize:Guardia
 	end
 	MenuCallbackHandler.callback_Guardian_increase_addon_weapon_switch_speed = function(self)
 		GuardianBonusBuff:AskUpgrade("increase_addon_weapon_switch_speed")
+	end
+	MenuCallbackHandler.callback_Guardian_increase_addon_weapon_damage_multiplier = function(self)
+		GuardianBonusBuff:AskUpgrade("increase_addon_weapon_damage_multiplier")
+	end
+	MenuCallbackHandler.callback_Guardian_increase_addon_pick_up_ammo_multiplier = function(self)
+		GuardianBonusBuff:AskUpgrade("increase_addon_pick_up_ammo_multiplier")
+	end
+	MenuCallbackHandler.callback_Guardian_increase_addon_armor_regen_time_mul = function(self)
+		GuardianBonusBuff:AskUpgrade("increase_addon_armor_regen_time_mul")
+	end
+	MenuCallbackHandler.callback_Guardian_increase_crouch_speed_multiplier = function(self)
+		GuardianBonusBuff:AskUpgrade("increase_crouch_speed_multiplier")
 	end
 	MenuHelper:LoadFromJsonFile(GuardianBonusBuff.ModPath.."menu/menu.json", GuardianBonusBuff, GuardianBonusBuff._data)
 end)

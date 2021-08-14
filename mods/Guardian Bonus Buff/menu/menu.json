@@ -34,10 +34,38 @@
     },
     {
       "type": "button",
+      "id": "id4Guardian_increase_addon_armor_regen_time_mul",
+      "title": "Guardian_increase_addon_armor_regen_time_mul_name_w_var",
+      "description": "Guardian_increase_addon_armor_regen_time_mul_desc",
+      "callback": "callback_Guardian_increase_addon_armor_regen_time_mul"
+    },
+    {
+      "type": "button",
+      "id": "id4Guardian_increase_crouch_speed_multiplier",
+      "title": "Guardian_increase_crouch_speed_multiplier_name_w_var",
+      "description": "Guardian_increase_crouch_speed_multiplier_desc",
+      "callback": "callback_Guardian_increase_crouch_speed_multiplier"
+    },
+    {
+      "type": "button",
       "id": "id4Guardian_increase_addon_weapon_switch_speed",
       "title": "Guardian_increase_addon_weapon_switch_speed_name_w_var",
       "description": "Guardian_increase_addon_weapon_switch_speed_desc",
       "callback": "callback_Guardian_increase_addon_weapon_switch_speed"
+    },
+    {
+      "type": "button",
+      "id": "id4Guardian_increase_addon_weapon_damage_multiplier",
+      "title": "Guardian_increase_addon_weapon_damage_multiplier_name_w_var",
+      "description": "Guardian_increase_addon_weapon_damage_multiplier_desc",
+      "callback": "callback_Guardian_increase_addon_weapon_damage_multiplier"
+    },
+    {
+      "type": "button",
+      "id": "id4Guardian_increase_addon_pick_up_ammo_multiplier",
+      "title": "Guardian_increase_addon_pick_up_ammo_multiplier_name_w_var",
+      "description": "Guardian_increase_addon_pick_up_ammo_multiplier_desc",
+      "callback": "callback_Guardian_increase_addon_pick_up_ammo_multiplier"
     }
   ]
 }

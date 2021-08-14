@@ -17,5 +17,17 @@
   "Guardian_increase_addon_dodge_name_w_var": "Addon Dodge",
   "Guardian_increase_addon_weapon_switch_speed_name": "Weapon Switch Speed",
   "Guardian_increase_addon_weapon_switch_speed_desc": " ",
-  "Guardian_increase_addon_weapon_switch_speed_name_w_var": "Weapon Switch Speed"
+  "Guardian_increase_addon_weapon_switch_speed_name_w_var": "Weapon Switch Speed",
+  "Guardian_increase_addon_weapon_damage_multiplier_name": "Weapon Damage",
+  "Guardian_increase_addon_weapon_damage_multiplier_desc": " ",
+  "Guardian_increase_addon_weapon_damage_multiplier_name_w_var": "Weapon Damage",
+  "Guardian_increase_addon_pick_up_ammo_multiplier_name": "Ammo Pickup",
+  "Guardian_increase_addon_pick_up_ammo_multiplier_desc": " ",
+  "Guardian_increase_addon_pick_up_ammo_multiplier_name_w_var": "Ammo Pickup",
+  "Guardian_increase_addon_armor_regen_time_mul_name": "Armor Regeneration",
+  "Guardian_increase_addon_armor_regen_time_mul_desc": " ",
+  "Guardian_increase_addon_armor_regen_time_mul_name_w_var": "Armor Regeneration",
+  "Guardian_increase_crouch_speed_multiplier_name": "Crouch Speed",
+  "Guardian_increase_crouch_speed_multiplier_desc": " ",
+  "Guardian_increase_crouch_speed_multiplier_name_w_var": "Crouch Speed"
 }
