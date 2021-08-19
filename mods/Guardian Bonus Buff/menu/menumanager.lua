@@ -293,6 +293,20 @@ Hooks:Add("LocalizationManagerPostInit", "M_"..Idstring("LocalizationManagerPost
 end)
 
 Hooks:Add("MenuManagerInitialize", "M_"..Idstring("MenuManagerInitialize:GuardianBonusBuff"):key(), function()
+	MenuCallbackHandler.DoResetFunc = function(self)
+		GuardianBonusBuff:reset()
+	end
+	MenuCallbackHandler.callback_Guardian_Func_reset = function(self)
+		managers.system_menu:show({
+			title = managers.localization:to_upper_text("Guardian_Func_reset_name"),
+			text = managers.localization:to_upper_text("Guardian_Func_reset_desc"),
+			button_list = {
+				{text = "No", is_cancel_button = true},
+				{text = "Yes", callback_func = callback(self, self, "DoResetFunc", {})}
+			},
+			id = "F_"..Idstring(tostring(math.random(0,0xFFFFFFFF))):key()
+		})
+	end
 	MenuCallbackHandler.callback_Guardian_increase_maximum_health = function(self)
 		GuardianBonusBuff:AskUpgrade("increase_maximum_health")
 	end

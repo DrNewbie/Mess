@@ -66,6 +66,17 @@
       "title": "Guardian_increase_addon_pick_up_ammo_multiplier_name_w_var",
       "description": "Guardian_increase_addon_pick_up_ammo_multiplier_desc",
       "callback": "callback_Guardian_increase_addon_pick_up_ammo_multiplier"
+    },
+    {
+      "type": "divider",
+      "size": 160
+    },
+    {
+      "type": "button",
+      "id": "id4Guardian_Func_reset",
+      "title": "Guardian_Func_reset_name",
+      "description": "Guardian_Func_reset_desc",
+      "callback": "callback_Guardian_Func_reset"
     }
   ]
 }
