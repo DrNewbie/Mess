@@ -295,6 +295,7 @@ end)
 Hooks:Add("MenuManagerInitialize", "M_"..Idstring("MenuManagerInitialize:GuardianBonusBuff"):key(), function()
 	MenuCallbackHandler.DoResetFunc = function(self)
 		GuardianBonusBuff:reset()
+		GuardianBonusBuff:DoLocUpgrade()
 	end
 	MenuCallbackHandler.callback_Guardian_Func_reset = function(self)
 		managers.system_menu:show({
