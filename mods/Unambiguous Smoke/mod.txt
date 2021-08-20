@@ -1,0 +1,14 @@
+{
+  "name": "Unambiguous Smoke",
+  "description": "https://modworkshop.net/mod/33738",
+  "author": " ",
+  "contact": "https://modworkshop.net/mod/33738",
+  "version": "1",
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/managers/player/smokescreeneffect",
+      "script_path": "main.lua"
+    }
+  ]
+}
