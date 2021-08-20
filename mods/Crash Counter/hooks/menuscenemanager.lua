@@ -1,6 +1,7 @@
 local ThisModPath = ModPath
 local ThisModSave = io.open(ThisModPath.."__record.json", "r")
 local ThisModJson = {Times = 0, Hash = 'none', Since = tostring(os.date("%Y-%m-%d"))}
+local __DelayToSpawnGameCrashCounter = false
 if ThisModSave then
 	ThisModJson = json.decode(ThisModSave:read("*all"))
 	ThisModSave:close()
@@ -26,6 +27,13 @@ local banner_unit_ids = Idstring(banner_unit)
 local crashlog_path = Application:nice_path(os.getenv("LOCALAPPDATA")..'/PAYDAY 2/', true)..'crashlog.txt'
 
 local function ThisModSpawnCounter()
+	if managers.menu:active_menu() and managers.menu:active_menu().logic:selected_node() then
+		local __menu_name = managers.menu:active_menu().logic:selected_node():parameters().name
+		if tostring(__menu_name) ~= "main" then
+			__DelayToSpawnGameCrashCounter = false
+			return
+		end
+	end
 	if not managers.dyn_resource:is_resource_ready(Idstring("unit"), logger_unit_ids, managers.dyn_resource.DYN_RESOURCES_PACKAGE) then
 		return
 	end
@@ -40,6 +48,13 @@ local function ThisModSpawnCounter()
 end
 
 local function ThisModSpawnBanner()
+	if managers.menu:active_menu() and managers.menu:active_menu().logic:selected_node() then
+		local __menu_name = managers.menu:active_menu().logic:selected_node():parameters().name
+		if tostring(__menu_name) ~= "main" then
+			__DelayToSpawnGameCrashCounter = false
+			return
+		end
+	end
 	if not managers.dyn_resource:is_resource_ready(Idstring("unit"), banner_unit_ids, managers.dyn_resource.DYN_RESOURCES_PACKAGE) then
 		return
 	end
@@ -82,41 +97,6 @@ local function ThisModSpawnBanner()
 	return
 end
 
-Hooks:Add("MenuManagerOnOpenMenu", "F_"..Idstring("Crash Counter::logger"):key(), function(self, menu)
-	if menu == "menu_main" and managers.dyn_resource and DB:has("unit", logger_unit) and DB:has("unit", banner_unit) then
-		if io.file_is_readable(crashlog_path) then
-			local __crash_log_text_ids = file.FileHash(crashlog_path)
-			if __crash_log_text_ids ~= ThisModJson.Hash then
-				if ThisModJson.Hash ~= "none" then
-					ThisModJson.Times = ThisModJson.Times + 1
-				else
-					ThisModJson.Since = tostring( os.date("%Y-%m-%d") )
-				end
-				ThisModJson.Hash = __crash_log_text_ids
-				ThisModSave = io.open(ThisModPath.."__record.json", "w+")
-				if ThisModSave then
-					ThisModSave:write(json.encode(ThisModJson))
-					ThisModSave:close()
-				end
-			end
-		end
-		if ThisUnitLinkToWep.__logger_unit and alive(ThisUnitLinkToWep.__logger_unit) then
-			World:delete_unit(ThisUnitLinkToWep.__logger_unit)
-			ThisUnitLinkToWep.__logger_unit = nil
-		end
-		if ThisUnitLinkToWep.__banner_unit and alive(ThisUnitLinkToWep.__banner_unit) then
-			World:delete_unit(ThisUnitLinkToWep.__banner_unit)
-			ThisUnitLinkToWep.__banner_unit = nil
-		end
-		if ThisUnitLinkToWep.__desc_since_unit and alive(ThisUnitLinkToWep.__desc_since_unit) then
-			World:delete_unit(ThisUnitLinkToWep.__desc_since_unit)
-			ThisUnitLinkToWep.__desc_since_unit = nil
-		end		
-		managers.dyn_resource:load(Idstring("unit"), logger_unit_ids, managers.dyn_resource.DYN_RESOURCES_PACKAGE, ThisModSpawnCounter)
-		managers.dyn_resource:load(Idstring("unit"), banner_unit_ids, managers.dyn_resource.DYN_RESOURCES_PACKAGE, ThisModSpawnBanner)
-	end
-end)
-
 Hooks:PreHook(MenuSceneManager, "pre_unload", "F_"..Idstring("Crash Counter::RGB::pre_unload"):key(), function(self)
 	if type(ThisUnitLinkToWep) == "table" then
 		local __del_unit
@@ -146,6 +126,41 @@ Hooks:PostHook(MenuSceneManager, "update", "F_"..Idstring("Crash Counter::RGB::u
 			local __green = math.sin(140 * t + 60) / 2 + 0.5
 			local __blue = math.sin(145 * t + 120) / 2 + 0.5
 			__banner:editable_gui():set_font_color(Vector3(__red, __green, __blue))
+		end
+	end
+	if not __DelayToSpawnGameCrashCounter and math.round(t) % 5 == 0 and t > 5 then
+		if managers.dyn_resource and DB:has("unit", logger_unit) and DB:has("unit", banner_unit) then
+			__DelayToSpawnGameCrashCounter = true
+			if io.file_is_readable(crashlog_path) then
+				local __crash_log_text_ids = file.FileHash(crashlog_path)
+				if __crash_log_text_ids ~= ThisModJson.Hash then
+					if ThisModJson.Hash ~= "none" then
+						ThisModJson.Times = ThisModJson.Times + 1
+					else
+						ThisModJson.Since = tostring( os.date("%Y-%m-%d") )
+					end
+					ThisModJson.Hash = __crash_log_text_ids
+					ThisModSave = io.open(ThisModPath.."__record.json", "w+")
+					if ThisModSave then
+						ThisModSave:write(json.encode(ThisModJson))
+						ThisModSave:close()
+					end
+				end
+			end
+			if ThisUnitLinkToWep.__logger_unit and alive(ThisUnitLinkToWep.__logger_unit) then
+				World:delete_unit(ThisUnitLinkToWep.__logger_unit)
+				ThisUnitLinkToWep.__logger_unit = nil
+			end
+			if ThisUnitLinkToWep.__banner_unit and alive(ThisUnitLinkToWep.__banner_unit) then
+				World:delete_unit(ThisUnitLinkToWep.__banner_unit)
+				ThisUnitLinkToWep.__banner_unit = nil
+			end
+			if ThisUnitLinkToWep.__desc_since_unit and alive(ThisUnitLinkToWep.__desc_since_unit) then
+				World:delete_unit(ThisUnitLinkToWep.__desc_since_unit)
+				ThisUnitLinkToWep.__desc_since_unit = nil
+			end		
+			managers.dyn_resource:load(Idstring("unit"), logger_unit_ids, managers.dyn_resource.DYN_RESOURCES_PACKAGE, ThisModSpawnCounter)
+			managers.dyn_resource:load(Idstring("unit"), banner_unit_ids, managers.dyn_resource.DYN_RESOURCES_PACKAGE, ThisModSpawnBanner)
 		end
 	end
 end)
