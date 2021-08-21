@@ -1,0 +1,9 @@
+<mod name="weapon equip and unequip sound effect">
+	<Hooks directory="Scripts">
+		<hook source_file="lib/units/beings/player/states/playerstandard" file="playerstandard.lua"/>
+	</Hooks>
+	<Sounds directory="Assets">
+		<sound id="OGG_0FEE7FB3C7CD7F1C" path="sounds\OGG_0FEE7FB3C7CD7F1C.ogg" prefix="first"/>
+		<sound id="OGG_3149341ED8825DFA" path="sounds\OGG_3149341ED8825DFA.ogg" prefix="first"/>
+	</Sounds>
+</mod>
