@@ -30,7 +30,7 @@ local function ThisModSpawnCounter()
 	if managers.menu:active_menu() and managers.menu:active_menu().logic:selected_node() then
 		local __menu_name = managers.menu:active_menu().logic:selected_node():parameters().name
 		if tostring(__menu_name) ~= "main" then
-			__DelayToSpawnGameCrashCounter = false
+			--__DelayToSpawnGameCrashCounter = false
 			return
 		end
 	end
@@ -51,7 +51,7 @@ local function ThisModSpawnBanner()
 	if managers.menu:active_menu() and managers.menu:active_menu().logic:selected_node() then
 		local __menu_name = managers.menu:active_menu().logic:selected_node():parameters().name
 		if tostring(__menu_name) ~= "main" then
-			__DelayToSpawnGameCrashCounter = false
+			--__DelayToSpawnGameCrashCounter = false
 			return
 		end
 	end
