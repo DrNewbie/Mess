@@ -45,9 +45,9 @@ Hooks:PostHook(HUDManager, "update", hook2, function(self, t, dt)
 		if self._hud_assault_corner then
 			if self[bool1] ~= managers.groupai:state():get_assault_mode() then
 				self[bool1] = managers.groupai:state():get_assault_mode()
-				self[dt2] = -(texture_size[1] * 1.25)
-				self[panel1]:set_center_x(-1000)
 				if self[bool1] then
+					self[dt2] = -(texture_size[1] * 1.25)
+					self[panel1]:set_center_x(-1000)
 					self[panel1]:set_visible(true)
 					self[bitmap1]:set_visible(true)
 				else
