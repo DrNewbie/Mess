@@ -1,0 +1,13 @@
+{
+  "name": "Gawr Gura Taiko Assault Banner",
+  "description": "https://modworkshop.net/mod/34031",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/34031",
+  "version": "1",
+  "hooks": [
+    {
+      "hook_id": "lib/managers/hudmanager",
+      "script_path": "lib/hudmanager.lua"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+<table name="packages/gura_taiko_small">
+	<Package id="packages/gura_taiko_small" directory="assets">
+		<texture path="textures/memes/gura_taiko_small"/>
+	</Package>
+</table>
