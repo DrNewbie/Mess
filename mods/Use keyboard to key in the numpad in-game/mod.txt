@@ -1,0 +1,125 @@
+{
+  "name": "Use keyboard to key in the numpad in-game",
+  "description": "https://modworkshop.net/mod/34119",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/34119",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/managers/enemymanager",
+      "script_path": "function.lua"
+    }
+  ],
+  "keybinds": [
+    {
+      "keybind_id": "keybind_keypad_cas_button_01",
+      "name": " 1",
+      "description": " ",
+      "script_path": "cas_button_01.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "keybind_keypad_cas_button_02",
+      "name": " 2",
+      "description": " ",
+      "script_path": "cas_button_02.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "keybind_keypad_cas_button_03",
+      "name": " 3",
+      "description": " ",
+      "script_path": "cas_button_03.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "keybind_keypad_cas_button_04",
+      "name": " 4",
+      "description": " ",
+      "script_path": "cas_button_04.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "keybind_keypad_cas_button_05",
+      "name": " 5",
+      "description": " ",
+      "script_path": "cas_button_05.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "keybind_keypad_cas_button_06",
+      "name": " 6",
+      "description": " ",
+      "script_path": "cas_button_06.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "keybind_keypad_cas_button_07",
+      "name": " 7",
+      "description": " ",
+      "script_path": "cas_button_07.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "keybind_keypad_cas_button_08",
+      "name": " 8",
+      "description": " ",
+      "script_path": "cas_button_08.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "keybind_keypad_cas_button_09",
+      "name": " 9",
+      "description": " ",
+      "script_path": "cas_button_09.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "keybind_keypad_cas_button_0",
+      "name": " 0",
+      "description": " ",
+      "script_path": "cas_button_00.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "keybind_keypad_cas_button_clear",
+      "name": "clear",
+      "description": " ",
+      "script_path": "cas_button_clear.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "keybind_keypad_cas_button_enter",
+      "name": "enter",
+      "description": " ",
+      "script_path": "cas_button_enter.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    }
+  ]
+}
