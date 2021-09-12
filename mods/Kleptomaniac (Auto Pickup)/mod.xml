@@ -1,5 +1,5 @@
 <mod name="Kleptomaniac (Auto Pickup)" global_key="KleptomaniacPickup">
-	<AssetUpdates id="Kleptomaniac (Auto Pickup)" version="1">
+	<AssetUpdates id="Kleptomaniac (Auto Pickup)" version="2">
         <custom_provider version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Kleptomaniac%20(Auto%20Pickup).txt" download_url="https://drnewbie.github.io/Mess/UpdateProvider/Kleptomaniac%20(Auto%20Pickup).zip"/>
     </AssetUpdates>
 </mod>
