@@ -12,10 +12,14 @@ local function __Kleptomaniac(them, list)
 			if type(pickup.interaction) == "function" and pickup:interaction() and type(pickup:interaction().tweak_data) == "string" and (not list or (type(list) == "table" and list[pickup:interaction().tweak_data])) then
 				local pick_inter = pickup:interaction()
 				local pick_tweak = pick_inter.tweak_data
-				if not tweak_data.interaction[pick_tweak] or tweak_data.interaction[pick_tweak].timer then
+				if not tweak_data.interaction[pick_tweak] or (tweak_data.interaction[pick_tweak].timer and tweak_data.interaction[pick_tweak].timer > 0) then
 				
 				else
-					if pick_inter:can_select(them._unit) and pick_inter:can_interact(them._unit) and not pick_inter:_interact_blocked(them._unit) and pick_inter:active() and not pick_inter:disabled() then
+					local can_pickup = pick_inter._special_equipment and managers.player:can_pickup_equipment(tostring(pick_inter._special_equipment))
+					if type(pick_inter._unit:base()) == "table" and pick_inter._unit:base().small_loot then
+						can_pickup = true
+					end
+					if can_pickup and pick_inter:can_select(them._unit) and pick_inter:can_interact(them._unit) and not pick_inter:_interact_blocked(them._unit) and pick_inter:active() and not pick_inter:disabled() then
 						pick_inter:interact(them._unit)
 						return
 					end
