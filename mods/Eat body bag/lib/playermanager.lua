@@ -2,9 +2,9 @@ local ThisModPath = ModPath
 local ThisBuffer
 if blt.xaudio then
 	blt.xaudio.setup()
-	ThisBuffer = XAudio.Buffer:new(ThisModPath .. "ogg_197155c7de1ca8e0.ogg")
+	ThisBuffer = XAudio.Buffer:new(ThisModPath .. "/assets/ogg_197155c7de1ca8e0.ogg")
 end
-local mod_ids = Idstring("Eat body bag"):key()
+local mod_ids = Idstring(ThisModPath):key()
 local __using_dt = "F_"..Idstring("__using_dt:"..mod_ids):key()
 local __using_ft = "F_"..Idstring("__using_ft:"..mod_ids):key()
 local __eating_ogg = "F_"..Idstring("__eating_ogg:"..mod_ids):key()

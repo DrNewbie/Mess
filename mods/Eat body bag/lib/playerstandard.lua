@@ -1,4 +1,5 @@
-local mod_ids = Idstring("Eat body bag"):key()
+local mod_ids = Idstring(ModPath):key()
+local __EBB_hook2 = "F_"..Idstring("__EBB_hook2:"..mod_ids):key()
 local __using_dt = "F_"..Idstring("__using_dt:"..mod_ids):key()
 local __using_ft = "F_"..Idstring("__using_ft:"..mod_ids):key()
 local __eating_unit = "F_"..Idstring("__eating_unit:"..mod_ids):key()
@@ -22,7 +23,7 @@ function PlayerStandard:_get_max_walk_speed(...)
 	return managers.player[__using_dt] and __ans*0.05 or __ans
 end
 
-Hooks:PostHook(PlayerStandard , "_update_check_actions", "F_"..Idstring("PostHook:PlayerStandard:_update_check_actions:"..mod_ids):key(), function(self, t, dt)
+Hooks:PostHook(PlayerStandard , "_update_check_actions", __EBB_hook2, function(self, t, dt)
 	if type(managers.player[__using_dt]) == "number" and managers.player[__eating_unit] then
 		local current_state_name = self._unit:movement():current_state_name()
 		if not alive(managers.player[__eating_unit]) or

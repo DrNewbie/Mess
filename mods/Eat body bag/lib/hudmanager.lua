@@ -1,4 +1,5 @@
-local mod_ids = Idstring("Eat body bag"):key()
+local mod_ids = Idstring(ModPath):key()
+local __EBB_hook1 = "F_"..Idstring("__EBB_hook1:"..mod_ids):key()
 local __EBB_main = "F_"..Idstring("EBB_main:"..mod_ids):key()
 local __EBB_panel = "F_"..Idstring("EBB_panel:"..mod_ids):key()
 local __EBB_bitmap = "F_"..Idstring("__EBB_bitmap:"..mod_ids):key()
@@ -9,7 +10,7 @@ local __EBB_e_location = "F_"..Idstring("__EBB_e_location:"..mod_ids):key()
 local __EBB_sout = "F_"..Idstring("__EBB_sout:"..mod_ids):key()
 local __EBB_bitmap_visible = "F_"..Idstring("__EBB_bitmap_visible:"..mod_ids):key()
 
-Hooks:PostHook(HUDManager, "_player_hud_layout", "F_"..Idstring("PostHook:HUDManager:_player_hud_layout:"..mod_ids):key(), function(self)
+Hooks:PostHook(HUDManager, "_player_hud_layout", __EBB_hook1, function(self)
 	local EBB_main = managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2).panel:panel({
 		name 	= __EBB_main,
 		halign 	= "grow",
