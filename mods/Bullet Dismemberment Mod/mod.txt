@@ -1,0 +1,27 @@
+{
+  "name": "Bullet Dismemberment Mod",
+  "description": "https://modworkshop.net/mod/34203",
+  "author": " ",
+  "blt_version": 2,
+  "version": "1",
+  "hooks": [
+    {
+      "hook_id": "lib/units/enemies/cop/copdamage",
+      "script_path": "lua/CopDamage.lua"
+    },
+    {
+      "hook_id": "lib/units/enemies/cop/copmovement",
+      "script_path": "lua/CopMovement.lua"
+    }
+  ],
+  "updates": [
+    {
+      "identifier": "BulletDismembermentModGitHubUpdate",
+      "host": {
+        "meta": "https://drnewbie.github.io/Mess/Update/Bullet%20Dismemberment%20Mod.meta.json",
+        "download": "https://drnewbie.github.io/Mess/Update/Bullet%20Dismemberment%20Mod.zip",
+        "patchnotes": "https://modworkshop.net/mod/34203#changelog"
+      }
+    }
+  ]
+}
