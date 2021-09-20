@@ -1,0 +1,19 @@
+{
+  "lw_ff_opt_menu_name": "Lowered Weapons",
+  "lw_ff_opt_menu_none": " ",
+  "lw_ff_opt_desc_none": " ",
+  "lw_ff_opt_to_fake_Slider": " ",
+  "lw_ff_opt_time_to_lower": "Time to lower the weapon",
+  "lw_ff_opt_speed_to_lower": "Speed to lower the weapon",
+  "lw_ff_opt_none_text": "offset",
+  "lw_ff_opt_pos_x_offset": "Pos - X",
+  "lw_ff_opt_pos_y_offset": "Pos - Y",
+  "lw_ff_opt_pos_z_offset": "Pos - Z",
+  "lw_ff_opt_rot_x_offset": "Rot - X",
+  "lw_ff_opt_rot_y_offset": "Rot - Y",
+  "lw_ff_opt_rot_z_offset": "Rot - Z",
+  "lw_ff_opt_reset_default": "Reset",
+  "lw_ff_opt_reset_default_desc": "Click to Reset Opts",
+  "lw_ff_opt_after_reset_default": "Reset the options to the default values successfully.",
+  "lw_ff_opt_after_reset_default_ok": "OK"
+}

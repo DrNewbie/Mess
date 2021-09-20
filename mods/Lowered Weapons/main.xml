@@ -1,0 +1,54 @@
+<table name="LLWepF" global_key="LLWepF" core_class="lua/Setup.lua">
+	<AssetUpdates id="Lowered Weapons" version="1">
+        <custom_provider 
+			version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Lowered%20Weapons.txt" 
+			download_url="https://drnewbie.github.io/Mess/UpdateProvider/Lowered%20Weapons.zip"
+		/>
+    </AssetUpdates>
+	
+	<Localization directory="loc" default="en.json"/>
+	<Options>
+		<options title_id="lw_ff_opt_menu_name" desc_id="lw_ff_opt_menu_none" build_items="true">
+			<option type="number" min="0" max="999" step="1" show_value="true" default_value="3" 
+				title_id="lw_ff_opt_time_to_lower" desc_id="lw_ff_opt_desc_none" name="__time_delay" 
+			/>
+			<option type="number" min="0" max="999" step="0.1" show_value="true" default_value="1" 
+				title_id="lw_ff_opt_speed_to_lower" desc_id="lw_ff_opt_desc_none" name="__time_speed" 
+			/>
+			<option type="bool" default_value="false" disabled="true"
+				title_id="lw_ff_opt_to_fake_Slider" desc_id="lw_ff_opt_to_fake_Slider" name="__fake_bool_1" 
+			/>
+			<option type="number" min="-100" max="100" step="1" show_value="true" default_value="10" 
+				title_id="lw_ff_opt_pos_x_offset" desc_id="lw_ff_opt_none_text" name="__offset_pos_x" 
+				value_changed="LLWepF:OptChanged" 
+			/>
+			<option type="number" min="-100" max="100" step="1" show_value="true" default_value="10" 
+				title_id="lw_ff_opt_pos_y_offset" desc_id="lw_ff_opt_none_text" name="__offset_pos_y" 
+				value_changed="LLWepF:OptChanged" 
+			/>
+			<option type="number" min="-100" max="100" step="1" show_value="true" default_value="-5" 
+				title_id="lw_ff_opt_pos_z_offset" desc_id="lw_ff_opt_none_text" name="__offset_pos_z" 
+				value_changed="LLWepF:OptChanged" 
+			/>
+			<option type="number" min="-180" max="180" step="1" show_value="true" default_value="66" 
+				title_id="lw_ff_opt_rot_x_offset" desc_id="lw_ff_opt_none_text" name="__offset_rot_x" 
+				value_changed="LLWepF:OptChanged" 
+			/>
+			<option type="number" min="-180" max="180" step="1" show_value="true" default_value="0" 
+				title_id="lw_ff_opt_rot_y_offset" desc_id="lw_ff_opt_none_text" name="__offset_rot_y" 
+				value_changed="LLWepF:OptChanged" 
+			/>
+			<option type="number" min="-180" max="180" step="1" show_value="true" default_value="0" 
+				title_id="lw_ff_opt_rot_z_offset" desc_id="lw_ff_opt_none_text" name="__offset_rot_z" 
+				value_changed="LLWepF:OptChanged" 
+			/>
+			<option type="bool" default_value="false" disabled="true"
+				title_id="lw_ff_opt_to_fake_Slider" desc_id="lw_ff_opt_to_fake_Slider" name="__fake_bool_2" 
+			/>
+			<option type="bool" default_value="false" 
+				title_id="lw_ff_opt_reset_default" desc_id="lw_ff_opt_reset_default_desc" name="__reset_bool" 
+				value_changed="LLWepF:ResetToDefault" 
+			/>
+		</options>
+	</Options>
+</table>
