@@ -1,7 +1,3 @@
-local mod_ids = Idstring(ModPath):key()
-local __dt1 = "F"..Idstring("__dt1::"..mod_ids):key()
-local bool1 = "F"..Idstring("bool1::"..mod_ids):key()
-
 function LLWepF:OptChanged()
 	if not type(LLWepF) == "table" or not type(LLWepF.Options) == "table" or not type(LLWepF.Options.GetValue) == "function" then
 		return

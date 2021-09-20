@@ -1,9 +1,9 @@
 {
   "name": "Lowered Weapons",
-  "description": " ",
+  "description": "https://modworkshop.net/mod/34244",
   "author": "Dr_Newbie",
-  "contact": " ",
-  "version": "1",
+  "contact": "https://modworkshop.net/mod/34244",
+  "version": "2",
   "priority": 100,
   "blt_version": 2,
   "hooks": [
