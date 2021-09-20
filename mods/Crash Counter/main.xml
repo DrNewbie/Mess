@@ -2,12 +2,12 @@
 	<Hooks directory="hooks">
 		<hook file="menuscenemanager.lua" source_file="lib/setups/menusetup"/>
 	</Hooks>
-	<AssetUpdates id="Crash Counter" version="11">
+	<AssetUpdates id="Crash Counter" version="12">
         <custom_provider 
 			version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Crash%20Counter.txt" 
 			download_url="https://drnewbie.github.io/Mess/UpdateProvider/Crash%20Counter.zip"/>
     </AssetUpdates>
-	<AddFiles directory="assets">
+	<Package id="packages/mod_crash_counter" directory="assets">
 		<material_config path="units/mods/chl_prop_workshop_scorer/chl_prop_workshop_scorer"/>
 		<model path="units/mods/chl_prop_workshop_scorer/chl_prop_workshop_scorer"/>
 		<object path="units/mods/chl_prop_workshop_scorer/chl_prop_workshop_scorer"/>

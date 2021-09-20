@@ -17,6 +17,8 @@ else
 	end
 end
 
+local ThisModReqPackage = "packages/mod_crash_counter"
+
 local ThisUnitLinkToWep = {}
 local logger_unit = "units/mods/chl_prop_workshop_scorer/chl_prop_workshop_scorer"
 local logger_unit_ids = Idstring(logger_unit)
@@ -26,15 +28,19 @@ local banner_unit_ids = Idstring(banner_unit)
 
 local crashlog_path = Application:nice_path(os.getenv("LOCALAPPDATA")..'/PAYDAY 2/', true)..'crashlog.txt'
 
-local function ThisModSpawnCounter()
-	if managers.menu:active_menu() and managers.menu:active_menu().logic:selected_node() then
+local function IsThisModRunInMainMenu()
+	if PackageManager:loaded(ThisModReqPackage) and managers.menu and managers.menu:active_menu() and managers.menu:active_menu().logic:selected_node() then
 		local __menu_name = managers.menu:active_menu().logic:selected_node():parameters().name
 		if tostring(__menu_name) ~= "main" then
 			--__DelayToSpawnGameCrashCounter = false
-			return
+		else
+			return true
 		end
 	end
-	if not managers.dyn_resource:is_resource_ready(Idstring("unit"), logger_unit_ids, managers.dyn_resource.DYN_RESOURCES_PACKAGE) then
+	return false
+end
+local function ThisModSpawnCounter()
+	if not IsThisModRunInMainMenu() then
 		return
 	end
 	local __logger = World:spawn_unit(logger_unit_ids, Vector3(70, 200, 0), Rotation())
@@ -48,14 +54,7 @@ local function ThisModSpawnCounter()
 end
 
 local function ThisModSpawnBanner()
-	if managers.menu:active_menu() and managers.menu:active_menu().logic:selected_node() then
-		local __menu_name = managers.menu:active_menu().logic:selected_node():parameters().name
-		if tostring(__menu_name) ~= "main" then
-			--__DelayToSpawnGameCrashCounter = false
-			return
-		end
-	end
-	if not managers.dyn_resource:is_resource_ready(Idstring("unit"), banner_unit_ids, managers.dyn_resource.DYN_RESOURCES_PACKAGE) then
+	if not IsThisModRunInMainMenu() then
 		return
 	end
 	local __banner = World:spawn_unit(banner_unit_ids, Vector3(24, 150, 45), Rotation(0, 90, 0))
@@ -128,7 +127,7 @@ Hooks:PostHook(MenuSceneManager, "update", "F_"..Idstring("Crash Counter::RGB::u
 			__banner:editable_gui():set_font_color(Vector3(__red, __green, __blue))
 		end
 	end
-	if not __DelayToSpawnGameCrashCounter and math.round(t) % 5 == 0 and t > 5 then
+	if IsThisModRunInMainMenu() and not __DelayToSpawnGameCrashCounter and math.round(t) % 5 == 0 and t > 5 then
 		if managers.dyn_resource and DB:has("unit", logger_unit) and DB:has("unit", banner_unit) then
 			__DelayToSpawnGameCrashCounter = true
 			if io.file_is_readable(crashlog_path) then
@@ -159,8 +158,12 @@ Hooks:PostHook(MenuSceneManager, "update", "F_"..Idstring("Crash Counter::RGB::u
 				World:delete_unit(ThisUnitLinkToWep.__desc_since_unit)
 				ThisUnitLinkToWep.__desc_since_unit = nil
 			end		
-			managers.dyn_resource:load(Idstring("unit"), logger_unit_ids, managers.dyn_resource.DYN_RESOURCES_PACKAGE, ThisModSpawnCounter)
-			managers.dyn_resource:load(Idstring("unit"), banner_unit_ids, managers.dyn_resource.DYN_RESOURCES_PACKAGE, ThisModSpawnBanner)
+			ThisModSpawnCounter()
+			ThisModSpawnBanner()
 		end
 	end
 end)
+
+if PackageManager:package_exists(ThisModReqPackage) then
+	PackageManager:load(ThisModReqPackage)
+end	
