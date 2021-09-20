@@ -62,16 +62,20 @@ if not _G.HsAGA then
 		return
 	end
 	
+	function HsAGA:Get_Save_Name()
+		if not is_HsAGA and Utils and (Utils:IsInHeist() or Utils:IsInLoadingState() or Utils:IsInGameState()) and Global.game_settings and Global.game_settings.level_id then
+			return tostring(managers.job:current_level_id())..".json"	
+		else
+			return "def.ault.json"
+		end
+		return
+	end
+	
 	function HsAGA:Apply_CFG(is_HsAGA, retry)
 		if not managers.user or not MenuCallbackHandler or not managers.menu then
 			return
 		end
-		local _save_file = nil
-		if not is_HsAGA and Global.game_settings and Global.game_settings.level_id then
-			_save_file = managers.job:current_job_id()..".json"	
-		else
-			_save_file = "def.ault.json"
-		end
+		local _save_file = self:Get_Save_Name()
 		if _save_file then
 			local _cfg_file = io.open(self.SavePath.._save_file, "r")
 			if not _cfg_file then
@@ -102,15 +106,15 @@ if not _G.HsAGA then
 				end
 			end
 		end
+		if is_HsAGA then
+			DelayedCalls:Add("HsAGA_LoadMeFalse_Delay", 1, function()
+				HsAGA:Apply_CFG(false)
+			end)
+		end
 	end
 	
 	function HsAGA:Save_CFG(name, data, sp_type)
-		local _save_file = nil
-		if Utils and (Utils:IsInHeist() or Utils:IsInLoadingState() or Utils:IsInGameState()) and Global.game_settings and Global.game_settings.level_id then
-			_save_file = Global.game_settings.level_id..".json"	
-		else
-			_save_file = "def.ault.json"
-		end
+		local _save_file = self:Get_Save_Name()
 		if _save_file then
 			local _cfg_file = io.open(self.SavePath.._save_file, "r")
 			if not _cfg_file then
