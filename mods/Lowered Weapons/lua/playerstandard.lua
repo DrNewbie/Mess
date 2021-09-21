@@ -1,8 +1,11 @@
 local mod_ids = Idstring(ModPath):key()
 local hook1 = "F"..Idstring("hook1::"..mod_ids):key()
+local hook2 = "F"..Idstring("hook2::"..mod_ids):key()
 local __dt1 = "F"..Idstring("__dt1::"..mod_ids):key()
 local bool1 = "F"..Idstring("bool1::"..mod_ids):key()
+local bool2 = "F"..Idstring("bool2::"..mod_ids):key()
 local func1 = "F"..Idstring("func1::"..mod_ids):key()
+local is_LLWepF = type(LLWepF) == "table" and type(LLWepF.Options) == "table" and type(LLWepF.Options.GetValue) == "function"
 
 PlayerStandard[func1] = PlayerStandard[func1] or function(them)
 	local __camera_base = them._camera_unit:base()
@@ -13,9 +16,7 @@ PlayerStandard[func1] = PlayerStandard[func1] or function(them)
 	local offset_pos = Vector3(0, 0, -20)
 	local offset_rot = Rotation(50, 0, 0)
 	local duration_multiplier, duration = 1, 1
-	if not type(LLWepF) == "table" or not type(LLWepF.Options) == "table" or not type(LLWepF.Options.GetValue) == "function" then
-	
-	else
+	if is_LLWepF then
 		offset_pos = Vector3(
 			LLWepF.Options:GetValue("__offset_pos_x"), 
 			LLWepF.Options:GetValue("__offset_pos_y"), 
@@ -44,26 +45,62 @@ end
 Hooks:PostHook(PlayerStandard, "_update_check_actions", hook1, function(self, __t, __dt)
 	if self._camera_unit and alive(self._camera_unit) and self._camera_unit:base() and self._equipped_unit and alive(self._equipped_unit) and self._equipped_unit:base() then
 		local __weap_base = self._equipped_unit:base()
-		local __action_forbidden = self._shooting or self:_is_reloading() or self:in_steelsight() or self:_changing_weapon() or self:_is_meleeing() or self._use_item_expire_t or self:_interacting() or self:_is_throwing_projectile() or self:_is_deploying_bipod() or self._menu_closed_fire_cooldown > 0 or self:is_switching_stances()
+		local __action_forbidden = self._shooting or 
+									self:_is_reloading() or 
+									self:in_steelsight() or 
+									self:_changing_weapon() or 
+									self:_is_meleeing() or 
+									self._use_item_expire_t or 
+									self:_interacting() or 
+									self:_is_throwing_projectile() or 
+									self:_is_deploying_bipod() or 
+									self._menu_closed_fire_cooldown > 0 or 
+									self:is_switching_stances() or 
+									self:_is_cash_inspecting() --observing the weapon
 		if not self[__dt1] or __action_forbidden or not __weap_base:start_shooting_allowed() then
 			self[__dt1] = 3
-			if not type(LLWepF) == "table" or not type(LLWepF.Options) == "table" or not type(LLWepF.Options.GetValue) == "function" then
-			
-			else
+			if is_LLWepF then
 				self[__dt1] = LLWepF.Options:GetValue("__time_delay")
 			end
 			if self[bool1] then
 				self:_stance_entered(false)
 			end
 			self[bool1] = false
+			self[bool2] = self[bool2] or {}
+			--auto turn gadget on
+			if self[bool2][self._equipped_unit:key()] then
+				local __last_gadget_idx = self[bool2][self._equipped_unit:key()] or 1
+				self[bool2][self._equipped_unit:key()] = nil
+				__weap_base:set_gadget_on(__last_gadget_idx, false)
+			end
 		else
 			if LLWepF.ForcedApplyToFov or (self[__dt1] <= 0 and not self[bool1]) then
 				LLWepF.ForcedApplyToFov = false
 				self[bool1] = true
+				--auto turn gadget off
+				if is_LLWepF and LLWepF.Options:GetValue("__auto_gadget_off") and __weap_base.set_gadget_on and __weap_base:has_gadget() and __weap_base:was_gadget_on() then
+					self[bool2][self._equipped_unit:key()] = __weap_base:current_gadget_index() or 1
+					__weap_base:gadget_off()
+				end
 				self[func1](self)
 			else
 				self[__dt1] = self[__dt1] - __dt
 			end		
+		end
+	end
+end)
+
+Hooks:PostHook(PlayerStandard, "_update_check_actions", hook2, function(self, __t, __dt)
+	if Utils and self._camera_unit and alive(self._camera_unit) and self._camera_unit:base() and self._equipped_unit and alive(self._equipped_unit) and self._equipped_unit:base() then
+		local too_close_dis = 50
+		if is_LLWepF then
+			too_close_dis = LLWepF.Options:GetValue("__too_close")
+		end
+		if too_close_dis > 0 then
+			local is_too_close = Utils:GetPlayerAimPos(managers.player:player_unit(), too_close_dis) or nil
+			if is_too_close and not self[bool1] then
+				LLWepF.ForcedApplyToFov = true
+			end
 		end
 	end
 end)

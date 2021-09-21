@@ -1,8 +1,4 @@
 function LLWepF:OptChanged()
-	if not type(LLWepF) == "table" or not type(LLWepF.Options) == "table" or not type(LLWepF.Options.GetValue) == "function" then
-		return
-	end
-	
 	local local_player = managers.player:local_player()
 	if not local_player then
 		return
@@ -18,10 +14,6 @@ function LLWepF:OptChanged()
 end
 
 function LLWepF:ResetToDefault()
-	if not type(LLWepF) == "table" or not type(LLWepF.Options) == "table" or not type(LLWepF.Options.SetValue) == "function" then
-		return
-	end
-	
 	LLWepF.Options:SetValue("__time_delay", 3)
 	LLWepF.Options:SetValue("__time_speed", 1)
 	
