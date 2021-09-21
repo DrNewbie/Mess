@@ -37,9 +37,11 @@ PlayerStandard[func1] = PlayerStandard[func1] or function(them, weap_base)
 			local is_match = false
 			if __cfg.weapon_id and __cfg.weapon_id == weapon_id then
 				is_match = true
-			elseif __cfg.categories and table.contains_all(weapon_tweak_data.categories, __cfg.categories) then
+			elseif type(__cfg.categories) == "table" and table.contains_all(weapon_tweak_data.categories, __cfg.categories) then
 				is_match = true
-			elseif __cfg.categories and table.contains(weapon_tweak_data.categories, __cfg.categories[1]) then
+			elseif type(__cfg.categories) == "table" and table.contains(weapon_tweak_data.categories, __cfg.categories[1]) then
+				is_match = true
+			elseif type(__cfg.categories) == "string" and weapon_tweak_data.categories[1] == __cfg.categories then
 				is_match = true
 			end
 			if is_match then
