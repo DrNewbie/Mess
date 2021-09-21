@@ -9,6 +9,8 @@ local func1 = "F"..Idstring("func1::"..mod_ids):key()
 local is_LLWepF = type(LLWepF) == "table" and type(LLWepF.Options) == "table" and type(LLWepF.Options.GetValue) == "function"
 
 PlayerStandard[func1] = PlayerStandard[func1] or function(them, weap_base)
+	local weapon_id = weap_base:get_name_id()
+	local weapon_tweak_data = tweak_data.weapon[weapon_id]
 	local __camera_base = them._camera_unit:base()
 	local stance_standard = tweak_data.player.stances.default[managers.player:current_state()] or tweak_data.player.stances.default.standard
 	local head_stance = them._state_data.ducking and tweak_data.player.stances.default.crouched.head or stance_standard.head
@@ -17,6 +19,7 @@ PlayerStandard[func1] = PlayerStandard[func1] or function(them, weap_base)
 	local offset_pos = Vector3(0, 0, -20)
 	local offset_rot = Rotation(50, 0, 0)
 	local duration_multiplier, duration = 1, 1
+	local disable_custom_wep = false
 	if is_LLWepF then
 		offset_pos = Vector3(
 			LLWepF.Options:GetValue("__offset_pos_x"), 
@@ -29,10 +32,12 @@ PlayerStandard[func1] = PlayerStandard[func1] or function(them, weap_base)
 			LLWepF.Options:GetValue("__offset_rot_z")
 		)
 		duration = LLWepF.Options:GetValue("__time_speed")
+		disable_custom_wep = LLWepF.Options:GetValue("__custom_wep_disable")
+	end
+	if disable_custom_wep and weapon_tweak_data.custom then
+		return
 	end
 	if type(LLWepF.AddonCfg) == "table" and #(LLWepF.AddonCfg) > 0 then
-		local weapon_id = weap_base:get_name_id()
-		local weapon_tweak_data = weapon_id and tweak_data.weapon[weapon_id]
 		for _, __cfg in pairs(LLWepF.AddonCfg) do
 			local is_match = false
 			if __cfg.weapon_id and __cfg.weapon_id == weapon_id then
@@ -53,6 +58,7 @@ PlayerStandard[func1] = PlayerStandard[func1] or function(them, weap_base)
 				local __rot_pitch = __cfg.__offset_rot_y or offset_rot:pitch()
 				local __rot_roll = __cfg.__offset_rot_z or offset_rot:roll()
 				offset_rot = Rotation(__rot_yaw, __rot_pitch, __rot_roll)
+				break
 			end
 		end
 	end
