@@ -62,7 +62,7 @@ if not _G.HsAGA then
 		return
 	end
 	
-	function HsAGA:Get_Save_Name()
+	function HsAGA:Get_Save_Name(is_HsAGA)
 		if not is_HsAGA and Utils and (Utils:IsInHeist() or Utils:IsInLoadingState() or Utils:IsInGameState()) and Global.game_settings and Global.game_settings.level_id then
 			return tostring(managers.job:current_level_id())..".json"	
 		else
@@ -75,7 +75,7 @@ if not _G.HsAGA then
 		if not managers.user or not MenuCallbackHandler or not managers.menu then
 			return
 		end
-		local _save_file = self:Get_Save_Name()
+		local _save_file = self:Get_Save_Name(is_HsAGA)
 		if _save_file then
 			local _cfg_file = io.open(self.SavePath.._save_file, "r")
 			if not _cfg_file then
