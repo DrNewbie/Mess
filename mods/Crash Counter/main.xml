@@ -2,7 +2,7 @@
 	<Hooks directory="hooks">
 		<hook file="menuscenemanager.lua" source_file="lib/setups/menusetup"/>
 	</Hooks>
-	<AssetUpdates id="Crash Counter" version="12">
+	<AssetUpdates id="Crash Counter" version="13">
         <custom_provider 
 			version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Crash%20Counter.txt" 
 			download_url="https://drnewbie.github.io/Mess/UpdateProvider/Crash%20Counter.zip"/>
@@ -23,5 +23,5 @@
 		<object path="units/mods/chl_prop_workshop_scorer/editable_text_short/editable_text_short"/>
 		<unit path="units/mods/chl_prop_workshop_scorer/editable_text_short/editable_text_short"/>
 		<cooked_physics path="units/mods/chl_prop_workshop_scorer/editable_text_short/editable_text_short"/>
-	</AddFiles>
+	</Package>
 </table>
