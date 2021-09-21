@@ -1,4 +1,5 @@
 local ThisModPath = ModPath
+local ThisSavePath = SavePath
 local mod_ids = Idstring(ThisModPath):key()
 local hook1 = "F"..Idstring("hook1::"..mod_ids):key()
 local hook2 = "F"..Idstring("hook2::"..mod_ids):key()
@@ -141,8 +142,16 @@ end)
 local function LLWepFLoadAddonCfg()
 	LLWepF.AddonCfg = LLWepF.AddonCfg or {}
 	local configs = file.GetFiles(ThisModPath.."/cfg/")
-	for i, cfg in pairs(configs) do
-		dofile(ThisModPath.."/cfg/"..cfg)
+	if type(configs) == "table"
+		for i, cfg in pairs(configs) do
+			dofile(ThisModPath.."/cfg/"..cfg)
+		end
+	end
+	configs = file.GetFiles(ThisSavePath.."/LLWepF CFG/")
+	if type(configs) == "table"
+		for i, cfg in pairs(configs) do
+			dofile(ThisSavePath.."/LLWepF CFG/"..cfg)
+		end
 	end
 end
 
