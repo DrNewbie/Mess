@@ -1,4 +1,5 @@
-local mod_ids = Idstring(ModPath):key()
+local ThisModPath = ModPath
+local mod_ids = Idstring(ThisModPath):key()
 local hook1 = "F"..Idstring("hook1::"..mod_ids):key()
 local hook2 = "F"..Idstring("hook2::"..mod_ids):key()
 local __dt1 = "F"..Idstring("__dt1::"..mod_ids):key()
@@ -7,7 +8,7 @@ local bool2 = "F"..Idstring("bool2::"..mod_ids):key()
 local func1 = "F"..Idstring("func1::"..mod_ids):key()
 local is_LLWepF = type(LLWepF) == "table" and type(LLWepF.Options) == "table" and type(LLWepF.Options.GetValue) == "function"
 
-PlayerStandard[func1] = PlayerStandard[func1] or function(them)
+PlayerStandard[func1] = PlayerStandard[func1] or function(them, weap_base)
 	local __camera_base = them._camera_unit:base()
 	local stance_standard = tweak_data.player.stances.default[managers.player:current_state()] or tweak_data.player.stances.default.standard
 	local head_stance = them._state_data.ducking and tweak_data.player.stances.default.crouched.head or stance_standard.head
@@ -28,6 +29,30 @@ PlayerStandard[func1] = PlayerStandard[func1] or function(them)
 			LLWepF.Options:GetValue("__offset_rot_z")
 		)
 		duration = LLWepF.Options:GetValue("__time_speed")
+	end
+	if type(LLWepF.AddonCfg) == "table" and #(LLWepF.AddonCfg) > 0 then
+		local weapon_id = weap_base:get_name_id()
+		local weapon_tweak_data = weapon_id and tweak_data.weapon[weapon_id]
+		for _, __cfg in pairs(LLWepF.AddonCfg) do
+			local is_match = false
+			if __cfg.weapon_id and __cfg.weapon_id == weapon_id then
+				is_match = true
+			elseif __cfg.categories and table.contains_all(weapon_tweak_data.categories, __cfg.categories) then
+				is_match = true
+			elseif __cfg.categories and table.contains(weapon_tweak_data.categories, __cfg.categories[1]) then
+				is_match = true
+			end
+			if is_match then
+				local __pos_x = __cfg.__offset_pos_x or offset_pos.x
+				local __pos_y = __cfg.__offset_pos_y or offset_pos.y
+				local __pos_z = __cfg.__offset_pos_z or offset_pos.z
+				offset_pos = Vector3(__pos_x, __pos_y, __pos_z)				
+				local __rot_yaw = __cfg.__offset_rot_x or offset_rot:yaw()
+				local __rot_pitch = __cfg.__offset_rot_y or offset_rot:pitch()
+				local __rot_roll = __cfg.__offset_rot_z or offset_rot:roll()
+				offset_rot = Rotation(__rot_yaw, __rot_pitch, __rot_roll)
+			end
+		end
 	end
 	local new_fov = them:get_zoom_fov(misc_attribs) + 0
 		__camera_base:clbk_stance_entered(
@@ -82,7 +107,7 @@ Hooks:PostHook(PlayerStandard, "_update_check_actions", hook1, function(self, __
 					self[bool2][self._equipped_unit:key()] = __weap_base:current_gadget_index() or 1
 					__weap_base:gadget_off()
 				end
-				self[func1](self)
+				self[func1](self, __weap_base)
 			else
 				self[__dt1] = self[__dt1] - __dt
 			end		
@@ -104,3 +129,13 @@ Hooks:PostHook(PlayerStandard, "_update_check_actions", hook2, function(self, __
 		end
 	end
 end)
+
+local function LLWepFLoadAddonCfg()
+	LLWepF.AddonCfg = LLWepF.AddonCfg or {}
+	local configs = file.GetFiles(ThisModPath.."/cfg/")
+	for i, cfg in pairs(configs) do
+		dofile(ThisModPath.."/cfg/"..cfg)
+	end
+end
+
+LLWepFLoadAddonCfg()
