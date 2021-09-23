@@ -1,0 +1,7 @@
+<table name="Addon Gun Charms">
+	<AssetUpdates id="Addon Gun Charms" version="1">
+        <custom_provider 
+			version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Addon%20Gun%20Charms.txt" 
+			download_url="https://drnewbie.github.io/Mess/UpdateProvider/Addon%20Gun%20Charms.zip"/>
+    </AssetUpdates>
+</table>
