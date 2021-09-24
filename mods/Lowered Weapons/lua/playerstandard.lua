@@ -147,10 +147,12 @@ local function LLWepFLoadAddonCfg()
 			dofile(ThisModPath.."/cfg/"..cfg)
 		end
 	end
-	configs = file.GetFiles(ThisSavePath.."/LLWepF CFG/")
-	if type(configs) == "table" then
-		for i, cfg in pairs(configs) do
-			dofile(ThisSavePath.."/LLWepF CFG/"..cfg)
+	if file.DirectoryExists(ThisSavePath.."/LLWepF CFG/") then
+		configs = file.GetFiles(ThisSavePath.."/LLWepF CFG/")
+		if type(configs) == "table" then
+			for i, cfg in pairs(configs) do
+				dofile(ThisSavePath.."/LLWepF CFG/"..cfg)
+			end
 		end
 	end
 end
