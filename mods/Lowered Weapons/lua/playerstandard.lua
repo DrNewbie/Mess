@@ -20,7 +20,7 @@ PlayerStandard[func1] = PlayerStandard[func1] or function(them, weap_base)
 	local offset_pos = Vector3(0, 0, -20)
 	local offset_rot = Rotation(50, 0, 0)
 	local duration_multiplier, duration = 1, 1
-	local disable_custom_wep = false
+	local disable_custom_wep = is_LLWepF and LLWepF.Options:GetValue("__custom_wep_disable") or false
 	if is_LLWepF then
 		offset_pos = Vector3(
 			LLWepF.Options:GetValue("__offset_pos_x"), 
@@ -33,7 +33,6 @@ PlayerStandard[func1] = PlayerStandard[func1] or function(them, weap_base)
 			LLWepF.Options:GetValue("__offset_rot_z")
 		)
 		duration = LLWepF.Options:GetValue("__time_speed")
-		disable_custom_wep = LLWepF.Options:GetValue("__custom_wep_disable")
 	end
 	if disable_custom_wep and weapon_tweak_data.custom then
 		return
@@ -76,6 +75,17 @@ PlayerStandard[func1] = PlayerStandard[func1] or function(them, weap_base)
 	)
 end
 
+local function __check_is_aiming_at_enemies_or_civilians(__camera)
+	local __distance = is_LLWepF and LLWepF.Options:GetValue("__uppered_wep_distance") or 1000
+	if __distance <= 0 then
+		return false
+	end
+	local __from = __camera:position()
+	local __to = __from + __camera:forward() * __distance
+	local __ray = World:raycast("ray", __from, __to, "slot_mask", managers.slot:get_mask("enemies", "civilians"))
+	return type(__ray) == "table" and __ray.hit_position and __ray.unit or false
+end
+
 Hooks:PostHook(PlayerStandard, "_update_check_actions", hook1, function(self, __t, __dt)
 	if self._camera_unit and alive(self._camera_unit) and self._camera_unit:base() and self._equipped_unit and alive(self._equipped_unit) and self._equipped_unit:base() then
 		local __weap_base = self._equipped_unit:base()
@@ -90,12 +100,10 @@ Hooks:PostHook(PlayerStandard, "_update_check_actions", hook1, function(self, __
 									self:_is_deploying_bipod() or 
 									self._menu_closed_fire_cooldown > 0 or 
 									self:is_switching_stances() or 
-									self:_is_cash_inspecting() --observing the weapon
+									self:_is_cash_inspecting() or --observing the weapon
+									__check_is_aiming_at_enemies_or_civilians(self._unit:camera()) --thanks to Hoppip
 		if not self[__dt1] or __action_forbidden or not __weap_base:start_shooting_allowed() then
-			self[__dt1] = 3
-			if is_LLWepF then
-				self[__dt1] = LLWepF.Options:GetValue("__time_delay")
-			end
+			self[__dt1] = is_LLWepF and LLWepF.Options:GetValue("__time_delay") or 3
 			if self[bool1] then
 				self:_stance_entered(false)
 			end
@@ -126,10 +134,7 @@ end)
 
 Hooks:PostHook(PlayerStandard, "_update_check_actions", hook2, function(self, __t, __dt)
 	if Utils and self._camera_unit and alive(self._camera_unit) and self._camera_unit:base() and self._equipped_unit and alive(self._equipped_unit) and self._equipped_unit:base() then
-		local too_close_dis = 50
-		if is_LLWepF then
-			too_close_dis = LLWepF.Options:GetValue("__too_close")
-		end
+		local too_close_dis = is_LLWepF and LLWepF.Options:GetValue("__too_close") or 50
 		if too_close_dis > 0 then
 			local is_too_close = Utils:GetPlayerAimPos(managers.player:player_unit(), too_close_dis) or nil
 			if is_too_close and not self[bool1] then

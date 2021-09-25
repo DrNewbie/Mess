@@ -21,5 +21,7 @@
   "lw_ff_opt_too_close": "Distance to lower wep",
   "lw_ff_opt_too_close_desc": "Distance to auto lower the weapon, 0(zero) = OFF",
   "lw_ff_opt_no_custom_wep": "Disable custom wep",
-  "lw_ff_opt_no_custom_wep_desc": "Disable the animations for custom weapons."
+  "lw_ff_opt_no_custom_wep_desc": "Disable the animations for custom weapons.",
+  "lw_ff_opt_uppered_wep_distance": "Distance to upper wep",
+  "lw_ff_opt_uppered_wep_distance_desc": "Distance to auto upper the weapon when aiming at enemies, 0(zero) = OFF"
 }

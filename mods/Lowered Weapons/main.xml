@@ -1,5 +1,5 @@
 <table name="LLWepF" global_key="LLWepF" core_class="lua/Setup.lua">
-	<AssetUpdates id="Lowered Weapons" version="9">
+	<AssetUpdates id="Lowered Weapons" version="10">
         <custom_provider 
 			version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Lowered%20Weapons.txt" 
 			download_url="https://drnewbie.github.io/Mess/UpdateProvider/Lowered%20Weapons.zip"
@@ -63,6 +63,12 @@
 			/>
 			<option type="bool" default_value="false"
 				title_id="lw_ff_opt_no_custom_wep" desc_id="lw_ff_opt_no_custom_wep_desc" name="__custom_wep_disable" 
+			/>
+			<option type="bool" default_value="false" disabled="true"
+				title_id="lw_ff_opt_to_fake_Slider" desc_id="lw_ff_opt_to_fake_Slider" name="__fake_bool_5" 
+			/>
+			<option type="number" min="0" max="1000000" step="100" show_value="true" default_value="1000" 
+				title_id="lw_ff_opt_uppered_wep_distance" desc_id="lw_ff_opt_uppered_wep_distance_desc" name="__uppered_wep_distance" 
 			/>
 		</options>
 	</Options>
