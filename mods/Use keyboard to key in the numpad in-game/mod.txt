@@ -3,7 +3,7 @@
   "description": "https://modworkshop.net/mod/34119",
   "author": "Dr_Newbie",
   "contact": "https://modworkshop.net/mod/34119",
-  "version": "1",
+  "version": "2",
   "priority": 100,
   "blt_version": 2,
   "hooks": [
@@ -117,6 +117,15 @@
       "name": "enter",
       "description": " ",
       "script_path": "cas_button_enter.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
+    },
+    {
+      "keybind_id": "keybind_keypad_sand_button_number_sign",
+      "name": "#",
+      "description": " ",
+      "script_path": "sand_button_number_sign.lua",
       "run_in_menu": false,
       "run_in_game": true,
       "localized": false
