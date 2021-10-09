@@ -4,12 +4,17 @@ local Hook1 = "F_"..Idstring("Hook1::"..ThisModIds):key()
 local Hook2 = "F_"..Idstring("Hook2::"..ThisModIds):key()
 local Hook3 = "F_"..Idstring("Hook3::"..ThisModIds):key()
 local Hook4 = "F_"..Idstring("Hook4::"..ThisModIds):key()
-local Func1 = "F_"..Idstring("Func1::"..ThisModIds):key()
+local Hook5 = "F_"..Idstring("Hook5::"..ThisModIds):key()
+local Hook6 = "F_"..Idstring("Hook6::"..ThisModIds):key()
+local Hook7 = "F_"..Idstring("Hook7::"..ThisModIds):key()
 local Bool1 = "F_"..Idstring("Bool1::"..ThisModIds):key()
 local Bool2 = "F_"..Idstring("Bool2::"..ThisModIds):key()
 local Bool3 = "F_"..Idstring("Bool3::"..ThisModIds):key()
+local Bool4 = "F_"..Idstring("Bool4::"..ThisModIds):key()
+local Func1 = "F_"..Idstring("Func1::"..ThisModIds):key()
 local Func2 = "F_"..Idstring("hide_nick_name::"..ThisModIds):key()
 local Func3 = "F_"..Idstring("show_nick_name::"..ThisModIds):key()
+local Func4 = "F_"..Idstring("get_nick_name::"..ThisModIds):key()
 local __Dt1 = "F_"..Idstring("__Dt1::"..ThisModIds):key()
 
 if CivilianBase and RequiredScript == "lib/units/civilians/civilianbase" then
@@ -23,24 +28,27 @@ if CivilianBase and RequiredScript == "lib/units/civilians/civilianbase" then
 	CivilianBase[Func3] = function(self)
 		if not self[Bool3] then
 			self[Bool3] = managers.hud:_add_name_label({
-				name = self:nick_name(),
+				name = self[Func4](self),
 				unit = self._unit
 			})
 		end
 	end
 
-	function CivilianBase:nick_name()
+	CivilianBase[Func4] = function(self)
 		if not self[Func1] then
 			return " "
 		end
-		return self[Func1]
+		return self[Func1]["first"].." "..self[Func1]["last"]
 	end
 
 	Hooks:PostHook(CivilianBase, "post_init", Hook1, function(self)
 		if type(_G[Bool2]) == "table" and type(_G[Bool2].results) == "table" then
 			local rnd_date = _G[Bool2].results[math.random(#_G[Bool2].results)]
 			if type(rnd_date) == "table" and type(rnd_date.name) == "table" then
-				self[Func1] = rnd_date.name["first"].." "..rnd_date.name["last"]
+				self[Func1] = {
+					["first"] = tostring(rnd_date.name["first"]),
+					["last"] = tostring(rnd_date.name["last"])
+				}
 			end
 		end
 	end)
@@ -65,9 +73,11 @@ if RequiredScript == "lib/managers/menumanagerpd2" then
 	end)
 
 	local ReadFromNamesSave = io.open(ThisModPath.."__temp_names.json", "r")
-	_G[Bool2] = json.decode(ReadFromNamesSave:read("*all"))
-	ReadFromNamesSave:close()
-	ReadFromNamesSave = nil
+	if ReadFromNamesSave then
+		_G[Bool2] = json.decode(ReadFromNamesSave:read("*all"))
+		ReadFromNamesSave:close()
+		ReadFromNamesSave = nil
+	end
 end
 
 if RequiredScript == "lib/units/beings/player/playercamera" then
@@ -112,3 +122,29 @@ if RequiredScript == "lib/units/beings/player/playercamera" then
 		end
 	end)
 end
+
+--[[
+if RequiredScript == "lib/units/civilians/civiliandamage" then
+	Hooks:PostHook(CivilianDamage, "die", Hook5, function(self)
+		if self._dead and self._unit.interaction then
+			self._unit:interaction()[Bool4] = tostring(self._unit:base()[Func4](self._unit:base()))
+		end
+	end)
+end
+
+if RequiredScript == "lib/units/interactions/interactionext" then
+	Hooks:PostHook(IntimitateInteractionExt, "selected", Hook6, function(self)
+		if self[Bool4] and self.tweak_data == "corpse_dispose" then
+			local u_key = self._unit:key()
+			local u_id = managers.enemy:get_corpse_unit_data_from_key(u_key).u_id
+			if u_id then
+				managers.enemy:get_corpse_unit_data_from_key(u_key)[Bool4] = self[Bool4]
+			end
+		end
+	end)
+	
+	Hooks:PreHook(CarryInteractionExt, "init", Hook7, function(self)
+	
+	end)
+end
+]]

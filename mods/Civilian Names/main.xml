@@ -1,5 +1,5 @@
 <table name="Civilian Names">
-	<AssetUpdates id="Civilian Names" version="1">
+	<AssetUpdates id="Civilian Names" version="2">
         <custom_provider 
 			version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Civilian%20Names.txt" 
 			download_url="https://drnewbie.github.io/Mess/UpdateProvider/Civilian%20Names.zip"

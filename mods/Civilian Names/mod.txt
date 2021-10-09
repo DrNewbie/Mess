@@ -3,21 +3,29 @@
   "description": "https://modworkshop.net/mod/34567",
   "author": "Dr_Newbie",
   "contact": "https://modworkshop.net/mod/34567",
-  "version": "1",
+  "version": "2",
   "priority": 100,
   "blt_version": 2,
   "hooks": [
     {
       "hook_id": "lib/units/civilians/civilianbase",
-      "script_path": "mod.lua"
-    }
+      "script_path": "hooks/mod.lua"
+    },
     {
       "hook_id": "lib/managers/menumanagerpd2",
-      "script_path": "mod.lua"
-    }
+      "script_path": "hooks/mod.lua"
+    },
     {
       "hook_id": "lib/units/beings/player/playercamera",
-      "script_path": "mod.lua"
+      "script_path": "hooks/mod.lua"
+    },
+    {
+      "hook_id": "lib/units/civilians/civiliandamage",
+      "script_path": "hooks/mod.lua"
+    },
+    {
+      "hook_id": "lib/units/interactions/interactionext",
+      "script_path": "hooks/mod.lua"
     }
   ]
 }
