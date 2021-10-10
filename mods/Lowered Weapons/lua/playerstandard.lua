@@ -63,7 +63,7 @@ PlayerStandard[func1] = PlayerStandard[func1] or function(them, weap_base)
 		end
 	end
 	local new_fov = them:get_zoom_fov(misc_attribs) + 0
-		__camera_base:clbk_stance_entered(
+	__camera_base:clbk_stance_entered(
 		misc_attribs.shoulders, 
 		head_stance, 
 		misc_attribs.vel_overshot, 
