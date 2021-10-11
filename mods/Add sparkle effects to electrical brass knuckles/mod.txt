@@ -1,0 +1,15 @@
+{
+  "name": "Add sparkle effects to electrical brass knuckles",
+  "description": "https://modworkshop.net/mod/34596",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/34596",
+  "blt_version": 2,
+  "version": "1",
+  "priority": 100,
+  "hooks": [
+    {
+      "hook_id": "lib/units/cameras/fpcameraplayerbase",
+      "script_path": "fpcameraplayerbase.lua"
+    }
+  ]
+}
