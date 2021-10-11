@@ -1,58 +1,67 @@
-local Ply_init_ask_bot_use_min_equipment = false
+local ThisModPath = ModPath
+local ThisModIds = Idstring(ThisModPath):key()
+local Hook1 = "F_"..Idstring("Hook1::"..ThisModIds):key()
+local Bool1 = "F_"..Idstring("Bool1::"..ThisModIds):key()
+local __Dt1 = "F_"..Idstring("__Dt1::"..ThisModIds):key()
 
-Hooks:PostHook(PlayerStandard, "init", "BotMiniDeployable_PlayerStandard_init", function(self)
-	if Input and Input:keyboard() and not Ply_init_ask_bot_use_min_equipment then
-		Ply_init_ask_bot_use_min_equipment = true
-		Input:keyboard():add_trigger(Idstring("f8"), callback(self, self, "Ask_Bot_Us_Min_Equipment"))
-		self._ask_bot_t = 0
+function PlayerStandard:Ask_Bot_Use_Min_Equipment()
+	if not managers.groupai:state():whisper_mode() then
+		self[Bool1] = true
 	end
-end)
-
-function PlayerStandard:Ask_Bot_Us_Min_Equipment()
-	if managers.player:player_unit():movement()._current_state_name ~= "standard" then
-		return
-	end
-	self._ask_bot = true
-	self:_start_ask_bot(TimerManager:game():time())
 end
 
-function PlayerStandard:_start_ask_bot(t)
-	if self._ask_bot then
-		self._ask_bot = false
-		if t > self._ask_bot_t then
-			self._ask_bot_t = t + 5
-			local secondary
-			local skip_alert = managers.groupai:state():whisper_mode()
-			local voice_type, plural, prime_target = self:_get_unit_intimidation_action(not secondary, not secondary, true, false, true, nil, nil, nil, secondary)
-			if prime_target and prime_target.unit and prime_target.unit.base and (prime_target.unit:base().unintimidateable or prime_target.unit:anim_data() and prime_target.unit:anim_data().unintimidateable) then
-				return
-			end
-			if not prime_target or not prime_target.unit or not prime_target.unit:inventory() or not prime_target.unit:inventory().min_equipment_amount or prime_target.unit:inventory():min_equipment_amount() <= 0 then
-				return
-			end
-			local min_equipment = prime_target.unit:inventory():min_equipment() or nil
-			if min_equipment then
-				local unit_min, pos, rot
-				pos = prime_target.unit:position()
-				rot = prime_target.unit:rotation()				
-				if min_equipment == "ammo_bag" then
-					unit_min = AmmoBagBase.spawn(pos, rot, 0, 0, 0)
-				elseif min_equipment == "doctor_bag" then
-					unit_min = DoctorBagBase.spawn(pos, rot, 0, 0)
-				end
-				if unit_min and alive(unit_min) then
-					prime_target.unit:inventory():reduce_min_equipment_amount(true)
-					unit_min:base():set_min(true)
-					self:say_line("g18", skip_alert)
-					if prime_target.unit:inventory():min_equipment_amount() <= 0 then
-						local visual_object = tweak_data.equipments[min_equipment] and tweak_data.equipments[min_equipment].visual_object
-						local mesh_obj = prime_target.unit:get_object(Idstring(visual_object))
-						if mesh_obj then
-							mesh_obj:set_visibility(false)
+local function __is_aiming_at_team_bot(__camera)
+	if not __camera then
+		return nil
+	end
+	local __from = __camera:position()
+	local __to = __from + __camera:forward() * 1000
+	local __ray = World:raycast("ray", __from, __to, "slot_mask", managers.slot:get_mask("criminals"))
+	if type(__ray) == "table" and __ray.hit_position and __ray.unit then
+		return __ray.unit
+	end
+	return nil
+end
+
+Hooks:PostHook(PlayerStandard, "_update_check_actions", Hook1, function(self, __t, __dt)
+	if self[__Dt1] then
+		self[__Dt1] = self[__Dt1] - __dt
+		if self[__Dt1] < 0 then
+			self[__Dt1] = nil
+		end
+	end
+	if self[Bool1] and not self[__Dt1] then
+		self[Bool1] = false	
+		if not self._intimidate_t or tweak_data.player.movement_state.interaction_delay < t - self._intimidate_t then
+			local prime_target = __is_aiming_at_team_bot(self._ext_camera)
+			if not prime_target or not prime_target.inventory or not prime_target:inventory() or not prime_target:inventory().min_equipment_amount or prime_target:inventory():min_equipment_amount() <= 0 then
+			
+			else
+				local min_equipment = prime_target:inventory():min_equipment() or nil
+				if min_equipment then
+					local unit_min, pos, rot
+					pos = prime_target:position()
+					rot = prime_target:rotation()				
+					if min_equipment == "ammo_bag" then
+						unit_min = AmmoBagBase.spawn(pos, rot, 0, 0, 0)
+					elseif min_equipment == "doctor_bag" then
+						unit_min = DoctorBagBase.spawn(pos, rot, 0, 0)
+					end
+					if unit_min and alive(unit_min) then
+						self[__Dt1] = 1
+						prime_target:inventory():reduce_min_equipment_amount(true)
+						unit_min:base():set_min(true)
+						self:say_line("g18", skip_alert)
+						if prime_target:inventory():min_equipment_amount() <= 0 then
+							local visual_object = tweak_data.equipments[min_equipment] and tweak_data.equipments[min_equipment].visual_object
+							local mesh_obj = prime_target:get_object(Idstring(visual_object))
+							if mesh_obj then
+								mesh_obj:set_visibility(false)
+							end
 						end
 					end
 				end
 			end
 		end
 	end
-end
+end)
