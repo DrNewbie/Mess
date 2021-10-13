@@ -1,5 +1,5 @@
 <table name="Change Weapon Texture After Killing">
-	<AssetUpdates id="Change Weapon Texture After Killing" version="2">
+	<AssetUpdates id="Change Weapon Texture After Killing" version="3">
         <custom_provider 
 			version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Change%20Weapon%20Texture%20After%20Killing.txt" 
 			download_url="https://drnewbie.github.io/Mess/UpdateProvider/Change%20Weapon%20Texture%20After%20Killing.zip"

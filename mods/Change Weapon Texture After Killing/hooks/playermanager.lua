@@ -63,7 +63,7 @@ Hooks:PostHook(PlayerManager, "on_killshot", Hook2, function(self, __killed_unit
 	if not player_unit or not player_unit.inventory or not player_unit:inventory() then
 	
 	else
-		local __weapon_melee = weapon_id and tweak_data.blackmarket and tweak_data.blackmarket.melee_weapons and tweak_data.blackmarket.melee_weapons[weapon_id] and true
+		local __weapon_melee = __weapon_id and tweak_data.blackmarket and tweak_data.blackmarket.melee_weapons and tweak_data.blackmarket.melee_weapons[__weapon_id] and true
 		local __dist_sq = mvector3.distance_sq(player_unit:movement():m_pos(), __killed_unit:movement():m_pos())
 		if __dist_sq <= self[Bool1] then
 			if __weapon_melee then
