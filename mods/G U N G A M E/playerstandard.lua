@@ -4,8 +4,25 @@ local GunGameGame_ids = Idstring("GunGameGame")
 local GunGameGame_key = Idstring("GunGameGame"):key()
 local GunGameGame_now_t = '___'..GunGameGame_key..'_now_t'
 
+local function __able_to_run(them)
+	local __action_forbidden = them._shooting or 
+		them:_is_reloading() or 
+		them:in_steelsight() or 
+		them:_changing_weapon() or 
+		them:_is_meleeing() or 
+		them._use_item_expire_t or 
+		them:_interacting() or 
+		them:_is_throwing_projectile() or 
+		them:_is_deploying_bipod() or 
+		them._menu_closed_fire_cooldown > 0 or 
+		them:is_switching_stances() or 
+		them:_is_cash_inspecting() or 
+		them._running
+	return not __action_forbidden
+end
+
 Hooks:PreHook(PlayerStandard, "_update_equip_weapon_timers", "F_"..Idstring("PostHook:PlayerStandard:_update_equip_weapon_timers:G U N G A M E"):key(), function(self, t, input)
-	if self._change_weapon_data and self._change_weapon_data.selection_gungame then
+	if __able_to_run(self) and self._change_weapon_data and self._change_weapon_data.selection_gungame then
 		self._change_weapon_data.selection_gungame = nil
 		local wep_data = self._change_weapon_data.wep_data
 		if wep_data.factory_id and tweak_data.weapon.factory[wep_data.factory_id] then
@@ -106,7 +123,7 @@ Hooks:PostHook(PlayerStandard, "update", "F_"..Idstring("PostHook:PlayerStandard
 		local action_forbidden = self:_changing_weapon()
 		action_forbidden = action_forbidden or self:_is_meleeing() or self._use_item_expire_t or self._change_item_expire_t
 		action_forbidden = action_forbidden or self._unit:inventory():num_selections() == 1 or self:_interacting() or self:_is_throwing_projectile() or self:_is_deploying_bipod()
-		if not action_forbidden and not self._running then
+		if not action_forbidden and __able_to_run(self) then
 			self._gumgame_req_chanage_weapon = self._gumgame_req_chanage_weapon - dt
 			if self._gumgame_req_chanage_weapon <= 0 then
 				self._gumgame_req_chanage_weapon = nil
