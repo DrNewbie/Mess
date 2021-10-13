@@ -1,12 +1,12 @@
 <table name="Change Weapon Texture After Killing">
-	<AssetUpdates id="Change Weapon Texture After Killing" version="1">
+	<AssetUpdates id="Change Weapon Texture After Killing" version="2">
         <custom_provider 
 			version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Change%20Weapon%20Texture%20After%20Killing.txt" 
 			download_url="https://drnewbie.github.io/Mess/UpdateProvider/Change%20Weapon%20Texture%20After%20Killing.zip"
 		/>
     </AssetUpdates>
 	<Hooks directory="hooks">
-		<hook file="menuscenemanager.lua" source_file="lib/setups/menusetup"/>
+		<hook file="fpcameraplayerbase.lua" source_file="lib/units/cameras/fpcameraplayerbase"/>
 		<hook file="playermanager.lua" source_file="lib/managers/playermanager"/>
 	</Hooks>
 	<Package id="packages/bloody_ak5_body_test0000" directory="assets">
