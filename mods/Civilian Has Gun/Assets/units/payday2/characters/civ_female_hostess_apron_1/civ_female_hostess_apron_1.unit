@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<unit type="being" slot="21">
+	<anim_state_machine name="anims/units/enemies/cop/cop_machine" />
+	<object file="units/payday2/characters/civ_female_hostess_apron_1/civ_female_hostess_apron_1" />
+
+	<dependencies>
+		
+	</dependencies>
+
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="base" class="CopBase" >
+			<var name="_tweak_table" value="cop_female" />
+		</extension>
+		<extension name="inventory" class="CopInventory" />
+		<extension name="brain" class="CivilianBrain" />
+		<extension name="anim_data" class="PlayerAnimationData" />
+		<extension name="character_damage" class="CopDamage"/>
+		<extension name="movement" class="CopMovement" >
+			<var name="_footwear" value="hardsole" />
+		</extension>
+		<extension name="interaction" class="IntimitateInteractionExt" >
+			<var name="tweak_data" value="intimidate" />
+		</extension>
+		<extension name="network" class="NetworkBaseExtension" />
+		<extension name="damage" class="UnitDamage" >
+			<var name="_skip_save_anim_state_machine" value="true" />
+		</extension>
+		<extension name="contour" class="ContourExt" />
+		<extension name="sound" class="CopSound" />
+	</extensions>
+
+	<network sync="spawn" remote_unit="units/payday2/characters/civ_female_hostess_apron_1/civ_female_hostess_apron_1_husk"/>
+
+	<sounds>
+		<default_soundsource source="Hips"/>
+	</sounds>
+</unit>

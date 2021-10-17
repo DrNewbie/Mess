@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<unit type="being" slot="21">
+	<anim_state_machine name="anims/units/enemies/cop/cop_machine" />
+	<object file="units/pd2_dlc_moon/characters/civ_male_pilot_2/civ_male_pilot_2" />
+
+	<dependencies>
+		<depends_on bnk="soundbanks/regular_vox" />
+		<depends_on unit="units/payday2/props/com_prop_store_wines/com_prop_store_wines_red2" />
+		<depends_on unit="units/pd2_dlc_pines/characters/gen_civ_acc_puking_effect/gen_civ_acc_puking_effect" />
+	</dependencies>
+
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" >
+			<var name="disable_shout" value="true" />
+		</extension>
+		<extension name="base" class="CopBase" >
+			<var name="_tweak_table" value="drunk_pilot" />
+		</extension>
+		<extension name="inventory" class="CopInventory" />
+		<extension name="brain" class="CivilianBrain" />
+		<extension name="anim_data" class="PlayerAnimationData" />
+		<extension name="character_damage" class="CopDamage" >
+			<var name="immortal" value="true" />
+		</extension>
+		<extension name="movement" class="CopMovement" >
+			<var name="_footwear" value="hardsole" />
+		</extension>
+		<extension name="interaction" class="IntimitateInteractionExt" >
+			<var name="tweak_data" value="intimidate" />
+		</extension>
+		<extension name="network" class="NetworkBaseExtension" />
+		<extension name="damage" class="UnitDamage" >
+			<var name="_skip_save_anim_state_machine" value="true" />
+		</extension>
+		<extension name="contour" class="ContourExt" >
+			<!-- <var name="init_contour" value="drunk_pilot" /> -->
+		</extension>
+		<extension name="sound" class="CopSound" />
+	</extensions>
+
+	<network sync="spawn" remote_unit="units/pd2_dlc_moon/characters/civ_male_pilot_2/civ_male_pilot_2_husk"/>
+
+	<sounds>
+		<default_soundsource source="Hips"/>
+	</sounds>
+</unit>

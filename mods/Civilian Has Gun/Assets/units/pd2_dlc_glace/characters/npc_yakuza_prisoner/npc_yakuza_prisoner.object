@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_glace/characters/npc_yakuza_prisoner/npc_yakuza_prisoner" orientation_object="root_point" />
+	<sequence_manager file="units/payday2/characters/civ_male_taxman/civ_male_taxman" /> <animation_def name="anims/units/escort_guy/escort_prisoner_def" />
+
+	<bodies>
+		<body name="body" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
+			<object name="Spine1"/>
+			<object name="c_capsule_body" collision_type="capsule"/>
+		</body>
+		<body name="head" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
+			<object name="Head"/>
+			<object name="c_sphere_head" collision_type="sphere"/>
+		</body>
+	</bodies>	
+
+	<decal_surfaces default_material="flesh" />
+
+		<graphics>
+		<graphic_group name="character" enabled="true" culling_object="g_body">
+
+			<lod_object name="lod_body">
+				<object name="g_body" 		enabled="true"  max_distance="2500"  max_draw_lod="0" />
+				<object name="g_body_lod1" 	enabled="true" lod="1" />
+			</lod_object>
+
+			<lod_object name="lod_head">
+				<object name="g_head" 		enabled="true"  max_distance="2500"  max_draw_lod="0" />
+				<object name="g_head_lod1" 	enabled="true" lod="1" />
+			</lod_object> 
+			<object name="s_body" enabled="true" shadow_caster="true"/>
+			<object name="g_eyes" enabled="true" shadow_caster="false"/>
+			<object name="g_eyes_reflection" enabled="true" shadow_caster="false"/>
+		</graphic_group>
+	</graphics>
+
+</dynamic_object>

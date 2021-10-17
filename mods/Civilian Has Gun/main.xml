@@ -1,0 +1,8 @@
+<table name="Civilian Has Gun">
+	<AssetUpdates id="Civilian Has Gun" version="1">
+        <custom_provider 
+			version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Civilian%20Has%20Gun.txt" 
+			download_url="https://drnewbie.github.io/Mess/UpdateProvider/Civilian%20Has%20Gun.zip"
+		/>
+    </AssetUpdates>
+</table>

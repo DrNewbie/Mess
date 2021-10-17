@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_bex/characters/civ_male_it_guy/civ_male_it_guy" orientation_object="root_point" />
+	<sequence_manager file="units/payday2/characters/civ_male_taxman/civ_male_taxman" />
+	<animation_def name="anims/units/enemies/cop/cop_def" />
+
+	<bodies>
+		<body name="body" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
+			<object name="Spine1"/>
+			<object name="c_capsule_body" collision_type="capsule"/>
+		</body>
+		<body name="head" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
+			<object name="Head"/>
+			<object name="c_sphere_head" collision_type="sphere"/>
+		</body>
+	</bodies>
+
+	<decal_surfaces default_material="flesh" />
+
+	<graphics>
+		<graphic_group name="character" enabled="true" >
+			<object name="g_body"	 	enabled="true" />
+			<object name="g_head"	 	enabled="true" />
+			<object name="s_body" 		enabled="true" shadow_caster="true"/>
+		</graphic_group>
+	</graphics>
+
+</dynamic_object>

@@ -1,0 +1,1 @@
+NetworkMatchMakingSTEAM._BUILD_SEARCH_INTEREST_KEY = Idstring(tostring(Application:time())):key() .. Idstring(tostring(math.random())):key()

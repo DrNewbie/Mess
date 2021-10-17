@@ -1,0 +1,31 @@
+{
+  "name": "Civilian Has Gun",
+  "description": "https://modworkshop.net/mod/34388",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/34388",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/units/civilians/civilianbase",
+      "script_path": "lua/civilianbase.lua"
+    },
+    {
+      "hook_id": "lib/units/civilians/civiliandamage",
+      "script_path": "lua/civiliandamage.lua"
+    },
+    {
+      "hook_id": "lib/units/enemies/cop/copmovement",
+      "script_path": "lua/copmovement.lua"
+    },
+    {
+      "hook_id": "lib/entry",
+      "script_path": "read_assets.lua"
+    },
+    {
+      "hook_id": "lib/network/matchmaking/networkmatchmakingsteam",
+      "script_path": "lock_to_singleplayer.lua"
+    }
+  ]
+}
