@@ -1,0 +1,4 @@
+<table directory="Assets">
+	<texture path="guis/dlcs/turtles/textures/pd2/blackmarket/icons/grenades/wpn_prj_four"/>
+	<unit path="units/payday2/equipment/gen_equipment_tripmine/gen_equipment_c4bomb_husk"/>
+</table>

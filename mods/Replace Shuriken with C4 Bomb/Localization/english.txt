@@ -1,0 +1,7 @@
+{
+  "bm_c4_grenade_local_name": "C4",
+  "bm_c4_grenade_local_name_not_working": "C4 (Invalid: Not Host)",
+  "bm_c4_grenade_local_desc": " ",
+  "bm_c4_grenade_local_remote_name": "Detonate All C4",
+  "bm_c4_grenade_local_remote_desc": "KaBoom!!"
+}
