@@ -1,8 +1,8 @@
 {
-  "name": "buff_birthday_2x_damage_sound",
-  "description": " ",
+  "name": "2x Damage Buff Sound Effect (PD2 10th Mutator)",
+  "description": "https://modworkshop.net/mod/34748",
   "author": "Dr_Newbie",
-  "contact": " ",
+  "contact": "https://modworkshop.net/mod/34748",
   "blt_version": 2,
   "version": "1",
   "priority": 100,
