@@ -1,5 +1,5 @@
 _G.RWSN2W = _G.RWSN2W or {}
-RWSN2W.ModPath = ModPath
+RWSN2W.ModPath = RWSN2W.ModPath or ModPath
 RWSN2W.Configs = RWSN2W.Configs or {}
 
 function RWSN2W:Add(id, func)
@@ -50,18 +50,16 @@ function RWSN2W:Run(data)
 end
 
 function RWSN2W:Simple_Set(them, stat_name, txt, color)
-	if them and type(them._stats_texts) == "table" and type(them._stats_texts[stat_name]) == "table" then
-		if txt then
-			them._stats_texts[stat_name].base:set_text("")
-			them._stats_texts[stat_name].mods:set_text("")
-			them._stats_texts[stat_name].skill:set_text("")
-			them._stats_texts[stat_name].equip:set_text(txt)
-			them._stats_texts[stat_name].equip:set_size(200, 20)
-			them._stats_texts[stat_name].equip:parent():set_w(200)
-		end
-		if color then
-			them._stats_texts[stat_name].equip:set_color(color)
-		end
+	if txt then
+		them._stats_texts[stat_name].base:set_text("")
+		them._stats_texts[stat_name].mods:set_text("")
+		them._stats_texts[stat_name].skill:set_text("")
+		them._stats_texts[stat_name].equip:set_text(txt)
+		them._stats_texts[stat_name].equip:set_size(200, 20)
+		them._stats_texts[stat_name].equip:parent():set_w(200)
+	end
+	if color then
+		them._stats_texts[stat_name].equip:set_color(color)
 	end
 end
 
@@ -124,3 +122,11 @@ Hooks:PostHook(BlackMarketGui, "_setup", "RWSN2W_PostHook_setup", function(self)
 end)
 
 RWSN2W:Init()
+
+--[[
+Hooks:Add("LocalizationManagerPostInit", "RWSN2W_AddMyLoc", function(loc)
+	loc:add_localized_strings({
+		RWSN2W_empty_desc = ""
+	})
+end)
+]]
