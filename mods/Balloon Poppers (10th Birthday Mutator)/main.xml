@@ -1,0 +1,24 @@
+<table name="Balloon Poppers (10th Birthday Mutator)">
+	<AssetUpdates id="Balloon Poppers (10th Birthday Mutator)" version="1">
+        <custom_provider 
+			version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Balloon%20Poppers%20(10th%20Birthday%20Mutator).txt" 
+			download_url="https://drnewbie.github.io/Mess/UpdateProvider/Balloon%20Poppers%20(10th%20Birthday%20Mutator).zip"
+		/>
+    </AssetUpdates>
+	<AddFiles directory="Assets" auto_generate="true"/>
+	<Localization directory="Locs" default="english.json"/>
+	<Hooks directory="Hooks">
+		<hook file="menuscenemanager.lua" source_file="lib/managers/menu/menuscenemanager"/>
+		<hook file="mutatorbirthday.lua" source_file="lib/mutators/basemutator"/>
+		<hook file="buffballoon.lua" source_file="lib/units/props/drill"/>
+		<hook file="enemymanager.lua" source_file="lib/managers/enemymanager"/>
+		<hook file="hudmanagerpd2.lua" source_file="lib/managers/hudmanagerpd2"/>
+		<hook file="hudmutator.lua" source_file="lib/managers/hudmanagerpd2"/>
+		<hook file="mutatorsmanager.lua" source_file="lib/managers/mutatorsmanager"/>
+		<hook file="mutatortweakdata.lua" source_file="lib/tweak_data/mutatortweakdata"/>
+		<hook file="playerdamage.lua" source_file="lib/units/beings/player/playerdamage"/>
+		<hook file="playerstandard.lua" source_file="lib/units/beings/player/states/playerstandard"/>
+		<hook file="balloondamage.lua" source_file="lib/units/props/drill"/>
+	</Hooks>
+</table>
+
