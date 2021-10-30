@@ -1,0 +1,6 @@
+<table name="Daily News">
+	<Hooks directory="Hooks">
+		<hook file="interactionext.lua" source_file="lib/units/interactions/interactionext"/>
+	</Hooks>
+</table>
+
