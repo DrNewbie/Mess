@@ -11,6 +11,8 @@ local Bool1 = "F_"..Idstring("get_assault_mode::"..ThisModIds):key()
 local Func1 = "F_"..Idstring("create_new_heists_gui::"..ThisModIds):key()
 local Func2 = "F_"..Idstring("close_new_heists_gui::"..ThisModIds):key()
 
+local is_IGAdsB = type(IGAdsB) == "table" and type(IGAdsB.Options) == "table" and type(IGAdsB.Options.GetValue) == "function"
+
 function NewHeistsGuiInGameAD:try_get_dummy()
 
 end
@@ -55,6 +57,9 @@ HUDManager[Func1] = function(self)
 	local __ws = self._ws or managers.gui_data:create_fullscreen_workspace()
 	if NewHeistsGuiInGameAD and __ws and __fullscreen_ws then
 		self.__new_heists_gui_ad = self.__new_heists_gui_ad or NewHeistsGuiInGameAD:new(__ws, __fullscreen_ws)
+		if is_IGAdsB then
+			IGAdsB.AdsGui = self.__new_heists_gui_ad
+		end
 	end
 end
 
@@ -62,6 +67,9 @@ HUDManager[Func2] = function(self)
 	if self.__new_heists_gui_ad then
 		self.__new_heists_gui_ad:close()
 		self.__new_heists_gui_ad = nil
+		if is_IGAdsB then
+			IGAdsB.AdsGui = nil
+		end
 	end
 end
 
