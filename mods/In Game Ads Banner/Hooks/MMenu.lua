@@ -59,6 +59,7 @@ HUDManager[Func1] = function(self)
 		self.__new_heists_gui_ad = self.__new_heists_gui_ad or NewHeistsGuiInGameAD:new(__ws, __fullscreen_ws)
 		if is_IGAdsB then
 			IGAdsB.AdsGui = self.__new_heists_gui_ad
+			IGAdsB:OptChanged()
 		end
 	end
 end

@@ -1,5 +1,5 @@
 <table name="In Game Ads Banner" global_key="IGAdsB" core_class="Menu/Setup.lua">
-	<AssetUpdates id="In Game Ads Banner" version="2">
+	<AssetUpdates id="In Game Ads Banner" version="3">
         <custom_provider 
 			version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/In%20Game%20Ads%20Banner.txt" 
 			download_url="https://drnewbie.github.io/Mess/UpdateProvider/In%20Game%20Ads%20Banner.zip"
@@ -8,14 +8,20 @@
 	<Localization directory="Loc" default="en.json"/>
 	<Options>
 		<options title_id="IGAdsB_ff_opt_menu_name" desc_id="IGAdsB_ff_opt_menu_none" build_items="true">
-			<option type="number" min="0" max="100" step="1" show_value="true" default_value="100" 
+			<option type="number" min="0" max="100" step="1" show_value="true" default_value="83" 
 				title_id="IGAdsB_ff_opt_pos_x_offset" desc_id="IGAdsB_ff_opt_none_text" name="__offset_pos_x" 
 				value_changed="IGAdsB:OptChanged" 
 			/>
-			<option type="number" min="0" max="100" step="1" show_value="true" default_value="0" 
+			<option type="number" min="0" max="100" step="1" show_value="true" default_value="83" 
 				title_id="IGAdsB_ff_opt_pos_y_offset" desc_id="IGAdsB_ff_opt_none_text" name="__offset_pos_y" 
 				value_changed="IGAdsB:OptChanged" 
 			/>
+			<!--
+			<option type="number" min="0" max="300" step="1" show_value="true" default_value="100" 
+				title_id="IGAdsB_ff_opt_scale" desc_id="IGAdsB_ff_opt_none_text" name="__scale" 
+				value_changed="IGAdsB:OptChanged" 
+			/>
+			-->
 		</options>
 	</Options>
 </table>

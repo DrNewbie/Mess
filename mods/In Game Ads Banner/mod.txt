@@ -3,7 +3,7 @@
   "name": "In Game Ads Banner",
   "author": "Dr_Newbie",
   "contact": "https://modworkshop.net/mod/34903",
-  "version": "2",
+  "version": "3",
   "priority": 100,
   "hooks": [
     {
