@@ -28,7 +28,7 @@ local function GET_POINTS(killed_unit, variant, headshot, weapon_id, weapon_base
 	if char_tweak == "medic" then
 		__p = __p + 3
 	elseif char_tweak == "sniper" then
-		__p = __p + 10
+		__p = __p + 3
 	elseif char_tweak == "tank" then
 		__p = __p + 15
 	elseif char_tweak == "spooc" then
