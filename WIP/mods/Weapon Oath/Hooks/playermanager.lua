@@ -5,7 +5,7 @@ local Hook1 = "F_"..Idstring("ply::on_killshot::"..ThisModIds):key()
 local function GET_POINTS(killed_unit, variant, headshot, weapon_id, weapon_base, slot_data)
 	local __p = 0
 	--[[]]
-	if not killed_unit or not killed_unit:base() or not weapon_base or not weapon_base:base() then
+	if not killed_unit or not killed_unit:base() or not weapon_base then
 		return 0
 	end
 	local char_tweak = killed_unit:base()._tweak_table

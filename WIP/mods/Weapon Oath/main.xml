@@ -1,5 +1,5 @@
 <table name="Weapon Oath">
-	<AssetUpdates id="Weapon Oath" version="2">
+	<AssetUpdates id="Weapon Oath" version="3">
         <custom_provider 
 			version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Weapon%20Oath.txt" 
 			download_url="https://drnewbie.github.io/Mess/UpdateProvider/Weapon%20Oath.zip"
