@@ -1,0 +1,9 @@
+<table name="Hoxton Daily News">
+    <AssetUpdates id="Hoxton Daily News" version="1">
+        <custom_provider 
+			version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Hoxton%20Daily%20News.txt" 
+			download_url="https://drnewbie.github.io/Mess/UpdateProvider/Hoxton%20Daily%20News.zip"
+		/>
+    </AssetUpdates>
+</table>
+
