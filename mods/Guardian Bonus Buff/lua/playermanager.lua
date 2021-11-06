@@ -18,8 +18,6 @@ function PlayerManager:upgrade_value(category, upgrade, ...)
 			Ans = Ans + GuardianBonusBuff:GetBonusPercent("increase_addon_dodge")
 		elseif category == "weapon" and upgrade == "passive_swap_speed_multiplier" then
 			Ans = Ans + GuardianBonusBuff:GetBonusPercent("increase_addon_weapon_switch_speed")
-		elseif category == "weapon" and upgrade == "passive_damage_multiplier" then
-			Ans = Ans + GuardianBonusBuff:GetBonusPercent("increase_addon_weapon_damage_multiplier")
 		elseif category == "player" and upgrade == "pick_up_ammo_multiplier" then
 			Ans = Ans + GuardianBonusBuff:GetBonusPercent("increase_addon_pick_up_ammo_multiplier")
 		elseif category == "player" and upgrade == "armor_regen_time_mul" then
