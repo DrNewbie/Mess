@@ -3,15 +3,19 @@
   "description": "https://modworkshop.net/mod/34203",
   "author": " ",
   "blt_version": 2,
-  "version": "1",
+  "version": "2",
   "hooks": [
     {
       "hook_id": "lib/units/enemies/cop/copdamage",
-      "script_path": "lua/CopDamage.lua"
+      "script_path": "lua/copdamage.lua"
     },
     {
       "hook_id": "lib/units/enemies/cop/copmovement",
-      "script_path": "lua/CopMovement.lua"
+      "script_path": "lua/copmovement.lua"
+    },
+    {
+      "hook_id": "lib/managers/explosionmanager",
+      "script_path": "lua/explosionmanager.lua"
     }
   ],
   "updates": [

@@ -22,11 +22,6 @@ Hooks:PreHook(CopMovement, "update", "BulletDecapitationsPreCopMovementUpdate", 
 				self._need_upd = false
 				self._force_head_upd = nil
 				self:upd_ground_ray()
-				--[[self._unit:movement():enable_update()
-				self._unit:movement()._frozen = nil
-				if self._unit:movement()._active_actions[1] then
-					self._unit:movement()._active_actions[1]:force_ragdoll()
-				end]]
 				for part , _ in pairs(BulletDecapitations.cop_decapitation.parts[unit]) do
 					if part == "Head" then
 						__set_BD(self._unit, "Head", bone_body5)
