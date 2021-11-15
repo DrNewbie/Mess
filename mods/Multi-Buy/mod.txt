@@ -1,0 +1,14 @@
+{
+  "name": "Multi-Buy",
+  "description": "https://modworkshop.net/mod/20207",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/20207",
+  "version": "1",
+  "priority": 100,
+  "hooks": [
+    {
+      "hook_id": "lib/managers/menu/blackmarketgui",
+      "script_path": "blackmarketgui.lua"
+    }
+  ]
+}
