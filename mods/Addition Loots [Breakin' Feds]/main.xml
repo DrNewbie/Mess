@@ -1,9 +1,9 @@
 <table name="Addition Loots [Breakin Feds]">
-    <AssetUpdates id="Addition Loots [Breakin Feds]" version="1">
-        <custom_provider 
+	<AssetUpdates id="Addition Loots [Breakin Feds]" version="1">
+		<custom_provider 
 			version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Addition%20Loots%20[Breakin'%20Feds].txt" 
 			download_url="https://drnewbie.github.io/Mess/UpdateProvider/Addition%20Loots%20[Breakin'%20Feds].zip"
 		/>
-    </AssetUpdates>
+	</AssetUpdates>
 </table>
 
