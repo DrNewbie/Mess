@@ -1,0 +1,14 @@
+{
+  "name": "Addition Loots [Breakin' Feds]",
+  "description": "https://modworkshop.net/mod/35133",
+  "author": "Dr_Newbie",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "core/lib/utils/dev/editor/coreworlddefinition",
+      "script_path": "coreworlddefinition.lua"
+    }
+  ]
+}
