@@ -1,0 +1,26 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_nails/props/nls_prop_methlab_spider/nls_prop_methlab_spider" orientation_object="rp_nls_prop_methlab_spider" />
+	<sequence_manager file="units/pd2_dlc_nails/props/nls_prop_methlab_spider/nls_prop_methlab_spider" />
+	<animation_def name="anims/units/level/nail/spider/def" />
+	<bodies>
+		<body name="b_head" enabled="true" template="animated" collides_with_mover="false" pushed_by_mover="false" >
+			<object name="anim_Head_Jnt" />
+			<object name="c_sphere_02" collision_type="sphere" padding="-2.5" />
+		</body>
+		<body name="b_body" enabled="true" template="animated" collides_with_mover="false" pushed_by_mover="false" >
+			<object name="anim_Torso02_Jnt" />
+			<object name="c_sphere_01" collision_type="sphere" padding="-2.5" />
+		</body>
+	</bodies>
+	<decal_surfaces default_material="flesh" />
+	<graphics>
+		<graphic_group name="grp" enabled="false" culling_object="co_cull">
+			<lod_object name="lod_g">
+				<object name="g_lod0" enabled="false" max_distance="5000" />
+				<object name="g_lod1" enabled="false" max_distance="10000" />
+				<object name="g_lod2" enabled="false" />
+			</lod_object>
+			<object name="s_s" enabled="true" shadow_caster="true" />
+		</graphic_group>
+	</graphics>
+</dynamic_object>

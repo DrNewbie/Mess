@@ -1,0 +1,14 @@
+{
+  "name": "No Spider [Lab Rats]",
+  "description": " ",
+  "author": "Dr_Newbie",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/units/unitdamage",
+      "script_path": "unitdamage.lua"
+    }
+  ]
+}
