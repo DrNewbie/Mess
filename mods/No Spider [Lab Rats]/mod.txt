@@ -1,6 +1,6 @@
 {
   "name": "No Spider [Lab Rats]",
-  "description": " ",
+  "description": "https://modworkshop.net/mod/35285",
   "author": "Dr_Newbie",
   "version": "1",
   "priority": 100,
