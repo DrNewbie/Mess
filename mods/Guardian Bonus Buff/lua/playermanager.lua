@@ -25,6 +25,8 @@ function PlayerManager:upgrade_value(category, upgrade, ...)
 			Ans = math.max(Ans, 0.001)
 		elseif category == "player" and upgrade == "crouch_speed_multiplier" then
 			Ans = Ans + GuardianBonusBuff:GetBonusPercent("increase_crouch_speed_multiplier")
+		elseif category == "player" and upgrade == "stamina_multiplier" then
+			Ans = Ans + GuardianBonusBuff:GetBonusPercent("increase_stamina_multiplier")
 		end
 	end
 	return Ans

@@ -30,6 +30,9 @@
   "Guardian_increase_crouch_speed_multiplier_name": "Crouch Speed",
   "Guardian_increase_crouch_speed_multiplier_desc": " ",
   "Guardian_increase_crouch_speed_multiplier_name_w_var": "Crouch Speed",
+  "Guardian_increase_stamina_multiplier_name": "Maximum Stamina",
+  "Guardian_increase_stamina_multiplier_desc": " ",
+  "Guardian_increase_stamina_multiplier_name_w_var": "Maximum Stamina",
   "Guardian_Func_reset_name": "Reset Upgrade",
   "Guardian_Func_reset_desc": "Clean all of your upgrade."
 }
