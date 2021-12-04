@@ -1,0 +1,19 @@
+<unit type="support_unit" slot="1">
+	<object file="units/dev_tools/mission_elements/point_interaction/interaction_dummy"/>
+	<dependencies>
+		<depends_on sequence_manager="units/dev_tools/mission_elements/point_interaction/interaction_dummy"/>
+	</dependencies>
+	<extensions>
+		<extension name="damage" class="UnitDamage"/>
+		<extension name="interaction" class="CarryInteractionDummyExt">
+			<var name="tweak_data" value="gen_pku_artifact"/>
+			<var name="_remove_on_interact" value="true"/>
+			<!--<var name="_ray_object_names" type="table">
+				<var value="root_point"/>
+			</var>-->
+		</extension>
+		<extension name="carry_data" class="CarryData">
+			<var name="_carry_id" value="mus_artifact"/>
+		</extension>
+	</extensions>
+</unit>
