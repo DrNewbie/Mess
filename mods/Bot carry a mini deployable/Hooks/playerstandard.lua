@@ -32,7 +32,7 @@ Hooks:PostHook(PlayerStandard, "_update_check_actions", Hook1, function(self, __
 	end
 	if self[Bool1] and not self[__Dt1] then
 		self[Bool1] = false	
-		if not self._intimidate_t or tweak_data.player.movement_state.interaction_delay < t - self._intimidate_t then
+		if not self._intimidate_t or tweak_data.player.movement_state.interaction_delay < __t - self._intimidate_t then
 			local prime_target = __is_aiming_at_team_bot(self._ext_camera)
 			if not prime_target or not prime_target.inventory or not prime_target:inventory() or not prime_target:inventory().min_equipment_amount or prime_target:inventory():min_equipment_amount() <= 0 then
 			
