@@ -1,5 +1,5 @@
 <table name="Bot carry a mini-deployable">
-    <AssetUpdates id="Bot carry a mini-deployable" version="5">
+    <AssetUpdates id="Bot carry a mini-deployable" version="6">
         <custom_provider version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Bot%20carry%20a%20mini%20deployable.txt" download_url="https://drnewbie.github.io/Mess/UpdateProvider/Bot%20carry%20a%20mini%20deployable.zip"/>
     </AssetUpdates>
     <Hooks directory="Hooks">
