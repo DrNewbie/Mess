@@ -1,0 +1,4 @@
+<table name="Brick">
+	<Localization directory="loc" default="english.txt"/>
+	<AddFiles directory="assets" auto_generate="true"/>
+</table>

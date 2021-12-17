@@ -1,0 +1,12 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_xm21/weapons/wpn_xmas_snowball/wpn_xmas_snowball" orientation_object="rp_concrete_blocks_cover_single"/>
+	<bodies>
+		<body name="dynamic_body" collision_class="projectile" collision_script_filter="0" collision_script_quiet_time="0.0" collision_script_tag="impact" enabled="true" template="small_prop" friction="0.5" sweep="true" restitution="0.4" lin_damping="0" ang_damping="0" pushed_by_mover="false">
+			<object name="rp_concrete_blocks_cover_single"/>
+			<object name="c_concrete_blocks_cover_single" enabled="true" collision_type="sphere" mass="0.4" padding="-2.5"/>
+		</body>
+	</bodies>
+	<graphics>
+		<object name="g_concrete_blocks_cover_single" enabled="true"/>
+	</graphics>
+</dynamic_object>

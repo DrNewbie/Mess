@@ -1,0 +1,6 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_xm21/weapons/wpn_xmas_snowball/wpn_xmas_snowball_husk" orientation_object="rp_concrete_blocks_cover_single"/>
+	<graphics>
+		<object name="g_concrete_blocks_cover_single" enabled="true"/>
+	</graphics>
+</dynamic_object>
