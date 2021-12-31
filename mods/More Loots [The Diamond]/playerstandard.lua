@@ -1,6 +1,8 @@
 require("lib/units/interactions/InteractionExt")
 
-if not DB:has("unit", "units/dev_tools/mission_elements/point_interaction/carry_interaction_dummy_nosync") then
+local __interaction_dummy = "units/dev_tools/mission_elements/point_interaction/carry_interaction_dummy_nosync"
+
+if not DB:has("unit", __interaction_dummy) then
 	return
 end
 
@@ -15,7 +17,7 @@ local hook4 = "F_"..Idstring("hook4::"..ThisModIds):key()
 local hook5 = "F_"..Idstring("hook5::"..ThisModIds):key()
 local IsSpwanDone
 
-CarryInteractionDummyExt = CarryInteractionDummyExt or CarryInteractionExt
+CarryInteractionDummyExt = CarryInteractionDummyExt or class(CarryInteractionExt)
 
 CarryInteractionDummyExt.old_can_select = CarryInteractionDummyExt.old_can_select or CarryInteractionDummyExt.can_select
 
@@ -95,7 +97,7 @@ Hooks:PostHook(PlayerStandard, "update", hook3, function(self)
 		for _, __unit in pairs(units) do
 			if AddonLootList[__unit:name():key()] then
 				local __data = AddonLootList[__unit:name():key()]
-				local __carry_dummy = World:spawn_unit(Idstring("units/dev_tools/mission_elements/point_interaction/carry_interaction_dummy_nosync"), __unit:position() + Vector3(0, 0, 3), Rotation())
+				local __carry_dummy = World:spawn_unit(Idstring(__interaction_dummy), __unit:position() + Vector3(0, 0, 3), Rotation())
 				if __carry_dummy and __carry_dummy.interaction and __carry_dummy:interaction() then
 					__carry_dummy:interaction():set_remove_unit_on_interact(__unit)
 					if __data.tweak_data then
