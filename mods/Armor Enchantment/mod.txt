@@ -1,0 +1,45 @@
+{
+  "name": "Armor Enchantment",
+  "description": "Using Continental Coins, you can give various stat upgrades (enchantments) to armor. Each time you 'enchant' from the armor menu, a random amount of random effects are applied, with random values.",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/35721",
+  "priority": 100,
+  "version": "1",
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/managers/menu/blackmarketgui",
+      "script_path": "menu/Menu_Function.lua"
+    },
+    {
+      "hook_id": "lib/managers/menu/blackmarketgui",
+      "script_path": "menu/Roll_Enchanting_Function.lua"
+    },
+    {
+      "hook_id": "lib/managers/playermanager",
+      "script_path": "cfg/Give_Buff_Bonus_Function.lua"
+    },
+    {
+      "hook_id": "lib/managers/playermanager",
+      "script_path": "cfg/Define_Armor_Value_Ans.lua"
+    },
+    {
+      "hook_id": "lib/managers/playermanager",
+      "script_path": "cfg/Define_Some_Values.lua"
+    },
+    {
+      "hook_id": "lib/managers/playermanager",
+      "script_path": "cfg/Save_Load_Apply.lua"
+    }
+  ],
+  "updates": [
+    {
+      "identifier": "ArmorEnchantmentGitHubUpdate",
+      "host": {
+        "meta": "https://drnewbie.github.io/Mess/Update/Armor%20Enchantment.meta.json",
+        "download": "https://drnewbie.github.io/Mess/Update/Armor%20Enchantment.zip",
+        "patchnotes": "https://modworkshop.net/mod/35721#changelog"
+      }
+    }
+  ]
+}

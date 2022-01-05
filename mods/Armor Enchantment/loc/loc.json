@@ -1,0 +1,18 @@
+{
+  "bm_menu_btn_enchant_armor_name_id": "Enchanting",
+  "bm_menu_enchant_armor_name_id": "Enchanting Armor",
+  "bm_menu_enchant_armor_desc_id": "Do you want to enchanting your 'Improved Combined Tactical Vest' randomly?",
+  "bm_menu_enchant_armor_no_coins": "Not enough coins.",
+  "ee_armor_p_recovery_rate_name_id": "Recovery Rate",
+  "ee_armor_p_recovery_rate_desc_id": "Increases armor recovery rate by $$var$$%",
+  "ee_armor_p_shorten_recovery_rate": "Recovery",
+  "ee_armor_p_more_armor_name_id": "Addition Armor",
+  "ee_armor_p_more_armor_desc_id": "Total armor is increased by $$var$$%",
+  "ee_armor_p_shorten_more_armor": "Armor",
+  "ee_armor_p_add_dodge_name_id": "Addition Dodge",
+  "ee_armor_p_add_dodge_desc_id": "Gain addition dodge by $$var$$%",
+  "ee_armor_p_shorten_add_dodge": "Dodge",
+  "ee_armor_p_add_stamina_name_id": "Addition Stamina",
+  "ee_armor_p_add_stamina_desc_id": "Gain addition stamina by $$var$$%",
+  "ee_armor_p_shorten_add_stamina": "Stamina"
+}
