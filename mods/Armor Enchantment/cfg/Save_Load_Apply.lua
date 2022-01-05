@@ -13,9 +13,9 @@ end
 
 function PlayerManager:__EE_Armor_Apply(__rdata)
 	if type(__rdata) == "table" then
+		_G.EEArmorBuff = {}
 		for lv_i, __data in pairs(__rdata) do
 			if type(__data) == "table" and type(__data[1]) == "table" then
-				_G.EEArmorBuff = {}
 				_G.EEArmorBuff[lv_i] = {}
 				local __type_size = #(self:__EE_Armor_Bonus_Type_List())
 				for i = 1, __type_size do
