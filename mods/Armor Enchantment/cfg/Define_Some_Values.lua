@@ -16,7 +16,8 @@ function PlayerManager:__EE_Armor_Bonus_List()
 		[2] = 50, --+More Armor
 		[3] = 30, --+Addon Dodge
 		[4] = 30, --+More Stamina
-		[5] = 5 --+SP: Thorns
+		[5] = 5, --+SP: Thorns
+		[6] = 5 --+SP: Protection
 	}
 end
 
@@ -26,7 +27,8 @@ function PlayerManager:__EE_Armor_Bonus_Type_List()
 		[2] = "more_armor",
 		[3] = "add_dodge",
 		[4] = "add_stamina",
-		[5] = "sp_thorns"
+		[5] = "sp_thorns",
+		[6] = "sp_protection"
 	}
 end
 

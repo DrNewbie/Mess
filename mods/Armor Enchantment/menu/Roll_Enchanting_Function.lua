@@ -1,4 +1,4 @@
-_G.EEArmorBuff = _G.EEArmorBuff or {0, 0, 0, 0, 0}
+_G.EEArmorBuff = _G.EEArmorBuff or {}
 
 local function __apply(__data) return managers.player:__EE_Armor_Apply(__data) end
 local function __save(__data) return managers.player:__EE_Armor_Save(__data) end

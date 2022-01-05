@@ -17,5 +17,8 @@
   "ee_armor_p_shorten_add_stamina": "Stamina",
   "ee_armor_p_sp_thorns_name_id": "Damage Reflection",
   "ee_armor_p_sp_thorns_desc_id": "Reflect $$var$$% damage to attackers.",
-  "ee_armor_p_shorten_sp_thorns": "Thorns"
+  "ee_armor_p_shorten_sp_thorns": "Thorns",
+  "ee_armor_p_sp_protection_name_id": "Damage Resistance",
+  "ee_armor_p_sp_protection_desc_id": "Increases armor resistance by $$var$$%",
+  "ee_armor_p_shorten_sp_protection": "Protection"
 }

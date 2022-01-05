@@ -18,11 +18,18 @@ function PlayerManager:__EE_Armor_Bonus_Value_List(lv)
 			200
 		})
 	end
+	local sp_protection = function(__lv)
+		return table.random({
+			11, 11, 11, 11, 11, 11, 11, 11, 11,
+			33, 33, 33
+		})
+	end
 	return {
 		[1] = recovery_rate(lv),
 		[2] = more_armor(lv),
 		[3] = add_dodge(lv),
 		[4] = add_stamina(lv),
-		[5] = sp_thorns(lv)
+		[5] = sp_thorns(lv),
+		[6] = sp_protection(lv)
 	}
 end
