@@ -1,10 +1,10 @@
 local ThisModPath = ModPath
 
 local mod_ids = Idstring(ThisModPath):key()
-local hook1 = "F"..Idstring("hook1::"..mod_ids):key()
-local hook2 = "F"..Idstring("hook2::"..mod_ids):key()
-local msgr1 = "F"..Idstring("msgr1::"..mod_ids):key()
-local bool1 = "F"..Idstring("is_sp_thorns::"..mod_ids):key()
+local hook1 = "EEA_"..Idstring("sp_thorns::hook1::"..mod_ids):key()
+local hook2 = "EEA_"..Idstring("sp_thorns::hook2::"..mod_ids):key()
+local msgr1 = "EEA_"..Idstring("sp_thorns::msgr1::"..mod_ids):key()
+local bool1 = "EEA_"..Idstring("sp_thorns::is_sp_thorns::"..mod_ids):key()
 
 Hooks:PostHook(PlayerDamage, "init", hook1, function(self)
 	managers.player:unregister_message(Message.OnPlayerDamage, msgr1)
