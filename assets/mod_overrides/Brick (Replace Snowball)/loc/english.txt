@@ -1,4 +1,0 @@
-{
-  "bm_grenade_xmas_snowball": "Brick",
-  "bm_grenade_xmas_snowball_desc": " "
-}
