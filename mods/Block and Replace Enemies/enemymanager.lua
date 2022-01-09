@@ -33,6 +33,7 @@ Hooks:PostHook(EnemyManager, "update", func1, function(self, t, dt)
 			for u_key, u_data in pairs(self._enemy_data.unit_data) do
 				if u_data.unit and alive(u_data.unit) and u_data.unit.character_damage and u_data.unit:character_damage() then
 					if not u_data.unit:base().__is_BoR_E then
+						u_data.unit:base().__is_BoR_E = true
 						local unit_type = BoR_Enemy:Get_EnemyType(u_data.unit:name())
 						if type(unit_type) == "number" and unit_type > 0 and unit_type < 999 then
 							local BoR_type = BoR_Enemy:Get_Value("value::"..unit_type) or 1

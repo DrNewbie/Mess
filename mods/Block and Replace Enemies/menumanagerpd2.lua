@@ -4,6 +4,7 @@ BoR_Enemy.ModPath = BoR_Enemy.ModPath or ModPath
 BoR_Enemy.settings = BoR_Enemy.settings or {}
 BoR_Enemy.enemy_type_list = BoR_Enemy.enemy_type_list or {}
 BoR_Enemy.type_enemy_list = BoR_Enemy.type_enemy_list or {}
+BoR_Enemy.unit_name_type = BoR_Enemy.unit_name_type or {}
 
 function BoR_Enemy:Name(__name)
 	return "BoR_E_"..Idstring(__name.."::"..self.ModPath):key()
@@ -136,15 +137,13 @@ end
 
 function BoR_Enemy:Get_EnemyType(unit_name_ids)
 	if type(unit_name_ids) ~= "userdata" or not tostring(unit_name_ids):find("Idstring") then
-		return
+		return -1
 	end
 	if self.enemy_type_list[unit_name_ids:key()] then
 		return self.enemy_type_list[unit_name_ids:key()]
 	end
 	if DB:has(Idstring("unit"), unit_name_ids) then
-		local unit_node = DB:load_node(Idstring("unit"), unit_name_ids)
-		if unit_node and type(unit_node) == "userdata" then
-			local unit_node_string = tostring(unit_node)
+		if self.unit_name_type[unit_name_ids:key()] then
 			local type_list = {
 				["tank"] = 3,
 				["spooc"] = 4,
@@ -154,29 +153,96 @@ function BoR_Enemy:Get_EnemyType(unit_name_ids)
 				["tank_medic"] = 8,
 				["tank_mini"] = 9
 			}
-			for type_key, type_id in pairs(type_list) do
-				if unit_node_string:find('<var name="_tweak_table" value="'..type_key..'"/>') then
-					self:Set_EnemyType(unit_name_ids, type_id)
-					return type_id
-				end
+			local type_id = type_list[self.unit_name_type[unit_name_ids:key()]]
+			if type_id then
+				self:Set_EnemyType(unit_name_ids, type_id)
+				return type_id
 			end
+		else
 			self:Set_EnemyType(unit_name_ids, 999)
 			return 999
 		end
 	end
-	return -1
+	return -3
 end
 
-BoR_Enemy:Get_EnemyType(Idstring("units/payday2/characters/ene_medic_r870/ene_medic_r870"))
-BoR_Enemy:Get_EnemyType(Idstring("units/payday2/characters/ene_medic_m4/ene_medic_m4"))
-BoR_Enemy:Get_EnemyType(Idstring("units/payday2/characters/ene_spook_1/ene_spook_1"))
-BoR_Enemy:Get_EnemyType(Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"))
-BoR_Enemy:Get_EnemyType(Idstring("units/payday2/characters/ene_sniper_1/ene_sniper_1"))
-BoR_Enemy:Get_EnemyType(Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"))
-BoR_Enemy:Get_EnemyType(Idstring("units/payday2/characters/ene_shield_2/ene_shield_2"))
-BoR_Enemy:Get_EnemyType(Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"))
-BoR_Enemy:Get_EnemyType(Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"))
-BoR_Enemy:Get_EnemyType(Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"))
-BoR_Enemy:Get_EnemyType(Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"))
-BoR_Enemy:Get_EnemyType(Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"))
-BoR_Enemy:Get_EnemyType(Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"))
+function BoR_Enemy:Add_Enemy(type_name, unit_name_list)
+	for _, unit_name_ids in pairs(unit_name_list) do
+		self.unit_name_type[unit_name_ids:key()] = type_name
+	end
+	return
+end
+
+BoR_Enemy:Add_Enemy("spooc", {
+	Idstring("units/payday2/characters/ene_spook_1/ene_spook_1"),
+	Idstring("units/payday2/characters/ene_spook_1/ene_spook_1"),
+	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker/ene_zeal_cloaker"),
+	Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg"),
+	Idstring("units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1"),
+	Idstring("units/pd2_dlc_bph/characters/ene_murkywater_cloaker/ene_murkywater_cloaker"),
+	Idstring("units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale/ene_swat_cloaker_policia_federale")
+})
+BoR_Enemy:Add_Enemy("medic", {
+	Idstring("units/payday2/characters/ene_medic_m4/ene_medic_m4"),
+	Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_ak47_ass/ene_akan_medic_ak47_ass"),
+	Idstring("units/pd2_dlc_hvh/characters/ene_medic_hvh_m4/ene_medic_hvh_m4"),
+	Idstring("units/pd2_dlc_bph/characters/ene_murkywater_medic/ene_murkywater_medic"),
+	Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),
+	Idstring("units/payday2/characters/ene_medic_r870/ene_medic_r870"),
+	Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_r870/ene_akan_medic_r870"),
+	Idstring("units/pd2_dlc_hvh/characters/ene_medic_hvh_r870/ene_medic_hvh_r870"),
+	Idstring("units/pd2_dlc_bph/characters/ene_murkywater_medic_r870/ene_murkywater_medic_r870"),
+	Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale_r870/ene_swat_medic_policia_federale_r870")
+})
+BoR_Enemy:Add_Enemy("tank", {
+	Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"),
+	Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"),
+	Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"),
+	Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"),
+	Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga"),
+	Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg"),
+	Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1"),
+	Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2"),
+	Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3"),
+	Idstring("units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_1/ene_murkywater_bulldozer_1"),
+	Idstring("units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_2/ene_murkywater_bulldozer_2"),
+	Idstring("units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_3/ene_murkywater_bulldozer_3"),
+	Idstring("units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_4/ene_murkywater_bulldozer_4"),
+	Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_r870/ene_swat_dozer_policia_federale_r870"),
+	Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_saiga/ene_swat_dozer_policia_federale_saiga"),
+	Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_m249/ene_swat_dozer_policia_federale_m249"),
+	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"),
+	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"),
+	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3")
+})
+BoR_Enemy:Add_Enemy("tank_mini", {
+	Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_minigun/ene_swat_dozer_policia_federale_minigun"),
+	Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"),
+	Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
+})
+BoR_Enemy:Add_Enemy("tank_medic", {
+	Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
+})
+BoR_Enemy:Add_Enemy("shield", {
+	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"),
+	Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_shield_c45/ene_akan_cs_shield_c45"),
+	Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_2/ene_shield_hvh_2"),
+	Idstring("units/pd2_dlc_bph/characters/ene_murkywater_shield/ene_murkywater_shield"),
+	Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9/ene_swat_shield_policia_federale_mp9"),
+	Idstring("units/payday2/characters/ene_shield_2/ene_shield_2"),
+	Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_c45/ene_swat_shield_policia_federale_c45"),
+	Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
+	Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_shield_sr2_smg/ene_akan_fbi_shield_sr2_smg"),
+	Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1"),
+	Idstring("units/pd2_dlc_bph/characters/ene_murkywater_shield/ene_murkywater_shield"),
+	Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9/ene_swat_shield_policia_federale_mp9"),
+	Idstring("units/payday2/characters/ene_city_shield/ene_city_shield")
+})
+BoR_Enemy:Add_Enemy("taser", {
+	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer"),
+	Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+	Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+	Idstring("units/pd2_dlc_bph/characters/ene_murkywater_tazer/ene_murkywater_tazer"),
+	Idstring("units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale"),
+	Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+})
