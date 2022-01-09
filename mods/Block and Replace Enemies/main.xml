@@ -1,0 +1,8 @@
+<table name="Block and Replace Enemies">
+	<AssetUpdates id="Block and Replace Enemies" version="1">
+		<custom_provider 
+			version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Block%20and%20Replace%20Enemies.txt" 
+			download_url="https://drnewbie.github.io/Mess/UpdateProvider/Block%20and%20Replace%20Enemies.zip"
+		/>
+	</AssetUpdates>
+</table>
