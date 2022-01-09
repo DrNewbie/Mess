@@ -2,7 +2,7 @@ _G.BoR_Enemy = _G.BoR_Enemy or {}
 BoR_Enemy = BoR_Enemy or {}
 
 local func1 = BoR_Enemy:Name("EnemyManager:update")
-local func2 = BoR_Enemy:Name("EnemyManager:update")
+local func2 = BoR_Enemy:Name("EnemyManager:update:dt")
 
 local function is_self_check(unit_type, BoR_type)
 	if BoR_type == 1 then
