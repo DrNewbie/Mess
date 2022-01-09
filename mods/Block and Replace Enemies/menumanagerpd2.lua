@@ -135,6 +135,9 @@ function BoR_Enemy:Set_EnemyType(unit_name_ids, __type)
 end
 
 function BoR_Enemy:Get_EnemyType(unit_name_ids)
+	if type(unit_name_ids) ~= "userdata" or not tostring(unit_name_ids):find("Idstring") then
+		return
+	end
 	if self.enemy_type_list[unit_name_ids:key()] then
 		return self.enemy_type_list[unit_name_ids:key()]
 	end
@@ -164,16 +167,16 @@ function BoR_Enemy:Get_EnemyType(unit_name_ids)
 	return -1
 end
 
-BoR_Enemy:Get_EnemyType("units/payday2/characters/ene_medic_r870/ene_medic_r870")
-BoR_Enemy:Get_EnemyType("units/payday2/characters/ene_medic_m4/ene_medic_m4")
-BoR_Enemy:Get_EnemyType("units/payday2/characters/ene_spook_1/ene_spook_1")
-BoR_Enemy:Get_EnemyType("units/payday2/characters/ene_tazer_1/ene_tazer_1")
-BoR_Enemy:Get_EnemyType("units/payday2/characters/ene_sniper_1/ene_sniper_1")
-BoR_Enemy:Get_EnemyType("units/payday2/characters/ene_shield_1/ene_shield_1")
-BoR_Enemy:Get_EnemyType("units/payday2/characters/ene_shield_2/ene_shield_2")
-BoR_Enemy:Get_EnemyType("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1")
-BoR_Enemy:Get_EnemyType("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2")
-BoR_Enemy:Get_EnemyType("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3")
-BoR_Enemy:Get_EnemyType("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
-BoR_Enemy:Get_EnemyType("units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
-BoR_Enemy:Get_EnemyType("units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic")
+BoR_Enemy:Get_EnemyType(Idstring("units/payday2/characters/ene_medic_r870/ene_medic_r870"))
+BoR_Enemy:Get_EnemyType(Idstring("units/payday2/characters/ene_medic_m4/ene_medic_m4"))
+BoR_Enemy:Get_EnemyType(Idstring("units/payday2/characters/ene_spook_1/ene_spook_1"))
+BoR_Enemy:Get_EnemyType(Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"))
+BoR_Enemy:Get_EnemyType(Idstring("units/payday2/characters/ene_sniper_1/ene_sniper_1"))
+BoR_Enemy:Get_EnemyType(Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"))
+BoR_Enemy:Get_EnemyType(Idstring("units/payday2/characters/ene_shield_2/ene_shield_2"))
+BoR_Enemy:Get_EnemyType(Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"))
+BoR_Enemy:Get_EnemyType(Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"))
+BoR_Enemy:Get_EnemyType(Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"))
+BoR_Enemy:Get_EnemyType(Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"))
+BoR_Enemy:Get_EnemyType(Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"))
+BoR_Enemy:Get_EnemyType(Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"))
