@@ -157,7 +157,7 @@ function BoR_Enemy:Get_EnemyType(unit_name_ids)
 					return type_id
 				end
 			end
-			self:Set_EnemyType(unit_name_ids, "other")
+			self:Set_EnemyType(unit_name_ids, 999)
 			return 999
 		end
 	end
