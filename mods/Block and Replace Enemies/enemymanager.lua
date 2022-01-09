@@ -3,7 +3,7 @@ BoR_Enemy = BoR_Enemy or {}
 
 local func1 = BoR_Enemy:Name("EnemyManager:update")
 local func2 = BoR_Enemy:Name("EnemyManager:update")
-
+--[[
 Hooks:PostHook(EnemyManager, "update", func1, function(self, t, dt)
 	if self[func2] then
 		self[func2] = self[func2] - dt
@@ -26,3 +26,4 @@ Hooks:PostHook(EnemyManager, "update", func1, function(self, t, dt)
 		self[func2] = 1
 	end
 end)
+]]
