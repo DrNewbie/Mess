@@ -1,0 +1,15 @@
+{
+  "name": "Drill Dig in",
+  "description": "https://modworkshop.net/mod/35777",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/35777",
+  "version": "2",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/units/props/timergui",
+      "script_path": "timergui.lua"
+    }
+  ]
+}
