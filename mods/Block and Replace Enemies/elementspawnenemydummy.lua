@@ -11,6 +11,7 @@ ElementSpawnEnemyDummy[func1] = ElementSpawnEnemyDummy[func1] or ElementSpawnEne
 function ElementSpawnEnemyDummy:produce(params, ...)
 	local unit_name = nil
 	local which_one
+	local is_BoR_E
 	if params and params.name then
 		unit_name = params.name
 		which_one = true
@@ -64,8 +65,13 @@ function ElementSpawnEnemyDummy:produce(params, ...)
 						self._enemy_name = r_unit
 					end
 				end
+				is_BoR_E = true
 			end
 		end
 	end
-	return self[func1](self, params, ...)
+	local spawned_unit = self[func1](self, params, ...)
+	if spawned_unit and spawned_unit:base() then
+		spawned_unit:base().__is_BoR_E = is_BoR_E
+	end
+	return spawned_unit
 end
