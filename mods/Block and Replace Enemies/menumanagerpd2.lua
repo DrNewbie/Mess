@@ -246,3 +246,16 @@ BoR_Enemy:Add_Enemy("taser", {
 	Idstring("units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale"),
 	Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
 })
+BoR_Enemy:Get_EnemyType(Idstring("units/payday2/characters/ene_medic_r870/ene_medic_r870"))
+BoR_Enemy:Get_EnemyType(Idstring("units/payday2/characters/ene_medic_m4/ene_medic_m4"))
+BoR_Enemy:Get_EnemyType(Idstring("units/payday2/characters/ene_spook_1/ene_spook_1"))
+BoR_Enemy:Get_EnemyType(Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"))
+BoR_Enemy:Get_EnemyType(Idstring("units/payday2/characters/ene_sniper_1/ene_sniper_1"))
+BoR_Enemy:Get_EnemyType(Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"))
+BoR_Enemy:Get_EnemyType(Idstring("units/payday2/characters/ene_shield_2/ene_shield_2"))
+BoR_Enemy:Get_EnemyType(Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"))
+BoR_Enemy:Get_EnemyType(Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"))
+BoR_Enemy:Get_EnemyType(Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"))
+BoR_Enemy:Get_EnemyType(Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"))
+BoR_Enemy:Get_EnemyType(Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"))
+BoR_Enemy:Get_EnemyType(Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"))  
