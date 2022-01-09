@@ -68,7 +68,7 @@ BoR_Enemy:Load()
 
 Hooks:Add("LocalizationManagerPostInit", __Name("Loc"), function(loc)
 	loc:add_localized_strings({
-		["BoR_Enemy_menu_title"] = "Block or Replace Enemies",
+		["BoR_Enemy_menu_title"] = "Block and Replace Enemies",
 		["BoR_Enemy_menu_desc"] = " ",
 		["BoR_Enemy_menu_opts_1"] = "Default",
 		["BoR_Enemy_menu_opts_2"] = "Block",
