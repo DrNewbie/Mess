@@ -19,6 +19,8 @@ local function is_self_check(unit_type, BoR_type)
 		if unit_type ~= 3 and unit_type ~= 8 and unit_type ~= 9 then
 			return true
 		end
+	elseif BoR_type >= 3 and BoR_type <= 9 and BoR_type ~= unit_type then
+		return true
 	elseif BoR_type == 11 then
 		--Random, don't care if it spawn the same one
 	end

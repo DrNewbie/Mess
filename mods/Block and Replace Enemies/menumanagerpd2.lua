@@ -7,7 +7,7 @@ BoR_Enemy.type_enemy_list = BoR_Enemy.type_enemy_list or {}
 BoR_Enemy.unit_name_type = BoR_Enemy.unit_name_type or {}
 
 function BoR_Enemy:Name(__name)
-	return "BoR_E_"..Idstring(__name.."::"..self.ModPath):key()
+	return "BoR_E_"..Idstring(tostring(__name).."::"..self.ModPath):key()
 end
 
 local function __Name(__name)
@@ -125,7 +125,7 @@ Hooks:Add("MenuManagerBuildCustomMenus", __Name("BuildMenu"), function(menu_mana
 end)
 
 function BoR_Enemy:Get_TypeEnemy(__type)
-	return self.type_enemy_list[__type]
+	return self.type_enemy_list[__type] and self.type_enemy_list[__type] or {Idstring("units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"), Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36")}
 end
 
 function BoR_Enemy:Set_EnemyType(unit_name_ids, __type)
@@ -174,7 +174,6 @@ function BoR_Enemy:Add_Enemy(type_name, unit_name_list)
 end
 
 BoR_Enemy:Add_Enemy("spooc", {
-	Idstring("units/payday2/characters/ene_spook_1/ene_spook_1"),
 	Idstring("units/payday2/characters/ene_spook_1/ene_spook_1"),
 	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker/ene_zeal_cloaker"),
 	Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg"),

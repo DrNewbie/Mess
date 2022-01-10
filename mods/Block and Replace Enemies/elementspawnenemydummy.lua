@@ -11,7 +11,6 @@ ElementSpawnEnemyDummy[func1] = ElementSpawnEnemyDummy[func1] or ElementSpawnEne
 function ElementSpawnEnemyDummy:produce(params, ...)
 	local unit_name = nil
 	local which_one
-	local is_BoR_E
 	if params and params.name then
 		unit_name = params.name
 		which_one = true
@@ -31,6 +30,7 @@ function ElementSpawnEnemyDummy:produce(params, ...)
 		local unit_type = BoR_Enemy:Get_EnemyType(unit_name)
 		if type(unit_type) == "number" and unit_type > 0 and unit_type < 999 then
 			local BoR_type = BoR_Enemy:Get_Value("value::"..unit_type) or 1
+			--log("unit_type: " .. tostring(unit_type) .. "\t" .. "BoR_type: " .. tostring(BoR_type))
 			if BoR_type == 1 then
 				--Default, do nothing
 			elseif BoR_type >= 2 and BoR_type <= 11 then
@@ -42,11 +42,7 @@ function ElementSpawnEnemyDummy:produce(params, ...)
 					--Replace to special
 					if BoR_type == 11 then
 						--Random
-						local new_BoR_type = math.random(3, 9)
-						while new_BoR_type == unit_type do
-							new_BoR_type = math.random(3, 9)
-						end
-						BoR_type = new_BoR_type
+						BoR_type = math.random(3, 9)
 					elseif BoR_type == 10 then
 						--Bulldozer+
 						BoR_type = table.random({3, 3, 3, 8, 9})
@@ -56,22 +52,19 @@ function ElementSpawnEnemyDummy:produce(params, ...)
 						r_unit = r_list[table.random_key(r_list)]
 					end
 				end
-				if which_one then
-					params.name = r_unit
-				else
+				if r_unit then
+					if params and params.name then
+						params.name = r_unit
+					end
 					if self:value("enemy") then
 						self._values["enemy"] = r_unit
-					elseif self._enemy_name then
+					end
+					if self._enemy_name then
 						self._enemy_name = r_unit
 					end
 				end
-				is_BoR_E = true
 			end
 		end
 	end
-	local spawned_unit = self[func1](self, params, ...)
-	if spawned_unit and spawned_unit:base() then
-		spawned_unit:base().__is_BoR_E = is_BoR_E
-	end
-	return spawned_unit
+	return self[func1](self, params, ...)
 end
