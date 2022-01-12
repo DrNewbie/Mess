@@ -1,0 +1,9 @@
+<dynamic_object>
+    <diesel materials="units/payday2/weapons/wpn_fps_upg_ns_shot_shark/wpn_fps_upg_ns_shot_shark" orientation_object="rp_wpn_fps_upg_ns_shot_shark" />
+    <graphics>
+        <object name="g_shark" enabled="true" />
+    </graphics>
+	<effects>
+	    <effect_spawner name="effect_to_spawn_001" enabled="false" object="g_shark" effect="effects/payday2/particles/weapons/rpg_smoke_trail"/>
+	</effects>
+</dynamic_object>

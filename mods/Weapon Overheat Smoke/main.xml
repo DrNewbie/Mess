@@ -1,0 +1,16 @@
+<table name="Weapon Overheat Smoke">
+	<AssetUpdates id="Weapon Overheat Smoke" version="1">
+		<custom_provider 
+			version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Weapon%20Overheat%20Smoke.txt" 
+			download_url="https://drnewbie.github.io/Mess/UpdateProvider/Weapon%20Overheat%20Smoke.zip"
+		/>
+	</AssetUpdates>
+    <AddFiles directory="assets">
+		<unit path="units/payday2/weapons/wpn_fps_upg_ns_shot_shark/wpn_fps_upg_ns_shot_shark" force="true"/>
+		<object path="units/payday2/weapons/wpn_fps_upg_ns_shot_shark/wpn_fps_upg_ns_shot_shark" force="true"/>
+	</AddFiles>
+	<Hooks directory="hooks">
+		<hook file="newraycastweaponbase.lua" source_file="lib/units/weapons/newraycastweaponbase"/>
+		<hook file="newraycastweaponbase.lua" source_file="lib/units/beings/player/states/playerstandard"/>
+	</Hooks>
+</table>
