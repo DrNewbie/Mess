@@ -1,0 +1,12 @@
+<table name="Weapon Overheat Explosions">
+	<AssetUpdates id="Weapon Overheat Explosions" version="1">
+		<custom_provider 
+			version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Weapon%20Overheat%20Explosions.txt" 
+			download_url="https://drnewbie.github.io/Mess/UpdateProvider/Weapon%20Overheat%20Explosions.zip"
+		/>
+	</AssetUpdates>
+	<Hooks directory="hooks">
+		<hook file="newraycastweaponbase.lua" source_file="lib/units/weapons/newraycastweaponbase"/>
+		<hook file="newraycastweaponbase.lua" source_file="lib/units/beings/player/states/playerstandard"/>
+	</Hooks>
+</table>
