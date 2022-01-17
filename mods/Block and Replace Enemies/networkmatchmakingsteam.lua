@@ -1,9 +1,7 @@
-_G.BoR_Enemy = _G.BoR_Enemy or {}
-BoR_Enemy = BoR_Enemy or {}
-
-local hook1 = BoR_Enemy:Name("set_attributes")
-local hook2 = BoR_Enemy:Name("search_lobby")
-local hook3 = BoR_Enemy:Name("load_user_filters")
+local mod_ids = Idstring(ModPath):key()
+local hook1 = "LockLobby_"..Idstring("set_attributes::"..mod_ids):key()
+local hook2 = "LockLobby_"..Idstring("search_lobby::"..mod_ids):key()
+local hook3 = "LockLobby_"..Idstring("load_user_filters::"..mod_ids):key()
 
 NetworkMatchMakingSTEAM[hook1] = NetworkMatchMakingSTEAM[hook1] or NetworkMatchMakingSTEAM.set_attributes
 function NetworkMatchMakingSTEAM:set_attributes(settings, ...)

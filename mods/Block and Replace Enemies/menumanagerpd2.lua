@@ -173,8 +173,6 @@ function BoR_Enemy:Add_Enemy(type_name, unit_name_list)
 	return
 end
 
-dofile(BoR_Enemy.ModPath.."/Block.lua")
-
 BoR_Enemy:Add_Enemy("spooc", {
 	Idstring("units/payday2/characters/ene_spook_1/ene_spook_1"),
 	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker/ene_zeal_cloaker"),
