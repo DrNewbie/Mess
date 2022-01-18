@@ -150,8 +150,8 @@ function BoR_Enemy:Get_EnemyType(unit_name_ids)
 				["shield"] = 5,
 				["taser"] = 6,
 				["medic"] = 7,
-				["tank_medic"] = 8,
-				["tank_mini"] = 9
+				["tank_mini"] = 8,
+				["tank_medic"] = 9
 			}
 			local type_id = type_list[self.unit_name_type[unit_name_ids:key()]]
 			if type_id then
