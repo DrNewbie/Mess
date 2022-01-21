@@ -1,0 +1,14 @@
+{
+  "name": "Automatically Equip ICTV Armor",
+  "description": "https://modworkshop.net/mod/35944",
+  "author": "Dr_Newbie",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/managers/menu/skilltreeguinew",
+      "script_path": "skilltreeguinew.lua"
+    }
+  ]
+}
