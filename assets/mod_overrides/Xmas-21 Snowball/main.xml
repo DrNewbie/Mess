@@ -1,0 +1,4 @@
+<table name="Snowball">
+	<Localization directory="loc" default="english.txt"/>
+	<AddFiles directory="assets" auto_generate="true"/>
+</table>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<unit type="gen" slot="13">
+	<network sync="spawn" />
+	<object file="units/pd2_dlc_xm21/weapons/wpn_xmas_snowball/wpn_xmas_snowball" />
+	<dependencies>
+        <depends_on bnk="soundbanks/regular_weapon_sfx" />
+	</dependencies>
+	<extensions>
+        <extension name="base" class="ArrowBase" >
+            <var name="_tweak_projectile_entry" value="xmas_snowball" />
+        </extension>
+        <extension name="unit_data" class="ScriptUnitData" />
+        <extension name="damage" class="UnitDamage" >
+            <var name="_skip_give_body_collision_damage" value="true" />
+        </extension>
+	</extensions>
+	<sounds>
+		<default_soundsource source="rp_wpn_xmas_snowball" />
+        <soundsource name="snd" source="rp_wpn_xmas_snowball" />
+	</sounds>
+</unit>
