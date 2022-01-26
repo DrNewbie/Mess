@@ -1,0 +1,20 @@
+{
+  "menu_id": "custom_dot_size_menu_id",
+  "parent_menu_id": "blt_options",
+  "title": "custom_dot_size_menu_title",
+  "back_callback": "CustomDotSizeSaveSettings",
+  "area_bg": "half",
+  "items": [
+    {
+      "type": "slider",
+      "id": "sld_more_dot_size",
+      "title": "menu_accessibility_dot_size",
+      "callback": "CustomDotSizeSetDotPX",
+      "value": "dot_px",
+      "default_value": 5,
+      "max": 999,
+      "min": 0,
+      "step": 0.1
+    }
+  ]
+}

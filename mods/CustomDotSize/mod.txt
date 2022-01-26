@@ -1,0 +1,16 @@
+{
+  "name": "Custom Dot Size",
+  "description": "https://modworkshop.net/mod/36018",
+  "author": " ",
+  "version": "1",
+  "hooks": [
+    {
+      "hook_id": "lib/managers/menumanager",
+      "script_path": "lua/init.lua"
+    },
+    {
+      "hook_id": "lib/managers/menumanager",
+      "script_path": "lua/menumanager.lua"
+    }
+  ]
+}

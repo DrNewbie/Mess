@@ -1,0 +1,3 @@
+{
+  "custom_dot_size_menu_title": "Custom Dot Size"
+}
