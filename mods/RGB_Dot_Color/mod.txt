@@ -1,0 +1,12 @@
+{
+  "name": "RGB_Dot_Color",
+  "description": " ",
+  "author": " ",
+  "version": "1",
+  "hooks": [
+    {
+      "hook_id": "lib/managers/playermanager",
+      "script_path": "hud.lua"
+    }
+  ]
+}
