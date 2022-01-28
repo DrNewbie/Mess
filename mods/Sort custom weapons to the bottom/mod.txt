@@ -1,0 +1,12 @@
+{
+  "name": "Sort custom weapons to the bottom",
+  "description": "https://modworkshop.net/mod/36044",
+  "author": "Dr_Newbie",
+  "version": "1",
+  "hooks": [
+    {
+      "hook_id": "lib/managers/menu/blackmarketgui",
+      "script_path": "blackmarketgui.lua"
+    }
+  ]
+}
