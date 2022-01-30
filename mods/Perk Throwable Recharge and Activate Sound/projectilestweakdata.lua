@@ -1,13 +1,18 @@
 local ThisModPath = ModPath or tostring(math.random())
 
 Hooks:PostHook(BlackMarketTweakData, "_init_projectiles", "MOD1_"..Idstring(ThisModPath):key(), function(self)
-	self.projectiles.smoke_screen_grenade.sounds = self.projectiles.smoke_screen_grenade.sounds or {}
-	self.projectiles.smoke_screen_grenade.sounds.cooldown = "smoke_screen_grenade_cooldown"
-	self.projectiles.smoke_screen_grenade.sounds.activate = "smoke_screen_grenade_activate"
-	
-	self.projectiles.pocket_ecm_jammer.sounds = self.projectiles.pocket_ecm_jammer.sounds or {}
-	self.projectiles.pocket_ecm_jammer.sounds.cooldown = "pocket_ecm_jammer_cooldown"
-	
-	self.projectiles.damage_control.sounds = self.projectiles.damage_control.sounds or {}
-	self.projectiles.damage_control.sounds.cooldown = "damage_control_cooldown"
+	if file.DirectoryExists(ThisModPath.."assets/sounds") then
+		for __id, __data in pairs(self.projectiles) do
+			if type(__data) == "table" and type(__data.sounds) == "table" then
+				if file.DirectoryExists(ThisModPath.."assets/sounds/perk_deck_sounds/"..__id) then
+					if file.DirectoryExists(ThisModPath.."assets/sounds/perk_deck_sounds/"..__id.."/activate") then
+						self.projectiles[__id].sounds.activate = nil
+					end
+					if file.DirectoryExists(ThisModPath.."assets/sounds/perk_deck_sounds/"..__id.."/cooldown") then
+						self.projectiles[__id].sounds.cooldown = nil
+					end
+				end
+			end
+		end
+	end
 end)

@@ -1,11 +1,5 @@
 <table name="Perk Throwable Recharge and Activate Sound">
-	<Sounds directory="assets/sounds">
-		<sound id="smoke_screen_grenade_cooldown" path="perk_deck/smoke_screen_grenade_cooldown.ogg" volume="10"/>
-		<sound id="smoke_screen_grenade_activate" path="perk_deck/smoke_screen_grenade_activate.ogg" volume="1"/>
-		<sound id="pocket_ecm_jammer_cooldown" path="perk_deck/pocket_ecm_jammer_cooldown.ogg" volume="10"/>
-		<sound id="damage_control_cooldown" path="perk_deck/damage_control_cooldown.ogg" volume="10"/>
-	</Sounds>
-	<AssetUpdates id="Perk Throwable Recharge and Activate Sound" version="2">
+	<AssetUpdates id="Perk Throwable Recharge and Activate Sound" version="3">
 		<custom_provider 
 			version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Perk%20Throwable%20Recharge%20and%20Activate%20Sound.txt" 
 			download_url="https://drnewbie.github.io/Mess/UpdateProvider/Perk%20Throwable%20Recharge%20and%20Activate%20Sound.zip"
