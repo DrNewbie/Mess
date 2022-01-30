@@ -15,7 +15,7 @@ local function __GetSoundFileName(__perk, __cooldown_or_activate)
 	local __type = __cooldown_or_activate and "cooldown" or "activate"
 	local __type_patch = __perk_dir.."/"..__type
 	if type(__List_of_Sounds[__perk]) == "table" and type(__List_of_Sounds[__perk][__type]) == "table" then
-		__sound_name = table.random((__List_of_Sounds[__perk][__type]))
+		__sound_name = tostring(table.random(__List_of_Sounds[__perk][__type]))
 		if io.file_is_readable(__type_patch.."/"..__sound_name) then
 			return __type_patch.."/"..__sound_name
 		else
