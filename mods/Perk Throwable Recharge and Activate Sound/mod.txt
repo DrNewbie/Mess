@@ -1,0 +1,19 @@
+{
+  "name": "Perk Throwable Recharge and Activate Sound",
+  "description": "https://modworkshop.net/mod/36077",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/36077",
+  "version": "1",
+  "priority": 1,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/tweak_data/blackmarket/projectilestweakdata",
+      "script_path": "projectilestweakdata.lua"
+    },
+    {
+      "hook_id": "lib/managers/playermanager",
+      "script_path": "playermanager.lua"
+    }
+  ]
+}
