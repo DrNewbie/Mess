@@ -7,4 +7,7 @@ Hooks:PostHook(BlackMarketTweakData, "_init_projectiles", "MOD1_"..Idstring(This
 	
 	self.projectiles.pocket_ecm_jammer.sounds = self.projectiles.pocket_ecm_jammer.sounds or {}
 	self.projectiles.pocket_ecm_jammer.sounds.cooldown = "pocket_ecm_jammer_cooldown"
+	
+	self.projectiles.damage_control.sounds = self.projectiles.damage_control.sounds or {}
+	self.projectiles.damage_control.sounds.cooldown = "damage_control_cooldown"
 end)
