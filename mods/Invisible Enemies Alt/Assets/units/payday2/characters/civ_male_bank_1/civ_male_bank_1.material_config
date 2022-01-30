@@ -1,0 +1,25 @@
+<materials version="3" group="civ_male_bank_1">
+	<material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture file="units/payday2/characters/shared_textures/civ_male_bank_worker_head_1_nm"/>
+		<diffuse_texture file="units/payday2/characters/shared_textures/civ_male_bank_worker_head_1_df"/>
+	</material>
+	<material name="mtr_body" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture file="units/payday2/characters/shared_textures/male_bank_worker_nm"/>
+		<diffuse_texture file="units/payday2/characters/shared_textures/male_bank_worker_df"/>
+	</material>
+	<material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+	<material name="mtr_head_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture file="units/payday2/characters/shared_textures/civ_male_bank_worker_head_1_nm" mip="1"/>
+		<diffuse_texture file="units/payday2/characters/shared_textures/civ_male_bank_worker_head_1_df" mip="1"/>
+	</material>
+	<material name="mtr_head_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<diffuse_texture file="units/payday2/characters/shared_textures/civ_male_bank_worker_head_1_df" mip="4"/>
+	</material>
+	<material name="mtr_body_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture file="units/payday2/characters/shared_textures/male_bank_worker_nm" mip="1"/>
+		<diffuse_texture file="units/payday2/characters/shared_textures/male_bank_worker_df" mip="1"/>
+	</material>
+	<material name="mtr_body_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<diffuse_texture file="units/payday2/characters/shared_textures/male_bank_worker_df" mip="4"/>
+	</material>
+</materials>

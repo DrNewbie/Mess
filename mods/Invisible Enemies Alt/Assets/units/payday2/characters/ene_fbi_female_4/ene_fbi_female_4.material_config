@@ -1,0 +1,50 @@
+<materials version="3" group="ene_fbi_female_4">
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" unique="true" version="2" name="mtr_body">
+        <diffuse_texture file="units/payday2/characters/shared_textures/ene_fbi_female_3_df"/>
+        <bump_normal_texture file="units/payday2/characters/shared_textures/ene_fbi_female_1_nm"/>
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" unique="true" version="2" name="mtr_body_lod_1">
+        <diffuse_texture file="units/payday2/characters/shared_textures/ene_fbi_female_3_df" mip="1"/>
+        <bump_normal_texture file="units/payday2/characters/shared_textures/ene_fbi_female_1_nm" mip="1"/>
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" unique="true" version="2" name="mtr_body_lod_2">
+        <diffuse_texture file="units/payday2/characters/shared_textures/ene_fbi_female_3_df" mip="4"/>
+        <bump_normal_texture file="units/payday2/characters/shared_textures/ene_fbi_female_1_nm" mip="4"/>
+    </material>
+
+
+    <material name="mtr_head" unique="true" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+        <diffuse_texture file="units/payday2/characters/shared_textures/ene_fbi_female_4_head_df"/>
+        <bump_normal_texture file="units/payday2/characters/shared_textures/ene_fbi_female_4_head_nm"/>
+    </material>
+    <material name="mtr_head_lod_1" unique="true" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+        <diffuse_texture file="units/payday2/characters/shared_textures/ene_fbi_female_4_head_df" mip="1"/>
+        <bump_normal_texture file="units/payday2/characters/shared_textures/ene_fbi_female_4_head_nm" mip="1"/>
+    </material>
+    <material name="mtr_head_lod_2" unique="true" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+        <diffuse_texture file="units/payday2/characters/shared_textures/ene_fbi_female_4_head_df" mip="4"/>
+        <bump_normal_texture file="units/payday2/characters/shared_textures/ene_fbi_female_4_head_nm" mip="4"/>
+    </material>
+
+
+    <material name="mtr_hair_1" render_template="effect:DIFFUSE0_TEXTURE:SKINNED_3WEIGHTS:GHOST" version="2">
+        <variable value="candle" type="scalar" name="intensity"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/ene_prisonguard_female_1_hair_df"/>
+    </material>
+
+    <material render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:EXTERNAL_ALPHA_REF:NORMALMAP:OPACITY_TEXTURE:SIMPLE_TINT:SKINNED_3WEIGHTS:GHOST" unique="true" name="mtr_hair_2" version="2">
+        <diffuse_texture file="units/payday2/characters/shared_textures/hair_falloff_1_df"/>
+        <opacity_texture file="units/payday2/characters/shared_textures/hair_female_1_op"/>
+        <variable value="0.32700002193451" type="scalar" name="alpha_ref"/>
+        <bump_normal_texture file="units/payday2/characters/shared_textures/hair_female_1_nm"/>
+        <variable value="0.10236220806837 0.06181874871254 0.051783237606287" type="vector3" name="tint_color"/>
+    </material>
+
+    <material name="mtr_hair_3" render_template="effect:DIFFUSE0_TEXTURE:DOUBLE_SIDED:SKINNED_3WEIGHTS:GHOST:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/payday2/characters/shared_textures/ene_prisonguard_female_1_hair_df"/>
+        <variable value="candle" type="scalar" name="intensity"/>
+        <variable value="2" type="scalar" name="falloff_exp"/>
+    </material>
+
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

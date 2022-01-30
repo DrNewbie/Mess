@@ -1,0 +1,32 @@
+<materials version="3" group="ene_gang_biker_boss">
+	<material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_born/characters/ene_gang_biker_boss/ene_gang_biker_boss_head_nm"/>
+		<diffuse_texture 		file="units/pd2_dlc_born/characters/ene_gang_biker_boss/ene_gang_biker_boss_head_df"/>
+	</material>
+	<material name="mtr_head_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_born/characters/ene_gang_biker_boss/ene_gang_biker_boss_head_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_dlc_born/characters/ene_gang_biker_boss/ene_gang_biker_boss_head_df" mip="1"/>
+	</material>
+
+	<material name="mtr_vest" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_born/characters/ene_gang_biker_boss/ene_gang_biker_boss_vest_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_dlc_born/characters/ene_gang_biker_boss/ene_gang_biker_boss_vest_df" mip="1"/>
+	</material>
+
+
+	<material name="mtr_helmet" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_born/characters/ene_gang_biker_boss/ene_gang_biker_boss_helmet_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_dlc_born/characters/ene_gang_biker_boss/ene_gang_biker_boss_helmet_df" mip="1"/>
+	</material>
+	
+
+	<material name="mtr_body" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_born/characters/ene_gang_biker_boss/ene_gang_biker_boss_nm"/>
+		<diffuse_texture 		file="units/pd2_dlc_born/characters/ene_gang_biker_boss/ene_gang_biker_boss_df"/>
+	</material>
+	<material name="mtr_body_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_born/characters/ene_gang_biker_boss/ene_gang_biker_boss_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_dlc_born/characters/ene_gang_biker_boss/ene_gang_biker_boss_df" mip="1"/>
+	</material>
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

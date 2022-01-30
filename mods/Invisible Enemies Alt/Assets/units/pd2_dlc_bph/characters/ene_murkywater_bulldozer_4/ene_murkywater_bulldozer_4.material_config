@@ -1,0 +1,15 @@
+<materials version="3" group="ene_murkywater_bulldozer_4">
+    <material name="mtr_bulldozer" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+        <bump_normal_texture file="units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_1/material_nm"/>
+        <diffuse_texture file="units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_4/material_v4_df"/>
+    </material>
+    <material name="mtr_bulldozer_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+        <bump_normal_texture file="units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_1/material_nm" mips="3"/>
+        <diffuse_texture file="units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_4/material_v4_df" mips="3"/>
+    </material>
+<!--     <material name="mtr_bulldozer_lod_2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+        <bump_normal_texture file="units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_1/material_nm" mips="4"/>
+        <diffuse_texture file="units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_4/material_v4_df" mips="4"/>
+    </material>  -->
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

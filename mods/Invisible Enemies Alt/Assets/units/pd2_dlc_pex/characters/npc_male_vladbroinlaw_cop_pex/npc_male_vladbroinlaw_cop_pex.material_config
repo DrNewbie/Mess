@@ -1,0 +1,27 @@
+<materials version="3" group="npc_male_vladbroinlaw_cop_pex">
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_CIVILIANS:SKINNED_3WEIGHTS:GHOST" name="mtr_head" version="2">
+        <bump_normal_texture file="units/pd2_dlc_pex/characters/npc_male_vladbroinlaw_pex/npc_male_vladbroinlaw_head_pex_nm"/>
+        <diffuse_texture file="units/pd2_dlc_pex/characters/npc_male_vladbroinlaw_pex/npc_male_vladbroinlaw_head_pex_df"/>
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_CIVILIANS:SKINNED_3WEIGHTS:GHOST" name="mtr_body" version="2">
+        <bump_normal_texture file="units/pd2_dlc_pex/characters/ene_office_cops/shared_textures/ene_generic_office_cop_body_nm"/>
+        <diffuse_texture file="units/pd2_dlc_pex/characters/ene_office_cops/shared_textures/ene_generic_office_cop_body_df"/>
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS:GHOST" name="mtr_acc_headset" version="2">
+        <bump_normal_texture file="units/pd2_dlc_pex/characters/civ_male_prisoner_pex/acc_pex_headset_nm"/>
+        <diffuse_texture file="units/pd2_dlc_pex/characters/civ_male_prisoner_pex/acc_pex_headset_df"/>
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:GLOBAL_ENVIRONMENT_MAPPING:GLOSS_BLURS_CUBEMAP:GSMA_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" name="mtr_arms" version="2">
+        <bump_normal_texture file="units/pd2_dlc_pex/characters/ntr_male_generic_arms/ntr_male_generic_arms_hispanic_nm"/>
+        <diffuse_texture file="units/pd2_dlc_pex/characters/ntr_male_generic_arms/ntr_male_generic_arms_hispanic_1_df"/>
+        <material_texture file="units/pd2_dlc_pex/characters/ntr_male_generic_arms/ntr_male_generic_arms_hispanic_gsma"/>
+    </material>
+    <material render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:DOUBLE_SIDED:EXTERNAL_ALPHA_REF:GLOBAL_ENVIRONMENT_MAPPING:GLOSS_BLURS_CUBEMAP:GSMA_TEXTURE:NORMALMAP:OPACITY_TEXTURE:RL_CIVILIANS:SKINNED_3WEIGHTS:GHOST" name="mtr_hair" version="2">
+        <bump_normal_texture file="units/pd2_dlc_pex/characters/ntr_hair/ntr_hair_nm"/>
+        <diffuse_texture file="units/pd2_dlc_pex/characters/ntr_hair/ntr_hair_brown_df"/>
+        <opacity_texture file="units/pd2_dlc_pex/characters/ntr_hair/ntr_hair_op"/>
+        <variable type="scalar" name="alpha_ref" value="0.12100000574719"/>
+        <material_texture file="units/pd2_dlc_pex/characters/ntr_hair/ntr_hair_gsma"/>
+    </material>
+    <material render_template="shadow_caster_only:SKINNED_1WEIGHT" name="shadow_caster" version="2"/>
+</materials>

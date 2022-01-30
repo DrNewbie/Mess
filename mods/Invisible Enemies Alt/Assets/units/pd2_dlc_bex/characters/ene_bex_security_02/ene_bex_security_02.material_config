@@ -1,0 +1,46 @@
+<materials version="3" group="ene_bex_security_02">
+	<material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_bex/characters/shared_textures/ntr_generic_male_heads/ntr_male_generic_hispanic_head_05_nm"/>
+		<diffuse_texture 		file="units/pd2_dlc_bex/characters/shared_textures/ntr_generic_male_heads/ntr_male_generic_hispanic_head_05_df"/>
+	</material>
+	<material name="mtr_head_lod_1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_bex/characters/shared_textures/ntr_generic_male_heads/ntr_male_generic_hispanic_head_05_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_dlc_bex/characters/shared_textures/ntr_generic_male_heads/ntr_male_generic_hispanic_head_05_df" mip="1"/>
+	</material>
+		<material name="mtr_head_lod_2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_bex/characters/shared_textures/ntr_generic_male_heads/ntr_male_generic_hispanic_head_05_nm" mip="4"/>
+		<diffuse_texture 		file="units/pd2_dlc_bex/characters/shared_textures/ntr_generic_male_heads/ntr_male_generic_hispanic_head_05_df" mip="4"/>
+	</material>
+
+	<material name="mtr_arms" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_bex/characters/ene_bex_security_01/bex_ene_security_head_atlas_nm"/>
+		<diffuse_texture 		file="units/pd2_dlc_bex/characters/ene_bex_security_01/bex_ene_security_head_atlas_df"/>
+	</material>
+	<material name="mtr_arms_lod_1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_bex/characters/ene_bex_security_01/bex_ene_security_head_atlas_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_dlc_bex/characters/ene_bex_security_01/bex_ene_security_head_atlas_df" mip="1"/>
+	</material>
+		<material name="mtr_arms_lod_2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_bex/characters/ene_bex_security_01/bex_ene_security_head_atlas_nm" mip="4"/>
+		<diffuse_texture 		file="units/pd2_dlc_bex/characters/ene_bex_security_01/bex_ene_security_head_atlas_df" mip="4"/>
+	</material>
+
+	<material name="mtr_bex_ene_security_body" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_bex/characters/ene_bex_security_01/bex_ene_security_body_atlas_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_dlc_bex/characters/ene_bex_security_01/bex_ene_security_body_atlas_df"/>
+	</material>
+	<material name="mtr_bex_ene_security_body_lod_1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_bex/characters/ene_bex_security_01/bex_ene_security_body_atlas_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_dlc_bex/characters/ene_bex_security_01/bex_ene_security_body_atlas_df" mip="1"/>
+	</material>
+	<material name="mtr_bex_ene_security_body_lod_2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_bex/characters/ene_bex_security_01/bex_ene_security_body_atlas_nm" mip="4"/>
+		<diffuse_texture 		file="units/pd2_dlc_bex/characters/ene_bex_security_01/bex_ene_security_body_atlas_df" mip="4"/>
+	</material>
+	<material name="mtr_hat" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_bex/characters/ene_bex_security_01/bex_ene_security_body_atlas_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_dlc_bex/characters/ene_bex_security_01/bex_ene_security_body_atlas_df"/>
+	</material>
+
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

@@ -1,0 +1,16 @@
+<materials version="3" group="ene_cop_office_policia_3">
+	<material name="mtr_body" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_pex/characters/ene_office_cops/shared_textures/ene_generic_office_cop_body_2_nm"/>
+		<diffuse_texture 		file="units/pd2_dlc_pex/characters/ene_office_cops/shared_textures/ene_generic_office_cop_body_2_df"/>
+	</material>
+	<material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_bex/characters/shared_textures/ntr_generic_male_heads/ntr_male_generic_hispanic_head_07_nm"/>
+		<diffuse_texture 		file="units/pd2_dlc_bex/characters/shared_textures/ntr_generic_male_heads/ntr_male_generic_hispanic_head_07_df"/>
+	</material>
+	<material name="mtr_arms" render_template="generic:DIFFUSE_TEXTURE:GLOBAL_ENVIRONMENT_MAPPING:GLOSS_BLURS_CUBEMAP:GSMA_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_pex/characters/ntr_male_generic_arms/ntr_male_generic_arms_hispanic_nm"/>
+		<diffuse_texture 		file="units/pd2_dlc_pex/characters/ntr_male_generic_arms/ntr_male_generic_arms_hispanic_2_df"/>
+		<material_texture 		file="units/pd2_dlc_pex/characters/ntr_male_generic_arms/ntr_male_generic_arms_hispanic_gsma"/>
+	</material>
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

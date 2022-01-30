@@ -1,0 +1,12 @@
+<materials version="3" group="ene_drug_lord_boss">
+    <material name="mtr_body" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+        <bump_normal_texture file="units/pd2_dlc_friend/characters/ene_drug_lord_boss/ene_drug_lord_boss_nm"/>
+        <diffuse_texture file="units/pd2_dlc_friend/characters/ene_drug_lord_boss/ene_drug_lord_boss_df"/>
+    </material>
+    <material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+        <bump_normal_texture file="units/pd2_dlc_friend/characters/ene_drug_lord_boss/ene_drug_lord_boss_head_nm"/>
+        <diffuse_texture file="units/pd2_dlc_friend/characters/ene_drug_lord_boss/ene_drug_lord_boss_head_df"/>
+    </material>
+
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

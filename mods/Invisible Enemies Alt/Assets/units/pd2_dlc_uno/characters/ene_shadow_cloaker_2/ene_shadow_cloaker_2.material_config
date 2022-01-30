@@ -1,0 +1,33 @@
+<materials version="3" group="ene_shadow_spook_2">
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SELF_ILLUMINATION:SKINNED_3WEIGHTS:GHOST" name="mtr_body" version="2">
+        <bump_normal_texture file="units/pd2_dlc_uno/characters/ene_shadow_cloaker_1/ene_shadow_body_nm"/>
+        <diffuse_texture file="units/pd2_dlc_uno/characters/ene_shadow_cloaker_1/ene_shadow_body_df"/>
+        <self_illumination_texture file="units/pd2_dlc_uno/characters/ene_shadow_cloaker_1/ene_shadow_body_il"/>
+        <variable type="scalar" name="il_multiplier" value="reddot"/>
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SELF_ILLUMINATION:SKINNED_3WEIGHTS:GHOST" name="mtr_body_lod" version="2">
+        <bump_normal_texture file="units/pd2_dlc_uno/characters/ene_shadow_cloaker_1/ene_shadow_body_nm" mip="1"/>
+        <diffuse_texture file="units/pd2_dlc_uno/characters/ene_shadow_cloaker_1/ene_shadow_body_df" mip="1"/>
+        <self_illumination_texture file="units/pd2_dlc_uno/characters/ene_shadow_cloaker_1/ene_shadow_body_il"/>
+        <variable type="scalar" name="il_multiplier" value="reddot"/>
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SELF_ILLUMINATION:SKINNED_3WEIGHTS:GHOST" name="mtr_head" version="2">
+        <bump_normal_texture file="units/pd2_dlc_uno/characters/ene_shadow_cloaker_1/material_mask_2_nm"/>
+        <diffuse_texture file="units/pd2_dlc_uno/characters/ene_shadow_cloaker_1/material_mask_2_df"/>
+        <self_illumination_texture file="units/pd2_dlc_uno/characters/ene_shadow_cloaker_1/material_mask_2_il"/>
+        <variable type="scalar" name="il_multiplier" value="reddot"/>
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SELF_ILLUMINATION:SKINNED_3WEIGHTS:GHOST" name="mtr_head_lod" version="2">
+        <bump_normal_texture file="units/pd2_dlc_uno/characters/ene_shadow_cloaker_1/material_mask_2_nm" mip="1"/>
+        <diffuse_texture file="units/pd2_dlc_uno/characters/ene_shadow_cloaker_1/material_mask_2_df" mip="1"/>
+        <self_illumination_texture file="units/pd2_dlc_uno/characters/ene_shadow_cloaker_1/material_mask_2_il"/>
+        <variable type="scalar" name="il_multiplier" value="reddot"/>
+    </material>
+    <material render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:OPACITY_TEXTURE:RL_COPS:SELF_ILLUMINATION" name="mtr_il" version="2">
+        <diffuse_texture file="units/pd2_dlc_uno/characters/ene_shadow_cloaker_1/eyes_il"/>
+        <self_illumination_texture file="units/pd2_dlc_uno/characters/ene_shadow_cloaker_1/eyes_il"/>
+        <opacity_texture file="units/payday2/characters/shared_textures/spook_il"/>
+        <variable type="scalar" name="il_multiplier" value="reddot"/>
+    </material>
+    <material render_template="shadow_caster_only:SKINNED_1WEIGHT" name="shadow_caster" version="2"/>
+</materials>

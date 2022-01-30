@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<materials group="ene_triad_cruise_3" version="3">
+	<material name="mtr_body" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<diffuse_texture file="units/pd2_dlc1/characters/shared_textures/civ_male_bank_manager_2_df"/>
+		<bump_normal_texture file="units/pd2_dlc1/characters/shared_textures/civ_male_bank_manager_2_nm"/>
+	</material>
+	<material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:GLOBAL_ENVIRONMENT_MAPPING:GLOSS_BLURS_CUBEMAP:GSMA_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<diffuse_texture file="units/pd2_dlc_chas/characters/shared_textures/ntr_male_asian_heads/ntr_male_asian_head_02_diff"/>
+		<bump_normal_texture file="units/pd2_dlc_chas/characters/shared_textures/ntr_male_asian_heads/ntr_male_asian_head_02_nm"/>
+		<material_texture file="units/pd2_dlc_chas/characters/shared_textures/ntr_male_asian_heads/ntr_male_asian_head_02_gsma"/>
+	</material>
+	<material name="mtr_hair" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:DOUBLE_SIDED:EXTERNAL_ALPHA_REF:GLOBAL_ENVIRONMENT_MAPPING:GLOSS_BLURS_CUBEMAP:GSMA_TEXTURE:NORMALMAP:OPACITY_TEXTURE:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<diffuse_texture file="units/pd2_dlc_chas/characters/shared_textures/ntr_hair/ntr_generic_hair_df"/>
+		<bump_normal_texture file="units/pd2_dlc_fex/characters/ntr_hair/ntr_generic_hair_nm"/>
+		<material_texture file="units/pd2_dlc_fex/characters/ntr_hair/ntr_hair_gsma"/>
+		<opacity_texture file="units/pd2_dlc_chas/characters/shared_textures/ntr_hair/ntr_generic_hair_op"/>
+		<variable name="alpha_ref" type="scalar" value="0.12"/>
+	</material>
+	<material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT"/>
+</materials>

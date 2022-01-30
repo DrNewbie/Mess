@@ -1,0 +1,28 @@
+<materials version="3" group="ene_fbi_office_3">
+	<material name="mtr_fbi_head_4" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/fbi_head_4_nm"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/fbi_head_4_df"/>
+	</material>
+	<material name="mtr_fbi_head_4_lod_1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/fbi_head_4_nm" mips="1"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/fbi_head_4_df" mips="1"/>
+	</material>
+	<material name="mtr_fbi_head_4_lod_2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/fbi_head_4_nm" mips="4"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/fbi_head_4_df" mips="4"/>
+	</material>
+
+	<material name="mtr_fbi_body" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/fbi_body_nm"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/fbi_body_1_df"/>
+	</material>
+	<material name="mtr_fbi_body_lod_1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/fbi_body_nm" mips="1"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/fbi_body_1_df" mips="1"/>
+	</material>
+	<material name="mtr_fbi_body_lod_2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/fbi_body_nm" mips="4"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/fbi_body_1_df" mips="4"/>
+	</material>
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

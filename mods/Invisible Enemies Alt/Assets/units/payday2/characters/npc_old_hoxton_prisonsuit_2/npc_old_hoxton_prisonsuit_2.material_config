@@ -1,0 +1,25 @@
+<materials version="3" group="npc_old_hoxton_prisonsuit_2">
+    <material name="mtr_old_hoxton_head" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS:GHOST" unique="true" version="2" >
+        <bump_normal_texture file="units/payday2/characters/shared_textures/old_hoxton_head_nm"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/old_hoxton_head_df"/>
+        <variable value="0.2 0.8 1.0" type="vector3" name="contour_color"/>
+        <variable value="1" type="scalar" name="contour_opacity"/>
+    </material>
+    <material name="mtr_old_hoxton_prison_body" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS:GHOST" unique="true" version="2" >
+        <bump_normal_texture file="units/payday2/characters/shared_textures/old_hoxton_prisonsuit_nm"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/old_hoxton_prisonsuit_df"/>
+        <variable value="0.2 0.8 1.0" type="vector3" name="contour_color"/>
+        <variable value="1" type="scalar" name="contour_opacity"/>
+    </material>
+    <material name="mtr_straps" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+        <bump_normal_texture file="units/payday2/masks/fps_temp_dallas/temp_mask_inside_nm"/>
+        <diffuse_texture file="units/payday2/masks/fps_temp_dallas/temp_mask_inside_df"/>
+        <variable value="0.2 0.8 1.0" type="vector3" name="contour_color"/>
+        <variable value="1" type="scalar" name="contour_opacity"/>
+    </material>
+    <material name="mtr_mask" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+        <bump_normal_texture file="units/pd2_dlc_old_hoxton/masks/old_hoxton/old_hoxton_nm"/>
+        <diffuse_texture file="units/pd2_dlc_old_hoxton/masks/old_hoxton/old_hoxton_df"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

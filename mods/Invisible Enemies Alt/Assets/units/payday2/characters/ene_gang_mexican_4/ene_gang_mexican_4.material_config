@@ -1,0 +1,28 @@
+<materials version="3" group="ene_gang_mexican_4">
+	<material name="mtr_mexican_4_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/mexican_4_head_nm" mip="1"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/mexican_4_head_df" mip="1"/>
+	</material>
+	<material name="mtr_mexican_4_head_lod_1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/mexican_4_head_nm" mip="2"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/mexican_4_head_df" mip="2"/>
+	</material>
+	<material name="mtr_mexican_4_head_lod_2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/mexican_4_head_nm" mip="4"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/mexican_4_head_df" mip="4"/>
+	</material>
+
+	<material name="mtr_mexican_4_body" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/mexican_4_nm" mip="1"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/mexican_4_df" mip="1"/>
+	</material>
+	<material name="mtr_mexican_4_body_lod_1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/mexican_4_nm" mip="2"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/mexican_4_df" mip="2"/>
+	</material>
+	<material name="mtr_mexican_4_body_lod_2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/mexican_4_nm" mip="4"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/mexican_4_df" mip="4"/>
+	</material>
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

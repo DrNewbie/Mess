@@ -1,0 +1,20 @@
+<materials version="3" group="ene_male_triad_01">
+	<material name="mtr_biker_head_1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/biker_1_head_nm"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/biker_1_head_df"/>
+	</material>
+	<material name="mtr_biker_head_1_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/biker_1_head_nm" mip="1"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/biker_1_head_df" mip="1"/>
+	</material>
+
+	<material name="mtr_biker_1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/biker_1_nm"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/biker_1_df"/>
+	</material>
+	<material name="mtr_biker_1_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/biker_1_nm" mip="1"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/biker_1_df" mip="1"/>
+	</material>
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

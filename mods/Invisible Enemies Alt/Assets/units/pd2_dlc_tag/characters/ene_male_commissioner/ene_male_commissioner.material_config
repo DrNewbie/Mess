@@ -1,0 +1,11 @@
+<materials version="3" group="ene_male_commissioner">
+	<material name="mat_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_tag/characters/ene_male_commissioner/ene_male_commissioner_head_nm"/>
+		<diffuse_texture 		file="units/pd2_dlc_tag/characters/ene_male_commissioner/ene_male_commissioner_head_df"/>
+	</material>
+	<material name="mat_body" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_tag/characters/ene_male_commissioner/ene_male_commissioner_body_nm"/>
+		<diffuse_texture 		file="units/pd2_dlc_tag/characters/ene_male_commissioner/ene_male_commissioner_body_df"/>
+	</material>
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

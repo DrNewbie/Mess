@@ -1,0 +1,24 @@
+<materials version="3" group="civ_male_casual_2">
+    <material name="m_fredrik_e" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_CIVILIANS:SKINNED_3WEIGHTS:GHOST" version="2">
+        <bump_normal_texture file="units/payday2/characters/shared_textures/fredrik_e_nm"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/fredrik_e_df"/>
+    </material>
+    <material name="mtr_casual_male_2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_CIVILIANS:SKINNED_3WEIGHTS:GHOST" version="2">
+        <bump_normal_texture file="units/payday2/characters/shared_textures/casual_male_2_nm"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/casual_male_2_df"/>
+    </material>
+	<material name="m_fredrik_e_lod" render_template="generic:DIFFUSE_TEXTURE:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/fredrik_e_df" mip="1"/>
+	</material>
+    <material name="m_fredrik_e_lod2" render_template="generic:DIFFUSE_TEXTURE:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+        <diffuse_texture        file="units/payday2/characters/shared_textures/fredrik_e_df" mip="4"/>
+    </material>
+
+	<material name="mtr_casual_male_2_lod" render_template="generic:DIFFUSE_TEXTURE:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/casual_male_2_df" mip="1"/>
+	</material>
+    <material name="mtr_casual_male_2_lod2" render_template="generic:DIFFUSE_TEXTURE:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+        <diffuse_texture        file="units/payday2/characters/shared_textures/casual_male_2_df" mip="4"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

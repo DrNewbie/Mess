@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<materials group="ene_guard_jaguar_mask" version="3">
+	<material name="mtr_body" render_template="generic:DIFFUSE_TEXTURE:GLOBAL_ENVIRONMENT_MAPPING:GLOSS_BLURS_CUBEMAP:GSMA_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture file="units/pd2_dlc_fex/characters/shared_textures/ene_guard_masks/ene_male_guard_mask_body_nm"/>
+		<diffuse_texture file="units/pd2_dlc_fex/characters/ene_guard_jaguar_mask/ene_guard_jaguar_mask_body_df"/>
+		<material_texture file="units/pd2_dlc_fex/characters/shared_textures/ene_guard_masks/ene_male_guard_mask_body_gsma"/>
+	</material>
+	<material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture file="units/pd2_dlc_bex/characters/shared_textures/ntr_generic_male_heads/ntr_male_generic_hispanic_head_01_nm"/>
+		<diffuse_texture file="units/pd2_dlc_fex/characters/ene_guard_jaguar_mask/ene_guard_jaguar_mask_head_df"/>
+	</material>
+	<material name="mtr_mask" render_template="generic:DIFFUSE_TEXTURE:GLOBAL_ENVIRONMENT_MAPPING:GLOSS_BLURS_CUBEMAP:GSMA_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture file="units/pd2_dlc_fex/characters/ene_guard_jaguar_mask/ene_guard_jaguar_mask_nm"/>
+		<diffuse_texture file="units/pd2_dlc_fex/characters/ene_guard_jaguar_mask/ene_guard_jaguar_mask_df"/>
+		<material_texture file="units/pd2_dlc_fex/characters/ene_guard_jaguar_mask/ene_guard_jaguar_mask_gsma"/>
+	</material>
+	<material name="mtr_hair" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:DOUBLE_SIDED:EXTERNAL_ALPHA_REF:GLOBAL_ENVIRONMENT_MAPPING:GLOSS_BLURS_CUBEMAP:GSMA_TEXTURE:NORMALMAP:OPACITY_TEXTURE:RL_CIVILIANS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture file="units/pd2_dlc_pex/characters/ntr_hair/ntr_hair_nm"/>
+        <diffuse_texture file="units/pd2_dlc_pex/characters/ntr_hair/ntr_hair_brown_df"/>
+        <opacity_texture file="units/pd2_dlc_pex/characters/ntr_hair/ntr_hair_op"/>
+        <variable type="scalar" name="alpha_ref" value="0.12100000574719"/>
+        <material_texture file="units/pd2_dlc_pex/characters/ntr_hair/ntr_hair_gsma"/>
+	</material>
+	<material name="mtr_arms" render_template="generic:DIFFUSE_TEXTURE:GLOBAL_ENVIRONMENT_MAPPING:GLOSS_BLURS_CUBEMAP:GSMA_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture file="units/pd2_dlc_pex/characters/ntr_male_generic_arms/ntr_male_generic_arms_hispanic_nm"/>
+		<diffuse_texture file="units/pd2_dlc_fex/characters/ene_guard_jaguar_mask/ene_guard_jaguar_mask_arms_df"/>
+		<material_texture file="units/pd2_dlc_pex/characters/ntr_male_generic_arms/ntr_male_generic_arms_hispanic_gsma"/>
+	</material>
+	<material name="mtr_backside" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+		<bump_normal_texture file="units/payday2/masks/fps_temp_dallas/temp_mask_inside_nm"/>
+		<diffuse_texture file="units/payday2/masks/fps_temp_dallas/temp_mask_inside_df"/>
+	</material>
+	<material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT"/>
+</materials>

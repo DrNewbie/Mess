@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tweak name="shaders/base" extension="render_template_database">
+	<search>
+		<diesel_render_system/>
+		<render_templates/>
+	</search>
+	<target>
+		<template name="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" sort_value="">
+			<!--
+			<shader_input_declaration>
+				<variable name="reflection_texture" type="texture" ui_name="Reflection Cube" expects_gamma_corrected="true"/>
+				<variable name="opacity_texture" type="texture" ui_name="Opacity Texture (UV5)" expects_gamma_corrected="false"/>
+				<variable name="diffuse_texture" type="texture" ui_name="Diffuse Texture (UV1)" expects_gamma_corrected="true"/>
+				<variable name="bump_normal_texture" type="texture" ui_name="Normal Map (UV2 else UV1)" expects_gamma_corrected="false"/>
+			</shader_input_declaration>
+			<technique name="default">
+				<method name="opacity:default:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:NVIDIA:SKINNED_3WEIGHTS" platforms="PCD3D9" required_caps="nv_shadow_buffer"/>
+				<method name="opacity:default:ATI:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" platforms="PCD3D9" required_caps="ati_depth_texture_16"/>
+				<method name="opacity:default:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS"/>
+			</technique>
+			-->
+			<shader_input_declaration/>
+			<technique name="default">
+				<method name="decal:default"/>
+			</technique>
+		</template>
+	</target>
+</tweak>

@@ -1,0 +1,23 @@
+<materials version="3" group="civ_male_janitor_pex_01">
+    <material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_CIVILIANS:SKINNED_3WEIGHTS:GHOST" version="2">
+        <bump_normal_texture 	file="units/pd2_dlc_bex/characters/shared_textures/ntr_generic_male_heads/ntr_male_generic_hispanic_head_06_nm"/>
+        <diffuse_texture 		file="units/pd2_dlc_bex/characters/shared_textures/ntr_generic_male_heads/ntr_male_generic_hispanic_head_06_df"/>
+    </material>
+    <material name="mtr_body" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_CIVILIANS:SKINNED_3WEIGHTS:GHOST" version="2">
+        <bump_normal_texture 	file="units/pd2_dlc_pex/characters/civ_male_janitor_pex_01/civ_male_janitor_pex_nm"/>
+        <diffuse_texture 		file="units/pd2_dlc_pex/characters/civ_male_janitor_pex_01/civ_male_janitor_pex_df"/>
+    </material>
+    <material render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:DOUBLE_SIDED:EXTERNAL_ALPHA_REF:GLOBAL_ENVIRONMENT_MAPPING:GLOSS_BLURS_CUBEMAP:GSMA_TEXTURE:NORMALMAP:OPACITY_TEXTURE:RL_CIVILIANS:SKINNED_3WEIGHTS:GHOST" name="mtr_hair" version="2">
+        <bump_normal_texture file="units/pd2_dlc_pex/characters/ntr_hair/ntr_hair_nm"/>
+        <diffuse_texture file="units/pd2_dlc_pex/characters/ntr_hair/ntr_hair_brown_df"/>
+        <opacity_texture file="units/pd2_dlc_pex/characters/ntr_hair/ntr_hair_op"/>
+        <variable type="scalar" name="alpha_ref" value="0.12100000574719"/>
+        <material_texture file="units/pd2_dlc_pex/characters/ntr_hair/ntr_hair_gsma"/>
+    </material>
+    <material name="mtr_arms" render_template="generic:DIFFUSE_TEXTURE:GLOBAL_ENVIRONMENT_MAPPING:GLOSS_BLURS_CUBEMAP:GSMA_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS:GHOST" version="2">
+        <bump_normal_texture    file="units/pd2_dlc_pex/characters/ntr_male_generic_arms/ntr_male_generic_arms_hispanic_nm"/>
+        <diffuse_texture        file="units/pd2_dlc_pex/characters/ntr_male_generic_arms/ntr_male_generic_arms_hispanic_2_df"/>
+        <material_texture       file="units/pd2_dlc_pex/characters/ntr_male_generic_arms/ntr_male_generic_arms_hispanic_gsma"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>
