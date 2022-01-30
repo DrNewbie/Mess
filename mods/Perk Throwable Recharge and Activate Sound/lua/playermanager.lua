@@ -11,7 +11,7 @@ local __List_of_Sounds = {}
 local function __GetSoundFileName(__perk, __cooldown_or_activate)
 	__perk = tostring(__perk)
 	local __sound_name
-	local __perk_dir = ThisModPath.."assets/sounds/perk_deck_sounds/"..__perk
+	local __perk_dir = ThisModPath.."sounds/"..__perk
 	local __type = __cooldown_or_activate and "cooldown" or "activate"
 	local __type_patch = __perk_dir.."/"..__type
 	if type(__List_of_Sounds[__perk]) == "table" and type(__List_of_Sounds[__perk][__type]) == "table" then
