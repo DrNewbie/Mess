@@ -12,6 +12,10 @@
     {
       "hook_id": "lib/managers/playermanager",
       "script_path": "playermanager.lua"
+    },
+    {
+      "hook_id": "lib/network/matchmaking/networkmatchmakingsteam",
+      "script_path": "networkmatchmakingsteam.lua"
     }
   ]
 }
