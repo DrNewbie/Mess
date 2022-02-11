@@ -1,27 +1,36 @@
 {
-	"menu_id":"id_Safe4Stealth",
-	"parent_menu_id":"blt_options",
-	"title":"Safe4Stealth_menu_title",
-	"description":"Safe4Stealth_menu_desc",
-	"back_callback":"Safe4Stealth_toggle_save",
-	"items":[
-		{
-			"type":"toggle",
-			"id":"id_Safe4Stealth_weapon_kick",
-			"title":"Safe4Stealth_menu_weapon_kick_title",
-			"description":"Safe4Stealth_menu_kick_desc",
-			"callback":"Safe4Stealth_weapon_kick",
-			"value":"weapon",
-			"default_value":true
-		},
-		{
-			"type":"toggle",
-			"id":"id_Safe4Stealth_throw_kick",
-			"title":"Safe4Stealth_menu_throw_kick_title",
-			"description":"Safe4Stealth_menu_kick_desc",
-			"callback":"Safe4Stealth_throw_kick",
-			"value":"throw",
-			"default_value":true
-		}
-	]
+  "menu_id": "id_Safe4Stealth",
+  "parent_menu_id": "blt_options",
+  "title": "Safe4Stealth_menu_title",
+  "description": "Safe4Stealth_menu_desc",
+  "back_callback": "Safe4Stealth_toggle_save",
+  "items": [
+    {
+      "type": "toggle",
+      "id": "id_Safe4Stealth_weapon_kick",
+      "title": "Safe4Stealth_menu_weapon_kick_title",
+      "description": "Safe4Stealth_menu_kick_desc",
+      "callback": "Safe4Stealth_weapon_kick",
+      "value": "weapon",
+      "default_value": true
+    },
+    {
+      "type": "toggle",
+      "id": "id_Safe4Stealth_throw_kick",
+      "title": "Safe4Stealth_menu_throw_kick_title",
+      "description": "Safe4Stealth_menu_kick_desc",
+      "callback": "Safe4Stealth_throw_kick",
+      "value": "throw",
+      "default_value": true
+    },
+    {
+      "type": "toggle",
+      "id": "id_Safe4Stealth_allow_throw_molotov",
+      "title": "bm_grenade_molotov",
+      "description": "Safe4Stealth_allow_throw_desc",
+      "callback": "Safe4Stealth_allow_throw_molotov",
+      "value": "allow_throw_molotov",
+      "default_value": false
+    }
+  ]
 }

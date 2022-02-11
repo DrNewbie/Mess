@@ -13,15 +13,23 @@ function UnitNetworkHandler:request_throw_projectile(projectile_type_index, posi
 	end
 	if peer:id() ~= 1 and managers.groupai:state():whisper_mode() then
 		local projectile_entry = tostring(tweak_data.blackmarket:get_projectile_name_from_index(projectile_type_index))
-		local projectile_tweak = tweak_data.blackmarket.projectiles[projectile_entry]
-		local tweak_projectile = tweak_data.projectiles[projectile_entry]
-		if (projectile_tweak and (projectile_tweak.is_explosive or projectile_tweak.is_a_grenade)) or (tweak_projectile and (tweak_projectile.bullet_class == "PoisonBulletBase" or tweak_projectile.bullet_class == "InstantExplosiveBulletBase" or tweak_projectile.bullet_class == "ProjectilesPoisonBulletBase")) then
-			projectile_type_index = tweak_data.blackmarket:get_index_from_projectile_id("wpn_prj_ace")
-			local identifier = "cheater_banned_" .. tostring(peer:id())
-			managers.chat:feed_system_message(1, peer:name() .. " has been marked because throw loud noise thing ("..managers.localization:text(projectile_tweak.name_id)..")")
-			dir = Vector3(0, 0, -1)
-			position = Vector3(-9999, -9999, -9999)
-			Safe4Stealth:Kick_Peer("throw", peer)
+		if Safe4Stealth.Settings.allow_throw_molotov and projectile_entry == "molotov" then
+		
+		else
+			local projectile_tweak = tweak_data.blackmarket.projectiles[projectile_entry]
+			local tweak_projectile = tweak_data.projectiles[projectile_entry]
+			if (projectile_tweak and (projectile_tweak.is_explosive or projectile_tweak.is_a_grenade)) or (tweak_projectile and (tweak_projectile.bullet_class == "PoisonBulletBase" or tweak_projectile.bullet_class == "InstantExplosiveBulletBase" or tweak_projectile.bullet_class == "ProjectilesPoisonBulletBase")) then
+				projectile_type_index = tweak_data.blackmarket:get_index_from_projectile_id("wpn_prj_ace")
+				local identifier = "cheater_banned_" .. tostring(peer:id())
+				local throw_name = managers.localization:text(tostring(projectile_tweak.name_id))
+				if throw_name:find("ERROR") then
+					throw_name = projectile_entry
+				end
+				managers.chat:feed_system_message(1, peer:name() .. " has been marked because throw loud noise thing ("..throw_name..")")
+				dir = Vector3(0, 0, -1)
+				position = Vector3(-9999, -9999, -9999)
+				Safe4Stealth:Kick_Peer("throw", peer)
+			end
 		end
 	end
 	PeerThrowCheck(self, projectile_type_index, position, dir, sender)

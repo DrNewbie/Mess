@@ -1,7 +1,8 @@
 {
-	"Safe4Stealth_menu_title":"Safe for Stealth",
-	"Safe4Stealth_menu_desc":" ",
-	"Safe4Stealth_menu_weapon_kick_title":"Weapon Kick",
-	"Safe4Stealth_menu_throw_kick_title":"Throw Kick",
-	"Safe4Stealth_menu_kick_desc":"while detect it"
+  "Safe4Stealth_menu_title": "Safe for Stealth",
+  "Safe4Stealth_menu_desc": " ",
+  "Safe4Stealth_menu_weapon_kick_title": "Weapon Kick",
+  "Safe4Stealth_menu_throw_kick_title": "Throw Kick",
+  "Safe4Stealth_menu_kick_desc": "while detect it",
+  "Safe4Stealth_allow_throw_desc": "Allow throw this thing."
 }

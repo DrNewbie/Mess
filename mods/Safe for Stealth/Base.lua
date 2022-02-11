@@ -8,10 +8,15 @@ Hooks:Add("LocalizationManagerPostInit", "Safe4Stealth_loc", function(loc)
 	loc:load_localization_file(Safe4Stealth.ModPath.."Loc.json")
 end)
 
-Safe4Stealth.Settings = {
-	weapon = true,
-	throw = true
-}
+function Safe4Stealth:default()
+	return {
+		weapon = true,
+		throw = true,
+		allow_throw_molotov = false
+	}
+end
+
+Safe4Stealth.Settings = Safe4Stealth:default()
 
 function Safe4Stealth:save()
 	local _file = io.open(self.SavePath, "w+")
@@ -31,10 +36,7 @@ function Safe4Stealth:load()
 		end
 		_file:close()
 	else
-		self.Settings = {
-			weapon = true,
-			throw = true
-		}
+		self.Settings = self:default()
 		self:save()
 	end
 end
@@ -48,6 +50,9 @@ Hooks:Add("MenuManagerInitialize", "MenManInitSafe4Stealth", function()
 	end
 	function MenuCallbackHandler:Safe4Stealth_throw_kick(item)
 		Safe4Stealth.Settings.throw = tostring(item:value()) == 'on' and true or false
+	end
+	function MenuCallbackHandler:Safe4Stealth_allow_throw_molotov(item)
+		Safe4Stealth.Settings.allow_throw_molotov = tostring(item:value()) == 'on' and true or false
 	end
 	Safe4Stealth:load()
 	MenuHelper:LoadFromJsonFile(Safe4Stealth.ModPath.."Menu.json", Safe4Stealth, Safe4Stealth.Settings)
