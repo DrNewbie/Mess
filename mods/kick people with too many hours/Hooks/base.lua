@@ -1,14 +1,18 @@
-_G.NGBTUwU = _G.NGBTUwU or {}
+local mod_ids = ModPath and Idstring(ModPath):key() or tostring(math.random())
+local hook1 = "MOD0_"..Idstring("hook1::"..mod_ids):key()
 
-function NGBTUwU:Kicing_Hours()
-	return 1000 --kick who have over 1000 hours gaming time
+local function __Is_Kiced(__hours)
+	if type(__hours) == "number" and __hours > 1000 then
+		return true
+	end
+	return false
 end
 
-function NGBTUwU:App_ID()
+local function __App_ID()
 	return 218620
 end
 
-function NGBTUwU:Check(peer_id)
+local function __CheckPeer(peer_id)
 	if not managers.network or not managers.network:session() then
 		log("[NGBTUwU]: \t not managers.network")
 		return
@@ -28,7 +32,7 @@ function NGBTUwU:Check(peer_id)
 		function(page)
 			local _hoursOnRecord
 			local is_break_all
-			local s_app_id = NGBTUwU:App_ID()
+			local s_app_id = __App_ID()
 			page = tostring(page)
 			if page:find('<appID>'..s_app_id..'</appID>') then
 				page = page:gsub('<appID>', '<appID><![CDATA[')
@@ -64,7 +68,7 @@ function NGBTUwU:Check(peer_id)
 			else
 				managers.chat:_receive_message(1, "[NGBTUwU]", "'"..user_name.."' has hidden profiles.", Color.green)
 			end
-			if Network:is_server() and (not _hoursOnRecord or _hoursOnRecord > NGBTUwU:Kicing_Hours()) then
+			if Network:is_server() and __Is_Kiced(_hoursOnRecord) then
 				managers.network:session():send_to_peers("kick_peer", peer_id, 2)
 				managers.network:session():on_peer_kicked(peer_now, peer_id, 2)
 			end
@@ -72,15 +76,10 @@ function NGBTUwU:Check(peer_id)
 	)
 end
 
-function NGBTUwU:Check_All()
-	if not managers.network or not managers.network:session() or not managers.network:session():peers() then
-		return
-	end
-	local _dt = 0
-	for peer_id, _ in pairs(managers.network:session():peers()) do
-		_dt = _dt + 3
-		DelayedCalls:Add('DelayedModNGBTUwUXXX_' .. tostring(peer_id), 1 + _dt, function()
-			NGBTUwU:Check(peer_id)
-		end)
-	end
+if NetworkPeer then
+	Hooks:PostHook(NetworkPeer, "set_ip_verified", hook1, function(self)
+		if Network and Network:is_server() and self and self.id then
+			__CheckPeer(self:id())
+		end
+	end)
 end
