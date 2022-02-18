@@ -82,6 +82,10 @@ _G.MessageSoundsEventt.Init = function()
 			else
 				os.execute('MKDIR "'.. Application:nice_path(Application:base_path()..__msg_path, true) ..'"')
 			end
+			if not io.file_is_readable(__msg_path.."/empty.folder") then
+				local __file = io.open( __msg_path.."/empty.folder", "w+")
+				__file:close()
+			end
 		end
 	end
 	return
