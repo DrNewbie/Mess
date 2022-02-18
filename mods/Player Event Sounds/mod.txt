@@ -1,8 +1,8 @@
 {
-  "name": "Message Sounds Event",
-  "description": " ",
+  "name": "Player Event Sounds",
+  "description": "https://modworkshop.net/mod/36336",
   "author": "Dr_Newbie",
-  "contact": " ",
+  "contact": "https://modworkshop.net/mod/36336",
   "version": "1",
   "hooks": [
     {
