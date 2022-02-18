@@ -44,8 +44,9 @@ _G.MessageSoundsEventt.AddMsgFunc = function(__msg, __name, __func)
 				end
 			end)
 		end
+		return __NameIds(__name)
 	end
-	return __NameIds(__name)
+	return
 end
 
 --Init, get cfg and sound name
