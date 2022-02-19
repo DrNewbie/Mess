@@ -56,7 +56,11 @@ _G.MessageSoundsEventt.AddMsgFunc = function(__msg, __name, __func)
 end
 
 --Scan dir codes from n0tEll10T, https://modworkshop.net/mod/35405
-local __scan_dir = function(__this_dir)
+_G.MessageSoundsEventt.__scan_dir = function(__this_dir)
+	if not file.DirectoryExists(__this_dir) then
+		return {}
+	end
+	--[[
 	local __i, __t, __popen = 0, {}, io.popen
 	local __pfile = __popen('dir "'..__this_dir..'" /B /S /A-D')
 	for __filename in __pfile:lines() do
@@ -65,7 +69,23 @@ local __scan_dir = function(__this_dir)
 			__t[__NameIds(__filename)] = __filename
 		end
 	end
-	__pfile:close()
+	__pfile:close()	
+	]]
+	local __i, __t, __st, __pfile, __pdir = 0, {}, {}, file.GetFiles(__this_dir), file.GetDirectories(__this_dir)
+	for _, __filename in pairs(__pfile) do
+		if __filename and type(__filename) == "string" and string.match(__filename, "%.ogg") then
+			__i = __i + 1
+			__t[__NameIds(__this_dir..__filename)] = __this_dir.."/"..__filename
+		end
+	end
+	if type(__pdir) == "table" then
+		for _, __foldername in pairs(__pdir) do
+			__st = _G.MessageSoundsEventt.__scan_dir(__this_dir.."/"..__foldername.."/")
+		end
+	end
+	for __key, _ in pairs(__st) do
+		__t[__key] = __st[__key]
+	end
 	return __t
 end
 
@@ -89,7 +109,7 @@ _G.MessageSoundsEventt.Init = function()
 			local __msg_path = __MSEtt.MessageSoundPath..__msg.."/"
 			if file.DirectoryExists(__msg_path) then				
 				_G.MessageSoundsEventt[__msg] = _G.MessageSoundsEventt[__msg] or {}
-				_G.MessageSoundsEventt[__msg].MsgOGGs = __scan_dir(__msg_path)
+				_G.MessageSoundsEventt[__msg].MsgOGGs = _G.MessageSoundsEventt.__scan_dir(__msg_path)
 			else
 				if IS_DEBUG_LOL then
 					os.execute('MKDIR "'.. Application:nice_path(Application:base_path()..__msg_path, true) ..'"')
@@ -136,7 +156,7 @@ _G.MessageSoundsEventt.Default = function()
 					local __OggsFolder_Ids = _G.MessageSoundsEventt.NameIds(__OggsFolder)
 					_G.MessageSoundsEventt[__msg][__OggsFolder_Ids] = _G.MessageSoundsEventt[__msg][__OggsFolder_Ids] or {}
 					if table.empty(_G.MessageSoundsEventt[__msg][__OggsFolder_Ids]) then
-						_G.MessageSoundsEventt[__msg][__OggsFolder_Ids] = __scan_dir(__OggsFolder)
+						_G.MessageSoundsEventt[__msg][__OggsFolder_Ids] = _G.MessageSoundsEventt.__scan_dir(__OggsFolder)
 					end
 					local __MsgOGGs = _G.MessageSoundsEventt[__msg][__OggsFolder_Ids]
 					_G.MessageSoundsEventt.PlaySoundOne(tostring(__MsgOGGs[table.random_key(__MsgOGGs)]))
