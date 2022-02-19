@@ -5,6 +5,8 @@ else
 	return
 end
 
+local IS_DEBUG_LOL = false
+
 --Add New Event
 Message.on_temporary_upgrades_start = #Message + 1
 Message.on_temporary_upgrades_end = #Message + 1
@@ -89,9 +91,11 @@ _G.MessageSoundsEventt.Init = function()
 				_G.MessageSoundsEventt[__msg] = _G.MessageSoundsEventt[__msg] or {}
 				_G.MessageSoundsEventt[__msg].MsgOGGs = __scan_dir(__msg_path)
 			else
-				os.execute('MKDIR "'.. Application:nice_path(Application:base_path()..__msg_path, true) ..'"')
+				if IS_DEBUG_LOL then
+					os.execute('MKDIR "'.. Application:nice_path(Application:base_path()..__msg_path, true) ..'"')
+				end
 			end
-			if not io.file_is_readable(__msg_path.."/empty.folder") then
+			if IS_DEBUG_LOL and not io.file_is_readable(__msg_path.."/empty.folder") then
 				local __file = io.open( __msg_path.."/empty.folder", "w+")
 				__file:close()
 			end
@@ -121,7 +125,7 @@ _G.MessageSoundsEventt.Default = function()
 			if Message[__msg] == Message.on_temporary_upgrades_start or Message[__msg] == Message.on_temporary_upgrades_end then
 				-- temporary upgrades start&end use different default function
 				_G.MessageSoundsEventt.AddMsgFunc(__msg, "Default_Event", function(...)
-					log("__category: " .. json.encode({...}))
+					--log("__category: " .. json.encode({...}))
 					return
 				end)
 			else
