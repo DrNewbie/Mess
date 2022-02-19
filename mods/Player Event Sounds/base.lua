@@ -5,10 +5,14 @@ else
 	return
 end
 
+--Add New Event
+Message.on_temporary_upgrades_start = #Message + 1
+Message.on_temporary_upgrades_end = #Message + 1
+
 --Path Init
 _G.MessageSoundsEventt = _G.MessageSoundsEventt or {}
 _G.MessageSoundsEventt.ThisModPath = _G.MessageSoundsEventt.ThisModPath or ModPath
-_G.MessageSoundsEventt.ThisModSoundPath = _G.MessageSoundsEventt.ThisModPath .. "sounds/"
+_G.MessageSoundsEventt.MessageSoundPath = _G.MessageSoundsEventt.ThisModPath .. "sounds/"
 
 --Function to give unique name
 _G.MessageSoundsEventt.NameIds = function(__name)
@@ -16,7 +20,7 @@ _G.MessageSoundsEventt.NameIds = function(__name)
 end
 
 --Shorten
-local function __NameIds(__name)	
+local function __NameIds(__name)
 	return _G.MessageSoundsEventt.NameIds(__name)
 end
 
@@ -34,11 +38,11 @@ _G.MessageSoundsEventt.AddMsgFunc = function(__msg, __name, __func)
 		if managers.player then
 			local __MSEtt = _G.MessageSoundsEventt
 			managers.player:unregister_message(Message[__msg], __MSEtt.MsgName)
-			managers.player:register_message(Message[__msg], __MSEtt.MsgName, function()
+			managers.player:register_message(Message[__msg], __MSEtt.MsgName, function(...)
 				if type(__MSEtt[__msg]) == "table" and type(__MSEtt[__msg].MsgFuncs) == "table" then
 					for _, __sub_func in pairs(__MSEtt[__msg].MsgFuncs) do
 						if type(__sub_func) == "function" then
-							__sub_func()
+							__sub_func(...)
 						end
 					end
 				end
@@ -49,6 +53,20 @@ _G.MessageSoundsEventt.AddMsgFunc = function(__msg, __name, __func)
 	return
 end
 
+--Scan dir codes from n0tEll10T, https://modworkshop.net/mod/35405
+local __scan_dir = function(__this_dir)
+	local __i, __t, __popen = 0, {}, io.popen
+	local __pfile = __popen('dir "'..__this_dir..'" /B /S /A-D')
+	for __filename in __pfile:lines() do
+		if string.match(__filename, "%.ogg") then
+			__i = __i + 1
+			__t[__NameIds(__filename)] = __filename
+		end
+	end
+	__pfile:close()
+	return __t
+end
+
 --Init, get cfg and sound name
 _G.MessageSoundsEventt.Init = function()
 	local __MSEtt = _G.MessageSoundsEventt
@@ -57,25 +75,16 @@ _G.MessageSoundsEventt.Init = function()
 		if type(__configs) == "table" then
 			for _, __cfg in pairs(__configs) do
 				if __cfg and io.file_is_readable(__MSEtt.ThisModPath.."cfgs/"..__cfg) then
-					dofile(__MSEtt.ThisModPath.."cfgs/"..__cfg)
+					if string.match(__MSEtt.ThisModPath.."cfgs/"..__cfg, "%.lua") then
+						dofile(__MSEtt.ThisModPath.."cfgs/"..__cfg)
+					end
 				end
 			end
 		end
 	end
-	--Scan dir codes from n0tEll10T, https://modworkshop.net/mod/35405
-	local __scan_dir = function(__this_dir)
-		local __i, __t, __popen = 0, {}, io.popen
-		local __pfile = __popen('dir "'..__this_dir..'" /B /S /A-D')
-		for __filename in __pfile:lines() do
-			__i = __i + 1
-			__t[__NameIds(__filename)] = __filename
-		end
-		__pfile:close()
-		return __t
-	end
 	for __msg, _ in pairs(Message) do
-		if file.DirectoryExists(__MSEtt.ThisModSoundPath) then
-			local __msg_path = __MSEtt.ThisModSoundPath..__msg.."/"
+		if file.DirectoryExists(__MSEtt.MessageSoundPath) then
+			local __msg_path = __MSEtt.MessageSoundPath..__msg.."/"
 			if file.DirectoryExists(__msg_path) then				
 				_G.MessageSoundsEventt[__msg] = _G.MessageSoundsEventt[__msg] or {}
 				_G.MessageSoundsEventt[__msg].MsgOGGs = __scan_dir(__msg_path)
@@ -88,6 +97,7 @@ _G.MessageSoundsEventt.Init = function()
 			end
 		end
 	end
+	dofile(__MSEtt.ThisModPath.."skill_base.lua")
 	return
 end
 
@@ -108,13 +118,21 @@ _G.MessageSoundsEventt.Default = function()
 			end
 		end
 		if not __is_ok then
-			--Add default sound event to support all
-			_G.MessageSoundsEventt.AddMsgFunc(__msg, "Default_Event", function()
-				if managers.player then
-					_G.MessageSoundsEventt.PlaySoundRandom(__msg)
-				end
-				return
-			end)
+			if Message[__msg] == Message.on_temporary_upgrades_start or Message[__msg] == Message.on_temporary_upgrades_end then
+				-- temporary upgrades start&end use different default function
+				_G.MessageSoundsEventt.AddMsgFunc(__msg, "Default_Event", function(...)
+					log("__category: " .. json.encode({...}))
+					return
+				end)
+			else
+				--Add default sound event to support all
+				_G.MessageSoundsEventt.AddMsgFunc(__msg, "Default_Event", function()
+					if managers.player then
+						_G.MessageSoundsEventt.PlaySoundRandom(__msg)
+					end
+					return
+				end)
+			end
 		end
 	end
 end
@@ -152,42 +170,3 @@ Hooks:PostHook(Setup, "init_managers", __NameIds("Do Setup"), function(self)
 	_G.MessageSoundsEventt.Init()
 	_G.MessageSoundsEventt.Default()
 end)
-
---[[
-Message = {
-	OnHeadShot
-	OnAmmoPickup
-	OnSwitchWeapon
-	OnEnemyKilled
-	EscapeTase
-	SendTaserMalfunction
-	OnPlayerDamage
-	OnPlayerDodge
-	SetWeaponStagger
-	OnEnemyShot
-	OnDoctorBagUsed
-	OnPlayerReload
-	RevivePlayer
-	ResetStagger
-	CanTradeHostage
-	OnCashInspectWeapon
-	OnLethalHeadShot
-	OnWeaponFired
-	OnShotgunPush
-	OnCopDamageDeath
-	OnLevelUp
-	OnHeistComplete
-	OnWeaponBought
-	OnAchievement
-	OnSideJobComplete
-	OnEnterSafeHouse
-	OnSafeHouseUpgrade
-	OnDailyGenerated
-	OnDailyCompleted
-	OnDailyRewardCollected
-	OnMissionEnd
-	OnSafeOpened
-	OnDaysInRow
-	OnHighestCrimeSpree
-}
-]]
