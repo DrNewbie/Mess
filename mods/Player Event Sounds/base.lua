@@ -8,8 +8,8 @@ end
 local IS_DEBUG_LOL = false
 
 --Add New Event
-Message.on_temporary_upgrades_start = #Message + 1
-Message.on_temporary_upgrades_end = #Message + 1
+Message.on_temporary_upgrades_start = table.size(Message) + 1
+Message.on_temporary_upgrades_end = table.size(Message) + 1
 
 --Path Init
 _G.MessageSoundsEventt = _G.MessageSoundsEventt or {}
