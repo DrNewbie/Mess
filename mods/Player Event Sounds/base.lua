@@ -124,8 +124,17 @@ _G.MessageSoundsEventt.Default = function()
 		if not __is_ok then
 			if Message[__msg] == Message.on_temporary_upgrades_start or Message[__msg] == Message.on_temporary_upgrades_end then
 				-- temporary upgrades start&end use different default function
-				_G.MessageSoundsEventt.AddMsgFunc(__msg, "Default_Event", function(...)
-					--log("__category: " .. json.encode({...}))
+				_G.MessageSoundsEventt.AddMsgFunc(__msg, "Default_Event", function(__category, __upgrade)					
+					_G.MessageSoundsEventt.MessageSoundPath
+					_G.MessageSoundsEventt[__msg] = _G.MessageSoundsEventt[__msg] or {}
+					local __OggsFolder = _G.MessageSoundsEventt.MessageSoundPath .. __msg .. "/" .. __category .. "/" .. __upgrade
+					local __OggsFolder_Ids = _G.MessageSoundsEventt.NameIds(__OggsFolder)
+					_G.MessageSoundsEventt[__msg][__OggsFolder_Ids] = _G.MessageSoundsEventt[__msg][__OggsFolder_Ids] or {}
+					if table.empty(_G.MessageSoundsEventt[__msg][__OggsFolder_Ids]) then
+						_G.MessageSoundsEventt[__msg][__OggsFolder_Ids] = __scan_dir(__OggsFolder)
+					end
+					local __MsgOGGs = _G.MessageSoundsEventt[__msg][__OggsFolder_Ids]
+					_G.MessageSoundsEventt.PlaySoundOne(tostring(__MsgOGGs[table.random_key(__MsgOGGs)]))
 					return
 				end)
 			else
