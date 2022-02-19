@@ -125,7 +125,6 @@ _G.MessageSoundsEventt.Default = function()
 			if Message[__msg] == Message.on_temporary_upgrades_start or Message[__msg] == Message.on_temporary_upgrades_end then
 				-- temporary upgrades start&end use different default function
 				_G.MessageSoundsEventt.AddMsgFunc(__msg, "Default_Event", function(__category, __upgrade)					
-					_G.MessageSoundsEventt.MessageSoundPath
 					_G.MessageSoundsEventt[__msg] = _G.MessageSoundsEventt[__msg] or {}
 					local __OggsFolder = _G.MessageSoundsEventt.MessageSoundPath .. __msg .. "/" .. __category .. "/" .. __upgrade
 					local __OggsFolder_Ids = _G.MessageSoundsEventt.NameIds(__OggsFolder)
