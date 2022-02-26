@@ -24,12 +24,16 @@ function PlayerManager:__EE_Armor_Bonus_Value_List(lv)
 			33, 33, 33
 		})
 	end
+	local sp_shockproof = function(__lv)
+		return 1
+	end
 	return {
 		[1] = recovery_rate(lv),
 		[2] = more_armor(lv),
 		[3] = add_dodge(lv),
 		[4] = add_stamina(lv),
 		[5] = sp_thorns(lv),
-		[6] = sp_protection(lv)
+		[6] = sp_protection(lv),
+		[7] = sp_shockproof(lv)
 	}
 end

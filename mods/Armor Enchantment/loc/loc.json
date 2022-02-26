@@ -20,5 +20,8 @@
   "ee_armor_p_shorten_sp_thorns": "Thorns",
   "ee_armor_p_sp_protection_name_id": "Damage Resistance",
   "ee_armor_p_sp_protection_desc_id": "Increases armor resistance by $$var$$%",
-  "ee_armor_p_shorten_sp_protection": "Protection"
+  "ee_armor_p_shorten_sp_protection": "Protection",
+  "ee_armor_p_sp_shockproof_name_id": "Shockproof",
+  "ee_armor_p_sp_shockproof_desc_id": "When tased, backfire on the Taser",
+  "ee_armor_p_shorten_sp_shockproof": "Shock"
 }
