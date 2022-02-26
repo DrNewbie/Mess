@@ -12,7 +12,7 @@ function PlayerManager:__EE_Armor_Get_Var_by_Lv_and_ID(lv_i, ee_i)
 end
 
 function PlayerManager:__EE_Armor_Has_Var(lv_i, ee_i)
-	local __ans = self:__EE_Armor_Get_Var_by_Lv_and_ID(lv_i)[ee_i]
+	local __ans = self:__EE_Armor_Get_Var_by_Lv_and_ID(lv_i, ee_i)
 	if type(__ans) == "number" and (__ans > 0 or __ans < 0) then
 		return true
 	end	
