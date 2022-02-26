@@ -11,6 +11,14 @@ function PlayerManager:__EE_Armor_Get_Var_by_Lv_and_ID(lv_i, ee_i)
 	return self:__EE_Armor_Get_Var_by_Lv(lv_i)[ee_i] or 0
 end
 
+function PlayerManager:__EE_Armor_Has_Var(lv_i, ee_i)
+	local __ans = self:__EE_Armor_Get_Var_by_Lv_and_ID(lv_i)[ee_i]
+	if type(__ans) == "number" and (__ans > 0 or __ans < 0) then
+		return true
+	end	
+	return false
+end
+
 function PlayerManager:__EE_Armor_Apply(__rdata)
 	if type(__rdata) == "table" then
 		_G.EEArmorBuff = {}
