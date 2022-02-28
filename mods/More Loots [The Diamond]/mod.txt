@@ -2,7 +2,7 @@
   "name": "More Loots [The Diamond]",
   "description": "https://modworkshop.net/mod/16219",
   "author": "Dr_Newbie",
-  "version": "2",
+  "version": "3",
   "priority": 100,
   "blt_version": 2,
   "hooks": [

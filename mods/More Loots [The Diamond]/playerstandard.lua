@@ -68,18 +68,43 @@ function CarryInteractionDummyExt:sync_interacted(peer, player, status, skip_ali
 	end
 end
 
-local LootTempGuns = {
-	_carry_id = "weapon",
-	tweak_data = "take_weapons"
-}
+local AddonLootList = {}
 
-local AddonLootList = {
-	[Idstring("units/pd2_dlc_jfr/props/jfr_props_wpn_m1918/jfr_props_wpn_m1918"):key()] = LootTempGuns,
-	[Idstring("units/pd2_dlc_aru/props/aru_prop_weapons/aru_prop_ching_rifle"):key()] = LootTempGuns,
-	[Idstring("units/pd2_dlc_jfr/props/jfr_props_wpn_thompson/jfr_props_wpn_thompson"):key()] = LootTempGuns,
-	[Idstring("units/pd2_dlc_jfr/props/jfr_props_wpn_m1911/jfr_props_wpn_m1911"):key()] = LootTempGuns,
-	[Idstring("units/pd2_dlc_jfr/props/jfr_props_ammos_boxes/jfr_props_ammos_boxes_05"):key()] = LootTempGuns,
-}
+local function GiveAddonList()
+	local function __AddThis(__unit_name, __type)
+		AddonLootList[Idstring(__unit_name):key()] = __type
+	end
+	local LootTempGuns = {_carry_id = "weapon", tweak_data = "take_weapons"}
+	local LootTempTurrets = {_carry_id = "turret", tweak_data = "take_weapons"}
+	local LootTempHeavyArtifacts = {_carry_id = "artifact_statue", tweak_data = "mus_pku_artifact"}
+	local LootTempLightPainting = {_carry_id = "painting", tweak_data = "hold_take_painting"}
+	local LootTempMediumAmmo = {_carry_id = "ammo", tweak_data = "take_ammo"}
+	__AddThis("units/pd2_dlc_jfr/props/jfr_prop_machinegun_turret/jfr_prop_machinegun_turret", LootTempTurrets)
+	__AddThis("units/pd2_dlc_aru/props/aru_prop_weapons/aru_prop_erma_smg", LootTempGuns)
+	__AddThis("units/pd2_dlc_jfr/props/jfr_props_wpn_m1918/jfr_props_wpn_m1918", LootTempGuns)
+	__AddThis("units/pd2_dlc_aru/props/aru_prop_weapons/aru_prop_ching_rifle", LootTempGuns)
+	__AddThis("units/pd2_dlc_jfr/props/jfr_props_wpn_thompson/jfr_props_wpn_thompson", LootTempGuns)
+	__AddThis("units/pd2_dlc_jfr/props/jfr_props_wpn_m1911/jfr_props_wpn_m1911", LootTempGuns)
+	__AddThis("units/payday2/props/off_prop_hallway_pictures/off_prop_hallway_picture_06", LootTempLightPainting)
+	__AddThis("units/payday2/props/off_prop_hallway_pictures/off_prop_hallway_picture_12", LootTempLightPainting)
+	__AddThis("units/pd2_indiana/props/mus_prop_exhibit_paintings/mus_prop_exhibit_painting_atlantis", LootTempLightPainting)
+	__AddThis("units/pd2_indiana/props/mus_prop_exhibit_paintings/mus_prop_exhibit_painting_dig", LootTempLightPainting)
+	__AddThis("units/pd2_indiana/props/mus_prop_exhibit_paintings/mus_prop_exhibit_painting_mummy", LootTempLightPainting)
+	__AddThis("units/pd2_indiana/props/mus_prop_exhibit_paintings/mus_prop_exhibit_painting_thing", LootTempLightPainting)
+	__AddThis("units/pd2_indiana/props/mus_prop_exhibit_paintings/mus_prop_exhibit_painting_pyramide", LootTempLightPainting)
+	__AddThis("units/pd2_indiana/props/mus_prop_exhibit_paintings/mus_prop_exhibit_painting_tomb", LootTempLightPainting)
+	__AddThis("units/pd2_indiana/props/mus_prop_exhibit_paintings/mus_prop_exhibit_painting_derelict", LootTempLightPainting)
+	__AddThis("units/pd2_dlc_jfr/props/jfr_props_88_flak_shell/jfr_props_88_flak_shell", LootTempMediumAmmo)
+	__AddThis("units/pd2_dlc_jfr/props/jfr_props_tank_shells_pallet/jfr_props_tank_shells_pallet", LootTempMediumAmmo)
+	__AddThis("units/pd2_dlc_jfr/props/jfr_prop_crate_a/jfr_prop_crate_a", LootTempMediumAmmo)
+	__AddThis("units/pd2_dlc_jfr/props/jfr_prop_crate_ammo_a/jfr_prop_crate_ammo_a", LootTempMediumAmmo)
+	__AddThis("units/pd2_dlc_jfr/props/jfr_props_ammos_boxes/jfr_props_ammos_boxes_05", LootTempMediumAmmo)
+	__AddThis("units/pd2_dlc_jfr/props/jfr_props_ammos_boxes/jfr_props_ammos_boxes_06", LootTempMediumAmmo)
+	__AddThis("units/pd2_dlc_aru/props/aru_prop_radio/aru_prop_radio", LootTempHeavyArtifacts)
+	__AddThis("units/pd2_indiana/props/mus_prop_chivalry_weapons/mus_prop_chivalry_weapon_shield", LootTempHeavyArtifacts)
+	__AddThis("units/pd2_indiana/props/mus_prop_chivalry_weapons/mus_prop_chivalry_weapon_broadsword", LootTempHeavyArtifacts)
+	__AddThis("units/pd2_indiana/props/mus_prop_romulus_remus_statue/mus_prop_romulus_remus_statue", LootTempHeavyArtifacts)
+end
 
 Hooks:PreHook(CarryInteractionDummyExt, "remove_interact", hook4, function(self)
 	if self.__remove_this_unit and alive(self.__remove_this_unit) then
@@ -92,6 +117,7 @@ Hooks:PostHook(PlayerStandard, "update", hook3, function(self)
 	if IsSpwanDone or not Global.game_settings or not Global.game_settings.level_id or Global.game_settings.level_id ~= "mus" then
 	
 	else
+		GiveAddonList()
 		IsSpwanDone = true
 		local units = World:find_units_quick("all")
 		for _, __unit in pairs(units) do
