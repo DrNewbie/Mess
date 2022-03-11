@@ -28,7 +28,7 @@ end
 
 if PlayerStandard and RequiredScript == "lib/units/beings/player/states/playerstandard" then
 	Hooks:PostHook(PlayerStandard, "_check_melee_dot_damage", Hook3, function(self, col_ray, defense_data, melee_entry)
-		if col_ray and alive(col_ray.unit) and managers.player[Func1]() then
+		if tostring(melee_entry) == "fists" and col_ray and alive(col_ray.unit) and managers.player[Func1]() then
 			if not defense_data or defense_data.type == "death" then
 			
 			else
