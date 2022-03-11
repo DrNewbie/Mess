@@ -3,7 +3,7 @@
   "description": "https://modworkshop.net/mod/36530",
   "author": "Dr_Newbie",
   "contact": "https://modworkshop.net/mod/36530",
-  "version": "1.1",
+  "version": "1.2",
   "priority": 100,
   "blt_version": 2,
   "hooks": [
