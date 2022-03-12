@@ -1,17 +1,20 @@
-local ThisModPath = ModPath
+local ThisModPath = ModPath or tostring(math.random())
 local ThisModIds = Idstring(ThisModPath):key()
-local Hook1 = "F_"..Idstring("_setup::"..ThisModIds):key()
-local Hook2 = "F_"..Idstring("show_stats::"..ThisModIds):key()
-local Hook3 = "F_"..Idstring("_update_borders::"..ThisModIds):key()
-local Hook4 = "F_"..Idstring("destroy::"..ThisModIds):key()
-local BarPanel = "F_"..Idstring("BarPanel::"..ThisModIds):key()
-local BarPaneBoxl = "F_"..Idstring("BarPaneBoxl::"..ThisModIds):key()
-local BarLine = "F_"..Idstring("BarLine::"..ThisModIds):key()
-local BarLineBackground = "F_"..Idstring("BarLineBackground::"..ThisModIds):key()
-local BarText = "F_"..Idstring("BarText::"..ThisModIds):key()
-local BarRateText = "F_"..Idstring("BarRateText::"..ThisModIds):key()
+local __Name = function(__id)
+	return "WOATH_"..Idstring(tostring(__id).."::"..ThisModIds):key()
+end
+local Hook1 = __Name("_setup::")
+local Hook2 = __Name("show_stats::")
+local Hook3 = __Name("_update_borders::")
+local Hook4 = __Name("destroy::")
+local BarPanel = __Name("BarPanel::")
+local BarPaneBoxl = __Name("BarPaneBoxl::")
+local BarLine = __Name("BarLine::")
+local BarLineBackground = __Name("BarLineBackground::")
+local BarText = __Name("BarText::")
+local BarRateText = __Name("BarRateText::")
 local Bar_x_offset = 10
-local Bar100 = "F_"..Idstring("Bar100::"..ThisModIds):key()
+local Bar100 = __Name("Bar100::")
 local OATH_COLOR = Color(241/255, 174/255, 165/255)
 local OATH_TEXT_SIZE = 20
 
