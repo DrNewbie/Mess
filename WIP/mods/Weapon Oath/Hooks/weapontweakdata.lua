@@ -16,7 +16,7 @@ Hooks:PostHook(WeaponTweakData, "init", Hook1, function(self)
 					__max_points = 1*200000,
 					__oath_link = function(is_click, now_rate)
 						if is_click then
-							Steam:overlay_activate("url", __default_links[__id])
+							Steam:overlay_activate("url", "https://iopwiki.com/wiki/"..__default_links[__id])
 						end
 					end
 				}
