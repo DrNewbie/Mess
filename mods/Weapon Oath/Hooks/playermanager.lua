@@ -37,6 +37,10 @@ local function GET_POINTS(killed_unit, variant, headshot, weapon_id, weapon_base
 		__p = __p + 3
 	elseif char_tweak == "taser" then
 		__p = __p + 5
+	elseif char_tweak == "tank_mini" then
+		__p = __p + 20
+	elseif char_tweak == "tank_medic" then
+		__p = __p + 20
 	end
 	--[[]]
 	return __p
