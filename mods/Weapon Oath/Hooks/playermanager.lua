@@ -13,13 +13,13 @@ local function GET_POINTS(killed_unit, variant, headshot, weapon_id, weapon_base
 		return 0
 	end
 	local char_tweak_table = tweak_data.character[char_tweak]
-	if type(char_tweak_table) ~= "table" or type(char_tweak_table.tags) ~= "table" then
+	if type(char_tweak_table) ~= "table" then
 		return 0
 	end
 	--[[]]
 	if CopDamage.is_civilian(char_tweak) then
 		__p = __p - 10
-	elseif table.contains(char_tweak_table.tags, "special") then
+	elseif type(char_tweak_table.tags) == "table" and table.contains(char_tweak_table.tags, "special") then
 		__p = __p + 3
 	else
 		__p = __p + 1
