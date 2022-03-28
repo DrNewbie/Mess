@@ -1,0 +1,5 @@
+{
+  "bm_concussion_9_bang": "9-Bang",
+  "bm_concussion_9_bang_not_working": "9-Bang (Invalid: Not Host)",
+  "bm_concussion_9_bang_desc": "It's similar to the Flashbang; however, after the first explosion, eight more detonations occur in fast succession."
+}
