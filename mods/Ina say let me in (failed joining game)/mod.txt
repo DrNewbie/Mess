@@ -1,0 +1,15 @@
+{
+  "name": "Ina say let me in (failed joining game)",
+  "description": "https://modworkshop.net/mod/36778",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/36778",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/managers/menumanagerdialogs",
+      "script_path": "lua/menumanagerdialogs.lua"
+    }
+  ]
+}
