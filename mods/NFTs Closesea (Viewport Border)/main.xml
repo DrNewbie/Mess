@@ -1,0 +1,12 @@
+<mod name="NFTs Closesea (Viewport Border)" color="Color(0.01,0.62,0.98)">
+	<Dependencies>
+		<Dependency name="Viewport Border Base" min_ver="1.0.0" id="36835" provider="modworkshop" type="mod_overrides"/>
+	</Dependencies>
+	<AssetUpdates id="36842" version="1" provider="modworkshop"/>
+	<Hooks directory="hooks">
+		<hook file="playercamera.lua" source_file="lib/units/beings/player/playercamera"/>
+	</Hooks>
+	<AddFiles directory="assets">
+    	<png path="nftslol"/>
+    </AddFiles>
+</mod>
