@@ -43,7 +43,7 @@ Hooks:PostHook(PlayerDamage, "update", hook1, function(self, unit, t, dt)
 			end
 		end
 		if self[func1].__unit then
-			local t_var = ( t*speed_v + (i - 1) * 360/i_max )%360
+			local t_var = ( t*speed_v )%360
 			local new_pos = self._unit:position() + z_fix + Vector3(math.cos(t_var)*100, math.sin(t_var)*100, 0)
 			self[func1].__unit:set_position(new_pos)
 			self[func1].__unit:set_rotation(Rotation(t_var + 180 + 90, 0, 0))
