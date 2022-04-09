@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mod name="GiveSniperSkulldozerLAS" global_key="GiveSniperSkulldozerLAS">
+	<tweak definition="xml/ffcb30c12128fc5b.xml"/>
+	<tweak definition="xml/490944f03e56fcf0.xml"/>
+</mod>

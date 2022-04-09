@@ -1,0 +1,14 @@
+{
+  "name": "Give Sniper Skulldozer LAS",
+  "description": " ",
+  "author": "Dr_Newbie",
+  "contact": " ",
+  "version": "1",
+  "priority": 100,
+  "hooks": [
+    {
+      "hook_id": "lib/units/enemies/cop/huskcopmovement",
+      "script_path": "lua/huskcopmovement.lua"
+    }
+  ]
+}
