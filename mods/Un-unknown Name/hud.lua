@@ -14,7 +14,7 @@ local function UpdatePlayerName(data)
 	if type(data.peer.id) ~= "function" then
 		return
 	end
-	if managers.network:session():peer(data.peer:id()) then
+	if not managers.network:session():peer(data.peer:id()) then
 		return
 	end
 	if type(data.try) ~= "number" then
