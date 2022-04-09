@@ -1,5 +1,26 @@
 local function UpdatePlayerName(data)
-	if managers.network and type(data) == "table" and data.them and data.peer and data.peer.id and managers.network:session():peer(data.peer:id()) and data.try < 10 then
+	if not managers.network then
+		return
+	end
+	if type(data) ~= "table" then
+		return
+	end
+	if not data.them then
+		return
+	end
+	if not data.peer then
+		return
+	end
+	if type(data.peer.id) ~= "function" then
+		return
+	end
+	if managers.network:session():peer(data.peer:id()) then
+		return
+	end
+	if type(data.try) ~= "number" then
+		return
+	end
+	if data.try < 10 then
 		dohttpreq("http://steamcommunity.com/profiles/"..tostring(data.peer:user_id()).."/?xml=1", 
 			function (page)
 				local peer_id = data.peer:id()
