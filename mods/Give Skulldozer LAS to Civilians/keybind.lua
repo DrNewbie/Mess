@@ -88,8 +88,8 @@ local function OptChanged()
 		local char_map = tweak_data.character.character_map()
 		local Done = {}
 		local Block = {
-			ene_medic_r870 = true,
-			ene_female_civ_undercover = true
+			--ene_medic_r870 = true,
+			--ene_female_civ_undercover = true
 		}
 		for _, __table in pairs(char_map) do
 			if type(__table) == "table" and type(__table.path) == "string" and type(__table.list) == "table" then
@@ -113,11 +113,9 @@ local function OptChanged()
 									__main_xml:write('		nil\n')
 									__main_xml:write('	)\n')
 									for __line in __o_xml:gmatch("([^\n]*)\n?") do
+										__s_xml:write(__line..'\n')
 										if __line:find('<extensions>') then
-											__s_xml:write(__line..'\n')
 											__s_xml:write(''..__attach_line..'\n')
-										else
-											__s_xml:write(__line..'\n')
 										end
 									end
 									__s_xml:close()
