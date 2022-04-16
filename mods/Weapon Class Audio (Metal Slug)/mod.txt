@@ -1,0 +1,14 @@
+{
+  "name": "Weapon Class Audio (Metal Slug)",
+  "description": " ",
+  "author": "Dr_Newbie",
+  "contact": " ",
+  "version": "1",
+  "priority": 100,
+  "hooks": [
+    {
+      "hook_id": "lib/units/beings/player/states/playerstandard",
+      "script_path": "lua/playerstandard.lua"
+    }
+  ]
+}
