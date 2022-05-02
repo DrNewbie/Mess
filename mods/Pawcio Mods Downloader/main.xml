@@ -1,0 +1,5 @@
+<mod name="Pawcio Mods Downloader">
+	<Hooks>
+		<hook file="menumanager.lua" source_file="lib/managers/menumanager"/>
+	</Hooks>
+</mod>
