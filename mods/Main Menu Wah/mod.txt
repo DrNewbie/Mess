@@ -1,0 +1,15 @@
+{
+  "name": "Main Menu Wah",
+  "description": "https://modworkshop.net/mod/37437",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/37437",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/managers/menumanager",
+      "script_path": "menumanager.lua"
+    }
+  ]
+}
