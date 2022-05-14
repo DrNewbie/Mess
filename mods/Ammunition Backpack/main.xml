@@ -14,7 +14,7 @@
 		<hook file="Base.lua" source_file="lib/units/player_team/teamaimovement"/>
 		<hook file="Base.lua" source_file="lib/units/player_team/huskteamaimovement"/>
 	</Hooks>
-	<AssetUpdates id="Ammunition Backpack" version="1">
+	<AssetUpdates id="Ammunition Backpack" version="2">
         <custom_provider 
 			version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Ammunition%20Backpack.txt" 
 			download_url="https://drnewbie.github.io/Mess/UpdateProvider/Ammunition%20Backpack.zip"

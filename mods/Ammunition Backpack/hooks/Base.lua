@@ -165,7 +165,7 @@ if TeamAIMovement and string.lower(tostring(RequiredScript)) == "lib/units/playe
 			__Spawn_and_Link_to_User(self._unit, self._unit:inventory():equipped_unit())
 		end
 	end)
-	Hooks:PostHook(TeamAIMovement, "pre_destroy", __Name("TeamAIMovement:pre_destroy"), function(self)
+	Hooks:PreHook(TeamAIMovement, "pre_destroy", __Name("TeamAIMovement:pre_destroy"), function(self)
 		__Delete_Box(self._unit)
 	end)
 end
@@ -178,7 +178,7 @@ if HuskTeamAIMovement and string.lower(tostring(RequiredScript)) == "lib/units/p
 			__Spawn_and_Link_to_User(self._unit, self._unit:inventory():equipped_unit())
 		end
 	end)
-	Hooks:PostHook(HuskTeamAIMovement, "pre_destroy", __Name("HuskTeamAIMovement:pre_destroy"), function(self)
+	Hooks:PreHook(HuskTeamAIMovement, "pre_destroy", __Name("HuskTeamAIMovement:pre_destroy"), function(self)
 		__Delete_Box(self._unit)
 	end)
 end
