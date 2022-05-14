@@ -1,0 +1,23 @@
+<table name="Ammunition Backpack">
+	<Package id="packages/backpack_ammo_test0001" directory="assets">
+		<unit path="units/jfr_props/jfr_props_ammos_boxes_06"/>
+		<model path="units/jfr_props/jfr_props_ammos_boxes_06"/>
+		<object path="units/jfr_props/jfr_props_ammos_boxes_06"/>
+		<material_config path="units/jfr_props/jfr_props_ammos_boxes_06"/>
+		<texture path="units/jfr_props/ammo_grey_df"/>
+		<texture path="units/jfr_props/ammo_nm"/>
+		<texture path="units/jfr_props/ammo_gsm"/>
+	</Package>
+	<Hooks directory="hooks">
+		<hook file="Base.lua" source_file="lib/managers/menu/menuscenemanager"/>
+		<hook file="Base.lua" source_file="lib/tweak_data/weapontweakdata"/>
+		<hook file="Base.lua" source_file="lib/units/player_team/teamaimovement"/>
+		<hook file="Base.lua" source_file="lib/units/player_team/huskteamaimovement"/>
+	</Hooks>
+	<AssetUpdates id="Ammunition Backpack" version="1">
+        <custom_provider 
+			version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Ammunition%20Backpack.txt" 
+			download_url="https://drnewbie.github.io/Mess/UpdateProvider/Ammunition%20Backpack.zip"
+		/>
+    </AssetUpdates>
+</table>

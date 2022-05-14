@@ -1,0 +1,19 @@
+<dynamic_object>
+	<diesel materials="units/jfr_props/jfr_props_ammos_boxes_06" orientation_object="rp_props_ammos_boxes_06" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_props_ammos_boxes_06" />
+			<object name="c_box_04" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<decal_surfaces default_material="metal">
+		<decal_mesh name="dm_metal" enabled="true" material="metal" />
+	</decal_surfaces>
+	<graphics>
+		<lod_object name="lod_ammo_big11">
+            <object name="g_ammo_big11" enabled="true"  max_distance="1200" />
+            <object name="g_ammo_big11_lod" enabled="true" />
+        </lod_object>
+		<object name="s_s" enabled="true" shadow_caster="true" />
+	</graphics>
+</dynamic_object>

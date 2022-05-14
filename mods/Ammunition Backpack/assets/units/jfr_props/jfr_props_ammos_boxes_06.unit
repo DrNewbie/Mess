@@ -1,0 +1,7 @@
+<unit type="jfr" slot="1">
+	<object file="units/jfr_props/jfr_props_ammos_boxes_06" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+	</extensions>
+</unit>
+
