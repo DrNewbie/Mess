@@ -1,0 +1,9 @@
+<dynamic_object>
+	<diesel materials="units/jfr_props/wpn_fps_upg_charm_watson" orientation_object="rp_watson" />
+	<graphics>
+		<object name="g_charm_top" enabled="false" />
+		<object name="g_charm" enabled="true" />
+		<object name="g_ring" enabled="false" />
+		<object name="g_base" enabled="false" />
+	</graphics>
+</dynamic_object>
