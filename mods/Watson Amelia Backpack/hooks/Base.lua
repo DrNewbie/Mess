@@ -67,17 +67,17 @@ local function __Spawn_and_Link_to_User(parent_unit, weapon_unit)
 	local s_unit = World:spawn_unit(TihsModItemUnitIds, parent_unit:position())
 	if s_unit then
 		__Delete_Box(parent_unit:key())
-		__ammo_backpack_data.pos_fix = __ammo_backpack_data.pos_fix or function(__p_obj, __p_obj_rot)
+		local __pos_fix = function(__p_obj, __p_obj_rot)
 			return __p_obj:position() - __p_obj_rot:x() * 0 - __p_obj_rot:y() * 30 - __p_obj_rot:z() * 40
 		end
-		__ammo_backpack_data.rot_fix = __ammo_backpack_data.rot_fix or function(__p_obj, __p_obj_rot)
+		local __rot_fix = function(__p_obj, __p_obj_rot)
 			local __rot = Rotation(-__p_obj_rot:x(), -__p_obj_rot:z())
 			return __rot
 		end
 		parent_unit:link(parent_obj_name, s_unit)
 		local parent_obj_rot = parent_obj:rotation()
-		local world_pos = __ammo_backpack_data.pos_fix(parent_obj, parent_obj_rot)
-		local world_rot = __ammo_backpack_data.rot_fix(parent_obj, parent_obj_rot)
+		local world_pos = __pos_fix(parent_obj, parent_obj_rot)
+		local world_rot = __rot_fix(parent_obj, parent_obj_rot)
 		s_unit:set_position(world_pos)
 		s_unit:set_rotation(world_rot)
 		_G[BoxUnit][parent_unit:key()] = s_unit
