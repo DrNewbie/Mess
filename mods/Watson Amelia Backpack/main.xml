@@ -1,4 +1,10 @@
 <table name="Watson Amelia Backpack">
+	<AssetUpdates id="Watson Amelia Backpack" version="3">
+        <custom_provider 
+			version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Watson%20Amelia%20Backpack.txt" 
+			download_url="https://drnewbie.github.io/Mess/UpdateProvider/Watson%20Amelia%20Backpack.zip"
+		/>
+    </AssetUpdates>
 	<Package id="packages/backpack_hic_test0001" directory="assets">
 		<unit path="units/jfr_props/wpn_fps_upg_charm_watson"/>
 		<model path="units/jfr_props/wpn_fps_upg_charm_watson"/>
@@ -11,14 +17,7 @@
 	</Package>
 	<Hooks directory="hooks">
 		<hook file="Base.lua" source_file="lib/managers/menu/menuscenemanager"/>
-		<hook file="Base.lua" source_file="lib/tweak_data/weapontweakdata"/>
 		<hook file="Base.lua" source_file="lib/units/player_team/teamaimovement"/>
 		<hook file="Base.lua" source_file="lib/units/player_team/huskteamaimovement"/>
 	</Hooks>
-	<AssetUpdates id="Watson Amelia Backpack" version="1">
-        <custom_provider 
-			version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Watson%20Amelia%20Backpack.txt" 
-			download_url="https://drnewbie.github.io/Mess/UpdateProvider/Watson%20Amelia%20Backpack.zip"
-		/>
-    </AssetUpdates>
 </table>

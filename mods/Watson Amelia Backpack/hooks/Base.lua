@@ -64,31 +64,6 @@ local function __Spawn_and_Link_to_User(parent_unit, weapon_unit)
 		--__Log("no parent_obj")
 		return
 	end
-	local tweak_weapon = tweak_data.weapon
-	local tweak_parts = tweak_weapon.factory.parts
-	local wep_base = weapon_unit:base()
-	local wep_name_id = wep_base.name_id
-	local wep_blueprints = weapon_unit:base()._blueprint
-	local __ammo_backpack_data = nil
-	--__Log(wep_name_id)
-	--__Log(json.encode(wep_blueprints))
-	if type(wep_name_id) == "string" then
-		if tweak_weapon[wep_name_id] and type(tweak_weapon[wep_name_id].__addition_ammo_backpack_data) == "table" and tweak_weapon[wep_name_id].__addition_ammo_backpack_data.is_bool then
-			__ammo_backpack_data = tweak_weapon[wep_name_id].__addition_ammo_backpack_data
-		end
-	end
-	if type(wep_blueprints) == "table" and not table.empty(wep_blueprints) then
-		for _, __wd in pairs(wep_blueprints) do
-			if tweak_parts[__wd] and type(tweak_parts[__wd].__addition_ammo_backpack_data) == "table" and tweak_parts[__wd].__addition_ammo_backpack_data.is_bool then
-				__ammo_backpack_data = tweak_parts[__wd].__addition_ammo_backpack_data
-				break
-			end
-		end
-	end
-	if not __ammo_backpack_data then
-		--__Log("no __ammo_backpack_data")
-		return
-	end
 	local s_unit = World:spawn_unit(TihsModItemUnitIds, parent_unit:position())
 	if s_unit then
 		__Delete_Box(parent_unit:key())
@@ -138,15 +113,6 @@ if MenuSceneManager and string.lower(tostring(RequiredScript)) == "lib/managers/
 	end)
 	Hooks:PreHook(MenuSceneManager, "destroy", __Name("destroy"), function(self)
 		__Delete_Box()
-	end)
-end
-
-if WeaponTweakData and string.lower(tostring(RequiredScript)) == "lib/tweak_data/weapontweakdata" then
-	Hooks:PostHook(WeaponTweakData, "_init_hk51b", __Name("_init_hk51b"), function(self)
-		self.hk51b.__addition_ammo_backpack_data = self.hk51b.__addition_ammo_backpack_data or {is_bool = true}
-	end)
-	Hooks:PostHook(WeaponTweakData, "_init_data_hk51b_crew", __Name("_init_data_hk51b_crew"), function(self)
-		self.hk51b_crew.__addition_ammo_backpack_data = self.hk51b.__addition_ammo_backpack_data or {is_bool = true}
 	end)
 end
 
