@@ -80,7 +80,31 @@ local function __Spawn_and_Link_to_User(parent_unit, weapon_unit)
 		local world_rot = __rot_fix(parent_obj, parent_obj_rot)
 		s_unit:set_position(world_pos)
 		s_unit:set_rotation(world_rot)
+		local p_key = parent_unit:key()
 		_G[BoxUnit][parent_unit:key()] = s_unit
+		if type(parent_unit.base) == "function" and parent_unit:base() then
+			if type(parent_unit:base().pre_destroy) == "function" then
+				local old_destory = parent_unit:base().pre_destroy
+				parent_unit:base().pre_destroy = function(...)
+					if _G[BoxUnit][p_key] and alive(_G[BoxUnit][p_key]) then
+						_G[BoxUnit][p_key]:unlink()
+						World:delete_unit(_G[BoxUnit][p_key])
+					end
+					_G[BoxUnit][p_key] = nil
+					old_destory(...)
+				end
+			elseif type(parent_unit:base().destroy) == "function" then
+				local old_destory = parent_unit:base().destroy
+				parent_unit:base().destroy = function(...)
+					if _G[BoxUnit][p_key] and alive(_G[BoxUnit][p_key]) then
+						_G[BoxUnit][p_key]:unlink()
+						World:delete_unit(_G[BoxUnit][p_key])
+					end
+					_G[BoxUnit][p_key] = nil
+					old_destory(...)
+				end
+			end
+		end
 		return s_unit
 	end
 	return
