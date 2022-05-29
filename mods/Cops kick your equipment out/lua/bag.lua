@@ -107,7 +107,7 @@ if RequiredScript == "lib/units/equipment/doctor_bag/doctorbagbase" then
 			_t = 0,
 			_try = 0,
 			_target_unit = nil,
-			_target_run = "sync_ammo_bag_ammo_taken"
+			_target_run = "sync_doctor_bag_taken"
 		}
 	end)
 	
