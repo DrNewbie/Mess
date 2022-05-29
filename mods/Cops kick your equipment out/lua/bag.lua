@@ -14,17 +14,17 @@ function StealYourItem:LoopCheckMain(bag, t)
 	else
 		bag._StealYourItem._target_unit = nil
 	end
-	bag._StealYourItem._t = t + 3
+	bag._StealYourItem._t = t + 7
 	for u_key, u_data in pairs(managers.groupai:state():all_char_criminals()) do
 		if u_data and u_data.unit and alive(u_data.unit) then
-			if mvector3.distance(bag._unit:position(), u_data.unit:position()) < 1000 then
+			if mvector3.distance(bag._unit:position(), u_data.unit:position()) <= 1000 then
 				return
 			end
 		end
 	end
 	for _, data in pairs(managers.enemy:all_enemies()) do
 		local _cop = data.unit
-		if mvector3.distance(bag._unit:position(), _cop:position()) < 2000 then
+		if mvector3.distance(bag._unit:position(), _cop:position()) <= 2000 then
 			bag._StealYourItem._target_unit = _cop
 			break
 		end
@@ -37,8 +37,12 @@ function StealYourItem:RunNowMain(bag)
 	end
 	local _cop = bag._StealYourItem._target_unit
 	if _cop and alive(_cop) and not _cop:character_damage():dead() and not _cop:brain()._logic_data.is_converted then
-		if mvector3.distance(bag._unit:position(), _cop:position()) < 1000 then
-			managers.network:session():send_to_peers_synched(bag._StealYourItem._target_run, bag._unit, 999)
+		if mvector3.distance(bag._unit:position(), _cop:position()) <= 1000 then
+			if bag._StealYourItem._target_run == "sync_take_fak" then
+				managers.network:session():send_to_peers_synched("sync_unit_event_id_16", bag._unit, "base", 2)
+			else
+				managers.network:session():send_to_peers_synched(bag._StealYourItem._target_run, bag._unit, 999)
+			end
 			bag:_set_empty()
 		end
 	end
@@ -120,6 +124,29 @@ if RequiredScript == "lib/units/equipment/doctor_bag/doctorbagbase" then
 	end
 	
 	function DoctorBagBase:RunNowFail()
+		StealYourItem:RunNowFail(self)
+	end
+end
+
+if RequiredScript == "lib/units/equipment/first_aid_kit/firstaidkitbase" then
+	Hooks:PostHook(FirstAidKitBase, "init", "StealYourItem_FirstAidKitBaseInit", function(self, ...)
+		self._StealYourItem = {
+			_t = 0,
+			_try = 0,
+			_target_unit = nil,
+			_target_run = "sync_take_fak"
+		}
+	end)
+	
+	Hooks:PostHook(FirstAidKitBase, "update", "StealYourItem_FirstAidKitBaseUpdate", function(self, unit, t, dt)
+		StealYourItem:LoopCheckMain(self, t)
+	end)
+	
+	function FirstAidKitBase:RunNowMain()
+		StealYourItem:RunNowMain(self)
+	end
+	
+	function FirstAidKitBase:RunNowFail()
 		StealYourItem:RunNowFail(self)
 	end
 end

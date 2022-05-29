@@ -16,6 +16,10 @@
     {
       "hook_id": "lib/units/equipment/doctor_bag/doctorbagbase",
       "script_path": "lua/bag.lua"
+    },
+    {
+      "hook_id": "lib/units/equipment/first_aid_kit/firstaidkitbase",
+      "script_path": "lua/bag.lua"
     }
   ]
 }
