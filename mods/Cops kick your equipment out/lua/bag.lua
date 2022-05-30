@@ -1,8 +1,14 @@
 _G.StealYourItem = _G.StealYourItem or {}
 
 function StealYourItem:LoopCheckMain(bag, t)
+	if Network and Network:is_client() then
+		return
+	end
+	if not bag or not t or type(t) ~= "number" or type(bag._StealYourItem) ~= "table" or type(bag._StealYourItem._t) ~= "number" then
+		return
+	end
 	if bag._empty then
-		return false, false
+		return
 	end
 	if bag._StealYourItem._t > t then
 		return
