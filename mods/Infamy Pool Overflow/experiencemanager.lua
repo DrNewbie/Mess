@@ -1,6 +1,5 @@
 local ThisModPath = ModPath
 local ThisModIds = Idstring(ThisModPath):key()
-local __Data = {EXP = 0}
 local __Name = function(__id)
 	return "I4M_"..Idstring(tostring(__id).."::"..ThisModIds):key()
 end
