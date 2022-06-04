@@ -1,4 +1,4 @@
-<mod name="TTTTTTTTTTTTTTTTTest">
+<mod name="counter-x9">
 	<Hooks directory="hooks">
 		<hook file="hudmanager.lua" source_file="lib/managers/hudmanager"/>
 	</Hooks>
