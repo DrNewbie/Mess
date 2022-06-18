@@ -11,6 +11,9 @@ function PlayerManager:__EE_Armor_Bonus_Value_List(lv)
 	local add_stamina = function(__lv)
 		return math.random(1, 15)
 	end
+	local add_speed = function(__lv)
+		return math.random(1, 15)
+	end
 	local sp_thorns = function(__lv)
 		return table.random({
 			50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50,
@@ -34,6 +37,7 @@ function PlayerManager:__EE_Armor_Bonus_Value_List(lv)
 		[4] = add_stamina(lv),
 		[5] = sp_thorns(lv),
 		[6] = sp_protection(lv),
-		[7] = sp_shockproof(lv)
+		[7] = sp_shockproof(lv),
+		[8] = add_speed(lv)
 	}
 end
