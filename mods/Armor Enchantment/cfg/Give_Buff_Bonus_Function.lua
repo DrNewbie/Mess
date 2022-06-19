@@ -1,5 +1,4 @@
-local ThisModPath = ModPath
-local Hook1 = "EEA_"..Idstring("upgrade_value::"..ThisModPath):key()
+local Hook1 = _G.EEArmorBuffMain.__Name("upgrade_value")
 
 PlayerManager[Hook1] = PlayerManager[Hook1] or PlayerManager.upgrade_value
 
