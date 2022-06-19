@@ -1,5 +1,5 @@
 function PlayerManager:__EE_Armor_Conis()
-	return 100
+	return 0
 end
 
 function PlayerManager:__EE_Armor_Possible_Amount()
@@ -19,7 +19,8 @@ function PlayerManager:__EE_Armor_Bonus_List()
 		[5] = 5, --+SP: Thorns
 		[6] = 5, --+SP: Protection
 		[7] = 5, --+SP: Shockproof
-		[8] = 50 --+Addon Speed
+		[8] = 50, --+Addon Movemen Speed
+		[9] = 50 --+Addon Carry Movemen Speed
 	}
 end
 
@@ -32,7 +33,8 @@ function PlayerManager:__EE_Armor_Bonus_Type_List()
 		[5] = "sp_thorns",
 		[6] = "sp_protection",
 		[7] = "sp_shockproof",
-		[8] = "add_speed"
+		[8] = "add_movement_speed",
+		[9] = "add_carry_movement_speed"
 	}
 end
 

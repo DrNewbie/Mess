@@ -1,11 +1,12 @@
-local ThisModPath = _G.EEArmorBuffMain.ThisModPath
+local ThisModPath = ModPath
 local ThisModSavePath = SavePath.."EEnchantingArmor.txt"
-local Loc01 = _G.EEArmorBuffMain.__Name("load_localization_file")
-local Hook1 = _G.EEArmorBuffMain.__Name("BMGui:_setup")
-local Hook2 = _G.EEArmorBuffMain.__Name("BMGui:populate_armors")
-local Hook3 = _G.EEArmorBuffMain.__Name("BMGui:update_info_text")
-local Func1 = _G.EEArmorBuffMain.__Name("Func1")
-local Func2 = _G.EEArmorBuffMain.__Name("Func2")
+local ThisModIds = Idstring(ThisModPath):key()
+local Loc01 = "F_"..Idstring("load_localization_file::"..ThisModIds):key()
+local Hook1 = "F_"..Idstring("BMGui:_setup::"..ThisModIds):key()
+local Hook2 = "F_"..Idstring("BMGui:populate_armors::"..ThisModIds):key()
+local Hook3 = "F_"..Idstring("BMGui:update_info_text::"..ThisModIds):key()
+local Func1 = "F_"..Idstring("Func1::"..ThisModIds):key()
+local Func2 = "F_"..Idstring("Func2::"..ThisModIds):key()
 
 Hooks:PostHook(BlackMarketGui, "_setup", Hook1, function(self)
 	self[Func2] = self[Func2] or function(self)

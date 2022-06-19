@@ -1,7 +1,10 @@
-local hook1 = _G.EEArmorBuffMain.__Name("sp_thorns::hook1")
-local hook2 = _G.EEArmorBuffMain.__Name("sp_thorns::hook2")
-local msgr1 = _G.EEArmorBuffMain.__Name("sp_thorns::msgr1")
-local bool1 = _G.EEArmorBuffMain.__Name("sp_thorns::is_sp_thorns")
+local ThisModPath = ModPath
+
+local mod_ids = Idstring(ThisModPath):key()
+local hook1 = "EEA_"..Idstring("sp_thorns::hook1::"..mod_ids):key()
+local hook2 = "EEA_"..Idstring("sp_thorns::hook2::"..mod_ids):key()
+local msgr1 = "EEA_"..Idstring("sp_thorns::msgr1::"..mod_ids):key()
+local bool1 = "EEA_"..Idstring("sp_thorns::is_sp_thorns::"..mod_ids):key()
 
 Hooks:PostHook(PlayerDamage, "init", hook1, function(self)
 	managers.player:unregister_message(Message.OnPlayerDamage, msgr1)

@@ -1,4 +1,7 @@
-local func1 = _G.EEArmorBuffMain.__Name("sp_protection::func1")
+local ThisModPath = ModPath
+
+local mod_ids = Idstring(ThisModPath):key()
+local func1 = "EEA_"..Idstring("sp_protection::func1::"..mod_ids):key()
 
 PlayerManager[func1] = PlayerManager[func1] or PlayerManager.damage_reduction_skill_multiplier
 

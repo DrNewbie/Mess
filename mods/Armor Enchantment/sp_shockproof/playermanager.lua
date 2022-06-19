@@ -1,4 +1,5 @@
-local Hook1 = _G.EEArmorBuffMain.__Name("sp_shockproof::has_category_upgrade")
+local ThisModPath = ModPath
+local Hook1 = "EEA_"..Idstring("sp_shockproof::has_category_upgrade::"..ThisModPath):key()
 
 PlayerManager[Hook1] = PlayerManager[Hook1] or PlayerManager.has_category_upgrade
 

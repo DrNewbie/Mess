@@ -1,4 +1,5 @@
-local Hook1 = _G.EEArmorBuffMain.__Name("upgrade_value")
+local ThisModPath = ModPath
+local Hook1 = "EEA_"..Idstring("upgrade_value::"..ThisModPath):key()
 
 PlayerManager[Hook1] = PlayerManager[Hook1] or PlayerManager.upgrade_value
 
@@ -15,6 +16,10 @@ function PlayerManager:upgrade_value(category, upgrade, ...)
 		Ans = Ans + self:__EE_Armor_Get_Var_by_Lv_and_ID(nil, 4)/100
 	elseif category == "player" and upgrade == "movement_speed_multiplier" then
 		Ans = Ans + self:__EE_Armor_Get_Var_by_Lv_and_ID(nil, 8)/100
+	elseif category == "carry" and upgrade == "movement_speed_multiplier" then
+		log("AnsA: " .. Ans)
+		Ans = Ans + self:__EE_Armor_Get_Var_by_Lv_and_ID(nil, 9)/100
+		log("AnsB: " .. Ans)
 	end
 	return Ans
 end
