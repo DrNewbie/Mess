@@ -1,5 +1,5 @@
 function PlayerManager:__EE_Armor_Conis()
-	return 0
+	return 100
 end
 
 function PlayerManager:__EE_Armor_Possible_Amount()
