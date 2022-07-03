@@ -1,0 +1,11 @@
+{
+  "menu_deck5_1": "Armor",
+  "menu_deck5_1_desc": "You gain ##10%## more armor.",
+  "menu_deck5_3": "Ammo",
+  "menu_deck5_3_desc": "You gain ##25%## more ammo pickup.",
+  "menu_deck5_5": "Ammo+",
+  "menu_deck5_5_desc": "You gain ##25%## more total ammo.",
+  "menu_deck5_7": " ",
+  "menu_deck5_7_desc": " ",
+  "menu_deck5_9_desc": "##2.5## seconds guaranteed armor regen."
+}
