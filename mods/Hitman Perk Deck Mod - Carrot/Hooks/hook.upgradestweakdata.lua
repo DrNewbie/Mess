@@ -26,4 +26,16 @@ Hooks:PostHook(UpgradesTweakData, "_player_definitions", "F_"..Idstring("Upgrade
 			category = "player"
 		}
 	}
+	self.values.player.guaranteed_armor_regen_hitman_mod = {
+		2.5
+	}
+	self.definitions.player_guaranteed_armor_regen_hitman_mod = {
+		name_id = "menu_player_guaranteed_armor_regen_hitman_mod",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "guaranteed_armor_regen_hitman_mod",
+			category = "player"
+		}
+	}
 end)

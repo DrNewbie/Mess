@@ -34,6 +34,7 @@ Hooks:PostHook(SkillTreeTweakData, "init", "F_"..Idstring("SkillTreeTweakData::"
 		900
 	}
 	self.specializations[5][9].upgrades = {
+		"player_guaranteed_armor_regen_hitman_mod",
 		"player_passive_loot_drop_multiplier"
 	}
 end)
