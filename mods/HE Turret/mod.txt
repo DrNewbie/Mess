@@ -1,0 +1,15 @@
+{
+  "name": "HE Turret",
+  "description": "https://modworkshop.net/mod/38370",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/38370",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/units/equipment/player_turret/playerturretbase",
+      "script_path": "playerturretbase.lua"
+    }
+  ]
+}
