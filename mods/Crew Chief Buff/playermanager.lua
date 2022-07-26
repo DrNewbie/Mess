@@ -27,7 +27,7 @@ function PlayerManager:body_armor_skill_multiplier(...)
 	local __ans = self[func99](self, ...)
 	if self:has_category_upgrade("player", "ccb_hostage_armor_multiplier") then
 		local __hostages = managers.groupai and managers.groupai:state():hostage_count() or 0
-		local __minions = self:num_local_minions() or 0
+		local __minions = 0--self:num_local_minions() or 0
 		local __buff = self:upgrade_value("player", "ccb_hostage_armor_multiplier", 1)
 		__buff = __buff - 1
 		__ans = __ans + __buff * math.min(4, __hostages + __minions)
