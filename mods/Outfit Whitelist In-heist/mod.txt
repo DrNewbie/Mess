@@ -1,0 +1,19 @@
+{
+  "name": "Outfit Whitelist In-heist",
+  "description": "https://modworkshop.net/mod/38922",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/38922",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/managers/criminalsmanager",
+      "script_path": "criminalsmanager.lua"
+    },
+    {
+      "hook_id": "lib/managers/menumanager",
+      "script_path": "criminalsmanager.lua"
+    }
+  ]
+}
