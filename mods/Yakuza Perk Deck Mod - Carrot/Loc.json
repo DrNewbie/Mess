@@ -4,7 +4,7 @@
   "menu_deck12_3": "Speed",
   "menu_deck12_3_desc": "You gain ##20%## movement speed.",
   "menu_deck12_5": "Armor+",
-  "menu_deck12_5_desc": "The lower your health, the more armor recovery rate you have. Up to addition ##40%##.",
+  "menu_deck12_5_desc": "The lower your health, the more armor recovery rate you have. Up to ##40%##.",
   "menu_deck12_7": "Dodge",
-  "menu_deck12_7_desc": "The lower your health, the more dodge you have. Up to addition ##40%##.",
+  "menu_deck12_7_desc": "The lower your health, the more dodge you have. Up to ##40%##.",
 }
