@@ -1,0 +1,23 @@
+{
+  "name": "Yakuza Perk Deck Mod - Carrot",
+  "description": "https://modworkshop.net/mod/39053",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/39053",
+  "blt_version": 2,
+  "version": "1",
+  "priority": 100,
+  "hooks": [
+    {
+      "hook_id": "lib/tweak_data/skilltreetweakdata",
+      "script_path": "Hooks/hook.skilltreetweakdata.lua"
+    },
+    {
+      "hook_id": "lib/tweak_data/upgradestweakdata",
+      "script_path": "Hooks/hook.upgradestweakdata.lua"
+    },
+    {
+      "hook_id": "lib/managers/playermanager",
+      "script_path": "Hooks/hook.playermanager.lua"
+    }
+  ]
+}
