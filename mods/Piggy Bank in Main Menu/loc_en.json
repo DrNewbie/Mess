@@ -1,0 +1,12 @@
+{
+  "PBiMM_opt_menu_name": "Piggy Bank in Main Menu",
+  "PBiMM_opt_menu_none": " ",
+  "PBiMM_opt_desc_none": " ",
+  "PBiMM_opt_pos_x_offset": "Pos - X",
+  "PBiMM_opt_pos_y_offset": "Pos - Y",
+  "PBiMM_opt_pos_z_offset": "Pos - Z",
+  "PBiMM_opt_rot_x_offset": "Rot - X",
+  "PBiMM_opt_rot_y_offset": "Rot - Y",
+  "PBiMM_opt_rot_z_offset": "Rot - Z",
+  "PBiMM_opt_is_moving": "Moving or Static"
+ }

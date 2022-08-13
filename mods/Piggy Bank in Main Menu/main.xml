@@ -1,0 +1,41 @@
+<table name="PBiMM" global_key="PBiMM" core_class="lua/Setup.lua">
+	<AssetUpdates id="Piggy Bank in Main Menu" version="1">
+		<custom_provider 
+			version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Piggy%20Bank%20in%20Main%20Menu.txt" 
+			download_url="https://drnewbie.github.io/Mess/UpdateProvider/Piggy%20Bank%20in%20Main%20Menu.zip"
+		/>
+	</AssetUpdates>
+	<Localization default="loc_en.json"/>
+	<Options>
+		<options title_id="PBiMM_opt_menu_name" desc_id="PBiMM_opt_menu_none" build_items="true">
+			<option type="number" min="-999" max="999" step="1" show_value="true" default_value="30" 
+				title_id="PBiMM_opt_pos_x_offset" desc_id="PBiMM_opt_desc_none" name="__pos_x" 
+				value_changed="PBiMM:OptChanged" 
+			/>
+			<option type="number" min="-999" max="999" step="1" show_value="true" default_value="25" 
+				title_id="PBiMM_opt_pos_y_offset" desc_id="PBiMM_opt_desc_none" name="__pos_y" 
+				value_changed="PBiMM:OptChanged" 
+			/>
+			<option type="number" min="-999" max="999" step="1" show_value="true" default_value="-100" 
+				title_id="PBiMM_opt_pos_z_offset" desc_id="PBiMM_opt_desc_none" name="__pos_z" 
+				value_changed="PBiMM:OptChanged" 
+			/>
+			<option type="number" min="-360" max="360" step="1" show_value="true" default_value="130" 
+				title_id="PBiMM_opt_rot_x_offset" desc_id="PBiMM_opt_desc_none" name="__rot_x" 
+				value_changed="PBiMM:OptChanged" 
+			/>
+			<option type="number" min="-360" max="360" step="1" show_value="true" default_value="0" 
+				title_id="PBiMM_opt_rot_y_offset" desc_id="PBiMM_opt_desc_none" name="__rot_y" 
+				value_changed="PBiMM:OptChanged" 
+			/>
+			<option type="number" min="-360" max="360" step="1" show_value="true" default_value="0" 
+				title_id="PBiMM_opt_rot_z_offset" desc_id="PBiMM_opt_desc_none" name="__rot_z" 
+				value_changed="PBiMM:OptChanged" 
+			/>
+			<option type="bool" default_value="false"
+				title_id="PBiMM_opt_is_moving" desc_id="PBiMM_opt_desc_none" name="__is_moving" 
+				value_changed="PBiMM:IsMovingChanged" 
+			/>
+		</options>
+	</Options>
+</table>
