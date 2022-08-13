@@ -17,7 +17,10 @@ Hooks:PostHook(MissionScriptElement, "on_executed", Hook1, function(self, ...)
 	if not _G[Hook2] and self._id == 100014 and (not Network or (Network and not Network:is_client())) and Global.game_settings and Global.game_settings.level_id == "chill" then
 		_G[Hook2] = true
 		if PackageManager:package_exists(ThisPackage) and PackageManager:loaded(ThisPackage) then
-			World:spawn_unit(Idstring("units/pd2_dlc_pda9/props/pda9_piggybank/pda9_prop_piggybank_level_1"), Vector3(115, 335, 48), Rotation())
+			local p_unit = World:spawn_unit(Idstring("units/pd2_dlc_pda9/props/pda9_piggybank/pda9_prop_piggybank_level_1"), Vector3(115, 335, 48), Rotation())
+			if p_unit and alive(p_unit) and p_unit:damage() and p_unit:damage():has_sequence("anim_pig_idle") then
+				p_unit:damage():run_sequence_simple("anim_pig_idle")
+			end
 		end
 	end
 end)
