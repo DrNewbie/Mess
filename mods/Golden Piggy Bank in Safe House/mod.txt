@@ -1,0 +1,13 @@
+{
+  "name": "Golden Piggy Bank in Safe House",
+  "description": "https://modworkshop.net/mod/39060",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/39060",
+  "version": "1",
+  "hooks": [
+    {
+      "hook_id": "core/lib/managers/mission/coremissionscriptelement",
+      "script_path": "lua/event.lua"
+    }
+  ]
+}
