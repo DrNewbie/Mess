@@ -1,0 +1,15 @@
+{
+  "name": "turn off the gore effects for tazer",
+  "description": " ",
+  "author": " ",
+  "contact": " ",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/units/enemies/cop/copdamage",
+      "script_path": "copdamage.lua"
+    }
+  ]
+}
