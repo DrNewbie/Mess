@@ -10,19 +10,19 @@ function PBiMM:OptChanged()
 			PBiMM.Options:GetValue("__rot_y"),
 			PBiMM.Options:GetValue("__rot_z")
 		))
-		MenuSceneManager.PBiMM:set_enabled(false)
-		MenuSceneManager.PBiMM:set_enabled(true)
 	end
 	return
 end
 
 function PBiMM:IsMovingChanged()
-	MenuSceneManager:SpawnPBiMM()
 	if MenuSceneManager.PBiMM:damage() then
 		if PBiMM.Options:GetValue("__is_moving") then
 			if MenuSceneManager.PBiMM:damage():has_sequence("anim_pig_idle") then
 				MenuSceneManager.PBiMM:damage():run_sequence_simple("anim_pig_idle")
 			end
+		else
+			MenuSceneManager:__SpawnPBiMM()
+			PBiMM:OptChanged()
 		end
 	end
 end

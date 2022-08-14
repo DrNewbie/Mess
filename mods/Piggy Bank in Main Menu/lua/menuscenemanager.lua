@@ -6,9 +6,8 @@ if PackageManager:package_exists(ThisPackage) and not PackageManager:loaded(This
 end
 
 if MenuSceneManager then
-	function MenuSceneManager:SpawnPBiMM()
+	function MenuSceneManager:__SpawnPBiMM()
 		if PackageManager:package_exists(ThisPackage) and PackageManager:loaded(ThisPackage) and DB:has("unit", ThisUnitName) then
-			local is_PBiMM = type(PBiMM) == "table" and type(PBiMM.Options) == "table" and type(PBiMM.Options.GetValue) == "function"
 			if MenuSceneManager.PBiMM and alive(MenuSceneManager.PBiMM) then
 				MenuSceneManager.PBiMM:set_slot(0)
 				MenuSceneManager.PBiMM = nil
@@ -19,12 +18,23 @@ if MenuSceneManager then
 			if p_unit then
 				MenuSceneManager.PBiMM = p_unit
 			end
-			if is_PBiMM then
-				PBiMM:OptChanged()
-			end
 		end
+		return
 	end
-	Hooks:PostHook(MenuSceneManager, "_setup_bg", "SpawnAddonItemsEventNow", function(self) 
-		self:SpawnPBiMM()
+	function MenuSceneManager:SpawnPBiMM()
+		self:__SpawnPBiMM()
+		local is_PBiMM = type(PBiMM) == "table" and type(PBiMM.Options) == "table" and type(PBiMM.Options.GetValue) == "function"
+		if is_PBiMM then
+			PBiMM:OptChanged()
+			PBiMM:IsMovingChanged()
+		end
+		return
+	end
+	Hooks:Add("MenuManagerOnOpenMenu", "F_"..Idstring("OpenMenu::PBiMMRunEventNow"):key(), function(self, menu)
+		if menu == "menu_main" then
+			DelayedCalls:Add("F_"..Idstring("DelayedCalls::PBiMMRunEventNow"):key(), 3, function()
+				MenuSceneManager:SpawnPBiMM()
+			end)
+		end
 	end)
 end

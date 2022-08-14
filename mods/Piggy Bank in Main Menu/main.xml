@@ -1,5 +1,5 @@
 <table name="PBiMM" global_key="PBiMM" core_class="lua/Setup.lua">
-	<AssetUpdates id="Piggy Bank in Main Menu" version="1">
+	<AssetUpdates id="Piggy Bank in Main Menu" version="2">
 		<custom_provider 
 			version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Piggy%20Bank%20in%20Main%20Menu.txt" 
 			download_url="https://drnewbie.github.io/Mess/UpdateProvider/Piggy%20Bank%20in%20Main%20Menu.zip"
