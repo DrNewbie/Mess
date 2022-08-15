@@ -1,5 +1,5 @@
 <table name="PBiMM" global_key="PBiMM" core_class="lua/Setup.lua">
-	<AssetUpdates id="Piggy Bank in Main Menu" version="2">
+	<AssetUpdates id="Piggy Bank in Main Menu" version="3">
 		<custom_provider 
 			version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Piggy%20Bank%20in%20Main%20Menu.txt" 
 			download_url="https://drnewbie.github.io/Mess/UpdateProvider/Piggy%20Bank%20in%20Main%20Menu.zip"
@@ -35,6 +35,10 @@
 			<option type="bool" default_value="false"
 				title_id="PBiMM_opt_is_moving" desc_id="PBiMM_opt_desc_none" name="__is_moving" 
 				value_changed="PBiMM:IsMovingChanged" 
+			/>
+			<option type="number" min="0" max="12" step="1" show_value="true" default_value="1" 
+				title_id="PBiMM_opt_moving_speed" desc_id="PBiMM_opt_desc_none" name="__moving_speed" 
+				value_changed="PBiMM:MovingSpeedChanged" 
 			/>
 		</options>
 	</Options>

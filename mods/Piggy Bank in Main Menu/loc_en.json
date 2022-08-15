@@ -8,5 +8,6 @@
   "PBiMM_opt_rot_x_offset": "Rot - X",
   "PBiMM_opt_rot_y_offset": "Rot - Y",
   "PBiMM_opt_rot_z_offset": "Rot - Z",
-  "PBiMM_opt_is_moving": "Moving or Static"
+  "PBiMM_opt_is_moving": "Moving or Static",
+  "PBiMM_opt_moving_speed": "Moving Speed"
  }
