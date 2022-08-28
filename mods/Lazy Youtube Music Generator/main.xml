@@ -1,0 +1,5 @@
+<table name="Lazy Youtube Music Generator">
+	<Localization directory="Loc" default="English.txt">
+    	<loc file="English.txt" language="english"/>
+	</Localization>
+</table>
