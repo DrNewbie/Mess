@@ -8,6 +8,7 @@ _G.LazyYoutubeMusicGeneratorMain.Download = function(ThisDL_ID)
 	local __B_MPath = __BPath..'/'..ThisModPath
 	--local __dump_json = ThisModPath..'__dump.json'
 	local __ffmpeg_exe = Application:nice_path(__B_MPath.."/ffmpeg.exe", false)
+	local __yt_dlp_exe = Application:nice_path(__B_MPath.."/yt-dlp.exe", false)
 	local __ogg_folder = Application:nice_path(__B_MPath..'/__tmp_oggs/', false)
 	os.execute(string.format('rd /S /Q "%s"', __ogg_folder))
 	os.execute(string.format('md "%s"', __ogg_folder))
@@ -93,7 +94,7 @@ _G.LazyYoutubeMusicGeneratorMain.Download = function(ThisDL_ID)
 	assert(
 		tostring(
 			os.execute(
-				string.format('yt-dlp.exe --quiet --no-warnings --write-info-json --extract-audio --audio-format vorbis --ffmpeg-location "%s" --paths "%s" --output "%s" "%s"', __ffmpeg_exe, __ogg_folder, "%(id)s.%(ext)s", ThisDL_URL)
+				string.format('"%s" --quiet --no-warnings --write-info-json --extract-audio --audio-format vorbis --ffmpeg-location "%s" --paths "%s" --output "%s" "%s"', __yt_dlp_exe, __ffmpeg_exe, __ogg_folder, "%(id)s.%(ext)s", ThisDL_URL)
 			)
 		) == '0',
 		tostring(
