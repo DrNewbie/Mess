@@ -17,11 +17,11 @@ _G.LazyYoutubeMusicGeneratorMain.Download = function(ThisDL_ID)
 		__path = tostring(__path)
 		__yt_id = tostring(__yt_id)
 		if not file.DirectoryExists(__path) then
-			
+			return "LazyYoutubeMusicGenerator: not file.DirectoryExists(__path)"
 		else
 			local __files = file.GetFiles(__path)
 			if type(__files) ~= "table" or table.empty(__files) then
-				
+				return "LazyYoutubeMusicGenerator: not file.GetFiles(__path)"
 			else
 				local __VideoInfoFile = io.open(ThisModPath..'/__tmp_oggs/'..ThisDL_ID..'.info.json', 'r')
 				if __VideoInfoFile then
@@ -79,11 +79,16 @@ _G.LazyYoutubeMusicGeneratorMain.Download = function(ThisDL_ID)
 						if ModCore then
 							--ModCore:new(__music_mod_main_xml_path, true, true)
 						end
+						
+						--[[ remove __tmp ]]
+						os.execute(string.format('rd /S /Q "%s"', __path))
+						
+						return "LazyYoutubeMusicGenerator: okay"
 					end
 				end
 			end
 		end
-		return
+		return "LazyYoutubeMusicGenerator: no run"
 	end
 	assert(
 		tostring(
@@ -91,7 +96,9 @@ _G.LazyYoutubeMusicGeneratorMain.Download = function(ThisDL_ID)
 				string.format('yt-dlp.exe --quiet --no-warnings --write-info-json --extract-audio --audio-format vorbis --ffmpeg-location "%s" --paths "%s" --output "%s" "%s"', __ffmpeg_exe, __ogg_folder, "%(id)s.%(ext)s", ThisDL_URL)
 			)
 		) == '0',
-		pcall(__to_MusicMod, __ogg_folder, ThisDL_ID)
+		tostring(
+			pcall(__to_MusicMod, __ogg_folder, ThisDL_ID)
+		)
 	)
 	return
 end

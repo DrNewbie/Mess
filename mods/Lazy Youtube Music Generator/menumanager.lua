@@ -40,7 +40,7 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "LazyYoutubeMusicGeneratorPopulate",
 							}
 						}
 					):Show()
-					_G.LazyYoutubeMusicGeneratorMain.Download(vidid_now)
+					pcall(_G.LazyYoutubeMusicGeneratorMain.Download, vidid_now)
 					QuickMenu:new(
 						menu_title,
 						managers.localization:text("menu_LazyYoutubeMusicGenerator_menu_download_ok"),
