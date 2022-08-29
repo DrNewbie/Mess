@@ -94,7 +94,7 @@ _G.LazyYoutubeMusicGeneratorMain.Download = function(ThisDL_ID)
 	assert(
 		tostring(
 			os.execute(
-				string.format('"%s" --quiet --no-warnings --write-info-json --extract-audio --audio-format vorbis --ffmpeg-location "%s" --paths "%s" --output "%s" "%s"', __yt_dlp_exe, __ffmpeg_exe, __ogg_folder, "%(id)s.%(ext)s", ThisDL_URL)
+				string.format('yt-dlp.exe --quiet --no-warnings --write-info-json --extract-audio --audio-format vorbis --ffmpeg-location "%s" --paths "%s" --output "%s" "%s"', __ffmpeg_exe, __ogg_folder, "%(id)s.%(ext)s", ThisDL_URL)
 			)
 		) == '0',
 		tostring(
