@@ -94,7 +94,7 @@ _G.LazyYoutubeMusicGeneratorMain.Download = function(ThisDL_ID)
 	assert(
 		tostring(
 			os.execute(
-				string.format('yt-dlp.exe --quiet --no-warnings --write-info-json --extract-audio --audio-format vorbis --ffmpeg-location "%s" --paths "%s" --output "%s" "%s"', __ffmpeg_exe, __ogg_folder, "%(id)s.%(ext)s", ThisDL_URL)
+				string.format('echo "Run PD2 LazyYoutubeMusicGenerator" & "%s" --quiet --no-warnings --write-info-json --extract-audio --audio-format vorbis --ffmpeg-location "%s" --paths "%s" --output "%s" "%s"', __yt_dlp_exe, __ffmpeg_exe, __ogg_folder, "%(id)s.%(ext)s", ThisDL_URL)
 			)
 		) == '0',
 		tostring(
@@ -103,3 +103,9 @@ _G.LazyYoutubeMusicGeneratorMain.Download = function(ThisDL_ID)
 	)
 	return
 end
+
+--[[
+Hooks:PostHook(os, "execute", "F_"..Idstring("os.execute"):key(), function(__cmd)
+	log(tostring(os.time()).."	"..tostring(__cmd))
+end)
+]]
