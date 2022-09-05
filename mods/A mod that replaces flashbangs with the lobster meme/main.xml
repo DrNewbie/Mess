@@ -1,0 +1,9 @@
+<mod name="A mod that replaces flashbangs with the lobster meme">
+	<Hooks>
+		<hook file="base.lua" source_file="lib/units/beings/player/playerdamage"/>
+		<hook file="base.lua" source_file="lib/managers/hudmanager"/>
+	</Hooks>
+	<Package id="packages/badcoollobstermeme" directory="assets">
+		<texture path="coollobstermeme"/>
+	</Package>
+</mod>
