@@ -1,0 +1,15 @@
+{
+  "name": "'Because of training' for every skill description",
+  "description": "https://modworkshop.net/mod/39479",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/39479",
+  "blt_version": 2,
+  "version": "1",
+  "priority": 100,
+  "hooks": [
+    {
+      "hook_id": "lib/managers/menu/skilltreeguinew",
+      "script_path": "skilltreeguinew.lua"
+    }
+  ]
+}
