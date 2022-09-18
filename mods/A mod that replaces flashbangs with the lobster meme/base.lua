@@ -1,12 +1,15 @@
 local ThisModPath = ModPath
 
+--[[File Path]]
+local ThisOGG = ThisModPath.."sounds/earrapelobstermeme.ogg"
+local ThisTexture = "coollobstermeme"
+
 if blt.xaudio then
 	blt.xaudio.setup()
 else
 	return
 end
 
-local ThisOGG = ThisModPath.."sounds/earrapelobstermeme.ogg"
 if not io.file_is_readable(ThisOGG) then
 	return
 end
@@ -16,18 +19,26 @@ local __Name = function(__id)
 	return "BADMEMES_"..Idstring(tostring(__id).."::"..ThisModIds):key()
 end
 
-local _GName = __Name("_G")
 local XAudioBuffer = __Name("XAudioBuffer")
 local XAudioSource = __Name("XAudioSource")
-
+local _GName = __Name("_G")
 _G[_GName] = _G[_GName] or {}
+local ThisBitmap = __Name("ThisBitmap")
+_G[ThisBitmap] = _G[ThisBitmap] or nil
+
+local function is_FlashBMemes()
+	return type(FlashBMemes) == "table" and type(FlashBMemes.Options) == "table" and type(FlashBMemes.Options.GetValue) == "function"
+end
 
 local function __ply_ogg()
 	if io.file_is_readable(ThisOGG) then
+		local __is_FlashBMemes = is_FlashBMemes()
+		local __volume_start = __is_FlashBMemes and FlashBMemes.Options:GetValue("__volume_start") or 1
 		local this_buffer = XAudio.Buffer:new(ThisOGG)
 		local this_source = XAudio.UnitSource:new(XAudio.PLAYER)
 		this_source:set_buffer(this_buffer)
 		this_source:play()
+		this_source:set_volume(__volume_start)
 		_G[_GName][XAudioBuffer] = this_buffer
 		_G[_GName][XAudioSource] = this_source
 	end
@@ -46,53 +57,47 @@ local function __end_ogg()
 	return
 end
 
-local ThisBitmap = __Name("ThisBitmap")
-_G[ThisBitmap] = _G[ThisBitmap] or nil
+local function __ply_pic()
+	if _G[ThisBitmap] then
+		_G[ThisBitmap]:set_visible(true)
+	end
+	return
+end
+
+local function __end_pic()
+	if _G[ThisBitmap] then
+		_G[ThisBitmap]:set_visible(false)
+	end
+	return
+end
 
 if PlayerDamage then
 	Hooks:PostHook(PlayerDamage, "on_flashbanged", __Name("on_flashbanged"), function(self)
 		__end_ogg()
 		__ply_ogg()
-		if _G[_GName][XAudioSource] and _G[_GName][XAudioSource]:is_active() then
-			if _G[ThisBitmap] then
-				_G[ThisBitmap]:set_visible(true)
-			end
-		end		
+		__ply_pic()
 	end)
 	Hooks:PostHook(PlayerDamage, "update", __Name("update"), function(self)
 		if _G[_GName][XAudioSource] and not _G[_GName][XAudioSource]:is_active() then
 			__end_ogg()
-			if _G[ThisBitmap] then
-				_G[ThisBitmap]:set_visible(false)
-			end
+			__end_pic()
 		end
 	end)
 	Hooks:PostHook(PlayerDamage, "_stop_tinnitus", __Name("_stop_tinnitus"), function(self)
 		__end_ogg()
-		if _G[ThisBitmap] then
-			_G[ThisBitmap]:set_visible(false)
-		end
+		__end_pic()
 	end)
 end
 
 if HUDManager then
 	Hooks:PostHook(HUDManager, "_player_hud_layout", __Name("_player_hud_layout"), function(self)
-		local p_load = "packages/badcoollobstermeme"
-		if PackageManager:package_exists(p_load) then
-			if PackageManager:loaded(p_load) then
-				PackageManager:unload(p_load)
-			end
-			PackageManager:load(p_load)
-		else
-			return
-		end
 		local name1 = __Name("name1")
 		local panel1 = __Name("panel1")
 		local bitmap1 = __Name("bitmap1")
 		local hud = managers.hud:script(PlayerBase.PLAYER_INFO_HUD_FULLSCREEN_PD2)
 		self[panel1] = self[panel1] or hud and hud.panel or self._ws:panel({name = name1})
 		self[bitmap1] = self[panel1]:bitmap({
-			texture = "coollobstermeme",
+			texture = ThisTexture,
 			color = Color.white:with_alpha(1),
 			layer = 1
 		})

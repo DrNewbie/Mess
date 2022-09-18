@@ -1,9 +1,19 @@
-<mod name="A mod that replaces flashbangs with the lobster meme">
+<mod name="A mod that replaces flashbangs with the lobster meme" global_key="FlashBMemes">
+	<!--File Path-->
+	<AddFiles directory="Assets">
+		<texture path="coollobstermeme"/>
+	</AddFiles>
+	<!--Others-->
 	<Hooks>
 		<hook file="base.lua" source_file="lib/units/beings/player/playerdamage"/>
 		<hook file="base.lua" source_file="lib/managers/hudmanager"/>
 	</Hooks>
-	<Package id="packages/badcoollobstermeme" directory="assets">
-		<texture path="coollobstermeme"/>
-	</Package>
+	<Localization default="loc_en.json"/>
+	<Options>
+		<options title_id="FlashBMemes_opt_menu_name" desc_id="FlashBMemes_opt_menu_none" build_items="true">
+			<option type="number" min="0" max="1" step="0.1" show_value="true" default_value="1" 
+				title_id="FlashBMemes_opt_volume_start" desc_id="FlashBMemes_opt_volume_start_desc" name="__volume_start" 
+			/>
+		</options>
+	</Options>
 </mod>
