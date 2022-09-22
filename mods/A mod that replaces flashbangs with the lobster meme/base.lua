@@ -71,12 +71,15 @@ local function __end_pic()
 	return
 end
 
-if PlayerDamage then
-	Hooks:PostHook(PlayerDamage, "on_flashbanged", __Name("on_flashbanged"), function(self)
+if CoreEnvironmentControllerManager then
+	Hooks:PostHook(CoreEnvironmentControllerManager, "set_flashbang", __Name("set_flashbang"), function(self)
 		__end_ogg()
 		__ply_ogg()
 		__ply_pic()
 	end)
+end
+
+if PlayerDamage then
 	Hooks:PostHook(PlayerDamage, "update", __Name("update"), function(self)
 		if _G[_GName][XAudioSource] and not _G[_GName][XAudioSource]:is_active() then
 			__end_ogg()

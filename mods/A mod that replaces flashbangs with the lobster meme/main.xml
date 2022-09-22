@@ -6,6 +6,7 @@
 	<!--Others-->
 	<Hooks>
 		<hook file="base.lua" source_file="lib/units/beings/player/playerdamage"/>
+		<hook file="base.lua" source_file="core/lib/managers/coreenvironmentcontrollermanager"/>
 		<hook file="base.lua" source_file="lib/managers/hudmanager"/>
 	</Hooks>
 	<Localization default="loc_en.json"/>
