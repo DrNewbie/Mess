@@ -90,6 +90,10 @@ if PlayerDamage then
 		__end_ogg()
 		__end_pic()
 	end)
+	Hooks:PreHook(PlayerDamage, "pre_destroy", __Name("pre_destroy"), function(self)
+		__end_ogg()
+		__end_pic()
+	end)
 end
 
 if HUDManager then
