@@ -1,0 +1,15 @@
+{
+  "name": "VD-12 Jammed",
+  "description": " ",
+  "author": "Dr_Newbie",
+  "contact": " ",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/units/weapons/shotgun/shotgunbase",
+      "script_path": "shotgunbase.lua"
+    }
+  ]
+}
