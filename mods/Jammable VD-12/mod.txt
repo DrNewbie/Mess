@@ -1,5 +1,5 @@
 {
-  "name": "VD-12 Jammed",
+  "name": "Jammable VD-12",
   "description": " ",
   "author": "Dr_Newbie",
   "contact": " ",
