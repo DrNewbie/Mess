@@ -1,8 +1,8 @@
 {
   "name": "Jammable VD-12",
-  "description": " ",
+  "description": "https://modworkshop.net/mod/39672",
   "author": "Dr_Newbie",
-  "contact": " ",
+  "contact": "https://modworkshop.net/mod/39672",
   "version": "1",
   "priority": 100,
   "blt_version": 2,
