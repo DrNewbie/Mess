@@ -1,7 +1,7 @@
 <table name="Use keyboard to key in the numpad in-game">
 	<AssetUpdates id="Use keyboard to key in the numpad in-game" version="2">
-        <custom_provider 
+		<custom_provider 
 			version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Use%20keyboard%20to%20key%20in%20the%20numpad%20in-game.txt" 
 			download_url="https://drnewbie.github.io/Mess/UpdateProvider/Use%20keyboard%20to%20key%20in%20the%20numpad%20in-game.zip"/>
-    </AssetUpdates>
+	</AssetUpdates>
 </table>
