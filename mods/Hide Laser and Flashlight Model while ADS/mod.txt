@@ -1,0 +1,15 @@
+{
+  "name": "Hide Laser and Flashlight Model while ADS",
+  "description": "https://modworkshop.net/mod/39828",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/39828",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/units/beings/player/states/playerstandard",
+      "script_path": "hooks/base.lua"
+    }
+  ]
+}
