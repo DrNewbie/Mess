@@ -50,19 +50,29 @@ Hooks:Add("MenuManagerBuildCustomMenus", __Name("MenuManagerBuildCustomMenus"), 
 	MenuHelper:AddMenuItem(nodes["blt_options"], ThisModMenuID, ThisModMenuTitle, ThisModMenuDesc)
 end)
 
+local ThisModDiffList = {
+	"normal",
+	"hard",
+	"overkill",
+	"overkill_145",
+	"easy_wish",
+	"overkill_290",
+	"sm_wish"
+}
+
 Hooks:Add("MenuManagerPopulateCustomMenus", __Name("MenuManagerPopulateCustomMenus"), function(menu_manager, nodes)
-	local __list = tweak_data.difficulties
-	__list[1] = nil --remove 'easy'
 	--Give OD name
-	for __p, __diff in pairs(__list) do
+	for __p, __diff in pairs(ThisModDiffList) do
 		local diff_name_id = tweak_data.difficulty_name_ids[__diff]
-		local od_diff_name_id = diff_name_id.."_one_down"
-		LocalizationManager:add_localized_strings({
-			[od_diff_name_id] = managers.localization:text(diff_name_id)..", "..managers.localization:text("menu_one_down")
-		})
+		if diff_name_id then
+			local od_diff_name_id = diff_name_id.."_one_down"
+			LocalizationManager:add_localized_strings({
+				[od_diff_name_id] = managers.localization:text(diff_name_id)..", "..managers.localization:text("menu_one_down")
+			})
+		end
 	end
 	--Create Opts
-	for __p, __diff in pairs(__list) do
+	for __p, __diff in pairs(ThisModDiffList) do
 		local __menu_id = __Name("menu_id::"..__diff)
 		local __menu_callback = __Name("menu_callback::"..__diff)
 		MenuCallbackHandler[__menu_callback] = function(self, item)
