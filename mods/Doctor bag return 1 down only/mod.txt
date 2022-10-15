@@ -1,0 +1,15 @@
+{
+  "name": "Doctor bag return 1 down only",
+  "description": "https://modworkshop.net/mod/39889",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/39889",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/units/equipment/doctor_bag/doctorbagbase",
+      "script_path": "lua/doctorbagbase.lua"
+    }
+  ]
+}
