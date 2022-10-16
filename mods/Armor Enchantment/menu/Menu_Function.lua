@@ -47,21 +47,21 @@ Hooks:PostHook(BlackMarketGui, "_setup", Hook1, function(self)
 		callback = callback(self, self, Func1)
 	}, 10)
 	if self._armor_stats_panel and self._stats_panel then
-		local small_font = tweak_data.menu.pd2_small_font
-		local small_font_size = tweak_data.menu.pd2_small_font_size
+		local __font = tweak_data.menu.pd2_tiny_font
+		local __font_size = tweak_data.menu.pd2_tiny_font_size
 		
 		local armor_stats_panel = self._armor_stats_panel
 		local addon_armor_desc = self._stats_panel:text({
 			name = "addon_armor_desc",
 			text = " ",
 			layer = 1,
-			font_size = small_font_size,
-			font = small_font,
+			font_size = __font_size,
+			font = __font,
 			color = tweak_data.screen_colors.text,
 			x = armor_stats_panel:x() + 2,
 			y = armor_stats_panel:y() + (#self._armor_stats_shown + 1) * 20,
 			w = armor_stats_panel:w(),
-			h = small_font_size * 5,
+			h = __font_size * 5,
 			visible = false
 		})
 		self:__set_eenchanting_armor_date_to_text(true)

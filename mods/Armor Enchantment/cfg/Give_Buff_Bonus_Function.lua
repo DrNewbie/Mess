@@ -17,9 +17,7 @@ function PlayerManager:upgrade_value(category, upgrade, ...)
 	elseif category == "player" and upgrade == "movement_speed_multiplier" then
 		Ans = Ans + self:__EE_Armor_Get_Var_by_Lv_and_ID(nil, 8)/100
 	elseif category == "carry" and upgrade == "movement_speed_multiplier" then
-		log("AnsA: " .. Ans)
 		Ans = Ans + self:__EE_Armor_Get_Var_by_Lv_and_ID(nil, 9)/100
-		log("AnsB: " .. Ans)
 	end
 	return Ans
 end

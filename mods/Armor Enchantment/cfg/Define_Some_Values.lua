@@ -20,7 +20,8 @@ function PlayerManager:__EE_Armor_Bonus_List()
 		[6] = 5, --+SP: Protection
 		[7] = 5, --+SP: Shockproof
 		[8] = 50, --+Addon Movemen Speed
-		[9] = 50 --+Addon Carry Movemen Speed
+		[9] = 50, --+Addon Carry Movemen Speed
+		[10] = 5 --+SP: Impulse Fields
 	}
 end
 
@@ -34,7 +35,8 @@ function PlayerManager:__EE_Armor_Bonus_Type_List()
 		[6] = "sp_protection",
 		[7] = "sp_shockproof",
 		[8] = "add_movement_speed",
-		[9] = "add_carry_movement_speed"
+		[9] = "add_carry_movement_speed",
+		[10] = "sp_impulse_fields"
 	}
 end
 

@@ -33,6 +33,9 @@ function PlayerManager:__EE_Armor_Bonus_Value_List(lv)
 	local sp_shockproof = function(__lv)
 		return 1
 	end
+	local sp_impulse_fields = function(__lv)
+		return 1
+	end
 	return {
 		[1] = recovery_rate(lv),
 		[2] = more_armor(lv),
@@ -42,6 +45,7 @@ function PlayerManager:__EE_Armor_Bonus_Value_List(lv)
 		[6] = sp_protection(lv),
 		[7] = sp_shockproof(lv),
 		[8] = add_movement_speed(lv),
-		[9] = add_carry_movement_speed(lv)
+		[9] = add_carry_movement_speed(lv),
+		[10] = sp_impulse_fields(lv)
 	}
 end

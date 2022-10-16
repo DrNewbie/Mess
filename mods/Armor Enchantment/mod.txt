@@ -4,7 +4,7 @@
   "author": "Dr_Newbie",
   "contact": "https://modworkshop.net/mod/35721",
   "priority": 100,
-  "version": "8",
+  "version": "9",
   "blt_version": 2,
   "hooks": [
     {
@@ -42,6 +42,10 @@
     {
       "hook_id": "lib/managers/playermanager",
       "script_path": "sp_shockproof/playermanager.lua"
+    },
+    {
+      "hook_id": "lib/units/beings/player/playerdamage",
+      "script_path": "sp_impulse_fields/playerdamage.lua"
     }
   ],
   "updates": [
