@@ -1,0 +1,5 @@
+<mod name="enter the trash bin">
+	<AddFiles directory="assets">
+		<object path="units\world\street\trash_container\trash_container"/>
+	</AddFiles>
+</mod>
