@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mod name="Enter the Trash Bin">
+	<tweak definition="xml/trash_bin.xml"/>
+</mod>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tweaks>
+	<tweak version="2" name="units/world/street/trash_container/trash_container" extension="object">
+		<search>
+			<?xml version="1.0"?>
+			<dynamic_object/>
+			<bodies/>
+			<body name="body_blocker_mover"/>
+		</search>
+		<target mode="attributes">
+			<attr name="enabled" value="false"/>
+		</target>
+	</tweak>
+</tweaks>
