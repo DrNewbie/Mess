@@ -78,7 +78,7 @@ local __attach_line = [[
 ]]
 
 local function OptChanged()
-	local ThisModPath = "mods/Give Sniper Skulldozer LAS/"
+	local ThisModPath = "mods/Give Skulldozer LAS to Civilians/"
 	os.execute('RD "'.. Application:nice_path(ThisModPath..'/xml/', true) ..'" /S /Q')
 	os.execute('MD "'.. Application:nice_path(ThisModPath..'/xml/', true))
 	local __main_xml = io.open(ThisModPath..'/lua/read_assets.lua', "w+")
