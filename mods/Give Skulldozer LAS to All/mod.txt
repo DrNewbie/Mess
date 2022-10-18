@@ -1,0 +1,25 @@
+{
+  "name": "Give Skulldozer LAS to All",
+  "description": " ",
+  "author": "Dr_Newbie",
+  "contact": " ",
+  "version": "1",
+  "priority": 100,
+  "hooks": [
+    {
+      "hook_id": "lib/units/enemies/cop/huskcopmovement",
+      "script_path": "lua/huskcopmovement.lua"
+    }
+  ],
+  "keybinds": [
+    {
+      "keybind_id": "keybind_GXMLTweak",
+      "name": "KeybindGXMLTweak",
+      "description": " ",
+      "script_path": "keybind.lua",
+      "run_in_menu": true,
+      "run_in_game": true,
+      "localized": false
+    }
+  ]
+}

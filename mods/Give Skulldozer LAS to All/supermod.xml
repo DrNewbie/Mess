@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mod name="Give Skulldozer LAS to All">
+	<tweak definition="xml/a02f8a6f698d7563.xml"/>
+</mod>
