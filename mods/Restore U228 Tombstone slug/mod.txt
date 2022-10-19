@@ -1,0 +1,15 @@
+{
+  "name": "Restore U228 Tombstone slug",
+  "description": "U229: Tombstone slug no longer gives extended range and falloff reduces tick ratio.",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/39942",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/tweak_data/weaponfactorytweakdata",
+      "script_path": "weaponfactorytweakdata.lua"
+    }
+  ]
+}
