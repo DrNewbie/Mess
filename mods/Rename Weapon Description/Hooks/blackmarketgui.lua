@@ -28,6 +28,19 @@ end
 
 local WeaponDescriptionData = __Load()
 
+local function __Apply(them)
+	if type(them._slot_data) == "table" and type(them._info_texts) == "table" and type(them._info_texts[4]) == "userdata" then
+		local craft = Global.blackmarket_manager.crafted_items
+		local slot = them._slot_data.slot
+		local cat = them._slot_data.category
+		local key = __Name(json.encode({cat, slot}))
+		if craft[cat] and craft[cat][slot] and type(WeaponDescriptionData[key]) == "string" then
+			them:set_info_text(4, WeaponDescriptionData[key], Color.white)
+		end
+	end
+	return them
+end
+
 Hooks:PostHook(BlackMarketGui, "mouse_pressed", __Name("mouse_pressed"), function(self, __button, __x, __y)
 	if QuickKeyboardInput and type(self._info_texts[4]) == "userdata" and tostring(__button) == tostring(Idstring("0")) and self._info_texts[4] and alive(self._info_texts[4]) then
 		if type(self._slot_data) == "table" and self._info_texts[4]:inside(__x, __y) then
@@ -37,9 +50,9 @@ Hooks:PostHook(BlackMarketGui, "mouse_pressed", __Name("mouse_pressed"), functio
 			local key = __Name(json.encode({cat, slot}))
 			if craft[cat] and craft[cat][slot] then
 				function __qki_callback_ok(__text)
-					self:set_info_text(4, __text, Color.white)
 					WeaponDescriptionData[key] = __text
 					__Save(WeaponDescriptionData)
+					self = __Apply(self)
 				end
 				local __weapon_id = craft[cat][slot].weapon_id
 				local __weapon_data = tweak_data.weapon[__weapon_id]
@@ -58,19 +71,6 @@ Hooks:PostHook(BlackMarketGui, "mouse_pressed", __Name("mouse_pressed"), functio
 		end
 	end
 end)
-
-local function __Apply(them)
-	if type(them._slot_data) == "table" and type(them._info_texts) == "table" and type(them._info_texts[4]) == "userdata" then
-		local craft = Global.blackmarket_manager.crafted_items
-		local slot = them._slot_data.slot
-		local cat = them._slot_data.category
-		local key = __Name(json.encode({cat, slot}))
-		if craft[cat] and craft[cat][slot] and type(WeaponDescriptionData[key]) == "string" then
-			them:set_info_text(4, WeaponDescriptionData[key], Color.white)
-		end
-	end
-	return them
-end
 
 Hooks:PostHook(BlackMarketGui, "show_stats", __Name("p1"), function(self)
 	self = __Apply(self)
