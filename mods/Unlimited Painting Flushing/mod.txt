@@ -1,0 +1,15 @@
+{
+  "name": "Unlimited Painting Flushing",
+  "description": "https://modworkshop.net/mod/39976",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/39976",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/managers/mission/elementareatrigger",
+      "script_path": "lua/elementareatrigger.lua"
+    }
+  ]
+}
