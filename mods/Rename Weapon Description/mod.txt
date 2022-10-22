@@ -15,7 +15,9 @@
     {
       "identifier": "RenameWeaponDescriptionGitHubUpdate",
       "host": {
-        "meta": "https://drnewbie.github.io/Mess/Update/Rename%20Weapon%20Description.meta.json"
+        "meta": "https://drnewbie.github.io/Mess/Update/Rename%20Weapon%20Description.meta.json",
+        "patchnotes": "https://github.com/DrNewbie/Mess/commits/master",
+        "download": "https://drnewbie.github.io/Mess/Update/Rename%20Weapon%20Description.zip"
       }
     }
   ]
