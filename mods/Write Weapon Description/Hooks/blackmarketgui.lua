@@ -59,7 +59,7 @@ Hooks:PostHook(BlackMarketGui, "mouse_pressed", __Name("mouse_pressed"), functio
 				if __weapon_data and __weapon_data.name_id then
 					local __weapon_name = managers.localization:text(__weapon_data.name_id)
 					local __title = "[ "..tostring(__weapon_name).." ]"
-					local __message = "Rename this weapon description to..."
+					local __message = "Change this weapon description to..."
 					local __params = {
 						default_value = ' ',
 						changed_callback = __qki_callback_ok
