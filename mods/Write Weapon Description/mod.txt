@@ -3,7 +3,7 @@
   "description": "https://modworkshop.net/mod/39993",
   "author": "Dr_Newbie",
   "contact": "https://modworkshop.net/mod/39993",
-  "version": "2",
+  "version": "3",
   "priority": 100,
   "hooks": [
     {
@@ -16,7 +16,7 @@
       "identifier": "WriteWeaponDescriptionGitHubUpdate",
       "host": {
         "meta": "https://drnewbie.github.io/Mess/Update/Write%20Weapon%20Description.meta.json",
-        "patchnotes": "https://modworkshop.net/mod/39993",
+        "patchnotes": "https://modworkshop.net/mod/39993#changelog",
         "download": "https://drnewbie.github.io/Mess/Update/Write%20Weapon%20Description.zip"
       }
     }

@@ -1,9 +1,9 @@
 local ThisModPath = ModPath or tostring(math.random())
 local ThisModIds = Idstring(ThisModPath):key()
 local __Name = function(__id)
-	return "RWD_"..Idstring(tostring(__id).."::"..ThisModIds):key()
+	return "WWD_"..Idstring(tostring(__id).."::"..ThisModIds):key()
 end
-local ThisModSavePath = SavePath.."Rename Weapon Description Save File__"..__Name(ThisModIds)..".txt"
+local ThisModSavePath = SavePath.."Write Weapon Description Save File__"..__Name(ThisModIds)..".txt"
 
 local function __Save(__data)
 	local __save_file = io.open(ThisModSavePath, "w+")
