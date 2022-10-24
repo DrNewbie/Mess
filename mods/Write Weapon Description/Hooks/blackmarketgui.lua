@@ -80,7 +80,7 @@ Hooks:PostHook(BlackMarketGui, "_update_borders", __Name("p2"), function(self)
 	self = __Apply(self)
 end)
 
-Hooks:PostHook(BlackMarketGui, "update_info_text", __Name("p2"), function(self)
+Hooks:PostHook(BlackMarketGui, "update_info_text", __Name("p3"), function(self)
 	self = __Apply(self)
 end)
 
