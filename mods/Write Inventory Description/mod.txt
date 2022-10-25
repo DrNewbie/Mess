@@ -1,0 +1,24 @@
+{
+  "name": "Write Inventory Description",
+  "description": " ",
+  "author": "Dr_Newbie",
+  "contact": " ",
+  "version": "6",
+  "priority": 100,
+  "hooks": [
+    {
+      "script_path": "Hooks/blackmarketgui.lua",
+      "hook_id": "lib/managers/menu/blackmarketgui"
+    }
+  ],
+  "updates": [
+    {
+      "identifier": "WriteInventoryDescriptionGitHubUpdate",
+      "host": {
+        "meta": "https://drnewbie.github.io/Mess/Update/Write%20Inventory%20Description.meta.json",
+        "patchnotes": "https://modworkshop.net/mod/39993#changelog",
+        "download": "https://drnewbie.github.io/Mess/Update/Write%20Inventory%20Description.zip"
+      }
+    }
+  ]
+}
