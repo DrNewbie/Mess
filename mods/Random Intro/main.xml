@@ -1,0 +1,8 @@
+<mod name="Random Intro">
+	<AddFiles directory="assets">
+		<movie path="movies/intro_trailer" force="true"/>
+	</AddFiles>
+	<Hooks>
+		<hook file="base.lua" source_file="lib/entry"/>
+	</Hooks>
+</mod>
