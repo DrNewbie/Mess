@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mod name="trai_vehicle_locomotive">
+	<tweak definition="trai_vehicle_locomotive.xml"/>
+</mod>

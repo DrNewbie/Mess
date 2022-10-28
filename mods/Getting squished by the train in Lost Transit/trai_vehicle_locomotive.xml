@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tweaks>
+	<tweak version="2" name="units/pd2_dlc_trai/vehicles/trai_vehicle_locomotive/trai_vehicle_locomotive" extension="unit">
+		<search>
+			<unit/>
+			<extensions/>
+			<extension name="unit_data"/>
+		</search>
+		<target mode="append">
+			<extension name="base" class="LocomotiveHurtBase">
+				<var name="_body_name" value="anim_body"/>
+			</extension>
+		</target>
+	</tweak>
+</tweaks>
