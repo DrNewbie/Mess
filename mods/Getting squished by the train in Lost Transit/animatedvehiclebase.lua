@@ -17,7 +17,7 @@ function LocomotiveHurtBase:update(unit, t, dt)
 				local check_this_unit = u_data.unit
 				local c_head_pos = check_this_unit:movement():m_head_pos()
 				if c_head_pos then
-					local col_rayy = World:raycast("ray", c_head_pos, c_head_pos + Vector3(0, 0, 999999), "slot_mask", managers.slot:get_mask("all"))
+					local col_rayy = World:raycast("ray", c_head_pos, c_head_pos + Vector3(0, 0, 999999), "slot_mask", self._touch_slot)
 					if col_rayy and col_rayy.unit == self._unit and mvector3.distance_sq(col_rayy.hit_position, c_head_pos) <= self._touch_dis_sq then
 						local peer = managers.network:session():peer_by_unit(check_this_unit)
 						if peer then
