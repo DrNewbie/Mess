@@ -10,7 +10,7 @@ Hooks:PostHook(FPCameraPlayerBase, "update", "F_"..Idstring("PostHook:FPCameraPl
 	if self._unit then
 		self._unit:set_visible(__bool)
 		if self._unit.spawn_manager and self._unit:spawn_manager() and self._unit:spawn_manager():linked_units() then
-			for unit_id, _ in pairs( self._unit:spawn_manager():linked_units() ) do
+			for unit_id, _ in pairs(self._unit:spawn_manager():linked_units()) do
 				local unit_entry = self._unit:spawn_manager():spawned_units()[unit_id]
 				if unit_entry and alive(unit_entry.unit) then
 					unit_entry.unit:set_visible(__bool)
@@ -22,10 +22,16 @@ Hooks:PostHook(FPCameraPlayerBase, "update", "F_"..Idstring("PostHook:FPCameraPl
 				__melee_unit:set_visible(__bool)
 			end
 		end
-		if not __bool then
-			managers.player:player_unit():inventory():hide_equipped_unit()
-		else
-			managers.player:player_unit():inventory():show_equipped_unit()
+		if managers.player and managers.player.player_unit and managers.player:player_unit() and managers.player:player_unit().inventory and managers.player:player_unit():inventory() then 
+			if not __bool then
+				if type(managers.player:player_unit():inventory().hide_equipped_unit) == "function" then
+					managers.player:player_unit():inventory():hide_equipped_unit()
+				end
+			else
+				if type(managers.player:player_unit():inventory().show_equipped_unit) == "function" then
+					managers.player:player_unit():inventory():show_equipped_unit()
+				end
+			end
 		end
 	end
 end)
