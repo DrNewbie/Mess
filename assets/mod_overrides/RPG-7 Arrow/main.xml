@@ -8,7 +8,7 @@
 			total_ammo_mod="-12"
 		/>
 		<custom_stats
-			launcher_grenade="launcher_rocket"
+			launcher_grenade="launcher_frag"
 		/>
 		<weapons>
 			<value_node value="wpn_fps_bow_long"/>
