@@ -204,7 +204,3 @@ Hooks:Add("LocalizationManagerPostInit", "HeistChaaaaaaaaaaaaain_loc", function(
 		["heist_chaaaaaaaaaaaaain"] = "Heist Chaaaaaaaaaaaaain"
 	})
 end)
-
-if ModCore then
-	ModCore:new(HeistChaaaaaaaaaaaaain.ModPath .. "Config.xml", false, true):init_modules()
-end
