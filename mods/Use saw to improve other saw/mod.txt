@@ -3,8 +3,8 @@
   "description": " ",
   "author": "Dr_Newbie",
   "contact": "https://modworkshop.net/mod/21552",
-  "version": "5",
-  "priority": 1,
+  "version": "6",
+  "priority": 100,
   "hooks": [
     {
       "hook_id": "lib/units/weapons/sawweaponbase",
