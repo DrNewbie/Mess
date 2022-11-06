@@ -20,6 +20,8 @@ Hooks:PostHook(PlayerStandard, "_update_reload_timers", "F_"..Idstring("PostHook
 						self[_forced_stop] = true
 						if math.random() >= 0.66 then
 							self[not_working] = true
+						else
+							self[not_working] = nil
 						end
 						self[_forced_stop_dt] = t + 0.15
 						if type(self._state_data.reload_expire_t) == "number" then
