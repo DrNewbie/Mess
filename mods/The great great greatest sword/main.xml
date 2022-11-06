@@ -1,0 +1,5 @@
+<table name="Hot Rod">
+    <AddFiles directory="assets">
+		<model path="units/pd2_dlc_steel/weapons/wpn_fps_mel_great/wpn_fps_mel_great" force="true"/>
+	</AddFiles>
+</table>

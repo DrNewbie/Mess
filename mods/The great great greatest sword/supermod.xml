@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mod name="Hot Rod">
+	<tweak definition="xml/hot_rod.xml"/>
+</mod>

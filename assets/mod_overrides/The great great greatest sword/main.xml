@@ -1,7 +1,0 @@
-<table name="Hot Rod">
-    <AddFiles directory="assets">
-		<unit path="units/pd2_dlc_steel/weapons/wpn_fps_mel_great/wpn_fps_mel_great" force="true" reload="true" />
-		<object path="units/pd2_dlc_steel/weapons/wpn_fps_mel_great/wpn_fps_mel_great" force="true" reload="true" />
-		<model path="units/pd2_dlc_steel/weapons/wpn_fps_mel_great/wpn_fps_mel_great" force="true" reload="true" />
-	</AddFiles>
-</table>
