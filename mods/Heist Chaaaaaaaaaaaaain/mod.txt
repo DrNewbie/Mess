@@ -1,0 +1,33 @@
+{
+  "name": "Heist Chaaaaaaaaaaaaain",
+  "description": "Heist Chaaaaaaaaaaaaain",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/19841",
+  "version": "7",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/managers/localizationmanager",
+      "script_path": "lua/MenuFunction.lua"
+    },
+    {
+      "hook_id": "lib/managers/hud/hudmissionbriefing",
+      "script_path": "lua/hudmissionbriefing.lua"
+    },
+    {
+      "hook_id": "lib/tweak_data/tweakdata",
+      "script_path": "lua/tweakdata.lua"
+    }
+  ],
+  "updates": [
+    {
+      "identifier": "HeistChaaaaaaaaaaaaainGitHubUpdate",
+      "host": {
+        "meta": "https://drnewbie.github.io/Mess/Update/Heist%20Chaaaaaaaaaaaaain.meta.json",
+        "patchnotes": "https://modworkshop.net/mod/19841#changelog",
+        "download": "https://drnewbie.github.io/Mess/Update/Heist%20Chaaaaaaaaaaaaain.zip"
+      }
+    }
+  ]
+}
