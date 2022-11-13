@@ -19,7 +19,7 @@ Hooks:PostHook(GageAssignmentInteractionExt, "interact", "F_"..Idstring("PostHoo
 				HudChallengeNotification.queue(
 					"[ Powerup ]",
 					"Green Mantis: Bulletstorm for 10 seconds. FULL Ammo.",
-					"equipment_gasoline"
+					"equipment_ammo_bag"
 				)
 			end,
 			["yellow_bull"] = function (ply) --first aid kit regenerate
@@ -27,7 +27,7 @@ Hooks:PostHook(GageAssignmentInteractionExt, "interact", "F_"..Idstring("PostHoo
 				HudChallengeNotification.queue(
 					"[ Powerup ]",
 					"Yellow Bull: Full HP.",
-					"equipment_gasoline"
+					"equipment_first_aid_kit"
 				)
 			end,
 			["red_spider"] = function (ply) --medic bag regenerate
@@ -35,7 +35,7 @@ Hooks:PostHook(GageAssignmentInteractionExt, "interact", "F_"..Idstring("PostHoo
 				HudChallengeNotification.queue(
 					"[ Powerup ]",
 					"Red Spider: Full HP and resets your down counter.",
-					"equipment_gasoline"
+					"equipment_doctor_bag"
 				)
 			end
 			,
@@ -45,7 +45,7 @@ Hooks:PostHook(GageAssignmentInteractionExt, "interact", "F_"..Idstring("PostHoo
 				HudChallengeNotification.queue(
 					"[ Powerup ]",
 					"Blue Eagle: God Mode for 10 seconds.",
-					"equipment_gasoline"
+					"equipment_c4"
 				)
 			end,
 			["purple_snake"] = function (ply) --LOUD ONLY, 10s burn all enemies
