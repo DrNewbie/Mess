@@ -18,7 +18,7 @@ Hooks:PostHook(GageAssignmentInteractionExt, "interact", "F_"..Idstring("PostHoo
 				end
 				HudChallengeNotification.queue(
 					"[ Powerup ]",
-					"Green Mantis: You get the ability to shoot without depleting ammunition for 10 seconds. Your ammo replenishes.",
+					"Green Mantis: Bulletstorm for 10 seconds. FULL Ammo.",
 					"equipment_gasoline"
 				)
 			end,
@@ -26,7 +26,7 @@ Hooks:PostHook(GageAssignmentInteractionExt, "interact", "F_"..Idstring("PostHoo
 				ply:character_damage():band_aid_health()
 				HudChallengeNotification.queue(
 					"[ Powerup ]",
-					"Yellow Bull: Your health regenerates.",
+					"Yellow Bull: Full HP.",
 					"equipment_gasoline"
 				)
 			end,
@@ -34,7 +34,7 @@ Hooks:PostHook(GageAssignmentInteractionExt, "interact", "F_"..Idstring("PostHoo
 				ply:character_damage():recover_health()
 				HudChallengeNotification.queue(
 					"[ Powerup ]",
-					"Red Spider: Your health regenerates and resets your down counter.",
+					"Red Spider: Full HP and resets your down counter.",
 					"equipment_gasoline"
 				)
 			end
@@ -44,7 +44,7 @@ Hooks:PostHook(GageAssignmentInteractionExt, "interact", "F_"..Idstring("PostHoo
 				ply:character_damage()._last_received_dmg = math.huge
 				HudChallengeNotification.queue(
 					"[ Powerup ]",
-					"Blue Eagle: You are immune to enemy damage for 10 seconds.",
+					"Blue Eagle: God Mode for 10 seconds.",
 					"equipment_gasoline"
 				)
 			end,
@@ -53,7 +53,7 @@ Hooks:PostHook(GageAssignmentInteractionExt, "interact", "F_"..Idstring("PostHoo
 					managers.player:ask_loop_fire_to_all(10)
 					HudChallengeNotification.queue(
 						"[ Powerup ]",
-						"Purple Snake: All enemies burn for 10 seconds.",
+						"Purple Snake: Burn All enemies for 10 seconds.",
 						"equipment_gasoline"
 					)
 				end
