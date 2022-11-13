@@ -48,13 +48,15 @@ Hooks:PostHook(GageAssignmentInteractionExt, "interact", "F_"..Idstring("PostHoo
 					"equipment_gasoline"
 				)
 			end,
-			["purple_snake"] = function (ply) --10s burn all enemies
-				managers.player:ask_loop_fire_to_all(10)
-				HudChallengeNotification.queue(
-					"[ Powerup ]",
-					"Purple Snake: All enemies burn for 10 seconds.",
-					"equipment_gasoline"
-				)
+			["purple_snake"] = function (ply) --LOUD ONLY, 10s burn all enemies
+				if not managers.groupai:state():whisper_mode() then
+					managers.player:ask_loop_fire_to_all(10)
+					HudChallengeNotification.queue(
+						"[ Powerup ]",
+						"Purple Snake: All enemies burn for 10 seconds.",
+						"equipment_gasoline"
+					)
+				end
 			end
 		}
 		if type(_buffs[_type]) == "function" then
