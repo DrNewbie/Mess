@@ -1,0 +1,15 @@
+{
+  "name": "Cloaker in the Pot",
+  "author": "Dr_Newbie",
+  "description": "https://modworkshop.net/mod/40367",
+  "blt_version": 2,
+  "version": "2022-11-20",
+  "priority": 100,
+  "contact": "https://modworkshop.net/mod/40367",
+  "hooks": [
+    {
+      "hook_id": "core/lib/units/coreunitdamage",
+      "script_path": "coreunitdamage.lua"
+    }
+  ]
+}
