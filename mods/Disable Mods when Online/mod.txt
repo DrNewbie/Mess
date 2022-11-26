@@ -1,0 +1,10 @@
+{
+  "name": "Disable Mods when Online",
+  "description": "https://modworkshop.net/mod/40429",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/40429",
+  "version": "2022-11-26",
+  "priority": 900,
+  "blt_version": 2,
+  "supermod_definition" : "hooks.xml"
+}
