@@ -9,6 +9,13 @@ local function __CheckFolder(is_online)
 		[[assets/mod_overrides/]],
 		[[mods/]]
 	}
+	local BLT = rawget(_G, "BLT")
+	local BLTPathToIndex = {}
+	if BLT and BLT.Mods and BLT.Mods then
+		for mod_index, mod in ipairs(BLT.Mods:Mods()) do
+			BLTPathToIndex[Idstring(mod:GetPath()):key()] = mod_index
+		end
+	end
 	for _, __dir in pairs(__check_this_directory) do
 		if __file.DirectoryExists(__dir) then
 			local __sub_dirs = __file.GetDirectories(__dir)
@@ -18,15 +25,21 @@ local function __CheckFolder(is_online)
 						if __io.file_is_readable(__dir..__dir_s.."/"..__identify_this_file) then
 							local this_dir = __dir..__dir_s.."/"
 							if not is_online then
+								--Enable
 								__os.rename(this_dir.."mod."..__r_ext,		this_dir.."mod.txt")
 								__os.rename(this_dir.."main."..__r_ext,		this_dir.."main.xml")
 								__os.rename(this_dir.."supermod."..__r_ext,	this_dir.."supermod.xml")
 								__os.rename(this_dir.."hooks."..__r_ext,	this_dir.."hooks.xml")
 							else
+								--Disable
 								__os.rename(this_dir.."mod.txt",		this_dir.."mod."..__r_ext)
 								__os.rename(this_dir.."main.xml",		this_dir.."main."..__r_ext)
 								__os.rename(this_dir.."supermod.xml",	this_dir.."supermod."..__r_ext)
 								__os.rename(this_dir.."hooks.xml",	this_dir.."hooks."..__r_ext)
+								--Remove from Mod List
+								if type(BLTPathToIndex[Idstring(this_dir):key()]) == "number" then
+									table.remove( BLT.Mods.mods, BLTPathToIndex[Idstring(this_dir):key()])
+								end
 							end
 						end
 					end
