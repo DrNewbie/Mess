@@ -133,6 +133,7 @@ local function __IsJobOK(__data)
 				else
 					__data.difficulty_id = new_diff
 				end
+				__data.difficulty = tweak_data:index_to_difficulty(__data.difficulty_id)
 			end
 		end
 	end
@@ -140,20 +141,14 @@ local function __IsJobOK(__data)
 end
 
 local Hook1 = __Name("add_preset_job")
-local Hook2 = __Name("add_server_job")
 
 CrimeNetGui[Hook1] = CrimeNetGui[Hook1] or CrimeNetGui.add_preset_job
-CrimeNetGui[Hook2] = CrimeNetGui[Hook2] or CrimeNetGui.add_server_job
 
 function CrimeNetGui:add_preset_job(preset_id, ...)
 	local preset = managers.crimenet:preset(preset_id)
 	preset = __IsJobOK(preset)
+	managers.crimenet._presets[preset_id] = preset
 	self[Hook1](self, preset_id, ...)
-end
-
-function CrimeNetGui:add_server_job(data, ...)
-	preset = __IsJobOK(preset)
-	self[Hook2](self, data, ...)
 end
 
 __Load()
