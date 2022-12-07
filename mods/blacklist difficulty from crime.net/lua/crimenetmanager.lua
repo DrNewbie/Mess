@@ -115,10 +115,9 @@ end)
 
 local function __IsJobOK(__data)
 	if type(__data) == "table" and type(__BlockThisDiff) == "table" then
-		if type(__data.difficulty_id) == "number" and tweak_data.difficulties[__data.difficulty_id] and __BlockThisDiff[tweak_data.difficulties[__data.difficulty_id]] then
+		if (type(__data.one_down) ~= "number" or __data.one_down ~= 1) and type(__data.difficulty_id) == "number" and tweak_data.difficulties[__data.difficulty_id] and __BlockThisDiff[tweak_data.difficulties[__data.difficulty_id]] then
 			return false
-		end
-		if type(__data.one_down) == "number" and __data.one_down == 1 and type(__data.difficulty_id) == "number" and tweak_data.difficulties[__data.difficulty_id] and __BlockThisDiff[tweak_data.difficulties[__data.difficulty_id].."_one_down"] then
+		elseif type(__data.one_down) == "number" and __data.one_down == 1 and type(__data.difficulty_id) == "number" and tweak_data.difficulties[__data.difficulty_id] and __BlockThisDiff[tweak_data.difficulties[__data.difficulty_id].."_one_down"] then
 			return false
 		end
 	end
