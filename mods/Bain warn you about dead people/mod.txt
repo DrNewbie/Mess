@@ -2,7 +2,7 @@
   "name": "Do not kill people",
   "description": " ",
   "Author": "Dr_Newibe",
-  "contact": "http://modwork.shop/25533",
+  "contact": "https://modworkshop.net/mod/25533",
   "version": "1",
   "blt_version": 2,
   "priority": 100,

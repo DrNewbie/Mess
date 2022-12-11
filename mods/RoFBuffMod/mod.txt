@@ -1,6 +1,6 @@
 {
   "name": "Increased RoF when shooting",
-  "description": "http://modwork.shop/",
+  "description": "https://modworkshop.net/mod/",
   "author": "Dr_Newbie",
   "contact": "Dakka over Time, rate-of-fire ramp-up, Real Gatling",
   "priority": 300,

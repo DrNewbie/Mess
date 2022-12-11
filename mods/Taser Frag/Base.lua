@@ -5,4 +5,4 @@ end
 
 ModCore:new(ModPath .. "config.xml", true, true):init_modules()
 
-Announcer:AddHostMod('Taser Frag, (http://modwork.shop/19484)')
+Announcer:AddHostMod('Taser Frag, (https://modworkshop.net/mod/19484)')

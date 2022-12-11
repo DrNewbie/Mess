@@ -2,7 +2,7 @@
   "name": "I dun goosed",
   "description": "OVENGRILL_RexToday: Requesting a mod that prints in chat 'I dun goosed' every time you go into Swan Song.",
   "author": "Dr_Newbie",
-  "contact": "http://modwork.shop/",
+  "contact": "https://modworkshop.net/mod/",
   "blt_version": 2,
   "version": "1",
   "priority": 100,

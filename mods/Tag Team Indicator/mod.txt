@@ -2,7 +2,7 @@
 	"name":"Tag Team Indicator",
 	"description":" ",
 	"author":"Dr_Newbie",
-	"contact":"http://modwork.shop/23735",
+	"contact":"https://modworkshop.net/mod/23735",
 	"version":"1",
 	"blt_version": 2,
 	"hooks" :

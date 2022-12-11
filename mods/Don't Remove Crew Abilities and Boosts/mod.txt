@@ -1,7 +1,7 @@
 {	
 	"name":"Don't Remove Crew Abilities & Boosts",
-	"description":"http://modwork.shop/",
-	"contact":"http://modwork.shop/",
+	"description":"https://modworkshop.net/mod/",
+	"contact":"https://modworkshop.net/mod/",
 	"author":"Dr_Newbie",
 	"version":"2",
 	"blt_version":2,

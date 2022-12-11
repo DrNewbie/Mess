@@ -2,7 +2,7 @@
   "name": "Wordy Statistics",
   "description": "verbose weapon stats, suicide propaganda",
   "author": "Dr_Newbie",
-  "contact": "http://modwork.shop/24456",
+  "contact": "https://modworkshop.net/mod/24456",
   "version": "3",
   "priority": 100,
   "blt_version": 2,

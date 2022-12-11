@@ -1,6 +1,6 @@
 {
 	"name" : "Sharp Dressers (ALT)",
-	"description" : "http://modwork.shop/23201",
+	"description" : "https://modworkshop.net/mod/23201",
 	"author" : "Dr_Newbie",
 	"blt_version" : 2,
 	"version" : "3",

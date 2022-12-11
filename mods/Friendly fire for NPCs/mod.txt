@@ -2,7 +2,7 @@
 	"name":"Friendly fire for NPCs",
 	"description":"Friendly fire for NPCs",
 	"author":"Dr_Newbie",
-	"contact":"http://modwork.shop/22079",
+	"contact":"https://modworkshop.net/mod/22079",
 	"version":"1",
 	"color": "0 0 0",
 	"blt_version": 2,

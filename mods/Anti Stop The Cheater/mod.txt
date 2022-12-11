@@ -2,7 +2,7 @@
 	"name":"Anti Stop The Cheater",
 	"author":"Dr_Newbie",
 	"description":"Anti Stop The Cheater",
-	"contact":"http://modwork.shop/22560",
+	"contact":"https://modworkshop.net/mod/22560",
 	"version":"8",
 	"blt_version":2,
 	"hooks": 

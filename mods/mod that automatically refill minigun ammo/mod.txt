@@ -2,7 +2,7 @@
   "name": "mod that automatically refill minigun ammo",
   "description": " ",
   "author": "Dr_Newbie",
-  "contact": "http://modwork.shop/25983",
+  "contact": "https://modworkshop.net/mod/25983",
   "version": "2",
   "priority": 100,
   "blt_version": 2,

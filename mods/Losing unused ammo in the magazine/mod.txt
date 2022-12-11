@@ -2,7 +2,7 @@
 	"name":"Losing unused ammo in the magazine",
 	"author":"Dr_Newbie",
 	"description":" ",
-	"contact":"http://modwork.shop/23540",
+	"contact":"https://modworkshop.net/mod/23540",
 	"version":"1",
 	"blt_version":2,
 	"hooks": 

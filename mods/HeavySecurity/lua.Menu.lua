@@ -159,5 +159,5 @@ Hooks:Add("MenuManagerInitialize", "MenuManagerInitialize_HeavySecurityOptions",
 end)
 
 if Announcer then
-	Announcer:AddHostMod("Heavy Security, ( http://modwork.shop/16274 )")
+	Announcer:AddHostMod("Heavy Security, ( https://modworkshop.net/mod/16274 )")
 end

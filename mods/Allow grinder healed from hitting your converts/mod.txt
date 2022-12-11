@@ -2,7 +2,7 @@
 	"name":"Allow grinder healed from hitting your converts",
 	"author":"Dr_Newbie",
 	"description":"Allow grinder healed from hitting your converts",
-	"contact":"http://modwork.shop/23765",
+	"contact":"https://modworkshop.net/mod/23765",
 	"version":"1",
 	"blt_version":2,
 	"hooks": 

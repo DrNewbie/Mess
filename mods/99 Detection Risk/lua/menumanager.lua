@@ -1,1 +1,1 @@
-Announcer:AddHostMod('99 Detection Risk, (http://modwork.shop/20589)')
+Announcer:AddHostMod('99 Detection Risk, (https://modworkshop.net/mod/20589)')

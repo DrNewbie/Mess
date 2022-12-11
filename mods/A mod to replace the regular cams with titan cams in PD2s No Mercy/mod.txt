@@ -1,8 +1,8 @@
 {
   "name": "A mod to replace the regular cams with titan cams in PD2s No Mercy",
-  "description": "http://modwork.shop/26181",
+  "description": "https://modworkshop.net/mod/26181",
   "author": "Dr_Newbie",
-  "contact": "http://modwork.shop/26181",
+  "contact": "https://modworkshop.net/mod/26181",
   "version": "1",
   "priority": 100,
   "blt_version": 2,

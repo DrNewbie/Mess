@@ -2,7 +2,7 @@
   "name": "All reloads are empty mag reloads",
   "description": "All reloads are empty mag reloads",
   "author": "Dr_Newbie",
-  "contact": "http://modwork.shop/",
+  "contact": "https://modworkshop.net/mod/",
   "blt_version": 2,
   "version": "1",
   "priority": 100,

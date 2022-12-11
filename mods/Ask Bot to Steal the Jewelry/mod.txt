@@ -2,7 +2,7 @@
 	"name":"Ask Bot to Steal the Jewelry",
 	"description":" ",
 	"author":"Dr_Newbie",
-	"contact":"http://modwork.shop/",
+	"contact":"https://modworkshop.net/mod/",
 	"version":"2",
 	"priority":1,
 	"blt_version":2,

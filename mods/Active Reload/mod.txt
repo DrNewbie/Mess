@@ -1,8 +1,8 @@
 {
   "name": "Active Reload",
-  "description": "http://modwork.shop/25639",
+  "description": "https://modworkshop.net/mod/25639",
   "author": "Dr_Newbie",
-  "contact": "http://modwork.shop/25639",
+  "contact": "https://modworkshop.net/mod/25639",
   "version": "1",
   "hooks": [
     {

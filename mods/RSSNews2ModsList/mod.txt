@@ -2,7 +2,7 @@
 	"name": "RSS News into Mods List",
 	"description": " ",
 	"author": "Dr_Newbie",
-	"contact": "http://modwork.shop/21165",
+	"contact": "https://modworkshop.net/mod/21165",
 	"version": "4",
 	"priority": 100,
 	"blt_version": 2,

@@ -2,7 +2,7 @@
   "name": "c4 boom that door",
   "description": " ",
   "author": "Dr_Newbie",
-  "contact": "http://modwork.shop/23298",
+  "contact": "https://modworkshop.net/mod/23298",
   "version": "2",
   "priority": 100,
   "blt_version": 2,

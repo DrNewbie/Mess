@@ -1,6 +1,6 @@
 {
   "name": "One Life",
-  "description": "http://modwork.shop/24613",
+  "description": "https://modworkshop.net/mod/24613",
   "author": "Dr_newbie",
   "version": "1",
   "blt_version": 2,

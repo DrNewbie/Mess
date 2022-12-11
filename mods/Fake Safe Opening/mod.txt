@@ -2,7 +2,7 @@
 	"name": "Fake Safe Opneing",
 	"description": "Fake Safe Opneing",
 	"author": "Dr_Newbie",
-	"contact": "http://modwork.shop/22537",
+	"contact": "https://modworkshop.net/mod/22537",
 	"version": "1",
 	"priority": 100,
 	"blt_version": 2,

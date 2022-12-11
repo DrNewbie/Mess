@@ -2,7 +2,7 @@
 	"name":"Remove Teammates Outline",
 	"description":" ",
 	"author":"Dr_Newbie",
-	"contact":"http://modwork.shop/21420",
+	"contact":"https://modworkshop.net/mod/21420",
 	"version":"3",
 	"priority":1,
 	"blt_version":2,

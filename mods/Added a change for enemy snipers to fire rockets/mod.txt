@@ -1,7 +1,7 @@
 {
 	"name" : "Added a change for enemy snipers to fire rockets",
 	"author" : "Dr_Newbie",
-	"contact": "http://modwork.shop/22238",
+	"contact": "https://modworkshop.net/mod/22238",
 	"version": "3",
 	"priority": 100,
 	"blt_version": 2,

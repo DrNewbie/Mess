@@ -2,7 +2,7 @@
   "name": "Auto-Ban the Host",
   "description": " ",
   "Author": "Dr_Newibe",
-  "contact": "http://modwork.shop/25638",
+  "contact": "https://modworkshop.net/mod/25638",
   "version": "1",
   "blt_version": 2,
   "hooks": [

@@ -2,7 +2,7 @@
   "name": "Random Pictures to Framing Frame Gallery",
   "description": "img2dds: https://github.com/ducakar/img2dds",
   "author": "Dr_Newbie",
-  "contact": "http://modwork.shop/24561",
+  "contact": "https://modworkshop.net/mod/24561",
   "version": "1",
   "priority": 300,
   "blt_version": 2,

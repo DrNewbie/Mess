@@ -2,7 +2,7 @@
   "name": "Jump and Duck in Casing Mode",
   "description": "Jump and Duck in Casing Mode",
   "author": "Dr_Newbie",
-  "contact": "http://modwork.shop/21592",
+  "contact": "https://modworkshop.net/mod/21592",
   "blt_version": 2,
   "version": "3",
   "priority": 1,

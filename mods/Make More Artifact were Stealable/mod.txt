@@ -2,7 +2,7 @@
 	"name" : "Make More Artifact were Stealable",
 	"description" : "Make more artifact in The Diamond heist were stealable",
 	"author" : "Dr_Newbie",
-	"contact" : "http://modwork.shop/16219",
+	"contact" : "https://modworkshop.net/mod/16219",
 	"version": "6",
 	"priority": 1,
 	"blt_version": 2,

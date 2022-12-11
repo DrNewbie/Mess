@@ -2,7 +2,7 @@
   "name": "DOOM Slayer [LAS] Boosts",
   "description": " ",
   "author": "Dr_Newbie",
-  "contact": "http://modwork.shop/25615",
+  "contact": "https://modworkshop.net/mod/25615",
   "priority": 100,
   "version": "6",
   "blt_version": 2,

@@ -1,6 +1,6 @@
 {
   "name": "Slot Machine Cheat",
-  "description": "http://modwork.shop/24781",
+  "description": "https://modworkshop.net/mod/24781",
   "author": "Dr_Newbie",
   "blt_version": 2,  
   "priority": 100,

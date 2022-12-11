@@ -2,7 +2,7 @@
 	"name":"Chainsaw Reward",
 	"description":" ",
 	"author":"Dr_Newbie",
-	"contact":"http://modwork.shop/23490",
+	"contact":"https://modworkshop.net/mod/23490",
 	"version":"2",
 	"blt_version": 2,
 	"keybinds" : [

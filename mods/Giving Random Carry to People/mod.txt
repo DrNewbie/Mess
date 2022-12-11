@@ -2,7 +2,7 @@
   "name": "Giving random carry to people",
   "description": " ",
   "author": "Dr_Newbie",
-  "contact": "http://modwork.shop/25695",
+  "contact": "https://modworkshop.net/mod/25695",
   "version": "1",
   "priority": 100,
   "blt_version": 2,

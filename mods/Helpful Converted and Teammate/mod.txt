@@ -2,7 +2,7 @@
   "name": "Helpful Converted and Teammate",
   "description": "Helpful Converted and Teammate",
   "author": "Dr_Newbie",
-  "contact": "http://modwork.shop/17502",
+  "contact": "https://modworkshop.net/mod/17502",
   "version": "25",
   "priority": 1,
   "blt_version": 2,

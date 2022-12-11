@@ -2,7 +2,7 @@
   "name": "Change HOLDOUT Difficulty",
   "description": " ",
   "author": " ",
-  "contact": "http://modwork.shop/23209",
+  "contact": "https://modworkshop.net/mod/23209",
   "version": "6",
   "priority": 100,
   "blt_version": 2,

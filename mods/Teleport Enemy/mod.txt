@@ -2,7 +2,7 @@
 	"name" : "Teleport Enemy",
 	"description": "Teleport Enemy",
 	"author" : "Dr_Newbie",
-	"contact" : "http://modwork.shop/14427",
+	"contact" : "https://modworkshop.net/mod/14427",
 	"blt_version": 2,
 	"version": "6",
 	"priority": 1,

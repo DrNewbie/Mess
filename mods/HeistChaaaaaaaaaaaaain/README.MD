@@ -1,4 +1,4 @@
-http://modwork.shop/19841
+https://modworkshop.net/mod/19841
 
 ![ScreenShot](thumbnail.png)
 

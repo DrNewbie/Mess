@@ -1,4 +1,4 @@
 {
     "bm_askn_dw_12990" : "Deathwish Armor",
-    "bm_askn_dw_12990_desc" : "http://modwork.shop/12990",
+    "bm_askn_dw_12990_desc" : "https://modworkshop.net/mod/12990",
 }

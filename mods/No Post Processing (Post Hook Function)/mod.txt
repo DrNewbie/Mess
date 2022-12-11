@@ -1,6 +1,6 @@
 {
   "name": "No Post Processing (Post Hook Function)",
-  "description": "http://modwork.shop/26205",
+  "description": "https://modworkshop.net/mod/26205",
   "author": " ",
   "contact": " ",
   "version": "2",

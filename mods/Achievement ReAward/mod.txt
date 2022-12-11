@@ -2,7 +2,7 @@
 	"name" : "Achievement ReAward",
 	"description" : " ",
 	"author" : "Dr_Newbie",
-	"contact" : "http://modwork.shop/21601",
+	"contact" : "https://modworkshop.net/mod/21601",
 	"blt_version" : 2.0,
 	"version" : "1",
 	"priority" : 100,

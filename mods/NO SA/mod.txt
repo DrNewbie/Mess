@@ -2,7 +2,7 @@
 	"name" : "NO SA",
 	"description" : " ",
 	"author" : " ",
-	"contact" : "http://modwork.shop/22873",
+	"contact" : "https://modworkshop.net/mod/22873",
 	"version" : "3",
 	"priority" : 100,
 	"blt_version" : 2,

@@ -2,7 +2,7 @@
   "name": "Healing Insert (Healing Enemy)",
   "description": " ",
   "author": "Dr_Newbie",
-  "contact": "http://modwork.shop/",
+  "contact": "https://modworkshop.net/mod/",
   "version": "1",
   "blt_version": 2,
   "keybinds": [

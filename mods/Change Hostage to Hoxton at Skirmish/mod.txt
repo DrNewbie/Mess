@@ -2,7 +2,7 @@
 	"name" : "Change Hostage to Hoxton at HOLDOUT",
 	"description" : " ",
 	"author" : " ",
-	"contact" : "http://modwork.shop/23219",
+	"contact" : "https://modworkshop.net/mod/23219",
 	"version" : "2",
 	"priority" : 100,
 	"blt_version" : 2,

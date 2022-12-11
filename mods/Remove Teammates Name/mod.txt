@@ -2,7 +2,7 @@
 	"name":"Remove Teammates Name",
 	"description":" ",
 	"author":"Dr_Newbie",
-	"contact":"http://modwork.shop/21421",
+	"contact":"https://modworkshop.net/mod/21421",
 	"version":"1",
 	"priority":1,
 	"blt_version":2,

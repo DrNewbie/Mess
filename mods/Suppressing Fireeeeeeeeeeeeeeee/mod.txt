@@ -2,7 +2,7 @@
   "name": "Suppressing Fireeeeeeeeeeeeeeee",
   "description": "even more OP lmgs",
   "author": "Dr_Newbie",
-  "contact": "http://modwork.shop/23992",
+  "contact": "https://modworkshop.net/mod/23992",
   "blt_version": 2,
   "version": "4",
   "priority": 100,

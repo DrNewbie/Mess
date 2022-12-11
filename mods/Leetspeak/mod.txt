@@ -2,7 +2,7 @@
 	"name": "Leetspeak",
 	"description": "Leetspeak",
 	"author": "Dr_Newbie",
-	"contact": "http://modwork.shop/21653",
+	"contact": "https://modworkshop.net/mod/21653",
 	"version": "1",
 	"priority": 100,
 	"blt_version": 2,

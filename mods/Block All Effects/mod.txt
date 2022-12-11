@@ -2,7 +2,7 @@
 	"name": "Block All Effects",
 	"description": "Block All Effects",
 	"author": "Dr_Newbie",
-	"contact": "http://modwork.shop/22837",
+	"contact": "https://modworkshop.net/mod/22837",
 	"version": "1",
 	"priority": 100,
 	"blt_version": 2,

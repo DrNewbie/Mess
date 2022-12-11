@@ -2,7 +2,7 @@
   "name": "Grappling Hook",
   "description": " ",
   "Author": "Dr_Newibe",
-  "contact": "http://modwork.shop/25373",
+  "contact": "https://modworkshop.net/mod/25373",
   "version": "2",
   "blt_version": 2,
   "keybinds": [

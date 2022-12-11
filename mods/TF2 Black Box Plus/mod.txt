@@ -2,7 +2,7 @@
   "name": "Black Box Plus",
   "description": " ",
   "Author": "Dr_Newibe",
-  "contact": "http://modwork.shop/25586",
+  "contact": "https://modworkshop.net/mod/25586",
   "version": "2",
   "blt_version": 2,
   "hooks": [

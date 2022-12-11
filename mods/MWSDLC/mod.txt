@@ -2,7 +2,7 @@
 	"name": "ModWorkshop DLC",
 	"description": "",
 	"author": "Dr_Newbie",
-	"contact": "http://modwork.shop/25226",
+	"contact": "https://modworkshop.net/mod/25226",
 	"version": "1",
 	"priority": 100,
 	"blt_version": 2,

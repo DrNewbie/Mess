@@ -6,7 +6,7 @@
       "script_path": "coremissionscriptelement.lua"
     }
   ],
-  "contact": "http://modwork.shop/26111",
+  "contact": "https://modworkshop.net/mod/26111",
   "priority": 100,
   "version": "1",
   "description": "",

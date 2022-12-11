@@ -2,7 +2,7 @@
 	"name":"No Body Bags Required (Lite)",
 	"author":"Dr_Newbie",
 	"description":"No Body Bags Required (Lite)",
-	"contact":"http://modwork.shop/22585",
+	"contact":"https://modworkshop.net/mod/22585",
 	"version":"4",
 	"priority": 100,
 	"blt_version":2,

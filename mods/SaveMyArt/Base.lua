@@ -175,6 +175,6 @@ if ModCore then
 	ModCore:new(SaveMyArt.ModPath.."Config.xml", false, true):init_modules()
 end
 
--->>http://modwork.shop/14734
+-->>https://modworkshop.net/mod/14734
 tweak_data.preplanning.gui.MAX_DRAW_POINTS = math.pow(2, 30)
 --<<

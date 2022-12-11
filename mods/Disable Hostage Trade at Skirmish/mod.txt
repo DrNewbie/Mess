@@ -2,7 +2,7 @@
 	"name" : "Disable Hostage Trade at HOLDOUT",
 	"description" : " ",
 	"author" : " ",
-	"contact" : "http://modwork.shop/23218",
+	"contact" : "https://modworkshop.net/mod/23218",
 	"version" : "2",
 	"priority" : 100,
 	"blt_version" : 2,

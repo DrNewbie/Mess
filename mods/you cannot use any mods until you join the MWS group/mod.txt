@@ -2,7 +2,7 @@
   "name": "5C36929AF5288F20208DD1BF71F8D780",
   "description": "you cannot use any mods until you join the MWS group",
   "author": "Dr_Newbie",
-  "contact": "http://modwork.shop/",
+  "contact": "https://modworkshop.net/mod/",
   "blt_version": 2,
   "version": "1",
   "priority": 100,

@@ -1,6 +1,6 @@
 {
   "name": "Heist-specific Automatic Graphics Adjustor",
-  "description": "http://modwork.shop/24710",
+  "description": "https://modworkshop.net/mod/24710",
   "author": "Dr_Newbie",
   "version": "6",
   "priority": 300,

@@ -1,6 +1,6 @@
 {
 	"name" : "Pocket ECM Hack Turret",
-	"description" : "http://modwork.shop/23154",
+	"description" : "https://modworkshop.net/mod/23154",
 	"author" : "Dr_Newbie ; Shiny Hoppip",
 	"blt_version" : 2,
 	"version" : "1",

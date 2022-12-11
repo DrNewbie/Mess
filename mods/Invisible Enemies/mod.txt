@@ -2,7 +2,7 @@
 	"name": "Invisible Enemies",
 	"description": "Invisible Enemies",
 	"author": "Cpone",
-	"contact": "http://modwork.shop/23416",
+	"contact": "https://modworkshop.net/mod/23416",
 	"version": "1",
 	"priority": 100,
 	"blt_version": 2,

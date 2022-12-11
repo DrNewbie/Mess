@@ -2,7 +2,7 @@
   "name": "[Car Shop] Add zipline between start and end",
   "description": " ",
   "Author": "Dr_Newibe",
-  "contact": "http://modwork.shop/25373",
+  "contact": "https://modworkshop.net/mod/25373",
   "version": "1",
   "blt_version": 2,
   "hooks": [

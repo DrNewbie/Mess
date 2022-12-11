@@ -1,7 +1,7 @@
 {
 	"name": "No Post Processing (Not Persist Scripts)",
-	"description": "http://modwork.shop/21450",
-	"author": "http://modwork.shop/21359",
+	"description": "https://modworkshop.net/mod/21450",
+	"author": "https://modworkshop.net/mod/21359",
 	"contact": " ",
 	"version": "2",
 	"blt_version": 2,

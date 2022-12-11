@@ -2,7 +2,7 @@
 	"name" : "Slow down time when you are not moving",
 	"description" : " ",
 	"author" : "Dr_Newbie",
-	"contact" : "http://modwork.shop/",
+	"contact" : "https://modworkshop.net/mod/",
 	"blt_version" : 2.0,
 	"version" : "3",
 	"priority" : 100,

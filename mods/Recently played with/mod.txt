@@ -1,7 +1,7 @@
 {
   "name": "Recently played with...",
   "author": "Dr_Newbie",
-  "contact": "http://modwork.shop/22346",
+  "contact": "https://modworkshop.net/mod/22346",
   "blt_version": 2,
   "priority": 100,
   "version": "4",

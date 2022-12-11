@@ -2,7 +2,7 @@
 	"name": "C4 Remote Detonator",
 	"description": "C4 Remote Detonator",
 	"author": "Dr_Newbie",
-	"contact": "http://modwork.shop/22804",
+	"contact": "https://modworkshop.net/mod/22804",
 	"version": "3",
 	"priority": 100,
 	"blt_version": 2,

@@ -2,7 +2,7 @@
 	"name" : "All Painting were Stealable",
 	"description" : "Make every painting in the Art Gallery heist were stealable",
 	"author" : "Dr_Newbie",
-	"contact" : "http://modwork.shop/16163",
+	"contact" : "https://modworkshop.net/mod/16163",
 	"version": "7",
 	"priority": 1,
 	"blt_version": 2,

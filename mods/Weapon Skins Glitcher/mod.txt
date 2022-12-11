@@ -2,7 +2,7 @@
 	"name" : "Weapon Skins Glitcher",
 	"description" : "Weapon Skins Glitcher",
 	"author" : "Dr_Newbie",
-	"contact" : "http://modwork.shop/21803",
+	"contact" : "https://modworkshop.net/mod/21803",
 	"blt_version" : 2.0,
 	"version" : "3",
 	"priority" : 100,

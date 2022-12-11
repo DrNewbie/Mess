@@ -2,7 +2,7 @@
   "name": "MWS Update Banner",
   "description": " ",
   "author": "Dr_Newbie",
-  "contact": "http://modwork.shop/24643",
+  "contact": "https://modworkshop.net/mod/24643",
   "version": "1",
   "priority": 300,
   "blt_version": 2,

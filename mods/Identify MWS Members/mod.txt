@@ -1,8 +1,8 @@
 {
   "name": "Identify Mod Workshop Members",
-  "description": "http://modwork.shop/24442",
+  "description": "https://modworkshop.net/mod/24442",
   "author": "Dr_Newbie",
-  "contact": "http://modwork.shop/24442",
+  "contact": "https://modworkshop.net/mod/24442",
   "version": "4",
   "blt_version": 2,
   "hooks": [

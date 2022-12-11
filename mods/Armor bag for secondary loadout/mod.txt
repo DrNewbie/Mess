@@ -2,7 +2,7 @@
 	"name" : "Armor bag for secondary loadout",
 	"description" : "Armor bag for secondary loadout",
 	"author" : "Dr_Newbie",
-	"contact": "http://modwork.shop/21617",
+	"contact": "https://modworkshop.net/mod/21617",
 	"version": "3",
 	"blt_version" : 2,
 	"priority" : 50,

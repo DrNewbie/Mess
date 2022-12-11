@@ -2,7 +2,7 @@
   "name": "Escape No Return",
   "description": "Auto Daily-Skin Dropper",
   "author": "Dr_Newbie",
-  "contact": "http://modwork.shop/22559",
+  "contact": "https://modworkshop.net/mod/22559",
   "version": "1",
   "priority": 100,
   "blt_version": 2,

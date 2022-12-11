@@ -1,6 +1,6 @@
 {
   "name": "Mod that removes level requirements for weapons",
-  "description": "http://modwork.shop/24608",
+  "description": "https://modworkshop.net/mod/24608",
   "author": " ",
   "version": "1",
   "blt_version": 2,

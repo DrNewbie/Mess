@@ -2,7 +2,7 @@
   "name": "Spawn Some Things On Menu Background",
   "description": " ",
   "author": "Dr_Newbie",
-  "contact": "http://modwork.shop/",
+  "contact": "https://modworkshop.net/mod/",
   "version": "1",
   "priority": 100,
   "blt_version": 2,

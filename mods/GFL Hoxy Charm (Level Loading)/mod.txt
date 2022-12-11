@@ -1,8 +1,8 @@
 {
   "name": "GFL Hoxy Charm (Level Loading)",
-  "description": "http://modwork.shop/25651",
+  "description": "https://modworkshop.net/mod/25651",
   "author": "Dr_Newbie",
-  "contact": "http://modwork.shop/25651",
+  "contact": "https://modworkshop.net/mod/25651",
   "version": "2",
   "hooks": [
     {

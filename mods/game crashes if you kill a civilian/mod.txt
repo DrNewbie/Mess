@@ -4,7 +4,7 @@
   "author": "Dr_Newbie",
   "version": "1",
   "blt_version": 2,
-  "contact": "http://modwork.shop/26121",
+  "contact": "https://modworkshop.net/mod/26121",
   "hooks": [
     {
       "hook_id": "lib/managers/group_ai_states/groupaistatebase",

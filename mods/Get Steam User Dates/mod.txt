@@ -2,7 +2,7 @@
   "name": "Get Steam User Dates",
   "description": " ",
   "author": "Dr_Newbie",
-  "contact": "http://modwork.shop/",
+  "contact": "https://modworkshop.net/mod/",
   "version": "1",
   "priority": 300,
   "blt_version": 2,

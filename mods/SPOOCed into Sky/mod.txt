@@ -2,7 +2,7 @@
 	"name":"SPOOCed into Sky",
 	"author":"Dr_Newbie",
 	"description":" ",
-	"contact":"http://modwork.shop/23848",
+	"contact":"https://modworkshop.net/mod/23848",
 	"version":"1",
 	"blt_version":2,
 	"hooks": 

@@ -1,6 +1,6 @@
 {
 	"name": "Spawn Addition Loots on Gage Package",
-	"description": "http://modwork.shop/24030",
+	"description": "https://modworkshop.net/mod/24030",
 	"author": " ",
 	"version": "2",
 	"priority": 100,

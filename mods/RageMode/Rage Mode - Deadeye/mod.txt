@@ -2,7 +2,7 @@
 	"name" : "Rage Mode - Deadeye",
 	"description": " ",
 	"author": "Dr_Newbie",
-	"contact": "http://modwork.shop/17679",
+	"contact": "https://modworkshop.net/mod/17679",
 	"version": "9",
 	"priority": 100,
 	"blt_version": 2,

@@ -2,7 +2,7 @@
   "name": "Random Player Style to Bot",
   "description": "Random Player Style to Bot",
   "author": "Dr_Newbie",
-  "contact": "http://modwork.shop/25931",
+  "contact": "https://modworkshop.net/mod/25931",
   "version": "1",
   "blt_version": 2,
   "priority": 1,

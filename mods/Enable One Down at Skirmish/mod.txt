@@ -2,7 +2,7 @@
   "name": "Enable One Down at HOLDOUT",
   "description": " ",
   "author": " ",
-  "contact": "http://modwork.shop/23229",
+  "contact": "https://modworkshop.net/mod/23229",
   "version": "6",
   "priority": 100,
   "blt_version": 2,

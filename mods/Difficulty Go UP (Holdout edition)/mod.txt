@@ -2,7 +2,7 @@
   "name": "Difficulty Go UP (Holdout edition)",
   "description": " ",
   "author": "Dr_Newbie",
-  "contact": "http://modwork.shop/",
+  "contact": "https://modworkshop.net/mod/",
   "version": "1",
   "priority": 100,
   "blt_version": 2,

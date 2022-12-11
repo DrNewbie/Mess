@@ -2,7 +2,7 @@
 	"name" : "Graze doesn't kill civils",
 	"description" : " ",
 	"author" : " ",
-	"contact" : "http://modwork.shop/22987",
+	"contact" : "https://modworkshop.net/mod/22987",
 	"version" : "1",
 	"priority" : 100,
 	"blt_version" : 2,

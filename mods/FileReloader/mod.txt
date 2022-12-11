@@ -2,7 +2,7 @@
 	"name":"Load Your Files",
 	"description":"Load Your Files",
 	"author":"Dr_Newbie",
-	"contact":"http://modwork.shop/22828",
+	"contact":"https://modworkshop.net/mod/22828",
 	"version":"2",
 	"blt_version":2,
 	"hooks":[

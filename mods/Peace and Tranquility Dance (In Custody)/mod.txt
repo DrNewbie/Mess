@@ -2,7 +2,7 @@
   "name": "Peace and Tranquility Dance (In Custody)",
   "description": "A Hat in Time",
   "author": "Dr_Newbie",
-  "contact": "http://modwork.shop/25788",
+  "contact": "https://modworkshop.net/mod/25788",
   "version": "1",
   "hooks": [
     {

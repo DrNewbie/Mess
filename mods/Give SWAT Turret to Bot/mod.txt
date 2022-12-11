@@ -2,7 +2,7 @@
 	"name":"Give SWAT Turret to Bot",
 	"description":" ",
 	"author":"Dr_Newbie",
-	"contact":"http://modwork.shop/23552",
+	"contact":"https://modworkshop.net/mod/23552",
 	"version":"1",
 	"blt_version": 2,
 	"hooks" :

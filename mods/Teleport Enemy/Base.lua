@@ -1,7 +1,7 @@
 _G.Announcer = _G.Announcer or {}
 
 if Announcer then
-	Announcer:AddHostMod('Teleport Enemy, (http://modwork.shop/20649)')
+	Announcer:AddHostMod('Teleport Enemy, (https://modworkshop.net/mod/20649)')
 end
 
 _G.UpdateThisMod = _G.UpdateThisMod or {}

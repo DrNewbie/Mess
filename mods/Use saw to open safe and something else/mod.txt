@@ -2,7 +2,7 @@
   "name": "Use saw to open safe and something else",
   "description": " ",
   "author": "Dr_Newbie",
-  "contact": "http://modwork.shop/21547",
+  "contact": "https://modworkshop.net/mod/21547",
   "version": "5.1",
   "priority": 1,
   "hooks": [

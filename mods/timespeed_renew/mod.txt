@@ -2,7 +2,7 @@
 	"name": "Time Speed",
 	"description": "Time Speed",
 	"author": "Dr_Newbie",
-	"contact": "http://modwork.shop/20998",
+	"contact": "https://modworkshop.net/mod/20998",
 	"version": "7",
 	"priority": 1,
 	"blt_version": 2,

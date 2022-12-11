@@ -2,7 +2,7 @@
 	"name" : "Trigger Happy Hand Effect",
 	"description" : "Trigger Happy Hand Effect",
 	"author" : "Dr_Newbie",
-	"contact" : "http://modwork.shop/22918",
+	"contact" : "https://modworkshop.net/mod/22918",
 	"blt_version" : 2.0,
 	"version" : "2",
 	"priority" : 100,

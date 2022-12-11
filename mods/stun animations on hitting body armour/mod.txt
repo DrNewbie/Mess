@@ -2,7 +2,7 @@
 	"name": "stun animations on hitting body armour",
 	"description": " ",
 	"author": "Dr_Newbie",
-	"contact": "http://modwork.shop/23076",
+	"contact": "https://modworkshop.net/mod/23076",
 	"version": "1",
 	"priority": 100,
 	"blt_version": 2,

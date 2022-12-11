@@ -2,7 +2,7 @@
   "name": "Safe for Stealth",
   "description": "Safe for Stealth",
   "author": "Dr_Newbie",
-  "contact": "http://modwork.shop/21504",
+  "contact": "https://modworkshop.net/mod/21504",
   "version": "7",
   "priority": 1,
   "color": "0 0 0",

@@ -7,7 +7,7 @@ Hooks:Add('MenuManagerOnOpenMenu', 'OneLifeGoodBye_RunFunc', function(self, menu
 			]]
 			MenuManager:do_clear_progress()			
 			--[[
-				Sell All Items by Offyerrocker ; http://modwork.shop/24537
+				Sell All Items by Offyerrocker ; https://modworkshop.net/mod/24537
 			]]
 			local bm = managers.blackmarket
 			for _, category in pairs({"primaries","secondaries","masks"}) do
@@ -29,7 +29,7 @@ Hooks:Add('MenuManagerOnOpenMenu', 'OneLifeGoodBye_RunFunc', function(self, menu
 				end
 			end
 			--[[
-				all skill tree reset by Mx ; http://modwork.shop/22718
+				all skill tree reset by Mx ; https://modworkshop.net/mod/22718
 			]]
 			managers.skilltree:infamy_reset()			
 			--[[

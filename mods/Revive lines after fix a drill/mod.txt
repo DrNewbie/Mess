@@ -2,7 +2,7 @@
 	"name" : "Revive lines after fix a drill",
 	"description" : "Revive lines after fix a drill",
 	"author" : "Dr_Newbie",
-	"contact" : "http://modwork.shop/22019",
+	"contact" : "https://modworkshop.net/mod/22019",
 	"blt_version" : 2.0,
 	"version" : "1",
 	"priority" : 100,

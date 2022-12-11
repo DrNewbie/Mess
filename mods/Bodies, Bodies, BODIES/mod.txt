@@ -2,7 +2,7 @@
   "name": "Bodies, Bodies, BODIES",
   "description": "",
   "author": "Dr_Newbie ; TdlQ",
-  "contact": "http://modwork.shop/24907",
+  "contact": "https://modworkshop.net/mod/24907",
   "version": "2",
   "hooks": [
     {

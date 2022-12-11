@@ -1,7 +1,7 @@
 {
 	"name" : "Hell's Turret",
 	"author" : "Dr_Newbie",
-	"contact" : "http://modwork.shop/23777",
+	"contact" : "https://modworkshop.net/mod/23777",
 	"priority" : 100,
 	"version":"1",
 	"blt_version": 2,
