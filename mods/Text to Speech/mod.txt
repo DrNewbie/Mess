@@ -1,8 +1,8 @@
 {
   "name": "Text to Speech",
-  "description": " ",
+  "description": "https://modworkshop.net/mod/40566",
   "author": "Dr_Newbie",
-  "contact": " ",
+  "contact": "https://modworkshop.net/mod/40566",
   "version": "1",
   "priority": 100,
   "blt_version": 2,
@@ -10,6 +10,16 @@
     {
       "hook_id": "lib/managers/menumanagerpd2",
       "script_path": "menumanagerpd2.lua"
+    }
+  ],
+  "updates": [
+    {
+      "identifier": "TexttoSpeechGitHubUpdate",
+      "host": {
+        "meta": "https://drnewbie.github.io/Mess/Update/Text%20to%20Speech.meta.json",
+        "patchnotes": "https://modworkshop.net/mod/40566#changelog",
+        "download": "https://drnewbie.github.io/Mess/Update/Text%20to%20Speech.zip"
+      }
     }
   ]
 }
