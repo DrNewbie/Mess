@@ -1,8 +1,8 @@
 {
   "name": "More Options for Copycat Perk Deck",
-  "description": "https://modworkshop.net/mod/40591",
+  "description": "https://modworkshop.net/mod/40595",
   "author": "Dr_Newbie",
-  "contact": "https://modworkshop.net/mod/40591",
+  "contact": "https://modworkshop.net/mod/40595",
   "version": "3",
   "priority": 100,
   "blt_version": 2,
