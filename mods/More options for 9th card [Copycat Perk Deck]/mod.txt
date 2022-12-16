@@ -1,0 +1,15 @@
+{
+  "name": "More options for 9th card [Copycat Perk Deck]",
+  "description": "https://modworkshop.net/mod/40591",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/40591",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/tweak_data/upgradestweakdata",
+      "script_path": "Core.lua"
+    }
+  ]
+}
