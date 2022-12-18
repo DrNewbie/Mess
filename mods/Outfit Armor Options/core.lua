@@ -142,14 +142,11 @@ pcall(__Load)
 	Apply
 
 ]]
-if not MenuArmourBase then
-	return
-end
-
 local Func1 = __Name("force_apply_armor")
+local Bool1 = __Name("Bool1")
 
-MenuArmourBase[Func1] = MenuArmourBase[Func1] or function(self, ...)
-	if not self._unit or not alive(self._unit) or not self._armor_id then
+local function force_apply_armor(unit, armor_id, player_style_id)
+	if not unit or not alive(unit) or type(armor_id) ~= "string" then
 	
 	else
 		local obj_g_vest = {
@@ -160,7 +157,6 @@ MenuArmourBase[Func1] = MenuArmourBase[Func1] or function(self, ...)
 			"g_vest_thies",
 			"g_vest_leg_arm"
 		}
-		local player_style_id = self:player_style()		
 		if player_style_id then
 			local armor_part = {
 				level_2 = {
@@ -195,13 +191,12 @@ MenuArmourBase[Func1] = MenuArmourBase[Func1] or function(self, ...)
 			local opt_default = __Name("save::default::"..player_style_id)
 			local opt_armor = __Name("save::armor::"..player_style_id)
 			if __ThisOptionsSave[opt_armor] then
-				local armor_id = self:armor_id()
 				if armor_id then
 					local armor_data = armor_part[armor_id]
 					if armor_data then
 						for _, __ids in pairs(armor_data) do
-							if self._unit:get_object(Idstring(__ids)) then
-								self._unit:get_object(Idstring(__ids)):set_visibility(true)
+							if unit:get_object(Idstring(__ids)) then
+								unit:get_object(Idstring(__ids)):set_visibility(true)
 							end
 						end
 					end
@@ -210,8 +205,8 @@ MenuArmourBase[Func1] = MenuArmourBase[Func1] or function(self, ...)
 				for _, __obj in pairs(obj_g_vest) do
 					local opt_part = __Name("save::"..__obj.."::"..player_style_id)
 					if __ThisOptionsSave[opt_part] then
-						if self._unit:get_object(Idstring(__obj)) then
-							self._unit:get_object(Idstring(__obj)):set_visibility(true)
+						if unit:get_object(Idstring(__obj)) then
+							unit:get_object(Idstring(__obj)):set_visibility(true)
 						end
 					end
 				end
@@ -220,10 +215,57 @@ MenuArmourBase[Func1] = MenuArmourBase[Func1] or function(self, ...)
 	end
 end
 
-Hooks:PostHook(MenuArmourBase, "_apply_cosmetics", __Name("_apply_cosmetics"), function(self, ...)
-	call_on_next_update(callback(self, self, Func1))
-end)
+if MenuArmourBase and not MenuArmourBase[Bool1] then
+	MenuArmourBase[Bool1] = true
+	Hooks:PostHook(MenuArmourBase, "_apply_cosmetics", __Name("hook::1"), function(self, ...)
+		call_on_next_update(
+			function ()
+				local player_style_id = self:player_style()
+				pcall(force_apply_armor, self._unit, self._armor_id, player_style_id)
+			end
+		)
+	end)
+	Hooks:PostHook(MenuArmourBase, "update_character_visuals", __Name("hook::2"), function(self, ...)
+		call_on_next_update(
+			function ()
+				local player_style_id = self:player_style()
+				pcall(force_apply_armor, self._unit, self._armor_id, player_style_id)
+			end
+		)
+	end)
+end
 
-Hooks:PostHook(MenuArmourBase, "update_character_visuals", __Name("update_character_visuals"), function(self, ...)
-	call_on_next_update(callback(self, self, Func1))
-end)
+if PlayerDamage and not PlayerDamage[Bool1] then
+	PlayerDamage[Bool1] = true
+	Hooks:PostHook(PlayerDamage, "init", __Name("hook::3"), function(self, ...)
+		local armor_id = managers.blackmarket:equipped_armor()
+		local player_style_id = managers.blackmarket:equipped_player_style()
+		call_on_next_update(
+			function ()
+				pcall(force_apply_armor, self._unit, armor_id, player_style_id)
+			end
+		)
+	end)
+end
+
+if CriminalsManager and not CriminalsManager[Bool1] then
+	CriminalsManager[Bool1] = true
+	Hooks:PostHook(CriminalsManager, "update_character_visual_state", __Name("hook::4"), function(self, character_name, visual_state, ...)
+		local character = self:character_by_name(character_name)
+		if not character or not character.unit or not alive(character.unit) then
+		
+		else
+			local armor_id = visual_state.armor_id or character.visual_state.armor_id or "level_1"
+			local player_style = self:active_player_style() or managers.blackmarket:get_default_player_style()
+			local user_player_style = visual_state.player_style or character.visual_state.player_style or managers.blackmarket:get_default_player_style()
+			if not self:is_active_player_style_locked() and user_player_style ~= managers.blackmarket:get_default_player_style() then
+				player_style = user_player_style
+			end
+			call_on_next_update(
+				function ()
+					pcall(force_apply_armor, character.unit, armor_id, player_style)
+				end
+			)
+		end
+	end)
+end
