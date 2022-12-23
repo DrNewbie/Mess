@@ -1,8 +1,8 @@
 {
   "name": "Im not gonna sugarcoat it [Cloaker Counterstrike Sound Effect]",
-  "description": " ",
+  "description": "https://modworkshop.net/mod/40688",
   "author": "Dr_Newbie",
-  "contact": " ",
+  "contact": "https://modworkshop.net/mod/40688",
   "version": "1",
   "priority": 100,
   "blt_version": 2,
