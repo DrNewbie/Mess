@@ -255,9 +255,23 @@ if CriminalsManager and not CriminalsManager[Bool1] then
 		if not character or not character.unit or not alive(character.unit) then
 		
 		else
-			local armor_id = visual_state.armor_id or character.visual_state.armor_id or "level_1"
+			local armor_id = "level_1"
+			if type(visual_state) == "table" and type(visual_state.armor_id) == "string" then
+				armor_id = visual_state.armor_id
+			elseif type(character) == "table" and type(character.visual_state) == "table" and type(character.visual_state.armor_id) == "string" then
+				armor_id = character.visual_state.armor_id
+			else
+				armor_id = "level_1"
+			end
 			local player_style = self:active_player_style() or managers.blackmarket:get_default_player_style()
-			local user_player_style = visual_state.player_style or character.visual_state.player_style or managers.blackmarket:get_default_player_style()
+			local user_player_style = "none"
+			if type(visual_state) == "table" and type(visual_state.player_style) == "string" then
+				user_player_style = visual_state.player_style
+			elseif type(character) == "table" and type(character.visual_state) == "table" and type(character.visual_state.player_style) == "string" then
+				user_player_style = character.visual_state.player_style
+			else
+				user_player_style = managers.blackmarket:get_default_player_style()
+			end
 			if not self:is_active_player_style_locked() and user_player_style ~= managers.blackmarket:get_default_player_style() then
 				player_style = user_player_style
 			end
