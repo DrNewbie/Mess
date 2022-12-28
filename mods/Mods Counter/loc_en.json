@@ -1,0 +1,18 @@
+{
+  "ModsCounterLLL_opt_menu_name": "Mods Counter",
+  "ModsCounterLLL_opt_menu_none": " ",
+  "ModsCounterLLL_opt_desc_none": " ",
+  "ModsCounterLLL_opt_title_pos_x_offset": "Title Pos - X",
+  "ModsCounterLLL_opt_title_pos_y_offset": "Title Pos - Y",
+  "ModsCounterLLL_opt_title_pos_z_offset": "Title Pos - Z",
+  "ModsCounterLLL_opt_title_rot_x_offset": "Title Rot - X",
+  "ModsCounterLLL_opt_title_rot_y_offset": "Title Rot - Y",
+  "ModsCounterLLL_opt_title_rot_z_offset": "Title Rot - Z",
+  "ModsCounterLLL_opt_counter_pos_x_offset": "Counter Pos - X",
+  "ModsCounterLLL_opt_counter_pos_y_offset": "Counter Pos - Y",
+  "ModsCounterLLL_opt_counter_pos_z_offset": "Counter Pos - Z",
+  "ModsCounterLLL_opt_counter_rot_x_offset": "Counter Rot - X",
+  "ModsCounterLLL_opt_counter_rot_y_offset": "Counter Rot - Y",
+  "ModsCounterLLL_opt_counter_rot_z_offset": "Counter Rot - Z",
+  "ModsCounterLLL_opt_reset": "Reset"
+ }

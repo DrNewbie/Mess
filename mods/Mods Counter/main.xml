@@ -1,0 +1,79 @@
+<table name="Mods Counter" global_key="ModsCounterLLL" core_class="hooks/Setup.lua">
+	<Hooks directory="hooks">
+		<hook file="menuscenemanager.lua" source_file="lib/managers/menu/menuscenemanager"/>
+	</Hooks>
+	<Package id="packages/mod_crash_counter" directory="assets">
+		<material_config path="units/mods/chl_prop_workshop_scorer/chl_prop_workshop_scorer"/>
+		<model path="units/mods/chl_prop_workshop_scorer/chl_prop_workshop_scorer"/>
+		<object path="units/mods/chl_prop_workshop_scorer/chl_prop_workshop_scorer"/>
+		<sequence_manager path="units/mods/chl_prop_workshop_scorer/chl_prop_workshop_scorer"/>
+		<unit path="units/mods/chl_prop_workshop_scorer/chl_prop_workshop_scorer"/>
+		<cooked_physics path="units/mods/chl_prop_workshop_scorer/chl_prop_workshop_scorer"/>
+		<texture path="units/mods/chl_prop_workshop_scorer/chl_prop_damage_counter/chl_prop_damager_counter_df"/>
+		<texture path="units/mods/chl_prop_workshop_scorer/chl_prop_damage_counter/chl_prop_damager_counter_nm"/>
+		<texture path="units/mods/chl_prop_workshop_scorer/chl_prop_garage_cabinets_b/chl_prop_garage_cabinets_b_df"/>
+		<texture path="units/mods/chl_prop_workshop_scorer/chl_prop_garage_cabinets_b/chl_prop_garage_cabinets_b_nm"/>
+		<material_config path="units/mods/chl_prop_workshop_scorer/editable_text_short/editable_text_short"/>
+		<model path="units/mods/chl_prop_workshop_scorer/editable_text_short/editable_text_short"/>
+		<object path="units/mods/chl_prop_workshop_scorer/editable_text_short/editable_text_short"/>
+		<unit path="units/mods/chl_prop_workshop_scorer/editable_text_short/editable_text_short"/>
+		<cooked_physics path="units/mods/chl_prop_workshop_scorer/editable_text_short/editable_text_short"/>
+	</Package>
+	<Localization default="loc_en.json"/>
+	<Options>
+		<options title_id="ModsCounterLLL_opt_menu_name" desc_id="ModsCounterLLL_opt_menu_none" build_items="true">
+			<option type="number" min="-999" max="999" step="1" show_value="true" default_value="-38" 
+				title_id="ModsCounterLLL_opt_title_pos_x_offset" desc_id="ModsCounterLLL_opt_desc_none" name="__title_pos_x" 
+				value_changed="ModsCounterLLL:OptChanged" 
+			/>
+			<option type="number" min="-999" max="999" step="1" show_value="true" default_value="150" 
+				title_id="ModsCounterLLL_opt_title_pos_y_offset" desc_id="ModsCounterLLL_opt_desc_none" name="__title_pos_y" 
+				value_changed="ModsCounterLLL:OptChanged" 
+			/>
+			<option type="number" min="-999" max="999" step="1" show_value="true" default_value="45" 
+				title_id="ModsCounterLLL_opt_title_pos_z_offset" desc_id="ModsCounterLLL_opt_desc_none" name="__title_pos_z" 
+				value_changed="ModsCounterLLL:OptChanged" 
+			/>
+			<option type="number" min="-360" max="360" step="1" show_value="true" default_value="0" 
+				title_id="ModsCounterLLL_opt_title_rot_x_offset" desc_id="ModsCounterLLL_opt_desc_none" name="__title_rot_x" 
+				value_changed="ModsCounterLLL:OptChanged" 
+			/>
+			<option type="number" min="-360" max="360" step="1" show_value="true" default_value="90" 
+				title_id="ModsCounterLLL_opt_title_rot_y_offset" desc_id="ModsCounterLLL_opt_desc_none" name="__title_rot_y" 
+				value_changed="ModsCounterLLL:OptChanged" 
+			/>
+			<option type="number" min="-360" max="360" step="1" show_value="true" default_value="0" 
+				title_id="ModsCounterLLL_opt_title_rot_z_offset" desc_id="ModsCounterLLL_opt_desc_none" name="__title_rot_z" 
+				value_changed="ModsCounterLLL:OptChanged" 
+			/>
+			<option type="number" min="-999" max="999" step="1" show_value="true" default_value="70" 
+				title_id="ModsCounterLLL_opt_counter_pos_x_offset" desc_id="ModsCounterLLL_opt_desc_none" name="__counter_pos_x" 
+				value_changed="ModsCounterLLL:OptChanged" 
+			/>
+			<option type="number" min="-999" max="999" step="1" show_value="true" default_value="200" 
+				title_id="ModsCounterLLL_opt_counter_pos_y_offset" desc_id="ModsCounterLLL_opt_desc_none" name="__counter_pos_y" 
+				value_changed="ModsCounterLLL:OptChanged" 
+			/>
+			<option type="number" min="-999" max="999" step="1" show_value="true" default_value="0" 
+				title_id="ModsCounterLLL_opt_counter_pos_z_offset" desc_id="ModsCounterLLL_opt_desc_none" name="__counter_pos_z" 
+				value_changed="ModsCounterLLL:OptChanged" 
+			/>
+			<option type="number" min="-360" max="360" step="1" show_value="true" default_value="0" 
+				title_id="ModsCounterLLL_opt_counter_rot_x_offset" desc_id="ModsCounterLLL_opt_desc_none" name="__counter_rot_x" 
+				value_changed="ModsCounterLLL:OptChanged" 
+			/>
+			<option type="number" min="-360" max="360" step="1" show_value="true" default_value="0" 
+				title_id="ModsCounterLLL_opt_counter_rot_y_offset" desc_id="ModsCounterLLL_opt_desc_none" name="__counter_rot_y" 
+				value_changed="ModsCounterLLL:OptChanged" 
+			/>
+			<option type="number" min="-360" max="360" step="1" show_value="true" default_value="0" 
+				title_id="ModsCounterLLL_opt_counter_rot_z_offset" desc_id="ModsCounterLLL_opt_desc_none" name="__counter_rot_z" 
+				value_changed="ModsCounterLLL:OptChanged" 
+			/>
+			<option type="bool" default_value="false"
+				title_id="ModsCounterLLL_opt_reset" desc_id="ModsCounterLLL_opt_desc_none" name="__reset" 
+				value_changed="ModsCounterLLL:Reset" 
+			/>
+		</options>
+	</Options>
+</table>
