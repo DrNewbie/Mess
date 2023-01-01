@@ -1,5 +1,5 @@
 {
-  "name": "PAYDAY 3 EARLY ACCESS",
+  "name": "PAYDAY 3 EARLY ACCESS MENU (REAL)",
   "description": "https://modworkshop.net/mod/40800",
   "author": "Dr_Newbie",
   "contact": "https://modworkshop.net/mod/40800",
