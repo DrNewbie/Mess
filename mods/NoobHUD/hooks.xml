@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<mod>
+	<hooks>
+		<post hook_id="lib/entry" script_path="LoadAssets.lua"/>
+		<post hook_id="lib/managers/hudmanagerpd2" script_path="MyHP.lua"/>
+		<post hook_id="lib/managers/hudmanagerpd2" script_path="MyArmor.lua"/>
+		<post hook_id="lib/managers/hudmanagerpd2" script_path="MyAmmo.lua"/>
+		<post hook_id="lib/managers/hudmanagerpd2" script_path="HideDefaultHud.lua"/>
+		<post hook_id="lib/managers/hudmanagerpd2" script_path="MyGrenades.lua"/>
+		<post hook_id="lib/managers/hudmanagerpd2" script_path="MyDeployable.lua"/>
+		<post hook_id="lib/units/beings/player/playerdamage" script_path="MyHP.lua"/>
+		<post hook_id="lib/units/beings/player/playerdamage" script_path="MyArmor.lua"/>
+		<post hook_id="lib/units/beings/player/playerdamage" script_path="MyAmmo.lua"/>
+	</hooks>
+</mod>

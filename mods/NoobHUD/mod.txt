@@ -2,47 +2,10 @@
   "name": "Noob HUD",
   "description": "https://modworkshop.net/mod/26669",
   "author": "Dr_Newbie",
-  "version": "3.7",
+  "version": "3.9",
   "blt_version": 2,
   "priority": 100,
-  "hooks": [
-    {
-      "hook_id": "lib/managers/hudmanagerpd2",
-      "script_path": "MyHP.lua"
-    },
-    {
-      "hook_id": "lib/units/beings/player/playerdamage",
-      "script_path": "MyHP.lua"
-    },
-    {
-      "hook_id": "lib/managers/hudmanagerpd2",
-      "script_path": "MyArmor.lua"
-    },
-    {
-      "hook_id": "lib/units/beings/player/playerdamage",
-      "script_path": "MyArmor.lua"
-    },
-    {
-      "hook_id": "lib/managers/hudmanagerpd2",
-      "script_path": "MyAmmo.lua"
-    },
-    {
-      "hook_id": "lib/units/beings/player/playerdamage",
-      "script_path": "MyAmmo.lua"
-    },
-    {
-      "hook_id": "lib/managers/hudmanagerpd2",
-      "script_path": "HideDefaultHud.lua"
-    },
-    {
-      "hook_id": "lib/managers/hudmanagerpd2",
-      "script_path": "MyGrenades.lua"
-    },
-    {
-      "hook_id": "lib/managers/hudmanagerpd2",
-      "script_path": "MyDeployable.lua"
-    }
-  ],
+  "supermod_definition" : "hooks.xml",
   "updates": [
     {
       "identifier": "NoobHUDGitHubUpdate",

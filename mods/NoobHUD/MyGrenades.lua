@@ -29,7 +29,6 @@ if string.lower(RequiredScript) == "lib/managers/hudmanagerpd2" then
 			font = "fonts/font_large_mf",
 			font_size = 32
 		})
-		
 
 		local _quake_grenades_icon = self.__quake_grenades_panel:bitmap({
 			name = "_quake_grenades_icon",
@@ -46,7 +45,7 @@ if string.lower(RequiredScript) == "lib/managers/hudmanagerpd2" then
 		
 		self.__quake_grenades_panel:set_visible(true)
 	end
-		
+
 	function HUDQUAKEGRENADES:update(_amount, _icon)
 		if type(_icon) == "string" and self.__quake_grenades_panel and self.__quake_grenades_panel:child("_quake_grenades_icon") then
 			local __texture, __texture_rect = tweak_data.hud_icons:get_icon_data(_icon, {
@@ -64,11 +63,11 @@ if string.lower(RequiredScript) == "lib/managers/hudmanagerpd2" then
 			self._text:set_text(string.format("%.f", _amount))
 			self._text:set_color(Color(1, 1, 1))		
 		end
-	end
-	 
-		Hooks:PostHook(HUDManager, "_setup_player_info_hud_pd2", "F_"..Idstring("PostHook:HUDManager:_setup_player_info_hud_pd2:HUDQUAKEGRENADES:OwO"):key(), function(self)
-			self._hud_quake_grenades = HUDQUAKEGRENADES:new(managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2))
-		end)
+	end	 
+
+	Hooks:PostHook(HUDManager, "_setup_player_info_hud_pd2", "F_"..Idstring("PostHook:HUDManager:_setup_player_info_hud_pd2:HUDQUAKEGRENADES:OwO"):key(), function(self)
+		self._hud_quake_grenades = HUDQUAKEGRENADES:new(managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2))
+	end)
 		
 	function HUDManager:quake_grenades(_amount, _icon)
 		self._hud_quake_grenades:update(_amount, _icon)

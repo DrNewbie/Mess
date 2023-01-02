@@ -10,12 +10,12 @@ if string.lower(RequiredScript) == "lib/managers/hudmanagerpd2" then
 			w = 400,
 			h = 200
 		})
-		
+
 		self.__quake_ammo_panel:set_bottom(self._hud_panel:h()+64)
 		self.__quake_ammo_panel:set_right(self._hud_panel:w()*0.1 + 256)
-			
+
 		local _quake_ammo_box = HUDBGBox_create(self.__quake_ammo_panel, {w = 256, h = 128}, {})
-		
+
 		self._text = _quake_ammo_box:text({
 			name = "text",
 			text = "0",
@@ -29,13 +29,12 @@ if string.lower(RequiredScript) == "lib/managers/hudmanagerpd2" then
 			font = "fonts/font_large_mf",
 			font_size = 96
 		})
-		
 
 		local _quake_ammo_icon
-		if DB:has(Idstring("texture"), Idstring("guis/textures/pd2/noob_hud/better_icon/ammo")) then
+		if DB:has(Idstring("texture"), Idstring("noob_hud/ammo")) then
 			_quake_ammo_icon = self.__quake_ammo_panel:bitmap({
 				name = "_quake_ammo_icon",
-				texture = "guis/textures/pd2/noob_hud/better_icon/ammo",
+				texture = "noob_hud/ammo",
 				valign = "top",
 				layer = 1,
 				w = 96,
@@ -55,21 +54,21 @@ if string.lower(RequiredScript) == "lib/managers/hudmanagerpd2" then
 		_quake_ammo_icon:set_right(_quake_ammo_box:parent():w())
 		_quake_ammo_icon:set_center_y(_quake_ammo_box:h() / 2)
 		_quake_ammo_box:set_right(_quake_ammo_icon:left())
-		
+
 		self.__quake_ammo_panel:set_visible(true)
 	end
-		
+
 	function HUDQUAKEAMMO:update(_current_clip, _current_left)
 		_current_clip = math.clamp(_current_clip, 0, 999)
 		_current_left = math.clamp(_current_left, 0, 999)
 		self._text:set_text(string.format("%.f/%.f", _current_clip, _current_left))
 		self._text:set_color(Color(1, 1, 1))
 	end
-	 
-		Hooks:PostHook(HUDManager, "_setup_player_info_hud_pd2", "F_"..Idstring("PostHook:HUDManager:_setup_player_info_hud_pd2:HUDQUAKEAMMO:OwO"):key(), function(self)
-			self._hud_quake_ammo = HUDQUAKEAMMO:new(managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2))
-		end)
-		
+
+	Hooks:PostHook(HUDManager, "_setup_player_info_hud_pd2", "F_"..Idstring("PostHook:HUDManager:_setup_player_info_hud_pd2:HUDQUAKEAMMO:OwO"):key(), function(self)
+		self._hud_quake_ammo = HUDQUAKEAMMO:new(managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2))
+	end)
+
 	function HUDManager:quake_ammo(_current_clip, _current_left)
 		self._hud_quake_ammo:update(_current_clip, _current_left)
 	end

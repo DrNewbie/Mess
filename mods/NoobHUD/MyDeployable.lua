@@ -39,10 +39,10 @@ if string.lower(RequiredScript) == "lib/managers/hudmanagerpd2" then
 			layer = 1,
 			w = 64,
 			h = 64
-		})		
+		})
 		_quake_deployable_icon:set_right(_quake_deployable_box:parent():w())
 		_quake_deployable_icon:set_center_y(_quake_deployable_box:h() / 2)
-		_quake_deployable_box:set_right(_quake_deployable_icon:left())
+		_quake_deployable_box:set_right(_quake_deployable_icon:left() - 8)
 		
 		self.__quake_deployable_panel:set_visible(true)
 	end
@@ -65,10 +65,10 @@ if string.lower(RequiredScript) == "lib/managers/hudmanagerpd2" then
 			self._text:set_color(Color(1, 1, 1))		
 		end
 	end
-	 
-		Hooks:PostHook(HUDManager, "_setup_player_info_hud_pd2", "F_"..Idstring("PostHook:HUDManager:_setup_player_info_hud_pd2:HUDQUAKEDEPLOYABLE:OwO"):key(), function(self)
-			self._hud_quake_deployable = HUDQUAKEDEPLOYABLE:new(managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2))
-		end)
+
+	Hooks:PostHook(HUDManager, "_setup_player_info_hud_pd2", "F_"..Idstring("PostHook:HUDManager:_setup_player_info_hud_pd2:HUDQUAKEDEPLOYABLE:OwO"):key(), function(self)
+		self._hud_quake_deployable = HUDQUAKEDEPLOYABLE:new(managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2))
+	end)
 		
 	function HUDManager:quake_deployable(_amount, _icon)
 		self._hud_quake_deployable:update(_amount, _icon)

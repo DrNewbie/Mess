@@ -10,12 +10,12 @@ if string.lower(RequiredScript) == "lib/managers/hudmanagerpd2" then
 			w = 400,
 			h = 200
 		})
-		
+
 		self.__quake_hp_panel:set_bottom(self._hud_panel:h()+64)
 		self.__quake_hp_panel:set_center_x(self._hud_panel:w()*0.5)
-			
+
 		local _quake_hp_box = HUDBGBox_create(self.__quake_hp_panel, {w = 256, h = 128}, {})
-		
+
 		self._text = _quake_hp_box:text({
 			name = "text",
 			text = "0",
@@ -29,13 +29,12 @@ if string.lower(RequiredScript) == "lib/managers/hudmanagerpd2" then
 			font = "fonts/font_large_mf",
 			font_size = 96
 		})
-		
 
 		local _quake_hp_icon
-		if DB:has(Idstring("texture"), Idstring("guis/textures/pd2/noob_hud/better_icon/health")) then
+		if DB:has(Idstring("texture"), Idstring("noob_hud/health")) then
 			_quake_hp_icon = self.__quake_hp_panel:bitmap({
 				name = "_quake_hp_icon",
-				texture = "guis/textures/pd2/noob_hud/better_icon/health",
+				texture = "noob_hud/health",
 				valign = "top",
 				layer = 1,
 				w = 96,
@@ -58,17 +57,17 @@ if string.lower(RequiredScript) == "lib/managers/hudmanagerpd2" then
 		
 		self.__quake_hp_panel:set_visible(true)
 	end
-		
+
 	function HUDQUAKEHP:update(t)
 		t = math.max(t, 0)
 		self._text:set_text(string.format("%.f", t))
 		self._text:set_color(Color(1, 1, 1))
 	end
-	 
-		Hooks:PostHook(HUDManager, "_setup_player_info_hud_pd2", "F_"..Idstring("PostHook:HUDManager:_setup_player_info_hud_pd2:HUDQUAKEHP:OwO"):key(), function(self)
-			self._hud_quake_hp = HUDQUAKEHP:new(managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2))
-		end)
-		
+
+	Hooks:PostHook(HUDManager, "_setup_player_info_hud_pd2", "F_"..Idstring("PostHook:HUDManager:_setup_player_info_hud_pd2:HUDQUAKEHP:OwO"):key(), function(self)
+		self._hud_quake_hp = HUDQUAKEHP:new(managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2))
+	end)
+
 	function HUDManager:quake_hp(t)
 		self._hud_quake_hp:update(t)
 	end
