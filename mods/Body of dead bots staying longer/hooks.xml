@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mod name="Body of dead bots staying longer">
+	<hooks>
+		<post hook_id="lib/units/player_team/teamaibase" script_path="teamaibase.lua"/>
+		<post hook_id="lib/units/player_team/huskteamaibase" script_path="teamaibase.lua"/>
+	</hooks>
+</mod>
