@@ -3,7 +3,7 @@
   "description": "https://modworkshop.net/mod/34203",
   "author": " ",
   "blt_version": 2,
-  "version": "2",
+  "version": "3",
   "hooks": [
     {
       "hook_id": "lib/units/enemies/cop/copdamage",

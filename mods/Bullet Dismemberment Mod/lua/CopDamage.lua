@@ -66,7 +66,7 @@ function BulletDecapitations:BD_ToApplyBody(them, attack_data, is_explosion)
 	if not attack_data.attacker_unit then
 		attack_data.attacker_unit = managers.player:player_unit()
 	end
-	if not them._dead or (attack_data.attacker_unit:inventory() and BulletDecapitations.tweak_data.allowed_weapons[tweak_data.weapon[attack_data.attacker_unit:inventory():equipped_unit():base():get_name_id()].category] ~= true) then
+	if not them._dead or not attack_data.attacker_unit or not alive(attack_data.attacker_unit) or (attack_data.attacker_unit:inventory() and BulletDecapitations.tweak_data.allowed_weapons[tweak_data.weapon[attack_data.attacker_unit:inventory():equipped_unit():base():get_name_id()].category] ~= true) then
 	
 	else
 		if them._unit:base()._tweak_table == "spooc" then
