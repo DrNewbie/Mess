@@ -1,12 +1,12 @@
 local ThisModPath = ModPath
 local ThisSavePath = SavePath
-local mod_ids = Idstring(ThisModPath):key()
-local hook1 = "F"..Idstring("hook1::"..mod_ids):key()
-local hook2 = "F"..Idstring("hook2::"..mod_ids):key()
-local __dt1 = "F"..Idstring("__dt1::"..mod_ids):key()
-local bool1 = "F"..Idstring("bool1::"..mod_ids):key()
-local bool2 = "F"..Idstring("bool2::"..mod_ids):key()
-local func1 = "F"..Idstring("func1::"..mod_ids):key()
+local function __Name(__text)
+	return "LLW_"..Idstring(tostring(__text)..ThisModPath):key()
+end
+local __dt1 = __Name("__dt1")
+local bool1 = __Name("bool1")
+local bool2 = __Name("bool2")
+local func1 = __Name("func1")
 local is_LLWepF = type(LLWepF) == "table" and type(LLWepF.Options) == "table" and type(LLWepF.Options.GetValue) == "function"
 
 PlayerStandard[func1] = PlayerStandard[func1] or function(them, weap_base)
@@ -86,7 +86,7 @@ local function __check_is_aiming_at_enemies_or_civilians(__camera)
 	return type(__ray) == "table" and __ray.hit_position and __ray.unit or false
 end
 
-Hooks:PostHook(PlayerStandard, "_update_check_actions", hook1, function(self, __t, __dt)
+Hooks:PostHook(PlayerStandard, "_update_check_actions", __Name("hook1"), function(self, __t, __dt)
 	if self._camera_unit and alive(self._camera_unit) and self._camera_unit:base() and self._equipped_unit and alive(self._equipped_unit) and self._equipped_unit:base() then
 		local __weap_base = self._equipped_unit:base()
 		local __action_forbidden = self._shooting or 
@@ -132,7 +132,7 @@ Hooks:PostHook(PlayerStandard, "_update_check_actions", hook1, function(self, __
 	end
 end)
 
-Hooks:PostHook(PlayerStandard, "_update_check_actions", hook2, function(self, __t, __dt)
+Hooks:PostHook(PlayerStandard, "_update_check_actions", __Name("hook2"), function(self, __t, __dt)
 	if Utils and self._camera_unit and alive(self._camera_unit) and self._camera_unit:base() and self._equipped_unit and alive(self._equipped_unit) and self._equipped_unit:base() then
 		local too_close_dis = is_LLWepF and LLWepF.Options:GetValue("__too_close") or 50
 		if too_close_dis > 0 then
@@ -141,6 +141,13 @@ Hooks:PostHook(PlayerStandard, "_update_check_actions", hook2, function(self, __
 				LLWepF.ForcedApplyToFov = true
 			end
 		end
+	end
+end)
+
+Hooks:PostHook(PlayerStandard, "_activate_mover", __Name("hook3"), function(self, __mover, ...)
+	if __mover == PlayerStandard.MOVER_STAND or __mover == PlayerStandard.MOVER_DUCK then
+		self[bool1] = false
+		self[__dt1] = 1
 	end
 end)
 
