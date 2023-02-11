@@ -23,5 +23,7 @@
   "lw_ff_opt_no_custom_wep": "Disable custom wep",
   "lw_ff_opt_no_custom_wep_desc": "Disable the animations for custom weapons.",
   "lw_ff_opt_uppered_wep_distance": "Distance to upper wep",
-  "lw_ff_opt_uppered_wep_distance_desc": "Distance to auto upper the weapon when aiming at enemies, 0(zero) = OFF"
+  "lw_ff_opt_uppered_wep_distance_desc": "Distance to auto upper the weapon when aiming at enemies, 0(zero) = OFF",
+  "lw_ff_opt_assault_disable_lowered": "No Lowered in Assault",
+  "lw_ff_opt_assault_disable_lowered_desc": "When assault is in progress that weapons don't get lowered."
 }

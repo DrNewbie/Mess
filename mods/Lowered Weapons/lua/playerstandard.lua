@@ -86,8 +86,19 @@ local function __check_is_aiming_at_enemies_or_civilians(__camera)
 	return type(__ray) == "table" and __ray.hit_position and __ray.unit or false
 end
 
+local __whisper_mode = __Name("__whisper_mode")
+
 Hooks:PostHook(PlayerStandard, "_update_check_actions", __Name("hook1"), function(self, __t, __dt)
 	if self._camera_unit and alive(self._camera_unit) and self._camera_unit:base() and self._equipped_unit and alive(self._equipped_unit) and self._equipped_unit:base() then
+		local __assault_disable_lowered = is_LLWepF and LLWepF.Options:GetValue("__assault_disable_lowered") or false
+		local is_whisper_mode = managers.groupai:state():whisper_mode()
+		if __assault_disable_lowered and not is_whisper_mode then
+			if (type(self[__whisper_mode]) ~= type(is_whisper_mode)) or (self[__whisper_mode] ~= is_whisper_mode) then
+				self[__whisper_mode] = is_whisper_mode
+				self:_stance_entered(false)
+			end
+			self[__dt1] = 1
+		end
 		local __weap_base = self._equipped_unit:base()
 		local __action_forbidden = self._shooting or 
 									self:_is_reloading() or 
