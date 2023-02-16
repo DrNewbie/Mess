@@ -1,0 +1,15 @@
+{
+  "name": "Korsica say you cocky loser [Mission Failed]",
+  "description": "https://modworkshop.net/mod/41334",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/41334",
+  "blt_version": 2,
+  "version": "1",
+  "priority": 100,
+  "hooks": [
+    {
+      "hook_id": "lib/states/gameoverstate",
+      "script_path": "gameoverstate.lua"
+    }
+  ]
+}
