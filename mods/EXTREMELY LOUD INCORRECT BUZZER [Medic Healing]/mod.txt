@@ -1,0 +1,15 @@
+{
+  "name": "EXTREMELY LOUD INCORRECT BUZZER [Medic Healing]",
+  "description": "https://modworkshop.net/mod/41465",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/41465",
+  "blt_version": 2,
+  "version": "1",
+  "priority": 100,
+  "hooks": [
+    {
+      "hook_id": "lib/units/enemies/medic/medicdamage",
+      "script_path": "medicdamage.lua"
+    }
+  ]
+}
