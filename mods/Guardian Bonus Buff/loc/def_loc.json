@@ -33,6 +33,9 @@
   "Guardian_increase_stamina_multiplier_name": "Maximum Stamina",
   "Guardian_increase_stamina_multiplier_desc": " ",
   "Guardian_increase_stamina_multiplier_name_w_var": "Maximum Stamina",
+  "Guardian_increase_interaction_speed_multiplier_name": "Interaction Speed",
+  "Guardian_increase_interaction_speed_multiplier_desc": " ",
+  "Guardian_increase_interaction_speed_multiplier_name_w_var": "Interaction Speed",
   "Guardian_Func_reset_name": "Reset Upgrade",
   "Guardian_Func_reset_desc": "Clean all of your upgrade."
 }

@@ -31,7 +31,9 @@ function GuardianBonusBuff:Default()
 		increase_crouch_speed_multiplier = 0,
 		increase_crouch_speed_multiplier__max_level_max = 5,
 		increase_stamina_multiplier = 0,
-		increase_stamina_multiplier__max_level_max = 10
+		increase_stamina_multiplier__max_level_max = 10,
+		increase_interaction_speed_multiplier = 0,
+		increase_interaction_speed_multiplier__max_level_max = 30
 	}
 end
 
@@ -163,6 +165,8 @@ function GuardianBonusBuff:GetBonusPrePercent(__buff_name, __lv)
 		return math.round( __lv*10 )
 	elseif __buff_name == "increase_stamina_multiplier" then
 		return math.round( __lv*7.5 ) / 5 * 2
+	elseif __buff_name == "increase_interaction_speed_multiplier" then
+		return math.round( __lv*7.5 ) / 5
 	end
 	return math.round( __lv*7.5 ) / 10
 end
@@ -341,6 +345,9 @@ Hooks:Add("MenuManagerInitialize", "M_"..Idstring("MenuManagerInitialize:Guardia
 	end
 	MenuCallbackHandler.callback_Guardian_increase_stamina_multiplier = function(self)
 		GuardianBonusBuff:AskUpgrade("increase_stamina_multiplier")
+	end
+	MenuCallbackHandler.callback_Guardian_increase_interaction_speed_multiplier = function(self)
+		GuardianBonusBuff:AskUpgrade("increase_interaction_speed_multiplier")
 	end
 	MenuHelper:LoadFromJsonFile(GuardianBonusBuff.ModPath.."menu/menu.json", GuardianBonusBuff, GuardianBonusBuff._data)
 end)
