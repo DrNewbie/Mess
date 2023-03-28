@@ -1,0 +1,12 @@
+<table name="jp36 long foregrip +30 damage">
+	<Localization default="english.txt"/>
+	<AddFiles directory="assets">
+		<texture path="guis/dlcs/tng/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_g36_fg_long_30dmg"/>
+	</AddFiles>
+	<WeaponMod based_on="wpn_fps_upg_g36_fg_long" id="wpn_fps_upg_g36_fg_long_30dmg" name_id="bm_wp_g36_fg_long_30dmg" texture_bundle_folder="tng" is_a_unlockable="true">
+		<stats damage="30" concealment="-30"/>
+		<weapons>
+			<value_node value="wpn_fps_ass_g36"/>
+		</weapons>
+    </WeaponMod>
+</table>

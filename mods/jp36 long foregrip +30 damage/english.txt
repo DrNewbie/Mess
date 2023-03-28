@@ -1,0 +1,4 @@
+{
+	"bm_wp_g36_fg_long_30dmg" : "JP36 Long Foregrip+",
+    "bm_wp_g36_fg_long_30dmg_desc" : " "
+}
