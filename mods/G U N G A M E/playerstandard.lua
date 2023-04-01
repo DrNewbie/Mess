@@ -71,7 +71,7 @@ function PlayerStandard:DoGunGuChanageWeapon(t)
 	if math.random()*100 <= GunGameGame.settings.chance and type(_weapon_list) == "table" then
 		local _weapon_list_safe = {}
 		for id, wep_id in pairs(_weapon_list) do
-			if managers.blackmarket:weapon_unlocked(wep_id) then
+			if Global.blackmarket_manager.weapons[wep_id] and managers.blackmarket:weapon_unlocked(wep_id) then
 				table.insert(_weapon_list_safe, wep_id)
 			end
 		end
