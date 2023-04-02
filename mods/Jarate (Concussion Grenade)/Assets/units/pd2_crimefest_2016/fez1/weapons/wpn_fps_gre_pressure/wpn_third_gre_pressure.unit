@@ -1,0 +1,18 @@
+<unit type="item" slot="14">
+	<network sync="spawn"/>
+	<object file="units/pd2_crimefest_2016/fez1/weapons/wpn_fps_gre_pressure/wpn_third_gre_pressure" />
+	<dependencies>
+		<depends_on unit="units/pd2_crimefest_2016/fez1/weapons/wpn_fps_gre_pressure/wpn_fps_gre_pressure_husk" />
+		<depends_on effect="effects/particles/explosions/explosion_flash_grenade" />
+		<depends_on bnk="soundbanks/concussion_grenade"/>
+		<depends_on texture="guis/dlcs/tf2_jarate/textures/pd2/blackmarket/icons/grenades/concussion"/>
+	</dependencies>
+	<extensions>
+		<extension name="base" class="ConcussionTF2JarateGrenade" />
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" >
+			<var name="_collision_event" value="concussion_bounce" />
+			<var name="_collision_sfx_quite_time" value="0.1" />
+		</extension>
+	</extensions>
+</unit>

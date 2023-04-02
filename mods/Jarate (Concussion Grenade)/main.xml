@@ -1,0 +1,12 @@
+<table name="TF2 Jarate">
+	<Localization directory="Localization" default="english.txt"/>
+	<Hooks directory="Hooks">
+		<hook file="concussiongrenade.lua" source_file="lib/units/weapons/grenades/concussiongrenade"/>
+		<hook file="projectilestweakdata.lua" source_file="lib/tweak_data/blackmarket/projectilestweakdata"/>
+	</Hooks>
+	<AddFiles directory="Assets">
+		<unit path="units/pd2_crimefest_2016/fez1/weapons/wpn_fps_gre_pressure/wpn_third_gre_pressure" force="true"/>
+		<texture path="guis/dlcs/tf2_jarate/textures/pd2/blackmarket/icons/grenades/concussion" force="true"/>
+	</AddFiles>	
+</table>
+

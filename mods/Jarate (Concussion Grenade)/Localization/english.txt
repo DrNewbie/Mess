@@ -1,0 +1,5 @@
+{
+  "bm_concussion_tf2_jarate": "Jarate",
+  "bm_concussion_tf2_jarate_not_working": "Jarate (Invalid: Not Host)",
+  "bm_concussion_tf2_jarate_desc": "Jarate, the 'Jar-based Karate'. The item is a thrown weapon; the jar breaks and the liquid is splashed over a short distance, either upon immediate contact with the world or another player. Enemies caught within the range splash radius are soaked in the contents of the jar for 10 seconds. During this period, all incoming damage is registered as double."
+}
