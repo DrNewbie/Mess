@@ -1,0 +1,15 @@
+{
+  "name": "Metal Pipe Armor Break Sound",
+  "description": "https://modworkshop.net/mod/41822",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/41822",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/units/beings/player/playersound",
+      "script_path": "lua/playersound.lua"
+    }
+  ]
+}
