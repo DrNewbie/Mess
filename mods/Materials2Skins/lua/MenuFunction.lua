@@ -45,7 +45,7 @@ end)
 
 Hooks:Add("MenuManagerBuildCustomMenus", "MenuManagerBuildCustomMenus_Materials2Skins", function(menu_manager, nodes)
 	nodes["Materials2Skins_menu_id"] = MenuHelper:BuildMenu("Materials2Skins_menu_id")
-	MenuHelper:AddMenuItem(MenuHelper.menus.lua_mod_options_menu, "Materials2Skins_menu_id", "menu_Materials2Skins_contract_name", "menu_Materials2Skins_contract_desc")
+	MenuHelper:AddMenuItem(nodes["blt_options"], "Materials2Skins_menu_id", "menu_Materials2Skins_contract_name", "menu_Materials2Skins_contract_desc")
 end)
 
 Hooks:Add("LocalizationManagerPostInit", "Materials2Skins_loc", function(loc)
