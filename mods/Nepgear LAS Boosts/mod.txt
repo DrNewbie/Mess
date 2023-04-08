@@ -3,16 +3,12 @@
   "description": "https://modworkshop.net/mod/41878",
   "author": "Dr_Newbie",
   "contact": "https://modworkshop.net/mod/41878",
-  "version": "1",
+  "version": "2",
   "priority": 100,
   "blt_version": 2,
   "hooks": [
     {
       "hook_id": "lib/tweak_data/armorskinstweakdata",
-      "script_path": "base.lua"
-    },
-    {
-      "hook_id": "lib/managers/group_ai_states/groupaistatebase",
       "script_path": "base.lua"
     },
     {
