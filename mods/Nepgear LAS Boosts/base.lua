@@ -18,12 +18,19 @@ Hooks:Add("LocalizationManagerPostInit", __Name("Localization"), function(loc)
 			"[+] The lower your teammates health is, the more melee damage you do.\n",
 			"[-] Total ammo capacity is decreased by 100%."
 		}
-		loc:add_localized_strings({
-			["bm_askn_nepgear_desc"] = loc:text("bm_askn_nepgear_desc").."\n\n"..table.concat(add_buff, "\n"),
-			["bm_askn_nepgear_no_hands_desc"] = loc:text("bm_askn_nepgear_no_hands_desc").."\n\n"..table.concat(add_buff, "\n"),
-			["bm_askn_nepgear_mask_desc"] = loc:text("bm_askn_nepgear_mask_desc").."\n\n"..table.concat(add_buff, "\n"),
-			["bm_askn_nepgear_no_hands_mask_desc"] = loc:text("bm_askn_nepgear_no_hands_mask_desc").."\n\n"..table.concat(add_buff, "\n")
-		})
+		local loc_file = io.open(ThisModPath.."localization.json", "r")
+		if loc_file then
+			add_buff = json.decode(loc_file:read("*all"))
+			loc_file:close()
+		end
+		if type(add_buff) == "table" then
+			loc:add_localized_strings({
+				["bm_askn_nepgear_desc"] = loc:text("bm_askn_nepgear_desc").."\n\n"..table.concat(add_buff, "\n"),
+				["bm_askn_nepgear_no_hands_desc"] = loc:text("bm_askn_nepgear_no_hands_desc").."\n\n"..table.concat(add_buff, "\n"),
+				["bm_askn_nepgear_mask_desc"] = loc:text("bm_askn_nepgear_mask_desc").."\n\n"..table.concat(add_buff, "\n"),
+				["bm_askn_nepgear_no_hands_mask_desc"] = loc:text("bm_askn_nepgear_no_hands_mask_desc").."\n\n"..table.concat(add_buff, "\n")
+			})
+		end
 	end
 end)
 

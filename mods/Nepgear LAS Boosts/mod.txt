@@ -1,9 +1,9 @@
 {
   "name": "Nepgear [LAS] Boosts",
-  "description": " ",
+  "description": "https://modworkshop.net/mod/41878",
   "author": "Dr_Newbie",
-  "contact": "https://modworkshop.net/mod/",
-  "version": "5",
+  "contact": "https://modworkshop.net/mod/41878",
+  "version": "1",
   "priority": 100,
   "blt_version": 2,
   "hooks": [
