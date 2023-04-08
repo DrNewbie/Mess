@@ -81,27 +81,38 @@ if PlayerManager and not PlayerManager[is_bool] then
 	
 	local last_down_count = 0
 	
+	local function r_unit_check(r_unit)
+		if not r_unit or not alive(r_unit) then
+			return false
+		end
+		if type(r_unit.interaction) == "function" and r_unit:interaction() and type(r_unit:interaction().active) == "function" and r_unit:interaction():active() then
+			return true
+		elseif type(r_unit.character_damage) == "function" and r_unit:character_damage() then
+			if type(r_unit:character_damage().need_revive) == "function" and r_unit:character_damage():need_revive() then
+				return true
+			elseif type(r_unit:character_damage().arrested) == "function" and r_unit:character_damage():arrested() then
+				return true
+			end
+		end
+		return false
+	end
+	
 	Hooks:PostHook(PlayerManager, "update", __Name("loop check player down"), function(self, t, dt)
-		if self:Is_LAS_Nepgear() and self:local_player() then
-			local self = managers.player
+		if self:Is_LAS_Nepgear() and self:local_player() and self:local_player():character_damage() then
 			local ply_u = self:local_player()
 			local down_count = 0
 			local __all_player_criminals = managers.groupai:state():all_player_criminals()
 			local __all_AI_criminals = managers.groupai:state():all_AI_criminals()
 			for c_key, c_data in pairs(__all_player_criminals) do
 				local r_unit = c_data.unit
-				if (r_unit:interaction() and r_unit:interaction():active()) or (r_unit:character_damage() and (r_unit:character_damage():need_revive() or r_unit:character_damage():arrested())) then
-					if r_unit ~= ply_u and ply_u:character_damage() then
-						down_count = down_count + 1
-					end
+				if r_unit_check(r_unit) and r_unit ~= ply_u then
+					down_count = down_count + 1
 				end
 			end
 			for c_key, c_data in pairs(__all_AI_criminals) do
 				local r_unit = c_data.unit
-				if (r_unit:interaction() and r_unit:interaction():active()) or (r_unit:character_damage() and (r_unit:character_damage():need_revive() or r_unit:character_damage():arrested())) then
-					if r_unit ~= ply_u and ply_u:character_damage() then
-						down_count = down_count + 1
-					end
+				if r_unit_check(r_unit) and r_unit ~= ply_u then
+					down_count = down_count + 1
 				end
 			end
 			if last_down_count ~= down_count and down_count > 0 then
