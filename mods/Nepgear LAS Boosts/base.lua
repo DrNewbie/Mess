@@ -81,10 +81,10 @@ if PlayerManager and not PlayerManager[is_bool] then
 	
 	local last_down_count = 0
 	
-	Hooks:PreHook(PlayerManager, "update", __Name("loop check player down"), function(self, t, dt)
-		if managers.player and managers.player:Is_LAS_Nepgear() and managers.player:local_player() then
-			local ply_m = managers.player
-			local ply_u = ply_m:local_player()
+	Hooks:PostHook(PlayerManager, "update", __Name("loop check player down"), function(self, t, dt)
+		if self:Is_LAS_Nepgear() and self:local_player() then
+			local self = managers.player
+			local ply_u = self:local_player()
 			local down_count = 0
 			local __all_player_criminals = managers.groupai:state():all_player_criminals()
 			local __all_AI_criminals = managers.groupai:state():all_AI_criminals()
@@ -108,8 +108,8 @@ if PlayerManager and not PlayerManager[is_bool] then
 				last_down_count = down_count
 				ply_u:character_damage():band_aid_health()
 				ply_u:character_damage():_regenerate_armor()
-				if ply_m:has_active_timer("replenish_grenades") then
-					ply_m:start_timer("replenish_grenades", 0.1, callback(ply_m, ply_m, "_on_grenade_cooldown_end"))
+				if self:has_active_timer("replenish_grenades") then
+					self:start_timer("replenish_grenades", 0.1, callback(self, self, "_on_grenade_cooldown_end"))
 					managers.hud:set_player_grenade_cooldown({
 						end_time = managers.game_play_central:get_heist_timer() + 0.1,
 						duration = 0.1
