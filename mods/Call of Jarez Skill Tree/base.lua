@@ -116,7 +116,7 @@ if SkillTreeTweakData and not SkillTreeTweakData[is_bool] then
 				upgrades = {
 					"player_coj_guns_lazing_1"
 				},
-				cost = self.costs.default
+				cost = self.costs.hightierpro
 			}
 			--[[,
 			[2] = {
