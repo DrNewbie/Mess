@@ -1,0 +1,15 @@
+{
+  "name": "Weapon Weight",
+  "description": "https://modworkshop.net/mod/41946",
+  "author": "Dr_Newbie, Hoppip",
+  "contact": "https://modworkshop.net/mod/41946",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/managers/playermanager",
+      "script_path": "base.lua"
+    }
+  ]
+}
