@@ -1,7 +1,7 @@
 <table name="Remove Small Units" global_key="LessUnitMainClassFunction">
 	<AssetUpdates id="Remove Small Units" version="1">
-        <custom_provider version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Remove%20Small%20Units.txt" download_url="https://drnewbie.github.io/Mess/UpdateProvider/Remove%20Small%20Units.zip"/>
-    </AssetUpdates>
+		<custom_provider version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Remove%20Small%20Units.txt" download_url="https://drnewbie.github.io/Mess/UpdateProvider/Remove%20Small%20Units.zip"/>
+	</AssetUpdates>
 	<Localization default="loc.en.json"/>
 	<Options>
 		<options title_id="less_units_opt_menu_name" desc_id="less_units_opt_menu_none" build_items="true">
