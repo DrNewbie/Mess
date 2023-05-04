@@ -17,9 +17,9 @@ Hooks:PostHook(WeaponTweakData, "init", Hook1, function(self)
 		if __pd2_to_tdoll[__id] and type(__data) == "table" and type(__data.categories) == "table" and type(__data.use_data) == "table" then
 			self[__id].__oath_data = self[__id].__oath_data or {}
 			self[__id].__oath_data.__max_points = self[__id].__oath_data.__max_points or 1*20000
-			self[__id].__oath_data.__oath_dlc1_wiki_url = "https://iopwiki.com/wiki/"..__pd2_to_tdoll[__id]
-			self[__id].__oath_data.__oath_dlc1_ogg_folder = ThisModPath.."Sounds/Default/"..string.upper(__pd2_to_tdoll[__id]).."/"
-			self[__id].__oath_data.__oath_link = function(is_click, now_rate)
+			self[__id].__oath_data.__oath_dlc1_wiki_url = self[__id].__oath_data.__oath_dlc1_wiki_url or "https://iopwiki.com/wiki/"..__pd2_to_tdoll[__id]
+			self[__id].__oath_data.__oath_dlc1_ogg_folder = self[__id].__oath_data.__oath_dlc1_ogg_folder or ThisModPath.."Sounds/Default/"..string.upper(__pd2_to_tdoll[__id]).."/"
+			self[__id].__oath_data.__oath_link = self[__id].__oath_data.__oath_link or function(is_click, now_rate)
 				if is_click then
 					Steam:overlay_activate("url", self[__id].__oath_data.__oath_dlc1_wiki_url)
 					if blt.xaudio then
