@@ -1,0 +1,10 @@
+<table directory="assets">
+	<texture path="units/blahaj/blahaj_nm"/>
+	<sequence_manager path="units/blahaj/blahaj"/>
+	<texture path="units/blahaj/blahaj_df"/>
+	<cooked_physics path="units/blahaj/blahaj"/>
+	<model path="units/blahaj/blahaj"/>
+	<object path="units/blahaj/blahaj"/>
+	<material_config path="units/blahaj/blahaj"/>
+	<unit path="units/blahaj/blahaj"/>
+</table>

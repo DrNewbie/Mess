@@ -1,0 +1,7 @@
+<materials version="3">
+	<material unique="true" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" name="mtr_lootbag" version="2">
+		<diffuse_texture file="units/blahaj/blahaj_df"/>
+        <bump_normal_texture file="units/blahaj/blahaj_nm"/>		
+		<material_texture file="units/payday2/pickups/gen_pku_lootbag/gen_pku_lootbag_gsma"/>
+	</material>
+</materials>

@@ -1,0 +1,8 @@
+<unit type="bnk" slot="1" >
+	<object file="units/blahaj/blahaj" />
+	<dependencies/>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+	</extensions>
+</unit>

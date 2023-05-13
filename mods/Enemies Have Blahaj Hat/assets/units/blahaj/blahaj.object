@@ -1,0 +1,18 @@
+<dynamic_object>
+	<diesel materials="units/blahaj/blahaj" orientation_object="rp_loot_bag"/>
+	<sequence_manager file="units/blahaj/blahaj"/>
+    <bodies>
+        <body enabled="hinge_body_1" template="static" name="static_body" >
+			<object name="rp_bnk_prop_phone" />
+			<object name="c_hinge_body_1" collision_type="box"/>
+		</body>
+        <body enabled="hinge_body_2" template="static" name="static_body" >
+			<object name="a_hinge_body_2" />
+			<object name="c_hinge_body_2" collision_type="box"/>
+		</body>
+    </bodies>
+	<decal_surfaces default_material="cloth"/>
+	<graphics>
+		<object name="g_bag" enabled="true"/>
+	</graphics>
+</dynamic_object>
