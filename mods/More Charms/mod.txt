@@ -1,0 +1,19 @@
+{
+  "name": "More Charms",
+  "description": "https://modworkshop.net/mod/42187",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/42187",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/managers/charmmanager",
+      "script_path": "lua/charmmanager.lua"
+    },
+    {
+      "hook_id": "lib/managers/menu/blackmarketgui",
+      "script_path": "lua/blackmarketgui.lua"
+    }
+  ]
+}
