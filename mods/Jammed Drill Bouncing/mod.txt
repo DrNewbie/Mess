@@ -1,0 +1,15 @@
+{
+  "name": "Jammed Drill Bouncing",
+  "description": "https://modworkshop.net/mod/42293",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/42293",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/units/props/timergui",
+      "script_path": "timergui.lua"
+    }
+  ]
+}
