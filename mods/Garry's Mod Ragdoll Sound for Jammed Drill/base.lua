@@ -3,13 +3,9 @@ local ThisModPath = ModPath
 --[[File Path]]
 local ThisOGG = ThisModPath.."912385876.ogg"
 
-if blt.xaudio then
+if blt.xaudio and io.file_is_readable(ThisOGG) then
 	blt.xaudio.setup()
 else
-	return
-end
-
-if not io.file_is_readable(ThisOGG) then
 	return
 end
 
