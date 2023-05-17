@@ -27,10 +27,7 @@ local function __ply_ogg(__drill_unit)
 	local __key = __Name(__drill_unit:key())
 	if io.file_is_readable(ThisOGG) then
 		local this_buffer = XAudio.Buffer:new(ThisOGG)
-		local this_source = XAudio.UnitSource:new(__drill_unit)
-		this_source:set_buffer(this_buffer)
-		this_source:play()
-		this_source:set_volume(1)
+		local this_source = XAudio.UnitSource:new(__drill_unit, this_buffer)
 		_G[_GName][__key] = _G[_GName][__key] or {}
 		_G[_GName][__key][XAudioBuffer] = this_buffer
 		_G[_GName][__key][XAudioSource] = this_source
