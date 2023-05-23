@@ -1,0 +1,15 @@
+{
+  "name": "Mari [Cloaked Sound Effect]",
+  "description": "https://modworkshop.net/mod/42388",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/42388",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/units/beings/player/playermovement",
+      "script_path": "lua/playermovement.lua"
+    }
+  ]
+}
