@@ -1,0 +1,20 @@
+{
+  "name": "Permanent Death System",
+  "description": " ",
+  "author": "Dr_Newbie",
+  "contact": " ",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "supermod_definition": "hooks.xml",
+  "updates": [
+    {
+      "identifier": "permanentdeathsystemgithubupdate",
+      "host": {
+        "meta": "https://drnewbie.github.io/Mess/Update/Permanent%20Death%20System.meta.json",
+        "download": "https://drnewbie.github.io/Mess/Update/Permanent%20Death%20System.zip",
+        "patchnotes": "https://github.com/DrNewbie/Mess/commits/master"
+      }
+    }
+  ]
+}
