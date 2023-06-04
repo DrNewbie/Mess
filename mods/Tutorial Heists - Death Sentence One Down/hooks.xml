@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<mod>
+    <hooks>
+		<post hook_id="lib/managers/menumanager" script_path="menumanager.lua"/>
+    </hooks>
+</mod>

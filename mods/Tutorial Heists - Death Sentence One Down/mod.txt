@@ -1,0 +1,10 @@
+{
+  "name": "Tutorial Heists - Death Sentence One Down",
+  "description": "https://modworkshop.net/mod/42535",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/42535",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "supermod_definition": "hooks.xml"
+}
