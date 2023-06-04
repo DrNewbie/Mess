@@ -1,5 +1,5 @@
 {
-  "name": "Tutorial Heists - Death Sentence One Down",
+  "name": "Tutorial Heists - Death Sentence One Down Pro Jobs",
   "description": "https://modworkshop.net/mod/42535",
   "author": "Dr_Newbie",
   "contact": "https://modworkshop.net/mod/42535",

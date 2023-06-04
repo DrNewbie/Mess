@@ -1,3 +1,12 @@
+tweak_data.narrative.jobs.short.professional = true
+tweak_data.narrative.jobs.short.region = "professional"
+
+tweak_data.narrative.jobs.short2.professional = true
+tweak_data.narrative.jobs.short2.region = "professional"
+
+tweak_data.narrative.jobs.short2.professional = true
+tweak_data.narrative.jobs.short2.region = "professional"
+
 function MenuCallbackHandler:play_short_heist(item)
 	Global.game_settings.single_player = true
 	Global.game_settings.difficulty = "sm_wish"
