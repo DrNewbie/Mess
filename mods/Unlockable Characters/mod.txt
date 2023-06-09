@@ -1,0 +1,10 @@
+{
+  "name": "Unlockable Characters",
+  "description": " ",
+  "author": "Dr_Newbie",
+  "contact": " ",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "supermod_definition": "hooks.xml"
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<mod>
+    <hooks script_path="hooks/">
+        <pre hook_id="core/lib/utils/coreapp" :script_path="base.lua"/>
+		<post hook_id="lib/managers/menu/blackmarketgui" :script_path="function/load_localization_file.lua"/>
+        <post hook_id="lib/managers/menumanagerpd2" :script_path="function/block_in_menu.lua"/>
+        <post hook_id="lib/managers/mission/elementplayercharacter" :script_path="function/block_in_safehouse_1.lua"/>
+		<post hook_id="lib/managers/mission/elementspawncivilian" :script_path="function/block_in_safehouse_2.lua"/>
+		<post hook_id="lib/managers/criminalsmanager" :script_path="function/block_by_taken.lua"/>
+		<post hook_id="lib/managers/group_ai_states/groupaistatebase" :script_path="function/re_fill_criminal.lua"/>
+		<post hook_id="lib/units/beings/player/playerdamage" :script_path="function/kill_if_you_use_dead.lua"/>
+		<post hook_id="lib/managers/menumanager" :script_path="function/reset_lock.lua"/>
+		<post hook_id="lib/managers/menu/blackmarketgui" :script_path="function/apply_custom_achievement.lua"/>
+		<post hook_id="lib/managers/trademanager" :script_path="function/disable_trading.lua"/>
+		<post hook_id="lib/states/missionendstate" :script_path="function/when_heist_finish.lua"/>
+		<post hook_id="lib/tweak_data/hudiconstweakdata" :script_path="function/new_icons.lua"/>
+		<!--Character-->
+		<post hook_id="lib/states/missionendstate" :script_path="character/chains/when_heist_finish.lua"/>
+	</hooks>
+</mod>

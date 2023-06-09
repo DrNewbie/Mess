@@ -1,0 +1,92 @@
+<table name="Unlocked Character: Achievements" color="Color(0, 0, 0)">
+	<Achievements icon="guis/textures/pd2/blackmarket/icons/masks/dallas" id="pdstory_reward_package">
+		<achievement 
+			icon="guis/textures/pd2/blackmarket/icons/characters/dallas" 
+			id="pdstory_reward_dallas_unlocked" rank="1" 
+		/> 
+		<achievement 
+			icon="guis/textures/pd2/blackmarket/icons/characters/wolf" 
+			id="pdstory_reward_wolf_unlocked" rank="1" 
+		/> 
+		<achievement 
+			icon="guis/textures/pd2/blackmarket/icons/characters/chains" 
+			id="pdstory_reward_chains_unlocked" rank="1" 
+		/> 
+		<achievement 
+			icon="guis/textures/pd2/blackmarket/icons/characters/hoxton" 
+			id="pdstory_reward_hoxton_unlocked" rank="1" 
+		/> 
+		<achievement 
+			icon="guis/textures/pd2/blackmarket/icons/characters/jowi" 
+			id="pdstory_reward_jowi_unlocked" rank="1" 
+		/> 
+		<achievement 
+			icon="guis/textures/pd2/blackmarket/icons/characters/old_hoxton" 
+			id="pdstory_reward_old_hoxton_unlocked" rank="1" 
+		/> 
+		<achievement 
+			icon="guis/dlcs/character_pack_clover/textures/pd2/blackmarket/icons/characters/female_1" 
+			id="pdstory_reward_female_1_unlocked" rank="1" 
+		/> 
+		<achievement 
+			icon="guis/dlcs/character_pack_dragan/textures/pd2/blackmarket/icons/characters/dragan" 
+			id="pdstory_reward_dragan_unlocked" rank="1" 
+		/> 
+		<achievement 
+			icon="guis/dlcs/hlm2/textures/pd2/blackmarket/icons/characters/jacket" 
+			id="pdstory_reward_jacket_unlocked" rank="1" 
+		/> 
+		<achievement 
+			icon="guis/dlcs/character_pack_bonnie/textures/pd2/blackmarket/icons/characters/bonnie" 
+			id="pdstory_reward_bonnie_unlocked" rank="1" 
+		/> 
+		<achievement 
+			icon="guis/dlcs/character_pack_sokol/textures/pd2/blackmarket/icons/characters/sokol" 
+			id="pdstory_reward_sokol_unlocked" rank="1" 
+		/> 
+		<achievement 
+			icon="guis/dlcs/dragon/textures/pd2/blackmarket/icons/characters/dragon" 
+			id="pdstory_reward_dragon_unlocked" rank="1" 
+		/> 
+		<achievement 
+			icon="guis/dlcs/rip/textures/pd2/blackmarket/icons/characters/bodhi" 
+			id="pdstory_reward_bodhi_unlocked" rank="1" 
+		/> 
+		<achievement 
+			icon="guis/dlcs/coco/textures/pd2/blackmarket/icons/characters/jimmy" 
+			id="pdstory_reward_jimmy_unlocked" rank="1" 
+		/> 
+		<achievement 
+			icon="guis/dlcs/opera/textures/pd2/blackmarket/icons/characters/sydney" 
+			id="pdstory_reward_sydney_unlocked" rank="1" 
+		/> 
+		<achievement 
+			icon="guis/dlcs/wild/textures/pd2/blackmarket/icons/characters/wild" 
+			id="pdstory_reward_wild_unlocked" rank="1" 
+		/> 
+		<achievement 
+			icon="guis/dlcs/chico/textures/pd2/blackmarket/icons/characters/chico" 
+			id="pdstory_reward_chico_unlocked" rank="1" 
+		/> 
+		<achievement 
+			icon="guis/dlcs/max/textures/pd2/blackmarket/icons/characters/max" 
+			id="pdstory_reward_max_unlocked" rank="1" 
+		/> 
+		<achievement 
+			icon="guis/dlcs/joy/textures/pd2/blackmarket/icons/characters/joy" 
+			id="pdstory_reward_joy_unlocked" rank="1" 
+		/> 
+		<achievement 
+			icon="guis/dlcs/myh/textures/pd2/blackmarket/icons/characters/myh" 
+			id="pdstory_reward_myh_unlocked" rank="1" 
+		/> 
+		<achievement 
+			icon="guis/dlcs/ecp/textures/pd2/blackmarket/icons/characters/ecp_male" 
+			id="pdstory_reward_ecp_male_unlocked" rank="1" 
+		/> 
+		<achievement 
+			icon="guis/dlcs/ecp/textures/pd2/blackmarket/icons/characters/ecp_female" 
+			id="pdstory_reward_ecp_female_unlocked" rank="1" 
+		/> 
+	</Achievements>
+</table>
