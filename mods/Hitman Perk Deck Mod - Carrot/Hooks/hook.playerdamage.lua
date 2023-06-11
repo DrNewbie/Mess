@@ -16,7 +16,10 @@ Hooks:PostHook(PlayerDamage, "update", "F_"..Idstring("PlyDmg:update::"..ThisMod
 			self[__Dt] = self[__Dt] + __dt
 			if self[__Dt] >= self[__Bool] then
 				self[__Dt] = 0
-				self:_regenerate_armor()
+				local __armor_ratio = self:armor_ratio()
+				if __armor_ratio > 0 and __armor_ratio < 1 then
+					self:_regenerate_armor()
+				end
 			end
 		end
 	end
