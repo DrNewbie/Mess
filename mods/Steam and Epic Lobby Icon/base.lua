@@ -25,7 +25,7 @@ pcall(function()
 	)
 end)
 
-DelayedCalls:Add(__Name("delay hook"), 3, function()
+DelayedCalls:Add(__Name("delay hook"), 1, function()
 	Hooks:PostHook(CrimeNetGui, "add_server_job", __Name("add_server_job"), function(self, __data, ...)
 		if type(__data) == "table" and __data.id and __data.room_id then
 			local __icon_texture = nil

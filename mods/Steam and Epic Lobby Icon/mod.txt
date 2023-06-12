@@ -1,5 +1,5 @@
 {
-  "name": "Steam and Epic Lobby Icon Prefix",
+  "name": "Steam and Epic Lobby Icon",
   "description": " ",
   "author": "Dr_Newbie",
   "contact": " ",
