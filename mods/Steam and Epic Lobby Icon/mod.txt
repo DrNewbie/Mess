@@ -1,8 +1,8 @@
 {
   "name": "Steam and Epic Lobby Icon",
-  "description": " ",
+  "description": "https://modworkshop.net/mod/42598",
   "author": "Dr_Newbie",
-  "contact": " ",
+  "contact": "https://modworkshop.net/mod/42598",
   "blt_version": 2,
   "version": "1",
   "priority": 100,
@@ -10,6 +10,16 @@
     {
       "hook_id": "lib/managers/crimenetmanager",
       "script_path": "base.lua"
+    }
+  ],
+  "updates": [
+    {
+      "identifier": "SteamandEpicLobbyIconGitHubUpdate",
+      "host": {
+        "meta": "https://drnewbie.github.io/Mess/Update/Steam%20and%20Epic%20Lobby%20Icon.meta.json",
+        "download": "https://drnewbie.github.io/Mess/Update/Steam%20and%20Epic%20Lobby%20Icon.zip",
+        "patchnotes": "https://github.com/DrNewbie/Mess/commits/master"
+      }
     }
   ]
 }
