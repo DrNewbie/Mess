@@ -1,0 +1,15 @@
+{
+  "name": "Steam Avatar to Social Hub",
+  "description": "https://modworkshop.net/mod/42656",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/42656",
+  "blt_version": 2,
+  "version": "1",
+  "priority": 100,
+  "hooks": [
+    {
+      "hook_id": "lib/managers/social_hub/socialhubpanels",
+      "script_path": "base.lua"
+    }
+  ]
+}
