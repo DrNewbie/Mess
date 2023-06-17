@@ -4,11 +4,14 @@ if (Network and Network:is_server()) or Global.game_settings.single_player then
 
 else
 	return
-end	
+end
 
 local __Name = function(__id)
 	return "DDD_"..Idstring(tostring(__id).."::"..ThisModPath):key()
 end
+
+local this_speed_muilt = 1.66666
+local this_speed_last = 3.11111
 
 local is_bool = __Name("is_bool")
 local is_okay = __Name("is_okay")
@@ -35,8 +38,8 @@ if TimerGui and not TimerGui[is_bool] then
 		if self[is_okay] and is_okay_drill(self._unit) and not self._jammed and self._powered then
 			self[is_okay] = false
 			local __dt_mod = math.max(self._timer_multiplier or 1, 0.01)
-			if type(self._current_jam_timer) == "number" and self._current_jam_timer > 3 then
-				self._current_timer = self._current_timer - (__dt / __dt_mod) * 2
+			if type(self._current_jam_timer) == "number" and self._current_jam_timer > this_speed_last then
+				self._current_timer = self._current_timer - (__dt / __dt_mod) * this_speed_muilt
 				self._time_left = self._current_timer * __dt_mod
 			end
 		end

@@ -1,8 +1,8 @@
 {
   "name": "Fast Forwarding Drill",
-  "description": " ",
+  "description": "https://modworkshop.net/mod/42671",
   "author": "Dr_Newbie",
-  "contact": " ",
+  "contact": "https://modworkshop.net/mod/42671",
   "version": "1",
   "priority": 100,
   "blt_version": 2,
@@ -18,6 +18,16 @@
     {
       "hook_id": "lib/units/beings/player/states/playerstandard",
       "script_path": "drill.lua"
+    }
+  ],
+  "updates": [
+    {
+      "identifier": "FastForwardingDrillGitHubUpdate",
+      "host": {
+        "meta": "https://drnewbie.github.io/Mess/Update/Fast%20Forwarding%20Drill.meta.json",
+        "download": "https://drnewbie.github.io/Mess/Update/Fast%20Forwarding%20Drill.zip",
+        "patchnotes": "https://github.com/DrNewbie/Mess/commits/master"
+      }
     }
   ]
 }
