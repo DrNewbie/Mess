@@ -22,7 +22,7 @@ local function __CheckFolder(is_online)
 			if type(__sub_dirs) == "table" then
 				for _, __dir_s in pairs(__sub_dirs) do
 					if type(__dir_s) == "string" and __file.DirectoryExists(__dir..__dir_s.."/") then
-						if __io.file_is_readable(__dir..__dir_s.."/"..__identify_this_file) then
+						if __io.file_is_readable(__dir..__dir_s.."/"..__identify_this_file) or __io.file_is_readable(__dir..__dir_s.."/"..__identify_this_file..".txt") then
 							local this_dir = __dir..__dir_s.."/"
 							if not is_online then
 								--Enable
