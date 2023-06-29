@@ -1,0 +1,15 @@
+{
+  "name": "Trip Mines with High Value Target",
+  "description": "https://modworkshop.net/mod/42815",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/42815",
+  "version": "1",
+  "priority": 100,
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/units/weapons/trip_mine/tripminebase",
+      "script_path": "base.lua"
+    }
+  ]
+}
