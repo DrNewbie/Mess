@@ -6,7 +6,7 @@ end
 
 
 local ThisModUnit = "units/blahaj/blahaj"
-local ThisModUnitIds = Idstring("units/blahaj/blahaj")
+local ThisModUnitIds = Idstring(ThisModUnit)
 local UnitIds = Idstring("unit")
 
 local MaskUnit = __Name("MaskUnit")
@@ -34,7 +34,7 @@ local function __ApplyMaskToThis(them)
 	if not them._unit or not alive(them._unit) then
 		return
 	end
-	if not managers.enemy:is_enemy(them._unit) then
+	if CopDamage.is_civilian(them._unit:base()._tweak_table) then
 		return
 	end
 	local mask_align = them._obj_head
