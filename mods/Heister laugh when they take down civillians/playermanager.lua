@@ -1,4 +1,8 @@
 local ThisModPath = ModPath
+local ThisModPathIds = Idstring(ThisModPath):key()
+local Func1 = "F1_"..ThisModPathIds
+local Func2 = "F2_"..ThisModPathIds
+local Func3 = "F3_"..ThisModPathIds
 
 local function __Say(__killed_unit)
 	if managers.player:local_player() and CopDamage.is_civilian(__killed_unit:base()._tweak_table) then
@@ -9,6 +13,12 @@ local function __Say(__killed_unit)
 	return
 end
 
-Hooks:PostHook(PlayerManager, "on_killshot", "F_"..Idstring(ThisModPath):key(), function(self, __killed_unit, ...)
-	pcall(__Say, __killed_unit)
+Hooks:Add("LocalizationManagerPostInit", Func1, function(...)
+	pcall(function()
+		DelayedCalls:Add(Func2, 5, function()
+			Hooks:PostHook(PlayerManager, "on_killshot", Func3, function(self, __killed_unit, ...)
+				pcall(__Say, __killed_unit)
+			end)
+		end)
+	end)
 end)
