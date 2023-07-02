@@ -1,8 +1,8 @@
 {
   "name": "Heister laugh when they take down civillians",
-  "description": " ",
+  "description": "https://modworkshop.net/mod/42864",
   "Author": "Dr_Newibe",
-  "contact": " ",
+  "contact": "https://modworkshop.net/mod/42864",
   "version": "1.1",
   "blt_version": 2,
   "priority": 100,
