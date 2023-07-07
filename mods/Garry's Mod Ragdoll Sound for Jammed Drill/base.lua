@@ -80,7 +80,7 @@ Hooks:PostHook(TimerGui, "update", __Name(5), function(self, ...)
 						pcall(__end_ogg, __u_key)
 						self[IsMove] = false
 					else
-						pcall(call_on_next_update, function ()
+						pcall(function ()
 							local this_dis = mvector3.distance(player_unit:position(), self._unit:position())
 							if this_dis >= 800 then
 								this_source:set_volume(0)
@@ -94,7 +94,7 @@ Hooks:PostHook(TimerGui, "update", __Name(5), function(self, ...)
 				if this_source or this_buffer then
 					pcall(__end_ogg, __u_key)
 				end
-				pcall(call_on_next_update, function ()
+				pcall(function ()
 					self[IsMove] = false
 				end)
 			end
