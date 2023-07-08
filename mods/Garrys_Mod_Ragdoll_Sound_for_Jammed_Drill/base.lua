@@ -61,7 +61,7 @@ Hooks:PostHook(TimerGui, "init", __Name(4), function(self, ...)
 end)
 
 Hooks:PostHook(TimerGui, "update", __Name(5), function(self, ...)
-	if self._unit and alive(self._unit) and self[IsBool] then
+	if Utils and Utils:IsInHeist() and not Utils:IsInCustody() and self._unit and alive(self._unit) and self[IsBool] then
 		if self[IsFine] then
 			self[IsFine] = false
 		else

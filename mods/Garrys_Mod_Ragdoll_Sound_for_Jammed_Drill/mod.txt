@@ -3,13 +3,23 @@
   "description": "https://modworkshop.net/mod/42296",
   "author": "Dr_Newbie",
   "contact": "https://modworkshop.net/mod/42296",
-  "version": "3",
+  "version": "4",
   "priority": 100,
   "blt_version": 2,
   "hooks": [
     {
       "hook_id": "lib/units/props/timergui",
       "script_path": "base.lua"
+    }
+  ],
+  "updates": [
+    {
+      "identifier": "GarrysModRagdollSoundforJammedDrillGitHubUpdate",
+      "host": {
+        "meta": "https://drnewbie.github.io/Mess/Update/GarrysModRagdollSoundforJammedDrillGitHubUpdate.json",
+        "download": "https://drnewbie.github.io/Mess/Update/GarrysModRagdollSoundforJammedDrillGitHubUpdate.zip",
+        "patchnotes": "https://github.com/DrNewbie/Mess/commits/master"
+      }
     }
   ]
 }
