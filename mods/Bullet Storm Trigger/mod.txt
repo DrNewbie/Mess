@@ -3,7 +3,7 @@
   "description": "https://modworkshop.net/mod/38792",
   "author": "Dr_Newbie",
   "contact": "https://modworkshop.net/mod/38792",
-  "version": "2",
+  "version": "3",
   "priority": 100,
   "blt_version": 2,
   "hooks": [
@@ -13,6 +13,10 @@
     },
     {
       "hook_id": "lib/units/equipment/ammo_bag/ammobagbase",
+      "script_path": "ammobagbase.lua"
+    },
+    {
+      "hook_id": "lib/units/weapons/sawweaponbase",
       "script_path": "ammobagbase.lua"
     }
   ]
