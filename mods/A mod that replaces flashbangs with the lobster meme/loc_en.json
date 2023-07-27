@@ -2,5 +2,9 @@
   "FlashBMemes_opt_menu_name": "Replaces flashbangs with the lobster meme",
   "FlashBMemes_opt_menu_none": " ",
   "FlashBMemes_opt_volume_start": "Volume(Start)",
-  "FlashBMemes_opt_volume_start_desc": " "
- }
+  "FlashBMemes_opt_volume_start_desc": " ",
+  "FlashBMemes_opt_volume_fadeout": "Enable Fadeout - Volume",
+  "FlashBMemes_opt_volume_fadeout_desc": " ",
+  "FlashBMemes_opt_picture_fadeout": "Enable Fadeout - Picture",
+  "FlashBMemes_opt_picture_fadeout_desc": " "
+}
