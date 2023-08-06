@@ -10,7 +10,7 @@ local __Name = function(__id)
 	return "DDD_"..Idstring(tostring(__id).."::"..ThisModPath):key()
 end
 
-local this_speed_muilt = 7 / 3
+local this_speed_muilt = 11 / 3
 local this_speed_last = 5 / 3
 
 local is_bool = __Name("is_bool")
