@@ -93,6 +93,7 @@ local __whisper_mode = __Name("__whisper_mode")
 
 local function __loop_function_1(them, __t, __dt)
 	if them._camera_unit and alive(them._camera_unit) and them._camera_unit:base() and them._equipped_unit and alive(them._equipped_unit) and them._equipped_unit:base() then
+		local __sprinting_disable_lowered = is_LLWepF and LLWepF.Options:GetValue("__sprinting_disable_lowered") or false
 		local __assault_disable_lowered = is_LLWepF and LLWepF.Options:GetValue("__assault_disable_lowered") or false
 		local is_whisper_mode = managers.groupai:state():whisper_mode()
 		if __assault_disable_lowered and not is_whisper_mode then
@@ -104,6 +105,7 @@ local function __loop_function_1(them, __t, __dt)
 		end
 		local __weap_base = them._equipped_unit:base()
 		local __action_forbidden = them._shooting or 
+									(them._running and __sprinting_disable_lowered) or 
 									them:_is_reloading() or 
 									them:in_steelsight() or 
 									them:_changing_weapon() or 

@@ -1,5 +1,5 @@
 <table name="LLWepF" global_key="LLWepF" core_class="lua/Setup.lua">
-	<AssetUpdates id="Lowered Weapons" version="13">
+	<AssetUpdates id="Lowered Weapons" version="14">
 		<custom_provider 
 			version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Lowered%20Weapons.txt" 
 			download_url="https://drnewbie.github.io/Mess/UpdateProvider/Lowered%20Weapons.zip"
@@ -75,6 +75,12 @@
 			/>
 			<option type="bool" default_value="false" disabled="true"
 				title_id="lw_ff_opt_assault_disable_lowered" desc_id="lw_ff_opt_assault_disable_lowered_desc" name="__assault_disable_lowered" 
+			/>
+			<option type="bool" default_value="false" disabled="true"
+				title_id="lw_ff_opt_to_fake_Slider" desc_id="lw_ff_opt_to_fake_Slider" name="__fake_bool_7" 
+			/>
+			<option type="bool" default_value="false" disabled="true"
+				title_id="lw_ff_opt_sprinting_disable_lowered" desc_id="lw_ff_opt_sprinting_disable_lowered_desc" name="__sprinting_disable_lowered" 
 			/>
 		</options>
 	</Options>
