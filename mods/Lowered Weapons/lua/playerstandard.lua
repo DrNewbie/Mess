@@ -4,6 +4,8 @@ local function __Name(__text)
 	return "LLW_"..Idstring(tostring(__text)..ThisModPath):key()
 end
 
+LLWepF = LLWepF or {}
+
 local __dt1 = __Name("__dt1")
 local init1 = __Name("init1")
 local init2 = __Name("init2")
@@ -103,6 +105,20 @@ local function __loop_function_1(them, __t, __dt)
 			end
 			them[__dt1] = 1
 		end
+		local __time_delay = is_LLWepF and LLWepF.Options:GetValue("__time_delay") or 3
+		if __time_delay < 0 then
+			them[__dt1] = 1
+		end
+		--[[
+			keybind to run
+		]]
+		if _G.__LLWepF_Forced_to_Run then
+			them[__dt1] = 0
+		end
+		if _G.__LLWepF_ForcedApplyToFov then
+			_G.__LLWepF_ForcedApplyToFov = false
+			them:_stance_entered(false)
+		end
 		local __weap_base = them._equipped_unit:base()
 		local __action_forbidden = them._shooting or 
 									(them._running and __sprinting_disable_lowered) or 
@@ -119,7 +135,7 @@ local function __loop_function_1(them, __t, __dt)
 									them:_is_cash_inspecting() or --observing the weapon
 									__check_is_aiming_at_enemies_or_civilians(them._unit:camera()) --thanks to Hoppip
 		if not them[__dt1] or __action_forbidden or not __weap_base:start_shooting_allowed() then
-			them[__dt1] = is_LLWepF and LLWepF.Options:GetValue("__time_delay") or 3
+			them[__dt1] = __time_delay
 			if them[bool1] then
 				them:_stance_entered(false)
 			end
@@ -152,7 +168,7 @@ end
 local function __loop_function_2(them, __t, __dt)
 	if Utils and them._camera_unit and alive(them._camera_unit) and them._camera_unit:base() and them._equipped_unit and alive(them._equipped_unit) and them._equipped_unit:base() then
 		local too_close_dis = is_LLWepF and LLWepF.Options:GetValue("__too_close") or 50
-		if too_close_dis > 0 then
+		if too_close_dis >= 0 then
 			local is_too_close = Utils:GetPlayerAimPos(managers.player:player_unit(), too_close_dis) or nil
 			if is_too_close and not them[bool1] then
 				LLWepF.ForcedApplyToFov = true

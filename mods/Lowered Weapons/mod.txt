@@ -3,13 +3,24 @@
   "description": "https://modworkshop.net/mod/34244",
   "author": "Dr_Newbie",
   "contact": "https://modworkshop.net/mod/34244",
-  "version": "14",
+  "version": "15",
   "priority": 100,
   "blt_version": 2,
   "hooks": [
     {
       "hook_id": "lib/units/beings/player/states/playercarry",
       "script_path": "lua/playerstandard.lua"
+    }
+  ],
+  "keybinds": [
+    {
+      "keybind_id": "LLWepF_Forced_to_Run",
+      "name": "Lower the Weapon",
+      "description": " ",
+      "script_path": "keybind_LLWepF.lua",
+      "run_in_menu": false,
+      "run_in_game": true,
+      "localized": false
     }
   ]
 }
