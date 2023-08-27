@@ -1,5 +1,5 @@
 <table name="LLWepF" global_key="LLWepF" core_class="lua/Setup.lua">
-	<AssetUpdates id="Lowered Weapons" version="15">
+	<AssetUpdates id="Lowered Weapons" version="15.1">
 		<custom_provider 
 			version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Lowered%20Weapons.txt" 
 			download_url="https://drnewbie.github.io/Mess/UpdateProvider/Lowered%20Weapons.zip"
@@ -52,33 +52,43 @@
 			<option type="bool" default_value="false"
 				title_id="lw_ff_opt_auto_gadget_off" desc_id="lw_ff_opt_auto_gadget_off_desc" name="__auto_gadget_off" 
 			/>
+			<!--
 			<option type="bool" default_value="false" disabled="true"
 				title_id="lw_ff_opt_to_fake_Slider" desc_id="lw_ff_opt_to_fake_Slider" name="__fake_bool_3" 
 			/>
+			-->
 			<option type="number" min="-1" max="500" step="1" show_value="true" default_value="0" 
 				title_id="lw_ff_opt_too_close" desc_id="lw_ff_opt_too_close_desc" name="__too_close" 
 			/>
+			<!--
 			<option type="bool" default_value="false" disabled="true"
 				title_id="lw_ff_opt_to_fake_Slider" desc_id="lw_ff_opt_to_fake_Slider" name="__fake_bool_4" 
 			/>
+			-->
 			<option type="bool" default_value="false"
 				title_id="lw_ff_opt_no_custom_wep" desc_id="lw_ff_opt_no_custom_wep_desc" name="__custom_wep_disable" 
 			/>
+			<!--
 			<option type="bool" default_value="false" disabled="true"
 				title_id="lw_ff_opt_to_fake_Slider" desc_id="lw_ff_opt_to_fake_Slider" name="__fake_bool_5" 
 			/>
+			-->
 			<option type="number" min="0" max="1000000" step="100" show_value="true" default_value="1000" 
 				title_id="lw_ff_opt_uppered_wep_distance" desc_id="lw_ff_opt_uppered_wep_distance_desc" name="__uppered_wep_distance" 
 			/>
+			<!--
 			<option type="bool" default_value="false" disabled="true"
 				title_id="lw_ff_opt_to_fake_Slider" desc_id="lw_ff_opt_to_fake_Slider" name="__fake_bool_6" 
 			/>
+			-->
 			<option type="bool" default_value="false" disabled="true"
 				title_id="lw_ff_opt_assault_disable_lowered" desc_id="lw_ff_opt_assault_disable_lowered_desc" name="__assault_disable_lowered" 
 			/>
+			<!--
 			<option type="bool" default_value="false" disabled="true"
 				title_id="lw_ff_opt_to_fake_Slider" desc_id="lw_ff_opt_to_fake_Slider" name="__fake_bool_7" 
 			/>
+			-->
 			<option type="bool" default_value="false" disabled="true"
 				title_id="lw_ff_opt_sprinting_disable_lowered" desc_id="lw_ff_opt_sprinting_disable_lowered_desc" name="__sprinting_disable_lowered" 
 			/>
