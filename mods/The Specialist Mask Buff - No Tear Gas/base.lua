@@ -9,9 +9,9 @@ local hook1 = __Name("hook1")
 local stamina_ratio = 0.25
 
 local function is_mask_ok()
-	if managers.blackmarket and managers.player and (not Utils:IsInGameState() or managers.player:current_state() ~= "mask_off") then
+	if managers.blackmarket and managers.player and ((Utils and not Utils:IsInGameState()) or managers.player:current_state() ~= "mask_off") then
 		local x_equipped_mask = managers.blackmarket:equipped_mask()
-		x_mask_id = x_equipped_mask and x_equipped_mask.mask_id
+		local x_mask_id = x_equipped_mask and x_equipped_mask.mask_id
 		if x_mask_id and x_mask_id == "smoker" then
 			return true
 		end
