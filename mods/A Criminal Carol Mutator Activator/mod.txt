@@ -1,0 +1,15 @@
+{
+  "name": "A Criminal Carol Mutator Activator",
+  "description": "https://modworkshop.net/mod/43778",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/43778",
+  "priority": 100,
+  "version": "2023-09-10",
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/mutators/mutatorcg22",
+      "script_path": "mutatorcg22.lua"
+    }
+  ]
+}
