@@ -1,0 +1,15 @@
+{
+  "name": "Piggy Bank Mutator Activator",
+  "description": "https://modworkshop.net/mod/43775",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/43775",
+  "priority": 100,
+  "version": "2023-09-09",
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/mutators/mutatorpiggyrevenge",
+      "script_path": "mutatorpiggyrevenge.lua"
+    }
+  ]
+}
