@@ -12,7 +12,7 @@ local function is_mask_ok()
 	if managers.blackmarket and managers.player and ((Utils and not Utils:IsInGameState()) or managers.player:current_state() ~= "mask_off") then
 		local x_equipped_mask = managers.blackmarket:equipped_mask()
 		local x_mask_id = x_equipped_mask and x_equipped_mask.mask_id
-		if x_mask_id and x_mask_id == "smoker" then
+		if x_mask_id and (x_mask_id == "smoker" or x_mask_id == "jfr_03" or x_mask_id == "gasmask") then
 			return true
 		end
 	end

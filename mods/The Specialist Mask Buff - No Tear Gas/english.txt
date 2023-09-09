@@ -1,4 +1,0 @@
-{
-  "bm_msk_smoker_no_gas_tear_01": "[+] Stop taking damage from tear gas.",
-  "bm_msk_smoker_stamina_decrease_01": "[-] Stamina decreases 75%."
-}
