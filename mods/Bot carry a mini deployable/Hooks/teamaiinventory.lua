@@ -14,11 +14,3 @@ end
 function TeamAIInventory:min_equipment_amount()
 	return self._min_equipment_amount
 end
-
-if _G.BotWeapons then
-	Hooks:PostHook(BotWeapons, "set_equipment", "BotMiniDeployable_BotWeapons_set_equipment", function(self, unit, equipment)
-		if unit and alive(unit) and unit:inventory() then
-			unit:inventory():set_min_equipment(equipment)
-		end
-	end)
-end

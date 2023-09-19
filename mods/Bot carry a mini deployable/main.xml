@@ -1,11 +1,5 @@
 <table name="Bot carry a mini-deployable">
-    <AssetUpdates id="Bot carry a mini-deployable" version="6">
+    <AssetUpdates id="Bot carry a mini-deployable" version="7">
         <custom_provider version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Bot%20carry%20a%20mini%20deployable.txt" download_url="https://drnewbie.github.io/Mess/UpdateProvider/Bot%20carry%20a%20mini%20deployable.zip"/>
     </AssetUpdates>
-    <Hooks directory="Hooks">
-        <hook file="ammobagbase.lua" source_file="lib/units/equipment/ammo_bag/ammobagbase"/>
-        <hook file="doctorbagbase.lua" source_file="lib/units/equipment/doctor_bag/doctorbagbase"/>
-        <hook file="playerstandard.lua" source_file="lib/units/beings/player/states/playerstandard"/>
-        <hook file="teamaiinventory.lua" source_file="lib/units/player_team/teamaiinventory"/>
-    </Hooks>
 </table>
