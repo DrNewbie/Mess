@@ -1,10 +1,18 @@
 local ThisModPath = ModPath
 local ThisModIds = Idstring(ThisModPath):key()
-local Hook0 = "F_"..Idstring("_check_action_primary_attack:"..ThisModIds):key()
-local Hook1 = "F_"..Idstring("_get_interaction_speed:"..ThisModIds):key()
-local Old0 = "F_"..Idstring("trigger_pressed:"..ThisModIds):key()
-local Old1 = "F_"..Idstring("trigger_released:"..ThisModIds):key()
-local Old2 = "F_"..Idstring("trigger_held:"..ThisModIds):key()
+
+local __Name = function(__id)
+	return "GGG_"..Idstring(tostring(__id).."::"..ThisModIds):key()
+end
+
+local Hook0 = __Name("Hook0")
+local Hook1 = __Name("Hook1")
+local Hook2 = __Name("Hook2")
+local Hook3 = __Name("Hook3")
+local Old0 = __Name("Old0")
+local Old1 = __Name("Old1")
+local Old2 = __Name("Old2")
+local Bool0 = __Name("Bool0")
 
 _G.GuardianBonusBuff = _G.GuardianBonusBuff or {}
 
@@ -45,3 +53,17 @@ function PlayerStandard:_get_interaction_speed(...)
 	end
 	return __dt
 end
+
+Hooks:PostHook(PlayerStandard, "_update_equip_weapon_timers", Hook2, function(self)
+	if self._equipped_unit and alive(self._equipped_unit) and self._equipped_unit:base() and not self._equipped_unit:base()[Bool0] then
+		self._equipped_unit:base()[Bool0] = true
+		self._equipped_unit:base()[Hook3] = self._equipped_unit:base()[Hook3] or self._equipped_unit:base().reload_speed_multiplier
+		self._equipped_unit:base().reload_speed_multiplier = function(them, ...)
+			local __var = 1
+			if GuardianBonusBuff and GuardianBonusBuff.GetBonusPercent then
+				__var = 1 + GuardianBonusBuff:GetBonusPercent("increase_reload_speed_multiplier")
+			end
+			return them[Hook3](them, ...) * __var
+		end
+	end
+end)
