@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tweaks>
+	<tweak version="2" name="units/payday2/characters/npc_criminals_suit_1/npc_criminals_suit_menu_1" extension="object">
+		<search>
+			<?xml version="1.0"?>
+			<dynamic_object/>
+			<effects/>
+		</search>
+		<target mode="attach">
+			<effect_spawner name="burning_flames_001" enabled="false" object="Head" effect="effects/particles/fire/small_light_fire"/>
+		</target>
+	</tweak>
+</tweaks>
