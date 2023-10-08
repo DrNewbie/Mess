@@ -1,5 +1,5 @@
 <table name="Replace Shuriken with C4 Bomb">
-	<AssetUpdates id="Replace Shuriken with C4 Bomb" version="1">
+	<AssetUpdates id="Replace Shuriken with C4 Bomb" version="2">
         <custom_provider 
 			version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Replace%20Shuriken%20with%20C4%20Bomb.txt" 
 			download_url="https://drnewbie.github.io/Mess/UpdateProvider/Replace%20Shuriken%20with%20C4%20Bomb.zip"/>
@@ -7,7 +7,6 @@
 	<Localization directory="Localization" default="english.txt"/>
 	<AddFiles directory="Assets" auto_generate="true">
 	</AddFiles>
-	<Localization directory="Localization" default="english.txt"/>
 	<Hooks directory="Hooks">
 		<hook file="fraggrenade.lua" source_file="lib/units/weapons/grenades/fraggrenade"/>
 		<hook file="projectilestweakdata.lua" source_file="lib/tweak_data/blackmarket/projectilestweakdata"/>
