@@ -1,10 +1,15 @@
-local PlyModPath = ModPath
+local ThisModPath = ModPath
 
 _G.ArmorBag4S = _G.ArmorBag4S or {}
+
+local __Name = function(__id)
+	return "GGG_"..Idstring(tostring(__id).."::"..ThisModPath):key()
+end
+
 ArmorBag4S.Record_Times = ArmorBag4S.Record_Times or 0
 
 local bool_PlyOnUseArmorBagPostHook = false
-Hooks:PostHook(PlayerDamage, "_on_use_armor_bag_event", "PlyOnUseArmorBagPostHook", function(self)
+Hooks:PostHook(PlayerDamage, "_on_use_armor_bag_event", __Name(1), function(self)
 	local equipments, i = managers.player:equipment_data_by_name("armor_kit")
 	if i and type(i) == "number" then
 		if managers.player:get_equipment_amount("armor_kit", i) == 0 then
@@ -17,9 +22,9 @@ Hooks:PostHook(PlayerDamage, "_on_use_armor_bag_event", "PlyOnUseArmorBagPostHoo
 end)
 
 local bool_PlyUpdatePostHook = false
-Hooks:PostHook(PlayerDamage, "update", "PlyUpdatePostHook", function(self, unit, t)
+Hooks:PostHook(PlayerDamage, "update", __Name(2), function(self, unit, t)
 	if not bool_PlyUpdatePostHook and game_state_machine and Utils and Utils:IsInHeist() then
 		bool_PlyUpdatePostHook = true
-		dofile(PlyModPath.."Lua/blackmarketmanager.lua")
+		dofile(ThisModPath.."Lua/blackmarketmanager.lua")
 	end
 end)

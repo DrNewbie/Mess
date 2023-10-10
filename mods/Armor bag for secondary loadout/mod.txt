@@ -1,13 +1,19 @@
 {
-	"name" : "Armor bag for secondary loadout",
-	"description" : "Armor bag for secondary loadout",
-	"author" : "Dr_Newbie",
-	"contact": "https://modworkshop.net/mod/21617",
-	"version": "3",
-	"blt_version" : 2,
-	"priority" : 50,
-	"hooks" : [
-		{ "hook_id" : "lib/units/beings/player/playerinventory", "script_path" : "Lua/playerinventory.lua" },
-		{ "hook_id" : "lib/units/beings/player/playerdamage", "script_path" : "Lua/playerdamage.lua" }
-	]
+  "name": "Armor bag for secondary loadout",
+  "description": "Armor bag for secondary loadout",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/21617",
+  "version": "6",
+  "blt_version": 2,
+  "priority": 100,
+  "hooks": [
+    {
+      "hook_id": "lib/units/beings/player/playerinventory",
+      "script_path": "Lua/playerinventory.lua"
+    },
+    {
+      "hook_id": "lib/units/beings/player/playerdamage",
+      "script_path": "Lua/playerdamage.lua"
+    }
+  ]
 }

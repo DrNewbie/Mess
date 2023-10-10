@@ -1,4 +1,11 @@
+local ThisModPath = ModPath
+
 _G.ArmorBag4S = _G.ArmorBag4S or {}
+
+local __Name = function(__id)
+	return "GGG_"..Idstring(tostring(__id).."::"..ThisModPath):key()
+end
+
 ArmorBag4S.Record_Index = ArmorBag4S.Record_Index or -1
 ArmorBag4S.Record_Times = ArmorBag4S.Record_Times or 0
 
@@ -23,8 +30,8 @@ function PlayerInventory:equip_from_armor_bag(bool_select)
 		self:destroy_all_items()
 
 		local profile = managers.multi_profile:profile(index)
-		local primaries = managers.blackmarket:get_equip_weapon("primaries", profile.primary)
-		local secondaries = managers.blackmarket:get_equip_weapon("secondaries", profile.secondary)
+		local primaries = managers.blackmarket:ArmorBag4S_get_equip_weapon("primaries", profile.primary)
+		local secondaries = managers.blackmarket:ArmorBag4S_get_equip_weapon("secondaries", profile.secondary)
 		if primaries and type(primaries) == "table" and primaries.factory_id and secondaries and type(secondaries) == "table" and secondaries.factory_id then
 			if managers.blackmarket:weapon_unlocked(managers.weapon_factory:get_weapon_id_by_factory_id(primaries.factory_id)) then
 				self:add_unit_by_factory_name(primaries.factory_id, true, false, primaries.blueprint, primaries.cosmetics, primaries.texture_switches)
@@ -35,12 +42,15 @@ function PlayerInventory:equip_from_armor_bag(bool_select)
 			ArmorBag4S.Ammo_Request_Reduce = true
 		end
 		if profile.melee then
-			managers.blackmarket:set_forced_melee(profile.melee)
+			managers.blackmarket:ArmorBag4S_set_forced_melee(profile.melee)
+		end
+		if profile.armor then
+			managers.blackmarket:ArmorBag4S_set_forced_armor(profile.armor)
 		end
 		if profile.throwable and tweak_data.blackmarket.projectiles[profile.throwable] then
-			managers.blackmarket:set_forced_throwable(profile.throwable)
+			managers.blackmarket:ArmorBag4S_set_forced_throwable(profile.throwable)
 			local grenade, amount = profile.throwable, math.max(tweak_data.blackmarket.projectiles[profile.throwable].max_amount - ArmorBag4S.Record_Times, 0)
-			amount = managers.crime_spree:modify_value("PlayerManager:GetThrowablesMaxAmount", amount)
+			amount = managers.modifiers:modify_value("PlayerManager:GetThrowablesMaxAmount", amount)
 			managers.player:_set_grenade({
 				grenade = grenade,
 				amount = amount
@@ -57,7 +67,7 @@ function PlayerInventory:equip_from_armor_bag(bool_select)
 	end
 end
 
-Hooks:PostHook(PlayerInventory, "equip_selection", "ABS_Ply_equip_selection", function(self)
+Hooks:PostHook(PlayerInventory, "equip_selection", __Name(3), function(self)
 	if ArmorBag4S.Ammo_Request_Reduce then
 		ArmorBag4S.Ammo_Request_Reduce = false
 		for index, weapon in pairs(self._available_selections) do
