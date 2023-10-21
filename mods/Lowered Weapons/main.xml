@@ -1,5 +1,5 @@
 <table name="LLWepF" global_key="LLWepF" core_class="lua/Setup.lua">
-	<AssetUpdates id="Lowered Weapons" version="15.2">
+	<AssetUpdates id="Lowered Weapons" version="15.3">
 		<custom_provider 
 			version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Lowered%20Weapons.txt" 
 			download_url="https://drnewbie.github.io/Mess/UpdateProvider/Lowered%20Weapons.zip"

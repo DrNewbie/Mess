@@ -67,6 +67,8 @@ function PlayerStandard:__apply_lowered_weapon(weap_base)
 			end
 		end
 		local new_fov = self:get_zoom_fov(misc_attribs) + 0
+		local head_duration_multiplier = 1
+		local head_duration = tweak_data.player.TRANSITION_DURATION
 		__camera_base:clbk_stance_entered(
 			misc_attribs.shoulders, 
 			head_stance, 
@@ -75,7 +77,9 @@ function PlayerStandard:__apply_lowered_weapon(weap_base)
 			misc_attribs.shakers, 
 			{translation = offset_pos, rotation = offset_rot}, 
 			duration_multiplier, 
-			duration
+			duration,
+			head_duration_multiplier,
+			head_duration
 		)
 	end
 end
