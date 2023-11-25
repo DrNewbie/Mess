@@ -1,5 +1,5 @@
 {
-	"name": "Sinner Portrait - Limbus Company",
+	"name": "Crew Portrait Replacer",
 	"description": "https://modworkshop.net/mod/45916",
 	"author": "Dr_Newbie",
 	"contact": "https://modworkshop.net/mod/45916",
