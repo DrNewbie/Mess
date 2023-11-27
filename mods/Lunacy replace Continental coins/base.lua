@@ -17,12 +17,10 @@ pcall(function()
 		ThisModPath.."continental_coins_drop.texture", 
 		nil 
 	)
-	--[[
 	BLTAssetManager:CreateEntry( 
 		"guis/dlcs/chill/textures/pd2/safehouse/continental_coins_symbol", 
 		Idstring("texture"), 
 		ThisModPath.."continental_coins_symbol.texture", 
 		nil 
 	)
-	]]
 end)
