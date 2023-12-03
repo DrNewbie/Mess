@@ -1,0 +1,12 @@
+{
+	"banner_battlepass_dummy.dds.texture": {
+		"name_id": "limbus_company_ad_banner_01",
+		"limbus_company_ad_banner_01": "Limbus Company",
+		"url": "https://store.steampowered.com/app/1973530/Limbus_Company/"
+	},
+	"ExpDungeon_Banner_01.dds.texture": {
+		"name_id": "limbus_company_expdungeon_banner_01",
+		"limbus_company_expdungeon_banner_01": "Luxcavation",
+		"url": "https://limbuscompany.fandom.com/wiki/Luxcavation/"
+	}
+}
