@@ -1,0 +1,15 @@
+{
+	"name": "Spinning Sniper",
+	"description": "https://modworkshop.net/mod/45969",
+	"author": "Dr_Newbie",
+	"contact": "https://modworkshop.net/mod/45969",
+	"version": "1",
+	"priority": 100,
+	"blt_version": 2,
+	"hooks": [
+		{
+			"hook_id": "lib/managers/enemymanager",
+			"script_path": "mod.lua"
+		}
+	]
+}
