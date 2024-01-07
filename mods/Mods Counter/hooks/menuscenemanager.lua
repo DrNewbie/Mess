@@ -58,10 +58,16 @@ local function ThisModSpawnCounter()
 	if __counter then
 		ThisUnitLinkToWep.__counter = __counter
 		if __counter.digital_gui and __counter:digital_gui() then
-			local BLT = rawget(_G, "BLT")
-			local __mods = __file.GetDirectories("mods/")
-			local __mod_overrides = __file.GetDirectories("assets/mod_overrides/")
-			local __maps = __file.GetDirectories("Maps/")
+			local __mods, __mod_overrides, __maps = {}, {}, {}
+			if __file.DirectoryExists("mods/") then
+				__mods = __file.GetDirectories("mods/")
+			end
+			if __file.DirectoryExists("assets/mod_overrides/") then
+				__mod_overrides = __file.GetDirectories("assets/mod_overrides/")
+			end
+			if __file.DirectoryExists("Maps/") then
+				__maps = __file.GetDirectories("Maps/")
+			end
 			local __offset = 0
 			local __bypass = {
 				"mods/base/",
