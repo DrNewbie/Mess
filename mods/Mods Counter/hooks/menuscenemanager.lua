@@ -61,6 +61,7 @@ local function ThisModSpawnCounter()
 			local BLT = rawget(_G, "BLT")
 			local __mods = __file.GetDirectories("mods/")
 			local __mod_overrides = __file.GetDirectories("assets/mod_overrides/")
+			local __maps = __file.GetDirectories("Maps/")
 			local __offset = 0
 			local __bypass = {
 				"mods/base/",
@@ -72,7 +73,7 @@ local function ThisModSpawnCounter()
 					__offset = __offset + 1
 				end
 			end
-			local __modsamount = #(__mods) + #(__mod_overrides) - __offset
+			local __modsamount = #(__mods) + #(__mod_overrides) + #(__maps) - __offset
 			__counter:digital_gui():number_set(math.min(__modsamount, 99999))
 		end
 	end
