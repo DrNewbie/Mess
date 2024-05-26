@@ -1,0 +1,7 @@
+Hooks:PostHook(HUDManager, "blackscreen_fade_in_mid_text", "ForcedBlackscreenFadeOutRunNow", function(...)
+	call_on_next_update(function()
+		pcall(function()
+			managers.hud:blackscreen_fade_out_mid_text()
+		end)
+	end)
+end)
