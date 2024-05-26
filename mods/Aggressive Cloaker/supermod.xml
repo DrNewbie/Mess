@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mod name="Spooc Burning Flames Head">
+	<tweak definition="burning_flames_head.xml"/>
+</mod>

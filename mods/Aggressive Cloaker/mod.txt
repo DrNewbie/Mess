@@ -1,15 +1,19 @@
 {
-	"name" : "Aggressive Cloaker",
-	"description" : "Aggressive Cloaker",
-	"author" : "Dr_Newbie",
-	"contact" : "https://modworkshop.net/mod/21854",
-	"blt_version" : 2.0,
-	"version" : "1",
-	"priority" : 100,
-	"hooks" : [
-		{
-			"hook_id" : "lib/units/enemies/spooc/logics/spooclogicattack",
-			"script_path" : "spooclogicattack.lua"
-		}
-	]		
+  "name": "Aggressive Cloaker",
+  "description": "https://modworkshop.net/mod/21854",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/21854",
+  "priority": 100,
+  "version": "2024-05-26",
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/units/enemies/spooc/logics/spooclogicattack",
+      "script_path": "base.lua"
+    },
+    {
+      "hook_id": "lib/units/enemies/cop/copinventory",
+      "script_path": "base.lua"
+    }
+  ]
 }
