@@ -18,23 +18,9 @@ Hooks:Add("LocalizationManagerPostInit", "SaveMyArt_loc", function(loc)
 	})
 end)
 
-function SaveMyArt:Load(supp, current_stage)
-	local _file = io.open(self.SaveFile, "r")
-	if _file then
-		local _data = tostring(_file:read("*all"))
-		_data = _data:gsub('%[%]', '{}')
-		self.settings = json.decode(_data)
-		_file:close()
-		self:Save()
-	end
-end
-
 function SaveMyArt:Save(id, data)
-	local _file = io.open(self.ModPath.."Art/"..id..".json", "w+")
-	if _file then
-		_file:write(json.encode(data))
-		_file:close()
-	end
+	io.save_as_json(data, self.ModPath.."Art/"..id..".json")
+	return
 end
 
 function SaveMyArt:Clean()
@@ -42,32 +28,18 @@ function SaveMyArt:Clean()
 	self.Current_ID = nil
 	self.Current_DATA = nil
 	self.Read2Put = nil
+	return
 end
 
 function SaveMyArt:Choose(data)
-	if not data or not data.file_name then
+	if type(data) ~= "table" or not data.file_name then
 		return
 	end
-	-->>http://lua-users.org/lists/lua-l/2011-04/msg00785.html
-	local fsize = function (file)
-		local current = file:seek()
-		local size = file:seek("end")
-		file:seek("set", current)
-		return size
-	end
-	--<<
-	local _file = io.open(self.ModPath.."Art/"..data.file_name, "r")
-	local _file_size = 0
-	if _file then
-		_file_size = fsize(_file)
-		self:Clean()
-		self.Read2Put = json.decode(tostring(_file:read("*all")))
-		_file:close()
-	end
-	if managers.system_menu then
+	self.Read2Put = io.load_as_json(self.ModPath.."Art/"..data.file_name)
+	if type(self.Read2Put) == "table" and managers.system_menu then
 		managers.system_menu:show({
 			title = "[SaveMyArt]",
-			text = "Load: ".._file_size,
+			text = "Load: "..data.file_name,
 			button_list = {{ text = "[Close]", is_cancel_button = true }},
 			id = tostring(math.random(0,0xFFFFFFFF))
 		})
@@ -78,6 +50,7 @@ function SaveMyArt:Choose(data)
 			id = tostring(math.random(0,0xFFFFFFFF))
 		})
 	end
+	return
 end
 
 Hooks:Add( "MenuManagerSetupCustomMenus" , "MenuManagerSetupCustomMenus_SaveMyArt" , function()
