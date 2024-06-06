@@ -4,7 +4,7 @@
   "author": "Dr_Newbie",
   "contact": "https://modworkshop.net/mod/27416",
   "priority": 100,
-  "version": "12",
+  "version": "13",
   "blt_version": 2,
   "hooks": [
     {
@@ -18,6 +18,16 @@
     {
       "hook_id": "lib/units/beings/player/states/playerstandard",
       "script_path": "lua/playerstandard.lua"
+    }
+  ],
+  "updates": [
+    {
+      "identifier": "GuardianBonusBuffGithubUpdate",
+      "host": {
+        "meta": "https://drnewbie.github.io/Ace-of-Aces/Release/AceAceGithubUpdate.meta.json",
+        "download": "https://drnewbie.github.io/Mess/UpdateProvider/Guardian%20Bonus%20Buff.zip",
+        "patchnotes": "https://modworkshop.net/mod/27416?tab=changelog"
+      }
     }
   ]
 }

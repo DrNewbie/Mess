@@ -35,7 +35,9 @@ function GuardianBonusBuff:Default()
 		increase_interaction_speed_multiplier = 0,
 		increase_interaction_speed_multiplier__max_level_max = 30,
 		increase_reload_speed_multiplier = 0,
-		increase_reload_speed_multiplier__max_level_max = 30
+		increase_reload_speed_multiplier__max_level_max = 30,
+		increase_extra_ammo_multiplier = 0,
+		increase_extra_ammo_multiplier__max_level_max = 30,
 	}
 end
 
@@ -170,6 +172,8 @@ function GuardianBonusBuff:GetBonusPrePercent(__buff_name, __lv)
 	elseif __buff_name == "increase_interaction_speed_multiplier" then
 		return math.round( __lv*7.5 ) / 5
 	elseif __buff_name == "increase_reload_speed_multiplier" then
+		return __lv
+	elseif __buff_name == "increase_extra_ammo_multiplier" then
 		return __lv
 	end
 	return math.round( __lv*7.5 ) / 10
@@ -355,6 +359,9 @@ Hooks:Add("MenuManagerInitialize", "M_"..Idstring("MenuManagerInitialize:Guardia
 	end
 	MenuCallbackHandler.callback_Guardian_increase_reload_speed_multiplier = function(self)
 		GuardianBonusBuff:AskUpgrade("increase_reload_speed_multiplier")
+	end
+	MenuCallbackHandler.callback_Guardian_increase_extra_ammo_multiplier = function(self)
+		GuardianBonusBuff:AskUpgrade("increase_extra_ammo_multiplier")
 	end
 	MenuHelper:LoadFromJsonFile(GuardianBonusBuff.ModPath.."menu/menu.json", GuardianBonusBuff, GuardianBonusBuff._data)
 end)
