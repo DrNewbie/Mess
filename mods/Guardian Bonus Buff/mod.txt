@@ -4,7 +4,7 @@
   "author": "Dr_Newbie",
   "contact": "https://modworkshop.net/mod/27416",
   "priority": 100,
-  "version": "13",
+  "version": "13.1",
   "blt_version": 2,
   "hooks": [
     {
@@ -24,7 +24,7 @@
     {
       "identifier": "GuardianBonusBuffGithubUpdate",
       "host": {
-        "meta": "https://drnewbie.github.io/Ace-of-Aces/Release/AceAceGithubUpdate.meta.json",
+        "meta": "https://drnewbie.github.io/Mess/Update/GuardianBonusBuffGithubUpdate.meta.json",
         "download": "https://drnewbie.github.io/Mess/UpdateProvider/Guardian%20Bonus%20Buff.zip",
         "patchnotes": "https://modworkshop.net/mod/27416?tab=changelog"
       }
