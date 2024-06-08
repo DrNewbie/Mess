@@ -1,0 +1,16 @@
+{
+  "name": "No No First Aid Kit (Chaos Mod)",
+  "description": "Req. Chaos Mod ( https://github.com/segabl/pd2-chaos-mod )",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/48107",
+  "image": "mod.dds",
+  "blt_version": 2,
+  "version": "2024-06-08",
+  "priority": 100,
+  "hooks": [
+    {
+      "hook_id": "lib/managers/menumanager",
+      "script_path": "base.lua"
+    }
+  ]
+}
