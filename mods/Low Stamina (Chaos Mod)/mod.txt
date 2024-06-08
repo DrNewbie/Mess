@@ -1,0 +1,16 @@
+{
+  "name": "Low Stamina (Chaos Mod)",
+  "description": "Req. Chaos Mod ( https://github.com/segabl/pd2-chaos-mod )",
+  "author": "Dr_Newbie",
+  "contact": " ",
+  "image": "mod.dds",
+  "blt_version": 2,
+  "version": "1",
+  "priority": 100,
+  "hooks": [
+    {
+      "hook_id": "lib/managers/menumanager",
+      "script_path": "base.lua"
+    }
+  ]
+}
