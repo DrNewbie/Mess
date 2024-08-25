@@ -1,0 +1,14 @@
+{
+  "name": "Buy Random Weapon",
+  "description": "https://discord.com/channels/242285927056015361/1277135018979754014",
+  "author": "Dr_Newbie",
+  "contact": "https://discord.com/channels/242285927056015361/1277135018979754014",
+  "version": "1",
+  "priority": 100,
+  "hooks": [
+    {
+      "script_path": "Hooks/blackmarketgui.lua",
+      "hook_id": "lib/managers/menu/blackmarketgui"
+    }
+  ]
+}
