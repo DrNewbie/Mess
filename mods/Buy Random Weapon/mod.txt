@@ -1,8 +1,8 @@
 {
   "name": "Buy Random Weapon",
-  "description": "https://discord.com/channels/242285927056015361/1277135018979754014",
+  "description": "https://modworkshop.net/mod/49130",
   "author": "Dr_Newbie",
-  "contact": "https://discord.com/channels/242285927056015361/1277135018979754014",
+  "contact": "https://modworkshop.net/mod/49130",
   "version": "1",
   "priority": 100,
   "hooks": [
