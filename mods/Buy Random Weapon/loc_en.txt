@@ -1,0 +1,3 @@
+{
+  "bm_menu_buy_random_weapon_013ad61fa19195d33c42b5dda6bfb31dcbce8fd3": "Buy Random Weapon"
+}
