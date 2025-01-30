@@ -1,0 +1,19 @@
+{
+  "name": "Grenade Voice lines for Grenade launchers and underbarrel grenade launcher",
+  "description": "https://modworkshop.net/mod/50900/",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/50900/",
+  "priority": 100,
+  "version": "1",
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/units/weapons/grenadelauncherbase",
+      "script_path": "lua/base.lua"
+    },
+    {
+      "hook_id": "lib/units/weapons/weaponunderbarrellauncher",
+      "script_path": "lua/base.lua"
+    }
+  ]
+}
