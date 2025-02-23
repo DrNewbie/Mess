@@ -1,1 +1,0 @@
-HudBattleAnnouncersNotification.load_config()

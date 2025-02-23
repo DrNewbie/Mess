@@ -255,7 +255,6 @@ function HudBattleAnnouncersNotification.load_config()
 								return
 							end
 						)
-						log("__data\n\n", json.encode(__data))
 						for __insert = 1, __data.chance do
 							table.insert(HudBattleAnnouncersNotification.__type_data_ready[__type], __data)
 						end
@@ -264,7 +263,6 @@ function HudBattleAnnouncersNotification.load_config()
 			end
 		end
 	end
-	log("__type_data_ready\n\n", json.encode(HudBattleAnnouncersNotification.__type_data_ready))
 	return
 end
 
