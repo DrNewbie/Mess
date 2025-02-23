@@ -1,0 +1,73 @@
+{
+	"OnEnemyKilled": [
+		{
+			"global_delay": 0,
+			"title": "开拓者",
+			"chance": 2,
+			"sound": "test_hsr/VO_ZH_Stelle_Skill_Destruction_01.ogg",
+			"icon": "test_hsr/stelle.dds",
+			"type_delay": 10,
+			"description": "尝尝这个！"
+		},
+		{
+			"global_delay": 0,
+			"title": "开拓者",
+			"chance": 1,
+			"sound": "test_hsr/VO_ZH_Stelle_Battle_Begins_-_Weakness_Break_Destruction_01.ogg",
+			"icon": "test_hsr/stelle.dds",
+			"type_delay": 10,
+			"description": "机不可失"
+		},
+		{
+			"global_delay": 10,
+			"title": "开拓者",
+			"chance": 1,
+			"sound": "test_hsr/VO_ZH_Archive_Stelle_1.ogg",
+			"icon": "test_hsr/stelle.dds",
+			"type_delay": 30,
+			"description": "当有机会做出选择的时候，\n不要让自己后悔……"
+		},
+		{
+			"is_empty": true,
+			"type_delay": 3,
+			"chance": 5
+		}
+	],
+	"OnPlayerDodge": [
+		{
+			"global_delay": 10,
+			"title": "开拓者",
+			"chance": 1,
+			"sound": "test_hsr/VO_ZH_Stelle_Ultimate_-_Activate_Destruction_01.ogg",
+			"icon": "test_hsr/stelle.dds",
+			"type_delay": 10,
+			"description": "规则，就是用来打破的"
+		}
+	],
+	"version": 1,
+	"OnPlayerDamage": [
+		{
+			"global_delay": 10,
+			"title": "开拓者",
+			"chance": 1,
+			"sound": "test_hsr/VO_ZH_Stelle_Hit_by_Heavy_Attack_Destruction_01.ogg",
+			"icon": "test_hsr/stelle.dds",
+			"type_delay": 10,
+			"description": "还差的远！"
+		},
+		{
+			"global_delay": 10,
+			"title": "开拓者",
+			"chance": 1,
+			"sound": "test_hsr/VO_ZH_Stelle_Hit_by_Light_Attack_Destruction_01.ogg",
+			"icon": "test_hsr/stelle.dds",
+			"type_delay": 10,
+			"description": "不痛不痒。"
+		},
+		{
+			"is_empty": true,
+			"type_delay": 3,
+			"chance": 3
+		}
+	]
+}
