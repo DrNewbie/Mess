@@ -7,7 +7,10 @@
 			"sound": "test_hsr/VO_ZH_Stelle_Skill_Destruction_01.ogg",
 			"icon": "test_hsr/stelle.dds",
 			"type_delay": 10,
-			"description": "尝尝这个！"
+			"description": "尝尝这个！",
+			"use_required_weapons": [
+				"m249"
+			]
 		},
 		{
 			"global_delay": 0,

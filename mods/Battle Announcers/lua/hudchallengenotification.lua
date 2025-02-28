@@ -192,6 +192,13 @@ function HudBattleAnnouncersNotification.load_config()
 			description = "<string>",
 			sound = "<string>", -- path to .ogg
 			icon = "<string>", -- path to .dds or .texture
+			
+			use_required_weapons = { -- this sub_table require using specify weapons.
+				"<Weapon ID 1>", -- https://wiki.modworkshop.net/books/payday-2-mod-creation/page/weapons
+				"<Weapon ID 2>",
+				"<Weapon ID 3>"
+				...
+			}
 		}
 	]]
 	--[[
@@ -242,6 +249,13 @@ function HudBattleAnnouncersNotification.load_config()
 						if type(__data.icon) ~= "string" then
 							__data.icon = ""
 						end
+						if type(__data.use_required_weapons) == "table" then
+							for _, __use_required_weapon_id in pairs(__data.use_required_weapons) do
+								local use_weapon = __Name("use_weapon::"..tostring(__use_required_weapon_id))
+								__data[use_weapon] = true
+							end
+							__data.use_required_weapons = nil
+						end
 						pcall(
 							function ()
 								if __io.file_is_readable(ThisModFilesPath.."/"..__data.icon) then
@@ -279,14 +293,14 @@ function HudBattleAnnouncersNotification.queue(title, text, icon, __sound, queue
 		queue
 	})
 	if #queue == 1 then
-		HudBattleAnnouncersNotification:new(unpack(queue[1]))
+		return HudBattleAnnouncersNotification:new(unpack(queue[1]))
 	end
 	return
 end
 
 _G.HudBattleAnnouncersNotification.global_delay = 0
 
-function HudBattleAnnouncersNotification.queue_by_type(__type)
+local function __basic_before_queue(__type)
 	if type(HudBattleAnnouncersNotification.__type_data_ready) ~= "table" then
 		return
 	end
@@ -302,8 +316,16 @@ function HudBattleAnnouncersNotification.queue_by_type(__type)
 	if _G.HudBattleAnnouncersNotification.type_delay[__type] > __now_time then
 		return
 	end
+	return true
+end
+
+function HudBattleAnnouncersNotification.queue_by_type(__type, __possible_data)
+	if not __basic_before_queue(__type) then
+		return
+	end
+	local __now_time = TimerManager:game():time()
 	HudBattleAnnouncersNotification.__type_data_ready[__type] = HudBattleAnnouncersNotification.__type_data_ready[__type] or {}
-	local __pick_data = table.random(HudBattleAnnouncersNotification.__type_data_ready[__type])
+	local __pick_data = __possible_data and table.random(__possible_data) or table.random(HudBattleAnnouncersNotification.__type_data_ready[__type])
 	if type(__pick_data) == "table" then
 		_G.HudBattleAnnouncersNotification.global_delay = __now_time + __pick_data.global_delay
 		_G.HudBattleAnnouncersNotification.type_delay[__type] = __now_time + __pick_data.type_delay
@@ -316,6 +338,25 @@ function HudBattleAnnouncersNotification.queue_by_type(__type)
 			__pick_data.icon, 
 			__pick_data.sound
 		)
+	end
+	return
+end
+
+function HudBattleAnnouncersNotification.queue_by_type_and_weapon(__type, __weapon_id)
+	if not __basic_before_queue(__type) then
+		return
+	end
+	HudBattleAnnouncersNotification.__type_data_ready[__type] = HudBattleAnnouncersNotification.__type_data_ready[__type] or {}
+	local __possible_data = HudBattleAnnouncersNotification.__type_data_ready[__type]
+	if type(__possible_data) == "table" then
+		local __new_possible_data = {}
+		local use_weapon = __Name("use_weapon::"..tostring(__weapon_id))
+		for __id, __data in pairs(__possible_data) do
+			if __data[use_weapon] then
+				table.insert(__new_possible_data, __data)
+			end
+		end
+		return HudBattleAnnouncersNotification.queue_by_type(__type, __new_possible_data)
 	end
 	return
 end
@@ -395,22 +436,20 @@ function HudBattleAnnouncersNotification:init(title, text, icon, __sound, queue)
 				self:close()
 			end)
 		end)
+		return true
 	else
 		self:close()
 	end
+	return
 end
 
 function HudBattleAnnouncersNotification:close()
 	self:remove_self()
-
 	if self._ws and not _G.IS_VR then
 		managers.gui_data:destroy_workspace(self._ws)
-
 		self._ws = nil
 	end
-
 	table.remove(self._queue, 1)
-
 	if #self._queue > 0 then
 		HudBattleAnnouncersNotification:new(unpack(self._queue[1]))
 	end
