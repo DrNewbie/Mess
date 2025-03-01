@@ -17,7 +17,6 @@ Hooks:PostHook(PlayerDamage, "init", __Name(102), function(self)
 				if __equipped_weapon_unit then
 					local weapon = __equipped_weapon_unit:base()
 					__ans = __ans and true or HudBattleAnnouncersNotification.queue_by_type_and_weapon(__msg_name, weapon._name_id)
-					log("weapon._name_id:\t", tostring(weapon._name_id), tostring(__ans))
 				end
 			end
 			if not __ans then
