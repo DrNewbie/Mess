@@ -42,6 +42,9 @@
   "Guardian_increase_extra_ammo_multiplier_name": "Ammo Capacity",
   "Guardian_increase_extra_ammo_multiplier_desc": " ",
   "Guardian_increase_extra_ammo_multiplier_name_w_var": "Ammo Capacity",
+  "Guardian_increase_movement_speed_multiplier_name": "Movement Speed",
+  "Guardian_increase_movement_speed_multiplier_desc": " ",
+  "Guardian_increase_movement_speed_multiplier_name_w_var": "Movement Speed",
   "Guardian_Func_reset_name": "Reset Upgrade",
   "Guardian_Func_reset_desc": "Clean all of your upgrade."
 }

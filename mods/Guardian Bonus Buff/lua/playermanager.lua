@@ -29,6 +29,8 @@ function PlayerManager:upgrade_value(category, upgrade, ...)
 			Ans = Ans + GuardianBonusBuff:GetBonusPercent("increase_stamina_multiplier")
 		elseif category == "player" and upgrade == "extra_ammo_multiplier" then
 			Ans = Ans + GuardianBonusBuff:GetBonusPercent("increase_extra_ammo_multiplier")
+		elseif category == "player" and upgrade == "movement_speed_multiplier" then
+			Ans = Ans + GuardianBonusBuff:GetBonusPercent("increase_movement_speed_multiplier")
 		end
 	end
 	return Ans

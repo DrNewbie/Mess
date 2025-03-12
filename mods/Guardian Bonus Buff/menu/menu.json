@@ -96,6 +96,13 @@
       "callback": "callback_Guardian_increase_extra_ammo_multiplier"
     },
     {
+      "type": "button",
+      "id": "id4Guardian_increase_movement_speed_multiplier",
+      "title": "Guardian_increase_movement_speed_multiplier_name_w_var",
+      "description": "Guardian_increase_movement_speed_multiplier_desc",
+      "callback": "callback_Guardian_increase_movement_speed_multiplier"
+    },
+    {
       "type": "divider",
       "size": 160
     },
