@@ -117,8 +117,14 @@ HudBattleAnnouncersNotification.__ply_ogg = function (__this_ogg)
 		__this_ogg = ThisModFilesPath.."/"..__this_ogg
 		if io.file_is_readable(__this_ogg) then
 			local this_buffer = XAudio.Buffer:new(__this_ogg)
-			local this_source = XAudio.Source:new()
-			this_source:set_buffer(this_buffer)
+			local this_source = nil
+			if managers.player and managers.player:local_player() then
+				this_source = XAudio.UnitSource:new(XAudio.PLAYER, this_buffer)
+			else
+				this_source = XAudio.Source:new()
+				this_source:set_buffer(this_buffer)
+			end
+			this_source:set_volume(10)
 			this_source:play()
 			local __delay = this_buffer:get_length()
 			return __delay + 2.666
