@@ -1,4 +1,14 @@
-Hooks:PreHook(CopMovement, "update", "BulletDecapitationsPreCopMovementUpdate", function(self, unit, t, dt)
+local ThisModPath = tostring(ModPath)
+local ThisModIds = Idstring(ThisModPath):key()
+
+local __Name = function(__id)
+	return "K_"..Idstring(tostring(__id).."::"..ThisModIds):key()
+end
+
+BulletDecapitations = BulletDecapitations or {}
+BulletDecapitations.cop_decapitation = BulletDecapitations.cop_decapitation or {}
+
+Hooks:PreHook(CopMovement, "update", __Name(200), function(self, unit, t, dt)
 	if not BulletDecapitations then
 	
 	else

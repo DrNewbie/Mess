@@ -1,0 +1,6 @@
+{
+	"BulletDecapitations_Mneu_title": "Bullet Dismemberment",
+	"BulletDecapitations_Mneu_desc": " ",
+	"BulletDecapitations_Mneu_BodyBleedTime_title": "Body Bleed Time",
+	"BulletDecapitations_Mneu_BodyBleedTime_desc": "How long (-1 = indefinite)"
+}

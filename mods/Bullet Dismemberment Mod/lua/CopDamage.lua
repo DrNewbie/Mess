@@ -1,9 +1,15 @@
-if not _G.BulletDecapitations then
-	BulletDecapitations = {}
-end
+BulletDecapitations = BulletDecapitations or {}
+BulletDecapitations.cop_decapitation = BulletDecapitations.cop_decapitation or {}
  
 if not BulletDecapitations.tweak_data then
 	BulletDecapitations.tweak_data = {}
+end
+
+local ThisModPath = tostring(ModPath)
+local ThisModIds = Idstring(ThisModPath):key()
+
+local __Name = function(__id)
+	return "K_"..Idstring(tostring(__id).."::"..ThisModIds):key()
 end
  
 -- [[ BD Settings ]]
@@ -40,6 +46,28 @@ BulletDecapitations.cop_decapitation = {
 	parts = {}
 }
 
+function BulletDecapitations:BD_SpawnBleedEffect(__key, __object)
+	__key = __Name(__key)
+	if not __object then
+		if self.cop_decapitation.vfx[__key] then
+			if self.cop_decapitation.vfx[__key].effect_id then
+				World:effect_manager():kill(tostring(self.cop_decapitation.vfx[__key].effect_id))
+			end
+			self.cop_decapitation.vfx[__key] = nil
+		end
+	else
+		self.cop_decapitation.vfx[__key] = {
+			effect_id = World:effect_manager():spawn({
+				effect = Idstring("effects/payday2/particles/impacts/blood/blood_tendrils"),
+				position = __object:position(),
+				rotation = __object:rotation()
+			}),
+			now_time = TimerManager:game():time()
+		}
+	end
+	return
+end
+
 function BulletDecapitations:BD_ToApplyBody(them, attack_data, is_explosion)
 	if not attack_data or not them then
 		return
@@ -66,31 +94,31 @@ function BulletDecapitations:BD_ToApplyBody(them, attack_data, is_explosion)
 	if not attack_data.attacker_unit then
 		attack_data.attacker_unit = managers.player:player_unit()
 	end
-	if not them._dead or not attack_data.attacker_unit or not alive(attack_data.attacker_unit) or (attack_data.attacker_unit:inventory() and BulletDecapitations.tweak_data.allowed_weapons[tweak_data.weapon[attack_data.attacker_unit:inventory():equipped_unit():base():get_name_id()].category] ~= true) then
+	if not them._dead or not attack_data.attacker_unit or not alive(attack_data.attacker_unit) or (attack_data.attacker_unit:inventory() and self.tweak_data.allowed_weapons[tweak_data.weapon[attack_data.attacker_unit:inventory():equipped_unit():base():get_name_id()].category] ~= true) then
 	
 	else
 		if them._unit:base()._tweak_table == "spooc" then
-			if (body:key() == Idstring("head"):key() or body:key() == Idstring("hit_Head"):key() or body:key() == Idstring("rag_Head"):key()) and (BulletDecapitations.tweak_data.cloaker_decapitations == "all" or BulletDecapitations.tweak_data.cloaker_decapitations == "head") or body:key() == Idstring("hit_Head"):key() or body:key() == Idstring("rag_Head"):key() and (BulletDecapitations.tweak_data.cloaker_decapitations == "all" or BulletDecapitations.tweak_data.cloaker_decapitations == "head") then
+			if (body:key() == Idstring("head"):key() or body:key() == Idstring("hit_Head"):key() or body:key() == Idstring("rag_Head"):key()) and (self.tweak_data.cloaker_decapitations == "all" or self.tweak_data.cloaker_decapitations == "head") or body:key() == Idstring("hit_Head"):key() or body:key() == Idstring("rag_Head"):key() and (self.tweak_data.cloaker_decapitations == "all" or self.tweak_data.cloaker_decapitations == "head") then
 				them._unit:sound():play("split_gen_head")
 				them._unit:damage():run_sequence_simple("dismember_head")
 			else
-				if (BulletDecapitations.tweak_data.cloaker_decapitations == "all" or BulletDecapitations.tweak_data.cloaker_decapitations == "body") then
+				if (self.tweak_data.cloaker_decapitations == "all" or self.tweak_data.cloaker_decapitations == "body") then
 					them._unit:sound():play("split_gen_body")
 					them._unit:damage():run_sequence_simple("dismember_body_top")
 				end
             end
         end
 		if them._unit:base()._tweak_table == "taser" then
-			if (body:key() == Idstring("head"):key() or body:key() == Idstring("hit_Head"):key() or body:key() == Idstring("rag_Head"):key()) and BulletDecapitations.tweak_data.taser_decapitations then
+			if (body:key() == Idstring("head"):key() or body:key() == Idstring("hit_Head"):key() or body:key() == Idstring("rag_Head"):key()) and self.tweak_data.taser_decapitations then
 				them._unit:sound():play("split_gen_head")
 				them._unit:damage():run_sequence_simple("kill_tazer_headshot")
 				return
             end
         end
-		if BulletDecapitations.tweak_data.enable_bullet_cops then
+		if self.tweak_data.enable_bullet_cops then
 			if body:key() then
-				if not BulletDecapitations.cop_decapitation.parts[them._unit] then
-					BulletDecapitations.cop_decapitation.parts[them._unit] = {}
+				if not self.cop_decapitation.parts[them._unit] then
+					self.cop_decapitation.parts[them._unit] = {}
 				end			
 				them._unit:movement():enable_update()
 				them._unit:movement()._frozen = nil
@@ -100,12 +128,8 @@ function BulletDecapitations:BD_ToApplyBody(them, attack_data, is_explosion)
 				local bone_head = them._unit:get_object(Idstring("Head"))
 				local bone_body = them._unit:get_object(Idstring("Spine1"))				
 				if body:key() == Idstring("head"):key() or body:key() == Idstring("hit_Head"):key() or body:key() == Idstring("rag_Head"):key() then
-					BulletDecapitations.cop_decapitation.vfx[them._unit] = World:effect_manager():spawn({
-						effect = Idstring("effects/payday2/particles/impacts/blood/blood_tendrils"),
-						position = them._unit:get_object(Idstring("Neck")):position(),
-						rotation = them._unit:get_object(Idstring("Neck")):rotation()
-					})					
-					BulletDecapitations.cop_decapitation.parts[them._unit].Head = "Head"
+					self:BD_SpawnBleedEffect(them._unit:key(), them._unit:get_object(Idstring("Neck")))
+					self.cop_decapitation.parts[them._unit].Head = "Head"
 					if type(them._spawn_head_gadget) == "function" then
 						them:_spawn_head_gadget({
 							position = bone_head:position(),
@@ -114,45 +138,61 @@ function BulletDecapitations:BD_ToApplyBody(them, attack_data, is_explosion)
 						})
 					end
 				elseif body:key() == Idstring("hit_LeftArm"):key() or body:key() == Idstring("hit_LeftForeArm"):key() or body:key() == Idstring("rag_LeftArm"):key() or body:key() == Idstring("rag_LeftForeArm"):key() then
-					BulletDecapitations.cop_decapitation.parts[them._unit].LeftArm = "LeftArm"
+					self.cop_decapitation.parts[them._unit].LeftArm = "LeftArm"
 				elseif body:key() == Idstring("hit_RightArm"):key() or body:key() == Idstring("hit_RightForeArm"):key() or body:key() == Idstring("rag_RightArm"):key() or body:key() == Idstring("rag_RightForeArm"):key() then
-					BulletDecapitations.cop_decapitation.parts[them._unit].RightArm = "RightArm"
+					self.cop_decapitation.parts[them._unit].RightArm = "RightArm"
 				elseif body:key() == Idstring("hit_LeftUpLeg"):key() or body:key() == Idstring("hit_LeftLeg"):key() or body:key() == Idstring("rag_LeftUpLeg"):key() or body:key() == Idstring("rag_LeftLeg"):key() then
-					BulletDecapitations.cop_decapitation.parts[them._unit].LeftLeg = "LeftLeg"
+					self.cop_decapitation.parts[them._unit].LeftLeg = "LeftLeg"
 				elseif body:key() == Idstring("hit_RightUpLeg"):key() or body:key() == Idstring("hit_RightLeg"):key() or body:key() == Idstring("rag_RightUpLeg"):key() or body:key() == Idstring("rag_RightLeg"):key() then
-					BulletDecapitations.cop_decapitation.parts[them._unit].RightLeg = "RightLeg"
+					self.cop_decapitation.parts[them._unit].RightLeg = "RightLeg"
 				else
 				
 				end
-				BulletDecapitations.cop_decapitation.attack_data[them._unit] = attack_data
-				BulletDecapitations.cop_decapitation.ragdoll[them._unit] = them._unit
-				BulletDecapitations.cop_decapitation.t[them._unit] = Application:time() + BulletDecapitations.tweak_data.blood_time
-				BulletDecapitations.cop_decapitation.interval[them._unit] = Application:time() + BulletDecapitations.tweak_data.twitch_rate
+				self.cop_decapitation.attack_data[them._unit] = attack_data
+				self.cop_decapitation.ragdoll[them._unit] = them._unit
+				self.cop_decapitation.t[them._unit] = Application:time() + self.tweak_data.blood_time
+				self.cop_decapitation.interval[them._unit] = Application:time() + self.tweak_data.twitch_rate
 			end
 		end
 	end
 end
 
-Hooks:PostHook(CopDamage, "damage_explosion", "BD_CopDamagePostDamageEexplosion", function(self, attack_data)
+Hooks:PostHook(CopDamage, "damage_explosion", __Name(100), function(self, attack_data)
 	BulletDecapitations:BD_ToApplyBody(self, attack_data, true)
 end)
 
-Hooks:PostHook(CopDamage, "damage_bullet", "BD_CopDamagePostDamageBullet", function(self, attack_data)
+Hooks:PostHook(CopDamage, "damage_bullet", __Name(101), function(self, attack_data)
 	BulletDecapitations:BD_ToApplyBody(self, attack_data)
 end)
 
-Hooks:PostHook(PlayerManager, "update", "BD_CopDecapitationUpdate", function(self, t, dt)	
-	if not CopDamage then
+local is_bool_dt = false
+
+Hooks:PostHook(PlayerManager, "update", __Name(102), function(self, t, dt)
+	if is_bool_dt then
+		is_bool_dt = false
+		return
+	else
+		is_bool_dt = true
+	end
+	if not CopDamage or not BulletDecapitations then
 	
 	else
 		if BulletDecapitations.cop_decapitation then
+			if BulletDecapitations.cop_decapitation.vfx then
+				BulletDecapitations._data = BulletDecapitations._data or {}
+				if BulletDecapitations._data.BodyBleedTime and type(BulletDecapitations._data.BodyBleedTime) == "number" and BulletDecapitations._data.BodyBleedTime >= 0 then
+					local how_long_for_bleed = math.max(BulletDecapitations._data.BodyBleedTime, -1)
+					local this_now_time = TimerManager:game():time()
+					for __id, __data in pairs(BulletDecapitations.cop_decapitation.vfx) do
+						if __data and type(__data) == "table" and __data.effect_id and __data.now_time and type(__data.now_time) == "number" and this_now_time >= __data.now_time + how_long_for_bleed then
+							BulletDecapitations:BD_SpawnBleedEffect(__id, nil)
+						end					
+					end
+				end
+			end
 			local __spawn_BD = function(__unit, __object)
 				if __unit and __unit:get_object(Idstring(__object)) then
-					BulletDecapitations.cop_decapitation.vfx[__unit] = World:effect_manager():spawn({
-						effect = Idstring("effects/payday2/particles/impacts/blood/blood_tendrils"),
-						position = __unit:get_object(Idstring(__object)):position(),
-						rotation = __unit:get_object(Idstring(__object)):rotation()
-					})
+					BulletDecapitations:BD_SpawnBleedEffect(__unit:key(), __unit:get_object(Idstring(__object)))
 				end
 				return
 			end

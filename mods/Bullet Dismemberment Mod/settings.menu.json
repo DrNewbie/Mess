@@ -1,0 +1,20 @@
+{
+	"menu_id": "BulletDecapitations_Mneu",
+	"parent_menu_id": "blt_options",
+	"title": "BulletDecapitations_Mneu_title",
+	"description": "BulletDecapitations_Mneu_desc",
+	"items": [
+		{
+			"type": "slider",
+			"id": "BulletDecapitations_Mneu_BodyBleedTime",
+			"title": "BulletDecapitations_Mneu_BodyBleedTime_title",
+			"description": "BulletDecapitations_Mneu_BodyBleedTime_desc",
+			"value": "BodyBleedTime",
+			"default_value": -1,
+			"max": 3600,
+			"min": -1,
+			"step": 1,
+			"callback": "callback_BulletDecapitations_Mneu_BodyBleedTime"
+		}
+	]
+}

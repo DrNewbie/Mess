@@ -1,4 +1,11 @@
-Hooks:PostHook(ExplosionManager, "units_to_push", "BD_ExplosionMPostPush", function(self, units_to_push, hit_pos, range)
+local ThisModPath = tostring(ModPath)
+local ThisModIds = Idstring(ThisModPath):key()
+
+local __Name = function(__id)
+	return "K_"..Idstring(tostring(__id).."::"..ThisModIds):key()
+end
+
+Hooks:PostHook(ExplosionManager, "units_to_push", __Name(300), function(self, units_to_push, hit_pos, range)
 	if type(BulletDecapitations) == "table" and type(BulletDecapitations.BD_ToApplyBody) == "function" then
 		for u_key, unit in pairs(units_to_push) do
 			if alive(unit) then
