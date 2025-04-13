@@ -29,7 +29,7 @@ _G[TBPOWER_NUMBER_NAME] = _G[TBPOWER_NUMBER_NAME] or 0
 _G[TBPOWER_NUMBER_NEXT_RECOVER_NAME] = _G[TBPOWER_NUMBER_NEXT_RECOVER_NAME] or 0
 
 local function __Save()
-	pcall(function()	
+	pcall(function()
 		io.save_as_json({
 			TBPOWER_NUMBER = _G[TBPOWER_NUMBER_NAME],
 			TBPOWER_NUMBER_NEXT_RECOVER = _G[TBPOWER_NUMBER_NEXT_RECOVER_NAME]
@@ -42,7 +42,7 @@ local function __Load()
 		local __data = io.load_as_json(ThisModPath.."__savefile.txt")
 		if type(__data) == "table" then
 			if type(__data.TBPOWER_NUMBER) == "number" then
-				_G[TBPOWER_NUMBER_NAME] = __data.TBPOWER_NUMBER
+				_G[TBPOWER_NUMBER_NAME] = math.min(__data.TBPOWER_NUMBER, TBPOWER_MAX_NUMBER)
 			end
 			if type(__data.TBPOWER_NUMBER_NEXT_RECOVER) == "number" then
 				_G[TBPOWER_NUMBER_NEXT_RECOVER_NAME] = __data.TBPOWER_NUMBER_NEXT_RECOVER
@@ -56,6 +56,14 @@ local function __Load()
 end
 
 __Load()
+
+local function __Is_Not_Init(__ClassFunc, __RequiredScript)
+	if __ClassFunc and not _G[__Name(__RequiredScript)] then
+		_G[__Name(__RequiredScript)] = true
+		return true
+	end
+	return false
+end
 
 local function HIDE_TBPOWER_BAR(them)
 	if them[BarPaneBoxl] then
@@ -145,7 +153,7 @@ end
 
 local function Increase_TBPOWER(them, __var)
 	if type(__var) ~= "number" then
-		__var = 0
+		return
 	end
 	Set_TBPOWER(them, Get_TBPOWER(them) + __var)
 	return
@@ -164,9 +172,7 @@ local function UPDATE_TBPOWER_STATS(them)
 	return
 end
 
-if PlayerInventoryGui and not _G[__Name("PlayerInventoryGui::")] then
-	_G[__Name("PlayerInventoryGui::")] = true
-
+if __Is_Not_Init(PlayerInventoryGui, RequiredScript) then
 	require("lib/managers/menu/WalletGuiObject")
 	require("lib/utils/InventoryDescription")
 
@@ -274,16 +280,14 @@ if PlayerInventoryGui and not _G[__Name("PlayerInventoryGui::")] then
 	end)
 end
 
-if GameOverState and not _G[__Name("GameOverState::")] then
-	_G[__Name("GameOverState::")] = true
+if __Is_Not_Init(GameOverState, RequiredScript) then
 	require("lib/states/GameState")
 	Hooks:PostHook(GameOverState, "at_enter", __Name("GameOverState::at_enter"), function(...)
 		Increase_TBPOWER(nil, -TBPOWER_CONSUME_NUMBER)
 	end)
 end
 
-if VictoryState and not _G[__Name("VictoryState::")] then
-	_G[__Name("VictoryState::")] = true
+if __Is_Not_Init(VictoryState, RequiredScript) then
 	require("lib/states/GameState")
 	require("lib/utils/accelbyte/TelemetryConst")
 	VictoryState = VictoryState or class(MissionEndState)
