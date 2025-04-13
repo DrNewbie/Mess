@@ -12,6 +12,8 @@ local BarText = __Name("BarText::")
 local BarRateText = __Name("BarRateText::")
 local Bar_x_offset = 10
 local Bar100 = __Name("Bar100::")
+local LOGOICONBOX = __Name("LOGOICONBOX::")
+local LOGOICONPANEL = __Name("LOGOICONPANEL::")
 local TBPOWER_COLOR = Color(241/255, 174/255, 165/255)
 local TBPOWER_TEXT_SIZE = 20
 local TBPOWER_NUMBER_NAME = __Name("TBPOWER_NUMBER")
@@ -81,6 +83,9 @@ local function HIDE_TBPOWER_BAR(them)
 	if them[BarLine] then
 		them[BarLine]:set_visible(false)
 	end
+	if them[LOGOICONPANEL] then
+		them[LOGOICONPANEL]:set_visible(false)
+	end
 	return
 end
 
@@ -91,6 +96,9 @@ local function SET_TBPOWER_PERCENT(them, __var, __rate)
 		end
 		if them[BarRateText] then
 			them[BarRateText]:set_visible(true)
+		end
+		if them[LOGOICONPANEL] then
+			them[LOGOICONPANEL]:set_visible(true)
 		end
 		if them[BarLine] then
 			them[BarLine]:set_visible(true)
@@ -246,8 +254,22 @@ if __Is_Not_Init(PlayerInventoryGui, RequiredScript) then
 				text = "",
 				visible = false
 			})
-			self[BarRateText]:set_center(self[BarPanel]:center_x(), self[BarPanel]:center_y() - 8)
-			self[BarRateText]:set_left(self[BarPanel]:x() + 144)
+			self[BarRateText]:set_center_y(self[BarText]:center_y())
+			self[BarRateText]:set_left(self[BarText]:center_x() + 3)
+
+			self[LOGOICONPANEL], self[LOGOICONBOX] = self:create_box({
+				alpha = 1,
+				name = LOGOICONBOX,
+				bg_blend_mode = "normal",
+				w = 64,
+				h = 64,
+				text = '',
+				image = __Name("Item_Trailblaze_Power.dds"),
+				visible = false
+			})
+			
+			self[LOGOICONPANEL]:set_center_y(self[BarPanel]:center_y())
+			self[LOGOICONPANEL]:set_right(self[BarPanel]:x())
 		end
 		
 		UPDATE_TBPOWER_STATS(self)
@@ -276,6 +298,13 @@ if __Is_Not_Init(PlayerInventoryGui, RequiredScript) then
 		if self[BarPanel] then
 			pcall(function() self._panel:panel():remove(self[BarPanel]) end)
 			self[BarPanel] = nil
+		end
+		if self[LOGOICONBOX] then
+			self[LOGOICONBOX] = nil
+		end
+		if self[LOGOICONPANEL] then
+			pcall(function() self._panel:panel():remove(self[LOGOICONPANEL]) end)
+			self[LOGOICONPANEL] = nil
 		end
 	end)
 end
@@ -350,4 +379,13 @@ Hooks:Add("MenuManagerOnOpenMenu", __Name("MenuManagerOnOpenMenu::"), function(s
 		end)
 	end
 	Global.TBPOWER_RUN_OUT_MESSAGE = false
+end)
+
+pcall(function()
+	BLTAssetManager:CreateEntry( 
+		__Name("Item_Trailblaze_Power.dds"), 
+		"texture", 
+		ThisModPath.."Item_Trailblaze_Power.dds", 
+		nil 
+	)
 end)
