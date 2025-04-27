@@ -15,25 +15,26 @@
 		{
 			"global_delay": 0,
 			"title": "开拓者",
-			"chance": 1,
+			"chance": 2,
 			"sound": "test_hsr/VO_ZH_Stelle_Battle_Begins_-_Weakness_Break_Destruction_01.ogg",
 			"icon": "test_hsr/stelle.dds",
 			"type_delay": 10,
 			"description": "机不可失"
 		},
 		{
-			"global_delay": 10,
+			"is_empty": true,
+			"type_delay": 3,
+			"chance": 5
+		}
+	],
+	"OnHeistComplete": [
+		{
 			"title": "开拓者",
 			"chance": 1,
 			"sound": "test_hsr/VO_ZH_Archive_Stelle_1.ogg",
 			"icon": "test_hsr/stelle.dds",
-			"type_delay": 30,
-			"description": "当有机会做出选择的时候，\n不要让自己后悔……"
-		},
-		{
-			"is_empty": true,
-			"type_delay": 3,
-			"chance": 5
+			"description": "当有机会做出选择的时候，\n不要让自己后悔……",
+			"is_gameover_state": true
 		}
 	],
 	"OnPlayerDodge": [

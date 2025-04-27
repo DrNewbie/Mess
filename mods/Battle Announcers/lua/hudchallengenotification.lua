@@ -115,7 +115,7 @@ HudBattleAnnouncersNotification.icon_list = HudBattleAnnouncersNotification.icon
 HudBattleAnnouncersNotification.__ply_ogg = function (__this_ogg)
 	if type(__this_ogg) == "string" then
 		__this_ogg = ThisModFilesPath.."/"..__this_ogg
-		if io.file_is_readable(__this_ogg) then
+		if __io.file_is_readable(__this_ogg) then
 			local this_buffer = XAudio.Buffer:new(__this_ogg)
 			local this_source = nil
 			if managers.player and managers.player:local_player() then
@@ -124,7 +124,7 @@ HudBattleAnnouncersNotification.__ply_ogg = function (__this_ogg)
 				this_source = XAudio.Source:new()
 				this_source:set_buffer(this_buffer)
 			end
-			this_source:set_volume(10)
+			this_source:set_volume(1)
 			this_source:play()
 			local __delay = this_buffer:get_length()
 			return __delay + 2.666
@@ -193,7 +193,7 @@ function HudBattleAnnouncersNotification.load_config()
 			chance = <number>, -- larger = more chance
 			global_delay = <number>, -- second , default = 0 , used to delay entire the system
 			type_delay = <number>, -- second , default = 30 , used to delay only this type
-						
+
 			title = "<string>",
 			description = "<string>",
 			sound = "<string>", -- path to .ogg
@@ -205,6 +205,11 @@ function HudBattleAnnouncersNotification.load_config()
 				"<Weapon ID 3>"
 				...
 			}
+			
+			-- vvv OnHeistComplete Only vvv
+			is_gameover_state = <boolean>, -- when lose
+			is_victory_state = <boolean>, -- when win			
+			-- ^^^ OnHeistComplete Only ^^^
 		}
 	]]
 	--[[
@@ -367,6 +372,40 @@ function HudBattleAnnouncersNotification.queue_by_type_and_weapon(__type, __weap
 	return
 end
 
+function HudBattleAnnouncersNotification.queue_by_heist(__data_from_end)
+	if type(__data_from_end) ~= "table" then
+		return
+	end
+	local __possible_data = HudBattleAnnouncersNotification.__type_data_ready["OnHeistComplete"]
+	if type(__possible_data) ~= "table" then
+		return
+	end
+	if type(__data_from_end.job_id) ~= "string" or type(__data_from_end.level_id) ~= "string" then
+		return
+	end
+	if not tweak_data.narrative.jobs[__data_from_end.job_id] or not tweak_data.levels[__data_from_end.level_id] then
+		return
+	end
+	local __new_possible_data = {}
+	for __id, __data in pairs(__possible_data) do
+		if (__data.is_victory_state and __data_from_end.is_victory_state) or 
+			(__data.is_gameover_state and __data_from_end.is_gameover_state) or 
+			(__data.is_victory_state and __data.is_gameover_state) then 
+			table.insert(__new_possible_data, __data)
+		end
+	end
+	local __pick_data = __new_possible_data and table.random(__new_possible_data) or nil
+	if type(__pick_data) == "table" then
+		return HudBattleAnnouncersNotification.queue(
+			__pick_data.title, 
+			__pick_data.description, 
+			__pick_data.icon, 
+			__pick_data.sound
+		)
+	end
+	return
+end
+
 function HudBattleAnnouncersNotification:init(title, text, icon, __sound, queue)
 	if _G.IS_VR then
 		HudBattleAnnouncersNotification.super.init(self, managers.hud:prompt_panel())
@@ -379,7 +418,7 @@ function HudBattleAnnouncersNotification:init(title, text, icon, __sound, queue)
 	self._top = ExtendedPanel:new(self)
 	local title = self._top:fine_text({
 		layer = 1,
-		text = title or "ACHIEVEMENT UNLOCKED!",
+		text = title or " ",
 		font = small_font,
 		font_size = small_font_size,
 		color = Color.black
