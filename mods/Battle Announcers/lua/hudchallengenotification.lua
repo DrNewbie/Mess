@@ -112,7 +112,9 @@ HudBattleAnnouncersNotification.BOX_MAX_W = 400
 HudBattleAnnouncersNotification.default_queue = HudBattleAnnouncersNotification.default_queue or {}
 HudBattleAnnouncersNotification.icon_list = HudBattleAnnouncersNotification.icon_list or {}
 
-HudBattleAnnouncersNotification.__ply_ogg = function (__this_ogg)
+local ThisModData = __Name(302)
+
+HudBattleAnnouncersNotification.__ply_ogg = function (__this_ogg, __main_volume)
 	if type(__this_ogg) == "string" then
 		__this_ogg = ThisModFilesPath.."/"..__this_ogg
 		if __io.file_is_readable(__this_ogg) then
@@ -124,7 +126,12 @@ HudBattleAnnouncersNotification.__ply_ogg = function (__this_ogg)
 				this_source = XAudio.Source:new()
 				this_source:set_buffer(this_buffer)
 			end
-			this_source:set_volume(1)
+			_G[ThisModData] = _G[ThisModData] or {}
+			if type(__main_volume) == "string" and type(_G[ThisModData][__main_volume]) == "number" then
+				this_source:set_volume(math.clamp(_G[ThisModData][__main_volume] / 100, 0, 100))
+			else
+				this_source:set_volume(1)
+			end
 			this_source:play()
 			local __delay = this_buffer:get_length()
 			return __delay + 2.666
@@ -225,7 +232,11 @@ function HudBattleAnnouncersNotification.load_config()
 		local full_path = ThisModFilesPath.."/"..folder_name
 		local cfg_path = full_path.."/config.txt"
 		if __io.file_is_readable(cfg_path) then
-			table.insert(cfg_data, __io.load_as_json(cfg_path, "r"))
+			local load_from_cfg = __io.load_as_json(cfg_path, "r")
+			if type(load_from_cfg) == "table" then
+				load_from_cfg.__main_volume = __Name(folder_name.."::main_volume")
+				table.insert(cfg_data, load_from_cfg)
+			end
 		end
 	end
 	--[[
@@ -239,6 +250,9 @@ function HudBattleAnnouncersNotification.load_config()
 			if type(sub_type_data) == "table" then
 				for __key, __data in pairs(sub_type_data) do
 					if type(__data) == "table" then
+					
+						__data.__main_volume = sub_data.__main_volume
+						
 						if type(__data.global_delay) ~= "number" then
 							__data.global_delay = 0
 						end
@@ -291,7 +305,7 @@ function HudBattleAnnouncersNotification.load_config()
 	return
 end
 
-function HudBattleAnnouncersNotification.queue(title, text, icon, __sound, queue)
+function HudBattleAnnouncersNotification.queue(title, text, icon, __sound, __main_volume, queue)
 	if Application:editor() then
 		return
 	end
@@ -301,6 +315,7 @@ function HudBattleAnnouncersNotification.queue(title, text, icon, __sound, queue
 		text,
 		icon,
 		__sound,
+		__main_volume,
 		queue
 	})
 	if #queue == 1 then
@@ -347,7 +362,8 @@ function HudBattleAnnouncersNotification.queue_by_type(__type, __possible_data)
 			__pick_data.title, 
 			__pick_data.description, 
 			__pick_data.icon, 
-			__pick_data.sound
+			__pick_data.sound,
+			__pick_data.__main_volume
 		)
 	end
 	return
@@ -400,13 +416,14 @@ function HudBattleAnnouncersNotification.queue_by_heist(__data_from_end)
 			__pick_data.title, 
 			__pick_data.description, 
 			__pick_data.icon, 
-			__pick_data.sound
+			__pick_data.sound,
+			__pick_data.__main_volume
 		)
 	end
 	return
 end
 
-function HudBattleAnnouncersNotification:init(title, text, icon, __sound, queue)
+function HudBattleAnnouncersNotification:init(title, text, icon, __sound, __main_volume, queue)
 	if _G.IS_VR then
 		HudBattleAnnouncersNotification.super.init(self, managers.hud:prompt_panel())
 	else
@@ -471,7 +488,7 @@ function HudBattleAnnouncersNotification:init(title, text, icon, __sound, queue)
 	self._box:set_visible(false)
 	self:set_top(self:parent():h() * 0.015)
 	self:set_left(self:parent():w() * 0.015)
-	local __delay = HudBattleAnnouncersNotification.__ply_ogg(__sound)
+	local __delay = HudBattleAnnouncersNotification.__ply_ogg(__sound, __main_volume)
 	if __delay > 0 then
 		self._box_bg:animate(HudBattleAnnouncersNotification.__animate_open, function ()
 			self._box:set_visible(true)

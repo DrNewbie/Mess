@@ -3,7 +3,7 @@
 	"description": "https://modworkshop.net/mod/51185",
 	"author": "Dr_Newbie",
 	"contact": "https://modworkshop.net/mod/51185",
-	"version": "3.005",
+	"version": "3.007",
 	"priority": 100,
 	"blt_version": 2,
 	"hooks": [
@@ -22,6 +22,10 @@
 		{
 			"hook_id": "lib/states/victorystate",
 			"script_path": "lua/gamestate.lua"
+		},
+		{
+			"hook_id": "lib/managers/menumanager",
+			"script_path": "lua/menumanager.lua"
 		}
 	],
 	"updates": [
