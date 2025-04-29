@@ -113,6 +113,8 @@ HudBattleAnnouncersNotification.default_queue = HudBattleAnnouncersNotification.
 HudBattleAnnouncersNotification.icon_list = HudBattleAnnouncersNotification.icon_list or {}
 
 local ThisModData = __Name(302)
+local __popup_position_x = __Name("battle_announcers_popup_position_x")
+local __popup_position_y = __Name("battle_announcers_popup_position_y")
 
 HudBattleAnnouncersNotification.__ply_ogg = function (__this_ogg, __main_volume)
 	if type(__this_ogg) == "string" then
@@ -488,6 +490,19 @@ function HudBattleAnnouncersNotification:init(title, text, icon, __sound, __main
 	self._box:set_visible(false)
 	self:set_top(self:parent():h() * 0.015)
 	self:set_left(self:parent():w() * 0.015)
+	
+	_G[ThisModData] = _G[ThisModData] or {}
+	if type(_G[ThisModData][__popup_position_x]) ~= "number" then
+		_G[ThisModData][__popup_position_x] = self:center_x()
+	else
+		self:set_center_x(_G[ThisModData][__popup_position_x])
+	end
+	if type(_G[ThisModData][__popup_position_y]) ~= "number" then
+		_G[ThisModData][__popup_position_y] = self:center_y()
+	else
+		self:set_center_y(_G[ThisModData][__popup_position_y])
+	end
+	
 	local __delay = HudBattleAnnouncersNotification.__ply_ogg(__sound, __main_volume)
 	if __delay > 0 then
 		self._box_bg:animate(HudBattleAnnouncersNotification.__animate_open, function ()
