@@ -50,7 +50,7 @@ Hooks:PostHook(GageAssignmentInteractionExt, "interact", "F_"..Idstring("PostHoo
 			end,
 			["purple_snake"] = function (ply) --LOUD ONLY, 10s burn all enemies
 				if not managers.groupai:state():whisper_mode() then
-					managers.player:ask_loop_fire_to_all(10)
+					managers.player:ask_loop_fire_to_all(TimerManager:game():time()+10)
 					HudChallengeNotification.queue(
 						"[ Powerup ]",
 						"Purple Snake: Burn All enemies for 10 seconds.",
