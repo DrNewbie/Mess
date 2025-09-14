@@ -31,14 +31,15 @@ Hooks:Add('MenuManagerOnOpenMenu', 'OneLifeGoodBye_RunFunc', function(self, menu
 			--[[
 				all skill tree reset by Mx ; https://modworkshop.net/mod/22718
 			]]
-			managers.skilltree:infamy_reset()			
+			managers.skilltree:reset_skilltrees()
+			managers.skilltree:infamy_reset()
 			--[[
 				OwO
 			]]
 			QuickMenu:new(
 				"One Life",
-				"This is your fresh new life ^_^",
-				{{text = "ok", is_cancel_button = true}},
+				"This is your fresh new life.",
+				{{text = "OK", is_cancel_button = true}},
 				true
 			)			
 			DelayedCalls:Add('OneLifeGoodBye_Refresh', 8, function()
