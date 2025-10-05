@@ -1,0 +1,13 @@
+{
+  "name": "Garand Buff by RAID World War II",
+  "description": "https://modworkshop.net/mod/54017",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/54017",
+  "version": "1",
+  "hooks": [
+    {
+      "hook_id": "lib/tweak_data/weapontweakdata",
+      "script_path": "base.lua"
+    }
+  ]
+}
