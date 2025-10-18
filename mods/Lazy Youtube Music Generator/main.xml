@@ -2,7 +2,7 @@
 	<Localization directory="Loc" default="English.txt">
     	<loc file="English.txt" language="english"/>
 	</Localization>
-	<AssetUpdates id="Lazy Youtube Music Generator" version="6">
+	<AssetUpdates id="Lazy Youtube Music Generator" version="7">
 		<custom_provider 
 			version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/Lazy%20Youtube%20Music%20Generator.txt" 
 			download_url="https://github.com/DrNewbie/Mess/releases/download/lazy_youtube_music_generator/Lazy.Youtube.Music.Generator.zip"
