@@ -1,0 +1,13 @@
+{
+  "name": "Stelle Banner",
+  "description": "Artist: https://www.bilibili.com/video/BV1vYWszgESv/",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/54003",
+  "version": "1",
+  "hooks": [
+    {
+      "hook_id": "lib/managers/hudmanager",
+      "script_path": "hudmanager.lua"
+    }
+  ]
+}
