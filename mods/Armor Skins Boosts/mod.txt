@@ -1,45 +1,33 @@
 {
-	"name": "-- [Armor Skins Boosts] --",
-	"description": "-- [Armor Skins Boosts] --",
-	"author": "Dr_Newbie",
-	"contact": " ",
-	"version": "17",
-	"priority": 1,
-	"image": "logo.png",
-	"color": "0 0 0",
-	"blt_version": 2,
-	"libraries": [
-		{
-			"display_name": "Announcer",
-			"identifier": "ANCR",
-			"optional": "false"
-		},
-		{
-			"display_name": "BeardLib",
-			"identifier": "beardlib",
-			"optional": "false"
-		}
-	],
-	"hooks": [
-		{
-			"hook_id": "lib/managers/localizationmanager",
-			"script_path": "Update.lua"
-		},
-		{
-			"hook_id": "lib/tweak_data/armorskinstweakdata",
-			"script_path": "lua/armorskinstweakdata.lua"
-		},
-		{
-			"hook_id": "lib/managers/playermanager",
-			"script_path": "lua/playermanager.lua"
-		},
-		{
-			"hook_id": "lib/units/beings/player/playerdamage",
-			"script_path": "lua/playerdamage.lua"
-		},
-		{
-			"hook_id": "lib/managers/blackmarketmanager",
-			"script_path": "lua/blackmarketmanager.lua"
-		}
-	]
+  "name": "Armor Skins Boosts",
+  "description": "https://modworkshop.net/mod/20721",
+  "author": "Dr_Newbie",
+  "contact": "https://modworkshop.net/mod/20721",
+  "version": "17.1",
+  "priority": 1,
+  "image": "logo.png",
+  "color": "0 0 0",
+  "blt_version": 2,
+  "hooks": [
+    {
+      "hook_id": "lib/managers/localizationmanager",
+      "script_path": "Update.lua"
+    },
+    {
+      "hook_id": "lib/tweak_data/armorskinstweakdata",
+      "script_path": "lua/armorskinstweakdata.lua"
+    },
+    {
+      "hook_id": "lib/managers/playermanager",
+      "script_path": "lua/playermanager.lua"
+    },
+    {
+      "hook_id": "lib/units/beings/player/playerdamage",
+      "script_path": "lua/playerdamage.lua"
+    },
+    {
+      "hook_id": "lib/managers/blackmarketmanager",
+      "script_path": "lua/blackmarketmanager.lua"
+    }
+  ]
 }
