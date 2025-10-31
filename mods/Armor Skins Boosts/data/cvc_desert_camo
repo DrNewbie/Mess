@@ -1,0 +1,20 @@
+{
+	"armor_regen":{
+		"level_1":0.02,
+		"level_2":0.02,
+		"level_3":0.03,
+		"level_4":0.03,
+		"level_5":0.05,
+		"level_6":0.05,
+		"level_7":0.09
+	},
+	"dodge":{
+		"level_1":0.01,
+		"level_2":0.01,
+		"level_3":0.03,
+		"level_4":0.03,
+		"level_5":0.05,
+		"level_6":0.05,
+		"level_7":0.07
+	}
+}
