@@ -45,6 +45,9 @@
   "Guardian_increase_movement_speed_multiplier_name": "Movement Speed",
   "Guardian_increase_movement_speed_multiplier_desc": " ",
   "Guardian_increase_movement_speed_multiplier_name_w_var": "Movement Speed",
+  "Guardian_increase_damage_reduction_multiplier_name": "Damage Reduction",
+  "Guardian_increase_damage_reduction_multiplier_desc": " ",
+  "Guardian_increase_damage_reduction_multiplier_name_w_var": "Damage Reduction",
   "Guardian_Func_reset_name": "Reset Upgrade",
   "Guardian_Func_reset_desc": "Clean all of your upgrade."
 }

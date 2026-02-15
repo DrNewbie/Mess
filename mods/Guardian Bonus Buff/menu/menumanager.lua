@@ -39,21 +39,21 @@ function GuardianBonusBuff:Default()
 		increase_extra_ammo_multiplier = 0,
 		increase_extra_ammo_multiplier__max_level_max = 30,
 		increase_movement_speed_multiplier = 0,
-		increase_movement_speed_multiplier__max_level_max = 10
+		increase_movement_speed_multiplier__max_level_max = 10,
+		increase_damage_reduction_multiplier = 0,
+		increase_damage_reduction_multiplier__max_level_max = 10
 	}
 end
 
 function GuardianBonusBuff:save()
-	local _file = io.open(self.SavePath, "w+")
-	if _file then
-		_file:write(json.encode(self.Settings))
-		_file:close()
-	end
+	io.save_as_json(self.Settings, self.SavePath)
+	return
 end
 
 function GuardianBonusBuff:reset()
 	self.Settings = self:Default()
 	self:save()
+	return
 end
 
 function GuardianBonusBuff:load()
@@ -70,6 +70,7 @@ function GuardianBonusBuff:load()
 		self:reset()
 	end
 	self:save()
+	return
 end
 
 GuardianBonusBuff:load()
@@ -179,6 +180,8 @@ function GuardianBonusBuff:GetBonusPrePercent(__buff_name, __lv)
 		return __lv
 	elseif __buff_name == "increase_movement_speed_multiplier" then
 		return __lv * 3
+	elseif __buff_name == "increase_damage_reduction_multiplier" then
+		return __lv * 1.5
 	end
 	return math.round( __lv*7.5 ) / 10
 end
@@ -369,6 +372,9 @@ Hooks:Add("MenuManagerInitialize", "M_"..Idstring("MenuManagerInitialize:Guardia
 	end
 	MenuCallbackHandler.callback_Guardian_increase_movement_speed_multiplier = function(self)
 		GuardianBonusBuff:AskUpgrade("increase_movement_speed_multiplier")
+	end
+	MenuCallbackHandler.callback_Guardian_increase_damage_reduction_multiplier = function(self)
+		GuardianBonusBuff:AskUpgrade("increase_damage_reduction_multiplier")
 	end
 	MenuHelper:LoadFromJsonFile(GuardianBonusBuff.ModPath.."menu/menu.json", GuardianBonusBuff, GuardianBonusBuff._data)
 end)
