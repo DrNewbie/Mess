@@ -1,0 +1,7 @@
+{
+    "identification_code": "multi.interaction.circle",
+    "ammo_bag": {
+        "img_name": "hud_progress_",
+        "img_chance": 1
+    }
+}
