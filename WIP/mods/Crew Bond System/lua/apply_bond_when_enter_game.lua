@@ -53,7 +53,6 @@ Hooks:PostHook(PlayerDamage, "update", __Name(101), function(self, _, _, __dt, .
 				end
 				if __req_match_times <= 0 then
 					CrewBondUSystem.__set_bond_activing(__bond_number, true)
-					break
 				end
 			end
 		end
