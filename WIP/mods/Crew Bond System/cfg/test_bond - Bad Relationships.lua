@@ -10,7 +10,9 @@ CrewBondUSystem = CrewBondUSystem or {}
 
 pcall(function()
 	local criminals_number_map = CrewBondUSystem.__format_two_to_each_other({7, 13, 23, 31})
+	
 	for _, __criminals_number in pairs(criminals_number_map) do
+		local hook_name_for_each_criminals_number = CrewBondUSystem.__Name("get_hurt:"..json.encode(__criminals_number))
 		local __data = {
 			criminals_number = __criminals_number,
 			
@@ -19,7 +21,7 @@ pcall(function()
 			icon_id = "C_Hector_H_Firestarter_HereComesThePain",
 			
 			func = function(this_bond_number)
-				Hooks:PostHook(PlayerManager, "damage_reduction_skill_multiplier", CrewBondUSystem.__Name("get_hurt:"..json.encode(__criminals_number)), function(self, ...)
+				Hooks:PostHook(PlayerManager, "damage_reduction_skill_multiplier", hook_name_for_each_criminals_number, function(self, ...)
 					local ans = Hooks:GetReturn()
 					if not CrewBondUSystem.__is_bond_activing(this_bond_number) then
 						return ans
