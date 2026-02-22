@@ -21,9 +21,6 @@ pcall(function()
 			func = function(this_bond_number)
 				Hooks:PostHook(PlayerManager, "damage_reduction_skill_multiplier", CrewBondUSystem.__Name("get_hurt:"..json.encode(__criminals_number)), function(self, ...)
 					local ans = Hooks:GetReturn()
-					
-					CrewBondUSystem.__log("bad_relationships", this_bond_number)
-					
 					if not CrewBondUSystem.__is_bond_activing(this_bond_number) then
 						return ans
 					end
