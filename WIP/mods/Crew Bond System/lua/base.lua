@@ -179,6 +179,21 @@ CrewBondUSystem.__clean_bond_activing = function()
 	return
 end
 
+CrewBondUSystem.__format_two_to_each_other = function(__criminals_number)
+	local criminals_number_map_size = table.size(__criminals_number)
+	local new_criminals_number_map = {}
+	local already_insert = {}
+	for __i = 1, criminals_number_map_size do
+		for __d = 1, criminals_number_map_size do
+			if __i ~= __d and not already_insert[__i*__d] then
+				already_insert[__i*__d] = true
+				table.insert(new_criminals_number_map, {__criminals_number[__i], __criminals_number[__d]})
+			end
+		end
+	end
+	return new_criminals_number_map
+end
+
 Hooks:Add("LocalizationManagerPostInit", __Name("LocalizationManagerPostInit"), function(self)
 	local load_cfg = function()
 		if not __file.DirectoryExists(ThisModPath.."/cfg/") then
