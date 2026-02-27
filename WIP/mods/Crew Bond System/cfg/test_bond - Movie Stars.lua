@@ -1,3 +1,9 @@
+--[[
+	@UnintelligibleYT
+	https://www.youtube.com/watch?v=IGkodt4ZbuU&lc=UgwXFxtxli5Utz3Xw-h4AaABAg
+
+]]
+
 local ThisModPath = ModPath
 
 CrewBondUSystem = CrewBondUSystem or {}

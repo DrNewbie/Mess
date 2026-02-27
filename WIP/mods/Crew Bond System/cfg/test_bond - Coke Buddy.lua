@@ -11,8 +11,8 @@ CrewBondUSystem = CrewBondUSystem or {}
 CrewBondUSystem.__add_bond_number({
 	criminals_number = {43, 59},
 	
-	name_id = "trophy_coke",
-	desc_id = "crewbond_bond_mod_bond_trophy_coke_desc1",
+	name_id = "crewbond_bond_mod_bond_coke_buddy_name1",
+	desc_id = "crewbond_bond_mod_bond_coke_buddy_desc1",
 	icon_id = "C_Locke_H_BorderCrystals_HeisterCocinero",
 	
 	func = function(this_bond_number)
