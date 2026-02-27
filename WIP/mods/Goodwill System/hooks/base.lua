@@ -80,6 +80,7 @@ _G.GoodWillSysMain._funcs.__Add_Point = function(__char_name, __var)
 	end
 	__char_name = CriminalsManager.convert_old_to_new_character_workname(__char_name)
 	_G.GoodWillSysMain._datas.__char = _G.GoodWillSysMain._datas.__char or {}
+	_G.GoodWillSysMain._datas.__char[__char_name] = _G.GoodWillSysMain._datas.__char[__char_name] or 0
 	_G.GoodWillSysMain._datas.__char[__char_name] = math.clamp(_G.GoodWillSysMain._datas.__char[__char_name] + __var, 0, 10000)
 	_G.GoodWillSysMain._funcs.__Save()
 	return
