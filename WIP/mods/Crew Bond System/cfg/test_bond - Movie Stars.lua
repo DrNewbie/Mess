@@ -20,7 +20,7 @@ CrewBondUSystem.__add_bond_number({
 			Hooks:PostHook(PlayerManager, "critical_hit_chance", CrewBondUSystem.__Name("movie stars - more critical hit chance"), function(self, ...)
 				local ans = Hooks:GetReturn()
 				if CrewBondUSystem.__is_bond_activing(this_bond_number) then
-					ans = ans + 0.15 --critical hit chance+15%
+					ans = ans + 0.05 --critical hit chance+5%
 				end
 				return ans
 			end)
