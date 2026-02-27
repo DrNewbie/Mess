@@ -1,10 +1,20 @@
 {
     "name": "Goodwill System",
-    "description": " ",
+    "description": "https://modworkshop.net/mod/55500",
     "author": "Dr_Newbie",
-    "contact": " ",
+    "contact": "https://modworkshop.net/mod/55500",
     "version": "1",
     "priority": 100,
     "blt_version": 2,
-    "supermod_definition": "hooks.xml"
+    "supermod_definition": "hooks.xml",
+    "updates": [
+        {
+            "identifier": "GoodwillSystemGithubUpdate",
+            "host": {
+                "meta": "https://drnewbie.github.io/Mess/Update/GoodwillSystemGithubUpdate.meta.json",
+                "download": "https://drnewbie.github.io/Mess/Update/Goodwill%20System.zip",
+                "patchnotes": "https://modworkshop.net/mod/55500?tab=changelog"
+            }
+        }
+    ]
 }
