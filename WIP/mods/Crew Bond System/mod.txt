@@ -1,8 +1,8 @@
 {
     "name": "Crew Bond System",
-    "description": " ",
+    "description": "https://modworkshop.net/mod/55495",
     "author": "Dr_Newbie",
-    "contact": " ",
+    "contact": "https://modworkshop.net/mod/55495",
     "version": "1",
     "priority": 100,
     "blt_version": 2,
@@ -19,6 +19,16 @@
         {
             "hook_id": "lib/managers/hud/hudchallengenotification",
             "script_path": "lua/show_hint.lua"
+        }
+    ],
+    "updates": [
+        {
+            "identifier": "CrewBondSystemGithubUpdate",
+            "host": {
+                "meta": "https://drnewbie.github.io/Mess/Update/CrewBondSystemGithubUpdate.meta.json",
+                "download": "https://drnewbie.github.io/Mess/Update/Crew%20Bond%20System.zip",
+                "patchnotes": "https://modworkshop.net/mod/55495?tab=changelog"
+            }
         }
     ]
 }
