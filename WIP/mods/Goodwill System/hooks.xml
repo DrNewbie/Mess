@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<mod>
+    <hooks script_path="hooks/">
+        <pre hook_id="lib/entry" :script_path="base.lua"/>
+		<post hook_id="lib/managers/menu/blackmarketgui" :script_path="function/load_assets.lua"/>
+		<post hook_id="lib/managers/menu/blackmarketgui" :script_path="function/load_localization_file.lua"/>
+        <post hook_id="lib/managers/menumanagerpd2" :script_path="function/menu_desc.lua"/>
+        <post hook_id="lib/managers/menumanagerpd2" :script_path="function/decrease_by_time_pass.lua"/>
+        <post hook_id="lib/units/interactions/interactionext" :script_path="function/add_point_by_talking_in_safehouse.lua"/>
+		<post hook_id="lib/managers/menumanagerpd2" :script_path="function/add_point_by_playing.lua"/>
+		<post hook_id="lib/managers/playermanager" :script_path="function/add_point_by_killshot.lua"/>
+		<post hook_id="lib/managers/menu/menuscenemanager" :script_path="function/add_point_by_using_in_menu.lua"/>
+    </hooks>
+</mod>
