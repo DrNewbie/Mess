@@ -67,7 +67,8 @@ CrewBondUSystem.__add_bond_number({
 					local __help_criminal_number = CrewBondUSystem.__criminal_number_table[__help_criminal_name]
 					if type(__down_criminal_number) == "number" and this_bond_number_number % __down_criminal_number == 0 and 
 						type(__help_criminal_number) == "number" and this_bond_number_number % __help_criminal_number == 0 then
-						__t = __t * (1 - faster_ratio)
+						local this_objective = __my_data.performing_act_objective
+						__t = TimerManager:game():time() + (this_objective.action_duration or 0) * (1 - faster_ratio)
 					end
 				end
 			end)
