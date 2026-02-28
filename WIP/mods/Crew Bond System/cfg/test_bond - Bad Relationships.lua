@@ -4,8 +4,6 @@
 
 ]]
 
-local ThisModPath = ModPath
-
 CrewBondUSystem = CrewBondUSystem or {}
 
 pcall(function()

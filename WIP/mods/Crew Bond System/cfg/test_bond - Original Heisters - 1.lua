@@ -1,5 +1,3 @@
-local ThisModPath = ModPath
-
 CrewBondUSystem = CrewBondUSystem or {}
 
 CrewBondUSystem.__add_bond_number({
