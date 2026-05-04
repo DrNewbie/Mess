@@ -1,0 +1,8 @@
+<mod name="perk deck icon sample mod (crew chief)">
+	<AddFiles directory="Assets">
+		<png path="guis/dlcs/this_is_sample_for_crew_chief/textures/pd2/specialization/icons_atlas"/>
+	</AddFiles>
+	<Hooks>
+		<hook file="skilltreetweakdata.lua" source_file="lib/tweak_data/skilltreetweakdata"/>
+	</Hooks>
+</mod>
