@@ -1,0 +1,26 @@
+{
+    "name": "All gamemodes in Crime.net",
+    "description": " ",
+    "author": "Dr_Newbie",
+    "contact": " ",
+    "version": "1",
+    "priority": 100,
+    "blt_version": 2,
+    "color": "1 0.498 0",
+    "hooks": [
+        {
+            "hook_id": "lib/managers/crimenetmanager",
+            "script_path": "base.lua"
+        }
+    ],
+    "updates": [
+        {
+            "identifier": "AllGamemodesinCrimeNetGithubUpdate",
+            "host": {
+                "meta": "https://drnewbie.github.io/Mess/Update/AllGamemodesinCrimeNetGithubUpdate.meta.json",
+                "download": "https://drnewbie.github.io/Mess/Update/All%20gamemodes%20in%20Crime.net.zip",
+                "patchnotes": "https://github.com/DrNewbie/Mess/commits/master"
+            }
+        }
+    ]
+}
