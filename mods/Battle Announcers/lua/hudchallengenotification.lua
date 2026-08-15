@@ -286,11 +286,18 @@ function HudBattleAnnouncersNotification.load_config()
 						pcall(
 							function ()
 								if __io.file_is_readable(ThisModFilesPath.."/"..__data.icon) then
+								--[[
 									BLTAssetManager:CreateEntry( 
 										__Name(__data.icon), 
 										"texture", 
 										ThisModFilesPath..__data.icon, 
 										nil 
+									)
+									]]
+									DB:create_entry(
+										Idstring("texture"), 
+										__Name(__data.icon), 
+										ThisModFilesPath..__data.icon
 									)
 								end
 								return
