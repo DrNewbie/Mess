@@ -29,7 +29,7 @@ local function __Load_Data_from_Json()
 				for _, __dir_s in pairs(__sub_dirs) do
 					if type(__dir_s) == "string" and __file.DirectoryExists(__dir..__dir_s.."/") and __io.file_is_readable(__dir..__dir_s.."/"..__identify_this_file)  then
 						local __data = __io.load_as_json(__dir..__dir_s.."/"..__identify_this_file)
-						if type(__data) == "table" and type(__data.identification_code) == "string" and __data.identification_code == "dynamic.interaction.mod" then
+						if type(__data) == "table" and type(__data.identification_code) == "string" and __data.identification_code == "multi.interaction.circle" then
 							__data.identification_code = nil
 							__data.from_this_dir = __dir..__dir_s.."/"
 							table.insert(__loaded_data, __data)
@@ -57,6 +57,7 @@ end
 	}
 ]]
 local function __Data_Format()
+	local texture_ids = Idstring("texture")
 	local __loaded_data = _G[loaded_data]
 	local __format_data = {}
 	local __now_from_this_dir = ""
@@ -75,23 +76,20 @@ local function __Data_Format()
 						for __chnace = 1, __data.img_chance do
 							table.insert(__format_data[__type], This_Img_Path)
 						end
-						BLTAssetManager:CreateEntry( 
+						DB:create_entry( 
+							texture_ids, 
 							__Name(This_Img_Path.."active.texture"), 
-							"texture", 
-							(This_Img_Path.."active.texture"), 
-							nil 
+							(This_Img_Path.."active.texture")
 						)
-						BLTAssetManager:CreateEntry( 
+						DB:create_entry( 
+							texture_ids, 
 							__Name(This_Img_Path.."invalid.texture"), 
-							"texture", 
-							(This_Img_Path.."invalid.texture"), 
-							nil 
+							(This_Img_Path.."invalid.texture")
 						)
-						BLTAssetManager:CreateEntry( 
+						DB:create_entry( 
+							texture_ids, 
 							__Name(This_Img_Path.."bg.texture"), 
-							"texture", 
-							(This_Img_Path.."bg.texture"), 
-							nil 
+							(This_Img_Path.."bg.texture")
 						)
 					end
 				end
@@ -107,5 +105,6 @@ Hooks:PostHook(HUDInteraction, "init", __Name("init:1"), function(self, ...)
 		_G[__Name(51)] = true
 		pcall(__Load_Data_from_Json)
 		pcall(__Data_Format)
+		log(51, __Name(51))
 	end
 end)
