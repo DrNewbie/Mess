@@ -24,7 +24,7 @@ Hooks:PostHook(PlayerDamage, "init", __Name(102), function(self)
 			end
 		end)
 	end
-	HudBattleAnnouncersNotification.load_config()
+	pcall(HudBattleAnnouncersNotification.load_config)
 end)
 
 Hooks:PostHook(PlayerDamage, "pre_destroy", __Name(103), function(self)

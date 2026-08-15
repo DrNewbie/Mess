@@ -1,8 +1,6 @@
 local ThisModPath = tostring(ModPath)
 local ThisModIds = Idstring(ThisModPath):key()
 
-local ThisModFilesPath = ThisModPath.."/files/"
-
 local __file = file
 local __io = io
 
@@ -118,7 +116,7 @@ local __popup_position_y = __Name("battle_announcers_popup_position_y")
 
 HudBattleAnnouncersNotification.__ply_ogg = function (__this_ogg, __main_volume)
 	if type(__this_ogg) == "string" then
-		__this_ogg = ThisModFilesPath.."/"..__this_ogg
+		__this_ogg = __this_ogg
 		if __io.file_is_readable(__this_ogg) then
 			local this_buffer = XAudio.Buffer:new(__this_ogg)
 			local this_source = nil
@@ -225,19 +223,30 @@ function HudBattleAnnouncersNotification.load_config()
 		load all sub cfg into list
 	]]
 	HudBattleAnnouncersNotification.__config = {}
-	if not __file.DirectoryExists(ThisModFilesPath) then
-		return
-	end
 	local cfg_data = {}
-	local __sub_folder = __file.GetDirectories(ThisModFilesPath)
-	for _, folder_name in pairs(__sub_folder) do
-		local full_path = ThisModFilesPath.."/"..folder_name
-		local cfg_path = full_path.."/config.txt"
-		if __io.file_is_readable(cfg_path) then
-			local load_from_cfg = __io.load_as_json(cfg_path, "r")
-			if type(load_from_cfg) == "table" then
-				load_from_cfg.__main_volume = __Name(folder_name.."::main_volume")
-				table.insert(cfg_data, load_from_cfg)
+	local __check_this_directory = {
+		[[assets/mod_overrides/]],
+		[[mods/]]
+	}
+	for _, __dir in pairs(__check_this_directory) do
+		if __file.DirectoryExists(__dir) then
+			local __sub_folder = __file.GetDirectories(__dir)
+			for _, folder_name in pairs(__sub_folder) do
+				local ThisModFilesPath = __dir..folder_name.."/files/"
+				if __file.DirectoryExists(ThisModFilesPath) and __io.file_is_readable(__dir..folder_name.."/battle_announcers_identity_card.txt") then
+					local __sub_sub_folder = __file.GetDirectories(ThisModFilesPath)
+					for _, sub_folder_name in pairs(__sub_sub_folder) do
+						local cfg_path = ThisModFilesPath..sub_folder_name.."/config.txt"
+						if __io.file_is_readable(cfg_path) then
+							local load_from_cfg = __io.load_as_json(cfg_path, "r")
+							if type(load_from_cfg) == "table" then
+								load_from_cfg.__main_path = ThisModFilesPath
+								load_from_cfg.__main_volume = __Name(ThisModFilesPath.."::main_volume")
+								table.insert(cfg_data, load_from_cfg)
+							end
+						end
+					end
+				end
 			end
 		end
 	end
@@ -253,6 +262,7 @@ function HudBattleAnnouncersNotification.load_config()
 				for __key, __data in pairs(sub_type_data) do
 					if type(__data) == "table" then
 					
+						local __main_path = sub_data.__main_path
 						__data.__main_volume = sub_data.__main_volume
 						
 						if type(__data.global_delay) ~= "number" then
@@ -272,9 +282,13 @@ function HudBattleAnnouncersNotification.load_config()
 						end
 						if type(__data.sound) ~= "string" then
 							__data.sound = ""
+						else
+							__data.sound = __main_path..__data.sound
 						end
 						if type(__data.icon) ~= "string" then
 							__data.icon = ""
+						else
+							__data.icon = __main_path..__data.icon
 						end
 						if type(__data.use_required_weapons) == "table" then
 							for _, __use_required_weapon_id in pairs(__data.use_required_weapons) do
@@ -285,19 +299,11 @@ function HudBattleAnnouncersNotification.load_config()
 						end
 						pcall(
 							function ()
-								if __io.file_is_readable(ThisModFilesPath.."/"..__data.icon) then
-								--[[
-									BLTAssetManager:CreateEntry( 
-										__Name(__data.icon), 
-										"texture", 
-										ThisModFilesPath..__data.icon, 
-										nil 
-									)
-									]]
+								if __io.file_is_readable(__data.icon) then
 									DB:create_entry(
 										Idstring("texture"), 
 										__Name(__data.icon), 
-										ThisModFilesPath..__data.icon
+										__data.icon
 									)
 								end
 								return

@@ -1,6 +1,9 @@
 local ThisModPath = tostring(ModPath)
 local ThisModIds = Idstring(ThisModPath):key()
-local ThisModFilesPath = ThisModPath.."/files/"
+
+local __file = file
+local __io = io
+
 local __Name = function(__id)
 	return "K_"..Idstring(tostring(__id).."::"..ThisModIds):key()
 end
@@ -46,43 +49,55 @@ end)
 
 Hooks:Add("MenuManagerPopulateCustomMenus", __Name("MenuManagerPopulateCustomMenus"), function(menu_manager, nodes)
 	_G[ThisModData] = _G[ThisModData] or {}
-	local __sub_folder = file.GetDirectories(ThisModFilesPath)
-	for _, folder_name in pairs(__sub_folder) do
-		local full_path = ThisModFilesPath.."/"..folder_name
-		local cfg_path = full_path.."/config.txt"
-		if io.file_is_readable(cfg_path) then
-			local __this_package_title_id = __Name(folder_name.."::title_id")
-			local __this_package_desc_id = __Name(folder_name.."::desc_id")
-			local __this_package_callback = __Name(folder_name.."::callback")
-			local __this_package_main_volume = __Name(folder_name.."::main_volume")
-			local __sub_folder = file.GetDirectories(ThisModFilesPath)
-			managers.localization:add_localized_strings({
-				[__this_package_title_id] = folder_name,
-				[__this_package_desc_id] = full_path
-			})
-			if type(_G[ThisModData][__this_package_main_volume]) ~= "number" then
-				_G[ThisModData][__this_package_main_volume] = 50
+	local __check_this_directory = {
+		[[assets/mod_overrides/]],
+		[[mods/]]
+	}
+	for _, __dir in pairs(__check_this_directory) do
+		if __file.DirectoryExists(__dir) then
+			local __sub_folder = __file.GetDirectories(__dir)
+			for _, folder_name in pairs(__sub_folder) do
+				local ThisModFilesPath = __dir..folder_name.."/files/"
+				if __file.DirectoryExists(ThisModFilesPath) and __io.file_is_readable(__dir..folder_name.."/battle_announcers_identity_card.txt") then
+					local __sub_sub_folder = __file.GetDirectories(ThisModFilesPath)
+					for _, sub_folder_name in pairs(__sub_sub_folder) do
+						local cfg_path = ThisModFilesPath..sub_folder_name.."/config.txt"
+						if __io.file_is_readable(cfg_path) then
+							local __this_package_title_id = __Name(ThisModFilesPath.."::title_id")
+							local __this_package_desc_id = __Name(ThisModFilesPath.."::desc_id")
+							local __this_package_callback = __Name(ThisModFilesPath.."::callback")
+							local __this_package_main_volume = __Name(ThisModFilesPath.."::main_volume")
+							managers.localization:add_localized_strings({
+								[__this_package_title_id] = sub_folder_name,
+								[__this_package_desc_id] = ThisModFilesPath..sub_folder_name
+							})
+							if type(_G[ThisModData][__this_package_main_volume]) ~= "number" then
+								_G[ThisModData][__this_package_main_volume] = 50
+							end
+							_G[ThisModData][__this_package_main_volume] = math.clamp(_G[ThisModData][__this_package_main_volume], 0, 100)
+							MenuCallbackHandler[__this_package_callback] = function(self, item)
+								_G[ThisModData] = _G[ThisModData] or {}
+								_G[ThisModData][__this_package_main_volume] = math.clamp(math.floor(item:value()), 0, 100)
+								DelayedCalls:Add(__Name("this_package_callback_delay_save"), 1, function()
+									__Save()
+								end)
+							end
+							MenuHelper:AddSlider({
+							  id = __Name(cfg_path),
+							  title = __this_package_title_id,
+							  desc = __this_package_desc_id,
+							  callback = __this_package_callback,
+							  value = _G[ThisModData][__this_package_main_volume],
+							  min = 0,
+							  max = 100,
+							  step = 1,
+							  show_value = true,
+							  menu_id = ThisModMenuID
+							})
+						end
+					end
+				end
 			end
-			_G[ThisModData][__this_package_main_volume] = math.clamp(_G[ThisModData][__this_package_main_volume], 0, 100)
-			MenuCallbackHandler[__this_package_callback] = function(self, item)
-				_G[ThisModData] = _G[ThisModData] or {}
-				_G[ThisModData][__this_package_main_volume] = math.clamp(math.floor(item:value()), 0, 100)
-				DelayedCalls:Add(__Name("this_package_callback_delay_save"), 1, function()
-					__Save()
-				end)
-			end
-			MenuHelper:AddSlider({
-			  id = __Name(cfg_path),
-			  title = __this_package_title_id,
-			  desc = __this_package_desc_id,
-			  callback = __this_package_callback,
-			  value = _G[ThisModData][__this_package_main_volume],
-			  min = 0,
-			  max = 100,
-			  step = 1,
-			  show_value = true,
-			  menu_id = ThisModMenuID
-			})
 		end
 	end
 	local __popup_position_x = __Name("battle_announcers_popup_position_x")
