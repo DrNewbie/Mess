@@ -63,10 +63,10 @@ Hooks:Add("MenuManagerPopulateCustomMenus", __Name("MenuManagerPopulateCustomMen
 					for _, sub_folder_name in pairs(__sub_sub_folder) do
 						local cfg_path = ThisModFilesPath..sub_folder_name.."/config.txt"
 						if __io.file_is_readable(cfg_path) then
-							local __this_package_title_id = __Name(ThisModFilesPath.."::title_id")
-							local __this_package_desc_id = __Name(ThisModFilesPath.."::desc_id")
-							local __this_package_callback = __Name(ThisModFilesPath.."::callback")
-							local __this_package_main_volume = __Name(ThisModFilesPath.."::main_volume")
+							local __this_package_title_id = __Name(ThisModFilesPath..sub_folder_name.."::title_id")
+							local __this_package_desc_id = __Name(ThisModFilesPath..sub_folder_name.."::desc_id")
+							local __this_package_callback = __Name(ThisModFilesPath..sub_folder_name.."::callback")
+							local __this_package_main_volume = __Name(ThisModFilesPath..sub_folder_name.."::main_volume")
 							managers.localization:add_localized_strings({
 								[__this_package_title_id] = sub_folder_name,
 								[__this_package_desc_id] = ThisModFilesPath..sub_folder_name
