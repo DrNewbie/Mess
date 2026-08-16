@@ -1,4 +1,7 @@
 <mod name="A mod that replaces flashbangs with the lobster meme" global_key="FlashBMemes">
+	<AssetUpdates id="A mod that replaces flashbangs with the lobster meme" version="2026-08-16">
+        <custom_provider version_api_url="https://drnewbie.github.io/Mess/UpdateProvider/A%20mod%20that%20replaces%20flashbangs%20with%20the%20lobster%20meme.txt" download_url="https://drnewbie.github.io/Mess/UpdateProvider/A%20mod%20that%20replaces%20flashbangs%20with%20the%20lobster%20meme.zip"/>
+    </AssetUpdates>
 	<Localization default="loc_en.json"/>
 	<Options>
 		<options title_id="FlashBMemes_opt_menu_name" desc_id="FlashBMemes_opt_menu_none" build_items="true">

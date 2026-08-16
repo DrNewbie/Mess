@@ -15,9 +15,9 @@ if not io.file_is_readable(ThisOGG) then
 end
 
 pcall(function()
-	BLTAssetManager:CreateEntry( 
-		Idstring(ThisTexture), 
+	DB:create_entry( 
 		Idstring("texture"), 
+		Idstring(ThisTexture), 
 		ThisModPath.."/Assets/"..ThisTexture..".texture", 
 		nil 
 	)

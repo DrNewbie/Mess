@@ -4,7 +4,7 @@
   "author": "Dr_Newbie",
   "contact": "https://modworkshop.net/mod/39457",
   "priority": 100,
-  "version": "2023-07-27",
+  "version": "2026-08-16",
   "blt_version": 2,
   "hooks": [
     {
