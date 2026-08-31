@@ -23,7 +23,9 @@ Hooks:PostHook(PlayerStandard, "update", func2, function (self, t, dt)
 				sync_dir_yaw = self_camera._sync_dir.yaw
 			end
 			local angle_delta = math.abs(sync_dir_yaw - sync_yaw)
-			local update_network = tweak_data.network.camera.network_sync_delta_t < sync_dt and angle_delta > 0 or tweak_data.network.camera.network_angle_delta < angle_delta
+			local net_sync_delta_t = (tweak_data.network.camera and tweak_data.network.camera.network_sync_delta_t) or 0.1333
+			local net_angle_delta = (tweak_data.network.camera and tweak_data.network.camera.network_angle_delta) or 10
+			local update_network = net_sync_delta_t < sync_dt and angle_delta > 0 or net_angle_delta < angle_delta
 			if update_network then
 				self._unit:network():send("set_look_dir", sync_yaw, 90)
 				self._unit:camera()._last_sync_t = t

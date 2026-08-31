@@ -32,7 +32,9 @@ function PlayerCamera:set_rotation(rot, ...)
 		sync_pitch = math.floor(127 * sync_pitch / 170)
 		local angle_delta = math.abs(self._sync_dir.yaw - sync_yaw) + math.abs(self._sync_dir.pitch - sync_pitch)
 		if tweak_data.network then
-			local update_network = tweak_data.network.camera.network_sync_delta_t < sync_dt and angle_delta > 0 or tweak_data.network.camera.network_angle_delta < angle_delta
+			local net_sync_delta_t = (tweak_data.network.camera and tweak_data.network.camera.network_sync_delta_t) or 0.1333
+			local net_angle_delta = (tweak_data.network.camera and tweak_data.network.camera.network_angle_delta) or 10
+			local update_network = net_sync_delta_t < sync_dt and angle_delta > 0 or net_angle_delta < angle_delta
 			local locked_look_dir = self._locked_look_dir_t and t < self._locked_look_dir_t
 			if update_network then
 				self._sync_dir.yaw = sync_yaw
