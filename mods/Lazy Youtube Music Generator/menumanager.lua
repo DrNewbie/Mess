@@ -2,6 +2,10 @@ _G.LazyYoutubeMusicGeneratorMain = _G.LazyYoutubeMusicGeneratorMain or {}
 _G.LazyYoutubeMusicGeneratorMain.ModPath = _G.LazyYoutubeMusicGeneratorMain.ModPath or ModPath
 _G.LazyYoutubeMusicGeneratorMain.MenuID = "LazyYoutubeMusicGeneratorMenuID"
 
+Hooks:Add("LocalizationManagerPostInit", "LazyYoutubeMusicGeneratorLoadLoc", function(loc)
+	loc:load_localization_file(_G.LazyYoutubeMusicGeneratorMain.ModPath.."Loc/English.txt", false)
+end)
+
 Hooks:Add("MenuManagerSetupCustomMenus", "LazyYoutubeMusicGeneratorSetup", function(menu_manager, nodes)
 	MenuHelper:NewMenu(_G.LazyYoutubeMusicGeneratorMain.MenuID)
 end)
@@ -23,10 +27,20 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "LazyYoutubeMusicGeneratorPopulate",
 		elseif vidid2 then
 			vidid_now = vidid2
 		end
+		local menu_title = managers.localization:text("menu_LazyYoutubeMusicGenerator_name")
 		if type(vidid_now) ~= "string" or string.len(vidid_now) <= 1 then
+			QuickMenu:new(
+				menu_title, 
+				string.gsub(managers.localization:text("menu_LazyYoutubeMusicGenerator_menu_wrong_url"), '%$yturl%$', __clipboard), 
+				{
+					{
+						text = managers.localization:text("menu_LazyYoutubeMusicGenerator_menu_close"),
+						is_cancel_button = true
+					}
+				}
+				):Show()
 			return
 		end
-		local menu_title = managers.localization:text("menu_LazyYoutubeMusicGenerator_name")
 		local menu_message = managers.localization:text("menu_LazyYoutubeMusicGenerator_menu_msgs")
 		menu_message = string.gsub(menu_message, '%$yturl%$', vidid_now)
 		local menu_options = {
@@ -67,8 +81,7 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "LazyYoutubeMusicGeneratorPopulate",
 				is_cancel_button = true
 			}
 		}
-		local menu = QuickMenu:new(menu_title, menu_message, menu_options)
-		menu:Show()
+		QuickMenu:new(menu_title, menu_message, menu_options):Show()
 	end
 	MenuHelper:AddButton({
 		id = "RunLazyYoutubeMusicGenerator",

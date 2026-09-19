@@ -7,5 +7,5 @@
   "menu_LazyYoutubeMusicGenerator_menu_close": "[Close]",
   "menu_LazyYoutubeMusicGenerator_menu_downloading": "Nowloading...",
   "menu_LazyYoutubeMusicGenerator_menu_download_ok": "OK",
-  
+  "menu_LazyYoutubeMusicGenerator_menu_wrong_url": "Your URL is not from Youtube. ( $yturl$ )"
 }
