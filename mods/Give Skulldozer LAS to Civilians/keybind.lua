@@ -106,7 +106,7 @@ local function OptChanged()
 							if not __o_xml:find("spawn_manager") and __o_xml:find("CivilianBase") then
 								local __s_xml = io.open(ThisModPath..'/xml/'..u_key..'.unit', "w+")
 								if __s_xml then
-									__main_xml:write('	BLTAssetManager:CreateEntry(\n')
+									__main_xml:write('	BLT.AssetManager:CreateEntry(\n')
 									__main_xml:write('		Idstring("'..unit_path..'"),\n')
 									__main_xml:write('		Idstring("unit"),\n')
 									__main_xml:write('		ThisModPath.."xml/'..u_key..'.unit",\n')

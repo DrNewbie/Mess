@@ -7,7 +7,7 @@ else
 end
 
 pcall(function()
-	BLTAssetManager:CreateEntry( 
+	BLT.AssetManager:CreateEntry( 
 		Idstring("goodwill/texture/heart"), 
 		Idstring("texture"), 
 		_G.GoodWillSysMain.ThisModPath.."/assets/heart.dds", 

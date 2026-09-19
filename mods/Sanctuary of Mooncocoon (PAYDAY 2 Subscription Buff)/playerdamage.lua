@@ -101,7 +101,7 @@ end)
 pcall(
 	function ()
 		if io.file_is_readable(ThisBannerPath) then
-			BLTAssetManager:CreateEntry( 
+			BLT.AssetManager:CreateEntry( 
 				ThisBannerName, 
 				"texture", 
 				ThisBannerPath, 

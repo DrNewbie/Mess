@@ -11,13 +11,13 @@ Hooks:Add("LocalizationManagerPostInit", "LCBLunacyLocLoad", function(self)
 end)
 
 pcall(function()
-	BLTAssetManager:CreateEntry( 
+	BLT.AssetManager:CreateEntry( 
 		"guis/dlcs/chill/textures/pd2/safehouse/continental_coins_drop", 
 		Idstring("texture"), 
 		ThisModPath.."continental_coins_drop.texture", 
 		nil 
 	)
-	BLTAssetManager:CreateEntry( 
+	BLT.AssetManager:CreateEntry( 
 		"guis/dlcs/chill/textures/pd2/safehouse/continental_coins_symbol", 
 		Idstring("texture"), 
 		ThisModPath.."continental_coins_symbol.texture", 

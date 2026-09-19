@@ -23,7 +23,7 @@ texture_size = {texture_size[1], texture_size[2]}
 pcall(
 	function ()
 		if io.file_is_readable(ThisBannerPath) then
-			BLTAssetManager:CreateEntry( 
+			BLT.AssetManager:CreateEntry( 
 				ThisBannerName, 
 				"texture", 
 				ThisBannerPath, 

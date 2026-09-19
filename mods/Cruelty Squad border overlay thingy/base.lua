@@ -15,7 +15,7 @@ local ThisTexture = "test001.dds"
 local ThisTextureNPath = __Name(ThisTexture)
 
 pcall(function()
-	BLTAssetManager:CreateEntry( 
+	BLT.AssetManager:CreateEntry( 
 		Idstring(ThisTextureNPath), 
 		Idstring("texture"), 
 		ThisModPath..ThisTexture, 

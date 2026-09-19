@@ -4,7 +4,7 @@ local sound_id = "sounds/metalpipesarmorgonelol"
 local sound_ids = Idstring(sound_id)
 
 local function __load_assets()
-	BLTAssetManager:CreateEntry(
+	BLT.AssetManager:CreateEntry(
 		sound_ids,
 		movie_ids,
 		ThisModPath.."sounds/metalpipesarmorgonelol.movie",

@@ -22,13 +22,13 @@ end)
 	load assets
 ]]
 local function __load_assets()
-	BLTAssetManager:CreateEntry(
+	BLT.AssetManager:CreateEntry(
 		Idstring(new_tree_bg_texture),
 		Idstring("texture"),
 		ThisModPath.."assets/skilltreebackground.texture",
 		nil
 	)
-	BLTAssetManager:CreateEntry(
+	BLT.AssetManager:CreateEntry(
 		Idstring(new_skill_1_11_icon),
 		Idstring("texture"),
 		ThisModPath.."assets/skillicon_1_11.texture",

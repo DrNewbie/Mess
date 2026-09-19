@@ -11,7 +11,7 @@ local function LoadAssetsFunction()
 					if __io.file_is_readable(ThisModTexturesPath.."/"..__filename) then
 						local __pic = "noob_hud/"..string.gsub(__filename, ".texture", "")
 						local __ids_pic = Idstring(__pic)
-						BLTAssetManager:CreateEntry( 
+						BLT.AssetManager:CreateEntry( 
 							__ids_pic, 
 							Idstring("texture"), 
 							ThisModTexturesPath..__filename, 

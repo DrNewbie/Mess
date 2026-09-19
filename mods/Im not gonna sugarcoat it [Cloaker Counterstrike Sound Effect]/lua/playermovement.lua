@@ -43,7 +43,7 @@ local function __load_texture()
 						local __pic = "memes/"..string.gsub(__filename, ".texture", "")
 						local __ids_pic = Idstring(__pic)
 						ThisModTextures[Idstring(__filename):key()] = __ids_pic
-						BLTAssetManager:CreateEntry( 
+						BLT.AssetManager:CreateEntry( 
 							__ids_pic, 
 							Idstring("texture"), 
 							ThisModTexturesPath.."/"..__filename, 

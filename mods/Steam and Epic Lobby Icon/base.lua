@@ -11,13 +11,13 @@ local STEAM_ICON_PATH = __Name("steam_ico")
 local ICON_SIZE = 16
 
 pcall(function()
-	BLTAssetManager:CreateEntry( 
+	BLT.AssetManager:CreateEntry( 
 		Idstring(EGS_ICON_PATH), 
 		Idstring("texture"), 
 		ThisModPath.."/platformIcons/egs_ico_16px.dds", 
 		nil 
 	)
-	BLTAssetManager:CreateEntry( 
+	BLT.AssetManager:CreateEntry( 
 		Idstring(STEAM_ICON_PATH), 
 		Idstring("texture"), 
 		ThisModPath.."/platformIcons/steam_ico_16px.dds", 

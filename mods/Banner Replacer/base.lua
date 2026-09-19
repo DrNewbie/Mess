@@ -34,7 +34,7 @@ Hooks:PreHook(NewHeistsGui, "init", __Name(1), function(self, ...)
 							local __pic = __Name(__filename)
 							local __ids_pic = Idstring(__pic)
 							local __ids_pic_key = __ids_pic:key()
-							BLTAssetManager:CreateEntry( 
+							BLT.AssetManager:CreateEntry( 
 								__ids_pic, 
 								ids_texture, 
 								ThisModTexturesPath..__filename, 

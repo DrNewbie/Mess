@@ -18,7 +18,7 @@ pcall(function()
 	for __i, __d in pairs(__List) do
 		if __io.file_is_readable(ThisModPath..__d) then
 			local skull_path = "guis/lcb_difficulty_skulls_"..__i
-			BLTAssetManager:CreateEntry( 
+			BLT.AssetManager:CreateEntry( 
 				Idstring(skull_path), 
 				Idstring("texture"), 
 				ThisModPath..__d, 
@@ -28,7 +28,7 @@ pcall(function()
 		end
 	end
 	if __io.file_is_readable(ThisModPath.."guis/one_down.dds") then
-		BLTAssetManager:CreateEntry( 
+		BLT.AssetManager:CreateEntry( 
 			Idstring("guis/lcb_difficulty_skulls_one_down"), 
 			Idstring("texture"), 
 			ThisModPath.."guis/one_down.dds", 

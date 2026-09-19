@@ -7,7 +7,7 @@ else
 end
 
 pcall(function()
-	BLTAssetManager:CreateEntry( 
+	BLT.AssetManager:CreateEntry( 
 		Idstring("dmsm/texture/dmsm_skull"), 
 		Idstring("texture"), 
 		DeadManSysMain.ThisModPath.."/assets/dmsm_skull.texture", 

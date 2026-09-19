@@ -39,7 +39,7 @@ pcall(function ()
 					if __io.file_is_readable(ThisModTexturesPath.."/"..__filename) then
 						local __pic = __Name(__filename)
 						local __ids_pic = Idstring(__pic)
-						BLTAssetManager:CreateEntry( 
+						BLT.AssetManager:CreateEntry( 
 							__ids_pic, 
 							ids_texture, 
 							ThisModTexturesPath..__filename, 

@@ -16,7 +16,7 @@ local GameThumbnail = "2914150.dds"
 Hooks:PreHook(NewHeistsGui, "init", __Name(2), function(self, ...)
 	if __io.file_is_readable(ThisModPath..GameThumbnail) then
 		pcall(function ()
-			BLTAssetManager:CreateEntry( 
+			BLT.AssetManager:CreateEntry( 
 				__Name(GameThumbnail), 
 				Idstring("texture"), 
 				ThisModPath..GameThumbnail, 

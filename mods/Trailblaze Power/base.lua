@@ -382,7 +382,7 @@ Hooks:Add("MenuManagerOnOpenMenu", __Name("MenuManagerOnOpenMenu::"), function(s
 end)
 
 pcall(function()
-	BLTAssetManager:CreateEntry( 
+	BLT.AssetManager:CreateEntry( 
 		__Name("Item_Trailblaze_Power.dds"), 
 		"texture", 
 		ThisModPath.."Item_Trailblaze_Power.dds", 
