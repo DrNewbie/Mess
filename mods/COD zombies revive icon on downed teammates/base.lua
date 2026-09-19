@@ -17,7 +17,7 @@ if HUDManager and not HUDManager[is_bool] then
 
 	Hooks:PostHook(HUDManager, "init", __Name(1), function(self)
 		pcall(function()
-			BLTAssetManager:CreateEntry( 
+			BLT.AssetManager:CreateEntry( 
 				ThisTexturePathIds, 
 				Idstring("texture"), 
 				ThisModPath.."/need_revive.texture", 
