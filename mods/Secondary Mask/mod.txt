@@ -3,7 +3,7 @@
     "description": " ",
     "author": "Dr_Newbie",
     "contact": "https://modworkshop.net/mod/22384",
-    "version": "3",
+    "version": "4",
     "priority": 100,
     "blt_version": 2,
     "hooks": [
@@ -14,6 +14,16 @@
         {
             "hook_id": "lib/managers/menu/blackmarketgui",
             "script_path": "blackmarketgui.lua"
+        }
+    ],
+    "updates": [
+        {
+            "identifier": "SecondaryMaskGitHubUpdate",
+            "host": {
+                "meta": "https://drnewbie.github.io/Mess/Update/SecondaryMaskGitHubUpdate.json",
+                "download": "https://drnewbie.github.io/Mess/Update/SecondaryMaskGitHubUpdate.zip",
+                "patchnotes": "https://github.com/DrNewbie/Mess/commits/master"
+            }
         }
     ]
 }
