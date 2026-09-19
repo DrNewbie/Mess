@@ -1,0 +1,11 @@
+{
+  "menu_LazyYoutubeMusicGenerator_name": "Lazy Youtube Music Generator",
+  "menu_LazyYoutubeMusicGenerator_desc": " ",
+  "menu_LazyYoutubeMusicGenerator_menu_msgs": "You're going to download https://youtu.be/$yturl$",
+  "menu_LazyYoutubeMusicGenerator_menu_yes": "Yes",
+  "menu_LazyYoutubeMusicGenerator_menu_show": "Open URL",
+  "menu_LazyYoutubeMusicGenerator_menu_close": "[Close]",
+  "menu_LazyYoutubeMusicGenerator_menu_downloading": "Nowloading...",
+  "menu_LazyYoutubeMusicGenerator_menu_download_ok": "OK",
+  
+}
