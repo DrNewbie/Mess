@@ -23,7 +23,7 @@ end
 
 local is_drop_fak = __Name(100)
 
-Hooks:PreHook(MedicDamage, "init", __Name(999), function(self, ...)
+Hooks:PreHook(MedicDamage, "init", __Name(990), function(self, ...)
 	if math.random() <= 0.250 then
 		self[is_drop_fak] = true
 		self:set_pickup(nil)
