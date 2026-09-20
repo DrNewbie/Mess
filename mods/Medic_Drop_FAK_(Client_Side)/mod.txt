@@ -1,0 +1,14 @@
+{
+    "name": "Medic Drop FAK (Client Side)",
+    "description": "https://modworkshop.net/mod/19691",
+    "author": "Dr_Newbie",
+    "contact": "https://modworkshop.net/mod/19691",
+    "version": "2026-09-20",
+    "priority": 100,
+    "hooks": [
+        {
+            "hook_id": "lib/units/enemies/medic/medicdamage",
+            "script_path": "lua/medicdamage.lua"
+        }
+    ]
+}
