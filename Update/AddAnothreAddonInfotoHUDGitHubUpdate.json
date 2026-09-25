@@ -1,7 +1,7 @@
 [
     {
         "ident": "AddAnothreAddonInfotoHUDGitHubUpdate",
-        "version": "1",
+        "version": "1.00.001",
         "download": "https://drnewbie.github.io/Mess/Update/AddAnothreAddonInfotoHUDGitHubUpdate.zip",
         "patchnotes": "https://github.com/DrNewbie/Mess/commits/master"
     }
