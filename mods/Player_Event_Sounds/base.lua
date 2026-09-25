@@ -55,38 +55,33 @@ _G.MessageSoundsEventt.AddMsgFunc = function(__msg, __name, __func)
 	return
 end
 
---Scan dir codes from n0tEll10T, https://modworkshop.net/mod/35405
-_G.MessageSoundsEventt.__scan_dir = function(__this_dir)
-	if not file.DirectoryExists(__this_dir) then
-		return {}
+_G.MessageSoundsEventt.search_this_dir_ans = {}
+
+_G.MessageSoundsEventt.__scan_dir = function(this_dir)
+	if not file.DirectoryExists(this_dir) then
+		return
 	end
-	--[[
-	local __i, __t, __popen = 0, {}, io.popen
-	local __pfile = __popen('dir "'..__this_dir..'" /B /S /A-D')
-	for __filename in __pfile:lines() do
-		if string.match(__filename, "%.ogg") then
-			__i = __i + 1
-			__t[__NameIds(__filename)] = __filename
+	
+	_G.MessageSoundsEventt.search_this_dir_ans = {}
+	
+	local those_files = file.GetFiles(this_dir)
+	
+	local those_dirs = file.GetDirectories(this_dir)
+	
+	if type(those_files) == "table" then
+		for _, those_file_name in pairs(those_files) do
+			if string.match(string.lower(tostring(those_file_name)), "%.ogg") and io.file_is_readable(this_dir.."/"..those_file_name) then
+				_G.MessageSoundsEventt.search_this_dir_ans[__NameIds(this_dir.."/"..those_file_name)] = this_dir.."/"..those_file_name		
+			end	
 		end
 	end
-	__pfile:close()	
-	]]
-	local __i, __t, __st, __pfile, __pdir = 0, {}, {}, file.GetFiles(__this_dir), file.GetDirectories(__this_dir)
-	for _, __filename in pairs(__pfile) do
-		if __filename and type(__filename) == "string" and string.match(__filename, "%.ogg") then
-			__i = __i + 1
-			__t[__NameIds(__this_dir..__filename)] = __this_dir.."/"..__filename
+	
+	if type(those_dirs) == "table" then
+		for _, those_dir_name in pairs(those_dirs) do
+			_G.MessageSoundsEventt.__scan_dir(this_dir.."/"..those_dir_name)	
 		end
 	end
-	if type(__pdir) == "table" then
-		for _, __foldername in pairs(__pdir) do
-			__st = _G.MessageSoundsEventt.__scan_dir(__this_dir.."/"..__foldername.."/")
-		end
-	end
-	for __key, _ in pairs(__st) do
-		__t[__key] = __st[__key]
-	end
-	return __t
+	return _G.MessageSoundsEventt.search_this_dir_ans
 end
 
 --Init, get cfg and sound name
@@ -98,7 +93,7 @@ _G.MessageSoundsEventt.Init = function()
 			for _, __cfg in pairs(__configs) do
 				if __cfg and io.file_is_readable(__MSEtt.ThisModPath.."cfgs/"..__cfg) then
 					if string.match(__MSEtt.ThisModPath.."cfgs/"..__cfg, "%.lua") then
-						dofile(__MSEtt.ThisModPath.."cfgs/"..__cfg)
+						pcall(dofile, (__MSEtt.ThisModPath.."cfgs/"..__cfg))
 					end
 				end
 			end
@@ -121,7 +116,7 @@ _G.MessageSoundsEventt.Init = function()
 			end
 		end
 	end
-	dofile(__MSEtt.ThisModPath.."skill_base.lua")
+	pcall(dofile, (__MSEtt.ThisModPath.."skill_base.lua"))
 	return
 end
 

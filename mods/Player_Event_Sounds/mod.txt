@@ -1,13 +1,13 @@
 {
-  "name": "Player Event Sounds",
-  "description": "https://modworkshop.net/mod/36336",
-  "author": "Dr_Newbie",
-  "contact": "https://modworkshop.net/mod/36336",
-  "version": "5",
-  "hooks": [
-    {
-      "hook_id": "lib/setups/setup",
-      "script_path": "base.lua"
-    }
-  ]
+    "name": "Player Event Sounds",
+    "description": "https://modworkshop.net/mod/36336",
+    "author": "Dr_Newbie",
+    "contact": "https://modworkshop.net/mod/36336",
+    "version": "6",
+    "hooks": [
+        {
+            "hook_id": "lib/setups/setup",
+            "script_path": "base.lua"
+        }
+    ]
 }
