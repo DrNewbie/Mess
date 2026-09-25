@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<mod name="Add Anothre Addon Info to HUD"
+     description=" "
+     author="Dr_Newbie"
+     version="1"
+     priority="900">
+	<updates>
+		<update identifier="AddAnothreAddonInfotoHUDGitHubUpdate"
+		        display_name="Add Anothre Addon Info to HUD"
+		        install_dir="mods"
+		        meta="https://drnewbie.github.io/Mess/Update/AddAnothreAddonInfotoHUDGitHubUpdate.json"
+		        download_url="https://drnewbie.github.io/Mess/Update/AddAnothreAddonInfotoHUDGitHubUpdate.zip"
+		        patchnotes="https://github.com/DrNewbie/Mess/commits/master/"/>
+	</updates>
+	<hooks>
+		<post hook_id="lib/managers/hudmanagerpd2"
+		      script_path="Base.lua"/>
+	</hooks>
+</mod>
