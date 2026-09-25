@@ -1,0 +1,36 @@
+{
+    "this_hud_panel_data": {
+        "w": 400,
+        "h": 100,
+        "center_x": 1.55,
+        "center_y": 1.05
+    },
+    "this_hud_box_data": {
+        "w": 200,
+        "h": 64
+    },
+    "this_hud_box_icon_data": {
+        "texture": "guis/dlcs/cee/textures/pd2/crime_spree/boosts_atlas",
+        "texture_rect": [
+            128,
+            0,
+            128,
+            128
+        ],
+        "valign": "top",
+        "layer": 1,
+        "w": 64,
+        "h": 64
+    },
+    "this_hud_box_text_data": {
+        "text": "0",
+        "font_size": 24,
+        "font": "fonts/font_large_mf",
+        "vertical": "center",
+        "layer": 1,
+        "valign": "center",
+        "align": "center",
+        "w": 200,
+        "h": 64
+    }
+}

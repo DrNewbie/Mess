@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<mod name="Show Postion HUD"
+     description="https://modworkshop.net/mod/59178"
+	 contact="https://modworkshop.net/mod/59178"
+     author="Dr_Newbie"
+     version="1"
+     priority="100">
+	<dependencies>
+		<dependency identifier="AddAnothreAddonInfotoHUDGitHubUpdate"
+		            name="Add Anothre Addon Info to HUD"
+		            download_url="https://drnewbie.github.io/Mess/Update/AddAnothreAddonInfotoHUDGitHubUpdate.zip"
+		            install_dir="mods/"/>
+	</dependencies>
+	<hooks>
+		<post hook_id="lib/managers/hudmanagerpd2"
+		      script_path="HUD/MyLoaction.lua"/>
+		<post hook_id="lib/units/beings/player/playerdamage"
+		      script_path="HUD/MyLoaction.lua"/>
+	</hooks>
+</mod>
