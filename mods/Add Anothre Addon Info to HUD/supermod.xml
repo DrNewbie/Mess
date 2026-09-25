@@ -10,7 +10,7 @@
 		        install_dir="mods/"
 		        meta="https://drnewbie.github.io/Mess/Update/AddAnothreAddonInfotoHUDGitHubUpdate.json"
 		        download_url="https://drnewbie.github.io/Mess/Update/AddAnothreAddonInfotoHUDGitHubUpdate.zip"
-		        patchnotes="https://github.com/search?q=Add+Anothre+Addon+Info+to+HUD&type=commits&s=committer-date&o=desc"/>
+		        patchnotes="https://github.com/DrNewbie/Mess/commits/master/"/>
 	</updates>
 	<hooks>
 		<post hook_id="lib/managers/hudmanagerpd2"
