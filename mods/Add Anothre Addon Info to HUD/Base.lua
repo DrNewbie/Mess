@@ -12,6 +12,8 @@ _G.AddAddonInfoToHUD.ThisModPath = ThisModPath
 
 _G.AddAddonInfoToHUD.ThisModIds = ThisModIds
 
+_G.AddAddonInfoToHUD.All_of_Addon = {}
+
 _G.AddAddonInfoToHUD.__Name = function(__id)
 	return "T_"..Idstring(tostring(__id).."::".._G.AddAddonInfoToHUD.ThisModIds):key()
 end
@@ -164,6 +166,13 @@ _G.AddAddonInfoToHUD.Init = function(__data)
 	__log("this_hud_box_icon init:", this_hud_box_icon_data.name)
 	
 	this_hud_panel:set_visible(true)
+	
+	_G.AddAddonInfoToHUD.All_of_Addon[this_hud_panel_data.name] = {
+		this_hud_panel = this_hud_panel, 
+		this_hud_box = this_hud_box, 
+		this_hud_box_text = this_hud_box_text, 
+		this_hud_box_icon = this_hud_box_icon	
+	}
 	
 	return this_hud_panel, this_hud_box, this_hud_box_text, this_hud_box_icon
 end
