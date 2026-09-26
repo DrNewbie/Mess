@@ -139,7 +139,7 @@ _G.MessageSoundsEventt.Default = function()
 		if not __is_ok then
 			if Message[__msg] == Message.on_temporary_upgrades_start or Message[__msg] == Message.on_temporary_upgrades_end then
 				-- temporary upgrades start&end use different default function
-				_G.MessageSoundsEventt.AddMsgFunc(__msg, "Default_Event", function(__category, __upgrade)
+				_G.MessageSoundsEventt.AddMsgFunc(__msg, "Default_Event_Temporary", function(__category, __upgrade)
 					if not __category or not __upgrade then
 						return
 					end
@@ -159,7 +159,7 @@ _G.MessageSoundsEventt.Default = function()
 				end)
 			else
 				--Add default sound event to support all
-				_G.MessageSoundsEventt.AddMsgFunc(__msg, "Default_Event", function()
+				_G.MessageSoundsEventt.AddMsgFunc(__msg, "Default_Event_All", function()
 					if managers.player then
 						_G.MessageSoundsEventt.PlaySoundRandom(__msg)
 					end

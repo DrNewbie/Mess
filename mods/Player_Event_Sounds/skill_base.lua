@@ -1,11 +1,12 @@
 _G.MessageSoundsEventt = _G.MessageSoundsEventt or {}
 local List1 = _G.MessageSoundsEventt.NameIds("skill base event table")
 local Hook1 = _G.MessageSoundsEventt.NameIds("PostHook::PlayerManager:update")
-local Time1 = _G.MessageSoundsEventt.NameIds("PostHook::PlayerManager:update::dt")
+
+local is_delay_bool = 3
 
 Hooks:PostHook(PlayerManager, "update", Hook1, function(self, __t, __dt)
-	if not self[Time1] then
-		self[Time1] = 0.25
+	if is_delay_bool <= 0 then
+		is_delay_bool = 3
 		for __category, _ in pairs(self._temporary_upgrades) do
 			for __upgrade, _ in pairs(self._temporary_upgrades[__category]) do
 				local __name_ids = _G.MessageSoundsEventt.NameIds("temporary_upgrades::"..__category.."::"..__upgrade)
@@ -23,10 +24,7 @@ Hooks:PostHook(PlayerManager, "update", Hook1, function(self, __t, __dt)
 			end
 		end
 	else
-		self[Time1] = self[Time1] - __dt
-		if self[Time1] <= 0 then
-			self[Time1] = nil
-		end
+		is_delay_bool = is_delay_bool - 1
 	end
 end)
 
