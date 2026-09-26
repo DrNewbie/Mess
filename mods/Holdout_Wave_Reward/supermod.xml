@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<mod name="Holdout Wave Reward"
+     description="https://modworkshop.net/mod/27462"
+     contact="https://modworkshop.net/mod/27462"
+     author="Dr_Newbie"
+     version="5"
+     priority="100">
+	<dependencies>
+		<dependency identifier="ClientSideFakeAmmoBagGitHubUpdate"
+		            name="Client_Side_Fake_Ammo_Bag"
+		            download_url="https://drnewbie.github.io/PD2_Client_Side_Fake_Equipment/Client_Side_Fake_Ammo_Bag.zip"
+		            install_dir="mods/"/>
+		<dependency identifier="ClientSideFakeDoctorBagGitHubUpdate"
+		            name="Client_Side_Fake_Doctor_Bag"
+		            download_url="https://drnewbie.github.io/PD2_Client_Side_Fake_Equipment/Client_Side_Fake_Doctor_Bag.zip"
+		            install_dir="mods/"/>
+		<dependency identifier="ClientSideFakeFirstAidKitGitHubUpdate"
+		            name="Client_Side_Fake_First_Aid_Kit"
+		            download_url="https://drnewbie.github.io/PD2_Client_Side_Fake_Equipment/Client_Side_Fake_First_Aid_Kit.zip"
+		            install_dir="mods/"/>
+		<dependency identifier="ClientSideFakeGrenadeCrateGitHubUpdate"
+		            name="Client_Side_Fake_Grenade_Crate"
+		            download_url="https://drnewbie.github.io/PD2_Client_Side_Fake_Equipment/Client_Side_Fake_Grenade_Crate.zip"
+		            install_dir="mods/"/>
+	</dependencies>
+	<updates>
+		<update identifier="HoldoutWaveRewardGitHubUpdate"
+		        display_name="Holdout Wave Reward"
+		        install_dir="mods/"
+		        meta="https://drnewbie.github.io/Mess/Update/HoldoutWaveRewardGitHubUpdate.json"
+		        download="https://drnewbie.github.io/Mess/Update/HoldoutWaveRewardGitHubUpdate.zip"
+		        patchnotes="https://github.com/DrNewbie/Mess/commits/master/"/>
+	</updates>
+	<hooks>
+		<post hook_id="lib/managers/skirmishmanager"
+		      script_path="Lua/skirmishmanager.lua"/>
+		<post hook_id="lib/managers/mission/missionscriptelement"
+		      script_path="Lua/missionscriptelement.lua"/>
+	</hooks>
+</mod>
