@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<mod name="Removes Cleaner Costs From Killing Civillians When Specifically Playing Hila"
+     description="You don't need to pay Cleaner Costs while Hila is in the team."
+     contact=" "
+     author="Dr_Newbie"
+     version="1"
+     priority="1">
+	<hooks>
+		<post hook_id="lib/managers/moneymanager"
+		      script_path="moneymanager.lua"/>
+	</hooks>
+</mod>
