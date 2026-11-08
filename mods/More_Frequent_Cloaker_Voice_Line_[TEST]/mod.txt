@@ -1,0 +1,13 @@
+{
+    "name": "More_Frequent_Cloaker_Voice_Line_[TEST]",
+    "description": " ",
+    "author": "Dr_Newbie",
+    "contact": " ",
+    "version": "1",
+    "hooks": [
+        {
+            "hook_id": "lib/units/enemies/cop/copmovement",
+            "script_path": "base.lua"
+        }
+    ]
+}
