@@ -60,14 +60,20 @@ end
 
 local __delay_t_max = 10
 
-local __global_delay = __delay_t_max
+local __global_delay = __Name('__global_delay')
 
 Hooks:PostHook(CopMovement, "update", __Name(1), function(self, __unit, __t, __dt)
-	if __global_delay > 0 then
-		__global_delay = __global_delay - __dt
-	end
-	if __is_this_unit_okay(self._unit) and __global_delay <= 0 then
-		__global_delay = math.random() * __delay_t_max
-		pcall(__PlaySoundOne, self._unit, table.random({"Hurt_Long", "Hurt_Short", "Death_or_Hurt_Short", "Taunting_Hard"}))
+	if not __is_this_unit_okay(self._unit) then
+		return
+	end	
+	if type(self[__global_delay]) ~= "number" then
+		self[__global_delay] = __delay_t_max + math.random() * __delay_t_max
+	else
+		if self[__global_delay] > 0 then
+			self[__global_delay] = self[__global_delay] - __dt
+		else
+			self[__global_delay] = nil
+			pcall(__PlaySoundOne, self._unit, table.random({"Hit_by_Flashbang", "Hurt_Long", "Taunting_Hard"}))
+		end
 	end
 end)
